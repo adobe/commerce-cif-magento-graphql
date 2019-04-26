@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -20,8 +20,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 
 /**
-* 
-*/
+ * 
+ */
 public class QueryQuery extends AbstractQuery<QueryQuery> {
     QueryQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -33,8 +33,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Id of the category
-        */
+         * Id of the category
+         */
         public CategoryArguments id(Integer value) {
             if (value != null) {
                 startArgument("id");
@@ -72,8 +72,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Identifiers of the CMS blocks
-        */
+         * Identifiers of the CMS blocks
+         */
         public CmsBlocksArguments identifiers(List<String> value) {
             if (value != null) {
                 startArgument("identifiers");
@@ -97,15 +97,15 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-    * The CMS block query returns information about CMS blocks
-    */
+     * The CMS block query returns information about CMS blocks
+     */
     public QueryQuery cmsBlocks(CmsBlocksQueryDefinition queryDef) {
         return cmsBlocks(args -> {}, queryDef);
     }
 
     /**
-    * The CMS block query returns information about CMS blocks
-    */
+     * The CMS block query returns information about CMS blocks
+     */
     public QueryQuery cmsBlocks(CmsBlocksArgumentsDefinition argsDef, CmsBlocksQueryDefinition queryDef) {
         startField("cmsBlocks");
 
@@ -126,8 +126,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Id of the CMS page
-        */
+         * Id of the CMS page
+         */
         public CmsPageArguments id(Integer value) {
             if (value != null) {
                 startArgument("id");
@@ -142,15 +142,15 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-    * The CMS page query returns information about a CMS page
-    */
+     * The CMS page query returns information about a CMS page
+     */
     public QueryQuery cmsPage(CmsPageQueryDefinition queryDef) {
         return cmsPage(args -> {}, queryDef);
     }
 
     /**
-    * The CMS page query returns information about a CMS page
-    */
+     * The CMS page query returns information about a CMS page
+     */
     public QueryQuery cmsPage(CmsPageArgumentsDefinition argsDef, CmsPageQueryDefinition queryDef) {
         startField("cmsPage");
 
@@ -166,9 +166,9 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-    * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
-    * type
-    */
+     * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
+     * type
+     */
     public QueryQuery customAttributeMetadata(List<AttributeInput> attributes, CustomAttributeMetadataQueryDefinition queryDef) {
         startField("customAttributeMetadata");
 
@@ -194,8 +194,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-    * The customer query returns information about a customer account
-    */
+     * The customer query returns information about a customer account
+     */
     public QueryQuery customer(CustomerQueryDefinition queryDef) {
         startField("customer");
 
@@ -212,8 +212,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Performs a full-text search using the specified key words.
-        */
+         * Performs a full-text search using the specified key words.
+         */
         public ProductsArguments search(String value) {
             if (value != null) {
                 startArgument("search");
@@ -223,8 +223,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Identifies which product attributes to search for and return.
-        */
+         * Identifies which product attributes to search for and return.
+         */
         public ProductsArguments filter(ProductFilterInput value) {
             if (value != null) {
                 startArgument("filter");
@@ -234,8 +234,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Specifies the maximum number of results to return at once. This attribute is optional.
-        */
+         * Specifies the maximum number of results to return at once. This attribute is optional.
+         */
         public ProductsArguments pageSize(Integer value) {
             if (value != null) {
                 startArgument("pageSize");
@@ -245,8 +245,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Specifies which page of results to return. The default value is 1.
-        */
+         * Specifies which page of results to return. The default value is 1.
+         */
         public ProductsArguments currentPage(Integer value) {
             if (value != null) {
                 startArgument("currentPage");
@@ -256,9 +256,9 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-        * Specifies which attribute to sort on, and whether to return the results in ascending or descending
-        * order.
-        */
+         * Specifies which attribute to sort on, and whether to return the results in ascending or descending
+         * order.
+         */
         public ProductsArguments sort(ProductSortInput value) {
             if (value != null) {
                 startArgument("sort");
@@ -273,17 +273,17 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-    * The products query searches for products that match the criteria specified in the search and filter
-    * attributes
-    */
+     * The products query searches for products that match the criteria specified in the search and filter
+     * attributes
+     */
     public QueryQuery products(ProductsQueryDefinition queryDef) {
         return products(args -> {}, queryDef);
     }
 
     /**
-    * The products query searches for products that match the criteria specified in the search and filter
-    * attributes
-    */
+     * The products query searches for products that match the criteria specified in the search and filter
+     * attributes
+     */
     public QueryQuery products(ProductsArgumentsDefinition argsDef, ProductsQueryDefinition queryDef) {
         startField("products");
 
@@ -299,8 +299,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-    * The store config query
-    */
+     * The store config query
+     */
     public QueryQuery storeConfig(StoreConfigQueryDefinition queryDef) {
         startField("storeConfig");
 
@@ -312,8 +312,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-    * The urlResolver query returns the canonical URL for a specified product, category or CMS page
-    */
+     * The urlResolver query returns the canonical URL for a specified product, category or CMS page
+     */
     public QueryQuery urlResolver(String url, EntityUrlQueryDefinition queryDef) {
         startField("urlResolver");
 

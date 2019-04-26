@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -18,8 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 
 /**
-* Category Tree implementation
-*/
+ * Category Tree implementation
+ */
 public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     CategoryTreeQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -32,8 +32,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * Breadcrumbs, parent categories info
-    */
+     * Breadcrumbs, parent categories info
+     */
     public CategoryTreeQuery breadcrumbs(BreadcrumbQueryDefinition queryDef) {
         startField("breadcrumbs");
 
@@ -45,8 +45,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * Child categories tree
-    */
+     * Child categories tree
+     */
     public CategoryTreeQuery children(CategoryTreeQueryDefinition queryDef) {
         startField("children");
 
@@ -64,8 +64,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * Timestamp indicating when the category was created
-    */
+     * Timestamp indicating when the category was created
+     */
     public CategoryTreeQuery createdAt() {
         startField("created_at");
 
@@ -73,8 +73,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * The attribute to use for sorting
-    */
+     * The attribute to use for sorting
+     */
     public CategoryTreeQuery defaultSortBy() {
         startField("default_sort_by");
 
@@ -82,8 +82,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * An optional description of the category
-    */
+     * An optional description of the category
+     */
     public CategoryTreeQuery description() {
         startField("description");
 
@@ -103,8 +103,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * An ID that uniquely identifies the category
-    */
+     * An ID that uniquely identifies the category
+     */
     public CategoryTreeQuery id() {
         startField("id");
 
@@ -136,8 +136,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * Indicates the depth of the category within the tree
-    */
+     * Indicates the depth of the category within the tree
+     */
     public CategoryTreeQuery level() {
         startField("level");
 
@@ -163,8 +163,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * The display name of the category
-    */
+     * The display name of the category
+     */
     public CategoryTreeQuery name() {
         startField("name");
 
@@ -172,8 +172,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * Category Path
-    */
+     * Category Path
+     */
     public CategoryTreeQuery path() {
         startField("path");
 
@@ -181,8 +181,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * Category path in store
-    */
+     * Category path in store
+     */
     public CategoryTreeQuery pathInStore() {
         startField("path_in_store");
 
@@ -190,8 +190,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * The position of the category relative to other categories at the same level in tree
-    */
+     * The position of the category relative to other categories at the same level in tree
+     */
     public CategoryTreeQuery position() {
         startField("position");
 
@@ -199,8 +199,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * The number of products in the category
-    */
+     * The number of products in the category
+     */
     public CategoryTreeQuery productCount() {
         startField("product_count");
 
@@ -213,8 +213,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
         }
 
         /**
-        * Specifies the maximum number of results to return at once. This attribute is optional.
-        */
+         * Specifies the maximum number of results to return at once. This attribute is optional.
+         */
         public ProductsArguments pageSize(Integer value) {
             if (value != null) {
                 startArgument("pageSize");
@@ -224,8 +224,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
         }
 
         /**
-        * Specifies which page of results to return. The default value is 1.
-        */
+         * Specifies which page of results to return. The default value is 1.
+         */
         public ProductsArguments currentPage(Integer value) {
             if (value != null) {
                 startArgument("currentPage");
@@ -235,9 +235,9 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
         }
 
         /**
-        * Specifies which attribute to sort on, and whether to return the results in ascending or descending
-        * order.
-        */
+         * Specifies which attribute to sort on, and whether to return the results in ascending or descending
+         * order.
+         */
         public ProductsArguments sort(ProductSortInput value) {
             if (value != null) {
                 startArgument("sort");
@@ -252,15 +252,15 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * The list of products assigned to the category
-    */
+     * The list of products assigned to the category
+     */
     public CategoryTreeQuery products(CategoryProductsQueryDefinition queryDef) {
         return products(args -> {}, queryDef);
     }
 
     /**
-    * The list of products assigned to the category
-    */
+     * The list of products assigned to the category
+     */
     public CategoryTreeQuery products(ProductsArgumentsDefinition argsDef, CategoryProductsQueryDefinition queryDef) {
         startField("products");
 
@@ -276,8 +276,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * Timestamp indicating when the category was updated
-    */
+     * Timestamp indicating when the category was updated
+     */
     public CategoryTreeQuery updatedAt() {
         startField("updated_at");
 
@@ -285,8 +285,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * The url key assigned to the category
-    */
+     * The url key assigned to the category
+     */
     public CategoryTreeQuery urlKey() {
         startField("url_key");
 
@@ -294,8 +294,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-    * The url path assigned to the category
-    */
+     * The url path assigned to the category
+     */
     public CategoryTreeQuery urlPath() {
         startField("url_path");
 

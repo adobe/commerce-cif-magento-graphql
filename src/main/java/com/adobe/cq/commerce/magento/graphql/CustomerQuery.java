@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* Customer defines the customer name and address and other details
-*/
+ * Customer defines the customer name and address and other details
+ */
 public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     CustomerQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * An array containing the customer&#39;s shipping and billing addresses
-    */
+     * An array containing the customer&#39;s shipping and billing addresses
+     */
     public CustomerQuery addresses(CustomerAddressQueryDefinition queryDef) {
         startField("addresses");
 
@@ -38,8 +38,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * Timestamp indicating when the account was created
-    */
+     * Timestamp indicating when the account was created
+     */
     public CustomerQuery createdAt() {
         startField("created_at");
 
@@ -47,8 +47,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The ID assigned to the billing address
-    */
+     * The ID assigned to the billing address
+     */
     public CustomerQuery defaultBilling() {
         startField("default_billing");
 
@@ -56,8 +56,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The ID assigned to the shipping address
-    */
+     * The ID assigned to the shipping address
+     */
     public CustomerQuery defaultShipping() {
         startField("default_shipping");
 
@@ -65,8 +65,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer&#39;s date of birth
-    */
+     * The customer&#39;s date of birth
+     */
     public CustomerQuery dob() {
         startField("dob");
 
@@ -74,8 +74,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer&#39;s email address. Required
-    */
+     * The customer&#39;s email address. Required
+     */
     public CustomerQuery email() {
         startField("email");
 
@@ -83,8 +83,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer&#39;s first name
-    */
+     * The customer&#39;s first name
+     */
     public CustomerQuery firstname() {
         startField("firstname");
 
@@ -92,9 +92,9 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
-    * and 3 (Retailer)
-    */
+     * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
+     * and 3 (Retailer)
+     */
     public CustomerQuery groupId() {
         startField("group_id");
 
@@ -102,8 +102,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The ID assigned to the customer
-    */
+     * The ID assigned to the customer
+     */
     public CustomerQuery id() {
         startField("id");
 
@@ -111,8 +111,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * Indicates whether the customer is subscribed to the company&#39;s newsletter
-    */
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     */
     public CustomerQuery isSubscribed() {
         startField("is_subscribed");
 
@@ -120,8 +120,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer&#39;s family name
-    */
+     * The customer&#39;s family name
+     */
     public CustomerQuery lastname() {
         startField("lastname");
 
@@ -129,8 +129,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer&#39;s middle name
-    */
+     * The customer&#39;s middle name
+     */
     public CustomerQuery middlename() {
         startField("middlename");
 
@@ -138,8 +138,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * An honorific, such as Dr., Mr., or Mrs.
-    */
+     * An honorific, such as Dr., Mr., or Mrs.
+     */
     public CustomerQuery prefix() {
         startField("prefix");
 
@@ -147,8 +147,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * A value such as Sr., Jr., or III
-    */
+     * A value such as Sr., Jr., or III
+     */
     public CustomerQuery suffix() {
         startField("suffix");
 
@@ -156,8 +156,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer&#39;s Tax/VAT number (for corporate customers)
-    */
+     * The customer&#39;s Tax/VAT number (for corporate customers)
+     */
     public CustomerQuery taxvat() {
         startField("taxvat");
 

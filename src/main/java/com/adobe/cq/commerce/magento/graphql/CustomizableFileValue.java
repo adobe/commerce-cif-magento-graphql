@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,9 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* CustomizableFileValue defines the price and sku of a product whose page contains a customized file
-* picker
-*/
+ * CustomizableFileValue defines the price and sku of a product whose page contains a customized file
+ * picker
+ */
 public class CustomizableFileValue extends AbstractResponse<CustomizableFileValue> {
     public CustomizableFileValue() {
     }
@@ -116,8 +116,8 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-    * The file extension to accept
-    */
+     * The file extension to accept
+     */
 
     public String getFileExtension() {
         return (String) get("file_extension");
@@ -129,8 +129,8 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-    * The maximum width of an image
-    */
+     * The maximum width of an image
+     */
 
     public Integer getImageSizeX() {
         return (Integer) get("image_size_x");
@@ -142,8 +142,8 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-    * The maximum height of an image
-    */
+     * The maximum height of an image
+     */
 
     public Integer getImageSizeY() {
         return (Integer) get("image_size_y");
@@ -155,8 +155,8 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-    * The price assigned to this option
-    */
+     * The price assigned to this option
+     */
 
     public Double getPrice() {
         return (Double) get("price");
@@ -168,8 +168,8 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-    * FIXED, PERCENT, or DYNAMIC
-    */
+     * FIXED, PERCENT, or DYNAMIC
+     */
 
     public PriceTypeEnum getPriceType() {
         return (PriceTypeEnum) get("price_type");
@@ -181,8 +181,8 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-    * The Stock Keeping Unit for this option
-    */
+     * The Stock Keeping Unit for this option
+     */
 
     public String getSku() {
         return (String) get("sku");

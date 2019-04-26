@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* MediaGalleryEntry defines characteristics about images and videos associated with a specific product
-*/
+ * MediaGalleryEntry defines characteristics about images and videos associated with a specific product
+ */
 public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     public MediaGalleryEntry() {
     }
@@ -160,8 +160,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * Contains a ProductMediaGalleryEntriesContent object
-    */
+     * Contains a ProductMediaGalleryEntriesContent object
+     */
 
     public ProductMediaGalleryEntriesContent getContent() {
         return (ProductMediaGalleryEntriesContent) get("content");
@@ -173,8 +173,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * Whether the image is hidden from vie
-    */
+     * Whether the image is hidden from vie
+     */
 
     public Boolean getDisabled() {
         return (Boolean) get("disabled");
@@ -186,8 +186,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * The path of the image on the server
-    */
+     * The path of the image on the server
+     */
 
     public String getFile() {
         return (String) get("file");
@@ -199,8 +199,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * The identifier assigned to the object
-    */
+     * The identifier assigned to the object
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -212,8 +212,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * The alt text displayed on the UI when the user points to the image
-    */
+     * The alt text displayed on the UI when the user points to the image
+     */
 
     public String getLabel() {
         return (String) get("label");
@@ -225,8 +225,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * image or video
-    */
+     * image or video
+     */
 
     public String getMediaType() {
         return (String) get("media_type");
@@ -238,8 +238,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * The media item&#39;s position after it has been sorted
-    */
+     * The media item&#39;s position after it has been sorted
+     */
 
     public Integer getPosition() {
         return (Integer) get("position");
@@ -251,8 +251,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * Array of image types. It can have the following values: image, small_image, thumbnail
-    */
+     * Array of image types. It can have the following values: image, small_image, thumbnail
+     */
 
     public List<String> getTypes() {
         return (List<String>) get("types");
@@ -264,8 +264,8 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * Contains a ProductMediaGalleryEntriesVideoContent object
-    */
+     * Contains a ProductMediaGalleryEntriesVideoContent object
+     */
 
     public ProductMediaGalleryEntriesVideoContent getVideoContent() {
         return (ProductMediaGalleryEntriesVideoContent) get("video_content");

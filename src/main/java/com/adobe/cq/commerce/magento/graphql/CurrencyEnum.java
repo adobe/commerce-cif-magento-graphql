@@ -1,871 +1,871 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
-* The list of available currency codes
-*/
+ * The list of available currency codes
+ */
 public enum CurrencyEnum {
     /**
-    * 
-    */
+     * 
+     */
     AED,
 
     /**
-    * 
-    */
+     * 
+     */
     AFN,
 
     /**
-    * 
-    */
+     * 
+     */
     ALL,
 
     /**
-    * 
-    */
+     * 
+     */
     AMD,
 
     /**
-    * 
-    */
+     * 
+     */
     ANG,
 
     /**
-    * 
-    */
+     * 
+     */
     AOA,
 
     /**
-    * 
-    */
+     * 
+     */
     ARS,
 
     /**
-    * 
-    */
+     * 
+     */
     AUD,
 
     /**
-    * 
-    */
+     * 
+     */
     AWG,
 
     /**
-    * 
-    */
+     * 
+     */
     AZM,
 
     /**
-    * 
-    */
+     * 
+     */
     AZN,
 
     /**
-    * 
-    */
+     * 
+     */
     BAM,
 
     /**
-    * 
-    */
+     * 
+     */
     BBD,
 
     /**
-    * 
-    */
+     * 
+     */
     BDT,
 
     /**
-    * 
-    */
+     * 
+     */
     BGN,
 
     /**
-    * 
-    */
+     * 
+     */
     BHD,
 
     /**
-    * 
-    */
+     * 
+     */
     BIF,
 
     /**
-    * 
-    */
+     * 
+     */
     BMD,
 
     /**
-    * 
-    */
+     * 
+     */
     BND,
 
     /**
-    * 
-    */
+     * 
+     */
     BOB,
 
     /**
-    * 
-    */
+     * 
+     */
     BRL,
 
     /**
-    * 
-    */
+     * 
+     */
     BSD,
 
     /**
-    * 
-    */
+     * 
+     */
     BTN,
 
     /**
-    * 
-    */
+     * 
+     */
     BUK,
 
     /**
-    * 
-    */
+     * 
+     */
     BWP,
 
     /**
-    * 
-    */
+     * 
+     */
     BYR,
 
     /**
-    * 
-    */
+     * 
+     */
     BZD,
 
     /**
-    * 
-    */
+     * 
+     */
     CAD,
 
     /**
-    * 
-    */
+     * 
+     */
     CDF,
 
     /**
-    * 
-    */
+     * 
+     */
     CHE,
 
     /**
-    * 
-    */
+     * 
+     */
     CHF,
 
     /**
-    * 
-    */
+     * 
+     */
     CHW,
 
     /**
-    * 
-    */
+     * 
+     */
     CLP,
 
     /**
-    * 
-    */
+     * 
+     */
     CNY,
 
     /**
-    * 
-    */
+     * 
+     */
     COP,
 
     /**
-    * 
-    */
+     * 
+     */
     CRC,
 
     /**
-    * 
-    */
+     * 
+     */
     CUP,
 
     /**
-    * 
-    */
+     * 
+     */
     CVE,
 
     /**
-    * 
-    */
+     * 
+     */
     CZK,
 
     /**
-    * 
-    */
+     * 
+     */
     DJF,
 
     /**
-    * 
-    */
+     * 
+     */
     DKK,
 
     /**
-    * 
-    */
+     * 
+     */
     DOP,
 
     /**
-    * 
-    */
+     * 
+     */
     DZD,
 
     /**
-    * 
-    */
+     * 
+     */
     EEK,
 
     /**
-    * 
-    */
+     * 
+     */
     EGP,
 
     /**
-    * 
-    */
+     * 
+     */
     ERN,
 
     /**
-    * 
-    */
+     * 
+     */
     ETB,
 
     /**
-    * 
-    */
+     * 
+     */
     EUR,
 
     /**
-    * 
-    */
+     * 
+     */
     FJD,
 
     /**
-    * 
-    */
+     * 
+     */
     FKP,
 
     /**
-    * 
-    */
+     * 
+     */
     GBP,
 
     /**
-    * 
-    */
+     * 
+     */
     GEK,
 
     /**
-    * 
-    */
+     * 
+     */
     GEL,
 
     /**
-    * 
-    */
+     * 
+     */
     GHS,
 
     /**
-    * 
-    */
+     * 
+     */
     GIP,
 
     /**
-    * 
-    */
+     * 
+     */
     GMD,
 
     /**
-    * 
-    */
+     * 
+     */
     GNF,
 
     /**
-    * 
-    */
+     * 
+     */
     GQE,
 
     /**
-    * 
-    */
+     * 
+     */
     GTQ,
 
     /**
-    * 
-    */
+     * 
+     */
     GYD,
 
     /**
-    * 
-    */
+     * 
+     */
     HKD,
 
     /**
-    * 
-    */
+     * 
+     */
     HNL,
 
     /**
-    * 
-    */
+     * 
+     */
     HRK,
 
     /**
-    * 
-    */
+     * 
+     */
     HTG,
 
     /**
-    * 
-    */
+     * 
+     */
     HUF,
 
     /**
-    * 
-    */
+     * 
+     */
     IDR,
 
     /**
-    * 
-    */
+     * 
+     */
     ILS,
 
     /**
-    * 
-    */
+     * 
+     */
     INR,
 
     /**
-    * 
-    */
+     * 
+     */
     IQD,
 
     /**
-    * 
-    */
+     * 
+     */
     IRR,
 
     /**
-    * 
-    */
+     * 
+     */
     ISK,
 
     /**
-    * 
-    */
+     * 
+     */
     JMD,
 
     /**
-    * 
-    */
+     * 
+     */
     JOD,
 
     /**
-    * 
-    */
+     * 
+     */
     JPY,
 
     /**
-    * 
-    */
+     * 
+     */
     KES,
 
     /**
-    * 
-    */
+     * 
+     */
     KGS,
 
     /**
-    * 
-    */
+     * 
+     */
     KHR,
 
     /**
-    * 
-    */
+     * 
+     */
     KMF,
 
     /**
-    * 
-    */
+     * 
+     */
     KPW,
 
     /**
-    * 
-    */
+     * 
+     */
     KRW,
 
     /**
-    * 
-    */
+     * 
+     */
     KWD,
 
     /**
-    * 
-    */
+     * 
+     */
     KYD,
 
     /**
-    * 
-    */
+     * 
+     */
     KZT,
 
     /**
-    * 
-    */
+     * 
+     */
     LAK,
 
     /**
-    * 
-    */
+     * 
+     */
     LBP,
 
     /**
-    * 
-    */
+     * 
+     */
     LKR,
 
     /**
-    * 
-    */
+     * 
+     */
     LRD,
 
     /**
-    * 
-    */
+     * 
+     */
     LSL,
 
     /**
-    * 
-    */
+     * 
+     */
     LSM,
 
     /**
-    * 
-    */
+     * 
+     */
     LTL,
 
     /**
-    * 
-    */
+     * 
+     */
     LVL,
 
     /**
-    * 
-    */
+     * 
+     */
     LYD,
 
     /**
-    * 
-    */
+     * 
+     */
     MAD,
 
     /**
-    * 
-    */
+     * 
+     */
     MDL,
 
     /**
-    * 
-    */
+     * 
+     */
     MGA,
 
     /**
-    * 
-    */
+     * 
+     */
     MKD,
 
     /**
-    * 
-    */
+     * 
+     */
     MMK,
 
     /**
-    * 
-    */
+     * 
+     */
     MNT,
 
     /**
-    * 
-    */
+     * 
+     */
     MOP,
 
     /**
-    * 
-    */
+     * 
+     */
     MRO,
 
     /**
-    * 
-    */
+     * 
+     */
     MUR,
 
     /**
-    * 
-    */
+     * 
+     */
     MVR,
 
     /**
-    * 
-    */
+     * 
+     */
     MWK,
 
     /**
-    * 
-    */
+     * 
+     */
     MXN,
 
     /**
-    * 
-    */
+     * 
+     */
     MYR,
 
     /**
-    * 
-    */
+     * 
+     */
     MZN,
 
     /**
-    * 
-    */
+     * 
+     */
     NAD,
 
     /**
-    * 
-    */
+     * 
+     */
     NGN,
 
     /**
-    * 
-    */
+     * 
+     */
     NIC,
 
     /**
-    * 
-    */
+     * 
+     */
     NOK,
 
     /**
-    * 
-    */
+     * 
+     */
     NPR,
 
     /**
-    * 
-    */
+     * 
+     */
     NZD,
 
     /**
-    * 
-    */
+     * 
+     */
     OMR,
 
     /**
-    * 
-    */
+     * 
+     */
     PAB,
 
     /**
-    * 
-    */
+     * 
+     */
     PEN,
 
     /**
-    * 
-    */
+     * 
+     */
     PGK,
 
     /**
-    * 
-    */
+     * 
+     */
     PHP,
 
     /**
-    * 
-    */
+     * 
+     */
     PKR,
 
     /**
-    * 
-    */
+     * 
+     */
     PLN,
 
     /**
-    * 
-    */
+     * 
+     */
     PYG,
 
     /**
-    * 
-    */
+     * 
+     */
     QAR,
 
     /**
-    * 
-    */
+     * 
+     */
     RHD,
 
     /**
-    * 
-    */
+     * 
+     */
     ROL,
 
     /**
-    * 
-    */
+     * 
+     */
     RON,
 
     /**
-    * 
-    */
+     * 
+     */
     RSD,
 
     /**
-    * 
-    */
+     * 
+     */
     RUB,
 
     /**
-    * 
-    */
+     * 
+     */
     RWF,
 
     /**
-    * 
-    */
+     * 
+     */
     SAR,
 
     /**
-    * 
-    */
+     * 
+     */
     SBD,
 
     /**
-    * 
-    */
+     * 
+     */
     SCR,
 
     /**
-    * 
-    */
+     * 
+     */
     SDG,
 
     /**
-    * 
-    */
+     * 
+     */
     SEK,
 
     /**
-    * 
-    */
+     * 
+     */
     SGD,
 
     /**
-    * 
-    */
+     * 
+     */
     SHP,
 
     /**
-    * 
-    */
+     * 
+     */
     SKK,
 
     /**
-    * 
-    */
+     * 
+     */
     SLL,
 
     /**
-    * 
-    */
+     * 
+     */
     SOS,
 
     /**
-    * 
-    */
+     * 
+     */
     SRD,
 
     /**
-    * 
-    */
+     * 
+     */
     STD,
 
     /**
-    * 
-    */
+     * 
+     */
     SVC,
 
     /**
-    * 
-    */
+     * 
+     */
     SYP,
 
     /**
-    * 
-    */
+     * 
+     */
     SZL,
 
     /**
-    * 
-    */
+     * 
+     */
     THB,
 
     /**
-    * 
-    */
+     * 
+     */
     TJS,
 
     /**
-    * 
-    */
+     * 
+     */
     TMM,
 
     /**
-    * 
-    */
+     * 
+     */
     TND,
 
     /**
-    * 
-    */
+     * 
+     */
     TOP,
 
     /**
-    * 
-    */
+     * 
+     */
     TRL,
 
     /**
-    * 
-    */
+     * 
+     */
     TRY,
 
     /**
-    * 
-    */
+     * 
+     */
     TTD,
 
     /**
-    * 
-    */
+     * 
+     */
     TWD,
 
     /**
-    * 
-    */
+     * 
+     */
     TZS,
 
     /**
-    * 
-    */
+     * 
+     */
     UAH,
 
     /**
-    * 
-    */
+     * 
+     */
     UGX,
 
     /**
-    * 
-    */
+     * 
+     */
     USD,
 
     /**
-    * 
-    */
+     * 
+     */
     UYU,
 
     /**
-    * 
-    */
+     * 
+     */
     UZS,
 
     /**
-    * 
-    */
+     * 
+     */
     VEB,
 
     /**
-    * 
-    */
+     * 
+     */
     VEF,
 
     /**
-    * 
-    */
+     * 
+     */
     VND,
 
     /**
-    * 
-    */
+     * 
+     */
     VUV,
 
     /**
-    * 
-    */
+     * 
+     */
     WST,
 
     /**
-    * 
-    */
+     * 
+     */
     XCD,
 
     /**
-    * 
-    */
+     * 
+     */
     XOF,
 
     /**
-    * 
-    */
+     * 
+     */
     XPF,
 
     /**
-    * 
-    */
+     * 
+     */
     YER,
 
     /**
-    * 
-    */
+     * 
+     */
     YTL,
 
     /**
-    * 
-    */
+     * 
+     */
     ZAR,
 
     /**
-    * 
-    */
+     * 
+     */
     ZMK,
 
     /**
-    * 
-    */
+     * 
+     */
     ZWD,
 
     UNKNOWN_VALUE;

@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* BundleItemOption defines characteristics and options for a specific bundle item
-*/
+ * BundleItemOption defines characteristics and options for a specific bundle item
+ */
 public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     public BundleItemOption() {
     }
@@ -148,8 +148,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * Indicates whether the customer can change the number of items for this option
-    */
+     * Indicates whether the customer can change the number of items for this option
+     */
 
     public Boolean getCanChangeQuantity() {
         return (Boolean) get("can_change_quantity");
@@ -161,8 +161,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * The ID assigned to the bundled item option
-    */
+     * The ID assigned to the bundled item option
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -174,8 +174,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * Indicates whether this option is the default option
-    */
+     * Indicates whether this option is the default option
+     */
 
     public Boolean getIsDefault() {
         return (Boolean) get("is_default");
@@ -187,8 +187,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * The text that identifies the bundled item option
-    */
+     * The text that identifies the bundled item option
+     */
 
     public String getLabel() {
         return (String) get("label");
@@ -200,9 +200,9 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * When a bundle item contains multiple options, the relative position of this option compared to the
-    * other options
-    */
+     * When a bundle item contains multiple options, the relative position of this option compared to the
+     * other options
+     */
 
     public Integer getPosition() {
         return (Integer) get("position");
@@ -214,8 +214,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * The price of the selected option
-    */
+     * The price of the selected option
+     */
 
     public Double getPrice() {
         return (Double) get("price");
@@ -227,8 +227,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * One of FIXED, PERCENT, or DYNAMIC
-    */
+     * One of FIXED, PERCENT, or DYNAMIC
+     */
 
     public PriceTypeEnum getPriceType() {
         return (PriceTypeEnum) get("price_type");
@@ -240,8 +240,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * Contains details about this product option
-    */
+     * Contains details about this product option
+     */
 
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -253,8 +253,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-    * Indicates the quantity of this specific bundle item
-    */
+     * Indicates the quantity of this specific bundle item
+     */
 
     public Double getQty() {
         return (Double) get("qty");

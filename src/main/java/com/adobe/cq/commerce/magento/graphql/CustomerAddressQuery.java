@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* CustomerAddress contains detailed information about a customer&#39;s billing and shipping addresses
-*/
+ * CustomerAddress contains detailed information about a customer&#39;s billing and shipping addresses
+ */
 public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     CustomerAddressQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * The city or town
-    */
+     * The city or town
+     */
     public CustomerAddressQuery city() {
         startField("city");
 
@@ -34,8 +34,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer&#39;s company
-    */
+     * The customer&#39;s company
+     */
     public CustomerAddressQuery company() {
         startField("company");
 
@@ -43,8 +43,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer&#39;s country
-    */
+     * The customer&#39;s country
+     */
     public CustomerAddressQuery countryId() {
         startField("country_id");
 
@@ -52,8 +52,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer ID
-    */
+     * The customer ID
+     */
     public CustomerAddressQuery customerId() {
         startField("customer_id");
 
@@ -61,8 +61,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * Indicates whether the address is the default billing address
-    */
+     * Indicates whether the address is the default billing address
+     */
     public CustomerAddressQuery defaultBilling() {
         startField("default_billing");
 
@@ -70,8 +70,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * Indicates whether the address is the default shipping address
-    */
+     * Indicates whether the address is the default shipping address
+     */
     public CustomerAddressQuery defaultShipping() {
         startField("default_shipping");
 
@@ -79,8 +79,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The fax number
-    */
+     * The fax number
+     */
     public CustomerAddressQuery fax() {
         startField("fax");
 
@@ -88,8 +88,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The first name of the person associated with the shipping/billing address
-    */
+     * The first name of the person associated with the shipping/billing address
+     */
     public CustomerAddressQuery firstname() {
         startField("firstname");
 
@@ -97,8 +97,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The ID assigned to the address object
-    */
+     * The ID assigned to the address object
+     */
     public CustomerAddressQuery id() {
         startField("id");
 
@@ -106,8 +106,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The family name of the person associated with the shipping/billing address
-    */
+     * The family name of the person associated with the shipping/billing address
+     */
     public CustomerAddressQuery lastname() {
         startField("lastname");
 
@@ -115,8 +115,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The middle name of the person associated with the shipping/billing address
-    */
+     * The middle name of the person associated with the shipping/billing address
+     */
     public CustomerAddressQuery middlename() {
         startField("middlename");
 
@@ -124,8 +124,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer&#39;s ZIP or postal code
-    */
+     * The customer&#39;s ZIP or postal code
+     */
     public CustomerAddressQuery postcode() {
         startField("postcode");
 
@@ -133,8 +133,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * An honorific, such as Dr., Mr., or Mrs.
-    */
+     * An honorific, such as Dr., Mr., or Mrs.
+     */
     public CustomerAddressQuery prefix() {
         startField("prefix");
 
@@ -142,8 +142,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * An object containing the region name, region code, and region ID
-    */
+     * An object containing the region name, region code, and region ID
+     */
     public CustomerAddressQuery region(CustomerAddressRegionQueryDefinition queryDef) {
         startField("region");
 
@@ -155,8 +155,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * A number that uniquely identifies the state, province, or other area
-    */
+     * A number that uniquely identifies the state, province, or other area
+     */
     public CustomerAddressQuery regionId() {
         startField("region_id");
 
@@ -164,8 +164,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * An array of strings that define the street number and name
-    */
+     * An array of strings that define the street number and name
+     */
     public CustomerAddressQuery street() {
         startField("street");
 
@@ -173,8 +173,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * A value such as Sr., Jr., or III
-    */
+     * A value such as Sr., Jr., or III
+     */
     public CustomerAddressQuery suffix() {
         startField("suffix");
 
@@ -182,8 +182,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The telephone number
-    */
+     * The telephone number
+     */
     public CustomerAddressQuery telephone() {
         startField("telephone");
 
@@ -191,8 +191,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer&#39;s Tax/VAT number (for corporate customers)
-    */
+     * The customer&#39;s Tax/VAT number (for corporate customers)
+     */
     public CustomerAddressQuery vatId() {
         startField("vat_id");
 

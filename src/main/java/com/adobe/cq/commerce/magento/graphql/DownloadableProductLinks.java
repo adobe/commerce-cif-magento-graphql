@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* DownloadableProductLinks defines characteristics of a downloadable product
-*/
+ * DownloadableProductLinks defines characteristics of a downloadable product
+ */
 public class DownloadableProductLinks extends AbstractResponse<DownloadableProductLinks> {
     public DownloadableProductLinks() {
     }
@@ -159,8 +159,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * The unique ID for the link to the downloadable product
-    */
+     * The unique ID for the link to the downloadable product
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -172,8 +172,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * Indicates whether the link is shareable
-    */
+     * Indicates whether the link is shareable
+     */
 
     public Boolean getIsShareable() {
         return (Boolean) get("is_shareable");
@@ -185,8 +185,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * Either FILE or URL
-    */
+     * Either FILE or URL
+     */
 
     public DownloadableFileTypeEnum getLinkType() {
         return (DownloadableFileTypeEnum) get("link_type");
@@ -198,8 +198,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * The maximum number of times the product can be downloaded. A value of 0 means unlimited.
-    */
+     * The maximum number of times the product can be downloaded. A value of 0 means unlimited.
+     */
 
     public Integer getNumberOfDownloads() {
         return (Integer) get("number_of_downloads");
@@ -211,8 +211,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * The price of the downloadable product
-    */
+     * The price of the downloadable product
+     */
 
     public Double getPrice() {
         return (Double) get("price");
@@ -224,8 +224,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * The relative path to the downloadable sample
-    */
+     * The relative path to the downloadable sample
+     */
 
     public String getSampleFile() {
         return (String) get("sample_file");
@@ -237,8 +237,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * Either FILE or URL
-    */
+     * Either FILE or URL
+     */
 
     public DownloadableFileTypeEnum getSampleType() {
         return (DownloadableFileTypeEnum) get("sample_type");
@@ -250,8 +250,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * The relative URL to the downloadable sample
-    */
+     * The relative URL to the downloadable sample
+     */
 
     public String getSampleUrl() {
         return (String) get("sample_url");
@@ -263,8 +263,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * A number indicating the sort order
-    */
+     * A number indicating the sort order
+     */
 
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
@@ -276,8 +276,8 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-    * The display name of the link
-    */
+     * The display name of the link
+     */
 
     public String getTitle() {
         return (String) get("title");

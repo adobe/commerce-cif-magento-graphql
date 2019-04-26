@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* BundleProduct defines basic features of a bundle product and contains multiple BundleItems
-*/
+ * BundleProduct defines basic features of a bundle product and contains multiple BundleItems
+ */
 public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     BundleProductQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * The attribute set assigned to the product
-    */
+     * The attribute set assigned to the product
+     */
     public BundleProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -34,8 +34,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Canonical URL
-    */
+     * Canonical URL
+     */
     public BundleProductQuery canonicalUrl() {
         startField("canonical_url");
 
@@ -43,8 +43,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The categories assigned to a product
-    */
+     * The categories assigned to a product
+     */
     public BundleProductQuery categories(CategoryInterfaceQueryDefinition queryDef) {
         startField("categories");
 
@@ -62,8 +62,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The product&#39;s country of origin
-    */
+     * The product&#39;s country of origin
+     */
     public BundleProductQuery countryOfManufacture() {
         startField("country_of_manufacture");
 
@@ -71,8 +71,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Timestamp indicating when the product was created
-    */
+     * Timestamp indicating when the product was created
+     */
     public BundleProductQuery createdAt() {
         startField("created_at");
 
@@ -80,8 +80,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Detailed information about the product. The value can include simple HTML tags.
-    */
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
     public BundleProductQuery description() {
         startField("description");
 
@@ -89,8 +89,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Indicates whether the bundle product has a dynamic price
-    */
+     * Indicates whether the bundle product has a dynamic price
+     */
     public BundleProductQuery dynamicPrice() {
         startField("dynamic_price");
 
@@ -98,8 +98,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Indicates whether the bundle product has a dynamic SK
-    */
+     * Indicates whether the bundle product has a dynamic SK
+     */
     public BundleProductQuery dynamicSku() {
         startField("dynamic_sku");
 
@@ -107,8 +107,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Indicates whether the bundle product has a dynamically calculated weight
-    */
+     * Indicates whether the bundle product has a dynamically calculated weight
+     */
     public BundleProductQuery dynamicWeight() {
         startField("dynamic_weight");
 
@@ -116,8 +116,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Indicates whether a gift message is available
-    */
+     * Indicates whether a gift message is available
+     */
     public BundleProductQuery giftMessageAvailable() {
         startField("gift_message_available");
 
@@ -125,8 +125,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The ID number assigned to the product
-    */
+     * The ID number assigned to the product
+     */
     public BundleProductQuery id() {
         startField("id");
 
@@ -134,8 +134,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The relative path to the main image on the product page
-    */
+     * The relative path to the main image on the product page
+     */
     public BundleProductQuery image() {
         startField("image");
 
@@ -143,8 +143,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The label assigned to a product image
-    */
+     * The label assigned to a product image
+     */
     public BundleProductQuery imageLabel() {
         startField("image_label");
 
@@ -152,8 +152,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * An array containing information about individual bundle items
-    */
+     * An array containing information about individual bundle items
+     */
     public BundleProductQuery items(BundleItemQueryDefinition queryDef) {
         startField("items");
 
@@ -165,8 +165,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A number representing the product&#39;s manufacturer
-    */
+     * A number representing the product&#39;s manufacturer
+     */
     public BundleProductQuery manufacturer() {
         startField("manufacturer");
 
@@ -174,8 +174,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * An array of MediaGalleryEntry objects
-    */
+     * An array of MediaGalleryEntry objects
+     */
     public BundleProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
 
@@ -187,8 +187,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A brief overview of the product for search results listings, maximum 255 characters
-    */
+     * A brief overview of the product for search results listings, maximum 255 characters
+     */
     public BundleProductQuery metaDescription() {
         startField("meta_description");
 
@@ -196,8 +196,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A comma-separated list of keywords that are visible only to search engines
-    */
+     * A comma-separated list of keywords that are visible only to search engines
+     */
     public BundleProductQuery metaKeyword() {
         startField("meta_keyword");
 
@@ -205,8 +205,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A string that is displayed in the title bar and tab of the browser and in search results lists
-    */
+     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     */
     public BundleProductQuery metaTitle() {
         startField("meta_title");
 
@@ -214,8 +214,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The product name. Customers use this name to identify the product.
-    */
+     * The product name. Customers use this name to identify the product.
+     */
     public BundleProductQuery name() {
         startField("name");
 
@@ -223,9 +223,9 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The beginning date for new product listings, and determines if the product is featured as a new
-    * product
-    */
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product
+     */
     public BundleProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -233,8 +233,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The end date for new product listings
-    */
+     * The end date for new product listings
+     */
     public BundleProductQuery newToDate() {
         startField("new_to_date");
 
@@ -242,8 +242,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Product stock only x left count
-    */
+     * Product stock only x left count
+     */
     public BundleProductQuery onlyXLeftInStock() {
         startField("only_x_left_in_stock");
 
@@ -251,8 +251,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * An array of options for a customizable product
-    */
+     * An array of options for a customizable product
+     */
     public BundleProductQuery options(CustomizableOptionInterfaceQueryDefinition queryDef) {
         startField("options");
 
@@ -264,8 +264,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * If the product has multiple options, determines where they appear on the product page
-    */
+     * If the product has multiple options, determines where they appear on the product page
+     */
     public BundleProductQuery optionsContainer() {
         startField("options_container");
 
@@ -273,8 +273,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A ProductPrices object, indicating the price of an item
-    */
+     * A ProductPrices object, indicating the price of an item
+     */
     public BundleProductQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
 
@@ -286,8 +286,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * One of PRICE_RANGE or AS_LOW_AS
-    */
+     * One of PRICE_RANGE or AS_LOW_AS
+     */
     public BundleProductQuery priceView() {
         startField("price_view");
 
@@ -295,8 +295,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * An array of ProductLinks objects
-    */
+     * An array of ProductLinks objects
+     */
     public BundleProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
 
@@ -308,8 +308,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Indicates whether to ship bundle items together or individually
-    */
+     * Indicates whether to ship bundle items together or individually
+     */
     public BundleProductQuery shipBundleItems() {
         startField("ship_bundle_items");
 
@@ -317,8 +317,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A short description of the product. Its use depends on the theme.
-    */
+     * A short description of the product. Its use depends on the theme.
+     */
     public BundleProductQuery shortDescription() {
         startField("short_description");
 
@@ -326,8 +326,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A number or code assigned to a product to identify the product, options, price, and manufacturer
-    */
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     */
     public BundleProductQuery sku() {
         startField("sku");
 
@@ -335,8 +335,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The relative path to the small image, which is used on catalog pages
-    */
+     * The relative path to the small image, which is used on catalog pages
+     */
     public BundleProductQuery smallImage() {
         startField("small_image");
 
@@ -344,8 +344,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The label assigned to a product&#39;s small image
-    */
+     * The label assigned to a product&#39;s small image
+     */
     public BundleProductQuery smallImageLabel() {
         startField("small_image_label");
 
@@ -353,8 +353,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The beginning date that a product has a special price
-    */
+     * The beginning date that a product has a special price
+     */
     public BundleProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -362,8 +362,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The discounted price of the product
-    */
+     * The discounted price of the product
+     */
     public BundleProductQuery specialPrice() {
         startField("special_price");
 
@@ -371,8 +371,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The end date that a product has a special price
-    */
+     * The end date that a product has a special price
+     */
     public BundleProductQuery specialToDate() {
         startField("special_to_date");
 
@@ -380,8 +380,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Stock status of the product
-    */
+     * Stock status of the product
+     */
     public BundleProductQuery stockStatus() {
         startField("stock_status");
 
@@ -389,8 +389,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The file name of a swatch image
-    */
+     * The file name of a swatch image
+     */
     public BundleProductQuery swatchImage() {
         startField("swatch_image");
 
@@ -398,8 +398,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The relative path to the product&#39;s thumbnail image
-    */
+     * The relative path to the product&#39;s thumbnail image
+     */
     public BundleProductQuery thumbnail() {
         startField("thumbnail");
 
@@ -407,8 +407,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The label assigned to a product&#39;s thumbnail image
-    */
+     * The label assigned to a product&#39;s thumbnail image
+     */
     public BundleProductQuery thumbnailLabel() {
         startField("thumbnail_label");
 
@@ -416,8 +416,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The price when tier pricing is in effect and the items purchased threshold has been reached
-    */
+     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     */
     public BundleProductQuery tierPrice() {
         startField("tier_price");
 
@@ -425,8 +425,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * An array of ProductTierPrices objects
-    */
+     * An array of ProductTierPrices objects
+     */
     public BundleProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
 
@@ -438,8 +438,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * One of simple, virtual, bundle, downloadable, grouped, or configurable
-    */
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     */
     public BundleProductQuery typeId() {
         startField("type_id");
 
@@ -447,8 +447,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * Timestamp indicating when the product was updated
-    */
+     * Timestamp indicating when the product was updated
+     */
     public BundleProductQuery updatedAt() {
         startField("updated_at");
 
@@ -456,8 +456,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The part of the URL that identifies the product
-    */
+     * The part of the URL that identifies the product
+     */
     public BundleProductQuery urlKey() {
         startField("url_key");
 
@@ -465,8 +465,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The part of the URL that precedes the url_key
-    */
+     * The part of the URL that precedes the url_key
+     */
     public BundleProductQuery urlPath() {
         startField("url_path");
 
@@ -474,8 +474,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * An array of websites in which the product is available
-    */
+     * An array of websites in which the product is available
+     */
     public BundleProductQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");
 
@@ -487,8 +487,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The weight of the item, in units defined by the store
-    */
+     * The weight of the item, in units defined by the store
+     */
     public BundleProductQuery weight() {
         startField("weight");
 

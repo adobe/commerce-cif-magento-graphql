@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* CustomerAddressRegion defines the customer&#39;s state or province
-*/
+ * CustomerAddressRegion defines the customer&#39;s state or province
+ */
 public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegion> {
     public CustomerAddressRegion() {
     }
@@ -82,8 +82,8 @@ public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegio
     }
 
     /**
-    * The state or province name
-    */
+     * The state or province name
+     */
 
     public String getRegion() {
         return (String) get("region");
@@ -95,8 +95,8 @@ public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegio
     }
 
     /**
-    * The address region code
-    */
+     * The address region code
+     */
 
     public String getRegionCode() {
         return (String) get("region_code");
@@ -108,8 +108,8 @@ public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegio
     }
 
     /**
-    * Uniquely identifies the region
-    */
+     * Uniquely identifies the region
+     */
 
     public Integer getRegionId() {
         return (Integer) get("region_id");

@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* 
-*/
+ * 
+ */
 public class Query extends AbstractResponse<Query> {
     public Query() {
     }
@@ -146,8 +146,8 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-    * The CMS block query returns information about CMS blocks
-    */
+     * The CMS block query returns information about CMS blocks
+     */
 
     public CmsBlocks getCmsBlocks() {
         return (CmsBlocks) get("cmsBlocks");
@@ -159,8 +159,8 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-    * The CMS page query returns information about a CMS page
-    */
+     * The CMS page query returns information about a CMS page
+     */
 
     public CmsPage getCmsPage() {
         return (CmsPage) get("cmsPage");
@@ -172,9 +172,9 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-    * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
-    * type
-    */
+     * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
+     * type
+     */
 
     public CustomAttributeMetadata getCustomAttributeMetadata() {
         return (CustomAttributeMetadata) get("customAttributeMetadata");
@@ -186,8 +186,8 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-    * The customer query returns information about a customer account
-    */
+     * The customer query returns information about a customer account
+     */
 
     public Customer getCustomer() {
         return (Customer) get("customer");
@@ -199,9 +199,9 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-    * The products query searches for products that match the criteria specified in the search and filter
-    * attributes
-    */
+     * The products query searches for products that match the criteria specified in the search and filter
+     * attributes
+     */
 
     public Products getProducts() {
         return (Products) get("products");
@@ -213,8 +213,8 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-    * The store config query
-    */
+     * The store config query
+     */
 
     public StoreConfig getStoreConfig() {
         return (StoreConfig) get("storeConfig");
@@ -226,8 +226,8 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-    * The urlResolver query returns the canonical URL for a specified product, category or CMS page
-    */
+     * The urlResolver query returns the canonical URL for a specified product, category or CMS page
+     */
 
     public EntityUrl getUrlResolver() {
         return (EntityUrl) get("urlResolver");

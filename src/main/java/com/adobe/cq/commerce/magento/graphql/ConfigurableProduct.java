@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* ConfigurableProduct defines basic features of a configurable product and its simple product variants
-*/
+ * ConfigurableProduct defines basic features of a configurable product and its simple product variants
+ */
 public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> implements CustomizableProductInterface, PhysicalProductInterface, ProductInterface {
     public ConfigurableProduct() {
     }
@@ -626,8 +626,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The attribute set assigned to the product
-    */
+     * The attribute set assigned to the product
+     */
 
     public Integer getAttributeSetId() {
         return (Integer) get("attribute_set_id");
@@ -639,8 +639,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * Canonical URL
-    */
+     * Canonical URL
+     */
 
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
@@ -652,8 +652,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The categories assigned to a product
-    */
+     * The categories assigned to a product
+     */
 
     public List<CategoryInterface> getCategories() {
         return (List<CategoryInterface>) get("categories");
@@ -674,8 +674,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * An array of linked simple product items
-    */
+     * An array of linked simple product items
+     */
 
     public List<ConfigurableProductOptions> getConfigurableOptions() {
         return (List<ConfigurableProductOptions>) get("configurable_options");
@@ -687,8 +687,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The product&#39;s country of origin
-    */
+     * The product&#39;s country of origin
+     */
 
     public String getCountryOfManufacture() {
         return (String) get("country_of_manufacture");
@@ -700,8 +700,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * Timestamp indicating when the product was created
-    */
+     * Timestamp indicating when the product was created
+     */
 
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -713,8 +713,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * Detailed information about the product. The value can include simple HTML tags.
-    */
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
 
     public String getDescription() {
         return (String) get("description");
@@ -726,8 +726,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * Indicates whether a gift message is available
-    */
+     * Indicates whether a gift message is available
+     */
 
     public String getGiftMessageAvailable() {
         return (String) get("gift_message_available");
@@ -739,8 +739,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The ID number assigned to the product
-    */
+     * The ID number assigned to the product
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -752,8 +752,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The relative path to the main image on the product page
-    */
+     * The relative path to the main image on the product page
+     */
 
     public String getImage() {
         return (String) get("image");
@@ -765,8 +765,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The label assigned to a product image
-    */
+     * The label assigned to a product image
+     */
 
     public String getImageLabel() {
         return (String) get("image_label");
@@ -778,8 +778,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * A number representing the product&#39;s manufacturer
-    */
+     * A number representing the product&#39;s manufacturer
+     */
 
     public Integer getManufacturer() {
         return (Integer) get("manufacturer");
@@ -791,8 +791,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * An array of MediaGalleryEntry objects
-    */
+     * An array of MediaGalleryEntry objects
+     */
 
     public List<MediaGalleryEntry> getMediaGalleryEntries() {
         return (List<MediaGalleryEntry>) get("media_gallery_entries");
@@ -804,8 +804,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * A brief overview of the product for search results listings, maximum 255 characters
-    */
+     * A brief overview of the product for search results listings, maximum 255 characters
+     */
 
     public String getMetaDescription() {
         return (String) get("meta_description");
@@ -817,8 +817,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * A comma-separated list of keywords that are visible only to search engines
-    */
+     * A comma-separated list of keywords that are visible only to search engines
+     */
 
     public String getMetaKeyword() {
         return (String) get("meta_keyword");
@@ -830,8 +830,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * A string that is displayed in the title bar and tab of the browser and in search results lists
-    */
+     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     */
 
     public String getMetaTitle() {
         return (String) get("meta_title");
@@ -843,8 +843,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The product name. Customers use this name to identify the product.
-    */
+     * The product name. Customers use this name to identify the product.
+     */
 
     public String getName() {
         return (String) get("name");
@@ -856,9 +856,9 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The beginning date for new product listings, and determines if the product is featured as a new
-    * product
-    */
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product
+     */
 
     public String getNewFromDate() {
         return (String) get("new_from_date");
@@ -870,8 +870,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The end date for new product listings
-    */
+     * The end date for new product listings
+     */
 
     public String getNewToDate() {
         return (String) get("new_to_date");
@@ -883,8 +883,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * Product stock only x left count
-    */
+     * Product stock only x left count
+     */
 
     public Double getOnlyXLeftInStock() {
         return (Double) get("only_x_left_in_stock");
@@ -896,8 +896,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * An array of options for a customizable product
-    */
+     * An array of options for a customizable product
+     */
 
     public List<CustomizableOptionInterface> getOptions() {
         return (List<CustomizableOptionInterface>) get("options");
@@ -909,8 +909,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * If the product has multiple options, determines where they appear on the product page
-    */
+     * If the product has multiple options, determines where they appear on the product page
+     */
 
     public String getOptionsContainer() {
         return (String) get("options_container");
@@ -922,8 +922,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * A ProductPrices object, indicating the price of an item
-    */
+     * A ProductPrices object, indicating the price of an item
+     */
 
     public ProductPrices getPrice() {
         return (ProductPrices) get("price");
@@ -935,8 +935,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * An array of ProductLinks objects
-    */
+     * An array of ProductLinks objects
+     */
 
     public List<ProductLinksInterface> getProductLinks() {
         return (List<ProductLinksInterface>) get("product_links");
@@ -948,8 +948,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * A short description of the product. Its use depends on the theme.
-    */
+     * A short description of the product. Its use depends on the theme.
+     */
 
     public String getShortDescription() {
         return (String) get("short_description");
@@ -961,8 +961,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * A number or code assigned to a product to identify the product, options, price, and manufacturer
-    */
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     */
 
     public String getSku() {
         return (String) get("sku");
@@ -974,8 +974,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The relative path to the small image, which is used on catalog pages
-    */
+     * The relative path to the small image, which is used on catalog pages
+     */
 
     public String getSmallImage() {
         return (String) get("small_image");
@@ -987,8 +987,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The label assigned to a product&#39;s small image
-    */
+     * The label assigned to a product&#39;s small image
+     */
 
     public String getSmallImageLabel() {
         return (String) get("small_image_label");
@@ -1000,8 +1000,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The beginning date that a product has a special price
-    */
+     * The beginning date that a product has a special price
+     */
 
     public String getSpecialFromDate() {
         return (String) get("special_from_date");
@@ -1013,8 +1013,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The discounted price of the product
-    */
+     * The discounted price of the product
+     */
 
     public Double getSpecialPrice() {
         return (Double) get("special_price");
@@ -1026,8 +1026,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The end date that a product has a special price
-    */
+     * The end date that a product has a special price
+     */
 
     public String getSpecialToDate() {
         return (String) get("special_to_date");
@@ -1039,8 +1039,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * Stock status of the product
-    */
+     * Stock status of the product
+     */
 
     public ProductStockStatus getStockStatus() {
         return (ProductStockStatus) get("stock_status");
@@ -1052,8 +1052,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The file name of a swatch image
-    */
+     * The file name of a swatch image
+     */
 
     public String getSwatchImage() {
         return (String) get("swatch_image");
@@ -1065,8 +1065,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The relative path to the product&#39;s thumbnail image
-    */
+     * The relative path to the product&#39;s thumbnail image
+     */
 
     public String getThumbnail() {
         return (String) get("thumbnail");
@@ -1078,8 +1078,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The label assigned to a product&#39;s thumbnail image
-    */
+     * The label assigned to a product&#39;s thumbnail image
+     */
 
     public String getThumbnailLabel() {
         return (String) get("thumbnail_label");
@@ -1091,8 +1091,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The price when tier pricing is in effect and the items purchased threshold has been reached
-    */
+     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     */
 
     public Double getTierPrice() {
         return (Double) get("tier_price");
@@ -1104,8 +1104,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * An array of ProductTierPrices objects
-    */
+     * An array of ProductTierPrices objects
+     */
 
     public List<ProductTierPrices> getTierPrices() {
         return (List<ProductTierPrices>) get("tier_prices");
@@ -1117,8 +1117,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * One of simple, virtual, bundle, downloadable, grouped, or configurable
-    */
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     */
 
     public String getTypeId() {
         return (String) get("type_id");
@@ -1130,8 +1130,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * Timestamp indicating when the product was updated
-    */
+     * Timestamp indicating when the product was updated
+     */
 
     public String getUpdatedAt() {
         return (String) get("updated_at");
@@ -1143,8 +1143,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The part of the URL that identifies the product
-    */
+     * The part of the URL that identifies the product
+     */
 
     public String getUrlKey() {
         return (String) get("url_key");
@@ -1156,8 +1156,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The part of the URL that precedes the url_key
-    */
+     * The part of the URL that precedes the url_key
+     */
 
     public String getUrlPath() {
         return (String) get("url_path");
@@ -1169,8 +1169,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * An array of variants of products
-    */
+     * An array of variants of products
+     */
 
     public List<ConfigurableVariant> getVariants() {
         return (List<ConfigurableVariant>) get("variants");
@@ -1182,8 +1182,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * An array of websites in which the product is available
-    */
+     * An array of websites in which the product is available
+     */
 
     public List<Website> getWebsites() {
         return (List<Website>) get("websites");
@@ -1195,8 +1195,8 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-    * The weight of the item, in units defined by the store
-    */
+     * The weight of the item, in units defined by the store
+     */
 
     public Double getWeight() {
         return (Double) get("weight");

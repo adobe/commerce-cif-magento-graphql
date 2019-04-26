@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* ConfigurableProductOptions defines configurable attributes for the specified product
-*/
+ * ConfigurableProductOptions defines configurable attributes for the specified product
+ */
 public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableProductOptionsQuery> {
     ConfigurableProductOptionsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * A string that identifies the attribute
-    */
+     * A string that identifies the attribute
+     */
     public ConfigurableProductOptionsQuery attributeCode() {
         startField("attribute_code");
 
@@ -34,8 +34,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * The ID assigned to the attribute
-    */
+     * The ID assigned to the attribute
+     */
     public ConfigurableProductOptionsQuery attributeId() {
         startField("attribute_id");
 
@@ -43,8 +43,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * The configurable option ID number assigned by the system
-    */
+     * The configurable option ID number assigned by the system
+     */
     public ConfigurableProductOptionsQuery id() {
         startField("id");
 
@@ -52,8 +52,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * A string that describes the configurable product option, which is displayed on the UI
-    */
+     * A string that describes the configurable product option, which is displayed on the UI
+     */
     public ConfigurableProductOptionsQuery label() {
         startField("label");
 
@@ -61,8 +61,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * A number that indicates the order in which the attribute is displayed
-    */
+     * A number that indicates the order in which the attribute is displayed
+     */
     public ConfigurableProductOptionsQuery position() {
         startField("position");
 
@@ -70,8 +70,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * This is the same as a product&#39;s id field
-    */
+     * This is the same as a product&#39;s id field
+     */
     public ConfigurableProductOptionsQuery productId() {
         startField("product_id");
 
@@ -79,8 +79,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * Indicates whether the option is the default
-    */
+     * Indicates whether the option is the default
+     */
     public ConfigurableProductOptionsQuery useDefault() {
         startField("use_default");
 
@@ -88,8 +88,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * An array that defines the value_index codes assigned to the configurable product
-    */
+     * An array that defines the value_index codes assigned to the configurable product
+     */
     public ConfigurableProductOptionsQuery values(ConfigurableProductOptionsValuesQueryDefinition queryDef) {
         startField("values");
 

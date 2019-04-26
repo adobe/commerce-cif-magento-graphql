@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* DownloadableProductSamples defines characteristics of a downloadable product
-*/
+ * DownloadableProductSamples defines characteristics of a downloadable product
+ */
 public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableProductSamplesQuery> {
     DownloadableProductSamplesQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * The unique ID for the downloadable product sample
-    */
+     * The unique ID for the downloadable product sample
+     */
     public DownloadableProductSamplesQuery id() {
         startField("id");
 
@@ -34,8 +34,8 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-    * The relative path to the downloadable sample
-    */
+     * The relative path to the downloadable sample
+     */
     public DownloadableProductSamplesQuery sampleFile() {
         startField("sample_file");
 
@@ -43,8 +43,8 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-    * Either FILE or URL
-    */
+     * Either FILE or URL
+     */
     public DownloadableProductSamplesQuery sampleType() {
         startField("sample_type");
 
@@ -52,8 +52,8 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-    * The relative URL to the downloadable sample
-    */
+     * The relative URL to the downloadable sample
+     */
     public DownloadableProductSamplesQuery sampleUrl() {
         startField("sample_url");
 
@@ -61,8 +61,8 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-    * A number indicating the sort order
-    */
+     * A number indicating the sort order
+     */
     public DownloadableProductSamplesQuery sortOrder() {
         startField("sort_order");
 
@@ -70,8 +70,8 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-    * The display name of the sample
-    */
+     * The display name of the sample
+     */
     public DownloadableProductSamplesQuery title() {
         startField("title");
 

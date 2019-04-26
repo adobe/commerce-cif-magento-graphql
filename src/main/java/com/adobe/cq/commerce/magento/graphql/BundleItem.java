@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* BundleItem defines an individual item in a bundle product
-*/
+ * BundleItem defines an individual item in a bundle product
+ */
 public class BundleItem extends AbstractResponse<BundleItem> {
     public BundleItem() {
     }
@@ -138,8 +138,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-    * An ID assigned to each type of item in a bundle product
-    */
+     * An ID assigned to each type of item in a bundle product
+     */
 
     public Integer getOptionId() {
         return (Integer) get("option_id");
@@ -151,8 +151,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-    * An array of additional options for this bundle item
-    */
+     * An array of additional options for this bundle item
+     */
 
     public List<BundleItemOption> getOptions() {
         return (List<BundleItemOption>) get("options");
@@ -164,8 +164,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-    * he relative position of this item compared to the other bundle items
-    */
+     * he relative position of this item compared to the other bundle items
+     */
 
     public Integer getPosition() {
         return (Integer) get("position");
@@ -177,8 +177,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-    * Indicates whether the item must be included in the bundle
-    */
+     * Indicates whether the item must be included in the bundle
+     */
 
     public Boolean getRequired() {
         return (Boolean) get("required");
@@ -190,8 +190,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-    * The SKU of the bundle product
-    */
+     * The SKU of the bundle product
+     */
 
     public String getSku() {
         return (String) get("sku");
@@ -203,8 +203,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-    * The display name of the item
-    */
+     * The display name of the item
+     */
 
     public String getTitle() {
         return (String) get("title");
@@ -216,8 +216,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-    * The input type that the customer uses to select the item. Examples include radio button and checkbox
-    */
+     * The input type that the customer uses to select the item. Examples include radio button and checkbox
+     */
 
     public String getType() {
         return (String) get("type");

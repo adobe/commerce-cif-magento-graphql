@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* Breadcrumb item
-*/
+ * Breadcrumb item
+ */
 public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     public Breadcrumb() {
     }
@@ -93,8 +93,8 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-    * Category ID
-    */
+     * Category ID
+     */
 
     public Integer getCategoryId() {
         return (Integer) get("category_id");
@@ -106,8 +106,8 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-    * Category level
-    */
+     * Category level
+     */
 
     public Integer getCategoryLevel() {
         return (Integer) get("category_level");
@@ -119,8 +119,8 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-    * Category name
-    */
+     * Category name
+     */
 
     public String getCategoryName() {
         return (String) get("category_name");
@@ -132,8 +132,8 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-    * Category URL key
-    */
+     * Category URL key
+     */
 
     public String getCategoryUrlKey() {
         return (String) get("category_url_key");

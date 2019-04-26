@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* DownloadableProduct defines a product that the customer downloads
-*/
+ * DownloadableProduct defines a product that the customer downloads
+ */
 public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQuery> {
     DownloadableProductQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * The attribute set assigned to the product
-    */
+     * The attribute set assigned to the product
+     */
     public DownloadableProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -34,8 +34,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * Canonical URL
-    */
+     * Canonical URL
+     */
     public DownloadableProductQuery canonicalUrl() {
         startField("canonical_url");
 
@@ -43,8 +43,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The categories assigned to a product
-    */
+     * The categories assigned to a product
+     */
     public DownloadableProductQuery categories(CategoryInterfaceQueryDefinition queryDef) {
         startField("categories");
 
@@ -62,8 +62,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The product&#39;s country of origin
-    */
+     * The product&#39;s country of origin
+     */
     public DownloadableProductQuery countryOfManufacture() {
         startField("country_of_manufacture");
 
@@ -71,8 +71,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * Timestamp indicating when the product was created
-    */
+     * Timestamp indicating when the product was created
+     */
     public DownloadableProductQuery createdAt() {
         startField("created_at");
 
@@ -80,8 +80,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * Detailed information about the product. The value can include simple HTML tags.
-    */
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
     public DownloadableProductQuery description() {
         startField("description");
 
@@ -89,8 +89,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * An array containing information about the links for this downloadable product
-    */
+     * An array containing information about the links for this downloadable product
+     */
     public DownloadableProductQuery downloadableProductLinks(DownloadableProductLinksQueryDefinition queryDef) {
         startField("downloadable_product_links");
 
@@ -102,8 +102,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * An array containing information about samples of this downloadable product.
-    */
+     * An array containing information about samples of this downloadable product.
+     */
     public DownloadableProductQuery downloadableProductSamples(DownloadableProductSamplesQueryDefinition queryDef) {
         startField("downloadable_product_samples");
 
@@ -115,8 +115,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * Indicates whether a gift message is available
-    */
+     * Indicates whether a gift message is available
+     */
     public DownloadableProductQuery giftMessageAvailable() {
         startField("gift_message_available");
 
@@ -124,8 +124,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The ID number assigned to the product
-    */
+     * The ID number assigned to the product
+     */
     public DownloadableProductQuery id() {
         startField("id");
 
@@ -133,8 +133,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The relative path to the main image on the product page
-    */
+     * The relative path to the main image on the product page
+     */
     public DownloadableProductQuery image() {
         startField("image");
 
@@ -142,8 +142,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The label assigned to a product image
-    */
+     * The label assigned to a product image
+     */
     public DownloadableProductQuery imageLabel() {
         startField("image_label");
 
@@ -151,8 +151,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A value of 1 indicates that each link in the array must be purchased separately
-    */
+     * A value of 1 indicates that each link in the array must be purchased separately
+     */
     public DownloadableProductQuery linksPurchasedSeparately() {
         startField("links_purchased_separately");
 
@@ -160,8 +160,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The heading above the list of downloadable products
-    */
+     * The heading above the list of downloadable products
+     */
     public DownloadableProductQuery linksTitle() {
         startField("links_title");
 
@@ -169,8 +169,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A number representing the product&#39;s manufacturer
-    */
+     * A number representing the product&#39;s manufacturer
+     */
     public DownloadableProductQuery manufacturer() {
         startField("manufacturer");
 
@@ -178,8 +178,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * An array of MediaGalleryEntry objects
-    */
+     * An array of MediaGalleryEntry objects
+     */
     public DownloadableProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
 
@@ -191,8 +191,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A brief overview of the product for search results listings, maximum 255 characters
-    */
+     * A brief overview of the product for search results listings, maximum 255 characters
+     */
     public DownloadableProductQuery metaDescription() {
         startField("meta_description");
 
@@ -200,8 +200,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A comma-separated list of keywords that are visible only to search engines
-    */
+     * A comma-separated list of keywords that are visible only to search engines
+     */
     public DownloadableProductQuery metaKeyword() {
         startField("meta_keyword");
 
@@ -209,8 +209,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A string that is displayed in the title bar and tab of the browser and in search results lists
-    */
+     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     */
     public DownloadableProductQuery metaTitle() {
         startField("meta_title");
 
@@ -218,8 +218,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The product name. Customers use this name to identify the product.
-    */
+     * The product name. Customers use this name to identify the product.
+     */
     public DownloadableProductQuery name() {
         startField("name");
 
@@ -227,9 +227,9 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The beginning date for new product listings, and determines if the product is featured as a new
-    * product
-    */
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product
+     */
     public DownloadableProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -237,8 +237,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The end date for new product listings
-    */
+     * The end date for new product listings
+     */
     public DownloadableProductQuery newToDate() {
         startField("new_to_date");
 
@@ -246,8 +246,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * Product stock only x left count
-    */
+     * Product stock only x left count
+     */
     public DownloadableProductQuery onlyXLeftInStock() {
         startField("only_x_left_in_stock");
 
@@ -255,8 +255,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * An array of options for a customizable product
-    */
+     * An array of options for a customizable product
+     */
     public DownloadableProductQuery options(CustomizableOptionInterfaceQueryDefinition queryDef) {
         startField("options");
 
@@ -268,8 +268,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * If the product has multiple options, determines where they appear on the product page
-    */
+     * If the product has multiple options, determines where they appear on the product page
+     */
     public DownloadableProductQuery optionsContainer() {
         startField("options_container");
 
@@ -277,8 +277,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A ProductPrices object, indicating the price of an item
-    */
+     * A ProductPrices object, indicating the price of an item
+     */
     public DownloadableProductQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
 
@@ -290,8 +290,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * An array of ProductLinks objects
-    */
+     * An array of ProductLinks objects
+     */
     public DownloadableProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
 
@@ -303,8 +303,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A short description of the product. Its use depends on the theme.
-    */
+     * A short description of the product. Its use depends on the theme.
+     */
     public DownloadableProductQuery shortDescription() {
         startField("short_description");
 
@@ -312,8 +312,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * A number or code assigned to a product to identify the product, options, price, and manufacturer
-    */
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     */
     public DownloadableProductQuery sku() {
         startField("sku");
 
@@ -321,8 +321,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The relative path to the small image, which is used on catalog pages
-    */
+     * The relative path to the small image, which is used on catalog pages
+     */
     public DownloadableProductQuery smallImage() {
         startField("small_image");
 
@@ -330,8 +330,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The label assigned to a product&#39;s small image
-    */
+     * The label assigned to a product&#39;s small image
+     */
     public DownloadableProductQuery smallImageLabel() {
         startField("small_image_label");
 
@@ -339,8 +339,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The beginning date that a product has a special price
-    */
+     * The beginning date that a product has a special price
+     */
     public DownloadableProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -348,8 +348,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The discounted price of the product
-    */
+     * The discounted price of the product
+     */
     public DownloadableProductQuery specialPrice() {
         startField("special_price");
 
@@ -357,8 +357,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The end date that a product has a special price
-    */
+     * The end date that a product has a special price
+     */
     public DownloadableProductQuery specialToDate() {
         startField("special_to_date");
 
@@ -366,8 +366,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * Stock status of the product
-    */
+     * Stock status of the product
+     */
     public DownloadableProductQuery stockStatus() {
         startField("stock_status");
 
@@ -375,8 +375,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The file name of a swatch image
-    */
+     * The file name of a swatch image
+     */
     public DownloadableProductQuery swatchImage() {
         startField("swatch_image");
 
@@ -384,8 +384,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The relative path to the product&#39;s thumbnail image
-    */
+     * The relative path to the product&#39;s thumbnail image
+     */
     public DownloadableProductQuery thumbnail() {
         startField("thumbnail");
 
@@ -393,8 +393,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The label assigned to a product&#39;s thumbnail image
-    */
+     * The label assigned to a product&#39;s thumbnail image
+     */
     public DownloadableProductQuery thumbnailLabel() {
         startField("thumbnail_label");
 
@@ -402,8 +402,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The price when tier pricing is in effect and the items purchased threshold has been reached
-    */
+     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     */
     public DownloadableProductQuery tierPrice() {
         startField("tier_price");
 
@@ -411,8 +411,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * An array of ProductTierPrices objects
-    */
+     * An array of ProductTierPrices objects
+     */
     public DownloadableProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
 
@@ -424,8 +424,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * One of simple, virtual, bundle, downloadable, grouped, or configurable
-    */
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     */
     public DownloadableProductQuery typeId() {
         startField("type_id");
 
@@ -433,8 +433,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * Timestamp indicating when the product was updated
-    */
+     * Timestamp indicating when the product was updated
+     */
     public DownloadableProductQuery updatedAt() {
         startField("updated_at");
 
@@ -442,8 +442,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The part of the URL that identifies the product
-    */
+     * The part of the URL that identifies the product
+     */
     public DownloadableProductQuery urlKey() {
         startField("url_key");
 
@@ -451,8 +451,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * The part of the URL that precedes the url_key
-    */
+     * The part of the URL that precedes the url_key
+     */
     public DownloadableProductQuery urlPath() {
         startField("url_path");
 
@@ -460,8 +460,8 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-    * An array of websites in which the product is available
-    */
+     * An array of websites in which the product is available
+     */
     public DownloadableProductQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");
 

@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* GroupedProduct defines a grouped product
-*/
+ * GroupedProduct defines a grouped product
+ */
 public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     GroupedProductQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * The attribute set assigned to the product
-    */
+     * The attribute set assigned to the product
+     */
     public GroupedProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -34,8 +34,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * Canonical URL
-    */
+     * Canonical URL
+     */
     public GroupedProductQuery canonicalUrl() {
         startField("canonical_url");
 
@@ -43,8 +43,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The categories assigned to a product
-    */
+     * The categories assigned to a product
+     */
     public GroupedProductQuery categories(CategoryInterfaceQueryDefinition queryDef) {
         startField("categories");
 
@@ -62,8 +62,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The product&#39;s country of origin
-    */
+     * The product&#39;s country of origin
+     */
     public GroupedProductQuery countryOfManufacture() {
         startField("country_of_manufacture");
 
@@ -71,8 +71,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * Timestamp indicating when the product was created
-    */
+     * Timestamp indicating when the product was created
+     */
     public GroupedProductQuery createdAt() {
         startField("created_at");
 
@@ -80,8 +80,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * Detailed information about the product. The value can include simple HTML tags.
-    */
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
     public GroupedProductQuery description() {
         startField("description");
 
@@ -89,8 +89,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * Indicates whether a gift message is available
-    */
+     * Indicates whether a gift message is available
+     */
     public GroupedProductQuery giftMessageAvailable() {
         startField("gift_message_available");
 
@@ -98,8 +98,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The ID number assigned to the product
-    */
+     * The ID number assigned to the product
+     */
     public GroupedProductQuery id() {
         startField("id");
 
@@ -107,8 +107,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The relative path to the main image on the product page
-    */
+     * The relative path to the main image on the product page
+     */
     public GroupedProductQuery image() {
         startField("image");
 
@@ -116,8 +116,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The label assigned to a product image
-    */
+     * The label assigned to a product image
+     */
     public GroupedProductQuery imageLabel() {
         startField("image_label");
 
@@ -125,8 +125,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * An array containing grouped product items
-    */
+     * An array containing grouped product items
+     */
     public GroupedProductQuery items(GroupedProductItemQueryDefinition queryDef) {
         startField("items");
 
@@ -138,8 +138,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * A number representing the product&#39;s manufacturer
-    */
+     * A number representing the product&#39;s manufacturer
+     */
     public GroupedProductQuery manufacturer() {
         startField("manufacturer");
 
@@ -147,8 +147,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * An array of MediaGalleryEntry objects
-    */
+     * An array of MediaGalleryEntry objects
+     */
     public GroupedProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
 
@@ -160,8 +160,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * A brief overview of the product for search results listings, maximum 255 characters
-    */
+     * A brief overview of the product for search results listings, maximum 255 characters
+     */
     public GroupedProductQuery metaDescription() {
         startField("meta_description");
 
@@ -169,8 +169,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * A comma-separated list of keywords that are visible only to search engines
-    */
+     * A comma-separated list of keywords that are visible only to search engines
+     */
     public GroupedProductQuery metaKeyword() {
         startField("meta_keyword");
 
@@ -178,8 +178,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * A string that is displayed in the title bar and tab of the browser and in search results lists
-    */
+     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     */
     public GroupedProductQuery metaTitle() {
         startField("meta_title");
 
@@ -187,8 +187,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The product name. Customers use this name to identify the product.
-    */
+     * The product name. Customers use this name to identify the product.
+     */
     public GroupedProductQuery name() {
         startField("name");
 
@@ -196,9 +196,9 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The beginning date for new product listings, and determines if the product is featured as a new
-    * product
-    */
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product
+     */
     public GroupedProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -206,8 +206,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The end date for new product listings
-    */
+     * The end date for new product listings
+     */
     public GroupedProductQuery newToDate() {
         startField("new_to_date");
 
@@ -215,8 +215,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * Product stock only x left count
-    */
+     * Product stock only x left count
+     */
     public GroupedProductQuery onlyXLeftInStock() {
         startField("only_x_left_in_stock");
 
@@ -224,8 +224,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * If the product has multiple options, determines where they appear on the product page
-    */
+     * If the product has multiple options, determines where they appear on the product page
+     */
     public GroupedProductQuery optionsContainer() {
         startField("options_container");
 
@@ -233,8 +233,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * A ProductPrices object, indicating the price of an item
-    */
+     * A ProductPrices object, indicating the price of an item
+     */
     public GroupedProductQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
 
@@ -246,8 +246,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * An array of ProductLinks objects
-    */
+     * An array of ProductLinks objects
+     */
     public GroupedProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
 
@@ -259,8 +259,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * A short description of the product. Its use depends on the theme.
-    */
+     * A short description of the product. Its use depends on the theme.
+     */
     public GroupedProductQuery shortDescription() {
         startField("short_description");
 
@@ -268,8 +268,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * A number or code assigned to a product to identify the product, options, price, and manufacturer
-    */
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     */
     public GroupedProductQuery sku() {
         startField("sku");
 
@@ -277,8 +277,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The relative path to the small image, which is used on catalog pages
-    */
+     * The relative path to the small image, which is used on catalog pages
+     */
     public GroupedProductQuery smallImage() {
         startField("small_image");
 
@@ -286,8 +286,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The label assigned to a product&#39;s small image
-    */
+     * The label assigned to a product&#39;s small image
+     */
     public GroupedProductQuery smallImageLabel() {
         startField("small_image_label");
 
@@ -295,8 +295,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The beginning date that a product has a special price
-    */
+     * The beginning date that a product has a special price
+     */
     public GroupedProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -304,8 +304,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The discounted price of the product
-    */
+     * The discounted price of the product
+     */
     public GroupedProductQuery specialPrice() {
         startField("special_price");
 
@@ -313,8 +313,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The end date that a product has a special price
-    */
+     * The end date that a product has a special price
+     */
     public GroupedProductQuery specialToDate() {
         startField("special_to_date");
 
@@ -322,8 +322,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * Stock status of the product
-    */
+     * Stock status of the product
+     */
     public GroupedProductQuery stockStatus() {
         startField("stock_status");
 
@@ -331,8 +331,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The file name of a swatch image
-    */
+     * The file name of a swatch image
+     */
     public GroupedProductQuery swatchImage() {
         startField("swatch_image");
 
@@ -340,8 +340,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The relative path to the product&#39;s thumbnail image
-    */
+     * The relative path to the product&#39;s thumbnail image
+     */
     public GroupedProductQuery thumbnail() {
         startField("thumbnail");
 
@@ -349,8 +349,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The label assigned to a product&#39;s thumbnail image
-    */
+     * The label assigned to a product&#39;s thumbnail image
+     */
     public GroupedProductQuery thumbnailLabel() {
         startField("thumbnail_label");
 
@@ -358,8 +358,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The price when tier pricing is in effect and the items purchased threshold has been reached
-    */
+     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     */
     public GroupedProductQuery tierPrice() {
         startField("tier_price");
 
@@ -367,8 +367,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * An array of ProductTierPrices objects
-    */
+     * An array of ProductTierPrices objects
+     */
     public GroupedProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
 
@@ -380,8 +380,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * One of simple, virtual, bundle, downloadable, grouped, or configurable
-    */
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     */
     public GroupedProductQuery typeId() {
         startField("type_id");
 
@@ -389,8 +389,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * Timestamp indicating when the product was updated
-    */
+     * Timestamp indicating when the product was updated
+     */
     public GroupedProductQuery updatedAt() {
         startField("updated_at");
 
@@ -398,8 +398,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The part of the URL that identifies the product
-    */
+     * The part of the URL that identifies the product
+     */
     public GroupedProductQuery urlKey() {
         startField("url_key");
 
@@ -407,8 +407,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The part of the URL that precedes the url_key
-    */
+     * The part of the URL that precedes the url_key
+     */
     public GroupedProductQuery urlPath() {
         startField("url_path");
 
@@ -416,8 +416,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * An array of websites in which the product is available
-    */
+     * An array of websites in which the product is available
+     */
     public GroupedProductQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");
 
@@ -429,8 +429,8 @@ public class GroupedProductQuery extends AbstractQuery<GroupedProductQuery> {
     }
 
     /**
-    * The weight of the item, in units defined by the store
-    */
+     * The weight of the item, in units defined by the store
+     */
     public GroupedProductQuery weight() {
         startField("weight");
 

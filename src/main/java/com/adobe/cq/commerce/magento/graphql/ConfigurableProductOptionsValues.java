@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* ConfigurableProductOptionsValues contains the index number assigned to a configurable product option
-*/
+ * ConfigurableProductOptionsValues contains the index number assigned to a configurable product option
+ */
 public class ConfigurableProductOptionsValues extends AbstractResponse<ConfigurableProductOptionsValues> {
     public ConfigurableProductOptionsValues() {
     }
@@ -104,8 +104,8 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-    * The label of the product on the default store
-    */
+     * The label of the product on the default store
+     */
 
     public String getDefaultLabel() {
         return (String) get("default_label");
@@ -117,8 +117,8 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-    * The label of the product
-    */
+     * The label of the product
+     */
 
     public String getLabel() {
         return (String) get("label");
@@ -130,8 +130,8 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-    * The label of the product on the current store
-    */
+     * The label of the product on the current store
+     */
 
     public String getStoreLabel() {
         return (String) get("store_label");
@@ -143,8 +143,8 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-    * Indicates whether to use the default_label
-    */
+     * Indicates whether to use the default_label
+     */
 
     public Boolean getUseDefaultValue() {
         return (Boolean) get("use_default_value");
@@ -156,8 +156,8 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-    * A unique index number assigned to the configurable product option
-    */
+     * A unique index number assigned to the configurable product option
+     */
 
     public Integer getValueIndex() {
         return (Integer) get("value_index");

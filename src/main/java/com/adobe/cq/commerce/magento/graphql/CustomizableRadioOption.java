@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,9 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* CustomizableRadioOption contains information about a set of radio buttons that are defined as part
-* of a customizable option
-*/
+ * CustomizableRadioOption contains information about a set of radio buttons that are defined as part
+ * of a customizable option
+ */
 public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioOption> implements CustomizableOptionInterface {
     public CustomizableRadioOption() {
     }
@@ -106,8 +106,8 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-    * Indicates whether the option is required
-    */
+     * Indicates whether the option is required
+     */
 
     public Boolean getRequired() {
         return (Boolean) get("required");
@@ -119,8 +119,8 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-    * The order in which the option is displayed
-    */
+     * The order in which the option is displayed
+     */
 
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
@@ -132,8 +132,8 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-    * The display name for this option
-    */
+     * The display name for this option
+     */
 
     public String getTitle() {
         return (String) get("title");
@@ -145,8 +145,8 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-    * An array that defines a set of radio buttons
-    */
+     * An array that defines a set of radio buttons
+     */
 
     public List<CustomizableRadioValue> getValue() {
         return (List<CustomizableRadioValue>) get("value");

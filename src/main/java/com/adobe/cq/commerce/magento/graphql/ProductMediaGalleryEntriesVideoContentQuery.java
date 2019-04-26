@@ -1,33 +1,33 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
-* the video
-*/
+ * ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
+ * the video
+ */
 public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<ProductMediaGalleryEntriesVideoContentQuery> {
     ProductMediaGalleryEntriesVideoContentQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * Must be external-video
-    */
+     * Must be external-video
+     */
     public ProductMediaGalleryEntriesVideoContentQuery mediaType() {
         startField("media_type");
 
@@ -35,8 +35,8 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-    * A description of the video
-    */
+     * A description of the video
+     */
     public ProductMediaGalleryEntriesVideoContentQuery videoDescription() {
         startField("video_description");
 
@@ -44,8 +44,8 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-    * Optional data about the video
-    */
+     * Optional data about the video
+     */
     public ProductMediaGalleryEntriesVideoContentQuery videoMetadata() {
         startField("video_metadata");
 
@@ -53,8 +53,8 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-    * Describes the video source
-    */
+     * Describes the video source
+     */
     public ProductMediaGalleryEntriesVideoContentQuery videoProvider() {
         startField("video_provider");
 
@@ -62,8 +62,8 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-    * The title of the video
-    */
+     * The title of the video
+     */
     public ProductMediaGalleryEntriesVideoContentQuery videoTitle() {
         startField("video_title");
 
@@ -71,8 +71,8 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-    * The URL to the video
-    */
+     * The URL to the video
+     */
     public ProductMediaGalleryEntriesVideoContentQuery videoUrl() {
         startField("video_url");
 

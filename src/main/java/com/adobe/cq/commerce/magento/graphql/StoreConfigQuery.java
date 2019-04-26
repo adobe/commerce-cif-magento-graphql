@@ -1,32 +1,32 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* The type contains information about a store config
-*/
+ * The type contains information about a store config
+ */
 public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     StoreConfigQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-    * Base currency code
-    */
+     * Base currency code
+     */
     public StoreConfigQuery baseCurrencyCode() {
         startField("base_currency_code");
 
@@ -34,8 +34,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Base link URL for the store
-    */
+     * Base link URL for the store
+     */
     public StoreConfigQuery baseLinkUrl() {
         startField("base_link_url");
 
@@ -43,8 +43,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Base media URL for the store
-    */
+     * Base media URL for the store
+     */
     public StoreConfigQuery baseMediaUrl() {
         startField("base_media_url");
 
@@ -52,8 +52,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Base static URL for the store
-    */
+     * Base static URL for the store
+     */
     public StoreConfigQuery baseStaticUrl() {
         startField("base_static_url");
 
@@ -61,8 +61,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Base URL for the store
-    */
+     * Base URL for the store
+     */
     public StoreConfigQuery baseUrl() {
         startField("base_url");
 
@@ -70,8 +70,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * A code assigned to the store to identify it
-    */
+     * A code assigned to the store to identify it
+     */
     public StoreConfigQuery code() {
         startField("code");
 
@@ -79,8 +79,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Default display currency code
-    */
+     * Default display currency code
+     */
     public StoreConfigQuery defaultDisplayCurrencyCode() {
         startField("default_display_currency_code");
 
@@ -88,8 +88,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * The ID number assigned to the store
-    */
+     * The ID number assigned to the store
+     */
     public StoreConfigQuery id() {
         startField("id");
 
@@ -97,8 +97,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Store locale
-    */
+     * Store locale
+     */
     public StoreConfigQuery locale() {
         startField("locale");
 
@@ -106,8 +106,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Secure base link URL for the store
-    */
+     * Secure base link URL for the store
+     */
     public StoreConfigQuery secureBaseLinkUrl() {
         startField("secure_base_link_url");
 
@@ -115,8 +115,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Secure base media URL for the store
-    */
+     * Secure base media URL for the store
+     */
     public StoreConfigQuery secureBaseMediaUrl() {
         startField("secure_base_media_url");
 
@@ -124,8 +124,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Secure base static URL for the store
-    */
+     * Secure base static URL for the store
+     */
     public StoreConfigQuery secureBaseStaticUrl() {
         startField("secure_base_static_url");
 
@@ -133,8 +133,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Secure base URL for the store
-    */
+     * Secure base URL for the store
+     */
     public StoreConfigQuery secureBaseUrl() {
         startField("secure_base_url");
 
@@ -142,8 +142,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * Timezone of the store
-    */
+     * Timezone of the store
+     */
     public StoreConfigQuery timezone() {
         startField("timezone");
 
@@ -151,8 +151,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * The ID number assigned to the website store belongs
-    */
+     * The ID number assigned to the website store belongs
+     */
     public StoreConfigQuery websiteId() {
         startField("website_id");
 
@@ -160,8 +160,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-    * The unit of weight
-    */
+     * The unit of weight
+     */
     public StoreConfigQuery weightUnit() {
         startField("weight_unit");
 

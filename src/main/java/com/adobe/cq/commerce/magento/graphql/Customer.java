@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* Customer defines the customer name and address and other details
-*/
+ * Customer defines the customer name and address and other details
+ */
 public class Customer extends AbstractResponse<Customer> {
     public Customer() {
     }
@@ -226,8 +226,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * An array containing the customer&#39;s shipping and billing addresses
-    */
+     * An array containing the customer&#39;s shipping and billing addresses
+     */
 
     public List<CustomerAddress> getAddresses() {
         return (List<CustomerAddress>) get("addresses");
@@ -239,8 +239,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * Timestamp indicating when the account was created
-    */
+     * Timestamp indicating when the account was created
+     */
 
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -252,8 +252,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The ID assigned to the billing address
-    */
+     * The ID assigned to the billing address
+     */
 
     public String getDefaultBilling() {
         return (String) get("default_billing");
@@ -265,8 +265,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The ID assigned to the shipping address
-    */
+     * The ID assigned to the shipping address
+     */
 
     public String getDefaultShipping() {
         return (String) get("default_shipping");
@@ -278,8 +278,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer&#39;s date of birth
-    */
+     * The customer&#39;s date of birth
+     */
 
     public String getDob() {
         return (String) get("dob");
@@ -291,8 +291,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer&#39;s email address. Required
-    */
+     * The customer&#39;s email address. Required
+     */
 
     public String getEmail() {
         return (String) get("email");
@@ -304,8 +304,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer&#39;s first name
-    */
+     * The customer&#39;s first name
+     */
 
     public String getFirstname() {
         return (String) get("firstname");
@@ -317,9 +317,9 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
-    * and 3 (Retailer)
-    */
+     * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
+     * and 3 (Retailer)
+     */
 
     public Integer getGroupId() {
         return (Integer) get("group_id");
@@ -331,8 +331,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The ID assigned to the customer
-    */
+     * The ID assigned to the customer
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -344,8 +344,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * Indicates whether the customer is subscribed to the company&#39;s newsletter
-    */
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     */
 
     public Boolean getIsSubscribed() {
         return (Boolean) get("is_subscribed");
@@ -357,8 +357,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer&#39;s family name
-    */
+     * The customer&#39;s family name
+     */
 
     public String getLastname() {
         return (String) get("lastname");
@@ -370,8 +370,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer&#39;s middle name
-    */
+     * The customer&#39;s middle name
+     */
 
     public String getMiddlename() {
         return (String) get("middlename");
@@ -383,8 +383,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * An honorific, such as Dr., Mr., or Mrs.
-    */
+     * An honorific, such as Dr., Mr., or Mrs.
+     */
 
     public String getPrefix() {
         return (String) get("prefix");
@@ -396,8 +396,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * A value such as Sr., Jr., or III
-    */
+     * A value such as Sr., Jr., or III
+     */
 
     public String getSuffix() {
         return (String) get("suffix");
@@ -409,8 +409,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer&#39;s Tax/VAT number (for corporate customers)
-    */
+     * The customer&#39;s Tax/VAT number (for corporate customers)
+     */
 
     public String getTaxvat() {
         return (String) get("taxvat");

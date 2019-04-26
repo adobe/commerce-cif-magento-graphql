@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* ConfigurableProductOptions defines configurable attributes for the specified product
-*/
+ * ConfigurableProductOptions defines configurable attributes for the specified product
+ */
 public class ConfigurableProductOptions extends AbstractResponse<ConfigurableProductOptions> {
     public ConfigurableProductOptions() {
     }
@@ -149,8 +149,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * A string that identifies the attribute
-    */
+     * A string that identifies the attribute
+     */
 
     public String getAttributeCode() {
         return (String) get("attribute_code");
@@ -162,8 +162,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * The ID assigned to the attribute
-    */
+     * The ID assigned to the attribute
+     */
 
     public String getAttributeId() {
         return (String) get("attribute_id");
@@ -175,8 +175,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * The configurable option ID number assigned by the system
-    */
+     * The configurable option ID number assigned by the system
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -188,8 +188,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * A string that describes the configurable product option, which is displayed on the UI
-    */
+     * A string that describes the configurable product option, which is displayed on the UI
+     */
 
     public String getLabel() {
         return (String) get("label");
@@ -201,8 +201,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * A number that indicates the order in which the attribute is displayed
-    */
+     * A number that indicates the order in which the attribute is displayed
+     */
 
     public Integer getPosition() {
         return (Integer) get("position");
@@ -214,8 +214,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * This is the same as a product&#39;s id field
-    */
+     * This is the same as a product&#39;s id field
+     */
 
     public Integer getProductId() {
         return (Integer) get("product_id");
@@ -227,8 +227,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * Indicates whether the option is the default
-    */
+     * Indicates whether the option is the default
+     */
 
     public Boolean getUseDefault() {
         return (Boolean) get("use_default");
@@ -240,8 +240,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * An array that defines the value_index codes assigned to the configurable product
-    */
+     * An array that defines the value_index codes assigned to the configurable product
+     */
 
     public List<ConfigurableProductOptionsValues> getValues() {
         return (List<ConfigurableProductOptionsValues>) get("values");

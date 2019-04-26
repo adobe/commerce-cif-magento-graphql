@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* The type contains information about a store config
-*/
+ * The type contains information about a store config
+ */
 public class StoreConfig extends AbstractResponse<StoreConfig> {
     public StoreConfig() {
     }
@@ -225,8 +225,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Base currency code
-    */
+     * Base currency code
+     */
 
     public String getBaseCurrencyCode() {
         return (String) get("base_currency_code");
@@ -238,8 +238,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Base link URL for the store
-    */
+     * Base link URL for the store
+     */
 
     public String getBaseLinkUrl() {
         return (String) get("base_link_url");
@@ -251,8 +251,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Base media URL for the store
-    */
+     * Base media URL for the store
+     */
 
     public String getBaseMediaUrl() {
         return (String) get("base_media_url");
@@ -264,8 +264,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Base static URL for the store
-    */
+     * Base static URL for the store
+     */
 
     public String getBaseStaticUrl() {
         return (String) get("base_static_url");
@@ -277,8 +277,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Base URL for the store
-    */
+     * Base URL for the store
+     */
 
     public String getBaseUrl() {
         return (String) get("base_url");
@@ -290,8 +290,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * A code assigned to the store to identify it
-    */
+     * A code assigned to the store to identify it
+     */
 
     public String getCode() {
         return (String) get("code");
@@ -303,8 +303,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Default display currency code
-    */
+     * Default display currency code
+     */
 
     public String getDefaultDisplayCurrencyCode() {
         return (String) get("default_display_currency_code");
@@ -316,8 +316,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * The ID number assigned to the store
-    */
+     * The ID number assigned to the store
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -329,8 +329,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Store locale
-    */
+     * Store locale
+     */
 
     public String getLocale() {
         return (String) get("locale");
@@ -342,8 +342,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Secure base link URL for the store
-    */
+     * Secure base link URL for the store
+     */
 
     public String getSecureBaseLinkUrl() {
         return (String) get("secure_base_link_url");
@@ -355,8 +355,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Secure base media URL for the store
-    */
+     * Secure base media URL for the store
+     */
 
     public String getSecureBaseMediaUrl() {
         return (String) get("secure_base_media_url");
@@ -368,8 +368,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Secure base static URL for the store
-    */
+     * Secure base static URL for the store
+     */
 
     public String getSecureBaseStaticUrl() {
         return (String) get("secure_base_static_url");
@@ -381,8 +381,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Secure base URL for the store
-    */
+     * Secure base URL for the store
+     */
 
     public String getSecureBaseUrl() {
         return (String) get("secure_base_url");
@@ -394,8 +394,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * Timezone of the store
-    */
+     * Timezone of the store
+     */
 
     public String getTimezone() {
         return (String) get("timezone");
@@ -407,8 +407,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * The ID number assigned to the website store belongs
-    */
+     * The ID number assigned to the website store belongs
+     */
 
     public Integer getWebsiteId() {
         return (Integer) get("website_id");
@@ -420,8 +420,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-    * The unit of weight
-    */
+     * The unit of weight
+     */
 
     public String getWeightUnit() {
         return (String) get("weight_unit");

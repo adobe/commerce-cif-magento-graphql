@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,9 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* A virtual product is non-tangible product that does not require shipping and is not kept in
-* inventory
-*/
+ * A virtual product is non-tangible product that does not require shipping and is not kept in
+ * inventory
+ */
 public class VirtualProduct extends AbstractResponse<VirtualProduct> implements CustomizableProductInterface, ProductInterface {
     public VirtualProduct() {
     }
@@ -574,8 +574,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The attribute set assigned to the product
-    */
+     * The attribute set assigned to the product
+     */
 
     public Integer getAttributeSetId() {
         return (Integer) get("attribute_set_id");
@@ -587,8 +587,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * Canonical URL
-    */
+     * Canonical URL
+     */
 
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
@@ -600,8 +600,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The categories assigned to a product
-    */
+     * The categories assigned to a product
+     */
 
     public List<CategoryInterface> getCategories() {
         return (List<CategoryInterface>) get("categories");
@@ -622,8 +622,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The product&#39;s country of origin
-    */
+     * The product&#39;s country of origin
+     */
 
     public String getCountryOfManufacture() {
         return (String) get("country_of_manufacture");
@@ -635,8 +635,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * Timestamp indicating when the product was created
-    */
+     * Timestamp indicating when the product was created
+     */
 
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -648,8 +648,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * Detailed information about the product. The value can include simple HTML tags.
-    */
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
 
     public String getDescription() {
         return (String) get("description");
@@ -661,8 +661,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * Indicates whether a gift message is available
-    */
+     * Indicates whether a gift message is available
+     */
 
     public String getGiftMessageAvailable() {
         return (String) get("gift_message_available");
@@ -674,8 +674,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The ID number assigned to the product
-    */
+     * The ID number assigned to the product
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -687,8 +687,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The relative path to the main image on the product page
-    */
+     * The relative path to the main image on the product page
+     */
 
     public String getImage() {
         return (String) get("image");
@@ -700,8 +700,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The label assigned to a product image
-    */
+     * The label assigned to a product image
+     */
 
     public String getImageLabel() {
         return (String) get("image_label");
@@ -713,8 +713,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * A number representing the product&#39;s manufacturer
-    */
+     * A number representing the product&#39;s manufacturer
+     */
 
     public Integer getManufacturer() {
         return (Integer) get("manufacturer");
@@ -726,8 +726,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * An array of MediaGalleryEntry objects
-    */
+     * An array of MediaGalleryEntry objects
+     */
 
     public List<MediaGalleryEntry> getMediaGalleryEntries() {
         return (List<MediaGalleryEntry>) get("media_gallery_entries");
@@ -739,8 +739,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * A brief overview of the product for search results listings, maximum 255 characters
-    */
+     * A brief overview of the product for search results listings, maximum 255 characters
+     */
 
     public String getMetaDescription() {
         return (String) get("meta_description");
@@ -752,8 +752,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * A comma-separated list of keywords that are visible only to search engines
-    */
+     * A comma-separated list of keywords that are visible only to search engines
+     */
 
     public String getMetaKeyword() {
         return (String) get("meta_keyword");
@@ -765,8 +765,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * A string that is displayed in the title bar and tab of the browser and in search results lists
-    */
+     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     */
 
     public String getMetaTitle() {
         return (String) get("meta_title");
@@ -778,8 +778,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The product name. Customers use this name to identify the product.
-    */
+     * The product name. Customers use this name to identify the product.
+     */
 
     public String getName() {
         return (String) get("name");
@@ -791,9 +791,9 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The beginning date for new product listings, and determines if the product is featured as a new
-    * product
-    */
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product
+     */
 
     public String getNewFromDate() {
         return (String) get("new_from_date");
@@ -805,8 +805,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The end date for new product listings
-    */
+     * The end date for new product listings
+     */
 
     public String getNewToDate() {
         return (String) get("new_to_date");
@@ -818,8 +818,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * Product stock only x left count
-    */
+     * Product stock only x left count
+     */
 
     public Double getOnlyXLeftInStock() {
         return (Double) get("only_x_left_in_stock");
@@ -831,8 +831,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * An array of options for a customizable product
-    */
+     * An array of options for a customizable product
+     */
 
     public List<CustomizableOptionInterface> getOptions() {
         return (List<CustomizableOptionInterface>) get("options");
@@ -844,8 +844,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * If the product has multiple options, determines where they appear on the product page
-    */
+     * If the product has multiple options, determines where they appear on the product page
+     */
 
     public String getOptionsContainer() {
         return (String) get("options_container");
@@ -857,8 +857,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * A ProductPrices object, indicating the price of an item
-    */
+     * A ProductPrices object, indicating the price of an item
+     */
 
     public ProductPrices getPrice() {
         return (ProductPrices) get("price");
@@ -870,8 +870,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * An array of ProductLinks objects
-    */
+     * An array of ProductLinks objects
+     */
 
     public List<ProductLinksInterface> getProductLinks() {
         return (List<ProductLinksInterface>) get("product_links");
@@ -883,8 +883,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * A short description of the product. Its use depends on the theme.
-    */
+     * A short description of the product. Its use depends on the theme.
+     */
 
     public String getShortDescription() {
         return (String) get("short_description");
@@ -896,8 +896,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * A number or code assigned to a product to identify the product, options, price, and manufacturer
-    */
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     */
 
     public String getSku() {
         return (String) get("sku");
@@ -909,8 +909,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The relative path to the small image, which is used on catalog pages
-    */
+     * The relative path to the small image, which is used on catalog pages
+     */
 
     public String getSmallImage() {
         return (String) get("small_image");
@@ -922,8 +922,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The label assigned to a product&#39;s small image
-    */
+     * The label assigned to a product&#39;s small image
+     */
 
     public String getSmallImageLabel() {
         return (String) get("small_image_label");
@@ -935,8 +935,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The beginning date that a product has a special price
-    */
+     * The beginning date that a product has a special price
+     */
 
     public String getSpecialFromDate() {
         return (String) get("special_from_date");
@@ -948,8 +948,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The discounted price of the product
-    */
+     * The discounted price of the product
+     */
 
     public Double getSpecialPrice() {
         return (Double) get("special_price");
@@ -961,8 +961,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The end date that a product has a special price
-    */
+     * The end date that a product has a special price
+     */
 
     public String getSpecialToDate() {
         return (String) get("special_to_date");
@@ -974,8 +974,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * Stock status of the product
-    */
+     * Stock status of the product
+     */
 
     public ProductStockStatus getStockStatus() {
         return (ProductStockStatus) get("stock_status");
@@ -987,8 +987,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The file name of a swatch image
-    */
+     * The file name of a swatch image
+     */
 
     public String getSwatchImage() {
         return (String) get("swatch_image");
@@ -1000,8 +1000,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The relative path to the product&#39;s thumbnail image
-    */
+     * The relative path to the product&#39;s thumbnail image
+     */
 
     public String getThumbnail() {
         return (String) get("thumbnail");
@@ -1013,8 +1013,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The label assigned to a product&#39;s thumbnail image
-    */
+     * The label assigned to a product&#39;s thumbnail image
+     */
 
     public String getThumbnailLabel() {
         return (String) get("thumbnail_label");
@@ -1026,8 +1026,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The price when tier pricing is in effect and the items purchased threshold has been reached
-    */
+     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     */
 
     public Double getTierPrice() {
         return (Double) get("tier_price");
@@ -1039,8 +1039,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * An array of ProductTierPrices objects
-    */
+     * An array of ProductTierPrices objects
+     */
 
     public List<ProductTierPrices> getTierPrices() {
         return (List<ProductTierPrices>) get("tier_prices");
@@ -1052,8 +1052,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * One of simple, virtual, bundle, downloadable, grouped, or configurable
-    */
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     */
 
     public String getTypeId() {
         return (String) get("type_id");
@@ -1065,8 +1065,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * Timestamp indicating when the product was updated
-    */
+     * Timestamp indicating when the product was updated
+     */
 
     public String getUpdatedAt() {
         return (String) get("updated_at");
@@ -1078,8 +1078,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The part of the URL that identifies the product
-    */
+     * The part of the URL that identifies the product
+     */
 
     public String getUrlKey() {
         return (String) get("url_key");
@@ -1091,8 +1091,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * The part of the URL that precedes the url_key
-    */
+     * The part of the URL that precedes the url_key
+     */
 
     public String getUrlPath() {
         return (String) get("url_path");
@@ -1104,8 +1104,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-    * An array of websites in which the product is available
-    */
+     * An array of websites in which the product is available
+     */
 
     public List<Website> getWebsites() {
         return (List<Website>) get("websites");

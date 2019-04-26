@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -22,9 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
-* the video
-*/
+ * ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
+ * the video
+ */
 public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<ProductMediaGalleryEntriesVideoContent> {
     public ProductMediaGalleryEntriesVideoContent() {
     }
@@ -116,8 +116,8 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-    * Must be external-video
-    */
+     * Must be external-video
+     */
 
     public String getMediaType() {
         return (String) get("media_type");
@@ -129,8 +129,8 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-    * A description of the video
-    */
+     * A description of the video
+     */
 
     public String getVideoDescription() {
         return (String) get("video_description");
@@ -142,8 +142,8 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-    * Optional data about the video
-    */
+     * Optional data about the video
+     */
 
     public String getVideoMetadata() {
         return (String) get("video_metadata");
@@ -155,8 +155,8 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-    * Describes the video source
-    */
+     * Describes the video source
+     */
 
     public String getVideoProvider() {
         return (String) get("video_provider");
@@ -168,8 +168,8 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-    * The title of the video
-    */
+     * The title of the video
+     */
 
     public String getVideoTitle() {
         return (String) get("video_title");
@@ -181,8 +181,8 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-    * The URL to the video
-    */
+     * The URL to the video
+     */
 
     public String getVideoUrl() {
         return (String) get("video_url");

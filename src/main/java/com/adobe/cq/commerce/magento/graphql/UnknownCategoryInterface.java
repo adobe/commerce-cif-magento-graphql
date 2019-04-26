@@ -1,16 +1,16 @@
 /*******************************************************************************
-*
-*    Copyright 2019 Adobe. All rights reserved.
-*    This file is licensed to you under the Apache License, Version 2.0 (the "License");
-*    you may not use this file except in compliance with the License. You may obtain a copy
-*    of the License at http://www.apache.org/licenses/LICENSE-2.0
-*
-*    Unless required by applicable law or agreed to in writing, software distributed under
-*    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-*    OF ANY KIND, either express or implied. See the License for the specific language
-*    governing permissions and limitations under the License.
-*
-******************************************************************************/
+ *
+ *    Copyright 2019 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
 
 package com.adobe.cq.commerce.magento.graphql;
 
@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* CategoryInterface contains the full set of attributes that can be returned in a category search
-*/
+ * CategoryInterface contains the full set of attributes that can be returned in a category search
+ */
 public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryInterface> implements CategoryInterface {
     public UnknownCategoryInterface() {
     }
@@ -379,8 +379,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * Breadcrumbs, parent categories info
-    */
+     * Breadcrumbs, parent categories info
+     */
 
     public List<Breadcrumb> getBreadcrumbs() {
         return (List<Breadcrumb>) get("breadcrumbs");
@@ -401,8 +401,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * Timestamp indicating when the category was created
-    */
+     * Timestamp indicating when the category was created
+     */
 
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -414,8 +414,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * The attribute to use for sorting
-    */
+     * The attribute to use for sorting
+     */
 
     public String getDefaultSortBy() {
         return (String) get("default_sort_by");
@@ -427,8 +427,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * An optional description of the category
-    */
+     * An optional description of the category
+     */
 
     public String getDescription() {
         return (String) get("description");
@@ -458,8 +458,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * An ID that uniquely identifies the category
-    */
+     * An ID that uniquely identifies the category
+     */
 
     public Integer getId() {
         return (Integer) get("id");
@@ -507,8 +507,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * Indicates the depth of the category within the tree
-    */
+     * Indicates the depth of the category within the tree
+     */
 
     public Integer getLevel() {
         return (Integer) get("level");
@@ -547,8 +547,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * The display name of the category
-    */
+     * The display name of the category
+     */
 
     public String getName() {
         return (String) get("name");
@@ -560,8 +560,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * Category Path
-    */
+     * Category Path
+     */
 
     public String getPath() {
         return (String) get("path");
@@ -573,8 +573,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * Category path in store
-    */
+     * Category path in store
+     */
 
     public String getPathInStore() {
         return (String) get("path_in_store");
@@ -586,8 +586,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * The position of the category relative to other categories at the same level in tree
-    */
+     * The position of the category relative to other categories at the same level in tree
+     */
 
     public Integer getPosition() {
         return (Integer) get("position");
@@ -599,8 +599,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * The number of products in the category
-    */
+     * The number of products in the category
+     */
 
     public Integer getProductCount() {
         return (Integer) get("product_count");
@@ -612,8 +612,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * The list of products assigned to the category
-    */
+     * The list of products assigned to the category
+     */
 
     public CategoryProducts getProducts() {
         return (CategoryProducts) get("products");
@@ -625,8 +625,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * Timestamp indicating when the category was updated
-    */
+     * Timestamp indicating when the category was updated
+     */
 
     public String getUpdatedAt() {
         return (String) get("updated_at");
@@ -638,8 +638,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * The url key assigned to the category
-    */
+     * The url key assigned to the category
+     */
 
     public String getUrlKey() {
         return (String) get("url_key");
@@ -651,8 +651,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-    * The url path assigned to the category
-    */
+     * The url path assigned to the category
+     */
 
     public String getUrlPath() {
         return (String) get("url_path");
