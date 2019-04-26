@@ -13,6 +13,20 @@ The `magentoXYZ` part refers to the version of the Magento GraphQL API, for exam
 
 For example, the first released version of this artifact is `1.0.0-magento230`, which means that it uses the GraphQL schema from Magento `2.3.0` and is the first major version of that artifact.
 
+## Using the query builders and parsing responses
+
+To use this library in your project, just add the maven dependency:
+
+```xml
+<dependency>
+    <groupId>com.adobe.commerce.cif</groupId>
+    <artifactId>magento-graphql</artifactId>
+    <version>...</version>
+</dependency>
+```
+
+You can check some examples to create GraphQL queries and parse the JSON responses in the [unit tests](src/test/java/com/adobe/cq/commerce/magento/graphql/). In addition, you can use our generic [GraphQL client bundle for AEM](https://github.com/adobe/commerce-cif-graphql-client) to send the queries.
+
 ### Contributing
  
 Contributions are welcomed! Read the [Contributing Guide](.github/CONTRIBUTING.md) for more information.

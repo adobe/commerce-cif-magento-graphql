@@ -17,7 +17,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.adobe.commerce.cif</groupId>
     <artifactId>magento-graphql</artifactId>
-    <version>1.0.0-magento230-SNAPSHOT</version>
+    <version>0.9.0-magento230-SNAPSHOT</version>
     <packaging>bundle</packaging>
     
     <name>Magento GraphQL data models and query builders</name>
@@ -66,6 +66,7 @@
                     <instructions>
                         <Export-Package>
                             com.adobe.cq.commerce.magento.graphql,
+                            com.adobe.cq.commerce.magento.graphql.gson,
                             com.shopify.graphql.support
                         </Export-Package>
                     </instructions>
@@ -111,11 +112,6 @@
                 <version>2.3.2</version>
                 <dependencies>
                     <dependency>
-                        <groupId>org.apache.maven.release</groupId>
-                        <artifactId>maven-release-oddeven-policy</artifactId>
-                        <version>2.5.1</version>
-                    </dependency>
-                    <dependency>
                         <groupId>org.apache.maven.scm</groupId>
                         <artifactId>maven-scm-provider-gitexe</artifactId>
                         <version>1.9.1</version>
@@ -125,8 +121,6 @@
                     <scmCommentPrefix>@releng [maven-scm] :</scmCommentPrefix>
                     <preparationGoals>clean install</preparationGoals>
                     <goals>deploy</goals>
-                    <projectVersionPolicyId>OddEvenVersionPolicy</projectVersionPolicyId>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
                     <pushChanges>false</pushChanges>
                 </configuration>
             </plugin>
