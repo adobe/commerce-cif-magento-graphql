@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* CustomerAddress contains detailed information about a customer's billing and shipping addresses
+* CustomerAddress contains detailed information about a customer&#39;s billing and shipping addresses
 */
 public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     CustomerAddressQuery(StringBuilder _queryBuilder) {
@@ -34,7 +34,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer's company
+    * The customer&#39;s company
     */
     public CustomerAddressQuery company() {
         startField("company");
@@ -43,7 +43,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer's country
+    * The customer&#39;s country
     */
     public CustomerAddressQuery countryId() {
         startField("country_id");
@@ -124,7 +124,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer's ZIP or postal code
+    * The customer&#39;s ZIP or postal code
     */
     public CustomerAddressQuery postcode() {
         startField("postcode");
@@ -191,7 +191,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-    * The customer's Tax/VAT number (for corporate customers)
+    * The customer&#39;s Tax/VAT number (for corporate customers)
     */
     public CustomerAddressQuery vatId() {
         startField("vat_id");

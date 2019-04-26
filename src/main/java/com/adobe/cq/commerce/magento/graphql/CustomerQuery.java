@@ -25,7 +25,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * An array containing the customer's shipping and billing addresses
+    * An array containing the customer&#39;s shipping and billing addresses
     */
     public CustomerQuery addresses(CustomerAddressQueryDefinition queryDef) {
         startField("addresses");
@@ -65,7 +65,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer's date of birth
+    * The customer&#39;s date of birth
     */
     public CustomerQuery dob() {
         startField("dob");
@@ -74,7 +74,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer's email address. Required
+    * The customer&#39;s email address. Required
     */
     public CustomerQuery email() {
         startField("email");
@@ -83,7 +83,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer's first name
+    * The customer&#39;s first name
     */
     public CustomerQuery firstname() {
         startField("firstname");
@@ -111,7 +111,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * Indicates whether the customer is subscribed to the company's newsletter
+    * Indicates whether the customer is subscribed to the company&#39;s newsletter
     */
     public CustomerQuery isSubscribed() {
         startField("is_subscribed");
@@ -120,7 +120,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer's family name
+    * The customer&#39;s family name
     */
     public CustomerQuery lastname() {
         startField("lastname");
@@ -129,7 +129,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer's middle name
+    * The customer&#39;s middle name
     */
     public CustomerQuery middlename() {
         startField("middlename");
@@ -156,7 +156,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-    * The customer's Tax/VAT number (for corporate customers)
+    * The customer&#39;s Tax/VAT number (for corporate customers)
     */
     public CustomerQuery taxvat() {
         startField("taxvat");

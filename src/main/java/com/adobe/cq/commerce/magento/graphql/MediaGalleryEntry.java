@@ -238,7 +238,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-    * The media item's position after it has been sorted
+    * The media item&#39;s position after it has been sorted
     */
 
     public Integer getPosition() {

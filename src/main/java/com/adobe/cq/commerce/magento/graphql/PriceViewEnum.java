@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
-* This enumeration defines whether a bundle product's price is displayed as the lowest possible value
+* This enumeration defines whether a bundle product&#39;s price is displayed as the lowest possible value
 * or as a range.
 */
 public enum PriceViewEnum {

@@ -83,7 +83,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-    * The media item's position after it has been sorted
+    * The media item&#39;s position after it has been sorted
     */
     public MediaGalleryEntryQuery position() {
         startField("position");

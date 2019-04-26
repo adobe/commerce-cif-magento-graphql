@@ -685,7 +685,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
-    * The product's country of origin
+    * The product&#39;s country of origin
     */
 
     public String getCountryOfManufacture() {
@@ -828,7 +828,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
-    * A number representing the product's manufacturer
+    * A number representing the product&#39;s manufacturer
     */
 
     public Integer getManufacturer() {
@@ -1037,7 +1037,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
-    * The label assigned to a product's small image
+    * The label assigned to a product&#39;s small image
     */
 
     public String getSmallImageLabel() {
@@ -1115,7 +1115,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
-    * The relative path to the product's thumbnail image
+    * The relative path to the product&#39;s thumbnail image
     */
 
     public String getThumbnail() {
@@ -1128,7 +1128,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
-    * The label assigned to a product's thumbnail image
+    * The label assigned to a product&#39;s thumbnail image
     */
 
     public String getThumbnailLabel() {

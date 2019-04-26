@@ -168,7 +168,6 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.1</version>
                 <configuration>
-                    <skip>true</skip> <!-- Fails because of some generated comments so we skip it -->
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <!-- Fixes JavaDoc build error with Java 11 -->
                     <source>8</source>

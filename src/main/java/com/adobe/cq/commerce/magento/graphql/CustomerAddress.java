@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* CustomerAddress contains detailed information about a customer's billing and shipping addresses
+* CustomerAddress contains detailed information about a customer&#39;s billing and shipping addresses
 */
 public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     public CustomerAddress() {
@@ -283,7 +283,7 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
-    * The customer's company
+    * The customer&#39;s company
     */
 
     public String getCompany() {
@@ -296,7 +296,7 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
-    * The customer's country
+    * The customer&#39;s country
     */
 
     public String getCountryId() {
@@ -413,7 +413,7 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
-    * The customer's ZIP or postal code
+    * The customer&#39;s ZIP or postal code
     */
 
     public String getPostcode() {
@@ -504,7 +504,7 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
-    * The customer's Tax/VAT number (for corporate customers)
+    * The customer&#39;s Tax/VAT number (for corporate customers)
     */
 
     public String getVatId() {

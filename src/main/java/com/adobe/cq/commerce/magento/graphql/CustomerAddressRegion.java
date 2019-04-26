@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
-* CustomerAddressRegion defines the customer's state or province
+* CustomerAddressRegion defines the customer&#39;s state or province
 */
 public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegion> {
     public CustomerAddressRegion() {

@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
-* CustomerAddressRegion defines the customer's state or province
+* CustomerAddressRegion defines the customer&#39;s state or province
 */
 public class CustomerAddressRegionQuery extends AbstractQuery<CustomerAddressRegionQuery> {
     CustomerAddressRegionQuery(StringBuilder _queryBuilder) {

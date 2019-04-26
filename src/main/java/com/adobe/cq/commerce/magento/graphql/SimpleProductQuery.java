@@ -62,7 +62,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-    * The product's country of origin
+    * The product&#39;s country of origin
     */
     public SimpleProductQuery countryOfManufacture() {
         startField("country_of_manufacture");
@@ -125,7 +125,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-    * A number representing the product's manufacturer
+    * A number representing the product&#39;s manufacturer
     */
     public SimpleProductQuery manufacturer() {
         startField("manufacturer");
@@ -286,7 +286,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-    * The label assigned to a product's small image
+    * The label assigned to a product&#39;s small image
     */
     public SimpleProductQuery smallImageLabel() {
         startField("small_image_label");
@@ -340,7 +340,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-    * The relative path to the product's thumbnail image
+    * The relative path to the product&#39;s thumbnail image
     */
     public SimpleProductQuery thumbnail() {
         startField("thumbnail");
@@ -349,7 +349,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-    * The label assigned to a product's thumbnail image
+    * The label assigned to a product&#39;s thumbnail image
     */
     public SimpleProductQuery thumbnailLabel() {
         startField("thumbnail_label");

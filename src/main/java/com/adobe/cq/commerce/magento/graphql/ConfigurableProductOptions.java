@@ -214,7 +214,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-    * This is the same as a product's id field
+    * This is the same as a product&#39;s id field
     */
 
     public Integer getProductId() {

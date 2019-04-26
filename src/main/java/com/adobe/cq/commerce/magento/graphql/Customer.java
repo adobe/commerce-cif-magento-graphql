@@ -226,7 +226,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * An array containing the customer's shipping and billing addresses
+    * An array containing the customer&#39;s shipping and billing addresses
     */
 
     public List<CustomerAddress> getAddresses() {
@@ -278,7 +278,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer's date of birth
+    * The customer&#39;s date of birth
     */
 
     public String getDob() {
@@ -291,7 +291,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer's email address. Required
+    * The customer&#39;s email address. Required
     */
 
     public String getEmail() {
@@ -304,7 +304,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer's first name
+    * The customer&#39;s first name
     */
 
     public String getFirstname() {
@@ -344,7 +344,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * Indicates whether the customer is subscribed to the company's newsletter
+    * Indicates whether the customer is subscribed to the company&#39;s newsletter
     */
 
     public Boolean getIsSubscribed() {
@@ -357,7 +357,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer's family name
+    * The customer&#39;s family name
     */
 
     public String getLastname() {
@@ -370,7 +370,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer's middle name
+    * The customer&#39;s middle name
     */
 
     public String getMiddlename() {
@@ -409,7 +409,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-    * The customer's Tax/VAT number (for corporate customers)
+    * The customer&#39;s Tax/VAT number (for corporate customers)
     */
 
     public String getTaxvat() {

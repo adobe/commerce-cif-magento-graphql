@@ -70,7 +70,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-    * This is the same as a product's id field
+    * This is the same as a product&#39;s id field
     */
     public ConfigurableProductOptionsQuery productId() {
         startField("product_id");

@@ -62,7 +62,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The product's country of origin
+    * The product&#39;s country of origin
     */
     public BundleProductQuery countryOfManufacture() {
         startField("country_of_manufacture");
@@ -165,7 +165,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * A number representing the product's manufacturer
+    * A number representing the product&#39;s manufacturer
     */
     public BundleProductQuery manufacturer() {
         startField("manufacturer");
@@ -344,7 +344,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The label assigned to a product's small image
+    * The label assigned to a product&#39;s small image
     */
     public BundleProductQuery smallImageLabel() {
         startField("small_image_label");
@@ -398,7 +398,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The relative path to the product's thumbnail image
+    * The relative path to the product&#39;s thumbnail image
     */
     public BundleProductQuery thumbnail() {
         startField("thumbnail");
@@ -407,7 +407,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-    * The label assigned to a product's thumbnail image
+    * The label assigned to a product&#39;s thumbnail image
     */
     public BundleProductQuery thumbnailLabel() {
         startField("thumbnail_label");
