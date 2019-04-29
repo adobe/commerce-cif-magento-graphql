@@ -15,13 +15,14 @@ For example, the first released version of this artifact is `1.0.0-magento230`, 
 
 ## Using the query builders and parsing responses
 
-To use this library in your project, just add the maven dependency:
+To use this library in your project, just add the following maven dependency to your project and install the bundle in your AEM instance:
 
 ```xml
 <dependency>
     <groupId>com.adobe.commerce.cif</groupId>
     <artifactId>magento-graphql</artifactId>
     <version>...</version>
+    <scope>provided</scope>
 </dependency>
 ```
 
