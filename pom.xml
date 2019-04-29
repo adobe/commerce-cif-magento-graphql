@@ -93,6 +93,7 @@
                         <exclude>README.md</exclude>
                         <exclude>src/test/resources/**/*</exclude>
                         <exclude>**/*.md</exclude>
+                        <exclude>.circleci/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -161,6 +162,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.1</version>
+                <executions>
+			        <execution>
+			            <id>attach-javadocs</id>
+			            <goals>
+			                 <goal>jar</goal>
+			            </goals>
+			        </execution>
+			    </executions>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <!-- Fixes JavaDoc build error with Java 11 -->
