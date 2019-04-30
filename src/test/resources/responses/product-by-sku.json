@@ -1,0 +1,32 @@
+{
+  "products": {
+    "items": [
+      {
+        "__typename": "SimpleProduct",
+        "id": 1,
+        "sku": "testSimpleProduct",
+        "name": "Test Simple Product",
+        "description": null,
+        "image": "/images/product/placeholder/image.jpg",
+        "thumbnail": "/images/product/placeholder/image.jpg",
+        "url_key": "test-simple-product",
+        "updated_at": "2019-03-29 08:20:40",
+        "created_at": "2019-03-29 08:20:40",
+        "price": {
+          "regularPrice": {
+            "amount": {
+              "currency": "USD",
+              "value": 22
+            }
+          }
+        },
+        "categories": [
+          {
+            "__typename": "CategoryTree",
+            "url_path": "test-category"
+          }
+        ]
+      }
+    ]
+  }
+}

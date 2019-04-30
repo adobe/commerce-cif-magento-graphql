@@ -1,0 +1,20 @@
+{
+  "category": {
+    "id": 2,
+    "name": "Default Category",
+    "url_path": null,
+    "product_count": 3,
+    "children_count": "1",
+    "children": [
+      {
+        "id": 3,
+        "name": "Test Category",
+        "url_path": "test-category",
+        "product_count": 3,
+        "children_count": "0",
+        "children": [
+        ]
+      }
+    ]
+  }
+}

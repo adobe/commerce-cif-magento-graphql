@@ -1,0 +1,60 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - restore_cache:
+          keys: 
+            - maven-repo-v1-{{ checksum "pom.xml" }}
+            - maven-repo-v1-
+      - run:
+          name: Build
+          command: |
+            java -version
+            mvn -v
+            mvn -B clean install -s .circleci/settings.xml
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-repo-v1-{{ checksum "pom.xml" }}
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/surefire-reports
+  release:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - restore_cache:
+          keys: 
+            - maven-repo-v1-{{ checksum "pom.xml" }}
+            - maven-repo-v1-
+      - run:
+          name: Release
+          # Only performs a 'mvn deploy' after the 'mvn release:prepare' because circleCI
+          # already checks out the git tag like 'mvn release:perform' would do. 
+          command: |
+            echo $GPG_PRIVATE_KEY | base64 --decode | gpg --batch --import
+            mvn -B -s .circleci/settings.xml clean deploy -P release-sign-artifacts
+            rm -rf /home/circleci/.gnupg
+
+# The 'release' workflow is trigged by the release tags committed by 'mvn release:prepare'
+workflows:
+  version: 2
+  build-and-release:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^magento-graphql-.*/
