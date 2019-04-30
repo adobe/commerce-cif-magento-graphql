@@ -122,7 +122,6 @@
                     <scmCommentPrefix>@releng [maven-scm] :</scmCommentPrefix>
                     <preparationGoals>clean install</preparationGoals>
                     <goals>deploy</goals>
-                    <pushChanges>false</pushChanges>
                 </configuration>
             </plugin>
 
@@ -134,7 +133,7 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
 
