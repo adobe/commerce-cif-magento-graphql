@@ -57,4 +57,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^magento-graphql-/
+              only: /^magento-graphql-.*/
