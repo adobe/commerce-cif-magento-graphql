@@ -82,8 +82,12 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     /**
      * Detailed information about the product. The value can include simple HTML tags.
      */
-    public DownloadableProductQuery description() {
+    public DownloadableProductQuery description(ComplexTextValueQueryDefinition queryDef) {
         startField("description");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ComplexTextValueQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -135,17 +139,12 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     /**
      * The relative path to the main image on the product page
      */
-    public DownloadableProductQuery image() {
+    public DownloadableProductQuery image(ProductImageQueryDefinition queryDef) {
         startField("image");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product image
-     */
-    public DownloadableProductQuery imageLabel() {
-        startField("image_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -305,8 +304,12 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     /**
      * A short description of the product. Its use depends on the theme.
      */
-    public DownloadableProductQuery shortDescription() {
+    public DownloadableProductQuery shortDescription(ComplexTextValueQueryDefinition queryDef) {
         startField("short_description");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ComplexTextValueQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -323,17 +326,12 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     /**
      * The relative path to the small image, which is used on catalog pages
      */
-    public DownloadableProductQuery smallImage() {
+    public DownloadableProductQuery smallImage(ProductImageQueryDefinition queryDef) {
         startField("small_image");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s small image
-     */
-    public DownloadableProductQuery smallImageLabel() {
-        startField("small_image_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -386,17 +384,12 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     /**
      * The relative path to the product&#39;s thumbnail image
      */
-    public DownloadableProductQuery thumbnail() {
+    public DownloadableProductQuery thumbnail(ProductImageQueryDefinition queryDef) {
         startField("thumbnail");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s thumbnail image
-     */
-    public DownloadableProductQuery thumbnailLabel() {
-        startField("thumbnail_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -455,6 +448,19 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
      */
     public DownloadableProductQuery urlPath() {
         startField("url_path");
+
+        return this;
+    }
+
+    /**
+     * URL rewrites list
+     */
+    public DownloadableProductQuery urlRewrites(UrlRewriteQueryDefinition queryDef) {
+        startField("url_rewrites");
+
+        _queryBuilder.append('{');
+        queryDef.define(new UrlRewriteQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

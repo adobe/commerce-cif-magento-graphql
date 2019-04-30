@@ -36,15 +36,13 @@ public interface ProductInterface {
 
     String getCreatedAt();
 
-    String getDescription();
+    ComplexTextValue getDescription();
 
     String getGiftMessageAvailable();
 
     Integer getId();
 
-    String getImage();
-
-    String getImageLabel();
+    ProductImage getImage();
 
     Integer getManufacturer();
 
@@ -70,13 +68,11 @@ public interface ProductInterface {
 
     List<ProductLinksInterface> getProductLinks();
 
-    String getShortDescription();
+    ComplexTextValue getShortDescription();
 
     String getSku();
 
-    String getSmallImage();
-
-    String getSmallImageLabel();
+    ProductImage getSmallImage();
 
     String getSpecialFromDate();
 
@@ -88,9 +84,7 @@ public interface ProductInterface {
 
     String getSwatchImage();
 
-    String getThumbnail();
-
-    String getThumbnailLabel();
+    ProductImage getThumbnail();
 
     Double getTierPrice();
 
@@ -103,6 +97,8 @@ public interface ProductInterface {
     String getUrlKey();
 
     String getUrlPath();
+
+    List<UrlRewrite> getUrlRewrites();
 
     List<Website> getWebsites();
 }

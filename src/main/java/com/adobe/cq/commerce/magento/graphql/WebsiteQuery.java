@@ -34,7 +34,7 @@ public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     }
 
     /**
-     * The default group id that the website has
+     * The default group ID that the website has
      */
     public WebsiteQuery defaultGroupId() {
         startField("default_group_id");
@@ -61,7 +61,7 @@ public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     }
 
     /**
-     * The website name. Websites use this name to identify it easyer.
+     * The website name. Websites use this name to identify it easier.
      */
     public WebsiteQuery name() {
         startField("name");

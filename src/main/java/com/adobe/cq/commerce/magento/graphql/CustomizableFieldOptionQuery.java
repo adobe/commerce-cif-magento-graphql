@@ -26,6 +26,15 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
     }
 
     /**
+     * Option ID
+     */
+    public CustomizableFieldOptionQuery optionId() {
+        startField("option_id");
+
+        return this;
+    }
+
+    /**
      * The Stock Keeping Unit of the base product
      */
     public CustomizableFieldOptionQuery productSku() {

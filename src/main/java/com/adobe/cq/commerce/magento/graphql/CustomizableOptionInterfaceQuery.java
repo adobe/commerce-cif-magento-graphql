@@ -28,6 +28,15 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     }
 
     /**
+     * Option ID
+     */
+    public CustomizableOptionInterfaceQuery optionId() {
+        startField("option_id");
+
+        return this;
+    }
+
+    /**
      * Indicates whether the option is required
      */
     public CustomizableOptionInterfaceQuery required() {

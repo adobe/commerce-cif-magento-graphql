@@ -34,6 +34,17 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "option_id": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "product_sku": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -105,6 +116,19 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
     }
 
     /**
+     * Option ID
+     */
+
+    public Integer getOptionId() {
+        return (Integer) get("option_id");
+    }
+
+    public CustomizableFileOption setOptionId(Integer arg) {
+        optimisticData.put(getKey("option_id"), arg);
+        return this;
+    }
+
+    /**
      * The Stock Keeping Unit of the base product
      */
 
@@ -171,6 +195,8 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "option_id": return false;
+
             case "product_sku": return false;
 
             case "required": return false;

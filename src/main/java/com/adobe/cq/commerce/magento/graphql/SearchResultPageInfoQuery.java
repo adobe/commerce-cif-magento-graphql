@@ -41,4 +41,13 @@ public class SearchResultPageInfoQuery extends AbstractQuery<SearchResultPageInf
 
         return this;
     }
+
+    /**
+     * Total pages
+     */
+    public SearchResultPageInfoQuery totalPages() {
+        startField("total_pages");
+
+        return this;
+    }
 }

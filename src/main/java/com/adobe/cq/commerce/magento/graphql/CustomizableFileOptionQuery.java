@@ -26,6 +26,15 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
     }
 
     /**
+     * Option ID
+     */
+    public CustomizableFileOptionQuery optionId() {
+        startField("option_id");
+
+        return this;
+    }
+
+    /**
      * The Stock Keeping Unit of the base product
      */
     public CustomizableFileOptionQuery productSku() {
