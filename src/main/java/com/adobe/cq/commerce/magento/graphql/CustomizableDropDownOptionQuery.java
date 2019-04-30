@@ -26,6 +26,15 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
     }
 
     /**
+     * Option ID
+     */
+    public CustomizableDropDownOptionQuery optionId() {
+        startField("option_id");
+
+        return this;
+    }
+
+    /**
      * Indicates whether the option is required
      */
     public CustomizableDropDownOptionQuery required() {

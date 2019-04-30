@@ -55,6 +55,17 @@ public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo>
                     break;
                 }
 
+                case "total_pages": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -96,11 +107,26 @@ public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo>
         return this;
     }
 
+    /**
+     * Total pages
+     */
+
+    public Integer getTotalPages() {
+        return (Integer) get("total_pages");
+    }
+
+    public SearchResultPageInfo setTotalPages(Integer arg) {
+        optimisticData.put(getKey("total_pages"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "current_page": return false;
 
             case "page_size": return false;
+
+            case "total_pages": return false;
 
             default: return false;
         }

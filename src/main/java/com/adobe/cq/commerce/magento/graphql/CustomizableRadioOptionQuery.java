@@ -26,6 +26,15 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
     }
 
     /**
+     * Option ID
+     */
+    public CustomizableRadioOptionQuery optionId() {
+        startField("option_id");
+
+        return this;
+    }
+
+    /**
      * Indicates whether the option is required
      */
     public CustomizableRadioOptionQuery required() {

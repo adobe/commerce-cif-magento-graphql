@@ -22,6 +22,8 @@ package com.adobe.cq.commerce.magento.graphql;
 public interface CustomizableOptionInterface {
     String getGraphQlTypeName();
 
+    Integer getOptionId();
+
     Boolean getRequired();
 
     Integer getSortOrder();

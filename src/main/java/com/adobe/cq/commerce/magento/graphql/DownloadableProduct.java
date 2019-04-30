@@ -112,9 +112,9 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                 }
 
                 case "description": {
-                    String optional1 = null;
+                    ComplexTextValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ComplexTextValue(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -187,20 +187,9 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                 }
 
                 case "image": {
-                    String optional1 = null;
+                    ProductImage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "image_label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ProductImage(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -404,9 +393,9 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                 }
 
                 case "short_description": {
-                    String optional1 = null;
+                    ComplexTextValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ComplexTextValue(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -426,20 +415,9 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                 }
 
                 case "small_image": {
-                    String optional1 = null;
+                    ProductImage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "small_image_label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ProductImage(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -503,20 +481,9 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                 }
 
                 case "thumbnail": {
-                    String optional1 = null;
+                    ProductImage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "thumbnail_label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ProductImage(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -593,6 +560,27 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "url_rewrites": {
+                    List<UrlRewrite> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<UrlRewrite> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            UrlRewrite optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new UrlRewrite(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -714,11 +702,11 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
      * Detailed information about the product. The value can include simple HTML tags.
      */
 
-    public String getDescription() {
-        return (String) get("description");
+    public ComplexTextValue getDescription() {
+        return (ComplexTextValue) get("description");
     }
 
-    public DownloadableProduct setDescription(String arg) {
+    public DownloadableProduct setDescription(ComplexTextValue arg) {
         optimisticData.put(getKey("description"), arg);
         return this;
     }
@@ -779,25 +767,12 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
      * The relative path to the main image on the product page
      */
 
-    public String getImage() {
-        return (String) get("image");
+    public ProductImage getImage() {
+        return (ProductImage) get("image");
     }
 
-    public DownloadableProduct setImage(String arg) {
+    public DownloadableProduct setImage(ProductImage arg) {
         optimisticData.put(getKey("image"), arg);
-        return this;
-    }
-
-    /**
-     * The label assigned to a product image
-     */
-
-    public String getImageLabel() {
-        return (String) get("image_label");
-    }
-
-    public DownloadableProduct setImageLabel(String arg) {
-        optimisticData.put(getKey("image_label"), arg);
         return this;
     }
 
@@ -1001,11 +976,11 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
      * A short description of the product. Its use depends on the theme.
      */
 
-    public String getShortDescription() {
-        return (String) get("short_description");
+    public ComplexTextValue getShortDescription() {
+        return (ComplexTextValue) get("short_description");
     }
 
-    public DownloadableProduct setShortDescription(String arg) {
+    public DownloadableProduct setShortDescription(ComplexTextValue arg) {
         optimisticData.put(getKey("short_description"), arg);
         return this;
     }
@@ -1027,25 +1002,12 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
      * The relative path to the small image, which is used on catalog pages
      */
 
-    public String getSmallImage() {
-        return (String) get("small_image");
+    public ProductImage getSmallImage() {
+        return (ProductImage) get("small_image");
     }
 
-    public DownloadableProduct setSmallImage(String arg) {
+    public DownloadableProduct setSmallImage(ProductImage arg) {
         optimisticData.put(getKey("small_image"), arg);
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s small image
-     */
-
-    public String getSmallImageLabel() {
-        return (String) get("small_image_label");
-    }
-
-    public DownloadableProduct setSmallImageLabel(String arg) {
-        optimisticData.put(getKey("small_image_label"), arg);
         return this;
     }
 
@@ -1118,25 +1080,12 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
      * The relative path to the product&#39;s thumbnail image
      */
 
-    public String getThumbnail() {
-        return (String) get("thumbnail");
+    public ProductImage getThumbnail() {
+        return (ProductImage) get("thumbnail");
     }
 
-    public DownloadableProduct setThumbnail(String arg) {
+    public DownloadableProduct setThumbnail(ProductImage arg) {
         optimisticData.put(getKey("thumbnail"), arg);
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s thumbnail image
-     */
-
-    public String getThumbnailLabel() {
-        return (String) get("thumbnail_label");
-    }
-
-    public DownloadableProduct setThumbnailLabel(String arg) {
-        optimisticData.put(getKey("thumbnail_label"), arg);
         return this;
     }
 
@@ -1219,6 +1168,19 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
+     * URL rewrites list
+     */
+
+    public List<UrlRewrite> getUrlRewrites() {
+        return (List<UrlRewrite>) get("url_rewrites");
+    }
+
+    public DownloadableProduct setUrlRewrites(List<UrlRewrite> arg) {
+        optimisticData.put(getKey("url_rewrites"), arg);
+        return this;
+    }
+
+    /**
      * An array of websites in which the product is available
      */
 
@@ -1245,7 +1207,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
             case "created_at": return false;
 
-            case "description": return false;
+            case "description": return true;
 
             case "downloadable_product_links": return true;
 
@@ -1255,9 +1217,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
             case "id": return false;
 
-            case "image": return false;
-
-            case "image_label": return false;
+            case "image": return true;
 
             case "links_purchased_separately": return false;
 
@@ -1289,13 +1249,11 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
             case "product_links": return false;
 
-            case "short_description": return false;
+            case "short_description": return true;
 
             case "sku": return false;
 
-            case "small_image": return false;
-
-            case "small_image_label": return false;
+            case "small_image": return true;
 
             case "special_from_date": return false;
 
@@ -1307,9 +1265,7 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
             case "swatch_image": return false;
 
-            case "thumbnail": return false;
-
-            case "thumbnail_label": return false;
+            case "thumbnail": return true;
 
             case "tier_price": return false;
 
@@ -1322,6 +1278,8 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
             case "url_key": return false;
 
             case "url_path": return false;
+
+            case "url_rewrites": return true;
 
             case "websites": return true;
 

@@ -85,8 +85,12 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * Detailed information about the product. The value can include simple HTML tags.
      */
-    public ProductInterfaceQuery description() {
+    public ProductInterfaceQuery description(ComplexTextValueQueryDefinition queryDef) {
         startField("description");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ComplexTextValueQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -112,17 +116,12 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * The relative path to the main image on the product page
      */
-    public ProductInterfaceQuery image() {
+    public ProductInterfaceQuery image(ProductImageQueryDefinition queryDef) {
         startField("image");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product image
-     */
-    public ProductInterfaceQuery imageLabel() {
-        startField("image_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -251,8 +250,12 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * A short description of the product. Its use depends on the theme.
      */
-    public ProductInterfaceQuery shortDescription() {
+    public ProductInterfaceQuery shortDescription(ComplexTextValueQueryDefinition queryDef) {
         startField("short_description");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ComplexTextValueQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -269,17 +272,12 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * The relative path to the small image, which is used on catalog pages
      */
-    public ProductInterfaceQuery smallImage() {
+    public ProductInterfaceQuery smallImage(ProductImageQueryDefinition queryDef) {
         startField("small_image");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s small image
-     */
-    public ProductInterfaceQuery smallImageLabel() {
-        startField("small_image_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -332,17 +330,12 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * The relative path to the product&#39;s thumbnail image
      */
-    public ProductInterfaceQuery thumbnail() {
+    public ProductInterfaceQuery thumbnail(ProductImageQueryDefinition queryDef) {
         startField("thumbnail");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s thumbnail image
-     */
-    public ProductInterfaceQuery thumbnailLabel() {
-        startField("thumbnail_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -401,6 +394,19 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
      */
     public ProductInterfaceQuery urlPath() {
         startField("url_path");
+
+        return this;
+    }
+
+    /**
+     * URL rewrites list
+     */
+    public ProductInterfaceQuery urlRewrites(UrlRewriteQueryDefinition queryDef) {
+        startField("url_rewrites");
+
+        _queryBuilder.append('{');
+        queryDef.define(new UrlRewriteQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

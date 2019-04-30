@@ -128,7 +128,7 @@ public class Website extends AbstractResponse<Website> {
     }
 
     /**
-     * The default group id that the website has
+     * The default group ID that the website has
      */
 
     public String getDefaultGroupId() {
@@ -167,7 +167,7 @@ public class Website extends AbstractResponse<Website> {
     }
 
     /**
-     * The website name. Websites use this name to identify it easyer.
+     * The website name. Websites use this name to identify it easier.
      */
 
     public String getName() {

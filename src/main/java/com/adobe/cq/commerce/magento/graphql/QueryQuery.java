@@ -166,6 +166,77 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
+     * The countries query provides information for all countries.
+     */
+    public QueryQuery countries(CountryQueryDefinition queryDef) {
+        startField("countries");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CountryQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class CountryArguments extends Arguments {
+        CountryArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public CountryArguments id(String value) {
+            if (value != null) {
+                startArgument("id");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
+            }
+            return this;
+        }
+    }
+
+    public interface CountryArgumentsDefinition {
+        void define(CountryArguments args);
+    }
+
+    /**
+     * The countries query provides information for a single country.
+     */
+    public QueryQuery country(CountryQueryDefinition queryDef) {
+        return country(args -> {}, queryDef);
+    }
+
+    /**
+     * The countries query provides information for a single country.
+     */
+    public QueryQuery country(CountryArgumentsDefinition argsDef, CountryQueryDefinition queryDef) {
+        startField("country");
+
+        CountryArguments args = new CountryArguments(_queryBuilder);
+        argsDef.define(args);
+        CountryArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CountryQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The currency query returns information about store currency.
+     */
+    public QueryQuery currency(CurrencyQueryDefinition queryDef) {
+        startField("currency");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CurrencyQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
      * type
      */
@@ -201,6 +272,32 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CustomerQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The query returns the contents of a customer&#39;s downloadable products
+     */
+    public QueryQuery customerDownloadableProducts(CustomerDownloadableProductsQueryDefinition queryDef) {
+        startField("customerDownloadableProducts");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerDownloadableProductsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * List of customer orders
+     */
+    public QueryQuery customerOrders(CustomerOrdersQueryDefinition queryDef) {
+        startField("customerOrders");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerOrdersQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -312,7 +409,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The urlResolver query returns the canonical URL for a specified product, category or CMS page
+     * The urlResolver query returns the relative URL for a specified product, category or CMS page
      */
     public QueryQuery urlResolver(String url, EntityUrlQueryDefinition queryDef) {
         startField("urlResolver");
@@ -324,6 +421,19 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new EntityUrlQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The wishlist query returns the contents of a customer&#39;s wish list
+     */
+    public QueryQuery wishlist(WishlistOutputQueryDefinition queryDef) {
+        startField("wishlist");
+
+        _queryBuilder.append('{');
+        queryDef.define(new WishlistOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

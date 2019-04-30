@@ -26,6 +26,15 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
     }
 
     /**
+     * Option ID
+     */
+    public CustomizableDateOptionQuery optionId() {
+        startField("option_id");
+
+        return this;
+    }
+
+    /**
      * The Stock Keeping Unit of the base product
      */
     public CustomizableDateOptionQuery productSku() {

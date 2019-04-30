@@ -17,7 +17,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.adobe.commerce.cif</groupId>
     <artifactId>magento-graphql</artifactId>
-    <version>1.0.1-magento230-SNAPSHOT</version>
+    <version>2.0.0-magento231-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <name>Magento GraphQL data models and query builders</name>
@@ -74,6 +74,9 @@
                 <executions>
                     <execution>
                         <id>baseline</id>
+                        <goals>
+                            <goal>baseline</goal>
+                        </goals>
                         <configuration>
                             <logResults>false</logResults>
                         </configuration>

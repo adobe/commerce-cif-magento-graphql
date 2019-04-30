@@ -68,6 +68,27 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
                     break;
                 }
 
+                case "custom_attributes": {
+                    List<CustomerAddressAttribute> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<CustomerAddressAttribute> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            CustomerAddressAttribute optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new CustomerAddressAttribute(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "customer_id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -94,6 +115,27 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
                     Boolean optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "extension_attributes": {
+                    List<CustomerAddressAttribute> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<CustomerAddressAttribute> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            CustomerAddressAttribute optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new CustomerAddressAttribute(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -309,6 +351,19 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
+     * Address custom attributes
+     */
+
+    public List<CustomerAddressAttribute> getCustomAttributes() {
+        return (List<CustomerAddressAttribute>) get("custom_attributes");
+    }
+
+    public CustomerAddress setCustomAttributes(List<CustomerAddressAttribute> arg) {
+        optimisticData.put(getKey("custom_attributes"), arg);
+        return this;
+    }
+
+    /**
      * The customer ID
      */
 
@@ -344,6 +399,19 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
 
     public CustomerAddress setDefaultShipping(Boolean arg) {
         optimisticData.put(getKey("default_shipping"), arg);
+        return this;
+    }
+
+    /**
+     * Address extension attributes
+     */
+
+    public List<CustomerAddressAttribute> getExtensionAttributes() {
+        return (List<CustomerAddressAttribute>) get("extension_attributes");
+    }
+
+    public CustomerAddress setExtensionAttributes(List<CustomerAddressAttribute> arg) {
+        optimisticData.put(getKey("extension_attributes"), arg);
         return this;
     }
 
@@ -524,11 +592,15 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
 
             case "country_id": return false;
 
+            case "custom_attributes": return true;
+
             case "customer_id": return false;
 
             case "default_billing": return false;
 
             case "default_shipping": return false;
+
+            case "extension_attributes": return true;
 
             case "fax": return false;
 

@@ -34,6 +34,17 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "option_id": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "required": {
                     Boolean optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -116,6 +127,19 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
     }
 
     /**
+     * Option ID
+     */
+
+    public Integer getOptionId() {
+        return (Integer) get("option_id");
+    }
+
+    public UnknownCustomizableOptionInterface setOptionId(Integer arg) {
+        optimisticData.put(getKey("option_id"), arg);
+        return this;
+    }
+
+    /**
      * Indicates whether the option is required
      */
 
@@ -156,6 +180,8 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "option_id": return false;
+
             case "required": return false;
 
             case "sort_order": return false;

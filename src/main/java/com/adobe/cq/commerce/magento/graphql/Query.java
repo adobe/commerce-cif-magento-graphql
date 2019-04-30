@@ -14,6 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.JsonElement;
@@ -66,6 +68,49 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "countries": {
+                    List<Country> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<Country> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            Country optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new Country(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "country": {
+                    Country optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Country(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "currency": {
+                    Currency optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Currency(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "customAttributeMetadata": {
                     CustomAttributeMetadata optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -81,6 +126,28 @@ public class Query extends AbstractResponse<Query> {
                     Customer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new Customer(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "customerDownloadableProducts": {
+                    CustomerDownloadableProducts optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CustomerDownloadableProducts(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "customerOrders": {
+                    CustomerOrders optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CustomerOrders(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -114,6 +181,17 @@ public class Query extends AbstractResponse<Query> {
                     EntityUrl optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new EntityUrl(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "wishlist": {
+                    WishlistOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new WishlistOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -172,6 +250,45 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * The countries query provides information for all countries.
+     */
+
+    public List<Country> getCountries() {
+        return (List<Country>) get("countries");
+    }
+
+    public Query setCountries(List<Country> arg) {
+        optimisticData.put(getKey("countries"), arg);
+        return this;
+    }
+
+    /**
+     * The countries query provides information for a single country.
+     */
+
+    public Country getCountry() {
+        return (Country) get("country");
+    }
+
+    public Query setCountry(Country arg) {
+        optimisticData.put(getKey("country"), arg);
+        return this;
+    }
+
+    /**
+     * The currency query returns information about store currency.
+     */
+
+    public Currency getCurrency() {
+        return (Currency) get("currency");
+    }
+
+    public Query setCurrency(Currency arg) {
+        optimisticData.put(getKey("currency"), arg);
+        return this;
+    }
+
+    /**
      * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
      * type
      */
@@ -195,6 +312,32 @@ public class Query extends AbstractResponse<Query> {
 
     public Query setCustomer(Customer arg) {
         optimisticData.put(getKey("customer"), arg);
+        return this;
+    }
+
+    /**
+     * The query returns the contents of a customer&#39;s downloadable products
+     */
+
+    public CustomerDownloadableProducts getCustomerDownloadableProducts() {
+        return (CustomerDownloadableProducts) get("customerDownloadableProducts");
+    }
+
+    public Query setCustomerDownloadableProducts(CustomerDownloadableProducts arg) {
+        optimisticData.put(getKey("customerDownloadableProducts"), arg);
+        return this;
+    }
+
+    /**
+     * List of customer orders
+     */
+
+    public CustomerOrders getCustomerOrders() {
+        return (CustomerOrders) get("customerOrders");
+    }
+
+    public Query setCustomerOrders(CustomerOrders arg) {
+        optimisticData.put(getKey("customerOrders"), arg);
         return this;
     }
 
@@ -226,7 +369,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The urlResolver query returns the canonical URL for a specified product, category or CMS page
+     * The urlResolver query returns the relative URL for a specified product, category or CMS page
      */
 
     public EntityUrl getUrlResolver() {
@@ -238,6 +381,19 @@ public class Query extends AbstractResponse<Query> {
         return this;
     }
 
+    /**
+     * The wishlist query returns the contents of a customer&#39;s wish list
+     */
+
+    public WishlistOutput getWishlist() {
+        return (WishlistOutput) get("wishlist");
+    }
+
+    public Query setWishlist(WishlistOutput arg) {
+        optimisticData.put(getKey("wishlist"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "category": return true;
@@ -246,15 +402,27 @@ public class Query extends AbstractResponse<Query> {
 
             case "cmsPage": return true;
 
+            case "countries": return true;
+
+            case "country": return true;
+
+            case "currency": return true;
+
             case "customAttributeMetadata": return true;
 
             case "customer": return true;
+
+            case "customerDownloadableProducts": return true;
+
+            case "customerOrders": return true;
 
             case "products": return true;
 
             case "storeConfig": return true;
 
             case "urlResolver": return true;
+
+            case "wishlist": return true;
 
             default: return false;
         }

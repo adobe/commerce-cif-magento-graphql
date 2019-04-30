@@ -25,6 +25,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Footer Miscellaneous HTML
+     */
+    public StoreConfigQuery absoluteFooter() {
+        startField("absolute_footer");
+
+        return this;
+    }
+
+    /**
      * Base currency code
      */
     public StoreConfigQuery baseCurrencyCode() {
@@ -70,6 +79,33 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * CMS Home Page
+     */
+    public StoreConfigQuery cmsHomePage() {
+        startField("cms_home_page");
+
+        return this;
+    }
+
+    /**
+     * CMS No Cookies Page
+     */
+    public StoreConfigQuery cmsNoCookies() {
+        startField("cms_no_cookies");
+
+        return this;
+    }
+
+    /**
+     * CMS No Route Page
+     */
+    public StoreConfigQuery cmsNoRoute() {
+        startField("cms_no_route");
+
+        return this;
+    }
+
+    /**
      * A code assigned to the store to identify it
      */
     public StoreConfigQuery code() {
@@ -79,10 +115,91 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Copyright
+     */
+    public StoreConfigQuery copyright() {
+        startField("copyright");
+
+        return this;
+    }
+
+    /**
+     * Default Meta Description
+     */
+    public StoreConfigQuery defaultDescription() {
+        startField("default_description");
+
+        return this;
+    }
+
+    /**
      * Default display currency code
      */
     public StoreConfigQuery defaultDisplayCurrencyCode() {
         startField("default_display_currency_code");
+
+        return this;
+    }
+
+    /**
+     * Default Meta Keywords
+     */
+    public StoreConfigQuery defaultKeywords() {
+        startField("default_keywords");
+
+        return this;
+    }
+
+    /**
+     * Default Page Title
+     */
+    public StoreConfigQuery defaultTitle() {
+        startField("default_title");
+
+        return this;
+    }
+
+    /**
+     * Display Demo Store Notice
+     */
+    public StoreConfigQuery demonotice() {
+        startField("demonotice");
+
+        return this;
+    }
+
+    /**
+     * Default Web URL
+     */
+    public StoreConfigQuery front() {
+        startField("front");
+
+        return this;
+    }
+
+    /**
+     * Scripts and Style Sheets
+     */
+    public StoreConfigQuery headIncludes() {
+        startField("head_includes");
+
+        return this;
+    }
+
+    /**
+     * Favicon Icon
+     */
+    public StoreConfigQuery headShortcutIcon() {
+        startField("head_shortcut_icon");
+
+        return this;
+    }
+
+    /**
+     * Logo Image
+     */
+    public StoreConfigQuery headerLogoSrc() {
+        startField("header_logo_src");
 
         return this;
     }
@@ -101,6 +218,42 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery locale() {
         startField("locale");
+
+        return this;
+    }
+
+    /**
+     * Logo Image Alt
+     */
+    public StoreConfigQuery logoAlt() {
+        startField("logo_alt");
+
+        return this;
+    }
+
+    /**
+     * Logo Attribute Height
+     */
+    public StoreConfigQuery logoHeight() {
+        startField("logo_height");
+
+        return this;
+    }
+
+    /**
+     * Logo Attribute Width
+     */
+    public StoreConfigQuery logoWidth() {
+        startField("logo_width");
+
+        return this;
+    }
+
+    /**
+     * Default No-route URL
+     */
+    public StoreConfigQuery noRoute() {
+        startField("no_route");
 
         return this;
     }
@@ -142,10 +295,37 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Show Breadcrumbs for CMS Pages
+     */
+    public StoreConfigQuery showCmsBreadcrumbs() {
+        startField("show_cms_breadcrumbs");
+
+        return this;
+    }
+
+    /**
      * Timezone of the store
      */
     public StoreConfigQuery timezone() {
         startField("timezone");
+
+        return this;
+    }
+
+    /**
+     * Page Title Prefix
+     */
+    public StoreConfigQuery titlePrefix() {
+        startField("title_prefix");
+
+        return this;
+    }
+
+    /**
+     * Page Title Suffix
+     */
+    public StoreConfigQuery titleSuffix() {
+        startField("title_suffix");
 
         return this;
     }
@@ -164,6 +344,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery weightUnit() {
         startField("weight_unit");
+
+        return this;
+    }
+
+    /**
+     * Welcome Text
+     */
+    public StoreConfigQuery welcome() {
+        startField("welcome");
 
         return this;
     }

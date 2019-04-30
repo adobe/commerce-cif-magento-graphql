@@ -26,6 +26,15 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
     }
 
     /**
+     * Option ID
+     */
+    public CustomizableAreaOptionQuery optionId() {
+        startField("option_id");
+
+        return this;
+    }
+
+    /**
      * The Stock Keeping Unit of the base product
      */
     public CustomizableAreaOptionQuery productSku() {

@@ -82,8 +82,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * Detailed information about the product. The value can include simple HTML tags.
      */
-    public SimpleProductQuery description() {
+    public SimpleProductQuery description(ComplexTextValueQueryDefinition queryDef) {
         startField("description");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ComplexTextValueQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -109,17 +113,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * The relative path to the main image on the product page
      */
-    public SimpleProductQuery image() {
+    public SimpleProductQuery image(ProductImageQueryDefinition queryDef) {
         startField("image");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product image
-     */
-    public SimpleProductQuery imageLabel() {
-        startField("image_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -261,8 +260,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * A short description of the product. Its use depends on the theme.
      */
-    public SimpleProductQuery shortDescription() {
+    public SimpleProductQuery shortDescription(ComplexTextValueQueryDefinition queryDef) {
         startField("short_description");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ComplexTextValueQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -279,17 +282,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * The relative path to the small image, which is used on catalog pages
      */
-    public SimpleProductQuery smallImage() {
+    public SimpleProductQuery smallImage(ProductImageQueryDefinition queryDef) {
         startField("small_image");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s small image
-     */
-    public SimpleProductQuery smallImageLabel() {
-        startField("small_image_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -342,17 +340,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * The relative path to the product&#39;s thumbnail image
      */
-    public SimpleProductQuery thumbnail() {
+    public SimpleProductQuery thumbnail(ProductImageQueryDefinition queryDef) {
         startField("thumbnail");
 
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s thumbnail image
-     */
-    public SimpleProductQuery thumbnailLabel() {
-        startField("thumbnail_label");
+        _queryBuilder.append('{');
+        queryDef.define(new ProductImageQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -411,6 +404,19 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
      */
     public SimpleProductQuery urlPath() {
         startField("url_path");
+
+        return this;
+    }
+
+    /**
+     * URL rewrites list
+     */
+    public SimpleProductQuery urlRewrites(UrlRewriteQueryDefinition queryDef) {
+        startField("url_rewrites");
+
+        _queryBuilder.append('{');
+        queryDef.define(new UrlRewriteQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

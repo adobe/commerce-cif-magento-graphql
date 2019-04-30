@@ -52,6 +52,19 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
+     * Address custom attributes
+     */
+    public CustomerAddressQuery customAttributes(CustomerAddressAttributeQueryDefinition queryDef) {
+        startField("custom_attributes");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerAddressAttributeQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The customer ID
      */
     public CustomerAddressQuery customerId() {
@@ -74,6 +87,19 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
      */
     public CustomerAddressQuery defaultShipping() {
         startField("default_shipping");
+
+        return this;
+    }
+
+    /**
+     * Address extension attributes
+     */
+    public CustomerAddressQuery extensionAttributes(CustomerAddressAttributeQueryDefinition queryDef) {
+        startField("extension_attributes");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerAddressAttributeQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

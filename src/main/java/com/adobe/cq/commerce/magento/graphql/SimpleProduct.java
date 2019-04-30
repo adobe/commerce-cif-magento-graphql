@@ -112,9 +112,9 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
                 }
 
                 case "description": {
-                    String optional1 = null;
+                    ComplexTextValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ComplexTextValue(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -145,20 +145,9 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
                 }
 
                 case "image": {
-                    String optional1 = null;
+                    ProductImage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "image_label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ProductImage(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -340,9 +329,9 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
                 }
 
                 case "short_description": {
-                    String optional1 = null;
+                    ComplexTextValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ComplexTextValue(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -362,20 +351,9 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
                 }
 
                 case "small_image": {
-                    String optional1 = null;
+                    ProductImage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "small_image_label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ProductImage(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -439,20 +417,9 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
                 }
 
                 case "thumbnail": {
-                    String optional1 = null;
+                    ProductImage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "thumbnail_label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new ProductImage(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -529,6 +496,27 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "url_rewrites": {
+                    List<UrlRewrite> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<UrlRewrite> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            UrlRewrite optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new UrlRewrite(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -661,11 +649,11 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
      * Detailed information about the product. The value can include simple HTML tags.
      */
 
-    public String getDescription() {
-        return (String) get("description");
+    public ComplexTextValue getDescription() {
+        return (ComplexTextValue) get("description");
     }
 
-    public SimpleProduct setDescription(String arg) {
+    public SimpleProduct setDescription(ComplexTextValue arg) {
         optimisticData.put(getKey("description"), arg);
         return this;
     }
@@ -700,25 +688,12 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
      * The relative path to the main image on the product page
      */
 
-    public String getImage() {
-        return (String) get("image");
+    public ProductImage getImage() {
+        return (ProductImage) get("image");
     }
 
-    public SimpleProduct setImage(String arg) {
+    public SimpleProduct setImage(ProductImage arg) {
         optimisticData.put(getKey("image"), arg);
-        return this;
-    }
-
-    /**
-     * The label assigned to a product image
-     */
-
-    public String getImageLabel() {
-        return (String) get("image_label");
-    }
-
-    public SimpleProduct setImageLabel(String arg) {
-        optimisticData.put(getKey("image_label"), arg);
         return this;
     }
 
@@ -896,11 +871,11 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
      * A short description of the product. Its use depends on the theme.
      */
 
-    public String getShortDescription() {
-        return (String) get("short_description");
+    public ComplexTextValue getShortDescription() {
+        return (ComplexTextValue) get("short_description");
     }
 
-    public SimpleProduct setShortDescription(String arg) {
+    public SimpleProduct setShortDescription(ComplexTextValue arg) {
         optimisticData.put(getKey("short_description"), arg);
         return this;
     }
@@ -922,25 +897,12 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
      * The relative path to the small image, which is used on catalog pages
      */
 
-    public String getSmallImage() {
-        return (String) get("small_image");
+    public ProductImage getSmallImage() {
+        return (ProductImage) get("small_image");
     }
 
-    public SimpleProduct setSmallImage(String arg) {
+    public SimpleProduct setSmallImage(ProductImage arg) {
         optimisticData.put(getKey("small_image"), arg);
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s small image
-     */
-
-    public String getSmallImageLabel() {
-        return (String) get("small_image_label");
-    }
-
-    public SimpleProduct setSmallImageLabel(String arg) {
-        optimisticData.put(getKey("small_image_label"), arg);
         return this;
     }
 
@@ -1013,25 +975,12 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
      * The relative path to the product&#39;s thumbnail image
      */
 
-    public String getThumbnail() {
-        return (String) get("thumbnail");
+    public ProductImage getThumbnail() {
+        return (ProductImage) get("thumbnail");
     }
 
-    public SimpleProduct setThumbnail(String arg) {
+    public SimpleProduct setThumbnail(ProductImage arg) {
         optimisticData.put(getKey("thumbnail"), arg);
-        return this;
-    }
-
-    /**
-     * The label assigned to a product&#39;s thumbnail image
-     */
-
-    public String getThumbnailLabel() {
-        return (String) get("thumbnail_label");
-    }
-
-    public SimpleProduct setThumbnailLabel(String arg) {
-        optimisticData.put(getKey("thumbnail_label"), arg);
         return this;
     }
 
@@ -1114,6 +1063,19 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
     }
 
     /**
+     * URL rewrites list
+     */
+
+    public List<UrlRewrite> getUrlRewrites() {
+        return (List<UrlRewrite>) get("url_rewrites");
+    }
+
+    public SimpleProduct setUrlRewrites(List<UrlRewrite> arg) {
+        optimisticData.put(getKey("url_rewrites"), arg);
+        return this;
+    }
+
+    /**
      * An array of websites in which the product is available
      */
 
@@ -1153,15 +1115,13 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
 
             case "created_at": return false;
 
-            case "description": return false;
+            case "description": return true;
 
             case "gift_message_available": return false;
 
             case "id": return false;
 
-            case "image": return false;
-
-            case "image_label": return false;
+            case "image": return true;
 
             case "manufacturer": return false;
 
@@ -1189,13 +1149,11 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
 
             case "product_links": return false;
 
-            case "short_description": return false;
+            case "short_description": return true;
 
             case "sku": return false;
 
-            case "small_image": return false;
-
-            case "small_image_label": return false;
+            case "small_image": return true;
 
             case "special_from_date": return false;
 
@@ -1207,9 +1165,7 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
 
             case "swatch_image": return false;
 
-            case "thumbnail": return false;
-
-            case "thumbnail_label": return false;
+            case "thumbnail": return true;
 
             case "tier_price": return false;
 
@@ -1222,6 +1178,8 @@ public class SimpleProduct extends AbstractResponse<SimpleProduct> implements Cu
             case "url_key": return false;
 
             case "url_path": return false;
+
+            case "url_rewrites": return true;
 
             case "websites": return true;
 
