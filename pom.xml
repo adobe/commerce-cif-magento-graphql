@@ -176,6 +176,7 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <!-- Fixes JavaDoc build error with Java 11 -->
                     <source>8</source>
+                    <quiet>true</quiet>
                 </configuration>
             </plugin>
 
