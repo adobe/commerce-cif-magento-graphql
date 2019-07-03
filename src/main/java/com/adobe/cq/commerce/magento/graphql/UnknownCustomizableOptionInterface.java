@@ -96,6 +96,10 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
                 return new CustomizableAreaOption(fields);
             }
 
+            case "CustomizableCheckboxOption": {
+                return new CustomizableCheckboxOption(fields);
+            }
+
             case "CustomizableDateOption": {
                 return new CustomizableDateOption(fields);
             }
@@ -110,6 +114,10 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
 
             case "CustomizableFileOption": {
                 return new CustomizableFileOption(fields);
+            }
+
+            case "CustomizableMultipleOption": {
+                return new CustomizableMultipleOption(fields);
             }
 
             case "CustomizableRadioOption": {

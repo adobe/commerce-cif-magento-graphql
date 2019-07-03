@@ -17,17 +17,13 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * EntityUrl is an output object containing the `id`, `canonical_url`, and `type` attributes
+ * EntityUrl is an output object containing the `id`, `relative_url`, and `type` attributes
  */
 public class EntityUrlQuery extends AbstractQuery<EntityUrlQuery> {
     EntityUrlQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
-    /**
-     * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
-     * URL, not the original.
-     */
     public EntityUrlQuery canonicalUrl() {
         startField("canonical_url");
 
@@ -40,6 +36,16 @@ public class EntityUrlQuery extends AbstractQuery<EntityUrlQuery> {
      */
     public EntityUrlQuery id() {
         startField("id");
+
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
+     * URL, not the original.
+     */
+    public EntityUrlQuery relativeUrl() {
+        startField("relative_url");
 
         return this;
     }

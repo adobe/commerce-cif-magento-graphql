@@ -70,6 +70,13 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
         return this;
     }
 
+    public CustomizableOptionInterfaceQuery onCustomizableCheckboxOption(CustomizableCheckboxOptionQueryDefinition queryDef) {
+        startInlineFragment("CustomizableCheckboxOption");
+        queryDef.define(new CustomizableCheckboxOptionQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
     public CustomizableOptionInterfaceQuery onCustomizableDateOption(CustomizableDateOptionQueryDefinition queryDef) {
         startInlineFragment("CustomizableDateOption");
         queryDef.define(new CustomizableDateOptionQuery(_queryBuilder));
@@ -94,6 +101,13 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     public CustomizableOptionInterfaceQuery onCustomizableFileOption(CustomizableFileOptionQueryDefinition queryDef) {
         startInlineFragment("CustomizableFileOption");
         queryDef.define(new CustomizableFileOptionQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public CustomizableOptionInterfaceQuery onCustomizableMultipleOption(CustomizableMultipleOptionQueryDefinition queryDef) {
+        startInlineFragment("CustomizableMultipleOption");
+        queryDef.define(new CustomizableMultipleOptionQuery(_queryBuilder));
         _queryBuilder.append('}');
         return this;
     }

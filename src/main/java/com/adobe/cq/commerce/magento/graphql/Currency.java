@@ -100,6 +100,28 @@ public class Currency extends AbstractResponse<Currency> {
                     break;
                 }
 
+                case "default_display_currency_code": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "default_display_currency_symbol": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "exchange_rates": {
                     List<ExchangeRate> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -181,6 +203,24 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    public String getDefaultDisplayCurrencyCode() {
+        return (String) get("default_display_currency_code");
+    }
+
+    public Currency setDefaultDisplayCurrencyCode(String arg) {
+        optimisticData.put(getKey("default_display_currency_code"), arg);
+        return this;
+    }
+
+    public String getDefaultDisplayCurrencySymbol() {
+        return (String) get("default_display_currency_symbol");
+    }
+
+    public Currency setDefaultDisplayCurrencySymbol(String arg) {
+        optimisticData.put(getKey("default_display_currency_symbol"), arg);
+        return this;
+    }
+
     public List<ExchangeRate> getExchangeRates() {
         return (List<ExchangeRate>) get("exchange_rates");
     }
@@ -201,6 +241,10 @@ public class Currency extends AbstractResponse<Currency> {
             case "default_display_currecy_code": return false;
 
             case "default_display_currecy_symbol": return false;
+
+            case "default_display_currency_code": return false;
+
+            case "default_display_currency_symbol": return false;
 
             case "exchange_rates": return true;
 

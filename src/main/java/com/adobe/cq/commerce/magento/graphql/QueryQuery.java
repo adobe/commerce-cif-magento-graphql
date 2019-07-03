@@ -27,6 +27,24 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         super(_queryBuilder);
     }
 
+    /**
+     * Returns information about shopping cart
+     */
+    public QueryQuery cart(String cartId, CartQueryDefinition queryDef) {
+        startField("cart");
+
+        _queryBuilder.append("(cart_id:");
+        AbstractQuery.appendQuotedString(_queryBuilder, cartId.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CartQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class CategoryArguments extends Arguments {
         CategoryArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
@@ -48,10 +66,18 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         void define(CategoryArguments args);
     }
 
+    /**
+     * The category query searches for categories that match the criteria specified in the search and
+     * filter attributes
+     */
     public QueryQuery category(CategoryTreeQueryDefinition queryDef) {
         return category(args -> {}, queryDef);
     }
 
+    /**
+     * The category query searches for categories that match the criteria specified in the search and
+     * filter attributes
+     */
     public QueryQuery category(CategoryArgumentsDefinition argsDef, CategoryTreeQueryDefinition queryDef) {
         startField("category");
 
@@ -298,6 +324,34 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CustomerOrdersQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Return a list of customer payment tokens
+     */
+    public QueryQuery customerPaymentTokens(CustomerPaymentTokensQueryDefinition queryDef) {
+        startField("customerPaymentTokens");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerPaymentTokensQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public QueryQuery isEmailAvailable(String email, IsEmailAvailableOutputQueryDefinition queryDef) {
+        startField("isEmailAvailable");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new IsEmailAvailableOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

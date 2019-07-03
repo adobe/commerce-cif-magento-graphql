@@ -92,6 +92,15 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
+     * The customer&#39;s gender(Male - 1, Female - 2)
+     */
+    public CustomerQuery gender() {
+        startField("gender");
+
+        return this;
+    }
+
+    /**
      * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
      * and 3 (Retailer)
      */
