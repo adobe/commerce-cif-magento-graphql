@@ -35,6 +35,17 @@ public class Query extends AbstractResponse<Query> {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "cart": {
+                    Cart optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Cart(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "category": {
                     CategoryTree optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -155,6 +166,28 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "customerPaymentTokens": {
+                    CustomerPaymentTokens optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CustomerPaymentTokens(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "isEmailAvailable": {
+                    IsEmailAvailableOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new IsEmailAvailableOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "products": {
                     Products optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -213,6 +246,24 @@ public class Query extends AbstractResponse<Query> {
     public String getGraphQlTypeName() {
         return "Query";
     }
+
+    /**
+     * Returns information about shopping cart
+     */
+
+    public Cart getCart() {
+        return (Cart) get("cart");
+    }
+
+    public Query setCart(Cart arg) {
+        optimisticData.put(getKey("cart"), arg);
+        return this;
+    }
+
+    /**
+     * The category query searches for categories that match the criteria specified in the search and
+     * filter attributes
+     */
 
     public CategoryTree getCategory() {
         return (CategoryTree) get("category");
@@ -342,6 +393,28 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * Return a list of customer payment tokens
+     */
+
+    public CustomerPaymentTokens getCustomerPaymentTokens() {
+        return (CustomerPaymentTokens) get("customerPaymentTokens");
+    }
+
+    public Query setCustomerPaymentTokens(CustomerPaymentTokens arg) {
+        optimisticData.put(getKey("customerPaymentTokens"), arg);
+        return this;
+    }
+
+    public IsEmailAvailableOutput getIsEmailAvailable() {
+        return (IsEmailAvailableOutput) get("isEmailAvailable");
+    }
+
+    public Query setIsEmailAvailable(IsEmailAvailableOutput arg) {
+        optimisticData.put(getKey("isEmailAvailable"), arg);
+        return this;
+    }
+
+    /**
      * The products query searches for products that match the criteria specified in the search and filter
      * attributes
      */
@@ -396,6 +469,8 @@ public class Query extends AbstractResponse<Query> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "cart": return true;
+
             case "category": return true;
 
             case "cmsBlocks": return true;
@@ -415,6 +490,10 @@ public class Query extends AbstractResponse<Query> {
             case "customerDownloadableProducts": return true;
 
             case "customerOrders": return true;
+
+            case "customerPaymentTokens": return true;
+
+            case "isEmailAvailable": return true;
 
             case "products": return true;
 

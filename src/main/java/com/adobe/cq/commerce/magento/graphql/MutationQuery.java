@@ -25,6 +25,162 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         super(_queryBuilder);
     }
 
+    public class AddConfigurableProductsToCartArguments extends Arguments {
+        AddConfigurableProductsToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public AddConfigurableProductsToCartArguments input(AddConfigurableProductsToCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface AddConfigurableProductsToCartArgumentsDefinition {
+        void define(AddConfigurableProductsToCartArguments args);
+    }
+
+    public MutationQuery addConfigurableProductsToCart(AddConfigurableProductsToCartOutputQueryDefinition queryDef) {
+        return addConfigurableProductsToCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery addConfigurableProductsToCart(AddConfigurableProductsToCartArgumentsDefinition argsDef, AddConfigurableProductsToCartOutputQueryDefinition queryDef) {
+        startField("addConfigurableProductsToCart");
+
+        AddConfigurableProductsToCartArguments args = new AddConfigurableProductsToCartArguments(_queryBuilder);
+        argsDef.define(args);
+        AddConfigurableProductsToCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddConfigurableProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class AddSimpleProductsToCartArguments extends Arguments {
+        AddSimpleProductsToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public AddSimpleProductsToCartArguments input(AddSimpleProductsToCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface AddSimpleProductsToCartArgumentsDefinition {
+        void define(AddSimpleProductsToCartArguments args);
+    }
+
+    public MutationQuery addSimpleProductsToCart(AddSimpleProductsToCartOutputQueryDefinition queryDef) {
+        return addSimpleProductsToCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery addSimpleProductsToCart(AddSimpleProductsToCartArgumentsDefinition argsDef, AddSimpleProductsToCartOutputQueryDefinition queryDef) {
+        startField("addSimpleProductsToCart");
+
+        AddSimpleProductsToCartArguments args = new AddSimpleProductsToCartArguments(_queryBuilder);
+        argsDef.define(args);
+        AddSimpleProductsToCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddSimpleProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class AddVirtualProductsToCartArguments extends Arguments {
+        AddVirtualProductsToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public AddVirtualProductsToCartArguments input(AddVirtualProductsToCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface AddVirtualProductsToCartArgumentsDefinition {
+        void define(AddVirtualProductsToCartArguments args);
+    }
+
+    public MutationQuery addVirtualProductsToCart(AddVirtualProductsToCartOutputQueryDefinition queryDef) {
+        return addVirtualProductsToCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery addVirtualProductsToCart(AddVirtualProductsToCartArgumentsDefinition argsDef, AddVirtualProductsToCartOutputQueryDefinition queryDef) {
+        startField("addVirtualProductsToCart");
+
+        AddVirtualProductsToCartArguments args = new AddVirtualProductsToCartArguments(_queryBuilder);
+        argsDef.define(args);
+        AddVirtualProductsToCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddVirtualProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class ApplyCouponToCartArguments extends Arguments {
+        ApplyCouponToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public ApplyCouponToCartArguments input(ApplyCouponToCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface ApplyCouponToCartArgumentsDefinition {
+        void define(ApplyCouponToCartArguments args);
+    }
+
+    public MutationQuery applyCouponToCart(ApplyCouponToCartOutputQueryDefinition queryDef) {
+        return applyCouponToCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery applyCouponToCart(ApplyCouponToCartArgumentsDefinition argsDef, ApplyCouponToCartOutputQueryDefinition queryDef) {
+        startField("applyCouponToCart");
+
+        ApplyCouponToCartArguments args = new ApplyCouponToCartArguments(_queryBuilder);
+        argsDef.define(args);
+        ApplyCouponToCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ApplyCouponToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     /**
      * Changes the password for the logged-in customer
      */
@@ -82,11 +238,43 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    public class CreateEmptyCartArguments extends Arguments {
+        CreateEmptyCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public CreateEmptyCartArguments input(createEmptyCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface CreateEmptyCartArgumentsDefinition {
+        void define(CreateEmptyCartArguments args);
+    }
+
     /**
-     * Creates empty shopping cart for guest or logged in user
+     * Creates an empty shopping cart for a guest or logged in user
      */
     public MutationQuery createEmptyCart() {
+        return createEmptyCart(args -> {});
+    }
+
+    /**
+     * Creates an empty shopping cart for a guest or logged in user
+     */
+    public MutationQuery createEmptyCart(CreateEmptyCartArgumentsDefinition argsDef) {
         startField("createEmptyCart");
+
+        CreateEmptyCartArguments args = new CreateEmptyCartArguments(_queryBuilder);
+        argsDef.define(args);
+        CreateEmptyCartArguments.end(args);
 
         return this;
     }
@@ -101,6 +289,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         _queryBuilder.append(id);
 
         _queryBuilder.append(')');
+
+        return this;
+    }
+
+    /**
+     * Delete a customer payment token
+     */
+    public MutationQuery deletePaymentToken(String publicHash, DeletePaymentTokenOutputQueryDefinition queryDef) {
+        startField("deletePaymentToken");
+
+        _queryBuilder.append("(public_hash:");
+        AbstractQuery.appendQuotedString(_queryBuilder, publicHash.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new DeletePaymentTokenOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -121,6 +327,123 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CustomerTokenQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class PlaceOrderArguments extends Arguments {
+        PlaceOrderArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public PlaceOrderArguments input(PlaceOrderInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface PlaceOrderArgumentsDefinition {
+        void define(PlaceOrderArguments args);
+    }
+
+    public MutationQuery placeOrder(PlaceOrderOutputQueryDefinition queryDef) {
+        return placeOrder(args -> {}, queryDef);
+    }
+
+    public MutationQuery placeOrder(PlaceOrderArgumentsDefinition argsDef, PlaceOrderOutputQueryDefinition queryDef) {
+        startField("placeOrder");
+
+        PlaceOrderArguments args = new PlaceOrderArguments(_queryBuilder);
+        argsDef.define(args);
+        PlaceOrderArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new PlaceOrderOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class RemoveCouponFromCartArguments extends Arguments {
+        RemoveCouponFromCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public RemoveCouponFromCartArguments input(RemoveCouponFromCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface RemoveCouponFromCartArgumentsDefinition {
+        void define(RemoveCouponFromCartArguments args);
+    }
+
+    public MutationQuery removeCouponFromCart(RemoveCouponFromCartOutputQueryDefinition queryDef) {
+        return removeCouponFromCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery removeCouponFromCart(RemoveCouponFromCartArgumentsDefinition argsDef, RemoveCouponFromCartOutputQueryDefinition queryDef) {
+        startField("removeCouponFromCart");
+
+        RemoveCouponFromCartArguments args = new RemoveCouponFromCartArguments(_queryBuilder);
+        argsDef.define(args);
+        RemoveCouponFromCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveCouponFromCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class RemoveItemFromCartArguments extends Arguments {
+        RemoveItemFromCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public RemoveItemFromCartArguments input(RemoveItemFromCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface RemoveItemFromCartArgumentsDefinition {
+        void define(RemoveItemFromCartArguments args);
+    }
+
+    public MutationQuery removeItemFromCart(RemoveItemFromCartOutputQueryDefinition queryDef) {
+        return removeItemFromCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery removeItemFromCart(RemoveItemFromCartArgumentsDefinition argsDef, RemoveItemFromCartOutputQueryDefinition queryDef) {
+        startField("removeItemFromCart");
+
+        RemoveItemFromCartArguments args = new RemoveItemFromCartArguments(_queryBuilder);
+        argsDef.define(args);
+        RemoveItemFromCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveItemFromCartOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -179,6 +502,240 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new SendEmailToFriendOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class SetBillingAddressOnCartArguments extends Arguments {
+        SetBillingAddressOnCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public SetBillingAddressOnCartArguments input(SetBillingAddressOnCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface SetBillingAddressOnCartArgumentsDefinition {
+        void define(SetBillingAddressOnCartArguments args);
+    }
+
+    public MutationQuery setBillingAddressOnCart(SetBillingAddressOnCartOutputQueryDefinition queryDef) {
+        return setBillingAddressOnCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery setBillingAddressOnCart(SetBillingAddressOnCartArgumentsDefinition argsDef, SetBillingAddressOnCartOutputQueryDefinition queryDef) {
+        startField("setBillingAddressOnCart");
+
+        SetBillingAddressOnCartArguments args = new SetBillingAddressOnCartArguments(_queryBuilder);
+        argsDef.define(args);
+        SetBillingAddressOnCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new SetBillingAddressOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class SetGuestEmailOnCartArguments extends Arguments {
+        SetGuestEmailOnCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public SetGuestEmailOnCartArguments input(SetGuestEmailOnCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface SetGuestEmailOnCartArgumentsDefinition {
+        void define(SetGuestEmailOnCartArguments args);
+    }
+
+    public MutationQuery setGuestEmailOnCart(SetGuestEmailOnCartOutputQueryDefinition queryDef) {
+        return setGuestEmailOnCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery setGuestEmailOnCart(SetGuestEmailOnCartArgumentsDefinition argsDef, SetGuestEmailOnCartOutputQueryDefinition queryDef) {
+        startField("setGuestEmailOnCart");
+
+        SetGuestEmailOnCartArguments args = new SetGuestEmailOnCartArguments(_queryBuilder);
+        argsDef.define(args);
+        SetGuestEmailOnCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new SetGuestEmailOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class SetPaymentMethodOnCartArguments extends Arguments {
+        SetPaymentMethodOnCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public SetPaymentMethodOnCartArguments input(SetPaymentMethodOnCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface SetPaymentMethodOnCartArgumentsDefinition {
+        void define(SetPaymentMethodOnCartArguments args);
+    }
+
+    public MutationQuery setPaymentMethodOnCart(SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
+        return setPaymentMethodOnCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery setPaymentMethodOnCart(SetPaymentMethodOnCartArgumentsDefinition argsDef, SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
+        startField("setPaymentMethodOnCart");
+
+        SetPaymentMethodOnCartArguments args = new SetPaymentMethodOnCartArguments(_queryBuilder);
+        argsDef.define(args);
+        SetPaymentMethodOnCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new SetPaymentMethodOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class SetShippingAddressesOnCartArguments extends Arguments {
+        SetShippingAddressesOnCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public SetShippingAddressesOnCartArguments input(SetShippingAddressesOnCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface SetShippingAddressesOnCartArgumentsDefinition {
+        void define(SetShippingAddressesOnCartArguments args);
+    }
+
+    public MutationQuery setShippingAddressesOnCart(SetShippingAddressesOnCartOutputQueryDefinition queryDef) {
+        return setShippingAddressesOnCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery setShippingAddressesOnCart(SetShippingAddressesOnCartArgumentsDefinition argsDef, SetShippingAddressesOnCartOutputQueryDefinition queryDef) {
+        startField("setShippingAddressesOnCart");
+
+        SetShippingAddressesOnCartArguments args = new SetShippingAddressesOnCartArguments(_queryBuilder);
+        argsDef.define(args);
+        SetShippingAddressesOnCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new SetShippingAddressesOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class SetShippingMethodsOnCartArguments extends Arguments {
+        SetShippingMethodsOnCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public SetShippingMethodsOnCartArguments input(SetShippingMethodsOnCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface SetShippingMethodsOnCartArgumentsDefinition {
+        void define(SetShippingMethodsOnCartArguments args);
+    }
+
+    public MutationQuery setShippingMethodsOnCart(SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
+        return setShippingMethodsOnCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery setShippingMethodsOnCart(SetShippingMethodsOnCartArgumentsDefinition argsDef, SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
+        startField("setShippingMethodsOnCart");
+
+        SetShippingMethodsOnCartArguments args = new SetShippingMethodsOnCartArguments(_queryBuilder);
+        argsDef.define(args);
+        SetShippingMethodsOnCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new SetShippingMethodsOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class UpdateCartItemsArguments extends Arguments {
+        UpdateCartItemsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public UpdateCartItemsArguments input(UpdateCartItemsInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface UpdateCartItemsArgumentsDefinition {
+        void define(UpdateCartItemsArguments args);
+    }
+
+    public MutationQuery updateCartItems(UpdateCartItemsOutputQueryDefinition queryDef) {
+        return updateCartItems(args -> {}, queryDef);
+    }
+
+    public MutationQuery updateCartItems(UpdateCartItemsArgumentsDefinition argsDef, UpdateCartItemsOutputQueryDefinition queryDef) {
+        startField("updateCartItems");
+
+        UpdateCartItemsArguments args = new UpdateCartItemsArguments(_queryBuilder);
+        argsDef.define(args);
+        UpdateCartItemsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new UpdateCartItemsOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

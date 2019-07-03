@@ -122,6 +122,17 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "gender": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "group_id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -317,6 +328,19 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
+     * The customer&#39;s gender(Male - 1, Female - 2)
+     */
+
+    public Integer getGender() {
+        return (Integer) get("gender");
+    }
+
+    public Customer setGender(Integer arg) {
+        optimisticData.put(getKey("gender"), arg);
+        return this;
+    }
+
+    /**
      * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
      * and 3 (Retailer)
      */
@@ -436,6 +460,8 @@ public class Customer extends AbstractResponse<Customer> {
             case "email": return false;
 
             case "firstname": return false;
+
+            case "gender": return false;
 
             case "group_id": return false;
 

@@ -54,6 +54,18 @@ public class CurrencyQuery extends AbstractQuery<CurrencyQuery> {
         return this;
     }
 
+    public CurrencyQuery defaultDisplayCurrencyCode() {
+        startField("default_display_currency_code");
+
+        return this;
+    }
+
+    public CurrencyQuery defaultDisplayCurrencySymbol() {
+        startField("default_display_currency_symbol");
+
+        return this;
+    }
+
     public CurrencyQuery exchangeRates(ExchangeRateQueryDefinition queryDef) {
         startField("exchange_rates");
 

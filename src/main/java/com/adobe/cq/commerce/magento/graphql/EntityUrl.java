@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * EntityUrl is an output object containing the `id`, `canonical_url`, and `type` attributes
+ * EntityUrl is an output object containing the `id`, `relative_url`, and `type` attributes
  */
 public class EntityUrl extends AbstractResponse<EntityUrl> {
     public EntityUrl() {
@@ -48,6 +48,17 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "relative_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -81,11 +92,6 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
         return "EntityUrl";
     }
 
-    /**
-     * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
-     * URL, not the original.
-     */
-
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
     }
@@ -110,6 +116,20 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
+     * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
+     * URL, not the original.
+     */
+
+    public String getRelativeUrl() {
+        return (String) get("relative_url");
+    }
+
+    public EntityUrl setRelativeUrl(String arg) {
+        optimisticData.put(getKey("relative_url"), arg);
+        return this;
+    }
+
+    /**
      * One of PRODUCT, CATEGORY, or CMS_PAGE.
      */
 
@@ -127,6 +147,8 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
             case "canonical_url": return false;
 
             case "id": return false;
+
+            case "relative_url": return false;
 
             case "type": return false;
 
