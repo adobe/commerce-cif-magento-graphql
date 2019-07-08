@@ -24,6 +24,7 @@ import org.junit.Test;
 import com.adobe.cq.commerce.magento.graphql.QueryQuery.CategoryArgumentsDefinition;
 import com.adobe.cq.commerce.magento.graphql.QueryQuery.ProductsArgumentsDefinition;
 import com.adobe.cq.commerce.magento.graphql.gson.QueryDeserializer;
+import com.shopify.graphql.support.AbstractQuery;
 
 public class QueryBuilderTest {
 
@@ -121,5 +122,39 @@ public class QueryBuilderTest {
 
         String queryString = Operations.query(query -> query.category(searchArgs, queryArgs)).toString();
         Assert.assertEquals(expectedQuery, queryString);
+    }
+
+    @Test
+    public void testCategoryWithAliases() throws Exception {
+        String expectedQuery = getResource("queries/categories-with-aliases.txt");
+        String jsonResponse = getResource("responses/categories-with-aliases.json");
+
+        // Query for each category
+        CategoryTreeQueryDefinition queryArgs = q -> q
+            .id()
+            .name()
+            .urlPath();
+
+        // Main query for two categories with aliases
+        String queryString = Operations.query(query -> query
+            .withAlias("category3").category(c -> c.id(3), queryArgs)
+            .withAlias("category4").category(c -> c.id(4), queryArgs)).toString();
+
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Check that the reference response can be parsed and fields are properly set
+        Query query = QueryDeserializer.getGson().fromJson(jsonResponse, Query.class);
+
+        // An aliased field is queried by the original fieldname + "__" + the alias
+        CategoryTree category3 = (CategoryTree) query.get("category" + AbstractQuery.ALIAS_SUFFIX_SEPARATOR + "category3");
+        Assert.assertEquals(Integer.valueOf(3), category3.getId());
+        Assert.assertEquals("Equipment", category3.getName());
+        Assert.assertEquals("equipment", category3.getUrlPath());
+
+        // An aliased field is queried by the original fieldname + "__" + the alias
+        CategoryTree category4 = (CategoryTree) query.get("category" + AbstractQuery.ALIAS_SUFFIX_SEPARATOR + "category4");
+        Assert.assertEquals(Integer.valueOf(4), category4.getId());
+        Assert.assertEquals("Running", category4.getName());
+        Assert.assertEquals("equipment/running", category4.getUrlPath());
     }
 }
