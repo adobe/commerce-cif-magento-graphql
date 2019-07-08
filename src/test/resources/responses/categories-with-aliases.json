@@ -1,0 +1,12 @@
+{
+  "category__category3": {
+    "id": 3,
+    "name": "Equipment",
+    "url_path": "equipment"
+  },
+  "category__category4": {
+    "id": 4,
+    "name": "Running",
+    "url_path": "equipment/running"
+  }
+}

@@ -1,0 +1,1 @@
+{category__category3:category(id:3){id,name,url_path},category__category4:category(id:4){id,name,url_path}}
