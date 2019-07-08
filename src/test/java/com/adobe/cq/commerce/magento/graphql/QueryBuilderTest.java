@@ -125,7 +125,7 @@ public class QueryBuilderTest {
     }
 
     @Test
-    public void testCategoryWithAliases() throws Exception {
+    public void testCategoriesWithAliases() throws Exception {
         String expectedQuery = getResource("queries/categories-with-aliases.txt");
         String jsonResponse = getResource("responses/categories-with-aliases.json");
 
