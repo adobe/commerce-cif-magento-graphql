@@ -6,6 +6,18 @@
 This project contains the Magento GraphQL data models and query builders that have been automatically generated based on the Magento GraphQL schema.
 These classes can be used to build GraphQL requests and to parse/deserialise GraphQL JSON responses into java objects.
 
+## Installation
+
+To build and install the latest version in a running AEM instance, simply do
+
+```
+mvn clean install sling:install
+```
+This installs everything by default to `localhost:4502` without any context path. You can also configure the install location with the following maven properties:
+* `aem.host`: the name of the AEM instance
+* `aem.port`: the port number of the AEM instance
+* `aem.contextPath`: the context path (if any) of your AEM instance, starting with `/`
+
 ## Versioning
 
 The following versioning scheme is used for that maven dependency: `MAJOR.MINOR.PATCH-magentoXYZ`.

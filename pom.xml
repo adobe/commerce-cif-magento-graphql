@@ -42,6 +42,9 @@
     </licenses>
 
     <properties>
+        <aem.host>localhost</aem.host>
+        <aem.port>4502</aem.port>
+        <aem.contextPath />
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -187,6 +190,15 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+                <version>2.1.0</version>
+                <configuration>
+                    <slingUrl>http://${aem.host}:${aem.port}${aem.contextPath}/system/console</slingUrl>
                 </configuration>
             </plugin>
 
