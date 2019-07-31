@@ -86,7 +86,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     }
 
     protected Integer jsonAsInteger(JsonElement element, String field) throws SchemaViolationError {
-        if (!element.isJsonPrimitive() || !element.getAsJsonPrimitive().isNumber()) {
+        if (!element.isJsonPrimitive() || (!element.getAsJsonPrimitive().isNumber() && !element.getAsJsonPrimitive().isString())) {
             throw new SchemaViolationError(this, field, element);
         }
         try {
@@ -97,14 +97,18 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     }
 
     protected Double jsonAsDouble(JsonElement element, String field) throws SchemaViolationError {
-        if (!element.isJsonPrimitive() || !element.getAsJsonPrimitive().isNumber()) {
+        if (!element.isJsonPrimitive() || (!element.getAsJsonPrimitive().isNumber() && !element.getAsJsonPrimitive().isString())) {
             throw new SchemaViolationError(this, field, element);
         }
-        return element.getAsJsonPrimitive().getAsDouble();
+        try {
+            return element.getAsJsonPrimitive().getAsDouble();
+        } catch (NumberFormatException exc) {
+            throw new SchemaViolationError(this, field, element);
+        }
     }
 
     protected Boolean jsonAsBoolean(JsonElement element, String field) throws SchemaViolationError {
-        if (!element.isJsonPrimitive() || !element.getAsJsonPrimitive().isBoolean()) {
+        if (!element.isJsonPrimitive() || (!element.getAsJsonPrimitive().isBoolean() && !element.getAsJsonPrimitive().isString())) {
             throw new SchemaViolationError(this, field, element);
         }
         return element.getAsJsonPrimitive().getAsBoolean();
