@@ -57,7 +57,13 @@ public class QueryBuilderTest {
         Assert.assertEquals("Test Simple Product", product.getName());
         Assert.assertEquals("test-category", product.getCategories().get(0).getUrlPath());
         Assert.assertEquals(CurrencyEnum.USD, product.getPrice().getRegularPrice().getAmount().getCurrency());
-        Assert.assertEquals(22, product.getPrice().getRegularPrice().getAmount().getValue(), 0);
+        Assert.assertEquals(22.2, product.getPrice().getRegularPrice().getAmount().getValue(), 0);
+
+        // Test that primitives returned a strings get converted to primitive types
+        Assert.assertEquals(Integer.valueOf(1), product.getColor());
+        Assert.assertEquals(1.2, product.getSpecialPrice(), 0);
+        Assert.assertEquals(Boolean.TRUE, product.getMediaGalleryEntries().get(0).getDisabled());
+        Assert.assertEquals(Boolean.TRUE, product.getMediaGalleryEntries().get(1).getDisabled());
     }
 
     @Test
