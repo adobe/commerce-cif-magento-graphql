@@ -71,4 +71,12 @@ public class TestGraphqlQueries {
         .urlPath()
         .productCount()
         .childrenCount();
+
+    /**
+     * Test basic mutation query.
+     */
+    public static final CustomerQueryDefinition CUSTOMER_QUERY = q -> q
+        .email()
+        .firstname()
+        .lastname();
 }

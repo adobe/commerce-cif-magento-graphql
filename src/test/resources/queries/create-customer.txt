@@ -1,0 +1,1 @@
+mutation{createCustomer(input:{email:"john.doe@example.com",firstname:"John",lastname:"Doe",password:"*****"}){customer{email,firstname,lastname}}}

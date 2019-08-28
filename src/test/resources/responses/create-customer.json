@@ -1,0 +1,9 @@
+{
+  "createCustomer": {
+    "customer": {
+      "email": "john.doe@example.com",
+      "firstname": "John",
+      "lastname": "Doe"
+    }
+  }
+}
