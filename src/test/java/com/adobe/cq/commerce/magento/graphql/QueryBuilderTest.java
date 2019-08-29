@@ -23,6 +23,7 @@ import org.junit.Test;
 
 import com.adobe.cq.commerce.magento.graphql.QueryQuery.CategoryArgumentsDefinition;
 import com.adobe.cq.commerce.magento.graphql.QueryQuery.ProductsArgumentsDefinition;
+import com.adobe.cq.commerce.magento.graphql.gson.MutationDeserializer;
 import com.adobe.cq.commerce.magento.graphql.gson.QueryDeserializer;
 import com.shopify.graphql.support.AbstractQuery;
 
@@ -146,6 +147,7 @@ public class QueryBuilderTest {
             .withAlias("category3").category(c -> c.id(3), queryArgs)
             .withAlias("category4").category(c -> c.id(4), queryArgs)).toString();
 
+        // Check that the generated query matches the reference query
         Assert.assertEquals(expectedQuery, queryString);
 
         // Check that the reference response can be parsed and fields are properly set
@@ -162,5 +164,31 @@ public class QueryBuilderTest {
         Assert.assertEquals(Integer.valueOf(4), category4.getId());
         Assert.assertEquals("Running", category4.getName());
         Assert.assertEquals("equipment/running", category4.getUrlPath());
+    }
+
+    @Test
+    public void testMutationRequest() throws Exception {
+        String expectedQuery = getResource("queries/create-customer.txt");
+        String jsonResponse = getResource("responses/create-customer.json");
+
+        CustomerInput customerInput = new CustomerInput()
+            .setEmail("john.doe@example.com")
+            .setFirstname("John")
+            .setLastname("Doe")
+            .setPassword("*****");
+
+        CustomerOutputQueryDefinition customerQuery = c -> c.customer(TestGraphqlQueries.CUSTOMER_QUERY);
+        String mutationString = Operations.mutation(mutation -> mutation.createCustomer(customerInput, customerQuery)).toString();
+
+        // Check that the generated query matches the reference query
+        Assert.assertEquals(expectedQuery, mutationString);
+
+        // Check that the reference response can be parsed and fields are properly set
+        Mutation mutation = MutationDeserializer.getGson().fromJson(jsonResponse, Mutation.class);
+
+        Customer customer = mutation.getCreateCustomer().getCustomer();
+        Assert.assertEquals("john.doe@example.com", customer.getEmail());
+        Assert.assertEquals("John", customer.getFirstname());
+        Assert.assertEquals("Doe", customer.getLastname());
     }
 }
