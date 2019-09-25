@@ -20,7 +20,7 @@ import com.google.gson.JsonElement;
 /**
  * In order to allow custom fields from being "gettable" via java interface classes, this class
  * defines all the getter methods for custom fields. Note that all these methods are already implemented in
- * {@link AbstractResponse} so they immediately available to all interfaces.
+ * {@link AbstractResponse} so they are immediately available to all interfaces.
  */
 public interface CustomFieldInterface {
 

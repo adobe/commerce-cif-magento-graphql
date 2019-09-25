@@ -117,7 +117,7 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
 
     /**
      * Adds a custom simple field to the GraphQL query. The adjective "simple" here refers to
-     * a scalar/primitive field like String, Integer, Double, Boolean, or an array of simple fields.
+     * a scalar/primitive field like String, Integer, Double, Boolean, or an array of fields.
      * 
      * @param fieldName The name of the field that will be added to the GraphQL request.
      * @return The current query builder.
