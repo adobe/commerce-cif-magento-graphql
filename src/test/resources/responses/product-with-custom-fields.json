@@ -1,0 +1,40 @@
+{
+   "products": {
+    "items": [
+      {
+        "__typename": "ConfigurableProduct",
+        "sku": "MSH12",
+        "erin_recommends_custom_": 0,
+        "climate_custom_": "205,212,209",
+        "crosssell_products_custom_": [
+          {
+            "__typename": "SimpleProduct",
+            "sku": "24-UG06",
+            "name": "Affirm Water Bottle"
+          },
+          {
+            "__typename": "SimpleProduct",
+            "sku": "24-UG04",
+            "name": "Zing Jump Rope"
+          },
+          {
+            "__typename": "SimpleProduct",
+            "sku": "24-UG01",
+            "name": "Quest Lumaflex&trade; Band"
+          },
+          {
+            "__typename": "SimpleProduct",
+            "sku": "24-WG080",
+            "name": "Sprite Yoga Companion Kit"
+          }
+        ],
+        "replacement_product_custom_": {
+          "__typename": "ConfigurableProduct",
+          "sku": "MSH12-old",
+          "name": "Zing Jump Rope",
+          "weight_custom_": 42
+        }
+      }
+    ]
+  }
+}

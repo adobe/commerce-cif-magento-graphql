@@ -25,6 +25,8 @@ import com.adobe.cq.commerce.magento.graphql.QueryQuery.CategoryArgumentsDefinit
 import com.adobe.cq.commerce.magento.graphql.QueryQuery.ProductsArgumentsDefinition;
 import com.adobe.cq.commerce.magento.graphql.gson.MutationDeserializer;
 import com.adobe.cq.commerce.magento.graphql.gson.QueryDeserializer;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.shopify.graphql.support.AbstractQuery;
 
 public class QueryBuilderTest {
@@ -190,5 +192,93 @@ public class QueryBuilderTest {
         Assert.assertEquals("john.doe@example.com", customer.getEmail());
         Assert.assertEquals("John", customer.getFirstname());
         Assert.assertEquals("Doe", customer.getLastname());
+    }
+
+    @Test
+    public void testCustomFieldTypes() throws Exception {
+        String expectedQuery = getResource("queries/category-with-custom-field.txt");
+        String jsonResponse = getResource("responses/category-with-custom-field.json");
+
+        // Category with custom fields of different primitve types
+        CategoryTreeQueryDefinition queryArgs = q -> q
+            .id()
+            .name()
+            .addCustomSimpleField("mystring")
+            .addCustomSimpleField("myinteger")
+            .addCustomSimpleField("mydouble")
+            .addCustomSimpleField("myboolean")
+            .addCustomSimpleField("myarray");
+
+        // Search parameters
+        CategoryArgumentsDefinition searchArgs = q -> q.id(3);
+
+        String queryString = Operations.query(query -> query.category(searchArgs, queryArgs)).toString();
+
+        // Check that the generated query matches the reference query
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Check that the reference response can be parsed and fields are properly set
+        Query query = QueryDeserializer.getGson().fromJson(jsonResponse, Query.class);
+        CategoryTree category = query.getCategory();
+
+        // Check that custom fields of different types can be parsed
+        Assert.assertEquals("somevalue", category.getAsString("mystring"));
+        Assert.assertEquals(Integer.valueOf(42), category.getAsInteger("myinteger"));
+        Assert.assertEquals(4.2, category.getAsDouble("mydouble"), 0);
+        Assert.assertEquals(Boolean.TRUE, category.getAsBoolean("myboolean"));
+        Assert.assertTrue(category.getAsArray("myarray") instanceof JsonArray);
+    }
+
+    @Test
+    public void testCustomFieldsAndObjects() throws Exception {
+        String expectedQuery = getResource("queries/product-with-custom-fields.txt");
+        String jsonResponse = getResource("responses/product-with-custom-fields.json");
+
+        // Search parameters
+        ProductsArgumentsDefinition searchArgs = s -> s.search("short").currentPage(1);
+
+        // Product query with custom objects fields
+        ProductsQueryDefinition queryArgs = q -> q.items(i -> i
+            .sku()
+            .addCustomSimpleField("erin_recommends")
+            .addCustomSimpleField("climate")
+            .addCustomObjectField("replacement_product", c -> c
+                .addField("__typename")
+                .addField("sku")
+                .addField("name")
+                .addCustomSimpleField("weight"))
+            .addCustomObjectField("crosssell_products", c -> c
+                .addField("__typename")
+                .addField("sku")
+                .addField("name")));
+
+        String queryString = Operations.query(query -> query.products(searchArgs, queryArgs)).toString();
+
+        // Check that the generated query matches the reference query
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Check that the reference response can be parsed and fields are properly set
+        Query query = QueryDeserializer.getGson().fromJson(jsonResponse, Query.class);
+        ConfigurableProduct product = (ConfigurableProduct) query.getProducts().getItems().get(0);
+
+        // Check the "simple" custom fields
+        Assert.assertEquals("MSH12", product.getSku());
+        Assert.assertEquals(Integer.valueOf(0), product.getAsInteger("erin_recommends"));
+        Assert.assertEquals("205,212,209", product.getAsString("climate"));
+
+        // Check array custom field with objects element
+        JsonArray crossSellProducts = product.getAsArray("crosssell_products");
+        ProductInterface crossSellProduct = UnknownProductInterface.create(crossSellProducts.get(0).getAsJsonObject());
+        Assert.assertEquals("SimpleProduct", crossSellProduct.get("__typename"));
+        Assert.assertEquals("24-UG06", crossSellProduct.getSku());
+        Assert.assertEquals("Affirm Water Bottle", crossSellProduct.getName());
+
+        // Check custom object field
+        JsonElement replacementProductElement = (JsonElement) product.get("replacement_product");
+        ProductInterface replacementProduct = UnknownProductInterface.create(replacementProductElement.getAsJsonObject());
+        Assert.assertEquals("ConfigurableProduct", replacementProduct.get("__typename"));
+        Assert.assertEquals("MSH12-old", replacementProduct.getSku());
+        Assert.assertEquals("Zing Jump Rope", replacementProduct.getName());
+        Assert.assertEquals(Integer.valueOf(42), replacementProduct.getAsInteger("weight"));
     }
 }

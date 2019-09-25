@@ -16,12 +16,14 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.util.List;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * The ProductInterface contains attributes that are common to all types of products. Note that
  * descriptions may not be available for custom and EAV attributes.
  */
 
-public interface ProductInterface {
+public interface ProductInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     Integer getAttributeSetId();

@@ -28,6 +28,9 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
     public static final String ALIAS_SUFFIX_SEPARATOR = "__";
     private static final String BAD_ALIAS_SEPARATOR = "-";
     private static final String ALIAS_DELIMITER = ":";
+
+    public static final String CUSTOM_FIELD_LABEL = "_custom_";
+
     protected final StringBuilder _queryBuilder;
     private boolean firstSelection = true;
     private String aliasSuffix = null;
@@ -109,6 +112,40 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
             throw new IllegalArgumentException("Alias must not contain -");
         }
         this.aliasSuffix = aliasSuffix;
+        return (T) this;
+    }
+
+    /**
+     * Adds a custom simple field to the GraphQL query. The adjective "simple" here refers to
+     * a scalar/primitive field like String, Integer, Double, Boolean, or an array of simple fields.
+     * 
+     * @param fieldName The name of the field that will be added to the GraphQL request.
+     * @return The current query builder.
+     */
+    @SuppressWarnings("unchecked")
+    public T addCustomSimpleField(String fieldName) {
+        startField(fieldName + CUSTOM_FIELD_LABEL + ALIAS_DELIMITER + fieldName);
+        return (T) this;
+    }
+
+    /**
+     * Adds a custom object field to the GraphQL query. The term "object" here refers to
+     * a GraphQL object, which means some fields of the custom object must also be defined
+     * in the query.
+     * 
+     * @param fieldName The name of the field that will be added to the GraphQL request.
+     * @param queryDef The definition of the requested sub-fields of the object.
+     * @return The current query builder.
+     */
+    @SuppressWarnings("unchecked")
+    public T addCustomObjectField(String fieldName, CustomFieldQueryDefinition queryDef) {
+        // startField("__typename");
+        startField(fieldName + CUSTOM_FIELD_LABEL + ALIAS_DELIMITER + fieldName);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomFieldQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
         return (T) this;
     }
 }
