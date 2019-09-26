@@ -139,7 +139,6 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
      */
     @SuppressWarnings("unchecked")
     public T addCustomObjectField(String fieldName, CustomFieldQueryDefinition queryDef) {
-        // startField("__typename");
         startField(fieldName + CUSTOM_FIELD_LABEL + ALIAS_DELIMITER + fieldName);
 
         _queryBuilder.append('{');
