@@ -163,12 +163,12 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      * @throws SchemaViolationError If the field name does not contain the <code>_custom_</code> suffix.
      */
     protected void readCustomField(String fieldName, JsonElement element) throws SchemaViolationError {
-        int end = fieldName.indexOf(AbstractQuery.CUSTOM_FIELD_LABEL);
-        if (end > 0) {
-            responseData.put(fieldName.substring(0, end), element);
-        } else {
+        if (!fieldName.endsWith(AbstractQuery.CUSTOM_FIELD_LABEL)) {
             throw new SchemaViolationError(this, fieldName, element);
         }
+
+        int end = fieldName.lastIndexOf(AbstractQuery.CUSTOM_FIELD_LABEL);
+        responseData.put(fieldName.substring(0, end), element);
     }
 
     protected String getFieldName(String key) {

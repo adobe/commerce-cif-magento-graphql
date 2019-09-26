@@ -27,7 +27,9 @@ import com.adobe.cq.commerce.magento.graphql.gson.MutationDeserializer;
 import com.adobe.cq.commerce.magento.graphql.gson.QueryDeserializer;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.SchemaViolationError;
 
 public class QueryBuilderTest {
 
@@ -115,6 +117,15 @@ public class QueryBuilderTest {
         Assert.assertEquals(2, categoryTree.getId().intValue());
         Assert.assertEquals("Default Category", categoryTree.getName());
         Assert.assertEquals(1, categoryTree.getChildren().size());
+    }
+
+    @Test(expected = SchemaViolationError.class)
+    public void testSchemaViolationError() throws Exception {
+        String jsonResponse = getResource("responses/root-category-with-unknown-field.json");
+
+        // Triggers a SchemaViolationError
+        // (we don't use QueryDeserializer.getGson().fromJson() because it would trigger a JsonParseException)
+        new Query(new JsonParser().parse(jsonResponse).getAsJsonObject());
     }
 
     @Test
