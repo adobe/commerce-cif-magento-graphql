@@ -550,8 +550,9 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
                 }
+
                 default: {
-                    throw new SchemaViolationError(this, key, field.getValue());
+                    readCustomField(fieldName, field.getValue());
                 }
             }
         }

@@ -16,11 +16,13 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.util.List;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * 
  */
 
-public interface CartAddressInterface {
+public interface CartAddressInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     String getCity();

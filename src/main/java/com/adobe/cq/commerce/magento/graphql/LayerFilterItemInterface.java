@@ -14,11 +14,13 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * 
  */
 
-public interface LayerFilterItemInterface {
+public interface LayerFilterItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     Integer getItemsCount();

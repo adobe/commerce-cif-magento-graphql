@@ -5,8 +5,9 @@
 
 This project contains the Magento GraphQL data models and query builders that have been automatically generated based on the default/generic (= out-of-the-box) Magento GraphQL schema. These classes can be used to build GraphQL requests and to parse/deserialise GraphQL JSON responses into java objects. These files are suitable for all projects that want to manipulate the default set of objects and attributes available in Magento, without any need to access for example customized product attributes.
 
-If you want to access customized attributes like extra product attributes added to your product attributes set in Magento, you can use the [GraphQL Java Generator](https://github.com/adobe/graphql-java-generator) to generate a similar set of java classes that would include the custom attributes of your Magento project. 
+If you want to access customized attributes like extra product attributes added to your product attributes set in Magento, you can use the [GraphQL Java Generator](https://github.com/adobe/graphql-java-generator) to generate a similar set of Java classes that would include the custom attributes of your Magento project. 
 
+Starting with version `3.1.0-magento232`, this library now also supports custom query fields. That is, it is now possible to add custom fields to any GraphQL query without having to regenerate the Java classes, and the deserialization of JSON responses will accept and allow the parsing of custom fields. See the examples in the [unit tests](src/test/java/com/adobe/cq/commerce/magento/graphql/) to find out more about that new feature. Note that this feature should be used with care because it basically bypasses the type-checking enforced by the query builders and the deserialization.
 
 ## Installation
 

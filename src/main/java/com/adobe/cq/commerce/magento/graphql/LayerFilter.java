@@ -93,8 +93,9 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
                 }
+
                 default: {
-                    throw new SchemaViolationError(this, key, field.getValue());
+                    readCustomField(fieldName, field.getValue());
                 }
             }
         }

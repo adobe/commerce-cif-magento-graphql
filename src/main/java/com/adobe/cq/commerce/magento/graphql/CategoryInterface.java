@@ -16,11 +16,13 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.util.List;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * CategoryInterface contains the full set of attributes that can be returned in a category search
  */
 
-public interface CategoryInterface {
+public interface CategoryInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     List<String> getAvailableSortBy();

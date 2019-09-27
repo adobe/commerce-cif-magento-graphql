@@ -14,12 +14,14 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * The CustomizableOptionInterface contains basic information about a customizable option. It can be
  * implemented by several types of configurable options.
  */
 
-public interface CustomizableOptionInterface {
+public interface CustomizableOptionInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     Integer getOptionId();
