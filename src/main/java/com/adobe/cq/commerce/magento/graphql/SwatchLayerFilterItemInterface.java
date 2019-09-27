@@ -14,11 +14,13 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * 
  */
 
-public interface SwatchLayerFilterItemInterface {
+public interface SwatchLayerFilterItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     SwatchData getSwatchData();

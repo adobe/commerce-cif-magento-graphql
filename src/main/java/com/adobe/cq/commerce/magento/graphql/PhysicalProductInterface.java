@@ -14,11 +14,13 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * PhysicalProductInterface contains attributes specific to tangible products
  */
 
-public interface PhysicalProductInterface {
+public interface PhysicalProductInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     Double getWeight();

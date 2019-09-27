@@ -72,8 +72,9 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
                 }
+
                 default: {
-                    throw new SchemaViolationError(this, key, field.getValue());
+                    readCustomField(fieldName, field.getValue());
                 }
             }
         }

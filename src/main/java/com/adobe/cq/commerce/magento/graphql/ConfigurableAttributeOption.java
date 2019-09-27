@@ -71,8 +71,9 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
                 }
+
                 default: {
-                    throw new SchemaViolationError(this, key, field.getValue());
+                    readCustomField(fieldName, field.getValue());
                 }
             }
         }

@@ -1,0 +1,1 @@
+{category(id:3){id,name,mystring_custom_:mystring,myinteger_custom_:myinteger,mydouble_custom_:mydouble,myboolean_custom_:myboolean,myarray_custom_:myarray}}

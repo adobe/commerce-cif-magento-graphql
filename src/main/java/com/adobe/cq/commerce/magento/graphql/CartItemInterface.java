@@ -14,11 +14,13 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * 
  */
 
-public interface CartItemInterface {
+public interface CartItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     String getId();

@@ -1,0 +1,11 @@
+{
+  "category": {
+    "id": 3,
+    "name": "Equipment",
+    "mystring_custom_": "somevalue",
+    "myinteger_custom_": 42,
+    "mydouble_custom_": 4.2,
+    "myboolean_custom_": true,
+    "myarray_custom_": ["a", "b"]
+  }
+}

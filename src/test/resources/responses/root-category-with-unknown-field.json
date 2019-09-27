@@ -1,0 +1,5 @@
+{
+  "category": {
+    "unknown": "Unknown field, will trigger a SchemaViolationError"
+  }
+}

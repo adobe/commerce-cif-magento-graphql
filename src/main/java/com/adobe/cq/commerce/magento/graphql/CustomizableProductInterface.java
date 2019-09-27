@@ -16,11 +16,13 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.util.List;
 
+import com.shopify.graphql.support.CustomFieldInterface;
+
 /**
  * CustomizableProductInterface contains information about customizable product options.
  */
 
-public interface CustomizableProductInterface {
+public interface CustomizableProductInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     List<CustomizableOptionInterface> getOptions();
