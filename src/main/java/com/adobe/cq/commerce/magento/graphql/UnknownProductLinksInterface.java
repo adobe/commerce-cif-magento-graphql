@@ -119,7 +119,7 @@ public class UnknownProductLinksInterface extends AbstractResponse<UnknownProduc
     }
 
     /**
-     * One of related, associated, upsell, or crosssell
+     * One of related, associated, upsell, or crosssell.
      */
 
     public String getLinkType() {
@@ -132,7 +132,7 @@ public class UnknownProductLinksInterface extends AbstractResponse<UnknownProduc
     }
 
     /**
-     * The SKU of the linked product
+     * The SKU of the linked product.
      */
 
     public String getLinkedProductSku() {
@@ -145,7 +145,7 @@ public class UnknownProductLinksInterface extends AbstractResponse<UnknownProduc
     }
 
     /**
-     * The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable)
+     * The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable).
      */
 
     public String getLinkedProductType() {
@@ -158,7 +158,7 @@ public class UnknownProductLinksInterface extends AbstractResponse<UnknownProduc
     }
 
     /**
-     * The position within the list of product links
+     * The position within the list of product links.
      */
 
     public Integer getPosition() {
@@ -171,7 +171,7 @@ public class UnknownProductLinksInterface extends AbstractResponse<UnknownProduc
     }
 
     /**
-     * The identifier of the linked product
+     * The identifier of the linked product.
      */
 
     public String getSku() {

@@ -28,7 +28,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The attribute set assigned to the product
+     * The attribute set assigned to the product.
      */
     public ProductInterfaceQuery attributeSetId() {
         startField("attribute_set_id");
@@ -37,7 +37,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Canonical URL
+     * Canonical URL.
      */
     public ProductInterfaceQuery canonicalUrl() {
         startField("canonical_url");
@@ -46,7 +46,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The categories assigned to a product
+     * The categories assigned to a product.
      */
     public ProductInterfaceQuery categories(CategoryInterfaceQueryDefinition queryDef) {
         startField("categories");
@@ -65,7 +65,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The product&#39;s country of origin
+     * The product&#39;s country of origin.
      */
     public ProductInterfaceQuery countryOfManufacture() {
         startField("country_of_manufacture");
@@ -74,10 +74,23 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Timestamp indicating when the product was created
+     * Timestamp indicating when the product was created.
      */
     public ProductInterfaceQuery createdAt() {
         startField("created_at");
+
+        return this;
+    }
+
+    /**
+     * Crosssell Products
+     */
+    public ProductInterfaceQuery crosssellProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("crosssell_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -96,7 +109,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Indicates whether a gift message is available
+     * Indicates whether a gift message is available.
      */
     public ProductInterfaceQuery giftMessageAvailable() {
         startField("gift_message_available");
@@ -105,7 +118,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The ID number assigned to the product
+     * The ID number assigned to the product.
      */
     public ProductInterfaceQuery id() {
         startField("id");
@@ -114,7 +127,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The relative path to the main image on the product page
+     * The relative path to the main image on the product page.
      */
     public ProductInterfaceQuery image(ProductImageQueryDefinition queryDef) {
         startField("image");
@@ -127,7 +140,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A number representing the product&#39;s manufacturer
+     * A number representing the product&#39;s manufacturer.
      */
     public ProductInterfaceQuery manufacturer() {
         startField("manufacturer");
@@ -136,7 +149,20 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of MediaGalleryEntry objects
+     * An array of Media Gallery objects.
+     */
+    public ProductInterfaceQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {
+        startField("media_gallery");
+
+        _queryBuilder.append('{');
+        queryDef.define(new MediaGalleryInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array of MediaGalleryEntry objects.
      */
     public ProductInterfaceQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
@@ -149,7 +175,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A brief overview of the product for search results listings, maximum 255 characters
+     * A brief overview of the product for search results listings, maximum 255 characters.
      */
     public ProductInterfaceQuery metaDescription() {
         startField("meta_description");
@@ -158,7 +184,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A comma-separated list of keywords that are visible only to search engines
+     * A comma-separated list of keywords that are visible only to search engines.
      */
     public ProductInterfaceQuery metaKeyword() {
         startField("meta_keyword");
@@ -167,7 +193,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
      */
     public ProductInterfaceQuery metaTitle() {
         startField("meta_title");
@@ -186,7 +212,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
 
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
-     * product
+     * product.
      */
     public ProductInterfaceQuery newFromDate() {
         startField("new_from_date");
@@ -195,7 +221,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The end date for new product listings
+     * The end date for new product listings.
      */
     public ProductInterfaceQuery newToDate() {
         startField("new_to_date");
@@ -213,7 +239,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * If the product has multiple options, determines where they appear on the product page
+     * If the product has multiple options, determines where they appear on the product page.
      */
     public ProductInterfaceQuery optionsContainer() {
         startField("options_container");
@@ -222,7 +248,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item
+     * A ProductPrices object, indicating the price of an item.
      */
     public ProductInterfaceQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
@@ -235,13 +261,26 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of ProductLinks objects
+     * An array of ProductLinks objects.
      */
     public ProductInterfaceQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
 
         _queryBuilder.append('{');
         queryDef.define(new ProductLinksInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Related Products
+     */
+    public ProductInterfaceQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("related_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -261,7 +300,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
      */
     public ProductInterfaceQuery sku() {
         startField("sku");
@@ -270,7 +309,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The relative path to the small image, which is used on catalog pages
+     * The relative path to the small image, which is used on catalog pages.
      */
     public ProductInterfaceQuery smallImage(ProductImageQueryDefinition queryDef) {
         startField("small_image");
@@ -283,7 +322,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The beginning date that a product has a special price
+     * The beginning date that a product has a special price.
      */
     public ProductInterfaceQuery specialFromDate() {
         startField("special_from_date");
@@ -292,7 +331,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The discounted price of the product
+     * The discounted price of the product.
      */
     public ProductInterfaceQuery specialPrice() {
         startField("special_price");
@@ -301,7 +340,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The end date that a product has a special price
+     * The end date that a product has a special price.
      */
     public ProductInterfaceQuery specialToDate() {
         startField("special_to_date");
@@ -328,7 +367,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The relative path to the product&#39;s thumbnail image
+     * The relative path to the product&#39;s thumbnail image.
      */
     public ProductInterfaceQuery thumbnail(ProductImageQueryDefinition queryDef) {
         startField("thumbnail");
@@ -341,7 +380,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
      */
     public ProductInterfaceQuery tierPrice() {
         startField("tier_price");
@@ -350,7 +389,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of ProductTierPrices objects
+     * An array of ProductTierPrices objects.
      */
     public ProductInterfaceQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
@@ -363,7 +402,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      */
     public ProductInterfaceQuery typeId() {
         startField("type_id");
@@ -372,10 +411,23 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Timestamp indicating when the product was updated
+     * Timestamp indicating when the product was updated.
      */
     public ProductInterfaceQuery updatedAt() {
         startField("updated_at");
+
+        return this;
+    }
+
+    /**
+     * Upsell Products
+     */
+    public ProductInterfaceQuery upsellProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("upsell_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -389,9 +441,6 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         return this;
     }
 
-    /**
-     * The part of the URL that precedes the url_key
-     */
     public ProductInterfaceQuery urlPath() {
         startField("url_path");
 
@@ -412,7 +461,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of websites in which the product is available
+     * An array of websites in which the product is available.
      */
     public ProductInterfaceQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");

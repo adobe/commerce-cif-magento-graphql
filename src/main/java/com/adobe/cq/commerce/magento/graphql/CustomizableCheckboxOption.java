@@ -25,7 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableCheckbbixOption contains information about a set of checkbox values that are defined as
- * part of a customizable option
+ * part of a customizable option.
  */
 public class CustomizableCheckboxOption extends AbstractResponse<CustomizableCheckboxOption> implements CustomizableOptionInterface {
     public CustomizableCheckboxOption() {
@@ -118,7 +118,7 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -131,7 +131,7 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -144,7 +144,7 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -157,7 +157,7 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {
@@ -170,7 +170,7 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
     }
 
     /**
-     * An array that defines a set of checkbox values
+     * An array that defines a set of checkbox values.
      */
 
     public List<CustomizableCheckboxValue> getValue() {

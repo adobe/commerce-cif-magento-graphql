@@ -106,7 +106,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     }
 
     /**
-     * The ID of the customer group
+     * The ID of the customer group.
      */
 
     public String getCustomerGroupId() {
@@ -119,7 +119,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     }
 
     /**
-     * The percentage discount of the item
+     * The percentage discount of the item.
      */
 
     public Double getPercentageValue() {
@@ -132,7 +132,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     }
 
     /**
-     * The number of items that must be purchased to qualify for tier pricing
+     * The number of items that must be purchased to qualify for tier pricing.
      */
 
     public Double getQty() {
@@ -145,7 +145,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     }
 
     /**
-     * The price of the fixed price item
+     * The price of the fixed price item.
      */
 
     public Double getValue() {
@@ -158,7 +158,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     }
 
     /**
-     * The ID assigned to the website
+     * The ID assigned to the website.
      */
 
     public Double getWebsiteId() {

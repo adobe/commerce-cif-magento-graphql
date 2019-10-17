@@ -56,6 +56,17 @@ public class CartPrices extends AbstractResponse<CartPrices> {
                     break;
                 }
 
+                case "discount": {
+                    CartDiscount optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CartDiscount(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "grand_total": {
                     Money optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -125,6 +136,15 @@ public class CartPrices extends AbstractResponse<CartPrices> {
         return this;
     }
 
+    public CartDiscount getDiscount() {
+        return (CartDiscount) get("discount");
+    }
+
+    public CartPrices setDiscount(CartDiscount arg) {
+        optimisticData.put(getKey("discount"), arg);
+        return this;
+    }
+
     public Money getGrandTotal() {
         return (Money) get("grand_total");
     }
@@ -164,6 +184,8 @@ public class CartPrices extends AbstractResponse<CartPrices> {
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "applied_taxes": return true;
+
+            case "discount": return true;
 
             case "grand_total": return true;
 

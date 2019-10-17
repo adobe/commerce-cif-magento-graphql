@@ -28,7 +28,7 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableOptionInterfaceQuery optionId() {
         startField("option_id");
@@ -37,7 +37,7 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableOptionInterfaceQuery required() {
         startField("required");
@@ -46,7 +46,7 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableOptionInterfaceQuery sortOrder() {
         startField("sort_order");
@@ -55,7 +55,7 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableOptionInterfaceQuery title() {
         startField("title");

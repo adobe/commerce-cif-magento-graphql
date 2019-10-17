@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * SortFields contains a default value for sort fields and all available sort fields
+ * SortFields contains a default value for sort fields and all available sort fields.
  */
 public class SortFieldsQuery extends AbstractQuery<SortFieldsQuery> {
     SortFieldsQuery(StringBuilder _queryBuilder) {
@@ -25,7 +25,7 @@ public class SortFieldsQuery extends AbstractQuery<SortFieldsQuery> {
     }
 
     /**
-     * Default value of sort fields
+     * Default value of sort fields.
      */
     public SortFieldsQuery defaultValue() {
         startField("default");
@@ -34,7 +34,7 @@ public class SortFieldsQuery extends AbstractQuery<SortFieldsQuery> {
     }
 
     /**
-     * Available sort fields
+     * Available sort fields.
      */
     public SortFieldsQuery options(SortFieldQueryDefinition queryDef) {
         startField("options");

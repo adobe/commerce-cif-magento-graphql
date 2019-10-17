@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
- * the video
+ * the video.
  */
 public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<ProductMediaGalleryEntriesVideoContentQuery> {
     ProductMediaGalleryEntriesVideoContentQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-     * Must be external-video
+     * Must be external-video.
      */
     public ProductMediaGalleryEntriesVideoContentQuery mediaType() {
         startField("media_type");
@@ -35,7 +35,7 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-     * A description of the video
+     * A description of the video.
      */
     public ProductMediaGalleryEntriesVideoContentQuery videoDescription() {
         startField("video_description");
@@ -44,7 +44,7 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-     * Optional data about the video
+     * Optional data about the video.
      */
     public ProductMediaGalleryEntriesVideoContentQuery videoMetadata() {
         startField("video_metadata");
@@ -53,7 +53,7 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-     * Describes the video source
+     * Describes the video source.
      */
     public ProductMediaGalleryEntriesVideoContentQuery videoProvider() {
         startField("video_provider");
@@ -62,7 +62,7 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-     * The title of the video
+     * The title of the video.
      */
     public ProductMediaGalleryEntriesVideoContentQuery videoTitle() {
         startField("video_title");
@@ -71,7 +71,7 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
     }
 
     /**
-     * The URL to the video
+     * The URL to the video.
      */
     public ProductMediaGalleryEntriesVideoContentQuery videoUrl() {
         startField("video_url");

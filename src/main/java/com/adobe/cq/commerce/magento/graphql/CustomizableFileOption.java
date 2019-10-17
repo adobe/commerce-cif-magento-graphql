@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableFileOption contains information about a file picker that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableFileOption extends AbstractResponse<CustomizableFileOption> implements CustomizableOptionInterface {
     public CustomizableFileOption() {
@@ -117,7 +117,7 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -130,7 +130,7 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
     }
 
     /**
-     * The Stock Keeping Unit of the base product
+     * The Stock Keeping Unit of the base product.
      */
 
     public String getProductSku() {
@@ -143,7 +143,7 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -156,7 +156,7 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -169,7 +169,7 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {
@@ -182,7 +182,7 @@ public class CustomizableFileOption extends AbstractResponse<CustomizableFileOpt
     }
 
     /**
-     * An object that defines a file value
+     * An object that defines a file value.
      */
 
     public CustomizableFileValue getValue() {

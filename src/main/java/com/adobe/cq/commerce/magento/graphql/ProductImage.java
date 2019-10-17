@@ -22,9 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Product image information. Contains image relative path, URL and label
+ * Product image information. Contains the image URL and label.
  */
-public class ProductImage extends AbstractResponse<ProductImage> {
+public class ProductImage extends AbstractResponse<ProductImage> implements MediaGalleryInterface {
     public ProductImage() {
     }
 
@@ -71,6 +71,10 @@ public class ProductImage extends AbstractResponse<ProductImage> {
         return "ProductImage";
     }
 
+    /**
+     * The label of the product image or video.
+     */
+
     public String getLabel() {
         return (String) get("label");
     }
@@ -79,6 +83,10 @@ public class ProductImage extends AbstractResponse<ProductImage> {
         optimisticData.put(getKey("label"), arg);
         return this;
     }
+
+    /**
+     * The URL of the product image or video.
+     */
 
     public String getUrl() {
         return (String) get("url");

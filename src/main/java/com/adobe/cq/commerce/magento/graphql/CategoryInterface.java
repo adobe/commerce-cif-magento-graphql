@@ -19,7 +19,7 @@ import java.util.List;
 import com.shopify.graphql.support.CustomFieldInterface;
 
 /**
- * CategoryInterface contains the full set of attributes that can be returned in a category search
+ * CategoryInterface contains the full set of attributes that can be returned in a category search.
  */
 
 public interface CategoryInterface extends CustomFieldInterface {

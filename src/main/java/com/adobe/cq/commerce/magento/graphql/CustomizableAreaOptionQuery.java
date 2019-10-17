@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableAreaOption contains information about a text area that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaOptionQuery> {
     CustomizableAreaOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableAreaOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
     }
 
     /**
-     * The Stock Keeping Unit of the base product
+     * The Stock Keeping Unit of the base product.
      */
     public CustomizableAreaOptionQuery productSku() {
         startField("product_sku");
@@ -44,7 +44,7 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableAreaOptionQuery required() {
         startField("required");
@@ -53,7 +53,7 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableAreaOptionQuery sortOrder() {
         startField("sort_order");
@@ -62,7 +62,7 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableAreaOptionQuery title() {
         startField("title");
@@ -71,7 +71,7 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
     }
 
     /**
-     * An object that defines a text area
+     * An object that defines a text area.
      */
     public CustomizableAreaOptionQuery value(CustomizableAreaValueQueryDefinition queryDef) {
         startField("value");

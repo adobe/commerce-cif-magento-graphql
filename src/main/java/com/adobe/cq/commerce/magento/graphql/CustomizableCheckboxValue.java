@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableCheckboxValue defines the price and sku of a product whose page contains a customized
- * set of checkbox values
+ * set of checkbox values.
  */
 public class CustomizableCheckboxValue extends AbstractResponse<CustomizableCheckboxValue> {
     public CustomizableCheckboxValue() {
@@ -117,7 +117,7 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     }
 
     /**
-     * The ID assigned to the value
+     * The ID assigned to the value.
      */
 
     public Integer getOptionTypeId() {
@@ -130,7 +130,7 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
 
     public Double getPrice() {
@@ -143,7 +143,7 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -156,7 +156,7 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
 
     public String getSku() {
@@ -169,7 +169,7 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     }
 
     /**
-     * The order in which the checkbox value is displayed
+     * The order in which the checkbox value is displayed.
      */
 
     public Integer getSortOrder() {
@@ -182,7 +182,7 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {

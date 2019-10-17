@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableDropDownValue defines the price and sku of a product whose page contains a customized
- * drop down menu
+ * drop down menu.
  */
 public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDropDownValueQuery> {
     CustomizableDropDownValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDr
     }
 
     /**
-     * The ID assigned to the value
+     * The ID assigned to the value.
      */
     public CustomizableDropDownValueQuery optionTypeId() {
         startField("option_type_id");
@@ -35,7 +35,7 @@ public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDr
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
     public CustomizableDropDownValueQuery price() {
         startField("price");
@@ -44,7 +44,7 @@ public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDr
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableDropDownValueQuery priceType() {
         startField("price_type");
@@ -53,7 +53,7 @@ public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDr
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableDropDownValueQuery sku() {
         startField("sku");
@@ -62,7 +62,7 @@ public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDr
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableDropDownValueQuery sortOrder() {
         startField("sort_order");
@@ -71,7 +71,7 @@ public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDr
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableDropDownValueQuery title() {
         startField("title");

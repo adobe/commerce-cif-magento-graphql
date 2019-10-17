@@ -25,7 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableDropDownOption contains information about a drop down menu that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableDropDownOption extends AbstractResponse<CustomizableDropDownOption> implements CustomizableOptionInterface {
     public CustomizableDropDownOption() {
@@ -118,7 +118,7 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -131,7 +131,7 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -144,7 +144,7 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -157,7 +157,7 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {
@@ -170,7 +170,7 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
     }
 
     /**
-     * An array that defines the set of options for a drop down menu
+     * An array that defines the set of options for a drop down menu.
      */
 
     public List<CustomizableDropDownValue> getValue() {

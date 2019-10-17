@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * The category products object returned in the Category query
+ * The category products object returned in the Category query.
  */
 public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> {
     CategoryProductsQuery(StringBuilder _queryBuilder) {
@@ -25,7 +25,7 @@ public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> 
     }
 
     /**
-     * An array of products that are assigned to the category
+     * An array of products that are assigned to the category.
      */
     public CategoryProductsQuery items(ProductInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -38,7 +38,7 @@ public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> 
     }
 
     /**
-     * An object that includes the page_info and currentPage values specified in the query
+     * An object that includes the page_info and currentPage values specified in the query.
      */
     public CategoryProductsQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");
@@ -51,7 +51,7 @@ public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> 
     }
 
     /**
-     * The number of products returned
+     * The number of products returned.
      */
     public CategoryProductsQuery totalCount() {
         startField("total_count");

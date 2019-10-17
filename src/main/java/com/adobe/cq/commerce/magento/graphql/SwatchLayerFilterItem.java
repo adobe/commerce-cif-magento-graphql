@@ -94,7 +94,7 @@ public class SwatchLayerFilterItem extends AbstractResponse<SwatchLayerFilterIte
     }
 
     /**
-     * Count of items by filter
+     * Count of items by filter.
      */
 
     public Integer getItemsCount() {
@@ -107,7 +107,7 @@ public class SwatchLayerFilterItem extends AbstractResponse<SwatchLayerFilterIte
     }
 
     /**
-     * Filter label
+     * Filter label.
      */
 
     public String getLabel() {
@@ -133,7 +133,7 @@ public class SwatchLayerFilterItem extends AbstractResponse<SwatchLayerFilterIte
     }
 
     /**
-     * Value for filter request variable to be used in query
+     * Value for filter request variable to be used in query.
      */
 
     public String getValueString() {

@@ -25,7 +25,7 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     }
 
     /**
-     * Array of filter items
+     * Array of filter items.
      */
     public LayerFilterQuery filterItems(LayerFilterItemInterfaceQueryDefinition queryDef) {
         startField("filter_items");
@@ -38,7 +38,7 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     }
 
     /**
-     * Count of filter items in filter group
+     * Count of filter items in filter group.
      */
     public LayerFilterQuery filterItemsCount() {
         startField("filter_items_count");
@@ -47,7 +47,7 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     }
 
     /**
-     * Layered navigation filter name
+     * Layered navigation filter name.
      */
     public LayerFilterQuery name() {
         startField("name");
@@ -56,7 +56,7 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     }
 
     /**
-     * Request variable name for filter query
+     * Request variable name for filter query.
      */
     public LayerFilterQuery requestVar() {
         startField("request_var");

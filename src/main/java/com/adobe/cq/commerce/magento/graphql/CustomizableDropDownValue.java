@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableDropDownValue defines the price and sku of a product whose page contains a customized
- * drop down menu
+ * drop down menu.
  */
 public class CustomizableDropDownValue extends AbstractResponse<CustomizableDropDownValue> {
     public CustomizableDropDownValue() {
@@ -117,7 +117,7 @@ public class CustomizableDropDownValue extends AbstractResponse<CustomizableDrop
     }
 
     /**
-     * The ID assigned to the value
+     * The ID assigned to the value.
      */
 
     public Integer getOptionTypeId() {
@@ -130,7 +130,7 @@ public class CustomizableDropDownValue extends AbstractResponse<CustomizableDrop
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
 
     public Double getPrice() {
@@ -143,7 +143,7 @@ public class CustomizableDropDownValue extends AbstractResponse<CustomizableDrop
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -156,7 +156,7 @@ public class CustomizableDropDownValue extends AbstractResponse<CustomizableDrop
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
 
     public String getSku() {
@@ -169,7 +169,7 @@ public class CustomizableDropDownValue extends AbstractResponse<CustomizableDrop
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -182,7 +182,7 @@ public class CustomizableDropDownValue extends AbstractResponse<CustomizableDrop
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {

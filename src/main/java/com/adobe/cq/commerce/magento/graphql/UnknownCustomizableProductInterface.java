@@ -102,7 +102,7 @@ public class UnknownCustomizableProductInterface extends AbstractResponse<Unknow
     }
 
     /**
-     * An array of options for a customizable product
+     * An array of options for a customizable product.
      */
 
     public List<CustomizableOptionInterface> getOptions() {

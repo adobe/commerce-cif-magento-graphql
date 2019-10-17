@@ -57,6 +57,27 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "checkoutAgreements": {
+                    List<CheckoutAgreement> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<CheckoutAgreement> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            CheckoutAgreement optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new CheckoutAgreement(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "cmsBlocks": {
                     CmsBlocks optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -177,6 +198,28 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "getHostedProUrl": {
+                    HostedProUrl optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new HostedProUrl(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "getPayflowLinkToken": {
+                    PayflowLinkToken optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new PayflowLinkToken(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "isEmailAvailable": {
                     IsEmailAvailableOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -263,7 +306,7 @@ public class Query extends AbstractResponse<Query> {
 
     /**
      * The category query searches for categories that match the criteria specified in the search and
-     * filter attributes
+     * filter attributes.
      */
 
     public CategoryTree getCategory() {
@@ -272,6 +315,19 @@ public class Query extends AbstractResponse<Query> {
 
     public Query setCategory(CategoryTree arg) {
         optimisticData.put(getKey("category"), arg);
+        return this;
+    }
+
+    /**
+     * The Checkout Agreements information
+     */
+
+    public List<CheckoutAgreement> getCheckoutAgreements() {
+        return (List<CheckoutAgreement>) get("checkoutAgreements");
+    }
+
+    public Query setCheckoutAgreements(List<CheckoutAgreement> arg) {
+        optimisticData.put(getKey("checkoutAgreements"), arg);
         return this;
     }
 
@@ -406,6 +462,33 @@ public class Query extends AbstractResponse<Query> {
         return this;
     }
 
+    /**
+     * Retrieve secure PayPal url for Payments Pro Hosted Solution transaction.
+     */
+
+    public HostedProUrl getGetHostedProUrl() {
+        return (HostedProUrl) get("getHostedProUrl");
+    }
+
+    public Query setGetHostedProUrl(HostedProUrl arg) {
+        optimisticData.put(getKey("getHostedProUrl"), arg);
+        return this;
+    }
+
+    /**
+     * Retrieve payment credentials for transaction. Use this query for Payflow Link and Payments Advanced
+     * payment methods.
+     */
+
+    public PayflowLinkToken getGetPayflowLinkToken() {
+        return (PayflowLinkToken) get("getPayflowLinkToken");
+    }
+
+    public Query setGetPayflowLinkToken(PayflowLinkToken arg) {
+        optimisticData.put(getKey("getPayflowLinkToken"), arg);
+        return this;
+    }
+
     public IsEmailAvailableOutput getIsEmailAvailable() {
         return (IsEmailAvailableOutput) get("isEmailAvailable");
     }
@@ -417,7 +500,7 @@ public class Query extends AbstractResponse<Query> {
 
     /**
      * The products query searches for products that match the criteria specified in the search and filter
-     * attributes
+     * attributes.
      */
 
     public Products getProducts() {
@@ -474,6 +557,8 @@ public class Query extends AbstractResponse<Query> {
 
             case "category": return true;
 
+            case "checkoutAgreements": return true;
+
             case "cmsBlocks": return true;
 
             case "cmsPage": return true;
@@ -493,6 +578,10 @@ public class Query extends AbstractResponse<Query> {
             case "customerOrders": return true;
 
             case "customerPaymentTokens": return true;
+
+            case "getHostedProUrl": return true;
+
+            case "getPayflowLinkToken": return true;
 
             case "isEmailAvailable": return true;
 

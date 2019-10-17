@@ -24,27 +24,18 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
         super(_queryBuilder);
     }
 
-    /**
-     * The unique ID for the downloadable product sample
-     */
     public DownloadableProductSamplesQuery id() {
         startField("id");
 
         return this;
     }
 
-    /**
-     * The relative path to the downloadable sample
-     */
     public DownloadableProductSamplesQuery sampleFile() {
         startField("sample_file");
 
         return this;
     }
 
-    /**
-     * Either FILE or URL
-     */
     public DownloadableProductSamplesQuery sampleType() {
         startField("sample_type");
 
@@ -52,7 +43,7 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-     * The relative URL to the downloadable sample
+     * URL to the downloadable sample
      */
     public DownloadableProductSamplesQuery sampleUrl() {
         startField("sample_url");

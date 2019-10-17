@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * PhysicalProductInterface contains attributes specific to tangible products
+ * PhysicalProductInterface contains attributes specific to tangible products.
  */
 public class UnknownPhysicalProductInterface extends AbstractResponse<UnknownPhysicalProductInterface> implements PhysicalProductInterface {
     public UnknownPhysicalProductInterface() {
@@ -86,7 +86,7 @@ public class UnknownPhysicalProductInterface extends AbstractResponse<UnknownPhy
     }
 
     /**
-     * The weight of the item, in units defined by the store
+     * The weight of the item, in units defined by the store.
      */
 
     public Double getWeight() {

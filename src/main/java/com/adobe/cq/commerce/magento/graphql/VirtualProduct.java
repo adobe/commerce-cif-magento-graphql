@@ -25,7 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * A virtual product is non-tangible product that does not require shipping and is not kept in
- * inventory
+ * inventory.
  */
 public class VirtualProduct extends AbstractResponse<VirtualProduct> implements CustomizableProductInterface, ProductInterface {
     public VirtualProduct() {
@@ -112,6 +112,27 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                     break;
                 }
 
+                case "crosssell_products": {
+                    List<ProductInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<ProductInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            ProductInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownProductInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "description": {
                     ComplexTextValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -160,6 +181,27 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "media_gallery": {
+                    List<MediaGalleryInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<MediaGalleryInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            MediaGalleryInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownMediaGalleryInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -329,6 +371,27 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                     break;
                 }
 
+                case "related_products": {
+                    List<ProductInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<ProductInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            ProductInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownProductInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "short_description": {
                     ComplexTextValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -482,6 +545,27 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                     break;
                 }
 
+                case "upsell_products": {
+                    List<ProductInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<ProductInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            ProductInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownProductInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "url_key": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -563,7 +647,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The attribute set assigned to the product
+     * The attribute set assigned to the product.
      */
 
     public Integer getAttributeSetId() {
@@ -576,7 +660,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * Canonical URL
+     * Canonical URL.
      */
 
     public String getCanonicalUrl() {
@@ -589,7 +673,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The categories assigned to a product
+     * The categories assigned to a product.
      */
 
     public List<CategoryInterface> getCategories() {
@@ -611,7 +695,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The product&#39;s country of origin
+     * The product&#39;s country of origin.
      */
 
     public String getCountryOfManufacture() {
@@ -624,7 +708,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * Timestamp indicating when the product was created
+     * Timestamp indicating when the product was created.
      */
 
     public String getCreatedAt() {
@@ -633,6 +717,19 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
     public VirtualProduct setCreatedAt(String arg) {
         optimisticData.put(getKey("created_at"), arg);
+        return this;
+    }
+
+    /**
+     * Crosssell Products
+     */
+
+    public List<ProductInterface> getCrosssellProducts() {
+        return (List<ProductInterface>) get("crosssell_products");
+    }
+
+    public VirtualProduct setCrosssellProducts(List<ProductInterface> arg) {
+        optimisticData.put(getKey("crosssell_products"), arg);
         return this;
     }
 
@@ -650,7 +747,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * Indicates whether a gift message is available
+     * Indicates whether a gift message is available.
      */
 
     public String getGiftMessageAvailable() {
@@ -663,7 +760,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The ID number assigned to the product
+     * The ID number assigned to the product.
      */
 
     public Integer getId() {
@@ -676,7 +773,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The relative path to the main image on the product page
+     * The relative path to the main image on the product page.
      */
 
     public ProductImage getImage() {
@@ -689,7 +786,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * A number representing the product&#39;s manufacturer
+     * A number representing the product&#39;s manufacturer.
      */
 
     public Integer getManufacturer() {
@@ -702,7 +799,20 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * An array of MediaGalleryEntry objects
+     * An array of Media Gallery objects.
+     */
+
+    public List<MediaGalleryInterface> getMediaGallery() {
+        return (List<MediaGalleryInterface>) get("media_gallery");
+    }
+
+    public VirtualProduct setMediaGallery(List<MediaGalleryInterface> arg) {
+        optimisticData.put(getKey("media_gallery"), arg);
+        return this;
+    }
+
+    /**
+     * An array of MediaGalleryEntry objects.
      */
 
     public List<MediaGalleryEntry> getMediaGalleryEntries() {
@@ -715,7 +825,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * A brief overview of the product for search results listings, maximum 255 characters
+     * A brief overview of the product for search results listings, maximum 255 characters.
      */
 
     public String getMetaDescription() {
@@ -728,7 +838,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * A comma-separated list of keywords that are visible only to search engines
+     * A comma-separated list of keywords that are visible only to search engines.
      */
 
     public String getMetaKeyword() {
@@ -741,7 +851,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
      */
 
     public String getMetaTitle() {
@@ -768,7 +878,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
-     * product
+     * product.
      */
 
     public String getNewFromDate() {
@@ -781,7 +891,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The end date for new product listings
+     * The end date for new product listings.
      */
 
     public String getNewToDate() {
@@ -807,7 +917,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * An array of options for a customizable product
+     * An array of options for a customizable product.
      */
 
     public List<CustomizableOptionInterface> getOptions() {
@@ -820,7 +930,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * If the product has multiple options, determines where they appear on the product page
+     * If the product has multiple options, determines where they appear on the product page.
      */
 
     public String getOptionsContainer() {
@@ -833,7 +943,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item
+     * A ProductPrices object, indicating the price of an item.
      */
 
     public ProductPrices getPrice() {
@@ -846,7 +956,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * An array of ProductLinks objects
+     * An array of ProductLinks objects.
      */
 
     public List<ProductLinksInterface> getProductLinks() {
@@ -855,6 +965,19 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
     public VirtualProduct setProductLinks(List<ProductLinksInterface> arg) {
         optimisticData.put(getKey("product_links"), arg);
+        return this;
+    }
+
+    /**
+     * Related Products
+     */
+
+    public List<ProductInterface> getRelatedProducts() {
+        return (List<ProductInterface>) get("related_products");
+    }
+
+    public VirtualProduct setRelatedProducts(List<ProductInterface> arg) {
+        optimisticData.put(getKey("related_products"), arg);
         return this;
     }
 
@@ -872,7 +995,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
      */
 
     public String getSku() {
@@ -885,7 +1008,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The relative path to the small image, which is used on catalog pages
+     * The relative path to the small image, which is used on catalog pages.
      */
 
     public ProductImage getSmallImage() {
@@ -898,7 +1021,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The beginning date that a product has a special price
+     * The beginning date that a product has a special price.
      */
 
     public String getSpecialFromDate() {
@@ -911,7 +1034,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The discounted price of the product
+     * The discounted price of the product.
      */
 
     public Double getSpecialPrice() {
@@ -924,7 +1047,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The end date that a product has a special price
+     * The end date that a product has a special price.
      */
 
     public String getSpecialToDate() {
@@ -963,7 +1086,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The relative path to the product&#39;s thumbnail image
+     * The relative path to the product&#39;s thumbnail image.
      */
 
     public ProductImage getThumbnail() {
@@ -976,7 +1099,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
      */
 
     public Double getTierPrice() {
@@ -989,7 +1112,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * An array of ProductTierPrices objects
+     * An array of ProductTierPrices objects.
      */
 
     public List<ProductTierPrices> getTierPrices() {
@@ -1002,7 +1125,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      */
 
     public String getTypeId() {
@@ -1015,7 +1138,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * Timestamp indicating when the product was updated
+     * Timestamp indicating when the product was updated.
      */
 
     public String getUpdatedAt() {
@@ -1024,6 +1147,19 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
     public VirtualProduct setUpdatedAt(String arg) {
         optimisticData.put(getKey("updated_at"), arg);
+        return this;
+    }
+
+    /**
+     * Upsell Products
+     */
+
+    public List<ProductInterface> getUpsellProducts() {
+        return (List<ProductInterface>) get("upsell_products");
+    }
+
+    public VirtualProduct setUpsellProducts(List<ProductInterface> arg) {
+        optimisticData.put(getKey("upsell_products"), arg);
         return this;
     }
 
@@ -1039,10 +1175,6 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
         optimisticData.put(getKey("url_key"), arg);
         return this;
     }
-
-    /**
-     * The part of the URL that precedes the url_key
-     */
 
     public String getUrlPath() {
         return (String) get("url_path");
@@ -1067,7 +1199,7 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
-     * An array of websites in which the product is available
+     * An array of websites in which the product is available.
      */
 
     public List<Website> getWebsites() {
@@ -1093,6 +1225,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
             case "created_at": return false;
 
+            case "crosssell_products": return false;
+
             case "description": return true;
 
             case "gift_message_available": return false;
@@ -1102,6 +1236,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
             case "image": return true;
 
             case "manufacturer": return false;
+
+            case "media_gallery": return false;
 
             case "media_gallery_entries": return true;
 
@@ -1126,6 +1262,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
             case "price": return true;
 
             case "product_links": return false;
+
+            case "related_products": return false;
 
             case "short_description": return true;
 
@@ -1152,6 +1290,8 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
             case "type_id": return false;
 
             case "updated_at": return false;
+
+            case "upsell_products": return false;
 
             case "url_key": return false;
 

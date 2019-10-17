@@ -83,7 +83,7 @@ public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implement
     }
 
     /**
-     * Count of items by filter
+     * Count of items by filter.
      */
 
     public Integer getItemsCount() {
@@ -96,7 +96,7 @@ public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implement
     }
 
     /**
-     * Filter label
+     * Filter label.
      */
 
     public String getLabel() {
@@ -109,7 +109,7 @@ public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implement
     }
 
     /**
-     * Value for filter request variable to be used in query
+     * Value for filter request variable to be used in query.
      */
 
     public String getValueString() {

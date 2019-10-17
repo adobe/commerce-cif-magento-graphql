@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableFieldOption contains information about a text field that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFieldOptionQuery> {
     CustomizableFieldOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableFieldOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
     }
 
     /**
-     * The Stock Keeping Unit of the base product
+     * The Stock Keeping Unit of the base product.
      */
     public CustomizableFieldOptionQuery productSku() {
         startField("product_sku");
@@ -44,7 +44,7 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableFieldOptionQuery required() {
         startField("required");
@@ -53,7 +53,7 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableFieldOptionQuery sortOrder() {
         startField("sort_order");
@@ -62,7 +62,7 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableFieldOptionQuery title() {
         startField("title");
@@ -71,7 +71,7 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
     }
 
     /**
-     * An object that defines a text field
+     * An object that defines a text field.
      */
     public CustomizableFieldOptionQuery value(CustomizableFieldValueQueryDefinition queryDef) {
         startField("value");

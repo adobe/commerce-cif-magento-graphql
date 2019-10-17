@@ -34,6 +34,16 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
         return this;
     }
 
+    public CartPricesQuery discount(CartDiscountQueryDefinition queryDef) {
+        startField("discount");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CartDiscountQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public CartPricesQuery grandTotal(MoneyQueryDefinition queryDef) {
         startField("grand_total");
 

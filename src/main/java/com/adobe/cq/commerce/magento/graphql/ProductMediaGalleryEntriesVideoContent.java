@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
- * the video
+ * the video.
  */
 public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<ProductMediaGalleryEntriesVideoContent> {
     public ProductMediaGalleryEntriesVideoContent() {
@@ -117,7 +117,7 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-     * Must be external-video
+     * Must be external-video.
      */
 
     public String getMediaType() {
@@ -130,7 +130,7 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-     * A description of the video
+     * A description of the video.
      */
 
     public String getVideoDescription() {
@@ -143,7 +143,7 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-     * Optional data about the video
+     * Optional data about the video.
      */
 
     public String getVideoMetadata() {
@@ -156,7 +156,7 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-     * Describes the video source
+     * Describes the video source.
      */
 
     public String getVideoProvider() {
@@ -169,7 +169,7 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-     * The title of the video
+     * The title of the video.
      */
 
     public String getVideoTitle() {
@@ -182,7 +182,7 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
     }
 
     /**
-     * The URL to the video
+     * The URL to the video.
      */
 
     public String getVideoUrl() {

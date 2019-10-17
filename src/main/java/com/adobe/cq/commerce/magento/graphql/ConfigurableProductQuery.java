@@ -25,7 +25,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The attribute set assigned to the product
+     * The attribute set assigned to the product.
      */
     public ConfigurableProductQuery attributeSetId() {
         startField("attribute_set_id");
@@ -34,7 +34,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * Canonical URL
+     * Canonical URL.
      */
     public ConfigurableProductQuery canonicalUrl() {
         startField("canonical_url");
@@ -43,7 +43,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The categories assigned to a product
+     * The categories assigned to a product.
      */
     public ConfigurableProductQuery categories(CategoryInterfaceQueryDefinition queryDef) {
         startField("categories");
@@ -75,7 +75,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The product&#39;s country of origin
+     * The product&#39;s country of origin.
      */
     public ConfigurableProductQuery countryOfManufacture() {
         startField("country_of_manufacture");
@@ -84,10 +84,23 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * Timestamp indicating when the product was created
+     * Timestamp indicating when the product was created.
      */
     public ConfigurableProductQuery createdAt() {
         startField("created_at");
+
+        return this;
+    }
+
+    /**
+     * Crosssell Products
+     */
+    public ConfigurableProductQuery crosssellProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("crosssell_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -106,7 +119,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * Indicates whether a gift message is available
+     * Indicates whether a gift message is available.
      */
     public ConfigurableProductQuery giftMessageAvailable() {
         startField("gift_message_available");
@@ -115,7 +128,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The ID number assigned to the product
+     * The ID number assigned to the product.
      */
     public ConfigurableProductQuery id() {
         startField("id");
@@ -124,7 +137,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The relative path to the main image on the product page
+     * The relative path to the main image on the product page.
      */
     public ConfigurableProductQuery image(ProductImageQueryDefinition queryDef) {
         startField("image");
@@ -137,7 +150,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * A number representing the product&#39;s manufacturer
+     * A number representing the product&#39;s manufacturer.
      */
     public ConfigurableProductQuery manufacturer() {
         startField("manufacturer");
@@ -146,7 +159,20 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * An array of MediaGalleryEntry objects
+     * An array of Media Gallery objects.
+     */
+    public ConfigurableProductQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {
+        startField("media_gallery");
+
+        _queryBuilder.append('{');
+        queryDef.define(new MediaGalleryInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array of MediaGalleryEntry objects.
      */
     public ConfigurableProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
@@ -159,7 +185,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * A brief overview of the product for search results listings, maximum 255 characters
+     * A brief overview of the product for search results listings, maximum 255 characters.
      */
     public ConfigurableProductQuery metaDescription() {
         startField("meta_description");
@@ -168,7 +194,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * A comma-separated list of keywords that are visible only to search engines
+     * A comma-separated list of keywords that are visible only to search engines.
      */
     public ConfigurableProductQuery metaKeyword() {
         startField("meta_keyword");
@@ -177,7 +203,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
      */
     public ConfigurableProductQuery metaTitle() {
         startField("meta_title");
@@ -196,7 +222,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
-     * product
+     * product.
      */
     public ConfigurableProductQuery newFromDate() {
         startField("new_from_date");
@@ -205,7 +231,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The end date for new product listings
+     * The end date for new product listings.
      */
     public ConfigurableProductQuery newToDate() {
         startField("new_to_date");
@@ -223,7 +249,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * An array of options for a customizable product
+     * An array of options for a customizable product.
      */
     public ConfigurableProductQuery options(CustomizableOptionInterfaceQueryDefinition queryDef) {
         startField("options");
@@ -236,7 +262,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * If the product has multiple options, determines where they appear on the product page
+     * If the product has multiple options, determines where they appear on the product page.
      */
     public ConfigurableProductQuery optionsContainer() {
         startField("options_container");
@@ -245,7 +271,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item
+     * A ProductPrices object, indicating the price of an item.
      */
     public ConfigurableProductQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
@@ -258,13 +284,26 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * An array of ProductLinks objects
+     * An array of ProductLinks objects.
      */
     public ConfigurableProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
 
         _queryBuilder.append('{');
         queryDef.define(new ProductLinksInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Related Products
+     */
+    public ConfigurableProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("related_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -284,7 +323,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
      */
     public ConfigurableProductQuery sku() {
         startField("sku");
@@ -293,7 +332,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The relative path to the small image, which is used on catalog pages
+     * The relative path to the small image, which is used on catalog pages.
      */
     public ConfigurableProductQuery smallImage(ProductImageQueryDefinition queryDef) {
         startField("small_image");
@@ -306,7 +345,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The beginning date that a product has a special price
+     * The beginning date that a product has a special price.
      */
     public ConfigurableProductQuery specialFromDate() {
         startField("special_from_date");
@@ -315,7 +354,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The discounted price of the product
+     * The discounted price of the product.
      */
     public ConfigurableProductQuery specialPrice() {
         startField("special_price");
@@ -324,7 +363,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The end date that a product has a special price
+     * The end date that a product has a special price.
      */
     public ConfigurableProductQuery specialToDate() {
         startField("special_to_date");
@@ -351,7 +390,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The relative path to the product&#39;s thumbnail image
+     * The relative path to the product&#39;s thumbnail image.
      */
     public ConfigurableProductQuery thumbnail(ProductImageQueryDefinition queryDef) {
         startField("thumbnail");
@@ -364,7 +403,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
      */
     public ConfigurableProductQuery tierPrice() {
         startField("tier_price");
@@ -373,7 +412,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * An array of ProductTierPrices objects
+     * An array of ProductTierPrices objects.
      */
     public ConfigurableProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
@@ -386,7 +425,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      */
     public ConfigurableProductQuery typeId() {
         startField("type_id");
@@ -395,10 +434,23 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * Timestamp indicating when the product was updated
+     * Timestamp indicating when the product was updated.
      */
     public ConfigurableProductQuery updatedAt() {
         startField("updated_at");
+
+        return this;
+    }
+
+    /**
+     * Upsell Products
+     */
+    public ConfigurableProductQuery upsellProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("upsell_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -412,9 +464,6 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
         return this;
     }
 
-    /**
-     * The part of the URL that precedes the url_key
-     */
     public ConfigurableProductQuery urlPath() {
         startField("url_path");
 
@@ -448,7 +497,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * An array of websites in which the product is available
+     * An array of websites in which the product is available.
      */
     public ConfigurableProductQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");
@@ -461,7 +510,7 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * The weight of the item, in units defined by the store
+     * The weight of the item, in units defined by the store.
      */
     public ConfigurableProductQuery weight() {
         startField("weight");

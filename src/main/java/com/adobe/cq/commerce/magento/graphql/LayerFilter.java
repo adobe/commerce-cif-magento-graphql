@@ -106,7 +106,7 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Array of filter items
+     * Array of filter items.
      */
 
     public List<LayerFilterItemInterface> getFilterItems() {
@@ -119,7 +119,7 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Count of filter items in filter group
+     * Count of filter items in filter group.
      */
 
     public Integer getFilterItemsCount() {
@@ -132,7 +132,7 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Layered navigation filter name
+     * Layered navigation filter name.
      */
 
     public String getName() {
@@ -145,7 +145,7 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Request variable name for filter query
+     * Request variable name for filter query.
      */
 
     public String getRequestVar() {

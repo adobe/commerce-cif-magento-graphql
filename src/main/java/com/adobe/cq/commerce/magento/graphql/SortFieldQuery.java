@@ -25,7 +25,7 @@ public class SortFieldQuery extends AbstractQuery<SortFieldQuery> {
     }
 
     /**
-     * Label of sort field
+     * Label of sort field.
      */
     public SortFieldQuery label() {
         startField("label");
@@ -34,7 +34,7 @@ public class SortFieldQuery extends AbstractQuery<SortFieldQuery> {
     }
 
     /**
-     * Attribute code of sort field
+     * Attribute code of sort field.
      */
     public SortFieldQuery value() {
         startField("value");

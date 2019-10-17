@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * BundleItem defines an individual item in a bundle product
+ * BundleItem defines an individual item in a bundle product.
  */
 public class BundleItem extends AbstractResponse<BundleItem> {
     public BundleItem() {
@@ -139,7 +139,7 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * An ID assigned to each type of item in a bundle product
+     * An ID assigned to each type of item in a bundle product.
      */
 
     public Integer getOptionId() {
@@ -152,7 +152,7 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * An array of additional options for this bundle item
+     * An array of additional options for this bundle item.
      */
 
     public List<BundleItemOption> getOptions() {
@@ -165,7 +165,7 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * he relative position of this item compared to the other bundle items
+     * he relative position of this item compared to the other bundle items.
      */
 
     public Integer getPosition() {
@@ -178,7 +178,7 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * Indicates whether the item must be included in the bundle
+     * Indicates whether the item must be included in the bundle.
      */
 
     public Boolean getRequired() {
@@ -191,7 +191,7 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * The SKU of the bundle product
+     * The SKU of the bundle product.
      */
 
     public String getSku() {
@@ -204,7 +204,7 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * The display name of the item
+     * The display name of the item.
      */
 
     public String getTitle() {
@@ -217,7 +217,8 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * The input type that the customer uses to select the item. Examples include radio button and checkbox
+     * The input type that the customer uses to select the item. Examples include radio button and
+     * checkbox.
      */
 
     public String getType() {

@@ -203,6 +203,15 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Creates Braintree Client Token for creating client-side nonce.
+     */
+    public MutationQuery createBraintreeClientToken() {
+        startField("createBraintreeClientToken");
+
+        return this;
+    }
+
+    /**
      * Create customer account
      */
     public MutationQuery createCustomer(CustomerInput input, CustomerOutputQueryDefinition queryDef) {
@@ -280,6 +289,44 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Initiates a transaction and receives a token. Use this mutation for Payflow Pro and Payments Pro
+     * payment methods
+     */
+    public MutationQuery createPayflowProToken(PayflowProTokenInput input, PayflowProTokenQueryDefinition queryDef) {
+        startField("createPayflowProToken");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new PayflowProTokenQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Initiates an Express Checkout transaction and receives a token. Use this mutation for Express
+     * Checkout and Payments Standard payment methods.
+     */
+    public MutationQuery createPaypalExpressToken(PaypalExpressTokenInput input, PaypalExpressTokenQueryDefinition queryDef) {
+        startField("createPaypalExpressToken");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new PaypalExpressTokenQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Delete customer address
      */
     public MutationQuery deleteCustomerAddress(int id) {
@@ -327,6 +374,25 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CustomerTokenQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Handles payment response and saves payment in Quote. Use this mutations for Payflow Pro and Payments
+     * Pro payment methods.
+     */
+    public MutationQuery handlePayflowProResponse(PayflowProResponseInput input, PayflowProResponseOutputQueryDefinition queryDef) {
+        startField("handlePayflowProResponse");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new PayflowProResponseOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -580,6 +646,45 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new SetGuestEmailOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class SetPaymentMethodAndPlaceOrderArguments extends Arguments {
+        SetPaymentMethodAndPlaceOrderArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * 
+         */
+        public SetPaymentMethodAndPlaceOrderArguments input(SetPaymentMethodAndPlaceOrderInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface SetPaymentMethodAndPlaceOrderArgumentsDefinition {
+        void define(SetPaymentMethodAndPlaceOrderArguments args);
+    }
+
+    public MutationQuery setPaymentMethodAndPlaceOrder(PlaceOrderOutputQueryDefinition queryDef) {
+        return setPaymentMethodAndPlaceOrder(args -> {}, queryDef);
+    }
+
+    public MutationQuery setPaymentMethodAndPlaceOrder(SetPaymentMethodAndPlaceOrderArgumentsDefinition argsDef, PlaceOrderOutputQueryDefinition queryDef) {
+        startField("setPaymentMethodAndPlaceOrder");
+
+        SetPaymentMethodAndPlaceOrderArguments args = new SetPaymentMethodAndPlaceOrderArguments(_queryBuilder);
+        argsDef.define(args);
+        SetPaymentMethodAndPlaceOrderArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new PlaceOrderOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

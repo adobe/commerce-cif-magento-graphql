@@ -99,6 +99,28 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "catalog_default_sort_by": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "category_url_suffix": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "cms_home_page": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -220,6 +242,28 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "grid_per_page": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "grid_per_page_values": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "head_includes": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -257,6 +301,39 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "list_mode": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "list_per_page": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "list_per_page_values": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -309,6 +386,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                 }
 
                 case "no_route": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "product_url_suffix": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -386,6 +474,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                 }
 
                 case "title_prefix": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "title_separator": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -535,6 +634,32 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Default Sort By.
+     */
+
+    public String getCatalogDefaultSortBy() {
+        return (String) get("catalog_default_sort_by");
+    }
+
+    public StoreConfig setCatalogDefaultSortBy(String arg) {
+        optimisticData.put(getKey("catalog_default_sort_by"), arg);
+        return this;
+    }
+
+    /**
+     * Category URL Suffix.
+     */
+
+    public String getCategoryUrlSuffix() {
+        return (String) get("category_url_suffix");
+    }
+
+    public StoreConfig setCategoryUrlSuffix(String arg) {
+        optimisticData.put(getKey("category_url_suffix"), arg);
+        return this;
+    }
+
+    /**
      * CMS Home Page
      */
 
@@ -678,6 +803,32 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Products per Page on Grid Default Value.
+     */
+
+    public Integer getGridPerPage() {
+        return (Integer) get("grid_per_page");
+    }
+
+    public StoreConfig setGridPerPage(Integer arg) {
+        optimisticData.put(getKey("grid_per_page"), arg);
+        return this;
+    }
+
+    /**
+     * Products per Page on Grid Allowed Values.
+     */
+
+    public String getGridPerPageValues() {
+        return (String) get("grid_per_page_values");
+    }
+
+    public StoreConfig setGridPerPageValues(String arg) {
+        optimisticData.put(getKey("grid_per_page_values"), arg);
+        return this;
+    }
+
+    /**
      * Scripts and Style Sheets
      */
 
@@ -726,6 +877,45 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setId(Integer arg) {
         optimisticData.put(getKey("id"), arg);
+        return this;
+    }
+
+    /**
+     * List Mode.
+     */
+
+    public String getListMode() {
+        return (String) get("list_mode");
+    }
+
+    public StoreConfig setListMode(String arg) {
+        optimisticData.put(getKey("list_mode"), arg);
+        return this;
+    }
+
+    /**
+     * Products per Page on List Default Value.
+     */
+
+    public Integer getListPerPage() {
+        return (Integer) get("list_per_page");
+    }
+
+    public StoreConfig setListPerPage(Integer arg) {
+        optimisticData.put(getKey("list_per_page"), arg);
+        return this;
+    }
+
+    /**
+     * Products per Page on List Allowed Values.
+     */
+
+    public String getListPerPageValues() {
+        return (String) get("list_per_page_values");
+    }
+
+    public StoreConfig setListPerPageValues(String arg) {
+        optimisticData.put(getKey("list_per_page_values"), arg);
         return this;
     }
 
@@ -791,6 +981,19 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setNoRoute(String arg) {
         optimisticData.put(getKey("no_route"), arg);
+        return this;
+    }
+
+    /**
+     * Product URL Suffix.
+     */
+
+    public String getProductUrlSuffix() {
+        return (String) get("product_url_suffix");
+    }
+
+    public StoreConfig setProductUrlSuffix(String arg) {
+        optimisticData.put(getKey("product_url_suffix"), arg);
         return this;
     }
 
@@ -886,6 +1089,19 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Page Title Separator.
+     */
+
+    public String getTitleSeparator() {
+        return (String) get("title_separator");
+    }
+
+    public StoreConfig setTitleSeparator(String arg) {
+        optimisticData.put(getKey("title_separator"), arg);
+        return this;
+    }
+
+    /**
      * Page Title Suffix
      */
 
@@ -951,6 +1167,10 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
             case "base_url": return false;
 
+            case "catalog_default_sort_by": return false;
+
+            case "category_url_suffix": return false;
+
             case "cms_home_page": return false;
 
             case "cms_no_cookies": return false;
@@ -973,6 +1193,10 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
             case "front": return false;
 
+            case "grid_per_page": return false;
+
+            case "grid_per_page_values": return false;
+
             case "head_includes": return false;
 
             case "head_shortcut_icon": return false;
@@ -980,6 +1204,12 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "header_logo_src": return false;
 
             case "id": return false;
+
+            case "list_mode": return false;
+
+            case "list_per_page": return false;
+
+            case "list_per_page_values": return false;
 
             case "locale": return false;
 
@@ -990,6 +1220,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "logo_width": return false;
 
             case "no_route": return false;
+
+            case "product_url_suffix": return false;
 
             case "secure_base_link_url": return false;
 
@@ -1004,6 +1236,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "timezone": return false;
 
             case "title_prefix": return false;
+
+            case "title_separator": return false;
 
             case "title_suffix": return false;
 

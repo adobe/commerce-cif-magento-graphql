@@ -27,7 +27,7 @@ public class LayerFilterItemInterfaceQuery extends AbstractQuery<LayerFilterItem
     }
 
     /**
-     * Count of items by filter
+     * Count of items by filter.
      */
     public LayerFilterItemInterfaceQuery itemsCount() {
         startField("items_count");
@@ -36,7 +36,7 @@ public class LayerFilterItemInterfaceQuery extends AbstractQuery<LayerFilterItem
     }
 
     /**
-     * Filter label
+     * Filter label.
      */
     public LayerFilterItemInterfaceQuery label() {
         startField("label");
@@ -45,7 +45,7 @@ public class LayerFilterItemInterfaceQuery extends AbstractQuery<LayerFilterItem
     }
 
     /**
-     * Value for filter request variable to be used in query
+     * Value for filter request variable to be used in query.
      */
     public LayerFilterItemInterfaceQuery valueString() {
         startField("value_string");

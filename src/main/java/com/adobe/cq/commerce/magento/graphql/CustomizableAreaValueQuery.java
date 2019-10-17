@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableAreaValue defines the price and sku of a product whose page contains a customized text
- * area
+ * area.
  */
 public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaValueQuery> {
     CustomizableAreaValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaVa
     }
 
     /**
-     * The maximum number of characters that can be entered for this customizable option
+     * The maximum number of characters that can be entered for this customizable option.
      */
     public CustomizableAreaValueQuery maxCharacters() {
         startField("max_characters");
@@ -35,7 +35,7 @@ public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaVa
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
     public CustomizableAreaValueQuery price() {
         startField("price");
@@ -44,7 +44,7 @@ public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaVa
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableAreaValueQuery priceType() {
         startField("price_type");
@@ -53,7 +53,7 @@ public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaVa
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableAreaValueQuery sku() {
         startField("sku");

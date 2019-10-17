@@ -72,7 +72,7 @@ public class SortField extends AbstractResponse<SortField> {
     }
 
     /**
-     * Label of sort field
+     * Label of sort field.
      */
 
     public String getLabel() {
@@ -85,7 +85,7 @@ public class SortField extends AbstractResponse<SortField> {
     }
 
     /**
-     * Attribute code of sort field
+     * Attribute code of sort field.
      */
 
     public String getValue() {

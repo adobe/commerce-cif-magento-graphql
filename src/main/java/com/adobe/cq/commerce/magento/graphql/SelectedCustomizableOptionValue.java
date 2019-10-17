@@ -52,12 +52,7 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
                 }
 
                 case "value": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }

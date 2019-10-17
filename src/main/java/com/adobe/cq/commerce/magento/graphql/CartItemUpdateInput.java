@@ -15,16 +15,19 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.shopify.graphql.support.Input;
 
 public class CartItemUpdateInput implements Serializable {
     private int cartItemId;
 
-    private double quantity;
+    private Input<List<CustomizableOptionInput>> customizableOptions = Input.undefined();
 
-    public CartItemUpdateInput(int cartItemId, double quantity) {
+    private Input<Double> quantity = Input.undefined();
+
+    public CartItemUpdateInput(int cartItemId) {
         this.cartItemId = cartItemId;
-
-        this.quantity = quantity;
     }
 
     public int getCartItemId() {
@@ -36,11 +39,44 @@ public class CartItemUpdateInput implements Serializable {
         return this;
     }
 
-    public double getQuantity() {
+    public List<CustomizableOptionInput> getCustomizableOptions() {
+        return customizableOptions.getValue();
+    }
+
+    public Input<List<CustomizableOptionInput>> getCustomizableOptionsInput() {
+        return customizableOptions;
+    }
+
+    public CartItemUpdateInput setCustomizableOptions(List<CustomizableOptionInput> customizableOptions) {
+        this.customizableOptions = Input.optional(customizableOptions);
+        return this;
+    }
+
+    public CartItemUpdateInput setCustomizableOptionsInput(Input<List<CustomizableOptionInput>> customizableOptions) {
+        if (customizableOptions == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.customizableOptions = customizableOptions;
+        return this;
+    }
+
+    public Double getQuantity() {
+        return quantity.getValue();
+    }
+
+    public Input<Double> getQuantityInput() {
         return quantity;
     }
 
-    public CartItemUpdateInput setQuantity(double quantity) {
+    public CartItemUpdateInput setQuantity(Double quantity) {
+        this.quantity = Input.optional(quantity);
+        return this;
+    }
+
+    public CartItemUpdateInput setQuantityInput(Input<Double> quantity) {
+        if (quantity == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
         this.quantity = quantity;
         return this;
     }
@@ -54,10 +90,36 @@ public class CartItemUpdateInput implements Serializable {
         _queryBuilder.append("cart_item_id:");
         _queryBuilder.append(cartItemId);
 
-        _queryBuilder.append(separator);
-        separator = ",";
-        _queryBuilder.append("quantity:");
-        _queryBuilder.append(quantity);
+        if (this.customizableOptions.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("customizable_options:");
+            if (customizableOptions.getValue() != null) {
+                _queryBuilder.append('[');
+                {
+                    String listSeperator1 = "";
+                    for (CustomizableOptionInput item1 : customizableOptions.getValue()) {
+                        _queryBuilder.append(listSeperator1);
+                        listSeperator1 = ",";
+                        item1.appendTo(_queryBuilder);
+                    }
+                }
+                _queryBuilder.append(']');
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.quantity.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("quantity:");
+            if (quantity.getValue() != null) {
+                _queryBuilder.append(quantity.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         _queryBuilder.append('}');
     }

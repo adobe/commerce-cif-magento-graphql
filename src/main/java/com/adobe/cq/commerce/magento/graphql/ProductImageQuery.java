@@ -17,19 +17,25 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Product image information. Contains image relative path, URL and label
+ * Product image information. Contains the image URL and label.
  */
 public class ProductImageQuery extends AbstractQuery<ProductImageQuery> {
     ProductImageQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The label of the product image or video.
+     */
     public ProductImageQuery label() {
         startField("label");
 
         return this;
     }
 
+    /**
+     * The URL of the product image or video.
+     */
     public ProductImageQuery url() {
         startField("url");
 

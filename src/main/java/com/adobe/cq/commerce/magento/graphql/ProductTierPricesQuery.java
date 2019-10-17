@@ -26,7 +26,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     }
 
     /**
-     * The ID of the customer group
+     * The ID of the customer group.
      */
     public ProductTierPricesQuery customerGroupId() {
         startField("customer_group_id");
@@ -35,7 +35,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     }
 
     /**
-     * The percentage discount of the item
+     * The percentage discount of the item.
      */
     public ProductTierPricesQuery percentageValue() {
         startField("percentage_value");
@@ -44,7 +44,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     }
 
     /**
-     * The number of items that must be purchased to qualify for tier pricing
+     * The number of items that must be purchased to qualify for tier pricing.
      */
     public ProductTierPricesQuery qty() {
         startField("qty");
@@ -53,7 +53,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     }
 
     /**
-     * The price of the fixed price item
+     * The price of the fixed price item.
      */
     public ProductTierPricesQuery value() {
         startField("value");
@@ -62,7 +62,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     }
 
     /**
-     * The ID assigned to the website
+     * The ID assigned to the website.
      */
     public ProductTierPricesQuery websiteId() {
         startField("website_id");

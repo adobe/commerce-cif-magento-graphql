@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * PhysicalProductInterface contains attributes specific to tangible products
+ * PhysicalProductInterface contains attributes specific to tangible products.
  */
 public class PhysicalProductInterfaceQuery extends AbstractQuery<PhysicalProductInterfaceQuery> {
     PhysicalProductInterfaceQuery(StringBuilder _queryBuilder) {
@@ -27,7 +27,7 @@ public class PhysicalProductInterfaceQuery extends AbstractQuery<PhysicalProduct
     }
 
     /**
-     * The weight of the item, in units defined by the store
+     * The weight of the item, in units defined by the store.
      */
     public PhysicalProductInterfaceQuery weight() {
         startField("weight");

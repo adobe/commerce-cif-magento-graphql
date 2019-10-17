@@ -99,8 +99,9 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to a String.
      */
-    public String getAsString(String field) {
+    public String getAsString(String field) throws SchemaViolationError {
         BiFunction<JsonElement, String, String> converter = converterWrapper(this::jsonAsString);
         return getAs(field, converter);
     }
@@ -111,6 +112,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to an Integer.
      */
     public Integer getAsInteger(String field) throws SchemaViolationError {
         BiFunction<JsonElement, String, Integer> converter = converterWrapper(this::jsonAsInteger);
@@ -123,6 +125,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to a Double.
      */
     public Double getAsDouble(String field) throws SchemaViolationError {
         BiFunction<JsonElement, String, Double> converter = converterWrapper(this::jsonAsDouble);
@@ -135,6 +138,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to a Boolean.
      */
     public Boolean getAsBoolean(String field) throws SchemaViolationError {
         BiFunction<JsonElement, String, Boolean> converter = converterWrapper(this::jsonAsBoolean);
@@ -147,6 +151,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to an Array.
      */
     public JsonArray getAsArray(String field) throws SchemaViolationError {
         BiFunction<JsonElement, String, JsonArray> converter = converterWrapper(this::jsonAsArray);

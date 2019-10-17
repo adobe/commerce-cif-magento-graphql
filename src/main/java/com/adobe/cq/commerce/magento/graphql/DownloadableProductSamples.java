@@ -115,10 +115,6 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
         return "DownloadableProductSamples";
     }
 
-    /**
-     * The unique ID for the downloadable product sample
-     */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -128,10 +124,6 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
         return this;
     }
 
-    /**
-     * The relative path to the downloadable sample
-     */
-
     public String getSampleFile() {
         return (String) get("sample_file");
     }
@@ -140,10 +132,6 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
         optimisticData.put(getKey("sample_file"), arg);
         return this;
     }
-
-    /**
-     * Either FILE or URL
-     */
 
     public DownloadableFileTypeEnum getSampleType() {
         return (DownloadableFileTypeEnum) get("sample_type");
@@ -155,7 +143,7 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     }
 
     /**
-     * The relative URL to the downloadable sample
+     * URL to the downloadable sample
      */
 
     public String getSampleUrl() {

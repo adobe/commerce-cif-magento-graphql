@@ -159,10 +159,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return "DownloadableProductLinks";
     }
 
-    /**
-     * The unique ID for the link to the downloadable product
-     */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -171,10 +167,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         optimisticData.put(getKey("id"), arg);
         return this;
     }
-
-    /**
-     * Indicates whether the link is shareable
-     */
 
     public Boolean getIsShareable() {
         return (Boolean) get("is_shareable");
@@ -185,10 +177,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
-    /**
-     * Either FILE or URL
-     */
-
     public DownloadableFileTypeEnum getLinkType() {
         return (DownloadableFileTypeEnum) get("link_type");
     }
@@ -197,10 +185,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         optimisticData.put(getKey("link_type"), arg);
         return this;
     }
-
-    /**
-     * The maximum number of times the product can be downloaded. A value of 0 means unlimited.
-     */
 
     public Integer getNumberOfDownloads() {
         return (Integer) get("number_of_downloads");
@@ -224,10 +208,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
-    /**
-     * The relative path to the downloadable sample
-     */
-
     public String getSampleFile() {
         return (String) get("sample_file");
     }
@@ -236,10 +216,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         optimisticData.put(getKey("sample_file"), arg);
         return this;
     }
-
-    /**
-     * Either FILE or URL
-     */
 
     public DownloadableFileTypeEnum getSampleType() {
         return (DownloadableFileTypeEnum) get("sample_type");
@@ -251,7 +227,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * The relative URL to the downloadable sample
+     * URL to the downloadable sample
      */
 
     public String getSampleUrl() {

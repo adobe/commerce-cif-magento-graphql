@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableDropDownOption contains information about a drop down menu that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableDropDownOptionQuery> {
     CustomizableDropDownOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableDropDownOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableDropDownOptionQuery required() {
         startField("required");
@@ -44,7 +44,7 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableDropDownOptionQuery sortOrder() {
         startField("sort_order");
@@ -53,7 +53,7 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableDropDownOptionQuery title() {
         startField("title");
@@ -62,7 +62,7 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
     }
 
     /**
-     * An array that defines the set of options for a drop down menu
+     * An array that defines the set of options for a drop down menu.
      */
     public CustomizableDropDownOptionQuery value(CustomizableDropDownValueQueryDefinition queryDef) {
         startField("value");

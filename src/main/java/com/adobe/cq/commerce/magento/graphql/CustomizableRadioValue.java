@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableRadioValue defines the price and sku of a product whose page contains a customized set
- * of radio buttons
+ * of radio buttons.
  */
 public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioValue> {
     public CustomizableRadioValue() {
@@ -117,7 +117,7 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
     }
 
     /**
-     * The ID assigned to the value
+     * The ID assigned to the value.
      */
 
     public Integer getOptionTypeId() {
@@ -130,7 +130,7 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
 
     public Double getPrice() {
@@ -143,7 +143,7 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -156,7 +156,7 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
 
     public String getSku() {
@@ -169,7 +169,7 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
     }
 
     /**
-     * The order in which the radio button is displayed
+     * The order in which the radio button is displayed.
      */
 
     public Integer getSortOrder() {
@@ -182,7 +182,7 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {

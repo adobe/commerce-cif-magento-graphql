@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * BundleItemOption defines characteristics and options for a specific bundle item
+ * BundleItemOption defines characteristics and options for a specific bundle item.
  */
 public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> {
     BundleItemOptionQuery(StringBuilder _queryBuilder) {
@@ -25,7 +25,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * Indicates whether the customer can change the number of items for this option
+     * Indicates whether the customer can change the number of items for this option.
      */
     public BundleItemOptionQuery canChangeQuantity() {
         startField("can_change_quantity");
@@ -34,7 +34,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * The ID assigned to the bundled item option
+     * The ID assigned to the bundled item option.
      */
     public BundleItemOptionQuery id() {
         startField("id");
@@ -43,7 +43,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * Indicates whether this option is the default option
+     * Indicates whether this option is the default option.
      */
     public BundleItemOptionQuery isDefault() {
         startField("is_default");
@@ -52,7 +52,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * The text that identifies the bundled item option
+     * The text that identifies the bundled item option.
      */
     public BundleItemOptionQuery label() {
         startField("label");
@@ -62,7 +62,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
 
     /**
      * When a bundle item contains multiple options, the relative position of this option compared to the
-     * other options
+     * other options.
      */
     public BundleItemOptionQuery position() {
         startField("position");
@@ -71,7 +71,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * The price of the selected option
+     * The price of the selected option.
      */
     public BundleItemOptionQuery price() {
         startField("price");
@@ -80,7 +80,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * One of FIXED, PERCENT, or DYNAMIC
+     * One of FIXED, PERCENT, or DYNAMIC.
      */
     public BundleItemOptionQuery priceType() {
         startField("price_type");
@@ -89,7 +89,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * Contains details about this product option
+     * Contains details about this product option.
      */
     public BundleItemOptionQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -102,10 +102,19 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * Indicates the quantity of this specific bundle item
+     * Indicates the quantity of this specific bundle item.
      */
     public BundleItemOptionQuery qty() {
         startField("qty");
+
+        return this;
+    }
+
+    /**
+     * Indicates the quantity of this specific bundle item.
+     */
+    public BundleItemOptionQuery quantity() {
+        startField("quantity");
 
         return this;
     }

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableFieldValue defines the price and sku of a product whose page contains a customized text
- * field
+ * field.
  */
 public class CustomizableFieldValueQuery extends AbstractQuery<CustomizableFieldValueQuery> {
     CustomizableFieldValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableFieldValueQuery extends AbstractQuery<CustomizableField
     }
 
     /**
-     * The maximum number of characters that can be entered for this customizable option
+     * The maximum number of characters that can be entered for this customizable option.
      */
     public CustomizableFieldValueQuery maxCharacters() {
         startField("max_characters");
@@ -35,7 +35,7 @@ public class CustomizableFieldValueQuery extends AbstractQuery<CustomizableField
     }
 
     /**
-     * The price of the custom value
+     * The price of the custom value.
      */
     public CustomizableFieldValueQuery price() {
         startField("price");
@@ -44,7 +44,7 @@ public class CustomizableFieldValueQuery extends AbstractQuery<CustomizableField
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableFieldValueQuery priceType() {
         startField("price_type");
@@ -53,7 +53,7 @@ public class CustomizableFieldValueQuery extends AbstractQuery<CustomizableField
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableFieldValueQuery sku() {
         startField("sku");

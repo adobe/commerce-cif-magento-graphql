@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableAreaValue defines the price and sku of a product whose page contains a customized text
- * area
+ * area.
  */
 public class CustomizableAreaValue extends AbstractResponse<CustomizableAreaValue> {
     public CustomizableAreaValue() {
@@ -95,7 +95,7 @@ public class CustomizableAreaValue extends AbstractResponse<CustomizableAreaValu
     }
 
     /**
-     * The maximum number of characters that can be entered for this customizable option
+     * The maximum number of characters that can be entered for this customizable option.
      */
 
     public Integer getMaxCharacters() {
@@ -108,7 +108,7 @@ public class CustomizableAreaValue extends AbstractResponse<CustomizableAreaValu
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
 
     public Double getPrice() {
@@ -121,7 +121,7 @@ public class CustomizableAreaValue extends AbstractResponse<CustomizableAreaValu
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -134,7 +134,7 @@ public class CustomizableAreaValue extends AbstractResponse<CustomizableAreaValu
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
 
     public String getSku() {

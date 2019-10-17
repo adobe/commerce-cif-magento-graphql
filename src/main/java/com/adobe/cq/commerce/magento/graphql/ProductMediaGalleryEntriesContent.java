@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * ProductMediaGalleryEntriesContent contains an image in base64 format and basic information about the
- * image
+ * image.
  */
 public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductMediaGalleryEntriesContent> {
     public ProductMediaGalleryEntriesContent() {
@@ -84,7 +84,7 @@ public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductM
     }
 
     /**
-     * The image in base64 format
+     * The image in base64 format.
      */
 
     public String getBase64EncodedData() {
@@ -97,7 +97,7 @@ public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductM
     }
 
     /**
-     * The file name of the image
+     * The file name of the image.
      */
 
     public String getName() {
@@ -110,7 +110,7 @@ public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductM
     }
 
     /**
-     * The MIME type of the file, such as image/png
+     * The MIME type of the file, such as image/png.
      */
 
     public String getType() {

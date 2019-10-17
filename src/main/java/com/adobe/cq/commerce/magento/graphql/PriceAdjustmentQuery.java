@@ -26,7 +26,7 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
     }
 
     /**
-     * The amount of the price adjustment and its currency code
+     * The amount of the price adjustment and its currency code.
      */
     public PriceAdjustmentQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
@@ -39,7 +39,7 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
     }
 
     /**
-     * Indicates whether the adjustment involves tax, weee, or weee_tax
+     * Indicates whether the adjustment involves tax, weee, or weee_tax.
      */
     public PriceAdjustmentQuery code() {
         startField("code");
@@ -49,7 +49,7 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
 
     /**
      * Indicates whether the entity described by the code attribute is included or excluded from the
-     * adjustment
+     * adjustment.
      */
     public PriceAdjustmentQuery description() {
         startField("description");

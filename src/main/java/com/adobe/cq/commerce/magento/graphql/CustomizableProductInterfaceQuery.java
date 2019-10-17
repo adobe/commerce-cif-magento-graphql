@@ -27,7 +27,7 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
     }
 
     /**
-     * An array of options for a customizable product
+     * An array of options for a customizable product.
      */
     public CustomizableProductInterfaceQuery options(CustomizableOptionInterfaceQueryDefinition queryDef) {
         startField("options");

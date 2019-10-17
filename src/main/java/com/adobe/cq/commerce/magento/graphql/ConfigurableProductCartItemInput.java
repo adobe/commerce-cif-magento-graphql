@@ -23,14 +23,14 @@ import com.shopify.graphql.support.Input;
 public class ConfigurableProductCartItemInput implements Serializable {
     private CartItemInput data;
 
-    private String variantSku;
-
     private Input<List<CustomizableOptionInput>> customizableOptions = Input.undefined();
 
-    public ConfigurableProductCartItemInput(CartItemInput data, String variantSku) {
-        this.data = data;
+    private Input<String> parentSku = Input.undefined();
 
-        this.variantSku = variantSku;
+    private Input<String> variantSku = Input.undefined();
+
+    public ConfigurableProductCartItemInput(CartItemInput data) {
+        this.data = data;
     }
 
     public CartItemInput getData() {
@@ -39,15 +39,6 @@ public class ConfigurableProductCartItemInput implements Serializable {
 
     public ConfigurableProductCartItemInput setData(CartItemInput data) {
         this.data = data;
-        return this;
-    }
-
-    public String getVariantSku() {
-        return variantSku;
-    }
-
-    public ConfigurableProductCartItemInput setVariantSku(String variantSku) {
-        this.variantSku = variantSku;
         return this;
     }
 
@@ -72,6 +63,48 @@ public class ConfigurableProductCartItemInput implements Serializable {
         return this;
     }
 
+    public String getParentSku() {
+        return parentSku.getValue();
+    }
+
+    public Input<String> getParentSkuInput() {
+        return parentSku;
+    }
+
+    public ConfigurableProductCartItemInput setParentSku(String parentSku) {
+        this.parentSku = Input.optional(parentSku);
+        return this;
+    }
+
+    public ConfigurableProductCartItemInput setParentSkuInput(Input<String> parentSku) {
+        if (parentSku == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.parentSku = parentSku;
+        return this;
+    }
+
+    public String getVariantSku() {
+        return variantSku.getValue();
+    }
+
+    public Input<String> getVariantSkuInput() {
+        return variantSku;
+    }
+
+    public ConfigurableProductCartItemInput setVariantSku(String variantSku) {
+        this.variantSku = Input.optional(variantSku);
+        return this;
+    }
+
+    public ConfigurableProductCartItemInput setVariantSkuInput(Input<String> variantSku) {
+        if (variantSku == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.variantSku = variantSku;
+        return this;
+    }
+
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
@@ -80,11 +113,6 @@ public class ConfigurableProductCartItemInput implements Serializable {
         separator = ",";
         _queryBuilder.append("data:");
         data.appendTo(_queryBuilder);
-
-        _queryBuilder.append(separator);
-        separator = ",";
-        _queryBuilder.append("variant_sku:");
-        AbstractQuery.appendQuotedString(_queryBuilder, variantSku.toString());
 
         if (this.customizableOptions.isDefined()) {
             _queryBuilder.append(separator);
@@ -101,6 +129,28 @@ public class ConfigurableProductCartItemInput implements Serializable {
                     }
                 }
                 _queryBuilder.append(']');
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.parentSku.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("parent_sku:");
+            if (parentSku.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, parentSku.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.variantSku.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("variant_sku:");
+            if (variantSku.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, variantSku.getValue().toString());
             } else {
                 _queryBuilder.append("null");
             }

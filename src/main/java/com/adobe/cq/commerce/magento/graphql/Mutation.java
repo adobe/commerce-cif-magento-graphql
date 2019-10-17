@@ -88,6 +88,12 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "createBraintreeClientToken": {
+                    responseData.put(key, jsonAsString(field.getValue(), key));
+
+                    break;
+                }
+
                 case "createCustomer": {
                     CustomerOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -121,6 +127,28 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "createPayflowProToken": {
+                    PayflowProToken optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new PayflowProToken(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "createPaypalExpressToken": {
+                    PaypalExpressToken optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new PaypalExpressToken(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "deleteCustomerAddress": {
                     Boolean optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -147,6 +175,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     CustomerToken optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new CustomerToken(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "handlePayflowProResponse": {
+                    PayflowProResponseOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new PayflowProResponseOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -224,6 +263,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     SetGuestEmailOnCartOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new SetGuestEmailOnCartOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "setPaymentMethodAndPlaceOrder": {
+                    PlaceOrderOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new PlaceOrderOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -363,6 +413,19 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Creates Braintree Client Token for creating client-side nonce.
+     */
+
+    public String getCreateBraintreeClientToken() {
+        return (String) get("createBraintreeClientToken");
+    }
+
+    public Mutation setCreateBraintreeClientToken(String arg) {
+        optimisticData.put(getKey("createBraintreeClientToken"), arg);
+        return this;
+    }
+
+    /**
      * Create customer account
      */
 
@@ -402,6 +465,34 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Initiates a transaction and receives a token. Use this mutation for Payflow Pro and Payments Pro
+     * payment methods
+     */
+
+    public PayflowProToken getCreatePayflowProToken() {
+        return (PayflowProToken) get("createPayflowProToken");
+    }
+
+    public Mutation setCreatePayflowProToken(PayflowProToken arg) {
+        optimisticData.put(getKey("createPayflowProToken"), arg);
+        return this;
+    }
+
+    /**
+     * Initiates an Express Checkout transaction and receives a token. Use this mutation for Express
+     * Checkout and Payments Standard payment methods.
+     */
+
+    public PaypalExpressToken getCreatePaypalExpressToken() {
+        return (PaypalExpressToken) get("createPaypalExpressToken");
+    }
+
+    public Mutation setCreatePaypalExpressToken(PaypalExpressToken arg) {
+        optimisticData.put(getKey("createPaypalExpressToken"), arg);
+        return this;
+    }
+
+    /**
      * Delete customer address
      */
 
@@ -437,6 +528,20 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setGenerateCustomerToken(CustomerToken arg) {
         optimisticData.put(getKey("generateCustomerToken"), arg);
+        return this;
+    }
+
+    /**
+     * Handles payment response and saves payment in Quote. Use this mutations for Payflow Pro and Payments
+     * Pro payment methods.
+     */
+
+    public PayflowProResponseOutput getHandlePayflowProResponse() {
+        return (PayflowProResponseOutput) get("handlePayflowProResponse");
+    }
+
+    public Mutation setHandlePayflowProResponse(PayflowProResponseOutput arg) {
+        optimisticData.put(getKey("handlePayflowProResponse"), arg);
         return this;
     }
 
@@ -508,6 +613,15 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setSetGuestEmailOnCart(SetGuestEmailOnCartOutput arg) {
         optimisticData.put(getKey("setGuestEmailOnCart"), arg);
+        return this;
+    }
+
+    public PlaceOrderOutput getSetPaymentMethodAndPlaceOrder() {
+        return (PlaceOrderOutput) get("setPaymentMethodAndPlaceOrder");
+    }
+
+    public Mutation setSetPaymentMethodAndPlaceOrder(PlaceOrderOutput arg) {
+        optimisticData.put(getKey("setPaymentMethodAndPlaceOrder"), arg);
         return this;
     }
 
@@ -585,17 +699,25 @@ public class Mutation extends AbstractResponse<Mutation> {
 
             case "changeCustomerPassword": return true;
 
+            case "createBraintreeClientToken": return false;
+
             case "createCustomer": return true;
 
             case "createCustomerAddress": return true;
 
             case "createEmptyCart": return false;
 
+            case "createPayflowProToken": return true;
+
+            case "createPaypalExpressToken": return true;
+
             case "deleteCustomerAddress": return false;
 
             case "deletePaymentToken": return true;
 
             case "generateCustomerToken": return true;
+
+            case "handlePayflowProResponse": return true;
 
             case "placeOrder": return true;
 
@@ -610,6 +732,8 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "setBillingAddressOnCart": return true;
 
             case "setGuestEmailOnCart": return true;
+
+            case "setPaymentMethodAndPlaceOrder": return true;
 
             case "setPaymentMethodOnCart": return true;
 

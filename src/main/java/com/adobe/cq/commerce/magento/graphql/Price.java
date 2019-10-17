@@ -84,7 +84,7 @@ public class Price extends AbstractResponse<Price> {
     }
 
     /**
-     * An array that provides information about tax, weee, or weee_tax adjustments
+     * An array that provides information about tax, weee, or weee_tax adjustments.
      */
 
     public List<PriceAdjustment> getAdjustments() {
@@ -97,7 +97,7 @@ public class Price extends AbstractResponse<Price> {
     }
 
     /**
-     * The price of a product plus a three-letter currency code
+     * The price of a product plus a three-letter currency code.
      */
 
     public Money getAmount() {
