@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableCheckbbixOption contains information about a set of checkbox values that are defined as
- * part of a customizable option
+ * part of a customizable option.
  */
 public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableCheckboxOptionQuery> {
     CustomizableCheckboxOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableCheckboxOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableCheckboxOptionQuery required() {
         startField("required");
@@ -44,7 +44,7 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableCheckboxOptionQuery sortOrder() {
         startField("sort_order");
@@ -53,7 +53,7 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableCheckboxOptionQuery title() {
         startField("title");
@@ -62,7 +62,7 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
     }
 
     /**
-     * An array that defines a set of checkbox values
+     * An array that defines a set of checkbox values.
      */
     public CustomizableCheckboxOptionQuery value(CustomizableCheckboxValueQueryDefinition queryDef) {
         startField("value");

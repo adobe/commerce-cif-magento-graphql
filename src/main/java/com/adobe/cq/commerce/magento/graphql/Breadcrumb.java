@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Breadcrumb item
+ * Breadcrumb item.
  */
 public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     public Breadcrumb() {
@@ -94,7 +94,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category ID
+     * Category ID.
      */
 
     public Integer getCategoryId() {
@@ -107,7 +107,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category level
+     * Category level.
      */
 
     public Integer getCategoryLevel() {
@@ -120,7 +120,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category name
+     * Category name.
      */
 
     public String getCategoryName() {
@@ -133,7 +133,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category URL key
+     * Category URL key.
      */
 
     public String getCategoryUrlKey() {

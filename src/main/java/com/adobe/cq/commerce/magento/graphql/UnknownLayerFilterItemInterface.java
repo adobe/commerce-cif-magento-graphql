@@ -100,7 +100,7 @@ public class UnknownLayerFilterItemInterface extends AbstractResponse<UnknownLay
     }
 
     /**
-     * Count of items by filter
+     * Count of items by filter.
      */
 
     public Integer getItemsCount() {
@@ -113,7 +113,7 @@ public class UnknownLayerFilterItemInterface extends AbstractResponse<UnknownLay
     }
 
     /**
-     * Filter label
+     * Filter label.
      */
 
     public String getLabel() {
@@ -126,7 +126,7 @@ public class UnknownLayerFilterItemInterface extends AbstractResponse<UnknownLay
     }
 
     /**
-     * Value for filter request variable to be used in query
+     * Value for filter request variable to be used in query.
      */
 
     public String getValueString() {

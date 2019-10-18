@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Breadcrumb item
+ * Breadcrumb item.
  */
 public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     BreadcrumbQuery(StringBuilder _queryBuilder) {
@@ -25,7 +25,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category ID
+     * Category ID.
      */
     public BreadcrumbQuery categoryId() {
         startField("category_id");
@@ -34,7 +34,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category level
+     * Category level.
      */
     public BreadcrumbQuery categoryLevel() {
         startField("category_level");
@@ -43,7 +43,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category name
+     * Category name.
      */
     public BreadcrumbQuery categoryName() {
         startField("category_name");
@@ -52,7 +52,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category URL key
+     * Category URL key.
      */
     public BreadcrumbQuery categoryUrlKey() {
         startField("category_url_key");

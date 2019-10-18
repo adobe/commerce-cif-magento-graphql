@@ -25,7 +25,7 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
     }
 
     /**
-     * Count of items by filter
+     * Count of items by filter.
      */
     public SwatchLayerFilterItemQuery itemsCount() {
         startField("items_count");
@@ -34,7 +34,7 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
     }
 
     /**
-     * Filter label
+     * Filter label.
      */
     public SwatchLayerFilterItemQuery label() {
         startField("label");
@@ -56,7 +56,7 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
     }
 
     /**
-     * Value for filter request variable to be used in query
+     * Value for filter request variable to be used in query.
      */
     public SwatchLayerFilterItemQuery valueString() {
         startField("value_string");

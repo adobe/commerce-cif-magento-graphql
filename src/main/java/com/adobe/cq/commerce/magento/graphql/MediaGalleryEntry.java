@@ -24,7 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * MediaGalleryEntry defines characteristics about images and videos associated with a specific product
+ * MediaGalleryEntry defines characteristics about images and videos associated with a specific
+ * product.
  */
 public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     public MediaGalleryEntry() {
@@ -161,7 +162,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesContent object
+     * Contains a ProductMediaGalleryEntriesContent object.
      */
 
     public ProductMediaGalleryEntriesContent getContent() {
@@ -174,7 +175,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Whether the image is hidden from vie
+     * Whether the image is hidden from vie.
      */
 
     public Boolean getDisabled() {
@@ -187,7 +188,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * The path of the image on the server
+     * The path of the image on the server.
      */
 
     public String getFile() {
@@ -200,7 +201,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * The identifier assigned to the object
+     * The identifier assigned to the object.
      */
 
     public Integer getId() {
@@ -213,7 +214,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * The alt text displayed on the UI when the user points to the image
+     * The alt text displayed on the UI when the user points to the image.
      */
 
     public String getLabel() {
@@ -226,7 +227,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * image or video
+     * image or video.
      */
 
     public String getMediaType() {
@@ -239,7 +240,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * The media item&#39;s position after it has been sorted
+     * The media item&#39;s position after it has been sorted.
      */
 
     public Integer getPosition() {
@@ -252,7 +253,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Array of image types. It can have the following values: image, small_image, thumbnail
+     * Array of image types. It can have the following values: image, small_image, thumbnail.
      */
 
     public List<String> getTypes() {
@@ -265,7 +266,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesVideoContent object
+     * Contains a ProductMediaGalleryEntriesVideoContent object.
      */
 
     public ProductMediaGalleryEntriesVideoContent getVideoContent() {

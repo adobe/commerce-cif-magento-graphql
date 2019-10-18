@@ -105,7 +105,7 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     }
 
     /**
-     * One of related, associated, upsell, or crosssell
+     * One of related, associated, upsell, or crosssell.
      */
 
     public String getLinkType() {
@@ -118,7 +118,7 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     }
 
     /**
-     * The SKU of the linked product
+     * The SKU of the linked product.
      */
 
     public String getLinkedProductSku() {
@@ -131,7 +131,7 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     }
 
     /**
-     * The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable)
+     * The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable).
      */
 
     public String getLinkedProductType() {
@@ -144,7 +144,7 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     }
 
     /**
-     * The position within the list of product links
+     * The position within the list of product links.
      */
 
     public Integer getPosition() {
@@ -157,7 +157,7 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     }
 
     /**
-     * The identifier of the linked product
+     * The identifier of the linked product.
      */
 
     public String getSku() {

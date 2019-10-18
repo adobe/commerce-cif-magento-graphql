@@ -47,6 +47,7 @@ public interface CustomFieldInterface {
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to a String.
      */
     public default String getAsString(String field) throws SchemaViolationError {
         return null;
@@ -58,6 +59,7 @@ public interface CustomFieldInterface {
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to an Integer.
      */
     public default Integer getAsInteger(String field) throws SchemaViolationError {
         return null;
@@ -69,6 +71,7 @@ public interface CustomFieldInterface {
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to a Double.
      */
     public default Double getAsDouble(String field) throws SchemaViolationError {
         return null;
@@ -80,6 +83,7 @@ public interface CustomFieldInterface {
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to a Boolean.
      */
     public default Boolean getAsBoolean(String field) throws SchemaViolationError {
         return null;
@@ -91,6 +95,7 @@ public interface CustomFieldInterface {
      * 
      * @param field The name of the field.
      * @return The value of the field.
+     * @throws SchemaViolationError If the field cannot be converted to an Array.
      */
     public default JsonArray getAsArray(String field) throws SchemaViolationError {
         return null;

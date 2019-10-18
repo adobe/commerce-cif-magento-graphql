@@ -214,7 +214,7 @@ public enum CountryCodeEnum {
     CC,
 
     /**
-     * Congo - Kinshasa
+     * Congo-Kinshasa
      */
     CD,
 
@@ -224,7 +224,7 @@ public enum CountryCodeEnum {
     CF,
 
     /**
-     * Congo -Brazzaville
+     * Congo-Brazzaville
      */
     CG,
 

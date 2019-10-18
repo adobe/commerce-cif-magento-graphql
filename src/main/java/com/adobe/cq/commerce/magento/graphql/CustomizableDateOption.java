@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableDateOption contains information about a date picker that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableDateOption extends AbstractResponse<CustomizableDateOption> implements CustomizableOptionInterface {
     public CustomizableDateOption() {
@@ -117,7 +117,7 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -130,7 +130,7 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     }
 
     /**
-     * The Stock Keeping Unit of the base product
+     * The Stock Keeping Unit of the base product.
      */
 
     public String getProductSku() {
@@ -143,7 +143,7 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -156,7 +156,7 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -169,7 +169,7 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {

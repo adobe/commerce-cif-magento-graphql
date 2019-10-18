@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableRadioValue defines the price and sku of a product whose page contains a customized set
- * of radio buttons
+ * of radio buttons.
  */
 public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadioValueQuery> {
     CustomizableRadioValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadio
     }
 
     /**
-     * The ID assigned to the value
+     * The ID assigned to the value.
      */
     public CustomizableRadioValueQuery optionTypeId() {
         startField("option_type_id");
@@ -35,7 +35,7 @@ public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadio
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
     public CustomizableRadioValueQuery price() {
         startField("price");
@@ -44,7 +44,7 @@ public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadio
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableRadioValueQuery priceType() {
         startField("price_type");
@@ -53,7 +53,7 @@ public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadio
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableRadioValueQuery sku() {
         startField("sku");
@@ -62,7 +62,7 @@ public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadio
     }
 
     /**
-     * The order in which the radio button is displayed
+     * The order in which the radio button is displayed.
      */
     public CustomizableRadioValueQuery sortOrder() {
         startField("sort_order");
@@ -71,7 +71,7 @@ public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadio
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableRadioValueQuery title() {
         startField("title");

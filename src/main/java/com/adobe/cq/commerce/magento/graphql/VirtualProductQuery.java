@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * A virtual product is non-tangible product that does not require shipping and is not kept in
- * inventory
+ * inventory.
  */
 public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     VirtualProductQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The attribute set assigned to the product
+     * The attribute set assigned to the product.
      */
     public VirtualProductQuery attributeSetId() {
         startField("attribute_set_id");
@@ -35,7 +35,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * Canonical URL
+     * Canonical URL.
      */
     public VirtualProductQuery canonicalUrl() {
         startField("canonical_url");
@@ -44,7 +44,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The categories assigned to a product
+     * The categories assigned to a product.
      */
     public VirtualProductQuery categories(CategoryInterfaceQueryDefinition queryDef) {
         startField("categories");
@@ -63,7 +63,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The product&#39;s country of origin
+     * The product&#39;s country of origin.
      */
     public VirtualProductQuery countryOfManufacture() {
         startField("country_of_manufacture");
@@ -72,10 +72,23 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * Timestamp indicating when the product was created
+     * Timestamp indicating when the product was created.
      */
     public VirtualProductQuery createdAt() {
         startField("created_at");
+
+        return this;
+    }
+
+    /**
+     * Crosssell Products
+     */
+    public VirtualProductQuery crosssellProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("crosssell_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -94,7 +107,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * Indicates whether a gift message is available
+     * Indicates whether a gift message is available.
      */
     public VirtualProductQuery giftMessageAvailable() {
         startField("gift_message_available");
@@ -103,7 +116,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The ID number assigned to the product
+     * The ID number assigned to the product.
      */
     public VirtualProductQuery id() {
         startField("id");
@@ -112,7 +125,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The relative path to the main image on the product page
+     * The relative path to the main image on the product page.
      */
     public VirtualProductQuery image(ProductImageQueryDefinition queryDef) {
         startField("image");
@@ -125,7 +138,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * A number representing the product&#39;s manufacturer
+     * A number representing the product&#39;s manufacturer.
      */
     public VirtualProductQuery manufacturer() {
         startField("manufacturer");
@@ -134,7 +147,20 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * An array of MediaGalleryEntry objects
+     * An array of Media Gallery objects.
+     */
+    public VirtualProductQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {
+        startField("media_gallery");
+
+        _queryBuilder.append('{');
+        queryDef.define(new MediaGalleryInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array of MediaGalleryEntry objects.
      */
     public VirtualProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
@@ -147,7 +173,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * A brief overview of the product for search results listings, maximum 255 characters
+     * A brief overview of the product for search results listings, maximum 255 characters.
      */
     public VirtualProductQuery metaDescription() {
         startField("meta_description");
@@ -156,7 +182,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * A comma-separated list of keywords that are visible only to search engines
+     * A comma-separated list of keywords that are visible only to search engines.
      */
     public VirtualProductQuery metaKeyword() {
         startField("meta_keyword");
@@ -165,7 +191,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
      */
     public VirtualProductQuery metaTitle() {
         startField("meta_title");
@@ -184,7 +210,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
 
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
-     * product
+     * product.
      */
     public VirtualProductQuery newFromDate() {
         startField("new_from_date");
@@ -193,7 +219,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The end date for new product listings
+     * The end date for new product listings.
      */
     public VirtualProductQuery newToDate() {
         startField("new_to_date");
@@ -211,7 +237,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * An array of options for a customizable product
+     * An array of options for a customizable product.
      */
     public VirtualProductQuery options(CustomizableOptionInterfaceQueryDefinition queryDef) {
         startField("options");
@@ -224,7 +250,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * If the product has multiple options, determines where they appear on the product page
+     * If the product has multiple options, determines where they appear on the product page.
      */
     public VirtualProductQuery optionsContainer() {
         startField("options_container");
@@ -233,7 +259,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item
+     * A ProductPrices object, indicating the price of an item.
      */
     public VirtualProductQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
@@ -246,13 +272,26 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * An array of ProductLinks objects
+     * An array of ProductLinks objects.
      */
     public VirtualProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
 
         _queryBuilder.append('{');
         queryDef.define(new ProductLinksInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Related Products
+     */
+    public VirtualProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("related_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -272,7 +311,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
      */
     public VirtualProductQuery sku() {
         startField("sku");
@@ -281,7 +320,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The relative path to the small image, which is used on catalog pages
+     * The relative path to the small image, which is used on catalog pages.
      */
     public VirtualProductQuery smallImage(ProductImageQueryDefinition queryDef) {
         startField("small_image");
@@ -294,7 +333,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The beginning date that a product has a special price
+     * The beginning date that a product has a special price.
      */
     public VirtualProductQuery specialFromDate() {
         startField("special_from_date");
@@ -303,7 +342,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The discounted price of the product
+     * The discounted price of the product.
      */
     public VirtualProductQuery specialPrice() {
         startField("special_price");
@@ -312,7 +351,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The end date that a product has a special price
+     * The end date that a product has a special price.
      */
     public VirtualProductQuery specialToDate() {
         startField("special_to_date");
@@ -339,7 +378,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The relative path to the product&#39;s thumbnail image
+     * The relative path to the product&#39;s thumbnail image.
      */
     public VirtualProductQuery thumbnail(ProductImageQueryDefinition queryDef) {
         startField("thumbnail");
@@ -352,7 +391,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
      */
     public VirtualProductQuery tierPrice() {
         startField("tier_price");
@@ -361,7 +400,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * An array of ProductTierPrices objects
+     * An array of ProductTierPrices objects.
      */
     public VirtualProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
@@ -374,7 +413,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      */
     public VirtualProductQuery typeId() {
         startField("type_id");
@@ -383,10 +422,23 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * Timestamp indicating when the product was updated
+     * Timestamp indicating when the product was updated.
      */
     public VirtualProductQuery updatedAt() {
         startField("updated_at");
+
+        return this;
+    }
+
+    /**
+     * Upsell Products
+     */
+    public VirtualProductQuery upsellProducts(ProductInterfaceQueryDefinition queryDef) {
+        startField("upsell_products");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -400,9 +452,6 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
         return this;
     }
 
-    /**
-     * The part of the URL that precedes the url_key
-     */
     public VirtualProductQuery urlPath() {
         startField("url_path");
 
@@ -423,7 +472,7 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * An array of websites in which the product is available
+     * An array of websites in which the product is available.
      */
     public VirtualProductQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");

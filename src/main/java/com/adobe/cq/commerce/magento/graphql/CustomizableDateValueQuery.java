@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableDateValue defines the price and sku of a product whose page contains a customized date
- * picker
+ * picker.
  */
 public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateValueQuery> {
     CustomizableDateValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateVa
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
     public CustomizableDateValueQuery price() {
         startField("price");
@@ -35,7 +35,7 @@ public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateVa
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableDateValueQuery priceType() {
         startField("price_type");
@@ -44,7 +44,7 @@ public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateVa
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableDateValueQuery sku() {
         startField("sku");

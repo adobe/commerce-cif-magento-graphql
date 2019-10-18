@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * BundleProduct defines basic features of a bundle product and contains multiple BundleItems
+ * BundleProduct defines basic features of a bundle product and contains multiple BundleItems.
  */
 public class BundleProduct extends AbstractResponse<BundleProduct> implements CustomizableProductInterface, PhysicalProductInterface, ProductInterface {
     public BundleProduct() {
@@ -104,6 +104,27 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "crosssell_products": {
+                    List<ProductInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<ProductInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            ProductInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownProductInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -213,6 +234,27 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "media_gallery": {
+                    List<MediaGalleryInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<MediaGalleryInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            MediaGalleryInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownMediaGalleryInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -393,6 +435,27 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     break;
                 }
 
+                case "related_products": {
+                    List<ProductInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<ProductInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            ProductInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownProductInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "ship_bundle_items": {
                     ShipBundleItemsEnum optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -557,6 +620,27 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     break;
                 }
 
+                case "upsell_products": {
+                    List<ProductInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<ProductInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            ProductInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownProductInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "url_key": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -649,7 +733,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The attribute set assigned to the product
+     * The attribute set assigned to the product.
      */
 
     public Integer getAttributeSetId() {
@@ -662,7 +746,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Canonical URL
+     * Canonical URL.
      */
 
     public String getCanonicalUrl() {
@@ -675,7 +759,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The categories assigned to a product
+     * The categories assigned to a product.
      */
 
     public List<CategoryInterface> getCategories() {
@@ -697,7 +781,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The product&#39;s country of origin
+     * The product&#39;s country of origin.
      */
 
     public String getCountryOfManufacture() {
@@ -710,7 +794,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Timestamp indicating when the product was created
+     * Timestamp indicating when the product was created.
      */
 
     public String getCreatedAt() {
@@ -719,6 +803,19 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public BundleProduct setCreatedAt(String arg) {
         optimisticData.put(getKey("created_at"), arg);
+        return this;
+    }
+
+    /**
+     * Crosssell Products
+     */
+
+    public List<ProductInterface> getCrosssellProducts() {
+        return (List<ProductInterface>) get("crosssell_products");
+    }
+
+    public BundleProduct setCrosssellProducts(List<ProductInterface> arg) {
+        optimisticData.put(getKey("crosssell_products"), arg);
         return this;
     }
 
@@ -736,7 +833,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Indicates whether the bundle product has a dynamic price
+     * Indicates whether the bundle product has a dynamic price.
      */
 
     public Boolean getDynamicPrice() {
@@ -749,7 +846,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Indicates whether the bundle product has a dynamic SK
+     * Indicates whether the bundle product has a dynamic SK.
      */
 
     public Boolean getDynamicSku() {
@@ -762,7 +859,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Indicates whether the bundle product has a dynamically calculated weight
+     * Indicates whether the bundle product has a dynamically calculated weight.
      */
 
     public Boolean getDynamicWeight() {
@@ -775,7 +872,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Indicates whether a gift message is available
+     * Indicates whether a gift message is available.
      */
 
     public String getGiftMessageAvailable() {
@@ -788,7 +885,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The ID number assigned to the product
+     * The ID number assigned to the product.
      */
 
     public Integer getId() {
@@ -801,7 +898,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The relative path to the main image on the product page
+     * The relative path to the main image on the product page.
      */
 
     public ProductImage getImage() {
@@ -814,7 +911,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array containing information about individual bundle items
+     * An array containing information about individual bundle items.
      */
 
     public List<BundleItem> getItems() {
@@ -827,7 +924,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A number representing the product&#39;s manufacturer
+     * A number representing the product&#39;s manufacturer.
      */
 
     public Integer getManufacturer() {
@@ -840,7 +937,20 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of MediaGalleryEntry objects
+     * An array of Media Gallery objects.
+     */
+
+    public List<MediaGalleryInterface> getMediaGallery() {
+        return (List<MediaGalleryInterface>) get("media_gallery");
+    }
+
+    public BundleProduct setMediaGallery(List<MediaGalleryInterface> arg) {
+        optimisticData.put(getKey("media_gallery"), arg);
+        return this;
+    }
+
+    /**
+     * An array of MediaGalleryEntry objects.
      */
 
     public List<MediaGalleryEntry> getMediaGalleryEntries() {
@@ -853,7 +963,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A brief overview of the product for search results listings, maximum 255 characters
+     * A brief overview of the product for search results listings, maximum 255 characters.
      */
 
     public String getMetaDescription() {
@@ -866,7 +976,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A comma-separated list of keywords that are visible only to search engines
+     * A comma-separated list of keywords that are visible only to search engines.
      */
 
     public String getMetaKeyword() {
@@ -879,7 +989,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A string that is displayed in the title bar and tab of the browser and in search results lists
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
      */
 
     public String getMetaTitle() {
@@ -906,7 +1016,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
-     * product
+     * product.
      */
 
     public String getNewFromDate() {
@@ -919,7 +1029,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The end date for new product listings
+     * The end date for new product listings.
      */
 
     public String getNewToDate() {
@@ -945,7 +1055,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of options for a customizable product
+     * An array of options for a customizable product.
      */
 
     public List<CustomizableOptionInterface> getOptions() {
@@ -958,7 +1068,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * If the product has multiple options, determines where they appear on the product page
+     * If the product has multiple options, determines where they appear on the product page.
      */
 
     public String getOptionsContainer() {
@@ -971,7 +1081,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item
+     * A ProductPrices object, indicating the price of an item.
      */
 
     public ProductPrices getPrice() {
@@ -984,7 +1094,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * One of PRICE_RANGE or AS_LOW_AS
+     * One of PRICE_RANGE or AS_LOW_AS.
      */
 
     public PriceViewEnum getPriceView() {
@@ -997,7 +1107,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of ProductLinks objects
+     * An array of ProductLinks objects.
      */
 
     public List<ProductLinksInterface> getProductLinks() {
@@ -1010,7 +1120,20 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Indicates whether to ship bundle items together or individually
+     * Related Products
+     */
+
+    public List<ProductInterface> getRelatedProducts() {
+        return (List<ProductInterface>) get("related_products");
+    }
+
+    public BundleProduct setRelatedProducts(List<ProductInterface> arg) {
+        optimisticData.put(getKey("related_products"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether to ship bundle items together or individually.
      */
 
     public ShipBundleItemsEnum getShipBundleItems() {
@@ -1036,7 +1159,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A number or code assigned to a product to identify the product, options, price, and manufacturer
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
      */
 
     public String getSku() {
@@ -1049,7 +1172,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The relative path to the small image, which is used on catalog pages
+     * The relative path to the small image, which is used on catalog pages.
      */
 
     public ProductImage getSmallImage() {
@@ -1062,7 +1185,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The beginning date that a product has a special price
+     * The beginning date that a product has a special price.
      */
 
     public String getSpecialFromDate() {
@@ -1075,7 +1198,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The discounted price of the product
+     * The discounted price of the product.
      */
 
     public Double getSpecialPrice() {
@@ -1088,7 +1211,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The end date that a product has a special price
+     * The end date that a product has a special price.
      */
 
     public String getSpecialToDate() {
@@ -1127,7 +1250,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The relative path to the product&#39;s thumbnail image
+     * The relative path to the product&#39;s thumbnail image.
      */
 
     public ProductImage getThumbnail() {
@@ -1140,7 +1263,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The price when tier pricing is in effect and the items purchased threshold has been reached
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
      */
 
     public Double getTierPrice() {
@@ -1153,7 +1276,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of ProductTierPrices objects
+     * An array of ProductTierPrices objects.
      */
 
     public List<ProductTierPrices> getTierPrices() {
@@ -1166,7 +1289,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * One of simple, virtual, bundle, downloadable, grouped, or configurable
+     * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      */
 
     public String getTypeId() {
@@ -1179,7 +1302,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Timestamp indicating when the product was updated
+     * Timestamp indicating when the product was updated.
      */
 
     public String getUpdatedAt() {
@@ -1188,6 +1311,19 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public BundleProduct setUpdatedAt(String arg) {
         optimisticData.put(getKey("updated_at"), arg);
+        return this;
+    }
+
+    /**
+     * Upsell Products
+     */
+
+    public List<ProductInterface> getUpsellProducts() {
+        return (List<ProductInterface>) get("upsell_products");
+    }
+
+    public BundleProduct setUpsellProducts(List<ProductInterface> arg) {
+        optimisticData.put(getKey("upsell_products"), arg);
         return this;
     }
 
@@ -1203,10 +1339,6 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
         optimisticData.put(getKey("url_key"), arg);
         return this;
     }
-
-    /**
-     * The part of the URL that precedes the url_key
-     */
 
     public String getUrlPath() {
         return (String) get("url_path");
@@ -1231,7 +1363,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of websites in which the product is available
+     * An array of websites in which the product is available.
      */
 
     public List<Website> getWebsites() {
@@ -1244,7 +1376,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The weight of the item, in units defined by the store
+     * The weight of the item, in units defined by the store.
      */
 
     public Double getWeight() {
@@ -1270,6 +1402,8 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
             case "created_at": return false;
 
+            case "crosssell_products": return false;
+
             case "description": return true;
 
             case "dynamic_price": return false;
@@ -1287,6 +1421,8 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
             case "items": return true;
 
             case "manufacturer": return false;
+
+            case "media_gallery": return false;
 
             case "media_gallery_entries": return true;
 
@@ -1313,6 +1449,8 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
             case "price_view": return false;
 
             case "product_links": return false;
+
+            case "related_products": return false;
 
             case "ship_bundle_items": return false;
 
@@ -1341,6 +1479,8 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
             case "type_id": return false;
 
             case "updated_at": return false;
+
+            case "upsell_products": return false;
 
             case "url_key": return false;
 

@@ -136,7 +136,7 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -149,7 +149,7 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -162,7 +162,7 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -175,7 +175,7 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * ProductMediaGalleryEntriesContent contains an image in base64 format and basic information about the
- * image
+ * image.
  */
 public class ProductMediaGalleryEntriesContentQuery extends AbstractQuery<ProductMediaGalleryEntriesContentQuery> {
     ProductMediaGalleryEntriesContentQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ProductMediaGalleryEntriesContentQuery extends AbstractQuery<Produc
     }
 
     /**
-     * The image in base64 format
+     * The image in base64 format.
      */
     public ProductMediaGalleryEntriesContentQuery base64EncodedData() {
         startField("base64_encoded_data");
@@ -35,7 +35,7 @@ public class ProductMediaGalleryEntriesContentQuery extends AbstractQuery<Produc
     }
 
     /**
-     * The file name of the image
+     * The file name of the image.
      */
     public ProductMediaGalleryEntriesContentQuery name() {
         startField("name");
@@ -44,7 +44,7 @@ public class ProductMediaGalleryEntriesContentQuery extends AbstractQuery<Produc
     }
 
     /**
-     * The MIME type of the file, such as image/png
+     * The MIME type of the file, such as image/png.
      */
     public ProductMediaGalleryEntriesContentQuery type() {
         startField("type");

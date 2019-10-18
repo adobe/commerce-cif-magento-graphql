@@ -55,6 +55,17 @@ public class CmsPage extends AbstractResponse<CmsPage> {
                     break;
                 }
 
+                case "identifier": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "meta_description": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -164,6 +175,19 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     }
 
     /**
+     * Identifier of the CMS page
+     */
+
+    public String getIdentifier() {
+        return (String) get("identifier");
+    }
+
+    public CmsPage setIdentifier(String arg) {
+        optimisticData.put(getKey("identifier"), arg);
+        return this;
+    }
+
+    /**
      * CMS page meta description
      */
 
@@ -246,6 +270,8 @@ public class CmsPage extends AbstractResponse<CmsPage> {
             case "content": return false;
 
             case "content_heading": return false;
+
+            case "identifier": return false;
 
             case "meta_description": return false;
 

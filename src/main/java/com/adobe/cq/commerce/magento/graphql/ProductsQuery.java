@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * The Products object is the top-level object returned in a product search
+ * The Products object is the top-level object returned in a product search.
  */
 public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     ProductsQuery(StringBuilder _queryBuilder) {
@@ -25,7 +25,7 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     }
 
     /**
-     * Layered navigation filters array
+     * Layered navigation filters array.
      */
     public ProductsQuery filters(LayerFilterQueryDefinition queryDef) {
         startField("filters");
@@ -38,7 +38,7 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     }
 
     /**
-     * An array of products that match the specified search criteria
+     * An array of products that match the specified search criteria.
      */
     public ProductsQuery items(ProductInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -51,7 +51,7 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     }
 
     /**
-     * An object that includes the page_info and currentPage values specified in the query
+     * An object that includes the page_info and currentPage values specified in the query.
      */
     public ProductsQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");
@@ -64,7 +64,7 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     }
 
     /**
-     * An object that includes the default sort field and all available sort fields
+     * An object that includes the default sort field and all available sort fields.
      */
     public ProductsQuery sortFields(SortFieldsQueryDefinition queryDef) {
         startField("sort_fields");
@@ -77,7 +77,7 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     }
 
     /**
-     * The number of products returned
+     * The number of products returned.
      */
     public ProductsQuery totalCount() {
         startField("total_count");

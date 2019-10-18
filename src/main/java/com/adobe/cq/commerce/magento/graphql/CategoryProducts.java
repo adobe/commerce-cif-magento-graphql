@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The category products object returned in the Category query
+ * The category products object returned in the Category query.
  */
 public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     public CategoryProducts() {
@@ -95,7 +95,7 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     }
 
     /**
-     * An array of products that are assigned to the category
+     * An array of products that are assigned to the category.
      */
 
     public List<ProductInterface> getItems() {
@@ -108,7 +108,7 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     }
 
     /**
-     * An object that includes the page_info and currentPage values specified in the query
+     * An object that includes the page_info and currentPage values specified in the query.
      */
 
     public SearchResultPageInfo getPageInfo() {
@@ -121,7 +121,7 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     }
 
     /**
-     * The number of products returned
+     * The number of products returned.
      */
 
     public Integer getTotalCount() {

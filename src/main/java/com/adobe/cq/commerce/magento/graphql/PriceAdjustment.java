@@ -84,7 +84,7 @@ public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
     }
 
     /**
-     * The amount of the price adjustment and its currency code
+     * The amount of the price adjustment and its currency code.
      */
 
     public Money getAmount() {
@@ -97,7 +97,7 @@ public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
     }
 
     /**
-     * Indicates whether the adjustment involves tax, weee, or weee_tax
+     * Indicates whether the adjustment involves tax, weee, or weee_tax.
      */
 
     public PriceAdjustmentCodesEnum getCode() {
@@ -111,7 +111,7 @@ public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
 
     /**
      * Indicates whether the entity described by the code attribute is included or excluded from the
-     * adjustment
+     * adjustment.
      */
 
     public PriceAdjustmentDescriptionEnum getDescription() {

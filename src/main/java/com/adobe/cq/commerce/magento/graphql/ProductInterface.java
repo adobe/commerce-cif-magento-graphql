@@ -38,6 +38,8 @@ public interface ProductInterface extends CustomFieldInterface {
 
     String getCreatedAt();
 
+    List<ProductInterface> getCrosssellProducts();
+
     ComplexTextValue getDescription();
 
     String getGiftMessageAvailable();
@@ -47,6 +49,8 @@ public interface ProductInterface extends CustomFieldInterface {
     ProductImage getImage();
 
     Integer getManufacturer();
+
+    List<MediaGalleryInterface> getMediaGallery();
 
     List<MediaGalleryEntry> getMediaGalleryEntries();
 
@@ -69,6 +73,8 @@ public interface ProductInterface extends CustomFieldInterface {
     ProductPrices getPrice();
 
     List<ProductLinksInterface> getProductLinks();
+
+    List<ProductInterface> getRelatedProducts();
 
     ComplexTextValue getShortDescription();
 
@@ -95,6 +101,8 @@ public interface ProductInterface extends CustomFieldInterface {
     String getTypeId();
 
     String getUpdatedAt();
+
+    List<ProductInterface> getUpsellProducts();
 
     String getUrlKey();
 

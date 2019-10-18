@@ -25,7 +25,7 @@ public class PriceQuery extends AbstractQuery<PriceQuery> {
     }
 
     /**
-     * An array that provides information about tax, weee, or weee_tax adjustments
+     * An array that provides information about tax, weee, or weee_tax adjustments.
      */
     public PriceQuery adjustments(PriceAdjustmentQueryDefinition queryDef) {
         startField("adjustments");
@@ -38,7 +38,7 @@ public class PriceQuery extends AbstractQuery<PriceQuery> {
     }
 
     /**
-     * The price of a product plus a three-letter currency code
+     * The price of a product plus a three-letter currency code.
      */
     public PriceQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");

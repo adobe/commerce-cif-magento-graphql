@@ -25,7 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableRadioOption contains information about a set of radio buttons that are defined as part
- * of a customizable option
+ * of a customizable option.
  */
 public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioOption> implements CustomizableOptionInterface {
     public CustomizableRadioOption() {
@@ -118,7 +118,7 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -131,7 +131,7 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -144,7 +144,7 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -157,7 +157,7 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {
@@ -170,7 +170,7 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
-     * An array that defines a set of radio buttons
+     * An array that defines a set of radio buttons.
      */
 
     public List<CustomizableRadioValue> getValue() {

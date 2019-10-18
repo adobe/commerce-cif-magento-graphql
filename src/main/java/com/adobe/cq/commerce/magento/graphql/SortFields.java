@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * SortFields contains a default value for sort fields and all available sort fields
+ * SortFields contains a default value for sort fields and all available sort fields.
  */
 public class SortFields extends AbstractResponse<SortFields> {
     public SortFields() {
@@ -84,7 +84,7 @@ public class SortFields extends AbstractResponse<SortFields> {
     }
 
     /**
-     * Default value of sort fields
+     * Default value of sort fields.
      */
 
     public String getDefault() {
@@ -97,7 +97,7 @@ public class SortFields extends AbstractResponse<SortFields> {
     }
 
     /**
-     * Available sort fields
+     * Available sort fields.
      */
 
     public List<SortField> getOptions() {

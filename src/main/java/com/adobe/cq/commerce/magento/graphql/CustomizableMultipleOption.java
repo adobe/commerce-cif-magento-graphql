@@ -25,7 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableMultipleOption contains information about a multiselect that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableMultipleOption extends AbstractResponse<CustomizableMultipleOption> implements CustomizableOptionInterface {
     public CustomizableMultipleOption() {
@@ -118,7 +118,7 @@ public class CustomizableMultipleOption extends AbstractResponse<CustomizableMul
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -131,7 +131,7 @@ public class CustomizableMultipleOption extends AbstractResponse<CustomizableMul
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -144,7 +144,7 @@ public class CustomizableMultipleOption extends AbstractResponse<CustomizableMul
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -157,7 +157,7 @@ public class CustomizableMultipleOption extends AbstractResponse<CustomizableMul
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {
@@ -170,7 +170,7 @@ public class CustomizableMultipleOption extends AbstractResponse<CustomizableMul
     }
 
     /**
-     * An array that defines the set of options for a multiselect
+     * An array that defines the set of options for a multiselect.
      */
 
     public List<CustomizableMultipleValue> getValue() {

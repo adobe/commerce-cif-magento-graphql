@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration specifies whether a link or sample is a file or URL
+ * 
  */
 public enum DownloadableFileTypeEnum {
     /**

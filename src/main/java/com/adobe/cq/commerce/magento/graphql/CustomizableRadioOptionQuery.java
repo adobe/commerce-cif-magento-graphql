@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableRadioOption contains information about a set of radio buttons that are defined as part
- * of a customizable option
+ * of a customizable option.
  */
 public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadioOptionQuery> {
     CustomizableRadioOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableRadioOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableRadioOptionQuery required() {
         startField("required");
@@ -44,7 +44,7 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableRadioOptionQuery sortOrder() {
         startField("sort_order");
@@ -53,7 +53,7 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableRadioOptionQuery title() {
         startField("title");
@@ -62,7 +62,7 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
     }
 
     /**
-     * An array that defines a set of radio buttons
+     * An array that defines a set of radio buttons.
      */
     public CustomizableRadioOptionQuery value(CustomizableRadioValueQueryDefinition queryDef) {
         startField("value");

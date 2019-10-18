@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Category Tree implementation
+ * Category Tree implementation.
  */
 public class CategoryTree extends AbstractResponse<CategoryTree> implements CategoryInterface {
     public CategoryTree() {
@@ -388,7 +388,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Breadcrumbs, parent categories info
+     * Breadcrumbs, parent categories info.
      */
 
     public List<Breadcrumb> getBreadcrumbs() {
@@ -401,7 +401,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Child categories tree
+     * Child categories tree.
      */
 
     public List<CategoryTree> getChildren() {
@@ -423,7 +423,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Timestamp indicating when the category was created
+     * Timestamp indicating when the category was created.
      */
 
     public String getCreatedAt() {
@@ -436,7 +436,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The attribute to use for sorting
+     * The attribute to use for sorting.
      */
 
     public String getDefaultSortBy() {
@@ -449,7 +449,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * An optional description of the category
+     * An optional description of the category.
      */
 
     public String getDescription() {
@@ -480,7 +480,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * An ID that uniquely identifies the category
+     * An ID that uniquely identifies the category.
      */
 
     public Integer getId() {
@@ -529,7 +529,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Indicates the depth of the category within the tree
+     * Indicates the depth of the category within the tree.
      */
 
     public Integer getLevel() {
@@ -569,7 +569,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The display name of the category
+     * The display name of the category.
      */
 
     public String getName() {
@@ -582,7 +582,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Category Path
+     * Category Path.
      */
 
     public String getPath() {
@@ -595,7 +595,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Category path in store
+     * Category path in store.
      */
 
     public String getPathInStore() {
@@ -608,7 +608,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The position of the category relative to other categories at the same level in tree
+     * The position of the category relative to other categories at the same level in tree.
      */
 
     public Integer getPosition() {
@@ -621,7 +621,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The number of products in the category
+     * The number of products in the category.
      */
 
     public Integer getProductCount() {
@@ -634,7 +634,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The list of products assigned to the category
+     * The list of products assigned to the category.
      */
 
     public CategoryProducts getProducts() {
@@ -647,7 +647,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Timestamp indicating when the category was updated
+     * Timestamp indicating when the category was updated.
      */
 
     public String getUpdatedAt() {
@@ -660,7 +660,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The url key assigned to the category
+     * The url key assigned to the category.
      */
 
     public String getUrlKey() {
@@ -673,7 +673,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The url path assigned to the category
+     * The url path assigned to the category.
      */
 
     public String getUrlPath() {

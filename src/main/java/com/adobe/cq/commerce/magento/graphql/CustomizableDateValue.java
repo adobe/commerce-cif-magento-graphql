@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableDateValue defines the price and sku of a product whose page contains a customized date
- * picker
+ * picker.
  */
 public class CustomizableDateValue extends AbstractResponse<CustomizableDateValue> {
     public CustomizableDateValue() {
@@ -84,7 +84,7 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
 
     public Double getPrice() {
@@ -97,7 +97,7 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -110,7 +110,7 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
 
     public String getSku() {

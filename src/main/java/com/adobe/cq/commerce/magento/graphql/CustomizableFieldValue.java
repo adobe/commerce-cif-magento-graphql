@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableFieldValue defines the price and sku of a product whose page contains a customized text
- * field
+ * field.
  */
 public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldValue> {
     public CustomizableFieldValue() {
@@ -95,7 +95,7 @@ public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldVa
     }
 
     /**
-     * The maximum number of characters that can be entered for this customizable option
+     * The maximum number of characters that can be entered for this customizable option.
      */
 
     public Integer getMaxCharacters() {
@@ -108,7 +108,7 @@ public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldVa
     }
 
     /**
-     * The price of the custom value
+     * The price of the custom value.
      */
 
     public Double getPrice() {
@@ -121,7 +121,7 @@ public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldVa
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -134,7 +134,7 @@ public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldVa
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
 
     public String getSku() {

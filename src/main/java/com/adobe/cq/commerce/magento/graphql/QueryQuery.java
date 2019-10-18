@@ -51,7 +51,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Id of the category
+         * Id of the category.
          */
         public CategoryArguments id(Integer value) {
             if (value != null) {
@@ -68,7 +68,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
     /**
      * The category query searches for categories that match the criteria specified in the search and
-     * filter attributes
+     * filter attributes.
      */
     public QueryQuery category(CategoryTreeQueryDefinition queryDef) {
         return category(args -> {}, queryDef);
@@ -76,7 +76,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
     /**
      * The category query searches for categories that match the criteria specified in the search and
-     * filter attributes
+     * filter attributes.
      */
     public QueryQuery category(CategoryArgumentsDefinition argsDef, CategoryTreeQueryDefinition queryDef) {
         startField("category");
@@ -87,6 +87,19 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CategoryTreeQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The Checkout Agreements information
+     */
+    public QueryQuery checkoutAgreements(CheckoutAgreementQueryDefinition queryDef) {
+        startField("checkoutAgreements");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CheckoutAgreementQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -158,6 +171,17 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
             if (value != null) {
                 startArgument("id");
                 _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Identifier of the CMS page
+         */
+        public CmsPageArguments identifier(String value) {
+            if (value != null) {
+                startArgument("identifier");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
             }
             return this;
         }
@@ -342,6 +366,43 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         return this;
     }
 
+    /**
+     * Retrieve secure PayPal url for Payments Pro Hosted Solution transaction.
+     */
+    public QueryQuery getHostedProUrl(HostedProUrlInput input, HostedProUrlQueryDefinition queryDef) {
+        startField("getHostedProUrl");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new HostedProUrlQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Retrieve payment credentials for transaction. Use this query for Payflow Link and Payments Advanced
+     * payment methods.
+     */
+    public QueryQuery getPayflowLinkToken(PayflowLinkTokenInput input, PayflowLinkTokenQueryDefinition queryDef) {
+        startField("getPayflowLinkToken");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new PayflowLinkTokenQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public QueryQuery isEmailAvailable(String email, IsEmailAvailableOutputQueryDefinition queryDef) {
         startField("isEmailAvailable");
 
@@ -425,7 +486,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
     /**
      * The products query searches for products that match the criteria specified in the search and filter
-     * attributes
+     * attributes.
      */
     public QueryQuery products(ProductsQueryDefinition queryDef) {
         return products(args -> {}, queryDef);
@@ -433,7 +494,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
     /**
      * The products query searches for products that match the criteria specified in the search and filter
-     * attributes
+     * attributes.
      */
     public QueryQuery products(ProductsArgumentsDefinition argsDef, ProductsQueryDefinition queryDef) {
         startField("products");

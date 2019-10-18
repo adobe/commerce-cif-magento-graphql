@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableAreaOption contains information about a text area that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOption> implements CustomizableOptionInterface {
     public CustomizableAreaOption() {
@@ -117,7 +117,7 @@ public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOpt
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
 
     public Integer getOptionId() {
@@ -130,7 +130,7 @@ public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOpt
     }
 
     /**
-     * The Stock Keeping Unit of the base product
+     * The Stock Keeping Unit of the base product.
      */
 
     public String getProductSku() {
@@ -143,7 +143,7 @@ public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOpt
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
 
     public Boolean getRequired() {
@@ -156,7 +156,7 @@ public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOpt
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
 
     public Integer getSortOrder() {
@@ -169,7 +169,7 @@ public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOpt
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
 
     public String getTitle() {
@@ -182,7 +182,7 @@ public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOpt
     }
 
     /**
-     * An object that defines a text area
+     * An object that defines a text area.
      */
 
     public CustomizableAreaValue getValue() {

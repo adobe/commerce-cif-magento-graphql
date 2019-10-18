@@ -17,7 +17,8 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * MediaGalleryEntry defines characteristics about images and videos associated with a specific product
+ * MediaGalleryEntry defines characteristics about images and videos associated with a specific
+ * product.
  */
 public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery> {
     MediaGalleryEntryQuery(StringBuilder _queryBuilder) {
@@ -25,7 +26,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesContent object
+     * Contains a ProductMediaGalleryEntriesContent object.
      */
     public MediaGalleryEntryQuery content(ProductMediaGalleryEntriesContentQueryDefinition queryDef) {
         startField("content");
@@ -38,7 +39,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Whether the image is hidden from vie
+     * Whether the image is hidden from vie.
      */
     public MediaGalleryEntryQuery disabled() {
         startField("disabled");
@@ -47,7 +48,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * The path of the image on the server
+     * The path of the image on the server.
      */
     public MediaGalleryEntryQuery file() {
         startField("file");
@@ -56,7 +57,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * The identifier assigned to the object
+     * The identifier assigned to the object.
      */
     public MediaGalleryEntryQuery id() {
         startField("id");
@@ -65,7 +66,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * The alt text displayed on the UI when the user points to the image
+     * The alt text displayed on the UI when the user points to the image.
      */
     public MediaGalleryEntryQuery label() {
         startField("label");
@@ -74,7 +75,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * image or video
+     * image or video.
      */
     public MediaGalleryEntryQuery mediaType() {
         startField("media_type");
@@ -83,7 +84,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * The media item&#39;s position after it has been sorted
+     * The media item&#39;s position after it has been sorted.
      */
     public MediaGalleryEntryQuery position() {
         startField("position");
@@ -92,7 +93,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Array of image types. It can have the following values: image, small_image, thumbnail
+     * Array of image types. It can have the following values: image, small_image, thumbnail.
      */
     public MediaGalleryEntryQuery types() {
         startField("types");
@@ -101,7 +102,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesVideoContent object
+     * Contains a ProductMediaGalleryEntriesVideoContent object.
      */
     public MediaGalleryEntryQuery videoContent(ProductMediaGalleryEntriesVideoContentQueryDefinition queryDef) {
         startField("video_content");

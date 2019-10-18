@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableCheckboxValue defines the price and sku of a product whose page contains a customized
- * set of checkbox values
+ * set of checkbox values.
  */
 public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCheckboxValueQuery> {
     CustomizableCheckboxValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCh
     }
 
     /**
-     * The ID assigned to the value
+     * The ID assigned to the value.
      */
     public CustomizableCheckboxValueQuery optionTypeId() {
         startField("option_type_id");
@@ -35,7 +35,7 @@ public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCh
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
     public CustomizableCheckboxValueQuery price() {
         startField("price");
@@ -44,7 +44,7 @@ public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCh
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableCheckboxValueQuery priceType() {
         startField("price_type");
@@ -53,7 +53,7 @@ public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCh
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableCheckboxValueQuery sku() {
         startField("sku");
@@ -62,7 +62,7 @@ public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCh
     }
 
     /**
-     * The order in which the checkbox value is displayed
+     * The order in which the checkbox value is displayed.
      */
     public CustomizableCheckboxValueQuery sortOrder() {
         startField("sort_order");
@@ -71,7 +71,7 @@ public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCh
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableCheckboxValueQuery title() {
         startField("title");

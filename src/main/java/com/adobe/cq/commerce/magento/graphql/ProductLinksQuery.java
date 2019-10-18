@@ -25,7 +25,7 @@ public class ProductLinksQuery extends AbstractQuery<ProductLinksQuery> {
     }
 
     /**
-     * One of related, associated, upsell, or crosssell
+     * One of related, associated, upsell, or crosssell.
      */
     public ProductLinksQuery linkType() {
         startField("link_type");
@@ -34,7 +34,7 @@ public class ProductLinksQuery extends AbstractQuery<ProductLinksQuery> {
     }
 
     /**
-     * The SKU of the linked product
+     * The SKU of the linked product.
      */
     public ProductLinksQuery linkedProductSku() {
         startField("linked_product_sku");
@@ -43,7 +43,7 @@ public class ProductLinksQuery extends AbstractQuery<ProductLinksQuery> {
     }
 
     /**
-     * The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable)
+     * The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable).
      */
     public ProductLinksQuery linkedProductType() {
         startField("linked_product_type");
@@ -52,7 +52,7 @@ public class ProductLinksQuery extends AbstractQuery<ProductLinksQuery> {
     }
 
     /**
-     * The position within the list of product links
+     * The position within the list of product links.
      */
     public ProductLinksQuery position() {
         startField("position");
@@ -61,7 +61,7 @@ public class ProductLinksQuery extends AbstractQuery<ProductLinksQuery> {
     }
 
     /**
-     * The identifier of the linked product
+     * The identifier of the linked product.
      */
     public ProductLinksQuery sku() {
         startField("sku");

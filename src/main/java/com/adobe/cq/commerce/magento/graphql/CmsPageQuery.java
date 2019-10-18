@@ -43,6 +43,15 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
+     * Identifier of the CMS page
+     */
+    public CmsPageQuery identifier() {
+        startField("identifier");
+
+        return this;
+    }
+
+    /**
      * CMS page meta description
      */
     public CmsPageQuery metaDescription() {

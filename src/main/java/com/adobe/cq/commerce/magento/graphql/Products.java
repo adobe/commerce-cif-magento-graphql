@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The Products object is the top-level object returned in a product search
+ * The Products object is the top-level object returned in a product search.
  */
 public class Products extends AbstractResponse<Products> {
     public Products() {
@@ -127,7 +127,7 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
-     * Layered navigation filters array
+     * Layered navigation filters array.
      */
 
     public List<LayerFilter> getFilters() {
@@ -140,7 +140,7 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
-     * An array of products that match the specified search criteria
+     * An array of products that match the specified search criteria.
      */
 
     public List<ProductInterface> getItems() {
@@ -153,7 +153,7 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
-     * An object that includes the page_info and currentPage values specified in the query
+     * An object that includes the page_info and currentPage values specified in the query.
      */
 
     public SearchResultPageInfo getPageInfo() {
@@ -166,7 +166,7 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
-     * An object that includes the default sort field and all available sort fields
+     * An object that includes the default sort field and all available sort fields.
      */
 
     public SortFields getSortFields() {
@@ -179,7 +179,7 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
-     * The number of products returned
+     * The number of products returned.
      */
 
     public Integer getTotalCount() {

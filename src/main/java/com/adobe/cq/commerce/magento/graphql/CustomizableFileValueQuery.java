@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableFileValue defines the price and sku of a product whose page contains a customized file
- * picker
+ * picker.
  */
 public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileValueQuery> {
     CustomizableFileValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileVa
     }
 
     /**
-     * The file extension to accept
+     * The file extension to accept.
      */
     public CustomizableFileValueQuery fileExtension() {
         startField("file_extension");
@@ -35,7 +35,7 @@ public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileVa
     }
 
     /**
-     * The maximum width of an image
+     * The maximum width of an image.
      */
     public CustomizableFileValueQuery imageSizeX() {
         startField("image_size_x");
@@ -44,7 +44,7 @@ public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileVa
     }
 
     /**
-     * The maximum height of an image
+     * The maximum height of an image.
      */
     public CustomizableFileValueQuery imageSizeY() {
         startField("image_size_y");
@@ -53,7 +53,7 @@ public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileVa
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
     public CustomizableFileValueQuery price() {
         startField("price");
@@ -62,7 +62,7 @@ public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileVa
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableFileValueQuery priceType() {
         startField("price_type");
@@ -71,7 +71,7 @@ public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileVa
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableFileValueQuery sku() {
         startField("sku");

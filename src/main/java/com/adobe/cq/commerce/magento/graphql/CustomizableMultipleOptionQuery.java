@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableMultipleOption contains information about a multiselect that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableMultipleOptionQuery> {
     CustomizableMultipleOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableMultipleOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableMultipleOptionQuery required() {
         startField("required");
@@ -44,7 +44,7 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableMultipleOptionQuery sortOrder() {
         startField("sort_order");
@@ -53,7 +53,7 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableMultipleOptionQuery title() {
         startField("title");
@@ -62,7 +62,7 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
     }
 
     /**
-     * An array that defines the set of options for a multiselect
+     * An array that defines the set of options for a multiselect.
      */
     public CustomizableMultipleOptionQuery value(CustomizableMultipleValueQueryDefinition queryDef) {
         startField("value");

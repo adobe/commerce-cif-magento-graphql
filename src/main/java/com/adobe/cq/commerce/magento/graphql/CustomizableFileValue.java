@@ -23,7 +23,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomizableFileValue defines the price and sku of a product whose page contains a customized file
- * picker
+ * picker.
  */
 public class CustomizableFileValue extends AbstractResponse<CustomizableFileValue> {
     public CustomizableFileValue() {
@@ -117,7 +117,7 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-     * The file extension to accept
+     * The file extension to accept.
      */
 
     public String getFileExtension() {
@@ -130,7 +130,7 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-     * The maximum width of an image
+     * The maximum width of an image.
      */
 
     public Integer getImageSizeX() {
@@ -143,7 +143,7 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-     * The maximum height of an image
+     * The maximum height of an image.
      */
 
     public Integer getImageSizeY() {
@@ -156,7 +156,7 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
 
     public Double getPrice() {
@@ -169,7 +169,7 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -182,7 +182,7 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
 
     public String getSku() {

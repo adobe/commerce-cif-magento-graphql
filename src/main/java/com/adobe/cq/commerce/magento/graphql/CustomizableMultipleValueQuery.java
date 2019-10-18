@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableMultipleValue defines the price and sku of a product whose page contains a customized
- * multiselect
+ * multiselect.
  */
 public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMultipleValueQuery> {
     CustomizableMultipleValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMu
     }
 
     /**
-     * The ID assigned to the value
+     * The ID assigned to the value.
      */
     public CustomizableMultipleValueQuery optionTypeId() {
         startField("option_type_id");
@@ -35,7 +35,7 @@ public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMu
     }
 
     /**
-     * The price assigned to this option
+     * The price assigned to this option.
      */
     public CustomizableMultipleValueQuery price() {
         startField("price");
@@ -44,7 +44,7 @@ public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMu
     }
 
     /**
-     * FIXED, PERCENT, or DYNAMIC
+     * FIXED, PERCENT, or DYNAMIC.
      */
     public CustomizableMultipleValueQuery priceType() {
         startField("price_type");
@@ -53,7 +53,7 @@ public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMu
     }
 
     /**
-     * The Stock Keeping Unit for this option
+     * The Stock Keeping Unit for this option.
      */
     public CustomizableMultipleValueQuery sku() {
         startField("sku");
@@ -62,7 +62,7 @@ public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMu
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableMultipleValueQuery sortOrder() {
         startField("sort_order");
@@ -71,7 +71,7 @@ public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMu
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableMultipleValueQuery title() {
         startField("title");

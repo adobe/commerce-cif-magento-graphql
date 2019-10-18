@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableFileOption contains information about a file picker that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileOptionQuery> {
     CustomizableFileOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableFileOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
     }
 
     /**
-     * The Stock Keeping Unit of the base product
+     * The Stock Keeping Unit of the base product.
      */
     public CustomizableFileOptionQuery productSku() {
         startField("product_sku");
@@ -44,7 +44,7 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableFileOptionQuery required() {
         startField("required");
@@ -53,7 +53,7 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableFileOptionQuery sortOrder() {
         startField("sort_order");
@@ -62,7 +62,7 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableFileOptionQuery title() {
         startField("title");
@@ -71,7 +71,7 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
     }
 
     /**
-     * An object that defines a file value
+     * An object that defines a file value.
      */
     public CustomizableFileOptionQuery value(CustomizableFileValueQueryDefinition queryDef) {
         startField("value");

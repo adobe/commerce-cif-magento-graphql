@@ -24,36 +24,24 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
         super(_queryBuilder);
     }
 
-    /**
-     * The unique ID for the link to the downloadable product
-     */
     public DownloadableProductLinksQuery id() {
         startField("id");
 
         return this;
     }
 
-    /**
-     * Indicates whether the link is shareable
-     */
     public DownloadableProductLinksQuery isShareable() {
         startField("is_shareable");
 
         return this;
     }
 
-    /**
-     * Either FILE or URL
-     */
     public DownloadableProductLinksQuery linkType() {
         startField("link_type");
 
         return this;
     }
 
-    /**
-     * The maximum number of times the product can be downloaded. A value of 0 means unlimited.
-     */
     public DownloadableProductLinksQuery numberOfDownloads() {
         startField("number_of_downloads");
 
@@ -69,18 +57,12 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
         return this;
     }
 
-    /**
-     * The relative path to the downloadable sample
-     */
     public DownloadableProductLinksQuery sampleFile() {
         startField("sample_file");
 
         return this;
     }
 
-    /**
-     * Either FILE or URL
-     */
     public DownloadableProductLinksQuery sampleType() {
         startField("sample_type");
 
@@ -88,7 +70,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * The relative URL to the downloadable sample
+     * URL to the downloadable sample
      */
     public DownloadableProductLinksQuery sampleUrl() {
         startField("sample_url");

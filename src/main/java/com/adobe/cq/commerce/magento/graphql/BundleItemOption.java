@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * BundleItemOption defines characteristics and options for a specific bundle item
+ * BundleItemOption defines characteristics and options for a specific bundle item.
  */
 public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     public BundleItemOption() {
@@ -132,6 +132,17 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
                     break;
                 }
 
+                case "quantity": {
+                    Double optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsDouble(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -149,7 +160,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * Indicates whether the customer can change the number of items for this option
+     * Indicates whether the customer can change the number of items for this option.
      */
 
     public Boolean getCanChangeQuantity() {
@@ -162,7 +173,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * The ID assigned to the bundled item option
+     * The ID assigned to the bundled item option.
      */
 
     public Integer getId() {
@@ -175,7 +186,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * Indicates whether this option is the default option
+     * Indicates whether this option is the default option.
      */
 
     public Boolean getIsDefault() {
@@ -188,7 +199,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * The text that identifies the bundled item option
+     * The text that identifies the bundled item option.
      */
 
     public String getLabel() {
@@ -202,7 +213,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
 
     /**
      * When a bundle item contains multiple options, the relative position of this option compared to the
-     * other options
+     * other options.
      */
 
     public Integer getPosition() {
@@ -215,7 +226,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * The price of the selected option
+     * The price of the selected option.
      */
 
     public Double getPrice() {
@@ -228,7 +239,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * One of FIXED, PERCENT, or DYNAMIC
+     * One of FIXED, PERCENT, or DYNAMIC.
      */
 
     public PriceTypeEnum getPriceType() {
@@ -241,7 +252,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * Contains details about this product option
+     * Contains details about this product option.
      */
 
     public ProductInterface getProduct() {
@@ -254,7 +265,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * Indicates the quantity of this specific bundle item
+     * Indicates the quantity of this specific bundle item.
      */
 
     public Double getQty() {
@@ -263,6 +274,19 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
 
     public BundleItemOption setQty(Double arg) {
         optimisticData.put(getKey("qty"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates the quantity of this specific bundle item.
+     */
+
+    public Double getQuantity() {
+        return (Double) get("quantity");
+    }
+
+    public BundleItemOption setQuantity(Double arg) {
+        optimisticData.put(getKey("quantity"), arg);
         return this;
     }
 
@@ -285,6 +309,8 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
             case "product": return false;
 
             case "qty": return false;
+
+            case "quantity": return false;
 
             default: return false;
         }

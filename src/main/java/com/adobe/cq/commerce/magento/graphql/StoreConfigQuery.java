@@ -79,6 +79,24 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Default Sort By.
+     */
+    public StoreConfigQuery catalogDefaultSortBy() {
+        startField("catalog_default_sort_by");
+
+        return this;
+    }
+
+    /**
+     * Category URL Suffix.
+     */
+    public StoreConfigQuery categoryUrlSuffix() {
+        startField("category_url_suffix");
+
+        return this;
+    }
+
+    /**
      * CMS Home Page
      */
     public StoreConfigQuery cmsHomePage() {
@@ -178,6 +196,24 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Products per Page on Grid Default Value.
+     */
+    public StoreConfigQuery gridPerPage() {
+        startField("grid_per_page");
+
+        return this;
+    }
+
+    /**
+     * Products per Page on Grid Allowed Values.
+     */
+    public StoreConfigQuery gridPerPageValues() {
+        startField("grid_per_page_values");
+
+        return this;
+    }
+
+    /**
      * Scripts and Style Sheets
      */
     public StoreConfigQuery headIncludes() {
@@ -209,6 +245,33 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery id() {
         startField("id");
+
+        return this;
+    }
+
+    /**
+     * List Mode.
+     */
+    public StoreConfigQuery listMode() {
+        startField("list_mode");
+
+        return this;
+    }
+
+    /**
+     * Products per Page on List Default Value.
+     */
+    public StoreConfigQuery listPerPage() {
+        startField("list_per_page");
+
+        return this;
+    }
+
+    /**
+     * Products per Page on List Allowed Values.
+     */
+    public StoreConfigQuery listPerPageValues() {
+        startField("list_per_page_values");
 
         return this;
     }
@@ -254,6 +317,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery noRoute() {
         startField("no_route");
+
+        return this;
+    }
+
+    /**
+     * Product URL Suffix.
+     */
+    public StoreConfigQuery productUrlSuffix() {
+        startField("product_url_suffix");
 
         return this;
     }
@@ -317,6 +389,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery titlePrefix() {
         startField("title_prefix");
+
+        return this;
+    }
+
+    /**
+     * Page Title Separator.
+     */
+    public StoreConfigQuery titleSeparator() {
+        startField("title_separator");
 
         return this;
     }

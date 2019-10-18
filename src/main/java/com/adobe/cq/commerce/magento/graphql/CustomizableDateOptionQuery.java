@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 
 /**
  * CustomizableDateOption contains information about a date picker that is defined as part of a
- * customizable option
+ * customizable option.
  */
 public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateOptionQuery> {
     CustomizableDateOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
     }
 
     /**
-     * Option ID
+     * Option ID.
      */
     public CustomizableDateOptionQuery optionId() {
         startField("option_id");
@@ -35,7 +35,7 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
     }
 
     /**
-     * The Stock Keeping Unit of the base product
+     * The Stock Keeping Unit of the base product.
      */
     public CustomizableDateOptionQuery productSku() {
         startField("product_sku");
@@ -44,7 +44,7 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
     }
 
     /**
-     * Indicates whether the option is required
+     * Indicates whether the option is required.
      */
     public CustomizableDateOptionQuery required() {
         startField("required");
@@ -53,7 +53,7 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
     }
 
     /**
-     * The order in which the option is displayed
+     * The order in which the option is displayed.
      */
     public CustomizableDateOptionQuery sortOrder() {
         startField("sort_order");
@@ -62,7 +62,7 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
     }
 
     /**
-     * The display name for this option
+     * The display name for this option.
      */
     public CustomizableDateOptionQuery title() {
         startField("title");

@@ -32,7 +32,7 @@ public class CustomFieldQuery extends AbstractQuery<CustomFieldQuery> {
      * the fields of a custom object field that has an existing GraphQL type that can already be
      * parsed by the library.
      * 
-     * @param fieldName
+     * @param fieldName The name of the field that will be added to the GraphQL query.
      * @return The current query builder.
      */
     public CustomFieldQuery addField(String fieldName) {
