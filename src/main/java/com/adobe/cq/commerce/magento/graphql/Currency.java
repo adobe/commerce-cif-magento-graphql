@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -23,9 +23,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class Currency extends AbstractResponse<Currency> {
     public Currency() {
     }
@@ -186,6 +183,10 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    /**
+     * @deprecated Symbol was missed. Use `default_display_currency_code`.
+     */
+    @Deprecated
     public String getDefaultDisplayCurrecyCode() {
         return (String) get("default_display_currecy_code");
     }
@@ -195,6 +196,10 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    /**
+     * @deprecated Symbol was missed. Use `default_display_currency_symbol`.
+     */
+    @Deprecated
     public String getDefaultDisplayCurrecySymbol() {
         return (String) get("default_display_currecy_symbol");
     }

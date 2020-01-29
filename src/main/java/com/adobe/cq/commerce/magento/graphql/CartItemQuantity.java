@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * 
+ * Deprecated: `cart_items` field of `ShippingCartAddress` returns now  `CartItemInterface` instead of
+ * `CartItemQuantity`
  */
 public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
     public CartItemQuantity() {
@@ -61,6 +62,10 @@ public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
         return "CartItemQuantity";
     }
 
+    /**
+     * @deprecated `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of `CartItemQuantity`
+     */
+    @Deprecated
     public Integer getCartItemId() {
         return (Integer) get("cart_item_id");
     }
@@ -70,6 +75,10 @@ public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
         return this;
     }
 
+    /**
+     * @deprecated `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of `CartItemQuantity`
+     */
+    @Deprecated
     public Double getQuantity() {
         return (Double) get("quantity");
     }

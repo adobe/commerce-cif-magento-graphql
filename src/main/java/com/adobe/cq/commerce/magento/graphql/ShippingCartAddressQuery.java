@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,9 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * 
- */
 public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQuery> {
     ShippingCartAddressQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -34,11 +31,25 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * @deprecated `cart_items_v2` should be used instead
+     */
+    @Deprecated
     public ShippingCartAddressQuery cartItems(CartItemQuantityQueryDefinition queryDef) {
         startField("cart_items");
 
         _queryBuilder.append('{');
         queryDef.define(new CartItemQuantityQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public ShippingCartAddressQuery cartItemsV2(CartItemInterfaceQueryDefinition queryDef) {
+        startField("cart_items_v2");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CartItemInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -78,6 +89,10 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * @deprecated This information shoud not be exposed on frontend
+     */
+    @Deprecated
     public ShippingCartAddressQuery itemsWeight() {
         startField("items_weight");
 

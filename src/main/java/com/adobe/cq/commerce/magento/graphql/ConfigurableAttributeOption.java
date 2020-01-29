@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -86,7 +86,6 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     /**
      * The ID assigned to the attribute
      */
-
     public String getCode() {
         return (String) get("code");
     }
@@ -99,7 +98,6 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     /**
      * A string that describes the configurable attribute option
      */
-
     public String getLabel() {
         return (String) get("label");
     }
@@ -112,7 +110,6 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     /**
      * A unique index number assigned to the configurable product option
      */
-
     public Integer getValueIndex() {
         return (Integer) get("value_index");
     }

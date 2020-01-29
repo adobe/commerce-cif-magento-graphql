@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -23,9 +23,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> implements CartAddressInterface {
     public ShippingCartAddress() {
     }
@@ -77,13 +74,29 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
                     break;
                 }
 
-                case "city": {
-                    String optional1 = null;
+                case "cart_items_v2": {
+                    List<CartItemInterface> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        List<CartItemInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            CartItemInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownCartItemInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "city": {
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -100,12 +113,7 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
                 }
 
                 case "country": {
-                    CartAddressCountry optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = new CartAddressCountry(jsonAsObject(field.getValue(), key));
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, new CartAddressCountry(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
@@ -122,12 +130,7 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
                 }
 
                 case "firstname": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -144,12 +147,7 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
                 }
 
                 case "lastname": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -188,33 +186,23 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
                 }
 
                 case "street": {
-                    List<String> optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        List<String> list1 = new ArrayList<>();
-                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
-                            String optional2 = null;
-                            if (!element1.isJsonNull()) {
-                                optional2 = jsonAsString(element1, key);
-                            }
-
-                            list1.add(optional2);
+                    List<String> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        String optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = jsonAsString(element1, key);
                         }
 
-                        optional1 = list1;
+                        list1.add(optional2);
                     }
 
-                    responseData.put(key, optional1);
+                    responseData.put(key, list1);
 
                     break;
                 }
 
                 case "telephone": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -244,12 +232,25 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * @deprecated `cart_items_v2` should be used instead
+     */
+    @Deprecated
     public List<CartItemQuantity> getCartItems() {
         return (List<CartItemQuantity>) get("cart_items");
     }
 
     public ShippingCartAddress setCartItems(List<CartItemQuantity> arg) {
         optimisticData.put(getKey("cart_items"), arg);
+        return this;
+    }
+
+    public List<CartItemInterface> getCartItemsV2() {
+        return (List<CartItemInterface>) get("cart_items_v2");
+    }
+
+    public ShippingCartAddress setCartItemsV2(List<CartItemInterface> arg) {
+        optimisticData.put(getKey("cart_items_v2"), arg);
         return this;
     }
 
@@ -298,6 +299,10 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * @deprecated This information shoud not be exposed on frontend
+     */
+    @Deprecated
     public Double getItemsWeight() {
         return (Double) get("items_weight");
     }
@@ -366,6 +371,8 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
             case "available_shipping_methods": return true;
 
             case "cart_items": return true;
+
+            case "cart_items_v2": return false;
 
             case "city": return false;
 

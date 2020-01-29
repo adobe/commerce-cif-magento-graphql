@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -46,8 +46,31 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         return this;
     }
 
+    /**
+     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
+     * Tag For Categories&#39; is enabled
+     */
+    public CategoryInterfaceQuery canonicalUrl() {
+        startField("canonical_url");
+
+        return this;
+    }
+
     public CategoryInterfaceQuery childrenCount() {
         startField("children_count");
+
+        return this;
+    }
+
+    /**
+     * Category CMS Block.
+     */
+    public CategoryInterfaceQuery cmsBlock(CmsBlockQueryDefinition queryDef) {
+        startField("cms_block");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CmsBlockQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -57,6 +80,12 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
      */
     public CategoryInterfaceQuery createdAt() {
         startField("created_at");
+
+        return this;
+    }
+
+    public CategoryInterfaceQuery customLayoutUpdateFile() {
+        startField("custom_layout_update_file");
 
         return this;
     }
@@ -224,10 +253,10 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         }
 
         /**
-         * Specifies which attribute to sort on, and whether to return the results in ascending or descending
+         * Specifies which attributes to sort on, and whether to return the results in ascending or descending
          * order.
          */
-        public ProductsArguments sort(ProductSortInput value) {
+        public ProductsArguments sort(ProductAttributeSortInput value) {
             if (value != null) {
                 startArgument("sort");
                 value.appendTo(_queryBuilder);
@@ -287,6 +316,15 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
      */
     public CategoryInterfaceQuery urlPath() {
         startField("url_path");
+
+        return this;
+    }
+
+    /**
+     * The part of the category URL that is appended after the url key
+     */
+    public CategoryInterfaceQuery urlSuffix() {
+        startField("url_suffix");
 
         return this;
     }

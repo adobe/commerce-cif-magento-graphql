@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -97,7 +97,6 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     /**
      * An array of products that are assigned to the category.
      */
-
     public List<ProductInterface> getItems() {
         return (List<ProductInterface>) get("items");
     }
@@ -110,7 +109,6 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     /**
      * An object that includes the page_info and currentPage values specified in the query.
      */
-
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");
     }
@@ -123,7 +121,6 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     /**
      * The number of products returned.
      */
-
     public Integer getTotalCount() {
         return (Integer) get("total_count");
     }

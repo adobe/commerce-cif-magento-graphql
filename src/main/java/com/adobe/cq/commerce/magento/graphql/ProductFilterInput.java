@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -18,6 +18,11 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.Input;
 
+/**
+ * ProductFilterInput is deprecated, use @ProductAttributeFilterInput instead. ProductFilterInput
+ * defines the filters to be used in the search. A filter contains at least one attribute, a comparison
+ * operator, and the value that is being searched for.
+ */
 public class ProductFilterInput implements Serializable {
     private Input<FilterTypeInput> categoryId = Input.undefined();
 
@@ -95,19 +100,31 @@ public class ProductFilterInput implements Serializable {
 
     private Input<FilterTypeInput> weight = Input.undefined();
 
+    /**
+     * Category ID the product belongs to.
+     */
     public FilterTypeInput getCategoryId() {
         return categoryId.getValue();
     }
 
+    /**
+     * Category ID the product belongs to.
+     */
     public Input<FilterTypeInput> getCategoryIdInput() {
         return categoryId;
     }
 
+    /**
+     * Category ID the product belongs to.
+     */
     public ProductFilterInput setCategoryId(FilterTypeInput categoryId) {
         this.categoryId = Input.optional(categoryId);
         return this;
     }
 
+    /**
+     * Category ID the product belongs to.
+     */
     public ProductFilterInput setCategoryIdInput(Input<FilterTypeInput> categoryId) {
         if (categoryId == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -116,19 +133,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The product&#39;s country of origin.
+     */
     public FilterTypeInput getCountryOfManufacture() {
         return countryOfManufacture.getValue();
     }
 
+    /**
+     * The product&#39;s country of origin.
+     */
     public Input<FilterTypeInput> getCountryOfManufactureInput() {
         return countryOfManufacture;
     }
 
+    /**
+     * The product&#39;s country of origin.
+     */
     public ProductFilterInput setCountryOfManufacture(FilterTypeInput countryOfManufacture) {
         this.countryOfManufacture = Input.optional(countryOfManufacture);
         return this;
     }
 
+    /**
+     * The product&#39;s country of origin.
+     */
     public ProductFilterInput setCountryOfManufactureInput(Input<FilterTypeInput> countryOfManufacture) {
         if (countryOfManufacture == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -137,19 +166,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * Timestamp indicating when the product was created.
+     */
     public FilterTypeInput getCreatedAt() {
         return createdAt.getValue();
     }
 
+    /**
+     * Timestamp indicating when the product was created.
+     */
     public Input<FilterTypeInput> getCreatedAtInput() {
         return createdAt;
     }
 
+    /**
+     * Timestamp indicating when the product was created.
+     */
     public ProductFilterInput setCreatedAt(FilterTypeInput createdAt) {
         this.createdAt = Input.optional(createdAt);
         return this;
     }
 
+    /**
+     * Timestamp indicating when the product was created.
+     */
     public ProductFilterInput setCreatedAtInput(Input<FilterTypeInput> createdAt) {
         if (createdAt == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -158,19 +199,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The name of a custom layout.
+     */
     public FilterTypeInput getCustomLayout() {
         return customLayout.getValue();
     }
 
+    /**
+     * The name of a custom layout.
+     */
     public Input<FilterTypeInput> getCustomLayoutInput() {
         return customLayout;
     }
 
+    /**
+     * The name of a custom layout.
+     */
     public ProductFilterInput setCustomLayout(FilterTypeInput customLayout) {
         this.customLayout = Input.optional(customLayout);
         return this;
     }
 
+    /**
+     * The name of a custom layout.
+     */
     public ProductFilterInput setCustomLayoutInput(Input<FilterTypeInput> customLayout) {
         if (customLayout == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -179,19 +232,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * XML code that is applied as a layout update to the product page.
+     */
     public FilterTypeInput getCustomLayoutUpdate() {
         return customLayoutUpdate.getValue();
     }
 
+    /**
+     * XML code that is applied as a layout update to the product page.
+     */
     public Input<FilterTypeInput> getCustomLayoutUpdateInput() {
         return customLayoutUpdate;
     }
 
+    /**
+     * XML code that is applied as a layout update to the product page.
+     */
     public ProductFilterInput setCustomLayoutUpdate(FilterTypeInput customLayoutUpdate) {
         this.customLayoutUpdate = Input.optional(customLayoutUpdate);
         return this;
     }
 
+    /**
+     * XML code that is applied as a layout update to the product page.
+     */
     public ProductFilterInput setCustomLayoutUpdateInput(Input<FilterTypeInput> customLayoutUpdate) {
         if (customLayoutUpdate == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -200,19 +265,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
     public FilterTypeInput getDescription() {
         return description.getValue();
     }
 
+    /**
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
     public Input<FilterTypeInput> getDescriptionInput() {
         return description;
     }
 
+    /**
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
     public ProductFilterInput setDescription(FilterTypeInput description) {
         this.description = Input.optional(description);
         return this;
     }
 
+    /**
+     * Detailed information about the product. The value can include simple HTML tags.
+     */
     public ProductFilterInput setDescriptionInput(Input<FilterTypeInput> description) {
         if (description == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -221,19 +298,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * Indicates whether a gift message is available.
+     */
     public FilterTypeInput getGiftMessageAvailable() {
         return giftMessageAvailable.getValue();
     }
 
+    /**
+     * Indicates whether a gift message is available.
+     */
     public Input<FilterTypeInput> getGiftMessageAvailableInput() {
         return giftMessageAvailable;
     }
 
+    /**
+     * Indicates whether a gift message is available.
+     */
     public ProductFilterInput setGiftMessageAvailable(FilterTypeInput giftMessageAvailable) {
         this.giftMessageAvailable = Input.optional(giftMessageAvailable);
         return this;
     }
 
+    /**
+     * Indicates whether a gift message is available.
+     */
     public ProductFilterInput setGiftMessageAvailableInput(Input<FilterTypeInput> giftMessageAvailable) {
         if (giftMessageAvailable == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -242,19 +331,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * Indicates whether additional attributes have been created for the product.
+     */
     public FilterTypeInput getHasOptions() {
         return hasOptions.getValue();
     }
 
+    /**
+     * Indicates whether additional attributes have been created for the product.
+     */
     public Input<FilterTypeInput> getHasOptionsInput() {
         return hasOptions;
     }
 
+    /**
+     * Indicates whether additional attributes have been created for the product.
+     */
     public ProductFilterInput setHasOptions(FilterTypeInput hasOptions) {
         this.hasOptions = Input.optional(hasOptions);
         return this;
     }
 
+    /**
+     * Indicates whether additional attributes have been created for the product.
+     */
     public ProductFilterInput setHasOptionsInput(Input<FilterTypeInput> hasOptions) {
         if (hasOptions == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -263,19 +364,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The relative path to the main image on the product page.
+     */
     public FilterTypeInput getImage() {
         return image.getValue();
     }
 
+    /**
+     * The relative path to the main image on the product page.
+     */
     public Input<FilterTypeInput> getImageInput() {
         return image;
     }
 
+    /**
+     * The relative path to the main image on the product page.
+     */
     public ProductFilterInput setImage(FilterTypeInput image) {
         this.image = Input.optional(image);
         return this;
     }
 
+    /**
+     * The relative path to the main image on the product page.
+     */
     public ProductFilterInput setImageInput(Input<FilterTypeInput> image) {
         if (image == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -284,19 +397,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The label assigned to a product image.
+     */
     public FilterTypeInput getImageLabel() {
         return imageLabel.getValue();
     }
 
+    /**
+     * The label assigned to a product image.
+     */
     public Input<FilterTypeInput> getImageLabelInput() {
         return imageLabel;
     }
 
+    /**
+     * The label assigned to a product image.
+     */
     public ProductFilterInput setImageLabel(FilterTypeInput imageLabel) {
         this.imageLabel = Input.optional(imageLabel);
         return this;
     }
 
+    /**
+     * The label assigned to a product image.
+     */
     public ProductFilterInput setImageLabelInput(Input<FilterTypeInput> imageLabel) {
         if (imageLabel == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -305,19 +430,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * A number representing the product&#39;s manufacturer.
+     */
     public FilterTypeInput getManufacturer() {
         return manufacturer.getValue();
     }
 
+    /**
+     * A number representing the product&#39;s manufacturer.
+     */
     public Input<FilterTypeInput> getManufacturerInput() {
         return manufacturer;
     }
 
+    /**
+     * A number representing the product&#39;s manufacturer.
+     */
     public ProductFilterInput setManufacturer(FilterTypeInput manufacturer) {
         this.manufacturer = Input.optional(manufacturer);
         return this;
     }
 
+    /**
+     * A number representing the product&#39;s manufacturer.
+     */
     public ProductFilterInput setManufacturerInput(Input<FilterTypeInput> manufacturer) {
         if (manufacturer == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -326,19 +463,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The numeric maximal price of the product. Do not include the currency code.
+     */
     public FilterTypeInput getMaxPrice() {
         return maxPrice.getValue();
     }
 
+    /**
+     * The numeric maximal price of the product. Do not include the currency code.
+     */
     public Input<FilterTypeInput> getMaxPriceInput() {
         return maxPrice;
     }
 
+    /**
+     * The numeric maximal price of the product. Do not include the currency code.
+     */
     public ProductFilterInput setMaxPrice(FilterTypeInput maxPrice) {
         this.maxPrice = Input.optional(maxPrice);
         return this;
     }
 
+    /**
+     * The numeric maximal price of the product. Do not include the currency code.
+     */
     public ProductFilterInput setMaxPriceInput(Input<FilterTypeInput> maxPrice) {
         if (maxPrice == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -347,19 +496,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * A brief overview of the product for search results listings, maximum 255 characters.
+     */
     public FilterTypeInput getMetaDescription() {
         return metaDescription.getValue();
     }
 
+    /**
+     * A brief overview of the product for search results listings, maximum 255 characters.
+     */
     public Input<FilterTypeInput> getMetaDescriptionInput() {
         return metaDescription;
     }
 
+    /**
+     * A brief overview of the product for search results listings, maximum 255 characters.
+     */
     public ProductFilterInput setMetaDescription(FilterTypeInput metaDescription) {
         this.metaDescription = Input.optional(metaDescription);
         return this;
     }
 
+    /**
+     * A brief overview of the product for search results listings, maximum 255 characters.
+     */
     public ProductFilterInput setMetaDescriptionInput(Input<FilterTypeInput> metaDescription) {
         if (metaDescription == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -368,19 +529,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * A comma-separated list of keywords that are visible only to search engines.
+     */
     public FilterTypeInput getMetaKeyword() {
         return metaKeyword.getValue();
     }
 
+    /**
+     * A comma-separated list of keywords that are visible only to search engines.
+     */
     public Input<FilterTypeInput> getMetaKeywordInput() {
         return metaKeyword;
     }
 
+    /**
+     * A comma-separated list of keywords that are visible only to search engines.
+     */
     public ProductFilterInput setMetaKeyword(FilterTypeInput metaKeyword) {
         this.metaKeyword = Input.optional(metaKeyword);
         return this;
     }
 
+    /**
+     * A comma-separated list of keywords that are visible only to search engines.
+     */
     public ProductFilterInput setMetaKeywordInput(Input<FilterTypeInput> metaKeyword) {
         if (metaKeyword == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -389,19 +562,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
+     */
     public FilterTypeInput getMetaTitle() {
         return metaTitle.getValue();
     }
 
+    /**
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
+     */
     public Input<FilterTypeInput> getMetaTitleInput() {
         return metaTitle;
     }
 
+    /**
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
+     */
     public ProductFilterInput setMetaTitle(FilterTypeInput metaTitle) {
         this.metaTitle = Input.optional(metaTitle);
         return this;
     }
 
+    /**
+     * A string that is displayed in the title bar and tab of the browser and in search results lists.
+     */
     public ProductFilterInput setMetaTitleInput(Input<FilterTypeInput> metaTitle) {
         if (metaTitle == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -410,19 +595,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The numeric minimal price of the product. Do not include the currency code.
+     */
     public FilterTypeInput getMinPrice() {
         return minPrice.getValue();
     }
 
+    /**
+     * The numeric minimal price of the product. Do not include the currency code.
+     */
     public Input<FilterTypeInput> getMinPriceInput() {
         return minPrice;
     }
 
+    /**
+     * The numeric minimal price of the product. Do not include the currency code.
+     */
     public ProductFilterInput setMinPrice(FilterTypeInput minPrice) {
         this.minPrice = Input.optional(minPrice);
         return this;
     }
 
+    /**
+     * The numeric minimal price of the product. Do not include the currency code.
+     */
     public ProductFilterInput setMinPriceInput(Input<FilterTypeInput> minPrice) {
         if (minPrice == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -431,19 +628,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The product name. Customers use this name to identify the product.
+     */
     public FilterTypeInput getName() {
         return name.getValue();
     }
 
+    /**
+     * The product name. Customers use this name to identify the product.
+     */
     public Input<FilterTypeInput> getNameInput() {
         return name;
     }
 
+    /**
+     * The product name. Customers use this name to identify the product.
+     */
     public ProductFilterInput setName(FilterTypeInput name) {
         this.name = Input.optional(name);
         return this;
     }
 
+    /**
+     * The product name. Customers use this name to identify the product.
+     */
     public ProductFilterInput setNameInput(Input<FilterTypeInput> name) {
         if (name == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -452,19 +661,35 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product.
+     */
     public FilterTypeInput getNewsFromDate() {
         return newsFromDate.getValue();
     }
 
+    /**
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product.
+     */
     public Input<FilterTypeInput> getNewsFromDateInput() {
         return newsFromDate;
     }
 
+    /**
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product.
+     */
     public ProductFilterInput setNewsFromDate(FilterTypeInput newsFromDate) {
         this.newsFromDate = Input.optional(newsFromDate);
         return this;
     }
 
+    /**
+     * The beginning date for new product listings, and determines if the product is featured as a new
+     * product.
+     */
     public ProductFilterInput setNewsFromDateInput(Input<FilterTypeInput> newsFromDate) {
         if (newsFromDate == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -473,19 +698,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The end date for new product listings.
+     */
     public FilterTypeInput getNewsToDate() {
         return newsToDate.getValue();
     }
 
+    /**
+     * The end date for new product listings.
+     */
     public Input<FilterTypeInput> getNewsToDateInput() {
         return newsToDate;
     }
 
+    /**
+     * The end date for new product listings.
+     */
     public ProductFilterInput setNewsToDate(FilterTypeInput newsToDate) {
         this.newsToDate = Input.optional(newsToDate);
         return this;
     }
 
+    /**
+     * The end date for new product listings.
+     */
     public ProductFilterInput setNewsToDateInput(Input<FilterTypeInput> newsToDate) {
         if (newsToDate == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -494,19 +731,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * If the product has multiple options, determines where they appear on the product page.
+     */
     public FilterTypeInput getOptionsContainer() {
         return optionsContainer.getValue();
     }
 
+    /**
+     * If the product has multiple options, determines where they appear on the product page.
+     */
     public Input<FilterTypeInput> getOptionsContainerInput() {
         return optionsContainer;
     }
 
+    /**
+     * If the product has multiple options, determines where they appear on the product page.
+     */
     public ProductFilterInput setOptionsContainer(FilterTypeInput optionsContainer) {
         this.optionsContainer = Input.optional(optionsContainer);
         return this;
     }
 
+    /**
+     * If the product has multiple options, determines where they appear on the product page.
+     */
     public ProductFilterInput setOptionsContainerInput(Input<FilterTypeInput> optionsContainer) {
         if (optionsContainer == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -515,19 +764,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The keyword required to perform a logical OR comparison.
+     */
     public ProductFilterInput getOr() {
         return or.getValue();
     }
 
+    /**
+     * The keyword required to perform a logical OR comparison.
+     */
     public Input<ProductFilterInput> getOrInput() {
         return or;
     }
 
+    /**
+     * The keyword required to perform a logical OR comparison.
+     */
     public ProductFilterInput setOr(ProductFilterInput or) {
         this.or = Input.optional(or);
         return this;
     }
 
+    /**
+     * The keyword required to perform a logical OR comparison.
+     */
     public ProductFilterInput setOrInput(Input<ProductFilterInput> or) {
         if (or == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -536,19 +797,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The price of an item.
+     */
     public FilterTypeInput getPrice() {
         return price.getValue();
     }
 
+    /**
+     * The price of an item.
+     */
     public Input<FilterTypeInput> getPriceInput() {
         return price;
     }
 
+    /**
+     * The price of an item.
+     */
     public ProductFilterInput setPrice(FilterTypeInput price) {
         this.price = Input.optional(price);
         return this;
     }
 
+    /**
+     * The price of an item.
+     */
     public ProductFilterInput setPriceInput(Input<FilterTypeInput> price) {
         if (price == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -557,19 +830,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * Indicates whether the product has required options.
+     */
     public FilterTypeInput getRequiredOptions() {
         return requiredOptions.getValue();
     }
 
+    /**
+     * Indicates whether the product has required options.
+     */
     public Input<FilterTypeInput> getRequiredOptionsInput() {
         return requiredOptions;
     }
 
+    /**
+     * Indicates whether the product has required options.
+     */
     public ProductFilterInput setRequiredOptions(FilterTypeInput requiredOptions) {
         this.requiredOptions = Input.optional(requiredOptions);
         return this;
     }
 
+    /**
+     * Indicates whether the product has required options.
+     */
     public ProductFilterInput setRequiredOptionsInput(Input<FilterTypeInput> requiredOptions) {
         if (requiredOptions == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -578,19 +863,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * A short description of the product. Its use depends on the theme.
+     */
     public FilterTypeInput getShortDescription() {
         return shortDescription.getValue();
     }
 
+    /**
+     * A short description of the product. Its use depends on the theme.
+     */
     public Input<FilterTypeInput> getShortDescriptionInput() {
         return shortDescription;
     }
 
+    /**
+     * A short description of the product. Its use depends on the theme.
+     */
     public ProductFilterInput setShortDescription(FilterTypeInput shortDescription) {
         this.shortDescription = Input.optional(shortDescription);
         return this;
     }
 
+    /**
+     * A short description of the product. Its use depends on the theme.
+     */
     public ProductFilterInput setShortDescriptionInput(Input<FilterTypeInput> shortDescription) {
         if (shortDescription == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -599,19 +896,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
+     */
     public FilterTypeInput getSku() {
         return sku.getValue();
     }
 
+    /**
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
+     */
     public Input<FilterTypeInput> getSkuInput() {
         return sku;
     }
 
+    /**
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
+     */
     public ProductFilterInput setSku(FilterTypeInput sku) {
         this.sku = Input.optional(sku);
         return this;
     }
 
+    /**
+     * A number or code assigned to a product to identify the product, options, price, and manufacturer.
+     */
     public ProductFilterInput setSkuInput(Input<FilterTypeInput> sku) {
         if (sku == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -620,19 +929,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The relative path to the small image, which is used on catalog pages.
+     */
     public FilterTypeInput getSmallImage() {
         return smallImage.getValue();
     }
 
+    /**
+     * The relative path to the small image, which is used on catalog pages.
+     */
     public Input<FilterTypeInput> getSmallImageInput() {
         return smallImage;
     }
 
+    /**
+     * The relative path to the small image, which is used on catalog pages.
+     */
     public ProductFilterInput setSmallImage(FilterTypeInput smallImage) {
         this.smallImage = Input.optional(smallImage);
         return this;
     }
 
+    /**
+     * The relative path to the small image, which is used on catalog pages.
+     */
     public ProductFilterInput setSmallImageInput(Input<FilterTypeInput> smallImage) {
         if (smallImage == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -641,19 +962,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The label assigned to a product&#39;s small image.
+     */
     public FilterTypeInput getSmallImageLabel() {
         return smallImageLabel.getValue();
     }
 
+    /**
+     * The label assigned to a product&#39;s small image.
+     */
     public Input<FilterTypeInput> getSmallImageLabelInput() {
         return smallImageLabel;
     }
 
+    /**
+     * The label assigned to a product&#39;s small image.
+     */
     public ProductFilterInput setSmallImageLabel(FilterTypeInput smallImageLabel) {
         this.smallImageLabel = Input.optional(smallImageLabel);
         return this;
     }
 
+    /**
+     * The label assigned to a product&#39;s small image.
+     */
     public ProductFilterInput setSmallImageLabelInput(Input<FilterTypeInput> smallImageLabel) {
         if (smallImageLabel == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -662,19 +995,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The beginning date that a product has a special price.
+     */
     public FilterTypeInput getSpecialFromDate() {
         return specialFromDate.getValue();
     }
 
+    /**
+     * The beginning date that a product has a special price.
+     */
     public Input<FilterTypeInput> getSpecialFromDateInput() {
         return specialFromDate;
     }
 
+    /**
+     * The beginning date that a product has a special price.
+     */
     public ProductFilterInput setSpecialFromDate(FilterTypeInput specialFromDate) {
         this.specialFromDate = Input.optional(specialFromDate);
         return this;
     }
 
+    /**
+     * The beginning date that a product has a special price.
+     */
     public ProductFilterInput setSpecialFromDateInput(Input<FilterTypeInput> specialFromDate) {
         if (specialFromDate == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -683,19 +1028,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The discounted price of the product. Do not include the currency code.
+     */
     public FilterTypeInput getSpecialPrice() {
         return specialPrice.getValue();
     }
 
+    /**
+     * The discounted price of the product. Do not include the currency code.
+     */
     public Input<FilterTypeInput> getSpecialPriceInput() {
         return specialPrice;
     }
 
+    /**
+     * The discounted price of the product. Do not include the currency code.
+     */
     public ProductFilterInput setSpecialPrice(FilterTypeInput specialPrice) {
         this.specialPrice = Input.optional(specialPrice);
         return this;
     }
 
+    /**
+     * The discounted price of the product. Do not include the currency code.
+     */
     public ProductFilterInput setSpecialPriceInput(Input<FilterTypeInput> specialPrice) {
         if (specialPrice == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -704,19 +1061,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The end date that a product has a special price.
+     */
     public FilterTypeInput getSpecialToDate() {
         return specialToDate.getValue();
     }
 
+    /**
+     * The end date that a product has a special price.
+     */
     public Input<FilterTypeInput> getSpecialToDateInput() {
         return specialToDate;
     }
 
+    /**
+     * The end date that a product has a special price.
+     */
     public ProductFilterInput setSpecialToDate(FilterTypeInput specialToDate) {
         this.specialToDate = Input.optional(specialToDate);
         return this;
     }
 
+    /**
+     * The end date that a product has a special price.
+     */
     public ProductFilterInput setSpecialToDateInput(Input<FilterTypeInput> specialToDate) {
         if (specialToDate == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -725,19 +1094,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The file name of a swatch image
+     */
     public FilterTypeInput getSwatchImage() {
         return swatchImage.getValue();
     }
 
+    /**
+     * The file name of a swatch image
+     */
     public Input<FilterTypeInput> getSwatchImageInput() {
         return swatchImage;
     }
 
+    /**
+     * The file name of a swatch image
+     */
     public ProductFilterInput setSwatchImage(FilterTypeInput swatchImage) {
         this.swatchImage = Input.optional(swatchImage);
         return this;
     }
 
+    /**
+     * The file name of a swatch image
+     */
     public ProductFilterInput setSwatchImageInput(Input<FilterTypeInput> swatchImage) {
         if (swatchImage == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -746,19 +1127,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The relative path to the product&#39;s thumbnail image.
+     */
     public FilterTypeInput getThumbnail() {
         return thumbnail.getValue();
     }
 
+    /**
+     * The relative path to the product&#39;s thumbnail image.
+     */
     public Input<FilterTypeInput> getThumbnailInput() {
         return thumbnail;
     }
 
+    /**
+     * The relative path to the product&#39;s thumbnail image.
+     */
     public ProductFilterInput setThumbnail(FilterTypeInput thumbnail) {
         this.thumbnail = Input.optional(thumbnail);
         return this;
     }
 
+    /**
+     * The relative path to the product&#39;s thumbnail image.
+     */
     public ProductFilterInput setThumbnailInput(Input<FilterTypeInput> thumbnail) {
         if (thumbnail == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -767,19 +1160,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The label assigned to a product&#39;s thumbnail image.
+     */
     public FilterTypeInput getThumbnailLabel() {
         return thumbnailLabel.getValue();
     }
 
+    /**
+     * The label assigned to a product&#39;s thumbnail image.
+     */
     public Input<FilterTypeInput> getThumbnailLabelInput() {
         return thumbnailLabel;
     }
 
+    /**
+     * The label assigned to a product&#39;s thumbnail image.
+     */
     public ProductFilterInput setThumbnailLabel(FilterTypeInput thumbnailLabel) {
         this.thumbnailLabel = Input.optional(thumbnailLabel);
         return this;
     }
 
+    /**
+     * The label assigned to a product&#39;s thumbnail image.
+     */
     public ProductFilterInput setThumbnailLabelInput(Input<FilterTypeInput> thumbnailLabel) {
         if (thumbnailLabel == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -788,19 +1193,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
+     */
     public FilterTypeInput getTierPrice() {
         return tierPrice.getValue();
     }
 
+    /**
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
+     */
     public Input<FilterTypeInput> getTierPriceInput() {
         return tierPrice;
     }
 
+    /**
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
+     */
     public ProductFilterInput setTierPrice(FilterTypeInput tierPrice) {
         this.tierPrice = Input.optional(tierPrice);
         return this;
     }
 
+    /**
+     * The price when tier pricing is in effect and the items purchased threshold has been reached.
+     */
     public ProductFilterInput setTierPriceInput(Input<FilterTypeInput> tierPrice) {
         if (tierPrice == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -809,19 +1226,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * Timestamp indicating when the product was updated.
+     */
     public FilterTypeInput getUpdatedAt() {
         return updatedAt.getValue();
     }
 
+    /**
+     * Timestamp indicating when the product was updated.
+     */
     public Input<FilterTypeInput> getUpdatedAtInput() {
         return updatedAt;
     }
 
+    /**
+     * Timestamp indicating when the product was updated.
+     */
     public ProductFilterInput setUpdatedAt(FilterTypeInput updatedAt) {
         this.updatedAt = Input.optional(updatedAt);
         return this;
     }
 
+    /**
+     * Timestamp indicating when the product was updated.
+     */
     public ProductFilterInput setUpdatedAtInput(Input<FilterTypeInput> updatedAt) {
         if (updatedAt == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -830,19 +1259,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The part of the URL that identifies the product
+     */
     public FilterTypeInput getUrlKey() {
         return urlKey.getValue();
     }
 
+    /**
+     * The part of the URL that identifies the product
+     */
     public Input<FilterTypeInput> getUrlKeyInput() {
         return urlKey;
     }
 
+    /**
+     * The part of the URL that identifies the product
+     */
     public ProductFilterInput setUrlKey(FilterTypeInput urlKey) {
         this.urlKey = Input.optional(urlKey);
         return this;
     }
 
+    /**
+     * The part of the URL that identifies the product
+     */
     public ProductFilterInput setUrlKeyInput(Input<FilterTypeInput> urlKey) {
         if (urlKey == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -872,19 +1313,31 @@ public class ProductFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * The weight of the item, in units defined by the store.
+     */
     public FilterTypeInput getWeight() {
         return weight.getValue();
     }
 
+    /**
+     * The weight of the item, in units defined by the store.
+     */
     public Input<FilterTypeInput> getWeightInput() {
         return weight;
     }
 
+    /**
+     * The weight of the item, in units defined by the store.
+     */
     public ProductFilterInput setWeight(FilterTypeInput weight) {
         this.weight = Input.optional(weight);
         return this;
     }
 
+    /**
+     * The weight of the item, in units defined by the store.
+     */
     public ProductFilterInput setWeightInput(Input<FilterTypeInput> weight) {
         if (weight == null) {
             throw new IllegalArgumentException("Input can not be null");

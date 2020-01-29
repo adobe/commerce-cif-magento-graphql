@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,16 +16,23 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * 
- */
 public class OrderQuery extends AbstractQuery<OrderQuery> {
     OrderQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * @deprecated The order_id field is deprecated, use order_number instead.
+     */
+    @Deprecated
     public OrderQuery orderId() {
         startField("order_id");
+
+        return this;
+    }
+
+    public OrderQuery orderNumber() {
+        startField("order_number");
 
         return this;
     }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains the token returned by PayPal and a set of URLs that allow the buyer to authorize payment
- * and adjust checkout details. Applies to Express Checkout and Payments Standard payment methods.
+ * Deprecated: use type `PaypalExpressTokenOutput` instead
  */
 public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
     public PaypalExpressToken() {
@@ -74,8 +73,10 @@ public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
 
     /**
      * A set of URLs that allow the buyer to authorize payment and adjust checkout details
+     *
+     * @deprecated Use field `paypal_urls` of type `PaypalExpressTokenOutput` instead
      */
-
+    @Deprecated
     public PaypalExpressUrlList getPaypalUrls() {
         return (PaypalExpressUrlList) get("paypal_urls");
     }
@@ -87,8 +88,10 @@ public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
 
     /**
      * The token returned by PayPal
+     *
+     * @deprecated Use field `token` of type `PaypalExpressTokenOutput` instead
      */
-
+    @Deprecated
     public String getToken() {
         return (String) get("token");
     }

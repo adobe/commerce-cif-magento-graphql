@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -20,6 +20,9 @@ import java.util.List;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * FilterTypeInput specifies which action will be performed in a query 
+ */
 public class FilterTypeInput implements Serializable {
     private Input<String> eq = Input.undefined();
 
@@ -51,19 +54,31 @@ public class FilterTypeInput implements Serializable {
 
     private Input<String> to = Input.undefined();
 
+    /**
+     * Equals
+     */
     public String getEq() {
         return eq.getValue();
     }
 
+    /**
+     * Equals
+     */
     public Input<String> getEqInput() {
         return eq;
     }
 
+    /**
+     * Equals
+     */
     public FilterTypeInput setEq(String eq) {
         this.eq = Input.optional(eq);
         return this;
     }
 
+    /**
+     * Equals
+     */
     public FilterTypeInput setEqInput(Input<String> eq) {
         if (eq == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -93,19 +108,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * From. Must be used with &#39;to&#39;
+     */
     public String getFrom() {
         return from.getValue();
     }
 
+    /**
+     * From. Must be used with &#39;to&#39;
+     */
     public Input<String> getFromInput() {
         return from;
     }
 
+    /**
+     * From. Must be used with &#39;to&#39;
+     */
     public FilterTypeInput setFrom(String from) {
         this.from = Input.optional(from);
         return this;
     }
 
+    /**
+     * From. Must be used with &#39;to&#39;
+     */
     public FilterTypeInput setFromInput(Input<String> from) {
         if (from == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -114,19 +141,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Greater than
+     */
     public String getGt() {
         return gt.getValue();
     }
 
+    /**
+     * Greater than
+     */
     public Input<String> getGtInput() {
         return gt;
     }
 
+    /**
+     * Greater than
+     */
     public FilterTypeInput setGt(String gt) {
         this.gt = Input.optional(gt);
         return this;
     }
 
+    /**
+     * Greater than
+     */
     public FilterTypeInput setGtInput(Input<String> gt) {
         if (gt == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -135,19 +174,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Greater than or equal to
+     */
     public String getGteq() {
         return gteq.getValue();
     }
 
+    /**
+     * Greater than or equal to
+     */
     public Input<String> getGteqInput() {
         return gteq;
     }
 
+    /**
+     * Greater than or equal to
+     */
     public FilterTypeInput setGteq(String gteq) {
         this.gteq = Input.optional(gteq);
         return this;
     }
 
+    /**
+     * Greater than or equal to
+     */
     public FilterTypeInput setGteqInput(Input<String> gteq) {
         if (gteq == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -156,19 +207,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * In. The value can contain a set of comma-separated values
+     */
     public List<String> getIn() {
         return in.getValue();
     }
 
+    /**
+     * In. The value can contain a set of comma-separated values
+     */
     public Input<List<String>> getInInput() {
         return in;
     }
 
+    /**
+     * In. The value can contain a set of comma-separated values
+     */
     public FilterTypeInput setIn(List<String> in) {
         this.in = Input.optional(in);
         return this;
     }
 
+    /**
+     * In. The value can contain a set of comma-separated values
+     */
     public FilterTypeInput setInInput(Input<List<String>> in) {
         if (in == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -177,19 +240,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Like. The specified value can contain % (percent signs) to allow matching of 0 or more characters
+     */
     public String getLike() {
         return like.getValue();
     }
 
+    /**
+     * Like. The specified value can contain % (percent signs) to allow matching of 0 or more characters
+     */
     public Input<String> getLikeInput() {
         return like;
     }
 
+    /**
+     * Like. The specified value can contain % (percent signs) to allow matching of 0 or more characters
+     */
     public FilterTypeInput setLike(String like) {
         this.like = Input.optional(like);
         return this;
     }
 
+    /**
+     * Like. The specified value can contain % (percent signs) to allow matching of 0 or more characters
+     */
     public FilterTypeInput setLikeInput(Input<String> like) {
         if (like == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -198,19 +273,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Less than
+     */
     public String getLt() {
         return lt.getValue();
     }
 
+    /**
+     * Less than
+     */
     public Input<String> getLtInput() {
         return lt;
     }
 
+    /**
+     * Less than
+     */
     public FilterTypeInput setLt(String lt) {
         this.lt = Input.optional(lt);
         return this;
     }
 
+    /**
+     * Less than
+     */
     public FilterTypeInput setLtInput(Input<String> lt) {
         if (lt == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -219,19 +306,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Less than or equal to
+     */
     public String getLteq() {
         return lteq.getValue();
     }
 
+    /**
+     * Less than or equal to
+     */
     public Input<String> getLteqInput() {
         return lteq;
     }
 
+    /**
+     * Less than or equal to
+     */
     public FilterTypeInput setLteq(String lteq) {
         this.lteq = Input.optional(lteq);
         return this;
     }
 
+    /**
+     * Less than or equal to
+     */
     public FilterTypeInput setLteqInput(Input<String> lteq) {
         if (lteq == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -240,19 +339,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * More than or equal to
+     */
     public String getMoreq() {
         return moreq.getValue();
     }
 
+    /**
+     * More than or equal to
+     */
     public Input<String> getMoreqInput() {
         return moreq;
     }
 
+    /**
+     * More than or equal to
+     */
     public FilterTypeInput setMoreq(String moreq) {
         this.moreq = Input.optional(moreq);
         return this;
     }
 
+    /**
+     * More than or equal to
+     */
     public FilterTypeInput setMoreqInput(Input<String> moreq) {
         if (moreq == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -261,19 +372,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Not equal to
+     */
     public String getNeq() {
         return neq.getValue();
     }
 
+    /**
+     * Not equal to
+     */
     public Input<String> getNeqInput() {
         return neq;
     }
 
+    /**
+     * Not equal to
+     */
     public FilterTypeInput setNeq(String neq) {
         this.neq = Input.optional(neq);
         return this;
     }
 
+    /**
+     * Not equal to
+     */
     public FilterTypeInput setNeqInput(Input<String> neq) {
         if (neq == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -282,19 +405,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Not in. The value can contain a set of comma-separated values
+     */
     public List<String> getNin() {
         return nin.getValue();
     }
 
+    /**
+     * Not in. The value can contain a set of comma-separated values
+     */
     public Input<List<String>> getNinInput() {
         return nin;
     }
 
+    /**
+     * Not in. The value can contain a set of comma-separated values
+     */
     public FilterTypeInput setNin(List<String> nin) {
         this.nin = Input.optional(nin);
         return this;
     }
 
+    /**
+     * Not in. The value can contain a set of comma-separated values
+     */
     public FilterTypeInput setNinInput(Input<List<String>> nin) {
         if (nin == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -303,19 +438,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Not null
+     */
     public String getNotnull() {
         return notnull.getValue();
     }
 
+    /**
+     * Not null
+     */
     public Input<String> getNotnullInput() {
         return notnull;
     }
 
+    /**
+     * Not null
+     */
     public FilterTypeInput setNotnull(String notnull) {
         this.notnull = Input.optional(notnull);
         return this;
     }
 
+    /**
+     * Not null
+     */
     public FilterTypeInput setNotnullInput(Input<String> notnull) {
         if (notnull == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -324,19 +471,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * Is null
+     */
     public String getNull() {
         return nullValue.getValue();
     }
 
+    /**
+     * Is null
+     */
     public Input<String> getNullInput() {
         return nullValue;
     }
 
+    /**
+     * Is null
+     */
     public FilterTypeInput setNull(String nullValue) {
         this.nullValue = Input.optional(nullValue);
         return this;
     }
 
+    /**
+     * Is null
+     */
     public FilterTypeInput setNullInput(Input<String> nullValue) {
         if (nullValue == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -345,19 +504,31 @@ public class FilterTypeInput implements Serializable {
         return this;
     }
 
+    /**
+     * To. Must be used with &#39;from&#39;
+     */
     public String getTo() {
         return to.getValue();
     }
 
+    /**
+     * To. Must be used with &#39;from&#39;
+     */
     public Input<String> getToInput() {
         return to;
     }
 
+    /**
+     * To. Must be used with &#39;from&#39;
+     */
     public FilterTypeInput setTo(String to) {
         this.to = Input.optional(to);
         return this;
     }
 
+    /**
+     * To. Must be used with &#39;from&#39;
+     */
     public FilterTypeInput setToInput(Input<String> to) {
         if (to == null) {
             throw new IllegalArgumentException("Input can not be null");

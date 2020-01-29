@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -27,20 +27,48 @@ public interface CategoryInterface extends CustomFieldInterface {
 
     List<String> getAvailableSortBy();
 
+    /**
+     * Breadcrumbs, parent categories info.
+     */
     List<Breadcrumb> getBreadcrumbs();
+
+    /**
+     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
+     * Tag For Categories&#39; is enabled
+     */
+    String getCanonicalUrl();
 
     String getChildrenCount();
 
+    /**
+     * Category CMS Block.
+     */
+    CmsBlock getCmsBlock();
+
+    /**
+     * Timestamp indicating when the category was created.
+     */
     String getCreatedAt();
 
+    String getCustomLayoutUpdateFile();
+
+    /**
+     * The attribute to use for sorting.
+     */
     String getDefaultSortBy();
 
+    /**
+     * An optional description of the category.
+     */
     String getDescription();
 
     String getDisplayMode();
 
     Double getFilterPriceRange();
 
+    /**
+     * An ID that uniquely identifies the category.
+     */
     Integer getId();
 
     String getImage();
@@ -51,6 +79,9 @@ public interface CategoryInterface extends CustomFieldInterface {
 
     Integer getLandingPage();
 
+    /**
+     * Indicates the depth of the category within the tree.
+     */
     Integer getLevel();
 
     String getMetaDescription();
@@ -59,22 +90,54 @@ public interface CategoryInterface extends CustomFieldInterface {
 
     String getMetaTitle();
 
+    /**
+     * The display name of the category.
+     */
     String getName();
 
+    /**
+     * Category Path.
+     */
     String getPath();
 
+    /**
+     * Category path in store.
+     */
     String getPathInStore();
 
+    /**
+     * The position of the category relative to other categories at the same level in tree.
+     */
     Integer getPosition();
 
+    /**
+     * The number of products in the category.
+     */
     Integer getProductCount();
 
+    /**
+     * The list of products assigned to the category.
+     */
     CategoryProducts getProducts();
 
+    /**
+     * Timestamp indicating when the category was updated.
+     */
     String getUpdatedAt();
 
+    /**
+     * The url key assigned to the category.
+     */
     String getUrlKey();
 
+    /**
+     * The url path assigned to the category.
+     */
     String getUrlPath();
+
+    /**
+     * The part of the category URL that is appended after the url key
+     */
+    String getUrlSuffix();
 }
 

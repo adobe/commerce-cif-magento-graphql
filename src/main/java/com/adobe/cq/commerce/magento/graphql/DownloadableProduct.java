@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -413,6 +413,33 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                     break;
                 }
 
+                case "price_range": {
+                    responseData.put(key, new PriceRange(jsonAsObject(field.getValue(), key)));
+
+                    break;
+                }
+
+                case "price_tiers": {
+                    List<TierPrice> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<TierPrice> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            TierPrice optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new TierPrice(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "product_links": {
                     List<ProductLinksInterface> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -672,6 +699,17 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                     break;
                 }
 
+                case "url_suffix": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "websites": {
                     List<Website> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -712,7 +750,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The attribute set assigned to the product.
      */
-
     public Integer getAttributeSetId() {
         return (Integer) get("attribute_set_id");
     }
@@ -723,9 +760,9 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
-     * Canonical URL.
+     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
+     * Tag For Products&#39; is enabled
      */
-
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
     }
@@ -738,7 +775,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The categories assigned to a product.
      */
-
     public List<CategoryInterface> getCategories() {
         return (List<CategoryInterface>) get("categories");
     }
@@ -760,7 +796,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The product&#39;s country of origin.
      */
-
     public String getCountryOfManufacture() {
         return (String) get("country_of_manufacture");
     }
@@ -773,7 +808,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Timestamp indicating when the product was created.
      */
-
     public String getCreatedAt() {
         return (String) get("created_at");
     }
@@ -786,7 +820,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Crosssell Products
      */
-
     public List<ProductInterface> getCrosssellProducts() {
         return (List<ProductInterface>) get("crosssell_products");
     }
@@ -799,7 +832,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Detailed information about the product. The value can include simple HTML tags.
      */
-
     public ComplexTextValue getDescription() {
         return (ComplexTextValue) get("description");
     }
@@ -812,7 +844,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * An array containing information about the links for this downloadable product
      */
-
     public List<DownloadableProductLinks> getDownloadableProductLinks() {
         return (List<DownloadableProductLinks>) get("downloadable_product_links");
     }
@@ -825,7 +856,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * An array containing information about samples of this downloadable product.
      */
-
     public List<DownloadableProductSamples> getDownloadableProductSamples() {
         return (List<DownloadableProductSamples>) get("downloadable_product_samples");
     }
@@ -838,7 +868,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Indicates whether a gift message is available.
      */
-
     public String getGiftMessageAvailable() {
         return (String) get("gift_message_available");
     }
@@ -851,7 +880,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The ID number assigned to the product.
      */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -864,7 +892,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The relative path to the main image on the product page.
      */
-
     public ProductImage getImage() {
         return (ProductImage) get("image");
     }
@@ -877,7 +904,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * A value of 1 indicates that each link in the array must be purchased separately
      */
-
     public Integer getLinksPurchasedSeparately() {
         return (Integer) get("links_purchased_separately");
     }
@@ -890,7 +916,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The heading above the list of downloadable products
      */
-
     public String getLinksTitle() {
         return (String) get("links_title");
     }
@@ -903,7 +928,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * A number representing the product&#39;s manufacturer.
      */
-
     public Integer getManufacturer() {
         return (Integer) get("manufacturer");
     }
@@ -916,7 +940,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * An array of Media Gallery objects.
      */
-
     public List<MediaGalleryInterface> getMediaGallery() {
         return (List<MediaGalleryInterface>) get("media_gallery");
     }
@@ -928,8 +951,10 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     /**
      * An array of MediaGalleryEntry objects.
+     *
+     * @deprecated Use product&#39;s `media_gallery` instead
      */
-
+    @Deprecated
     public List<MediaGalleryEntry> getMediaGalleryEntries() {
         return (List<MediaGalleryEntry>) get("media_gallery_entries");
     }
@@ -942,7 +967,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * A brief overview of the product for search results listings, maximum 255 characters.
      */
-
     public String getMetaDescription() {
         return (String) get("meta_description");
     }
@@ -955,7 +979,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * A comma-separated list of keywords that are visible only to search engines.
      */
-
     public String getMetaKeyword() {
         return (String) get("meta_keyword");
     }
@@ -968,7 +991,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * A string that is displayed in the title bar and tab of the browser and in search results lists.
      */
-
     public String getMetaTitle() {
         return (String) get("meta_title");
     }
@@ -981,7 +1003,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The product name. Customers use this name to identify the product.
      */
-
     public String getName() {
         return (String) get("name");
     }
@@ -995,7 +1016,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
      */
-
     public String getNewFromDate() {
         return (String) get("new_from_date");
     }
@@ -1008,7 +1028,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The end date for new product listings.
      */
-
     public String getNewToDate() {
         return (String) get("new_to_date");
     }
@@ -1021,7 +1040,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Product stock only x left count
      */
-
     public Double getOnlyXLeftInStock() {
         return (Double) get("only_x_left_in_stock");
     }
@@ -1034,7 +1052,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * An array of options for a customizable product.
      */
-
     public List<CustomizableOptionInterface> getOptions() {
         return (List<CustomizableOptionInterface>) get("options");
     }
@@ -1047,7 +1064,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * If the product has multiple options, determines where they appear on the product page.
      */
-
     public String getOptionsContainer() {
         return (String) get("options_container");
     }
@@ -1059,8 +1075,10 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     /**
      * A ProductPrices object, indicating the price of an item.
+     *
+     * @deprecated Use price_range for product price information.
      */
-
+    @Deprecated
     public ProductPrices getPrice() {
         return (ProductPrices) get("price");
     }
@@ -1071,9 +1089,32 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
+     * A PriceRange object, indicating the range of prices for the product
+     */
+    public PriceRange getPriceRange() {
+        return (PriceRange) get("price_range");
+    }
+
+    public DownloadableProduct setPriceRange(PriceRange arg) {
+        optimisticData.put(getKey("price_range"), arg);
+        return this;
+    }
+
+    /**
+     * An array of TierPrice objects.
+     */
+    public List<TierPrice> getPriceTiers() {
+        return (List<TierPrice>) get("price_tiers");
+    }
+
+    public DownloadableProduct setPriceTiers(List<TierPrice> arg) {
+        optimisticData.put(getKey("price_tiers"), arg);
+        return this;
+    }
+
+    /**
      * An array of ProductLinks objects.
      */
-
     public List<ProductLinksInterface> getProductLinks() {
         return (List<ProductLinksInterface>) get("product_links");
     }
@@ -1086,7 +1127,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Related Products
      */
-
     public List<ProductInterface> getRelatedProducts() {
         return (List<ProductInterface>) get("related_products");
     }
@@ -1099,7 +1139,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * A short description of the product. Its use depends on the theme.
      */
-
     public ComplexTextValue getShortDescription() {
         return (ComplexTextValue) get("short_description");
     }
@@ -1112,7 +1151,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * A number or code assigned to a product to identify the product, options, price, and manufacturer.
      */
-
     public String getSku() {
         return (String) get("sku");
     }
@@ -1125,7 +1163,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The relative path to the small image, which is used on catalog pages.
      */
-
     public ProductImage getSmallImage() {
         return (ProductImage) get("small_image");
     }
@@ -1138,7 +1175,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The beginning date that a product has a special price.
      */
-
     public String getSpecialFromDate() {
         return (String) get("special_from_date");
     }
@@ -1151,7 +1187,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The discounted price of the product.
      */
-
     public Double getSpecialPrice() {
         return (Double) get("special_price");
     }
@@ -1164,7 +1199,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The end date that a product has a special price.
      */
-
     public String getSpecialToDate() {
         return (String) get("special_to_date");
     }
@@ -1177,7 +1211,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Stock status of the product
      */
-
     public ProductStockStatus getStockStatus() {
         return (ProductStockStatus) get("stock_status");
     }
@@ -1190,7 +1223,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The file name of a swatch image
      */
-
     public String getSwatchImage() {
         return (String) get("swatch_image");
     }
@@ -1203,7 +1235,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The relative path to the product&#39;s thumbnail image.
      */
-
     public ProductImage getThumbnail() {
         return (ProductImage) get("thumbnail");
     }
@@ -1215,8 +1246,10 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
+     *
+     * @deprecated Use price_tiers for product tier price information.
      */
-
+    @Deprecated
     public Double getTierPrice() {
         return (Double) get("tier_price");
     }
@@ -1228,8 +1261,10 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     /**
      * An array of ProductTierPrices objects.
+     *
+     * @deprecated Use price_tiers for product tier price information.
      */
-
+    @Deprecated
     public List<ProductTierPrices> getTierPrices() {
         return (List<ProductTierPrices>) get("tier_prices");
     }
@@ -1241,8 +1276,10 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
+     *
+     * @deprecated Use __typename instead.
      */
-
+    @Deprecated
     public String getTypeId() {
         return (String) get("type_id");
     }
@@ -1255,7 +1292,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Timestamp indicating when the product was updated.
      */
-
     public String getUpdatedAt() {
         return (String) get("updated_at");
     }
@@ -1268,7 +1304,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * Upsell Products
      */
-
     public List<ProductInterface> getUpsellProducts() {
         return (List<ProductInterface>) get("upsell_products");
     }
@@ -1281,7 +1316,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * The part of the URL that identifies the product
      */
-
     public String getUrlKey() {
         return (String) get("url_key");
     }
@@ -1291,6 +1325,10 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
         return this;
     }
 
+    /**
+     * @deprecated Use product&#39;s `canonical_url` or url rewrites instead
+     */
+    @Deprecated
     public String getUrlPath() {
         return (String) get("url_path");
     }
@@ -1303,7 +1341,6 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     /**
      * URL rewrites list
      */
-
     public List<UrlRewrite> getUrlRewrites() {
         return (List<UrlRewrite>) get("url_rewrites");
     }
@@ -1314,9 +1351,23 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
-     * An array of websites in which the product is available.
+     * The part of the product URL that is appended after the url key
      */
+    public String getUrlSuffix() {
+        return (String) get("url_suffix");
+    }
 
+    public DownloadableProduct setUrlSuffix(String arg) {
+        optimisticData.put(getKey("url_suffix"), arg);
+        return this;
+    }
+
+    /**
+     * An array of websites in which the product is available.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public List<Website> getWebsites() {
         return (List<Website>) get("websites");
     }
@@ -1384,6 +1435,10 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
             case "price": return true;
 
+            case "price_range": return true;
+
+            case "price_tiers": return true;
+
             case "product_links": return false;
 
             case "related_products": return false;
@@ -1421,6 +1476,8 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
             case "url_path": return false;
 
             case "url_rewrites": return true;
+
+            case "url_suffix": return false;
 
             case "websites": return true;
 

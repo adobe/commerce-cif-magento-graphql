@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -159,6 +159,10 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return "DownloadableProductLinks";
     }
 
+    /**
+     * @deprecated This information should not be exposed on frontend
+     */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -168,6 +172,10 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
+    /**
+     * @deprecated This information should not be exposed on frontend
+     */
+    @Deprecated
     public Boolean getIsShareable() {
         return (Boolean) get("is_shareable");
     }
@@ -177,6 +185,10 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
+    /**
+     * @deprecated `sample_url` serves to get the downloadable sample
+     */
+    @Deprecated
     public DownloadableFileTypeEnum getLinkType() {
         return (DownloadableFileTypeEnum) get("link_type");
     }
@@ -186,6 +198,10 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
+    /**
+     * @deprecated This information should not be exposed on frontend
+     */
+    @Deprecated
     public Integer getNumberOfDownloads() {
         return (Integer) get("number_of_downloads");
     }
@@ -198,7 +214,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     /**
      * The price of the downloadable product
      */
-
     public Double getPrice() {
         return (Double) get("price");
     }
@@ -208,6 +223,10 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
+    /**
+     * @deprecated `sample_url` serves to get the downloadable sample
+     */
+    @Deprecated
     public String getSampleFile() {
         return (String) get("sample_file");
     }
@@ -217,6 +236,10 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
+    /**
+     * @deprecated `sample_url` serves to get the downloadable sample
+     */
+    @Deprecated
     public DownloadableFileTypeEnum getSampleType() {
         return (DownloadableFileTypeEnum) get("sample_type");
     }
@@ -229,7 +252,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     /**
      * URL to the downloadable sample
      */
-
     public String getSampleUrl() {
         return (String) get("sample_url");
     }
@@ -242,7 +264,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     /**
      * A number indicating the sort order
      */
-
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
     }
@@ -255,7 +276,6 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     /**
      * The display name of the link
      */
-
     public String getTitle() {
         return (String) get("title");
     }

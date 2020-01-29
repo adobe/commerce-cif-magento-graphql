@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -119,7 +119,6 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     /**
      * The ID assigned to the value.
      */
-
     public Integer getOptionTypeId() {
         return (Integer) get("option_type_id");
     }
@@ -132,7 +131,6 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     /**
      * The price assigned to this option.
      */
-
     public Double getPrice() {
         return (Double) get("price");
     }
@@ -145,7 +143,6 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     /**
      * FIXED, PERCENT, or DYNAMIC.
      */
-
     public PriceTypeEnum getPriceType() {
         return (PriceTypeEnum) get("price_type");
     }
@@ -158,7 +155,6 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     /**
      * The Stock Keeping Unit for this option.
      */
-
     public String getSku() {
         return (String) get("sku");
     }
@@ -171,7 +167,6 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     /**
      * The order in which the checkbox value is displayed.
      */
-
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
     }
@@ -184,7 +179,6 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     /**
      * The display name for this option.
      */
-
     public String getTitle() {
         return (String) get("title");
     }

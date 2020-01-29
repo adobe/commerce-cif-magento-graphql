@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -89,6 +89,17 @@ public class Attribute extends AbstractResponse<Attribute> {
                     break;
                 }
 
+                case "input_type": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -109,7 +120,6 @@ public class Attribute extends AbstractResponse<Attribute> {
      * The unique identifier for an attribute code. This value should be in lowercase letters without
      * spaces.
      */
-
     public String getAttributeCode() {
         return (String) get("attribute_code");
     }
@@ -122,7 +132,6 @@ public class Attribute extends AbstractResponse<Attribute> {
     /**
      * Attribute options list.
      */
-
     public List<AttributeOption> getAttributeOptions() {
         return (List<AttributeOption>) get("attribute_options");
     }
@@ -135,7 +144,6 @@ public class Attribute extends AbstractResponse<Attribute> {
     /**
      * The data type of the attribute
      */
-
     public String getAttributeType() {
         return (String) get("attribute_type");
     }
@@ -148,13 +156,24 @@ public class Attribute extends AbstractResponse<Attribute> {
     /**
      * The type of entity that defines the attribute
      */
-
     public String getEntityType() {
         return (String) get("entity_type");
     }
 
     public Attribute setEntityType(String arg) {
         optimisticData.put(getKey("entity_type"), arg);
+        return this;
+    }
+
+    /**
+     * The frontend input type of the attribute
+     */
+    public String getInputType() {
+        return (String) get("input_type");
+    }
+
+    public Attribute setInputType(String arg) {
+        optimisticData.put(getKey("input_type"), arg);
         return this;
     }
 
@@ -167,6 +186,8 @@ public class Attribute extends AbstractResponse<Attribute> {
             case "attribute_type": return false;
 
             case "entity_type": return false;
+
+            case "input_type": return false;
 
             default: return false;
         }

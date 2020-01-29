@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -86,7 +86,6 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     /**
      * The price assigned to this option.
      */
-
     public Double getPrice() {
         return (Double) get("price");
     }
@@ -99,7 +98,6 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     /**
      * FIXED, PERCENT, or DYNAMIC.
      */
-
     public PriceTypeEnum getPriceType() {
         return (PriceTypeEnum) get("price_type");
     }
@@ -112,7 +110,6 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     /**
      * The Stock Keeping Unit for this option.
      */
-
     public String getSku() {
         return (String) get("sku");
     }

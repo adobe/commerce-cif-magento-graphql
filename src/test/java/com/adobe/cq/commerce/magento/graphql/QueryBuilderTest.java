@@ -43,8 +43,8 @@ public class QueryBuilderTest {
         String jsonResponse = getResource("responses/product-by-sku.json");
 
         // Search parameters
-        FilterTypeInput input = new FilterTypeInput().setEq("whatever");
-        ProductFilterInput filter = new ProductFilterInput().setSku(input);
+        FilterEqualTypeInput input = new FilterEqualTypeInput().setEq("whatever");
+        ProductAttributeFilterInput filter = new ProductAttributeFilterInput().setSku(input);
         ProductsArgumentsDefinition searchArgs = s -> s.filter(filter);
 
         // Main query

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -103,6 +103,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "category_fixed_product_tax_display_setting": {
+                    FixedProductTaxDisplaySettings optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = FixedProductTaxDisplaySettings.fromGraphQl(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -396,10 +407,43 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "product_fixed_product_tax_display_setting": {
+                    FixedProductTaxDisplaySettings optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = FixedProductTaxDisplaySettings.fromGraphQl(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "product_url_suffix": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "root_category_id": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "sales_fixed_product_tax_display_setting": {
+                    FixedProductTaxDisplaySettings optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = FixedProductTaxDisplaySettings.fromGraphQl(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -455,6 +499,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "store_name": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -558,7 +613,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Footer Miscellaneous HTML
      */
-
     public String getAbsoluteFooter() {
         return (String) get("absolute_footer");
     }
@@ -571,7 +625,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Base currency code
      */
-
     public String getBaseCurrencyCode() {
         return (String) get("base_currency_code");
     }
@@ -584,7 +637,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Base link URL for the store
      */
-
     public String getBaseLinkUrl() {
         return (String) get("base_link_url");
     }
@@ -597,7 +649,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Base media URL for the store
      */
-
     public String getBaseMediaUrl() {
         return (String) get("base_media_url");
     }
@@ -610,7 +661,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Base static URL for the store
      */
-
     public String getBaseStaticUrl() {
         return (String) get("base_static_url");
     }
@@ -623,7 +673,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Base URL for the store
      */
-
     public String getBaseUrl() {
         return (String) get("base_url");
     }
@@ -636,7 +685,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Default Sort By.
      */
-
     public String getCatalogDefaultSortBy() {
         return (String) get("catalog_default_sort_by");
     }
@@ -647,9 +695,21 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Corresponds to the &#39;Display Prices In Product Lists&#39; field. It indicates how FPT information is
+     * displayed on category pages
+     */
+    public FixedProductTaxDisplaySettings getCategoryFixedProductTaxDisplaySetting() {
+        return (FixedProductTaxDisplaySettings) get("category_fixed_product_tax_display_setting");
+    }
+
+    public StoreConfig setCategoryFixedProductTaxDisplaySetting(FixedProductTaxDisplaySettings arg) {
+        optimisticData.put(getKey("category_fixed_product_tax_display_setting"), arg);
+        return this;
+    }
+
+    /**
      * Category URL Suffix.
      */
-
     public String getCategoryUrlSuffix() {
         return (String) get("category_url_suffix");
     }
@@ -662,7 +722,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * CMS Home Page
      */
-
     public String getCmsHomePage() {
         return (String) get("cms_home_page");
     }
@@ -675,7 +734,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * CMS No Cookies Page
      */
-
     public String getCmsNoCookies() {
         return (String) get("cms_no_cookies");
     }
@@ -688,7 +746,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * CMS No Route Page
      */
-
     public String getCmsNoRoute() {
         return (String) get("cms_no_route");
     }
@@ -701,7 +758,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * A code assigned to the store to identify it
      */
-
     public String getCode() {
         return (String) get("code");
     }
@@ -714,7 +770,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Copyright
      */
-
     public String getCopyright() {
         return (String) get("copyright");
     }
@@ -727,7 +782,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Default Meta Description
      */
-
     public String getDefaultDescription() {
         return (String) get("default_description");
     }
@@ -740,7 +794,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Default display currency code
      */
-
     public String getDefaultDisplayCurrencyCode() {
         return (String) get("default_display_currency_code");
     }
@@ -753,7 +806,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Default Meta Keywords
      */
-
     public String getDefaultKeywords() {
         return (String) get("default_keywords");
     }
@@ -766,7 +818,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Default Page Title
      */
-
     public String getDefaultTitle() {
         return (String) get("default_title");
     }
@@ -779,7 +830,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Display Demo Store Notice
      */
-
     public Integer getDemonotice() {
         return (Integer) get("demonotice");
     }
@@ -792,7 +842,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Default Web URL
      */
-
     public String getFront() {
         return (String) get("front");
     }
@@ -805,7 +854,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Products per Page on Grid Default Value.
      */
-
     public Integer getGridPerPage() {
         return (Integer) get("grid_per_page");
     }
@@ -818,7 +866,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Products per Page on Grid Allowed Values.
      */
-
     public String getGridPerPageValues() {
         return (String) get("grid_per_page_values");
     }
@@ -831,7 +878,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Scripts and Style Sheets
      */
-
     public String getHeadIncludes() {
         return (String) get("head_includes");
     }
@@ -844,7 +890,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Favicon Icon
      */
-
     public String getHeadShortcutIcon() {
         return (String) get("head_shortcut_icon");
     }
@@ -857,7 +902,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Logo Image
      */
-
     public String getHeaderLogoSrc() {
         return (String) get("header_logo_src");
     }
@@ -870,7 +914,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * The ID number assigned to the store
      */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -883,7 +926,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * List Mode.
      */
-
     public String getListMode() {
         return (String) get("list_mode");
     }
@@ -896,7 +938,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Products per Page on List Default Value.
      */
-
     public Integer getListPerPage() {
         return (Integer) get("list_per_page");
     }
@@ -909,7 +950,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Products per Page on List Allowed Values.
      */
-
     public String getListPerPageValues() {
         return (String) get("list_per_page_values");
     }
@@ -922,7 +962,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Store locale
      */
-
     public String getLocale() {
         return (String) get("locale");
     }
@@ -935,7 +974,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Logo Image Alt
      */
-
     public String getLogoAlt() {
         return (String) get("logo_alt");
     }
@@ -948,7 +986,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Logo Attribute Height
      */
-
     public Integer getLogoHeight() {
         return (Integer) get("logo_height");
     }
@@ -961,7 +998,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Logo Attribute Width
      */
-
     public Integer getLogoWidth() {
         return (Integer) get("logo_width");
     }
@@ -974,7 +1010,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Default No-route URL
      */
-
     public String getNoRoute() {
         return (String) get("no_route");
     }
@@ -985,9 +1020,21 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Corresponds to the &#39;Display Prices On Product View Page&#39; field. It indicates how FPT information is
+     * displayed on product pages
+     */
+    public FixedProductTaxDisplaySettings getProductFixedProductTaxDisplaySetting() {
+        return (FixedProductTaxDisplaySettings) get("product_fixed_product_tax_display_setting");
+    }
+
+    public StoreConfig setProductFixedProductTaxDisplaySetting(FixedProductTaxDisplaySettings arg) {
+        optimisticData.put(getKey("product_fixed_product_tax_display_setting"), arg);
+        return this;
+    }
+
+    /**
      * Product URL Suffix.
      */
-
     public String getProductUrlSuffix() {
         return (String) get("product_url_suffix");
     }
@@ -998,9 +1045,33 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * The ID of the root category
+     */
+    public Integer getRootCategoryId() {
+        return (Integer) get("root_category_id");
+    }
+
+    public StoreConfig setRootCategoryId(Integer arg) {
+        optimisticData.put(getKey("root_category_id"), arg);
+        return this;
+    }
+
+    /**
+     * Corresponds to the &#39;Display Prices In Sales Modules&#39; field. It indicates how FPT information is
+     * displayed on cart, checkout, and order pages
+     */
+    public FixedProductTaxDisplaySettings getSalesFixedProductTaxDisplaySetting() {
+        return (FixedProductTaxDisplaySettings) get("sales_fixed_product_tax_display_setting");
+    }
+
+    public StoreConfig setSalesFixedProductTaxDisplaySetting(FixedProductTaxDisplaySettings arg) {
+        optimisticData.put(getKey("sales_fixed_product_tax_display_setting"), arg);
+        return this;
+    }
+
+    /**
      * Secure base link URL for the store
      */
-
     public String getSecureBaseLinkUrl() {
         return (String) get("secure_base_link_url");
     }
@@ -1013,7 +1084,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Secure base media URL for the store
      */
-
     public String getSecureBaseMediaUrl() {
         return (String) get("secure_base_media_url");
     }
@@ -1026,7 +1096,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Secure base static URL for the store
      */
-
     public String getSecureBaseStaticUrl() {
         return (String) get("secure_base_static_url");
     }
@@ -1039,7 +1108,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Secure base URL for the store
      */
-
     public String getSecureBaseUrl() {
         return (String) get("secure_base_url");
     }
@@ -1052,7 +1120,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Show Breadcrumbs for CMS Pages
      */
-
     public Integer getShowCmsBreadcrumbs() {
         return (Integer) get("show_cms_breadcrumbs");
     }
@@ -1063,9 +1130,20 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Name of the store
+     */
+    public String getStoreName() {
+        return (String) get("store_name");
+    }
+
+    public StoreConfig setStoreName(String arg) {
+        optimisticData.put(getKey("store_name"), arg);
+        return this;
+    }
+
+    /**
      * Timezone of the store
      */
-
     public String getTimezone() {
         return (String) get("timezone");
     }
@@ -1078,7 +1156,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Page Title Prefix
      */
-
     public String getTitlePrefix() {
         return (String) get("title_prefix");
     }
@@ -1091,7 +1168,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Page Title Separator.
      */
-
     public String getTitleSeparator() {
         return (String) get("title_separator");
     }
@@ -1104,7 +1180,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Page Title Suffix
      */
-
     public String getTitleSuffix() {
         return (String) get("title_suffix");
     }
@@ -1117,7 +1192,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * The ID number assigned to the website store belongs
      */
-
     public Integer getWebsiteId() {
         return (Integer) get("website_id");
     }
@@ -1130,7 +1204,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * The unit of weight
      */
-
     public String getWeightUnit() {
         return (String) get("weight_unit");
     }
@@ -1143,7 +1216,6 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     /**
      * Welcome Text
      */
-
     public String getWelcome() {
         return (String) get("welcome");
     }
@@ -1168,6 +1240,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "base_url": return false;
 
             case "catalog_default_sort_by": return false;
+
+            case "category_fixed_product_tax_display_setting": return false;
 
             case "category_url_suffix": return false;
 
@@ -1221,7 +1295,13 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
             case "no_route": return false;
 
+            case "product_fixed_product_tax_display_setting": return false;
+
             case "product_url_suffix": return false;
+
+            case "root_category_id": return false;
+
+            case "sales_fixed_product_tax_display_setting": return false;
 
             case "secure_base_link_url": return false;
 
@@ -1232,6 +1312,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "secure_base_url": return false;
 
             case "show_cms_breadcrumbs": return false;
+
+            case "store_name": return false;
 
             case "timezone": return false;
 

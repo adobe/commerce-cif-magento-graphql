@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,9 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * 
- */
 public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     LayerFilterQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -26,7 +23,10 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
 
     /**
      * Array of filter items.
+     *
+     * @deprecated Use Aggregation.options instead.
      */
+    @Deprecated
     public LayerFilterQuery filterItems(LayerFilterItemInterfaceQueryDefinition queryDef) {
         startField("filter_items");
 
@@ -39,7 +39,10 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
 
     /**
      * Count of filter items in filter group.
+     *
+     * @deprecated Use Aggregation.count instead.
      */
+    @Deprecated
     public LayerFilterQuery filterItemsCount() {
         startField("filter_items_count");
 
@@ -48,7 +51,10 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
 
     /**
      * Layered navigation filter name.
+     *
+     * @deprecated Use Aggregation.label instead.
      */
+    @Deprecated
     public LayerFilterQuery name() {
         startField("name");
 
@@ -57,7 +63,10 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
 
     /**
      * Request variable name for filter query.
+     *
+     * @deprecated Use Aggregation.attribute_code instead.
      */
+    @Deprecated
     public LayerFilterQuery requestVar() {
         startField("request_var");
 

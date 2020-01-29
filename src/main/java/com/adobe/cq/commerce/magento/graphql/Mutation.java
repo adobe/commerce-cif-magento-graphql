@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class Mutation extends AbstractResponse<Mutation> {
     public Mutation() {
     }
@@ -33,10 +30,32 @@ public class Mutation extends AbstractResponse<Mutation> {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "addBundleProductsToCart": {
+                    AddBundleProductsToCartOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AddBundleProductsToCartOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "addConfigurableProductsToCart": {
                     AddConfigurableProductsToCartOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new AddConfigurableProductsToCartOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "addDownloadableProductsToCart": {
+                    AddDownloadableProductsToCartOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AddDownloadableProductsToCartOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -128,9 +147,9 @@ public class Mutation extends AbstractResponse<Mutation> {
                 }
 
                 case "createPayflowProToken": {
-                    PayflowProToken optional1 = null;
+                    CreatePayflowProTokenOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = new PayflowProToken(jsonAsObject(field.getValue(), key));
+                        optional1 = new CreatePayflowProTokenOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -139,9 +158,9 @@ public class Mutation extends AbstractResponse<Mutation> {
                 }
 
                 case "createPaypalExpressToken": {
-                    PaypalExpressToken optional1 = null;
+                    PaypalExpressTokenOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = new PaypalExpressToken(jsonAsObject(field.getValue(), key));
+                        optional1 = new PaypalExpressTokenOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -189,6 +208,12 @@ public class Mutation extends AbstractResponse<Mutation> {
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "mergeCarts": {
+                    responseData.put(key, new Cart(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
@@ -363,12 +388,30 @@ public class Mutation extends AbstractResponse<Mutation> {
         return "Mutation";
     }
 
+    public AddBundleProductsToCartOutput getAddBundleProductsToCart() {
+        return (AddBundleProductsToCartOutput) get("addBundleProductsToCart");
+    }
+
+    public Mutation setAddBundleProductsToCart(AddBundleProductsToCartOutput arg) {
+        optimisticData.put(getKey("addBundleProductsToCart"), arg);
+        return this;
+    }
+
     public AddConfigurableProductsToCartOutput getAddConfigurableProductsToCart() {
         return (AddConfigurableProductsToCartOutput) get("addConfigurableProductsToCart");
     }
 
     public Mutation setAddConfigurableProductsToCart(AddConfigurableProductsToCartOutput arg) {
         optimisticData.put(getKey("addConfigurableProductsToCart"), arg);
+        return this;
+    }
+
+    public AddDownloadableProductsToCartOutput getAddDownloadableProductsToCart() {
+        return (AddDownloadableProductsToCartOutput) get("addDownloadableProductsToCart");
+    }
+
+    public Mutation setAddDownloadableProductsToCart(AddDownloadableProductsToCartOutput arg) {
+        optimisticData.put(getKey("addDownloadableProductsToCart"), arg);
         return this;
     }
 
@@ -402,7 +445,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Changes the password for the logged-in customer
      */
-
     public Customer getChangeCustomerPassword() {
         return (Customer) get("changeCustomerPassword");
     }
@@ -413,9 +455,8 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
-     * Creates Braintree Client Token for creating client-side nonce.
+     * Creates Client Token for Braintree Javascript SDK initialization.
      */
-
     public String getCreateBraintreeClientToken() {
         return (String) get("createBraintreeClientToken");
     }
@@ -428,7 +469,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Create customer account
      */
-
     public CustomerOutput getCreateCustomer() {
         return (CustomerOutput) get("createCustomer");
     }
@@ -441,7 +481,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Create customer address
      */
-
     public CustomerAddress getCreateCustomerAddress() {
         return (CustomerAddress) get("createCustomerAddress");
     }
@@ -454,7 +493,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Creates an empty shopping cart for a guest or logged in user
      */
-
     public String getCreateEmptyCart() {
         return (String) get("createEmptyCart");
     }
@@ -468,12 +506,11 @@ public class Mutation extends AbstractResponse<Mutation> {
      * Initiates a transaction and receives a token. Use this mutation for Payflow Pro and Payments Pro
      * payment methods
      */
-
-    public PayflowProToken getCreatePayflowProToken() {
-        return (PayflowProToken) get("createPayflowProToken");
+    public CreatePayflowProTokenOutput getCreatePayflowProToken() {
+        return (CreatePayflowProTokenOutput) get("createPayflowProToken");
     }
 
-    public Mutation setCreatePayflowProToken(PayflowProToken arg) {
+    public Mutation setCreatePayflowProToken(CreatePayflowProTokenOutput arg) {
         optimisticData.put(getKey("createPayflowProToken"), arg);
         return this;
     }
@@ -482,12 +519,11 @@ public class Mutation extends AbstractResponse<Mutation> {
      * Initiates an Express Checkout transaction and receives a token. Use this mutation for Express
      * Checkout and Payments Standard payment methods.
      */
-
-    public PaypalExpressToken getCreatePaypalExpressToken() {
-        return (PaypalExpressToken) get("createPaypalExpressToken");
+    public PaypalExpressTokenOutput getCreatePaypalExpressToken() {
+        return (PaypalExpressTokenOutput) get("createPaypalExpressToken");
     }
 
-    public Mutation setCreatePaypalExpressToken(PaypalExpressToken arg) {
+    public Mutation setCreatePaypalExpressToken(PaypalExpressTokenOutput arg) {
         optimisticData.put(getKey("createPaypalExpressToken"), arg);
         return this;
     }
@@ -495,7 +531,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Delete customer address
      */
-
     public Boolean getDeleteCustomerAddress() {
         return (Boolean) get("deleteCustomerAddress");
     }
@@ -508,7 +543,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Delete a customer payment token
      */
-
     public DeletePaymentTokenOutput getDeletePaymentToken() {
         return (DeletePaymentTokenOutput) get("deletePaymentToken");
     }
@@ -521,7 +555,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Retrieve the customer token
      */
-
     public CustomerToken getGenerateCustomerToken() {
         return (CustomerToken) get("generateCustomerToken");
     }
@@ -535,13 +568,24 @@ public class Mutation extends AbstractResponse<Mutation> {
      * Handles payment response and saves payment in Quote. Use this mutations for Payflow Pro and Payments
      * Pro payment methods.
      */
-
     public PayflowProResponseOutput getHandlePayflowProResponse() {
         return (PayflowProResponseOutput) get("handlePayflowProResponse");
     }
 
     public Mutation setHandlePayflowProResponse(PayflowProResponseOutput arg) {
         optimisticData.put(getKey("handlePayflowProResponse"), arg);
+        return this;
+    }
+
+    /**
+     * Merges the source cart into the destination cart
+     */
+    public Cart getMergeCarts() {
+        return (Cart) get("mergeCarts");
+    }
+
+    public Mutation setMergeCarts(Cart arg) {
+        optimisticData.put(getKey("mergeCarts"), arg);
         return this;
     }
 
@@ -575,7 +619,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Revoke the customer token
      */
-
     public RevokeCustomerTokenOutput getRevokeCustomerToken() {
         return (RevokeCustomerTokenOutput) get("revokeCustomerToken");
     }
@@ -588,7 +631,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Recommends Product by Sending Single/Multiple Email
      */
-
     public SendEmailToFriendOutput getSendEmailToFriend() {
         return (SendEmailToFriendOutput) get("sendEmailToFriend");
     }
@@ -616,6 +658,10 @@ public class Mutation extends AbstractResponse<Mutation> {
         return this;
     }
 
+    /**
+     * @deprecated Should use setPaymentMethodOnCart and placeOrder mutations in single request.
+     */
+    @Deprecated
     public PlaceOrderOutput getSetPaymentMethodAndPlaceOrder() {
         return (PlaceOrderOutput) get("setPaymentMethodAndPlaceOrder");
     }
@@ -664,7 +710,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Update the customer&#39;s personal information
      */
-
     public CustomerOutput getUpdateCustomer() {
         return (CustomerOutput) get("updateCustomer");
     }
@@ -677,7 +722,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     /**
      * Update customer address
      */
-
     public CustomerAddress getUpdateCustomerAddress() {
         return (CustomerAddress) get("updateCustomerAddress");
     }
@@ -689,7 +733,11 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "addBundleProductsToCart": return true;
+
             case "addConfigurableProductsToCart": return true;
+
+            case "addDownloadableProductsToCart": return true;
 
             case "addSimpleProductsToCart": return true;
 
@@ -718,6 +766,8 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "generateCustomerToken": return true;
 
             case "handlePayflowProResponse": return true;
+
+            case "mergeCarts": return true;
 
             case "placeOrder": return true;
 

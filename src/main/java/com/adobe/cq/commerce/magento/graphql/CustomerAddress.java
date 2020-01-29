@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -50,6 +50,17 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "country_code": {
+                    CountryCodeEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = CountryCodeEnum.fromGraphQl(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -315,7 +326,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The city or town
      */
-
     public String getCity() {
         return (String) get("city");
     }
@@ -328,7 +338,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The customer&#39;s company
      */
-
     public String getCompany() {
         return (String) get("company");
     }
@@ -341,7 +350,21 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The customer&#39;s country
      */
+    public CountryCodeEnum getCountryCode() {
+        return (CountryCodeEnum) get("country_code");
+    }
 
+    public CustomerAddress setCountryCode(CountryCodeEnum arg) {
+        optimisticData.put(getKey("country_code"), arg);
+        return this;
+    }
+
+    /**
+     * The customer&#39;s country
+     *
+     * @deprecated Use `country_code` instead.
+     */
+    @Deprecated
     public String getCountryId() {
         return (String) get("country_id");
     }
@@ -352,9 +375,9 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
-     * Address custom attributes
+     * @deprecated Custom attributes should not be put into container
      */
-
+    @Deprecated
     public List<CustomerAddressAttribute> getCustomAttributes() {
         return (List<CustomerAddressAttribute>) get("custom_attributes");
     }
@@ -366,8 +389,10 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
 
     /**
      * The customer ID
+     *
+     * @deprecated customer_id is not needed as part of CustomerAddress, address ID (id) is unique identifier for the addresses.
      */
-
+    @Deprecated
     public Integer getCustomerId() {
         return (Integer) get("customer_id");
     }
@@ -380,7 +405,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * Indicates whether the address is the default billing address
      */
-
     public Boolean getDefaultBilling() {
         return (Boolean) get("default_billing");
     }
@@ -393,7 +417,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * Indicates whether the address is the default shipping address
      */
-
     public Boolean getDefaultShipping() {
         return (Boolean) get("default_shipping");
     }
@@ -406,7 +429,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * Address extension attributes
      */
-
     public List<CustomerAddressAttribute> getExtensionAttributes() {
         return (List<CustomerAddressAttribute>) get("extension_attributes");
     }
@@ -419,7 +441,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The fax number
      */
-
     public String getFax() {
         return (String) get("fax");
     }
@@ -432,7 +453,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The first name of the person associated with the shipping/billing address
      */
-
     public String getFirstname() {
         return (String) get("firstname");
     }
@@ -445,7 +465,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The ID assigned to the address object
      */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -458,7 +477,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The family name of the person associated with the shipping/billing address
      */
-
     public String getLastname() {
         return (String) get("lastname");
     }
@@ -471,7 +489,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The middle name of the person associated with the shipping/billing address
      */
-
     public String getMiddlename() {
         return (String) get("middlename");
     }
@@ -484,7 +501,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The customer&#39;s ZIP or postal code
      */
-
     public String getPostcode() {
         return (String) get("postcode");
     }
@@ -497,7 +513,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * An honorific, such as Dr., Mr., or Mrs.
      */
-
     public String getPrefix() {
         return (String) get("prefix");
     }
@@ -510,7 +525,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * An object containing the region name, region code, and region ID
      */
-
     public CustomerAddressRegion getRegion() {
         return (CustomerAddressRegion) get("region");
     }
@@ -521,9 +535,9 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
-     * A number that uniquely identifies the state, province, or other area
+     * @deprecated Region ID is excessive on storefront and region code should suffice for all scenarios
      */
-
+    @Deprecated
     public Integer getRegionId() {
         return (Integer) get("region_id");
     }
@@ -536,7 +550,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * An array of strings that define the street number and name
      */
-
     public List<String> getStreet() {
         return (List<String>) get("street");
     }
@@ -549,7 +562,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * A value such as Sr., Jr., or III
      */
-
     public String getSuffix() {
         return (String) get("suffix");
     }
@@ -562,7 +574,6 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     /**
      * The telephone number
      */
-
     public String getTelephone() {
         return (String) get("telephone");
     }
@@ -573,9 +584,8 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
     }
 
     /**
-     * The customer&#39;s Tax/VAT number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
      */
-
     public String getVatId() {
         return (String) get("vat_id");
     }
@@ -590,6 +600,8 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
             case "city": return false;
 
             case "company": return false;
+
+            case "country_code": return false;
 
             case "country_id": return false;
 

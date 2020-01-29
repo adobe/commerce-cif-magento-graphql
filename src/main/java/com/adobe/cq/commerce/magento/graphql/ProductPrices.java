@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,9 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The ProductPrices object contains the regular price of an item, as well as its minimum and maximum
- * prices. Only composite products, which include bundle, configurable, and grouped products, can
- * contain a minimum and maximum price.
+ * ProductPrices is deprecated, replaced by PriceRange. The ProductPrices object contains the regular
+ * price of an item, as well as its minimum and maximum prices. Only composite products, which include
+ * bundle, configurable, and grouped products, can contain a minimum and maximum price.
  */
 public class ProductPrices extends AbstractResponse<ProductPrices> {
     public ProductPrices() {
@@ -87,8 +87,10 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
     /**
      * The highest possible final price for all the options defined within a composite product. If you are
      * specifying a price range, this would be the to value.
+     *
+     * @deprecated Use PriceRange.maximum_price.
      */
-
+    @Deprecated
     public Price getMaximalPrice() {
         return (Price) get("maximalPrice");
     }
@@ -101,8 +103,10 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
     /**
      * The lowest possible final price for all the options defined within a composite product. If you are
      * specifying a price range, this would be the from value.
+     *
+     * @deprecated Use PriceRange.minimum_price.
      */
-
+    @Deprecated
     public Price getMinimalPrice() {
         return (Price) get("minimalPrice");
     }
@@ -114,8 +118,10 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
 
     /**
      * The base price of a product.
+     *
+     * @deprecated Use regular_price from PriceRange.minimum_price or PriceRange.maximum_price.
      */
-
+    @Deprecated
     public Price getRegularPrice() {
         return (Price) get("regularPrice");
     }

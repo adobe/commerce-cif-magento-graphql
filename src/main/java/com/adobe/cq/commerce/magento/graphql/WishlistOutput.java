@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * 
+ * Deprecated: `Wishlist` type should be used instead
  */
 public class WishlistOutput extends AbstractResponse<WishlistOutput> {
     public WishlistOutput() {
@@ -118,8 +118,10 @@ public class WishlistOutput extends AbstractResponse<WishlistOutput> {
 
     /**
      * An array of items in the customer&#39;s wish list
+     *
+     * @deprecated Use field `items` from type `Wishlist` instead
      */
-
+    @Deprecated
     public List<WishlistItem> getItems() {
         return (List<WishlistItem>) get("items");
     }
@@ -131,8 +133,10 @@ public class WishlistOutput extends AbstractResponse<WishlistOutput> {
 
     /**
      * The number of items in the wish list
+     *
+     * @deprecated Use field `items_count` from type `Wishlist` instead
      */
-
+    @Deprecated
     public Integer getItemsCount() {
         return (Integer) get("items_count");
     }
@@ -144,8 +148,10 @@ public class WishlistOutput extends AbstractResponse<WishlistOutput> {
 
     /**
      * When multiple wish lists are enabled, the name the customer assigns to the wishlist
+     *
+     * @deprecated This field is related to Commerce functionality and is always `null` in Open Source edition
      */
-
+    @Deprecated
     public String getName() {
         return (String) get("name");
     }
@@ -157,8 +163,10 @@ public class WishlistOutput extends AbstractResponse<WishlistOutput> {
 
     /**
      * An encrypted code that Magento uses to link to the wish list
+     *
+     * @deprecated Use field `sharing_code` from type `Wishlist` instead
      */
-
+    @Deprecated
     public String getSharingCode() {
         return (String) get("sharing_code");
     }
@@ -170,8 +178,10 @@ public class WishlistOutput extends AbstractResponse<WishlistOutput> {
 
     /**
      * The time of the last modification to the wish list
+     *
+     * @deprecated Use field `updated_at` from type `Wishlist` instead
      */
-
+    @Deprecated
     public String getUpdatedAt() {
         return (String) get("updated_at");
     }

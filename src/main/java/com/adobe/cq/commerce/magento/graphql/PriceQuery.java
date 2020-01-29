@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -17,7 +17,8 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * The Price object defines the price of a product as well as any tax-related adjustments.
+ * Price is deprecated, replaced by ProductPrice. The Price object defines the price of a product as
+ * well as any tax-related adjustments.
  */
 public class PriceQuery extends AbstractQuery<PriceQuery> {
     PriceQuery(StringBuilder _queryBuilder) {
@@ -26,7 +27,10 @@ public class PriceQuery extends AbstractQuery<PriceQuery> {
 
     /**
      * An array that provides information about tax, weee, or weee_tax adjustments.
+     *
+     * @deprecated Price is deprecated, use ProductPrice.
      */
+    @Deprecated
     public PriceQuery adjustments(PriceAdjustmentQueryDefinition queryDef) {
         startField("adjustments");
 
@@ -39,7 +43,10 @@ public class PriceQuery extends AbstractQuery<PriceQuery> {
 
     /**
      * The price of a product plus a three-letter currency code.
+     *
+     * @deprecated Price is deprecated, use ProductPrice.
      */
+    @Deprecated
     public PriceQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
 

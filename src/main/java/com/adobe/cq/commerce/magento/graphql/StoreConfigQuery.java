@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -83,6 +83,16 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery catalogDefaultSortBy() {
         startField("catalog_default_sort_by");
+
+        return this;
+    }
+
+    /**
+     * Corresponds to the &#39;Display Prices In Product Lists&#39; field. It indicates how FPT information is
+     * displayed on category pages
+     */
+    public StoreConfigQuery categoryFixedProductTaxDisplaySetting() {
+        startField("category_fixed_product_tax_display_setting");
 
         return this;
     }
@@ -322,10 +332,39 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Corresponds to the &#39;Display Prices On Product View Page&#39; field. It indicates how FPT information is
+     * displayed on product pages
+     */
+    public StoreConfigQuery productFixedProductTaxDisplaySetting() {
+        startField("product_fixed_product_tax_display_setting");
+
+        return this;
+    }
+
+    /**
      * Product URL Suffix.
      */
     public StoreConfigQuery productUrlSuffix() {
         startField("product_url_suffix");
+
+        return this;
+    }
+
+    /**
+     * The ID of the root category
+     */
+    public StoreConfigQuery rootCategoryId() {
+        startField("root_category_id");
+
+        return this;
+    }
+
+    /**
+     * Corresponds to the &#39;Display Prices In Sales Modules&#39; field. It indicates how FPT information is
+     * displayed on cart, checkout, and order pages
+     */
+    public StoreConfigQuery salesFixedProductTaxDisplaySetting() {
+        startField("sales_fixed_product_tax_display_setting");
 
         return this;
     }
@@ -371,6 +410,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery showCmsBreadcrumbs() {
         startField("show_cms_breadcrumbs");
+
+        return this;
+    }
+
+    /**
+     * Name of the store
+     */
+    public StoreConfigQuery storeName() {
+        startField("store_name");
 
         return this;
     }

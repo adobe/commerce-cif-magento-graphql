@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -55,6 +55,17 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
                     break;
                 }
 
+                case "redirectCode": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "relative_url": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -93,6 +104,10 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
         return "EntityUrl";
     }
 
+    /**
+     * @deprecated The canonical_url field is deprecated, use relative_url instead.
+     */
+    @Deprecated
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
     }
@@ -106,7 +121,6 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
      * The ID assigned to the object associated with the specified url. This could be a product ID,
      * category ID, or page ID.
      */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -117,10 +131,21 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
+     * 301 or 302 HTTP code for url permanent or temporary redirect or 0 for the 200 no redirect
+     */
+    public Integer getRedirectCode() {
+        return (Integer) get("redirectCode");
+    }
+
+    public EntityUrl setRedirectCode(Integer arg) {
+        optimisticData.put(getKey("redirectCode"), arg);
+        return this;
+    }
+
+    /**
      * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
      * URL, not the original.
      */
-
     public String getRelativeUrl() {
         return (String) get("relative_url");
     }
@@ -133,7 +158,6 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     /**
      * One of PRODUCT, CATEGORY, or CMS_PAGE.
      */
-
     public UrlRewriteEntityTypeEnum getType() {
         return (UrlRewriteEntityTypeEnum) get("type");
     }
@@ -148,6 +172,8 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
             case "canonical_url": return false;
 
             case "id": return false;
+
+            case "redirectCode": return false;
 
             case "relative_url": return false;
 

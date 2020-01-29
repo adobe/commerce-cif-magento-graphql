@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -23,9 +23,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem> implements CartItemInterface {
     public ConfigurableCartItem() {
     }
@@ -69,6 +66,17 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
 
                 case "id": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
+
+                    break;
+                }
+
+                case "prices": {
+                    CartItemPrices optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CartItemPrices(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -128,6 +136,15 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
         return this;
     }
 
+    public CartItemPrices getPrices() {
+        return (CartItemPrices) get("prices");
+    }
+
+    public ConfigurableCartItem setPrices(CartItemPrices arg) {
+        optimisticData.put(getKey("prices"), arg);
+        return this;
+    }
+
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -153,6 +170,8 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
             case "customizable_options": return true;
 
             case "id": return false;
+
+            case "prices": return true;
 
             case "product": return false;
 

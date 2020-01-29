@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The type contains information about a website
+ * Website is deprecated because it is should not be used on storefront. The type contains information
+ * about a website
  */
 public class Website extends AbstractResponse<Website> {
     public Website() {
@@ -117,8 +118,10 @@ public class Website extends AbstractResponse<Website> {
 
     /**
      * A code assigned to the website to identify it
+     *
+     * @deprecated The field should not be used on the storefront.
      */
-
+    @Deprecated
     public String getCode() {
         return (String) get("code");
     }
@@ -130,8 +133,10 @@ public class Website extends AbstractResponse<Website> {
 
     /**
      * The default group ID that the website has
+     *
+     * @deprecated The field should not be used on the storefront.
      */
-
+    @Deprecated
     public String getDefaultGroupId() {
         return (String) get("default_group_id");
     }
@@ -143,8 +148,10 @@ public class Website extends AbstractResponse<Website> {
 
     /**
      * The ID number assigned to the website
+     *
+     * @deprecated The field should not be used on the storefront.
      */
-
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -156,8 +163,10 @@ public class Website extends AbstractResponse<Website> {
 
     /**
      * Specifies if this is the default website
+     *
+     * @deprecated The field should not be used on the storefront.
      */
-
+    @Deprecated
     public Boolean getIsDefault() {
         return (Boolean) get("is_default");
     }
@@ -169,8 +178,10 @@ public class Website extends AbstractResponse<Website> {
 
     /**
      * The website name. Websites use this name to identify it easier.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
-
+    @Deprecated
     public String getName() {
         return (String) get("name");
     }
@@ -182,8 +193,10 @@ public class Website extends AbstractResponse<Website> {
 
     /**
      * The attribute to use for sorting websites
+     *
+     * @deprecated The field should not be used on the storefront.
      */
-
+    @Deprecated
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
     }

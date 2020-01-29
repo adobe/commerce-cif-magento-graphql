@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,11 +21,9 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class Cart extends AbstractResponse<Cart> {
     public Cart() {
     }
@@ -39,6 +37,27 @@ public class Cart extends AbstractResponse<Cart> {
                     AppliedCoupon optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new AppliedCoupon(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "applied_coupons": {
+                    List<AppliedCoupon> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<AppliedCoupon> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            AppliedCoupon optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new AppliedCoupon(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -68,7 +87,12 @@ public class Cart extends AbstractResponse<Cart> {
                 }
 
                 case "billing_address": {
-                    responseData.put(key, new BillingCartAddress(jsonAsObject(field.getValue(), key)));
+                    BillingCartAddress optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new BillingCartAddress(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -80,6 +104,18 @@ public class Cart extends AbstractResponse<Cart> {
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "id": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
+                case "is_virtual": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
 
                     break;
                 }
@@ -143,6 +179,12 @@ public class Cart extends AbstractResponse<Cart> {
                     break;
                 }
 
+                case "total_quantity": {
+                    responseData.put(key, jsonAsDouble(field.getValue(), key));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -159,6 +201,12 @@ public class Cart extends AbstractResponse<Cart> {
         return "Cart";
     }
 
+    /**
+     * An array of coupons that have been applied to the cart
+     *
+     * @deprecated Use applied_coupons instead 
+     */
+    @Deprecated
     public AppliedCoupon getAppliedCoupon() {
         return (AppliedCoupon) get("applied_coupon");
     }
@@ -169,9 +217,21 @@ public class Cart extends AbstractResponse<Cart> {
     }
 
     /**
+     * An array of `AppliedCoupon` objects. Each object contains the `code` text attribute, which specifies
+     * the coupon code
+     */
+    public List<AppliedCoupon> getAppliedCoupons() {
+        return (List<AppliedCoupon>) get("applied_coupons");
+    }
+
+    public Cart setAppliedCoupons(List<AppliedCoupon> arg) {
+        optimisticData.put(getKey("applied_coupons"), arg);
+        return this;
+    }
+
+    /**
      * Available payment methods
      */
-
     public List<AvailablePaymentMethod> getAvailablePaymentMethods() {
         return (List<AvailablePaymentMethod>) get("available_payment_methods");
     }
@@ -196,6 +256,27 @@ public class Cart extends AbstractResponse<Cart> {
 
     public Cart setEmail(String arg) {
         optimisticData.put(getKey("email"), arg);
+        return this;
+    }
+
+    /**
+     * The ID of the cart.
+     */
+    public ID getId() {
+        return (ID) get("id");
+    }
+
+    public Cart setId(ID arg) {
+        optimisticData.put(getKey("id"), arg);
+        return this;
+    }
+
+    public Boolean getIsVirtual() {
+        return (Boolean) get("is_virtual");
+    }
+
+    public Cart setIsVirtual(Boolean arg) {
+        optimisticData.put(getKey("is_virtual"), arg);
         return this;
     }
 
@@ -235,15 +316,30 @@ public class Cart extends AbstractResponse<Cart> {
         return this;
     }
 
+    public Double getTotalQuantity() {
+        return (Double) get("total_quantity");
+    }
+
+    public Cart setTotalQuantity(Double arg) {
+        optimisticData.put(getKey("total_quantity"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "applied_coupon": return true;
+
+            case "applied_coupons": return true;
 
             case "available_payment_methods": return true;
 
             case "billing_address": return true;
 
             case "email": return false;
+
+            case "id": return false;
+
+            case "is_virtual": return false;
 
             case "items": return false;
 
@@ -252,6 +348,8 @@ public class Cart extends AbstractResponse<Cart> {
             case "selected_payment_method": return true;
 
             case "shipping_addresses": return true;
+
+            case "total_quantity": return false;
 
             default: return false;
         }

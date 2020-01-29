@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -24,6 +24,10 @@ public class EntityUrlQuery extends AbstractQuery<EntityUrlQuery> {
         super(_queryBuilder);
     }
 
+    /**
+     * @deprecated The canonical_url field is deprecated, use relative_url instead.
+     */
+    @Deprecated
     public EntityUrlQuery canonicalUrl() {
         startField("canonical_url");
 
@@ -36,6 +40,15 @@ public class EntityUrlQuery extends AbstractQuery<EntityUrlQuery> {
      */
     public EntityUrlQuery id() {
         startField("id");
+
+        return this;
+    }
+
+    /**
+     * 301 or 302 HTTP code for url permanent or temporary redirect or 0 for the 200 no redirect
+     */
+    public EntityUrlQuery redirectCode() {
+        startField("redirectCode");
 
         return this;
     }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,9 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * 
- */
 public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery> {
     CartItemInterfaceQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -28,6 +25,16 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
 
     public CartItemInterfaceQuery id() {
         startField("id");
+
+        return this;
+    }
+
+    public CartItemInterfaceQuery prices(CartItemPricesQueryDefinition queryDef) {
+        startField("prices");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CartItemPricesQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -48,9 +55,23 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
         return this;
     }
 
+    public CartItemInterfaceQuery onBundleCartItem(BundleCartItemQueryDefinition queryDef) {
+        startInlineFragment("BundleCartItem");
+        queryDef.define(new BundleCartItemQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
     public CartItemInterfaceQuery onConfigurableCartItem(ConfigurableCartItemQueryDefinition queryDef) {
         startInlineFragment("ConfigurableCartItem");
         queryDef.define(new ConfigurableCartItemQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public CartItemInterfaceQuery onDownloadableCartItem(DownloadableCartItemQueryDefinition queryDef) {
+        startInlineFragment("DownloadableCartItem");
+        queryDef.define(new DownloadableCartItemQuery(_queryBuilder));
         _queryBuilder.append('}');
         return this;
     }

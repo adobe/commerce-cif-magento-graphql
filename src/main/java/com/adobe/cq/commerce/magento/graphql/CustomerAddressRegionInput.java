@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * CustomerAddressRegionInput defines the customer&#39;s state or province
+ */
 public class CustomerAddressRegionInput implements Serializable {
     private Input<String> region = Input.undefined();
 
@@ -26,19 +29,31 @@ public class CustomerAddressRegionInput implements Serializable {
 
     private Input<Integer> regionId = Input.undefined();
 
+    /**
+     * The state or province name
+     */
     public String getRegion() {
         return region.getValue();
     }
 
+    /**
+     * The state or province name
+     */
     public Input<String> getRegionInput() {
         return region;
     }
 
+    /**
+     * The state or province name
+     */
     public CustomerAddressRegionInput setRegion(String region) {
         this.region = Input.optional(region);
         return this;
     }
 
+    /**
+     * The state or province name
+     */
     public CustomerAddressRegionInput setRegionInput(Input<String> region) {
         if (region == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -47,19 +62,31 @@ public class CustomerAddressRegionInput implements Serializable {
         return this;
     }
 
+    /**
+     * The address region code
+     */
     public String getRegionCode() {
         return regionCode.getValue();
     }
 
+    /**
+     * The address region code
+     */
     public Input<String> getRegionCodeInput() {
         return regionCode;
     }
 
+    /**
+     * The address region code
+     */
     public CustomerAddressRegionInput setRegionCode(String regionCode) {
         this.regionCode = Input.optional(regionCode);
         return this;
     }
 
+    /**
+     * The address region code
+     */
     public CustomerAddressRegionInput setRegionCodeInput(Input<String> regionCode) {
         if (regionCode == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -68,19 +95,35 @@ public class CustomerAddressRegionInput implements Serializable {
         return this;
     }
 
+    /**
+     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
+     * scenarios
+     */
     public Integer getRegionId() {
         return regionId.getValue();
     }
 
+    /**
+     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
+     * scenarios
+     */
     public Input<Integer> getRegionIdInput() {
         return regionId;
     }
 
+    /**
+     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
+     * scenarios
+     */
     public CustomerAddressRegionInput setRegionId(Integer regionId) {
         this.regionId = Input.optional(regionId);
         return this;
     }
 
+    /**
+     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
+     * scenarios
+     */
     public CustomerAddressRegionInput setRegionIdInput(Input<Integer> regionId) {
         if (regionId == null) {
             throw new IllegalArgumentException("Input can not be null");

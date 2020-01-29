@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,16 +16,33 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * 
- */
 public class CartQuery extends AbstractQuery<CartQuery> {
     CartQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An array of coupons that have been applied to the cart
+     *
+     * @deprecated Use applied_coupons instead 
+     */
+    @Deprecated
     public CartQuery appliedCoupon(AppliedCouponQueryDefinition queryDef) {
         startField("applied_coupon");
+
+        _queryBuilder.append('{');
+        queryDef.define(new AppliedCouponQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array of `AppliedCoupon` objects. Each object contains the `code` text attribute, which specifies
+     * the coupon code
+     */
+    public CartQuery appliedCoupons(AppliedCouponQueryDefinition queryDef) {
+        startField("applied_coupons");
 
         _queryBuilder.append('{');
         queryDef.define(new AppliedCouponQuery(_queryBuilder));
@@ -59,6 +76,21 @@ public class CartQuery extends AbstractQuery<CartQuery> {
 
     public CartQuery email() {
         startField("email");
+
+        return this;
+    }
+
+    /**
+     * The ID of the cart.
+     */
+    public CartQuery id() {
+        startField("id");
+
+        return this;
+    }
+
+    public CartQuery isVirtual() {
+        startField("is_virtual");
 
         return this;
     }
@@ -99,6 +131,12 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         _queryBuilder.append('{');
         queryDef.define(new ShippingCartAddressQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public CartQuery totalQuantity() {
+        startField("total_quantity");
 
         return this;
     }
