@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -29,8 +29,6 @@ public class CartAddressInput implements Serializable {
 
     private String lastname;
 
-    private boolean saveInAddressBook;
-
     private List<String> street;
 
     private String telephone;
@@ -41,7 +39,9 @@ public class CartAddressInput implements Serializable {
 
     private Input<String> region = Input.undefined();
 
-    public CartAddressInput(String city, String countryCode, String firstname, String lastname, boolean saveInAddressBook, List<String> street, String telephone) {
+    private Input<Boolean> saveInAddressBook = Input.undefined();
+
+    public CartAddressInput(String city, String countryCode, String firstname, String lastname, List<String> street, String telephone) {
         this.city = city;
 
         this.countryCode = countryCode;
@@ -49,8 +49,6 @@ public class CartAddressInput implements Serializable {
         this.firstname = firstname;
 
         this.lastname = lastname;
-
-        this.saveInAddressBook = saveInAddressBook;
 
         this.street = street;
 
@@ -90,15 +88,6 @@ public class CartAddressInput implements Serializable {
 
     public CartAddressInput setLastname(String lastname) {
         this.lastname = lastname;
-        return this;
-    }
-
-    public boolean getSaveInAddressBook() {
-        return saveInAddressBook;
-    }
-
-    public CartAddressInput setSaveInAddressBook(boolean saveInAddressBook) {
-        this.saveInAddressBook = saveInAddressBook;
         return this;
     }
 
@@ -183,6 +172,27 @@ public class CartAddressInput implements Serializable {
         return this;
     }
 
+    public Boolean getSaveInAddressBook() {
+        return saveInAddressBook.getValue();
+    }
+
+    public Input<Boolean> getSaveInAddressBookInput() {
+        return saveInAddressBook;
+    }
+
+    public CartAddressInput setSaveInAddressBook(Boolean saveInAddressBook) {
+        this.saveInAddressBook = Input.optional(saveInAddressBook);
+        return this;
+    }
+
+    public CartAddressInput setSaveInAddressBookInput(Input<Boolean> saveInAddressBook) {
+        if (saveInAddressBook == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.saveInAddressBook = saveInAddressBook;
+        return this;
+    }
+
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
@@ -206,11 +216,6 @@ public class CartAddressInput implements Serializable {
         separator = ",";
         _queryBuilder.append("lastname:");
         AbstractQuery.appendQuotedString(_queryBuilder, lastname.toString());
-
-        _queryBuilder.append(separator);
-        separator = ",";
-        _queryBuilder.append("save_in_address_book:");
-        _queryBuilder.append(saveInAddressBook);
 
         _queryBuilder.append(separator);
         separator = ",";
@@ -259,6 +264,17 @@ public class CartAddressInput implements Serializable {
             _queryBuilder.append("region:");
             if (region.getValue() != null) {
                 AbstractQuery.appendQuotedString(_queryBuilder, region.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.saveInAddressBook.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("save_in_address_book:");
+            if (saveInAddressBook.getValue() != null) {
+                _queryBuilder.append(saveInAddressBook.getValue());
             } else {
                 _queryBuilder.append("null");
             }

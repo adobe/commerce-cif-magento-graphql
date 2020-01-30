@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class SwatchData extends AbstractResponse<SwatchData> {
     public SwatchData() {
     }
@@ -74,7 +71,6 @@ public class SwatchData extends AbstractResponse<SwatchData> {
     /**
      * Type of swatch filter item: 1 - text, 2 - image
      */
-
     public String getType() {
         return (String) get("type");
     }
@@ -87,7 +83,6 @@ public class SwatchData extends AbstractResponse<SwatchData> {
     /**
      * Value for swatch item (text or image link)
      */
-
     public String getValue() {
         return (String) get("value");
     }

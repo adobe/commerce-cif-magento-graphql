@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMethod> {
     public SelectedShippingMethod() {
     }
@@ -34,12 +31,7 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
             String fieldName = getFieldName(key);
             switch (fieldName) {
                 case "amount": {
-                    Money optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = new Money(jsonAsObject(field.getValue(), key));
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, new Money(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
@@ -56,45 +48,25 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
                 }
 
                 case "carrier_code": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
 
                 case "carrier_title": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
 
                 case "method_code": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
 
                 case "method_title": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -124,6 +96,10 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
         return this;
     }
 
+    /**
+     * @deprecated The field should not be used on the storefront
+     */
+    @Deprecated
     public Money getBaseAmount() {
         return (Money) get("base_amount");
     }

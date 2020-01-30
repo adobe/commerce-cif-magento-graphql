@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -23,9 +23,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class CartPrices extends AbstractResponse<CartPrices> {
     public CartPrices() {
     }
@@ -60,6 +57,27 @@ public class CartPrices extends AbstractResponse<CartPrices> {
                     CartDiscount optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new CartDiscount(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "discounts": {
+                    List<Discount> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<Discount> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            Discount optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new Discount(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -136,12 +154,28 @@ public class CartPrices extends AbstractResponse<CartPrices> {
         return this;
     }
 
+    /**
+     * @deprecated Use discounts instead 
+     */
+    @Deprecated
     public CartDiscount getDiscount() {
         return (CartDiscount) get("discount");
     }
 
     public CartPrices setDiscount(CartDiscount arg) {
         optimisticData.put(getKey("discount"), arg);
+        return this;
+    }
+
+    /**
+     * An array of applied discounts
+     */
+    public List<Discount> getDiscounts() {
+        return (List<Discount>) get("discounts");
+    }
+
+    public CartPrices setDiscounts(List<Discount> arg) {
+        optimisticData.put(getKey("discounts"), arg);
         return this;
     }
 
@@ -186,6 +220,8 @@ public class CartPrices extends AbstractResponse<CartPrices> {
             case "applied_taxes": return true;
 
             case "discount": return true;
+
+            case "discounts": return true;
 
             case "grand_total": return true;
 

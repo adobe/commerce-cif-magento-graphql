@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -17,8 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * The PricedAdjustment object defines the amount of money to apply as an adjustment, the type of
- * adjustment to apply, and whether the item is included or excluded from the adjustment.
+ * PriceAdjustment is deprecated. Taxes will be included or excluded in the price. The PricedAdjustment
+ * object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and
+ * whether the item is included or excluded from the adjustment.
  */
 public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
     PriceAdjustmentQuery(StringBuilder _queryBuilder) {
@@ -40,7 +41,10 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
 
     /**
      * Indicates whether the adjustment involves tax, weee, or weee_tax.
+     *
+     * @deprecated PriceAdjustment is deprecated.
      */
+    @Deprecated
     public PriceAdjustmentQuery code() {
         startField("code");
 
@@ -50,7 +54,10 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
     /**
      * Indicates whether the entity described by the code attribute is included or excluded from the
      * adjustment.
+     *
+     * @deprecated PriceAdjustment is deprecated.
      */
+    @Deprecated
     public PriceAdjustmentQuery description() {
         startField("description");
 

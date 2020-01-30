@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -119,7 +119,6 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     /**
      * Option ID.
      */
-
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -132,7 +131,6 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     /**
      * The Stock Keeping Unit of the base product.
      */
-
     public String getProductSku() {
         return (String) get("product_sku");
     }
@@ -145,7 +143,6 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     /**
      * Indicates whether the option is required.
      */
-
     public Boolean getRequired() {
         return (Boolean) get("required");
     }
@@ -158,7 +155,6 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     /**
      * The order in which the option is displayed.
      */
-
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
     }
@@ -171,7 +167,6 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     /**
      * The display name for this option.
      */
-
     public String getTitle() {
         return (String) get("title");
     }
@@ -184,7 +179,6 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     /**
      * An object that defines a date field in a customizable option.
      */
-
     public CustomizableDateValue getValue() {
         return (CustomizableDateValue) get("value");
     }

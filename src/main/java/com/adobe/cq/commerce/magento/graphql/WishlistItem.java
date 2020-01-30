@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class WishlistItem extends AbstractResponse<WishlistItem> {
     public WishlistItem() {
     }
@@ -107,7 +104,6 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     /**
      * The time when the customer added the item to the wish list
      */
-
     public String getAddedAt() {
         return (String) get("added_at");
     }
@@ -120,7 +116,6 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     /**
      * The customer&#39;s comment about this item
      */
-
     public String getDescription() {
         return (String) get("description");
     }
@@ -133,7 +128,6 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     /**
      * The wish list item ID
      */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -155,7 +149,6 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     /**
      * The quantity of this wish list item
      */
-
     public Double getQty() {
         return (Double) get("qty");
     }

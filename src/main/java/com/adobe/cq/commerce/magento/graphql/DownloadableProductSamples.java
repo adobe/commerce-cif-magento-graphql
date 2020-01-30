@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -115,6 +115,10 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
         return "DownloadableProductSamples";
     }
 
+    /**
+     * @deprecated This information should not be exposed on frontend
+     */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -124,6 +128,10 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
         return this;
     }
 
+    /**
+     * @deprecated `sample_url` serves to get the downloadable sample
+     */
+    @Deprecated
     public String getSampleFile() {
         return (String) get("sample_file");
     }
@@ -133,6 +141,10 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
         return this;
     }
 
+    /**
+     * @deprecated `sample_url` serves to get the downloadable sample
+     */
+    @Deprecated
     public DownloadableFileTypeEnum getSampleType() {
         return (DownloadableFileTypeEnum) get("sample_type");
     }
@@ -145,7 +157,6 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     /**
      * URL to the downloadable sample
      */
-
     public String getSampleUrl() {
         return (String) get("sample_url");
     }
@@ -158,7 +169,6 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     /**
      * A number indicating the sort order
      */
-
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
     }
@@ -171,7 +181,6 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     /**
      * The display name of the sample
      */
-
     public String getTitle() {
         return (String) get("title");
     }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -63,19 +63,31 @@ public class ConfigurableProductCartItemInput implements Serializable {
         return this;
     }
 
+    /**
+     * Configurable product SKU.
+     */
     public String getParentSku() {
         return parentSku.getValue();
     }
 
+    /**
+     * Configurable product SKU.
+     */
     public Input<String> getParentSkuInput() {
         return parentSku;
     }
 
+    /**
+     * Configurable product SKU.
+     */
     public ConfigurableProductCartItemInput setParentSku(String parentSku) {
         this.parentSku = Input.optional(parentSku);
         return this;
     }
 
+    /**
+     * Configurable product SKU.
+     */
     public ConfigurableProductCartItemInput setParentSkuInput(Input<String> parentSku) {
         if (parentSku == null) {
             throw new IllegalArgumentException("Input can not be null");

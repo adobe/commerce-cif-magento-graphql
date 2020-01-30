@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -23,9 +23,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class Query extends AbstractResponse<Query> {
     public Query() {
     }
@@ -50,6 +47,27 @@ public class Query extends AbstractResponse<Query> {
                     CategoryTree optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new CategoryTree(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "categoryList": {
+                    List<CategoryTree> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<CategoryTree> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            CategoryTree optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new CategoryTree(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -161,6 +179,12 @@ public class Query extends AbstractResponse<Query> {
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "customerCart": {
+                    responseData.put(key, new Cart(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
@@ -294,7 +318,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * Returns information about shopping cart
      */
-
     public Cart getCart() {
         return (Cart) get("cart");
     }
@@ -307,8 +330,10 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The category query searches for categories that match the criteria specified in the search and
      * filter attributes.
+     *
+     * @deprecated Use &#39;categoryList&#39; query instead of &#39;category&#39; query
      */
-
+    @Deprecated
     public CategoryTree getCategory() {
         return (CategoryTree) get("category");
     }
@@ -319,9 +344,20 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * Returns an array of categories based on the specified filters.
+     */
+    public List<CategoryTree> getCategoryList() {
+        return (List<CategoryTree>) get("categoryList");
+    }
+
+    public Query setCategoryList(List<CategoryTree> arg) {
+        optimisticData.put(getKey("categoryList"), arg);
+        return this;
+    }
+
+    /**
      * The Checkout Agreements information
      */
-
     public List<CheckoutAgreement> getCheckoutAgreements() {
         return (List<CheckoutAgreement>) get("checkoutAgreements");
     }
@@ -334,7 +370,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The CMS block query returns information about CMS blocks
      */
-
     public CmsBlocks getCmsBlocks() {
         return (CmsBlocks) get("cmsBlocks");
     }
@@ -347,7 +382,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The CMS page query returns information about a CMS page
      */
-
     public CmsPage getCmsPage() {
         return (CmsPage) get("cmsPage");
     }
@@ -360,7 +394,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The countries query provides information for all countries.
      */
-
     public List<Country> getCountries() {
         return (List<Country>) get("countries");
     }
@@ -373,7 +406,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The countries query provides information for a single country.
      */
-
     public Country getCountry() {
         return (Country) get("country");
     }
@@ -386,7 +418,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The currency query returns information about store currency.
      */
-
     public Currency getCurrency() {
         return (Currency) get("currency");
     }
@@ -400,7 +431,6 @@ public class Query extends AbstractResponse<Query> {
      * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
      * type
      */
-
     public CustomAttributeMetadata getCustomAttributeMetadata() {
         return (CustomAttributeMetadata) get("customAttributeMetadata");
     }
@@ -413,7 +443,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The customer query returns information about a customer account
      */
-
     public Customer getCustomer() {
         return (Customer) get("customer");
     }
@@ -424,9 +453,20 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * Returns information about the customer shopping cart
+     */
+    public Cart getCustomerCart() {
+        return (Cart) get("customerCart");
+    }
+
+    public Query setCustomerCart(Cart arg) {
+        optimisticData.put(getKey("customerCart"), arg);
+        return this;
+    }
+
+    /**
      * The query returns the contents of a customer&#39;s downloadable products
      */
-
     public CustomerDownloadableProducts getCustomerDownloadableProducts() {
         return (CustomerDownloadableProducts) get("customerDownloadableProducts");
     }
@@ -439,7 +479,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * List of customer orders
      */
-
     public CustomerOrders getCustomerOrders() {
         return (CustomerOrders) get("customerOrders");
     }
@@ -452,7 +491,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * Return a list of customer payment tokens
      */
-
     public CustomerPaymentTokens getCustomerPaymentTokens() {
         return (CustomerPaymentTokens) get("customerPaymentTokens");
     }
@@ -465,7 +503,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * Retrieve secure PayPal url for Payments Pro Hosted Solution transaction.
      */
-
     public HostedProUrl getGetHostedProUrl() {
         return (HostedProUrl) get("getHostedProUrl");
     }
@@ -479,7 +516,6 @@ public class Query extends AbstractResponse<Query> {
      * Retrieve payment credentials for transaction. Use this query for Payflow Link and Payments Advanced
      * payment methods.
      */
-
     public PayflowLinkToken getGetPayflowLinkToken() {
         return (PayflowLinkToken) get("getPayflowLinkToken");
     }
@@ -502,7 +538,6 @@ public class Query extends AbstractResponse<Query> {
      * The products query searches for products that match the criteria specified in the search and filter
      * attributes.
      */
-
     public Products getProducts() {
         return (Products) get("products");
     }
@@ -515,7 +550,6 @@ public class Query extends AbstractResponse<Query> {
     /**
      * The store config query
      */
-
     public StoreConfig getStoreConfig() {
         return (StoreConfig) get("storeConfig");
     }
@@ -526,9 +560,9 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The urlResolver query returns the relative URL for a specified product, category or CMS page
+     * The urlResolver query returns the relative URL for a specified product, category or CMS page, using
+     * as input a url_key appended by the url_suffix, if one exists
      */
-
     public EntityUrl getUrlResolver() {
         return (EntityUrl) get("urlResolver");
     }
@@ -540,8 +574,10 @@ public class Query extends AbstractResponse<Query> {
 
     /**
      * The wishlist query returns the contents of a customer&#39;s wish list
+     *
+     * @deprecated Moved under `Customer` `wishlist`
      */
-
+    @Deprecated
     public WishlistOutput getWishlist() {
         return (WishlistOutput) get("wishlist");
     }
@@ -556,6 +592,8 @@ public class Query extends AbstractResponse<Query> {
             case "cart": return true;
 
             case "category": return true;
+
+            case "categoryList": return true;
 
             case "checkoutAgreements": return true;
 
@@ -572,6 +610,8 @@ public class Query extends AbstractResponse<Query> {
             case "customAttributeMetadata": return true;
 
             case "customer": return true;
+
+            case "customerCart": return true;
 
             case "customerDownloadableProducts": return true;
 

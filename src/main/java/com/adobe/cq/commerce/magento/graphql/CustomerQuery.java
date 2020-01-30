@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -47,6 +47,15 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
+     * The customer&#39;s date of birth
+     */
+    public CustomerQuery dateOfBirth() {
+        startField("date_of_birth");
+
+        return this;
+    }
+
+    /**
      * The ID assigned to the billing address
      */
     public CustomerQuery defaultBilling() {
@@ -66,7 +75,10 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
 
     /**
      * The customer&#39;s date of birth
+     *
+     * @deprecated Use `date_of_birth` instead
      */
+    @Deprecated
     public CustomerQuery dob() {
         startField("dob");
 
@@ -92,7 +104,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s gender(Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2)
      */
     public CustomerQuery gender() {
         startField("gender");
@@ -101,9 +113,9 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
-     * and 3 (Retailer)
+     * @deprecated Customer group should not be exposed in the storefront scenarios
      */
+    @Deprecated
     public CustomerQuery groupId() {
         startField("group_id");
 
@@ -112,7 +124,10 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
 
     /**
      * The ID assigned to the customer
+     *
+     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for authentication. There is no need to know customer ID on the client side.
      */
+    @Deprecated
     public CustomerQuery id() {
         startField("id");
 
@@ -165,10 +180,23 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s Tax/VAT number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
      */
     public CustomerQuery taxvat() {
         startField("taxvat");
+
+        return this;
+    }
+
+    /**
+     * The wishlist query returns the contents of a customer&#39;s wish lists
+     */
+    public CustomerQuery wishlist(WishlistQueryDefinition queryDef) {
+        startField("wishlist");
+
+        _queryBuilder.append('{');
+        queryDef.define(new WishlistQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

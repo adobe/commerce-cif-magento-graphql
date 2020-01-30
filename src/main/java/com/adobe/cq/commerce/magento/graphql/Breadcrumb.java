@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -77,6 +77,17 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
                     break;
                 }
 
+                case "category_url_path": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -96,7 +107,6 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     /**
      * Category ID.
      */
-
     public Integer getCategoryId() {
         return (Integer) get("category_id");
     }
@@ -109,7 +119,6 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     /**
      * Category level.
      */
-
     public Integer getCategoryLevel() {
         return (Integer) get("category_level");
     }
@@ -122,7 +131,6 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     /**
      * Category name.
      */
-
     public String getCategoryName() {
         return (String) get("category_name");
     }
@@ -135,13 +143,24 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     /**
      * Category URL key.
      */
-
     public String getCategoryUrlKey() {
         return (String) get("category_url_key");
     }
 
     public Breadcrumb setCategoryUrlKey(String arg) {
         optimisticData.put(getKey("category_url_key"), arg);
+        return this;
+    }
+
+    /**
+     * Category URL path.
+     */
+    public String getCategoryUrlPath() {
+        return (String) get("category_url_path");
+    }
+
+    public Breadcrumb setCategoryUrlPath(String arg) {
+        optimisticData.put(getKey("category_url_path"), arg);
         return this;
     }
 
@@ -154,6 +173,8 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
             case "category_name": return false;
 
             case "category_url_key": return false;
+
+            case "category_url_path": return false;
 
             default: return false;
         }

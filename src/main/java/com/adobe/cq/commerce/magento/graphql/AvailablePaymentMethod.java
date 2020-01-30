@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class AvailablePaymentMethod extends AbstractResponse<AvailablePaymentMethod> {
     public AvailablePaymentMethod() {
     }
@@ -64,7 +61,6 @@ public class AvailablePaymentMethod extends AbstractResponse<AvailablePaymentMet
     /**
      * The payment method code
      */
-
     public String getCode() {
         return (String) get("code");
     }
@@ -77,7 +73,6 @@ public class AvailablePaymentMethod extends AbstractResponse<AvailablePaymentMet
     /**
      * The payment method title.
      */
-
     public String getTitle() {
         return (String) get("title");
     }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class Order extends AbstractResponse<Order> {
     public Order() {
     }
@@ -44,6 +41,12 @@ public class Order extends AbstractResponse<Order> {
                     break;
                 }
 
+                case "order_number": {
+                    responseData.put(key, jsonAsString(field.getValue(), key));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -60,6 +63,10 @@ public class Order extends AbstractResponse<Order> {
         return "Order";
     }
 
+    /**
+     * @deprecated The order_id field is deprecated, use order_number instead.
+     */
+    @Deprecated
     public String getOrderId() {
         return (String) get("order_id");
     }
@@ -69,9 +76,20 @@ public class Order extends AbstractResponse<Order> {
         return this;
     }
 
+    public String getOrderNumber() {
+        return (String) get("order_number");
+    }
+
+    public Order setOrderNumber(String arg) {
+        optimisticData.put(getKey("order_number"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "order_id": return false;
+
+            case "order_number": return false;
 
             default: return false;
         }

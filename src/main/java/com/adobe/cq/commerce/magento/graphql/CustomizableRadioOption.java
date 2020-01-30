@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -120,7 +120,6 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     /**
      * Option ID.
      */
-
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -133,7 +132,6 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     /**
      * Indicates whether the option is required.
      */
-
     public Boolean getRequired() {
         return (Boolean) get("required");
     }
@@ -146,7 +144,6 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     /**
      * The order in which the option is displayed.
      */
-
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
     }
@@ -159,7 +156,6 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     /**
      * The display name for this option.
      */
-
     public String getTitle() {
         return (String) get("title");
     }
@@ -172,7 +168,6 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     /**
      * An array that defines a set of radio buttons.
      */
-
     public List<CustomizableRadioValue> getValue() {
         return (List<CustomizableRadioValue>) get("value");
     }

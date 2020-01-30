@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -34,7 +34,8 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * Canonical URL.
+     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
+     * Tag For Products&#39; is enabled
      */
     public ConfigurableProductQuery canonicalUrl() {
         startField("canonical_url");
@@ -173,7 +174,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * An array of MediaGalleryEntry objects.
+     *
+     * @deprecated Use product&#39;s `media_gallery` instead
      */
+    @Deprecated
     public ConfigurableProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
 
@@ -272,12 +276,41 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * A ProductPrices object, indicating the price of an item.
+     *
+     * @deprecated Use price_range for product price information.
      */
+    @Deprecated
     public ConfigurableProductQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
 
         _queryBuilder.append('{');
         queryDef.define(new ProductPricesQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * A PriceRange object, indicating the range of prices for the product
+     */
+    public ConfigurableProductQuery priceRange(PriceRangeQueryDefinition queryDef) {
+        startField("price_range");
+
+        _queryBuilder.append('{');
+        queryDef.define(new PriceRangeQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array of TierPrice objects.
+     */
+    public ConfigurableProductQuery priceTiers(TierPriceQueryDefinition queryDef) {
+        startField("price_tiers");
+
+        _queryBuilder.append('{');
+        queryDef.define(new TierPriceQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -404,7 +437,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
+     *
+     * @deprecated Use price_tiers for product tier price information.
      */
+    @Deprecated
     public ConfigurableProductQuery tierPrice() {
         startField("tier_price");
 
@@ -413,7 +449,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * An array of ProductTierPrices objects.
+     *
+     * @deprecated Use price_tiers for product tier price information.
      */
+    @Deprecated
     public ConfigurableProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
 
@@ -426,7 +465,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
+     *
+     * @deprecated Use __typename instead.
      */
+    @Deprecated
     public ConfigurableProductQuery typeId() {
         startField("type_id");
 
@@ -464,6 +506,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
         return this;
     }
 
+    /**
+     * @deprecated Use product&#39;s `canonical_url` or url rewrites instead
+     */
+    @Deprecated
     public ConfigurableProductQuery urlPath() {
         startField("url_path");
 
@@ -484,6 +530,15 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
+     * The part of the product URL that is appended after the url key
+     */
+    public ConfigurableProductQuery urlSuffix() {
+        startField("url_suffix");
+
+        return this;
+    }
+
+    /**
      * An array of variants of products
      */
     public ConfigurableProductQuery variants(ConfigurableVariantQueryDefinition queryDef) {
@@ -498,7 +553,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * An array of websites in which the product is available.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public ConfigurableProductQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");
 

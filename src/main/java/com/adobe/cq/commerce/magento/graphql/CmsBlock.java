@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -85,7 +85,6 @@ public class CmsBlock extends AbstractResponse<CmsBlock> {
     /**
      * CMS block content
      */
-
     public String getContent() {
         return (String) get("content");
     }
@@ -98,7 +97,6 @@ public class CmsBlock extends AbstractResponse<CmsBlock> {
     /**
      * CMS block identifier
      */
-
     public String getIdentifier() {
         return (String) get("identifier");
     }
@@ -111,7 +109,6 @@ public class CmsBlock extends AbstractResponse<CmsBlock> {
     /**
      * CMS block title
      */
-
     public String getTitle() {
         return (String) get("title");
     }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -33,28 +33,46 @@ public class AuthorizenetInput implements Serializable {
         this.opaqueDataValue = opaqueDataValue;
     }
 
+    /**
+     * The last four digits of the credit or debit card
+     */
     public int getCcLast4() {
         return ccLast4;
     }
 
+    /**
+     * The last four digits of the credit or debit card
+     */
     public AuthorizenetInput setCcLast4(int ccLast4) {
         this.ccLast4 = ccLast4;
         return this;
     }
 
+    /**
+     * Authorize.Net&#39;s description of the transaction request
+     */
     public String getOpaqueDataDescriptor() {
         return opaqueDataDescriptor;
     }
 
+    /**
+     * Authorize.Net&#39;s description of the transaction request
+     */
     public AuthorizenetInput setOpaqueDataDescriptor(String opaqueDataDescriptor) {
         this.opaqueDataDescriptor = opaqueDataDescriptor;
         return this;
     }
 
+    /**
+     * The nonce returned by Authorize.Net
+     */
     public String getOpaqueDataValue() {
         return opaqueDataValue;
     }
 
+    /**
+     * The nonce returned by Authorize.Net
+     */
     public AuthorizenetInput setOpaqueDataValue(String opaqueDataValue) {
         this.opaqueDataValue = opaqueDataValue;
         return this;

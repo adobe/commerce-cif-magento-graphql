@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Required input for Payflow Express Checkout payments
+ */
 public class PayflowExpressInput implements Serializable {
     private String payerId;
 
@@ -29,19 +32,31 @@ public class PayflowExpressInput implements Serializable {
         this.token = token;
     }
 
+    /**
+     * The unique ID of the PayPal user
+     */
     public String getPayerId() {
         return payerId;
     }
 
+    /**
+     * The unique ID of the PayPal user
+     */
     public PayflowExpressInput setPayerId(String payerId) {
         this.payerId = payerId;
         return this;
     }
 
+    /**
+     * The token returned by the createPaypalExpressToken mutation
+     */
     public String getToken() {
         return token;
     }
 
+    /**
+     * The token returned by the createPaypalExpressToken mutation
+     */
     public PayflowExpressInput setToken(String token) {
         this.token = token;
         return this;

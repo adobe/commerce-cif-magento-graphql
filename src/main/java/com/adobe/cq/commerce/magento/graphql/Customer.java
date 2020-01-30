@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -57,6 +57,17 @@ public class Customer extends AbstractResponse<Customer> {
                 }
 
                 case "created_at": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "date_of_birth": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -221,6 +232,12 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "wishlist": {
+                    responseData.put(key, new Wishlist(jsonAsObject(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -240,7 +257,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * An array containing the customer&#39;s shipping and billing addresses
      */
-
     public List<CustomerAddress> getAddresses() {
         return (List<CustomerAddress>) get("addresses");
     }
@@ -253,7 +269,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * Timestamp indicating when the account was created
      */
-
     public String getCreatedAt() {
         return (String) get("created_at");
     }
@@ -264,9 +279,20 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
+     * The customer&#39;s date of birth
+     */
+    public String getDateOfBirth() {
+        return (String) get("date_of_birth");
+    }
+
+    public Customer setDateOfBirth(String arg) {
+        optimisticData.put(getKey("date_of_birth"), arg);
+        return this;
+    }
+
+    /**
      * The ID assigned to the billing address
      */
-
     public String getDefaultBilling() {
         return (String) get("default_billing");
     }
@@ -279,7 +305,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * The ID assigned to the shipping address
      */
-
     public String getDefaultShipping() {
         return (String) get("default_shipping");
     }
@@ -291,8 +316,10 @@ public class Customer extends AbstractResponse<Customer> {
 
     /**
      * The customer&#39;s date of birth
+     *
+     * @deprecated Use `date_of_birth` instead
      */
-
+    @Deprecated
     public String getDob() {
         return (String) get("dob");
     }
@@ -305,7 +332,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * The customer&#39;s email address. Required
      */
-
     public String getEmail() {
         return (String) get("email");
     }
@@ -318,7 +344,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * The customer&#39;s first name
      */
-
     public String getFirstname() {
         return (String) get("firstname");
     }
@@ -329,9 +354,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s gender(Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2)
      */
-
     public Integer getGender() {
         return (Integer) get("gender");
     }
@@ -342,10 +366,9 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale),
-     * and 3 (Retailer)
+     * @deprecated Customer group should not be exposed in the storefront scenarios
      */
-
+    @Deprecated
     public Integer getGroupId() {
         return (Integer) get("group_id");
     }
@@ -357,8 +380,10 @@ public class Customer extends AbstractResponse<Customer> {
 
     /**
      * The ID assigned to the customer
+     *
+     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for authentication. There is no need to know customer ID on the client side.
      */
-
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -371,7 +396,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * Indicates whether the customer is subscribed to the company&#39;s newsletter
      */
-
     public Boolean getIsSubscribed() {
         return (Boolean) get("is_subscribed");
     }
@@ -384,7 +408,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * The customer&#39;s family name
      */
-
     public String getLastname() {
         return (String) get("lastname");
     }
@@ -397,7 +420,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * The customer&#39;s middle name
      */
-
     public String getMiddlename() {
         return (String) get("middlename");
     }
@@ -410,7 +432,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * An honorific, such as Dr., Mr., or Mrs.
      */
-
     public String getPrefix() {
         return (String) get("prefix");
     }
@@ -423,7 +444,6 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * A value such as Sr., Jr., or III
      */
-
     public String getSuffix() {
         return (String) get("suffix");
     }
@@ -434,9 +454,8 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s Tax/VAT number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
      */
-
     public String getTaxvat() {
         return (String) get("taxvat");
     }
@@ -446,11 +465,25 @@ public class Customer extends AbstractResponse<Customer> {
         return this;
     }
 
+    /**
+     * The wishlist query returns the contents of a customer&#39;s wish lists
+     */
+    public Wishlist getWishlist() {
+        return (Wishlist) get("wishlist");
+    }
+
+    public Customer setWishlist(Wishlist arg) {
+        optimisticData.put(getKey("wishlist"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "addresses": return true;
 
             case "created_at": return false;
+
+            case "date_of_birth": return false;
 
             case "default_billing": return false;
 
@@ -479,6 +512,8 @@ public class Customer extends AbstractResponse<Customer> {
             case "suffix": return false;
 
             case "taxvat": return false;
+
+            case "wishlist": return true;
 
             default: return false;
         }

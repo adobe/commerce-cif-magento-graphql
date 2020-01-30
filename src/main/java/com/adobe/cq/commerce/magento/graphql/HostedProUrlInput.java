@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * The required input to request the secure URL for Payments Pro Hosted Solution payment.
+ */
 public class HostedProUrlInput implements Serializable {
     private String cartId;
 
@@ -25,10 +28,16 @@ public class HostedProUrlInput implements Serializable {
         this.cartId = cartId;
     }
 
+    /**
+     * The unique ID that identifies the customer&#39;s cart
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID that identifies the customer&#39;s cart
+     */
     public HostedProUrlInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;

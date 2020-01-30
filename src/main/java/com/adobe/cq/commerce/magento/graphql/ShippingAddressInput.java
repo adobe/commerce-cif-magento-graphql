@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,12 +16,15 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.io.Serializable;
 
+import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
 public class ShippingAddressInput implements Serializable {
     private Input<CartAddressInput> address = Input.undefined();
 
     private Input<Integer> customerAddressId = Input.undefined();
+
+    private Input<String> customerNotes = Input.undefined();
 
     public CartAddressInput getAddress() {
         return address.getValue();
@@ -65,6 +68,27 @@ public class ShippingAddressInput implements Serializable {
         return this;
     }
 
+    public String getCustomerNotes() {
+        return customerNotes.getValue();
+    }
+
+    public Input<String> getCustomerNotesInput() {
+        return customerNotes;
+    }
+
+    public ShippingAddressInput setCustomerNotes(String customerNotes) {
+        this.customerNotes = Input.optional(customerNotes);
+        return this;
+    }
+
+    public ShippingAddressInput setCustomerNotesInput(Input<String> customerNotes) {
+        if (customerNotes == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.customerNotes = customerNotes;
+        return this;
+    }
+
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
@@ -86,6 +110,17 @@ public class ShippingAddressInput implements Serializable {
             _queryBuilder.append("customer_address_id:");
             if (customerAddressId.getValue() != null) {
                 _queryBuilder.append(customerAddressId.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.customerNotes.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("customer_notes:");
+            if (customerNotes.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, customerNotes.getValue().toString());
             } else {
                 _queryBuilder.append("null");
             }

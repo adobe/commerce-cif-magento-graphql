@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -23,9 +23,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class BillingCartAddress extends AbstractResponse<BillingCartAddress> implements CartAddressInterface {
     public BillingCartAddress() {
     }
@@ -36,12 +33,7 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
             String fieldName = getFieldName(key);
             switch (fieldName) {
                 case "city": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -58,12 +50,7 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
                 }
 
                 case "country": {
-                    CartAddressCountry optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = new CartAddressCountry(jsonAsObject(field.getValue(), key));
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, new CartAddressCountry(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
@@ -80,23 +67,13 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
                 }
 
                 case "firstname": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
 
                 case "lastname": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -124,33 +101,23 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
                 }
 
                 case "street": {
-                    List<String> optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        List<String> list1 = new ArrayList<>();
-                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
-                            String optional2 = null;
-                            if (!element1.isJsonNull()) {
-                                optional2 = jsonAsString(element1, key);
-                            }
-
-                            list1.add(optional2);
+                    List<String> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        String optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = jsonAsString(element1, key);
                         }
 
-                        optional1 = list1;
+                        list1.add(optional2);
                     }
 
-                    responseData.put(key, optional1);
+                    responseData.put(key, list1);
 
                     break;
                 }
 
                 case "telephone": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -198,6 +165,10 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * @deprecated The field is used only in shipping address
+     */
+    @Deprecated
     public String getCustomerNotes() {
         return (String) get("customer_notes");
     }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,6 +22,8 @@ public class BillingAddressInput implements Serializable {
     private Input<CartAddressInput> address = Input.undefined();
 
     private Input<Integer> customerAddressId = Input.undefined();
+
+    private Input<Boolean> sameAsShipping = Input.undefined();
 
     private Input<Boolean> useForShipping = Input.undefined();
 
@@ -67,19 +69,64 @@ public class BillingAddressInput implements Serializable {
         return this;
     }
 
+    /**
+     * Set billing address same as shipping
+     */
+    public Boolean getSameAsShipping() {
+        return sameAsShipping.getValue();
+    }
+
+    /**
+     * Set billing address same as shipping
+     */
+    public Input<Boolean> getSameAsShippingInput() {
+        return sameAsShipping;
+    }
+
+    /**
+     * Set billing address same as shipping
+     */
+    public BillingAddressInput setSameAsShipping(Boolean sameAsShipping) {
+        this.sameAsShipping = Input.optional(sameAsShipping);
+        return this;
+    }
+
+    /**
+     * Set billing address same as shipping
+     */
+    public BillingAddressInput setSameAsShippingInput(Input<Boolean> sameAsShipping) {
+        if (sameAsShipping == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.sameAsShipping = sameAsShipping;
+        return this;
+    }
+
+    /**
+     * Deprecated: use `same_as_shipping` field instead
+     */
     public Boolean getUseForShipping() {
         return useForShipping.getValue();
     }
 
+    /**
+     * Deprecated: use `same_as_shipping` field instead
+     */
     public Input<Boolean> getUseForShippingInput() {
         return useForShipping;
     }
 
+    /**
+     * Deprecated: use `same_as_shipping` field instead
+     */
     public BillingAddressInput setUseForShipping(Boolean useForShipping) {
         this.useForShipping = Input.optional(useForShipping);
         return this;
     }
 
+    /**
+     * Deprecated: use `same_as_shipping` field instead
+     */
     public BillingAddressInput setUseForShippingInput(Input<Boolean> useForShipping) {
         if (useForShipping == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -109,6 +156,17 @@ public class BillingAddressInput implements Serializable {
             _queryBuilder.append("customer_address_id:");
             if (customerAddressId.getValue() != null) {
                 _queryBuilder.append(customerAddressId.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.sameAsShipping.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("same_as_shipping:");
+            if (sameAsShipping.getValue() != null) {
+                _queryBuilder.append(sameAsShipping.getValue());
             } else {
                 _queryBuilder.append("null");
             }

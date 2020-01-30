@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -107,7 +107,6 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     /**
      * One of related, associated, upsell, or crosssell.
      */
-
     public String getLinkType() {
         return (String) get("link_type");
     }
@@ -120,7 +119,6 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     /**
      * The SKU of the linked product.
      */
-
     public String getLinkedProductSku() {
         return (String) get("linked_product_sku");
     }
@@ -133,7 +131,6 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     /**
      * The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable).
      */
-
     public String getLinkedProductType() {
         return (String) get("linked_product_type");
     }
@@ -146,7 +143,6 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     /**
      * The position within the list of product links.
      */
-
     public Integer getPosition() {
         return (Integer) get("position");
     }
@@ -159,7 +155,6 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
     /**
      * The identifier of the linked product.
      */
-
     public String getSku() {
         return (String) get("sku");
     }

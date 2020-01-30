@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -44,28 +44,46 @@ public class PaymentMethodInput implements Serializable {
         this.code = code;
     }
 
+    /**
+     * Payment method code
+     */
     public String getCode() {
         return code;
     }
 
+    /**
+     * Payment method code
+     */
     public PaymentMethodInput setCode(String code) {
         this.code = code;
         return this;
     }
 
+    /**
+     * Defines the required attributes for Authorize.Net payments
+     */
     public AuthorizenetInput getAuthorizenetAcceptjs() {
         return authorizenetAcceptjs.getValue();
     }
 
+    /**
+     * Defines the required attributes for Authorize.Net payments
+     */
     public Input<AuthorizenetInput> getAuthorizenetAcceptjsInput() {
         return authorizenetAcceptjs;
     }
 
+    /**
+     * Defines the required attributes for Authorize.Net payments
+     */
     public PaymentMethodInput setAuthorizenetAcceptjs(AuthorizenetInput authorizenetAcceptjs) {
         this.authorizenetAcceptjs = Input.optional(authorizenetAcceptjs);
         return this;
     }
 
+    /**
+     * Defines the required attributes for Authorize.Net payments
+     */
     public PaymentMethodInput setAuthorizenetAcceptjsInput(Input<AuthorizenetInput> authorizenetAcceptjs) {
         if (authorizenetAcceptjs == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -116,19 +134,31 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
+    /**
+     * Required input for PayPal Hosted pro payments
+     */
     public HostedProInput getHostedPro() {
         return hostedPro.getValue();
     }
 
+    /**
+     * Required input for PayPal Hosted pro payments
+     */
     public Input<HostedProInput> getHostedProInput() {
         return hostedPro;
     }
 
+    /**
+     * Required input for PayPal Hosted pro payments
+     */
     public PaymentMethodInput setHostedPro(HostedProInput hostedPro) {
         this.hostedPro = Input.optional(hostedPro);
         return this;
     }
 
+    /**
+     * Required input for PayPal Hosted pro payments
+     */
     public PaymentMethodInput setHostedProInput(Input<HostedProInput> hostedPro) {
         if (hostedPro == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -137,19 +167,31 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
+    /**
+     * Required input for Payflow Express Checkout payments
+     */
     public PayflowExpressInput getPayflowExpress() {
         return payflowExpress.getValue();
     }
 
+    /**
+     * Required input for Payflow Express Checkout payments
+     */
     public Input<PayflowExpressInput> getPayflowExpressInput() {
         return payflowExpress;
     }
 
+    /**
+     * Required input for Payflow Express Checkout payments
+     */
     public PaymentMethodInput setPayflowExpress(PayflowExpressInput payflowExpress) {
         this.payflowExpress = Input.optional(payflowExpress);
         return this;
     }
 
+    /**
+     * Required input for Payflow Express Checkout payments
+     */
     public PaymentMethodInput setPayflowExpressInput(Input<PayflowExpressInput> payflowExpress) {
         if (payflowExpress == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -158,19 +200,31 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
+    /**
+     * Required input for PayPal Payflow Link and Payments Advanced payments
+     */
     public PayflowLinkInput getPayflowLink() {
         return payflowLink.getValue();
     }
 
+    /**
+     * Required input for PayPal Payflow Link and Payments Advanced payments
+     */
     public Input<PayflowLinkInput> getPayflowLinkInput() {
         return payflowLink;
     }
 
+    /**
+     * Required input for PayPal Payflow Link and Payments Advanced payments
+     */
     public PaymentMethodInput setPayflowLink(PayflowLinkInput payflowLink) {
         this.payflowLink = Input.optional(payflowLink);
         return this;
     }
 
+    /**
+     * Required input for PayPal Payflow Link and Payments Advanced payments
+     */
     public PaymentMethodInput setPayflowLinkInput(Input<PayflowLinkInput> payflowLink) {
         if (payflowLink == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -179,19 +233,31 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
+    /**
+     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     */
     public PayflowProInput getPayflowpro() {
         return payflowpro.getValue();
     }
 
+    /**
+     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     */
     public Input<PayflowProInput> getPayflowproInput() {
         return payflowpro;
     }
 
+    /**
+     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     */
     public PaymentMethodInput setPayflowpro(PayflowProInput payflowpro) {
         this.payflowpro = Input.optional(payflowpro);
         return this;
     }
 
+    /**
+     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     */
     public PaymentMethodInput setPayflowproInput(Input<PayflowProInput> payflowpro) {
         if (payflowpro == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -200,19 +266,31 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
+    /**
+     * Required input for Express Checkout and Payments Standard payments
+     */
     public PaypalExpressInput getPaypalExpress() {
         return paypalExpress.getValue();
     }
 
+    /**
+     * Required input for Express Checkout and Payments Standard payments
+     */
     public Input<PaypalExpressInput> getPaypalExpressInput() {
         return paypalExpress;
     }
 
+    /**
+     * Required input for Express Checkout and Payments Standard payments
+     */
     public PaymentMethodInput setPaypalExpress(PaypalExpressInput paypalExpress) {
         this.paypalExpress = Input.optional(paypalExpress);
         return this;
     }
 
+    /**
+     * Required input for Express Checkout and Payments Standard payments
+     */
     public PaymentMethodInput setPaypalExpressInput(Input<PaypalExpressInput> paypalExpress) {
         if (paypalExpress == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -221,19 +299,31 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
+    /**
+     * Purchase order number
+     */
     public String getPurchaseOrderNumber() {
         return purchaseOrderNumber.getValue();
     }
 
+    /**
+     * Purchase order number
+     */
     public Input<String> getPurchaseOrderNumberInput() {
         return purchaseOrderNumber;
     }
 
+    /**
+     * Purchase order number
+     */
     public PaymentMethodInput setPurchaseOrderNumber(String purchaseOrderNumber) {
         this.purchaseOrderNumber = Input.optional(purchaseOrderNumber);
         return this;
     }
 
+    /**
+     * Purchase order number
+     */
     public PaymentMethodInput setPurchaseOrderNumberInput(Input<String> purchaseOrderNumber) {
         if (purchaseOrderNumber == null) {
             throw new IllegalArgumentException("Input can not be null");

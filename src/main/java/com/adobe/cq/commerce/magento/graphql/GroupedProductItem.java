@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -85,7 +85,6 @@ public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
     /**
      * The relative position of this item compared to the other group items
      */
-
     public Integer getPosition() {
         return (Integer) get("position");
     }
@@ -98,7 +97,6 @@ public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
     /**
      * The ProductInterface object, which contains details about this product option
      */
-
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -111,7 +109,6 @@ public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
     /**
      * The quantity of this grouped product item
      */
-
     public Double getQty() {
         return (Double) get("qty");
     }

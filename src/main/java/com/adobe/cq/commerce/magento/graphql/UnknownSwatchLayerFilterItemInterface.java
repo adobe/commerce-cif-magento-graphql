@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class UnknownSwatchLayerFilterItemInterface extends AbstractResponse<UnknownSwatchLayerFilterItemInterface> implements SwatchLayerFilterItemInterface {
     public UnknownSwatchLayerFilterItemInterface() {
     }
@@ -76,7 +73,6 @@ public class UnknownSwatchLayerFilterItemInterface extends AbstractResponse<Unkn
     /**
      * Data required to render swatch filter item
      */
-
     public SwatchData getSwatchData() {
         return (SwatchData) get("swatch_data");
     }

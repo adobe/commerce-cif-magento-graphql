@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class AvailableShippingMethod extends AbstractResponse<AvailableShippingMethod> {
     public AvailableShippingMethod() {
     }
@@ -148,9 +145,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
     }
 
     /**
-     * Could be null if method is not available
+     * @deprecated The field should not be used on the storefront
      */
-
+    @Deprecated
     public Money getBaseAmount() {
         return (Money) get("base_amount");
     }
@@ -190,7 +187,6 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
     /**
      * Could be null if method is not available
      */
-
     public String getMethodCode() {
         return (String) get("method_code");
     }
@@ -203,7 +199,6 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
     /**
      * Could be null if method is not available
      */
-
     public String getMethodTitle() {
         return (String) get("method_title");
     }

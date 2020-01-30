@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -17,12 +17,45 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 
-/**
- * 
- */
 public class MutationQuery extends AbstractQuery<MutationQuery> {
     MutationQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
+    }
+
+    public class AddBundleProductsToCartArguments extends Arguments {
+        AddBundleProductsToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public AddBundleProductsToCartArguments input(AddBundleProductsToCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface AddBundleProductsToCartArgumentsDefinition {
+        void define(AddBundleProductsToCartArguments args);
+    }
+
+    public MutationQuery addBundleProductsToCart(AddBundleProductsToCartOutputQueryDefinition queryDef) {
+        return addBundleProductsToCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery addBundleProductsToCart(AddBundleProductsToCartArgumentsDefinition argsDef, AddBundleProductsToCartOutputQueryDefinition queryDef) {
+        startField("addBundleProductsToCart");
+
+        AddBundleProductsToCartArguments args = new AddBundleProductsToCartArguments(_queryBuilder);
+        argsDef.define(args);
+        AddBundleProductsToCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddBundleProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
     }
 
     public class AddConfigurableProductsToCartArguments extends Arguments {
@@ -30,9 +63,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public AddConfigurableProductsToCartArguments input(AddConfigurableProductsToCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -64,14 +94,47 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    public class AddDownloadableProductsToCartArguments extends Arguments {
+        AddDownloadableProductsToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public AddDownloadableProductsToCartArguments input(AddDownloadableProductsToCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface AddDownloadableProductsToCartArgumentsDefinition {
+        void define(AddDownloadableProductsToCartArguments args);
+    }
+
+    public MutationQuery addDownloadableProductsToCart(AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
+        return addDownloadableProductsToCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery addDownloadableProductsToCart(AddDownloadableProductsToCartArgumentsDefinition argsDef, AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
+        startField("addDownloadableProductsToCart");
+
+        AddDownloadableProductsToCartArguments args = new AddDownloadableProductsToCartArguments(_queryBuilder);
+        argsDef.define(args);
+        AddDownloadableProductsToCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddDownloadableProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class AddSimpleProductsToCartArguments extends Arguments {
         AddSimpleProductsToCartArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public AddSimpleProductsToCartArguments input(AddSimpleProductsToCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -108,9 +171,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public AddVirtualProductsToCartArguments input(AddVirtualProductsToCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -147,9 +207,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public ApplyCouponToCartArguments input(ApplyCouponToCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -203,7 +260,7 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
-     * Creates Braintree Client Token for creating client-side nonce.
+     * Creates Client Token for Braintree Javascript SDK initialization.
      */
     public MutationQuery createBraintreeClientToken() {
         startField("createBraintreeClientToken");
@@ -252,9 +309,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public CreateEmptyCartArguments input(createEmptyCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -292,7 +346,7 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
      * Initiates a transaction and receives a token. Use this mutation for Payflow Pro and Payments Pro
      * payment methods
      */
-    public MutationQuery createPayflowProToken(PayflowProTokenInput input, PayflowProTokenQueryDefinition queryDef) {
+    public MutationQuery createPayflowProToken(PayflowProTokenInput input, CreatePayflowProTokenOutputQueryDefinition queryDef) {
         startField("createPayflowProToken");
 
         _queryBuilder.append("(input:");
@@ -301,7 +355,7 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         _queryBuilder.append(')');
 
         _queryBuilder.append('{');
-        queryDef.define(new PayflowProTokenQuery(_queryBuilder));
+        queryDef.define(new CreatePayflowProTokenOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -311,7 +365,7 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
      * Initiates an Express Checkout transaction and receives a token. Use this mutation for Express
      * Checkout and Payments Standard payment methods.
      */
-    public MutationQuery createPaypalExpressToken(PaypalExpressTokenInput input, PaypalExpressTokenQueryDefinition queryDef) {
+    public MutationQuery createPaypalExpressToken(PaypalExpressTokenInput input, PaypalExpressTokenOutputQueryDefinition queryDef) {
         startField("createPaypalExpressToken");
 
         _queryBuilder.append("(input:");
@@ -320,7 +374,7 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         _queryBuilder.append(')');
 
         _queryBuilder.append('{');
-        queryDef.define(new PaypalExpressTokenQuery(_queryBuilder));
+        queryDef.define(new PaypalExpressTokenOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -398,14 +452,32 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    /**
+     * Merges the source cart into the destination cart
+     */
+    public MutationQuery mergeCarts(String sourceCartId, String destinationCartId, CartQueryDefinition queryDef) {
+        startField("mergeCarts");
+
+        _queryBuilder.append("(source_cart_id:");
+        AbstractQuery.appendQuotedString(_queryBuilder, sourceCartId.toString());
+
+        _queryBuilder.append(",destination_cart_id:");
+        AbstractQuery.appendQuotedString(_queryBuilder, destinationCartId.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CartQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class PlaceOrderArguments extends Arguments {
         PlaceOrderArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public PlaceOrderArguments input(PlaceOrderInput value) {
             if (value != null) {
                 startArgument("input");
@@ -442,9 +514,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public RemoveCouponFromCartArguments input(RemoveCouponFromCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -481,9 +550,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public RemoveItemFromCartArguments input(RemoveItemFromCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -533,9 +599,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public SendEmailToFriendArguments input(SendEmailToFriendInput value) {
             if (value != null) {
                 startArgument("input");
@@ -578,9 +641,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public SetBillingAddressOnCartArguments input(SetBillingAddressOnCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -617,9 +677,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public SetGuestEmailOnCartArguments input(SetGuestEmailOnCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -656,9 +713,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public SetPaymentMethodAndPlaceOrderArguments input(SetPaymentMethodAndPlaceOrderInput value) {
             if (value != null) {
                 startArgument("input");
@@ -672,10 +726,17 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         void define(SetPaymentMethodAndPlaceOrderArguments args);
     }
 
+    /**
+     * @deprecated Should use setPaymentMethodOnCart and placeOrder mutations in single request.
+     */
     public MutationQuery setPaymentMethodAndPlaceOrder(PlaceOrderOutputQueryDefinition queryDef) {
         return setPaymentMethodAndPlaceOrder(args -> {}, queryDef);
     }
 
+    /**
+     * @deprecated Should use setPaymentMethodOnCart and placeOrder mutations in single request.
+     */
+    @Deprecated
     public MutationQuery setPaymentMethodAndPlaceOrder(SetPaymentMethodAndPlaceOrderArgumentsDefinition argsDef, PlaceOrderOutputQueryDefinition queryDef) {
         startField("setPaymentMethodAndPlaceOrder");
 
@@ -695,9 +756,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public SetPaymentMethodOnCartArguments input(SetPaymentMethodOnCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -734,9 +792,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public SetShippingAddressesOnCartArguments input(SetShippingAddressesOnCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -773,9 +828,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public SetShippingMethodsOnCartArguments input(SetShippingMethodsOnCartInput value) {
             if (value != null) {
                 startArgument("input");
@@ -812,9 +864,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public UpdateCartItemsArguments input(UpdateCartItemsInput value) {
             if (value != null) {
                 startArgument("input");
@@ -869,9 +918,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
             super(_queryBuilder, false);
         }
 
-        /**
-         * 
-         */
         public UpdateCustomerAddressArguments input(CustomerAddressInput value) {
             if (value != null) {
                 startArgument("input");

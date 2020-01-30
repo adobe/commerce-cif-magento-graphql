@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -37,7 +37,8 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Canonical URL.
+     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
+     * Tag For Products&#39; is enabled
      */
     public ProductInterfaceQuery canonicalUrl() {
         startField("canonical_url");
@@ -163,7 +164,10 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
 
     /**
      * An array of MediaGalleryEntry objects.
+     *
+     * @deprecated Use product&#39;s `media_gallery` instead
      */
+    @Deprecated
     public ProductInterfaceQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
         startField("media_gallery_entries");
 
@@ -249,12 +253,41 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
 
     /**
      * A ProductPrices object, indicating the price of an item.
+     *
+     * @deprecated Use price_range for product price information.
      */
+    @Deprecated
     public ProductInterfaceQuery price(ProductPricesQueryDefinition queryDef) {
         startField("price");
 
         _queryBuilder.append('{');
         queryDef.define(new ProductPricesQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * A PriceRange object, indicating the range of prices for the product
+     */
+    public ProductInterfaceQuery priceRange(PriceRangeQueryDefinition queryDef) {
+        startField("price_range");
+
+        _queryBuilder.append('{');
+        queryDef.define(new PriceRangeQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array of TierPrice objects.
+     */
+    public ProductInterfaceQuery priceTiers(TierPriceQueryDefinition queryDef) {
+        startField("price_tiers");
+
+        _queryBuilder.append('{');
+        queryDef.define(new TierPriceQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -381,7 +414,10 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
 
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
+     *
+     * @deprecated Use price_tiers for product tier price information.
      */
+    @Deprecated
     public ProductInterfaceQuery tierPrice() {
         startField("tier_price");
 
@@ -390,7 +426,10 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
 
     /**
      * An array of ProductTierPrices objects.
+     *
+     * @deprecated Use price_tiers for product tier price information.
      */
+    @Deprecated
     public ProductInterfaceQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
         startField("tier_prices");
 
@@ -403,7 +442,10 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
 
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
+     *
+     * @deprecated Use __typename instead.
      */
+    @Deprecated
     public ProductInterfaceQuery typeId() {
         startField("type_id");
 
@@ -441,6 +483,10 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         return this;
     }
 
+    /**
+     * @deprecated Use product&#39;s `canonical_url` or url rewrites instead
+     */
+    @Deprecated
     public ProductInterfaceQuery urlPath() {
         startField("url_path");
 
@@ -461,8 +507,20 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of websites in which the product is available.
+     * The part of the product URL that is appended after the url key
      */
+    public ProductInterfaceQuery urlSuffix() {
+        startField("url_suffix");
+
+        return this;
+    }
+
+    /**
+     * An array of websites in which the product is available.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public ProductInterfaceQuery websites(WebsiteQueryDefinition queryDef) {
         startField("websites");
 

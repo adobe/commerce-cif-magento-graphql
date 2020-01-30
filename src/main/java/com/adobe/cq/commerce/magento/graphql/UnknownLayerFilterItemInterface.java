@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -21,9 +21,6 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * 
- */
 public class UnknownLayerFilterItemInterface extends AbstractResponse<UnknownLayerFilterItemInterface> implements LayerFilterItemInterface {
     public UnknownLayerFilterItemInterface() {
     }
@@ -101,8 +98,10 @@ public class UnknownLayerFilterItemInterface extends AbstractResponse<UnknownLay
 
     /**
      * Count of items by filter.
+     *
+     * @deprecated Use AggregationOption.count instead.
      */
-
+    @Deprecated
     public Integer getItemsCount() {
         return (Integer) get("items_count");
     }
@@ -114,8 +113,10 @@ public class UnknownLayerFilterItemInterface extends AbstractResponse<UnknownLay
 
     /**
      * Filter label.
+     *
+     * @deprecated Use AggregationOption.label instead.
      */
-
+    @Deprecated
     public String getLabel() {
         return (String) get("label");
     }
@@ -127,8 +128,10 @@ public class UnknownLayerFilterItemInterface extends AbstractResponse<UnknownLay
 
     /**
      * Value for filter request variable to be used in query.
+     *
+     * @deprecated Use AggregationOption.value instead.
      */
-
+    @Deprecated
     public String getValueString() {
         return (String) get("value_string");
     }

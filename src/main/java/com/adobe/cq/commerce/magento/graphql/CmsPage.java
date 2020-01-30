@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -151,7 +151,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * CMS page content
      */
-
     public String getContent() {
         return (String) get("content");
     }
@@ -164,7 +163,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * CMS page content heading
      */
-
     public String getContentHeading() {
         return (String) get("content_heading");
     }
@@ -177,7 +175,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * Identifier of the CMS page
      */
-
     public String getIdentifier() {
         return (String) get("identifier");
     }
@@ -190,7 +187,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * CMS page meta description
      */
-
     public String getMetaDescription() {
         return (String) get("meta_description");
     }
@@ -203,7 +199,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * CMS page meta keywords
      */
-
     public String getMetaKeywords() {
         return (String) get("meta_keywords");
     }
@@ -216,7 +211,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * CMS page meta title
      */
-
     public String getMetaTitle() {
         return (String) get("meta_title");
     }
@@ -229,7 +223,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * CMS page content heading
      */
-
     public String getPageLayout() {
         return (String) get("page_layout");
     }
@@ -242,7 +235,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * CMS page title
      */
-
     public String getTitle() {
         return (String) get("title");
     }
@@ -255,7 +247,6 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     /**
      * URL key of CMS page
      */
-
     public String getUrlKey() {
         return (String) get("url_key");
     }

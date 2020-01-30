@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -20,6 +20,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
 public class CustomerInput implements Serializable {
+    private Input<String> dateOfBirth = Input.undefined();
+
     private Input<String> dob = Input.undefined();
 
     private Input<String> email = Input.undefined();
@@ -42,19 +44,64 @@ public class CustomerInput implements Serializable {
 
     private Input<String> taxvat = Input.undefined();
 
+    /**
+     * The customer&#39;s date of birth
+     */
+    public String getDateOfBirth() {
+        return dateOfBirth.getValue();
+    }
+
+    /**
+     * The customer&#39;s date of birth
+     */
+    public Input<String> getDateOfBirthInput() {
+        return dateOfBirth;
+    }
+
+    /**
+     * The customer&#39;s date of birth
+     */
+    public CustomerInput setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = Input.optional(dateOfBirth);
+        return this;
+    }
+
+    /**
+     * The customer&#39;s date of birth
+     */
+    public CustomerInput setDateOfBirthInput(Input<String> dateOfBirth) {
+        if (dateOfBirth == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.dateOfBirth = dateOfBirth;
+        return this;
+    }
+
+    /**
+     * Deprecated: Use `date_of_birth` instead
+     */
     public String getDob() {
         return dob.getValue();
     }
 
+    /**
+     * Deprecated: Use `date_of_birth` instead
+     */
     public Input<String> getDobInput() {
         return dob;
     }
 
+    /**
+     * Deprecated: Use `date_of_birth` instead
+     */
     public CustomerInput setDob(String dob) {
         this.dob = Input.optional(dob);
         return this;
     }
 
+    /**
+     * Deprecated: Use `date_of_birth` instead
+     */
     public CustomerInput setDobInput(Input<String> dob) {
         if (dob == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -63,19 +110,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * The customer&#39;s email address. Required for customer creation
+     */
     public String getEmail() {
         return email.getValue();
     }
 
+    /**
+     * The customer&#39;s email address. Required for customer creation
+     */
     public Input<String> getEmailInput() {
         return email;
     }
 
+    /**
+     * The customer&#39;s email address. Required for customer creation
+     */
     public CustomerInput setEmail(String email) {
         this.email = Input.optional(email);
         return this;
     }
 
+    /**
+     * The customer&#39;s email address. Required for customer creation
+     */
     public CustomerInput setEmailInput(Input<String> email) {
         if (email == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -84,19 +143,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * The customer&#39;s first name
+     */
     public String getFirstname() {
         return firstname.getValue();
     }
 
+    /**
+     * The customer&#39;s first name
+     */
     public Input<String> getFirstnameInput() {
         return firstname;
     }
 
+    /**
+     * The customer&#39;s first name
+     */
     public CustomerInput setFirstname(String firstname) {
         this.firstname = Input.optional(firstname);
         return this;
     }
 
+    /**
+     * The customer&#39;s first name
+     */
     public CustomerInput setFirstnameInput(Input<String> firstname) {
         if (firstname == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -105,19 +176,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * The customer&#39;s gender (Male - 1, Female - 2)
+     */
     public Integer getGender() {
         return gender.getValue();
     }
 
+    /**
+     * The customer&#39;s gender (Male - 1, Female - 2)
+     */
     public Input<Integer> getGenderInput() {
         return gender;
     }
 
+    /**
+     * The customer&#39;s gender (Male - 1, Female - 2)
+     */
     public CustomerInput setGender(Integer gender) {
         this.gender = Input.optional(gender);
         return this;
     }
 
+    /**
+     * The customer&#39;s gender (Male - 1, Female - 2)
+     */
     public CustomerInput setGenderInput(Input<Integer> gender) {
         if (gender == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -126,19 +209,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     */
     public Boolean getIsSubscribed() {
         return isSubscribed.getValue();
     }
 
+    /**
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     */
     public Input<Boolean> getIsSubscribedInput() {
         return isSubscribed;
     }
 
+    /**
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     */
     public CustomerInput setIsSubscribed(Boolean isSubscribed) {
         this.isSubscribed = Input.optional(isSubscribed);
         return this;
     }
 
+    /**
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     */
     public CustomerInput setIsSubscribedInput(Input<Boolean> isSubscribed) {
         if (isSubscribed == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -147,19 +242,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * The customer&#39;s family name
+     */
     public String getLastname() {
         return lastname.getValue();
     }
 
+    /**
+     * The customer&#39;s family name
+     */
     public Input<String> getLastnameInput() {
         return lastname;
     }
 
+    /**
+     * The customer&#39;s family name
+     */
     public CustomerInput setLastname(String lastname) {
         this.lastname = Input.optional(lastname);
         return this;
     }
 
+    /**
+     * The customer&#39;s family name
+     */
     public CustomerInput setLastnameInput(Input<String> lastname) {
         if (lastname == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -168,19 +275,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * The customer&#39;s middle name
+     */
     public String getMiddlename() {
         return middlename.getValue();
     }
 
+    /**
+     * The customer&#39;s middle name
+     */
     public Input<String> getMiddlenameInput() {
         return middlename;
     }
 
+    /**
+     * The customer&#39;s middle name
+     */
     public CustomerInput setMiddlename(String middlename) {
         this.middlename = Input.optional(middlename);
         return this;
     }
 
+    /**
+     * The customer&#39;s middle name
+     */
     public CustomerInput setMiddlenameInput(Input<String> middlename) {
         if (middlename == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -189,19 +308,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * The customer&#39;s password
+     */
     public String getPassword() {
         return password.getValue();
     }
 
+    /**
+     * The customer&#39;s password
+     */
     public Input<String> getPasswordInput() {
         return password;
     }
 
+    /**
+     * The customer&#39;s password
+     */
     public CustomerInput setPassword(String password) {
         this.password = Input.optional(password);
         return this;
     }
 
+    /**
+     * The customer&#39;s password
+     */
     public CustomerInput setPasswordInput(Input<String> password) {
         if (password == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -210,19 +341,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * An honorific, such as Dr., Mr., or Mrs.
+     */
     public String getPrefix() {
         return prefix.getValue();
     }
 
+    /**
+     * An honorific, such as Dr., Mr., or Mrs.
+     */
     public Input<String> getPrefixInput() {
         return prefix;
     }
 
+    /**
+     * An honorific, such as Dr., Mr., or Mrs.
+     */
     public CustomerInput setPrefix(String prefix) {
         this.prefix = Input.optional(prefix);
         return this;
     }
 
+    /**
+     * An honorific, such as Dr., Mr., or Mrs.
+     */
     public CustomerInput setPrefixInput(Input<String> prefix) {
         if (prefix == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -231,19 +374,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * A value such as Sr., Jr., or III
+     */
     public String getSuffix() {
         return suffix.getValue();
     }
 
+    /**
+     * A value such as Sr., Jr., or III
+     */
     public Input<String> getSuffixInput() {
         return suffix;
     }
 
+    /**
+     * A value such as Sr., Jr., or III
+     */
     public CustomerInput setSuffix(String suffix) {
         this.suffix = Input.optional(suffix);
         return this;
     }
 
+    /**
+     * A value such as Sr., Jr., or III
+     */
     public CustomerInput setSuffixInput(Input<String> suffix) {
         if (suffix == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -252,19 +407,31 @@ public class CustomerInput implements Serializable {
         return this;
     }
 
+    /**
+     * The customer&#39;s Tax/VAT number (for corporate customers)
+     */
     public String getTaxvat() {
         return taxvat.getValue();
     }
 
+    /**
+     * The customer&#39;s Tax/VAT number (for corporate customers)
+     */
     public Input<String> getTaxvatInput() {
         return taxvat;
     }
 
+    /**
+     * The customer&#39;s Tax/VAT number (for corporate customers)
+     */
     public CustomerInput setTaxvat(String taxvat) {
         this.taxvat = Input.optional(taxvat);
         return this;
     }
 
+    /**
+     * The customer&#39;s Tax/VAT number (for corporate customers)
+     */
     public CustomerInput setTaxvatInput(Input<String> taxvat) {
         if (taxvat == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -276,6 +443,17 @@ public class CustomerInput implements Serializable {
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
+
+        if (this.dateOfBirth.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("date_of_birth:");
+            if (dateOfBirth.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, dateOfBirth.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         if (this.dob.isDefined()) {
             _queryBuilder.append(separator);

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -35,6 +35,27 @@ public class Products extends AbstractResponse<Products> {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "aggregations": {
+                    List<Aggregation> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<Aggregation> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            Aggregation optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new Aggregation(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "filters": {
                     List<LayerFilter> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -127,9 +148,23 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
-     * Layered navigation filters array.
+     * Layered navigation aggregations.
      */
+    public List<Aggregation> getAggregations() {
+        return (List<Aggregation>) get("aggregations");
+    }
 
+    public Products setAggregations(List<Aggregation> arg) {
+        optimisticData.put(getKey("aggregations"), arg);
+        return this;
+    }
+
+    /**
+     * Layered navigation filters array.
+     *
+     * @deprecated Use aggregations instead
+     */
+    @Deprecated
     public List<LayerFilter> getFilters() {
         return (List<LayerFilter>) get("filters");
     }
@@ -142,7 +177,6 @@ public class Products extends AbstractResponse<Products> {
     /**
      * An array of products that match the specified search criteria.
      */
-
     public List<ProductInterface> getItems() {
         return (List<ProductInterface>) get("items");
     }
@@ -155,7 +189,6 @@ public class Products extends AbstractResponse<Products> {
     /**
      * An object that includes the page_info and currentPage values specified in the query.
      */
-
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");
     }
@@ -168,7 +201,6 @@ public class Products extends AbstractResponse<Products> {
     /**
      * An object that includes the default sort field and all available sort fields.
      */
-
     public SortFields getSortFields() {
         return (SortFields) get("sort_fields");
     }
@@ -181,7 +213,6 @@ public class Products extends AbstractResponse<Products> {
     /**
      * The number of products returned.
      */
-
     public Integer getTotalCount() {
         return (Integer) get("total_count");
     }
@@ -193,6 +224,8 @@ public class Products extends AbstractResponse<Products> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "aggregations": return true;
+
             case "filters": return true;
 
             case "items": return false;

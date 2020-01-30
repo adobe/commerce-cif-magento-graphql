@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -17,8 +17,8 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * The ProductTierPrices object defines a tier price, which is a quantity discount offered to a
- * specific customer group.
+ * ProductTierPrices is deprecated and has been replaced by TierPrice. The ProductTierPrices object
+ * defines a tier price, which is a quantity discount offered to a specific customer group.
  */
 public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery> {
     ProductTierPricesQuery(StringBuilder _queryBuilder) {
@@ -27,7 +27,10 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
 
     /**
      * The ID of the customer group.
+     *
+     * @deprecated customer_group_id is not relevant for storefront.
      */
+    @Deprecated
     public ProductTierPricesQuery customerGroupId() {
         startField("customer_group_id");
 
@@ -36,7 +39,10 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
 
     /**
      * The percentage discount of the item.
+     *
+     * @deprecated ProductTierPrices is deprecated. Use TierPrice.discount.
      */
+    @Deprecated
     public ProductTierPricesQuery percentageValue() {
         startField("percentage_value");
 
@@ -45,7 +51,10 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
 
     /**
      * The number of items that must be purchased to qualify for tier pricing.
+     *
+     * @deprecated ProductTierPrices is deprecated, use TierPrice.quantity.
      */
+    @Deprecated
     public ProductTierPricesQuery qty() {
         startField("qty");
 
@@ -54,7 +63,10 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
 
     /**
      * The price of the fixed price item.
+     *
+     * @deprecated ProductTierPrices is deprecated. Use TierPrice.final_price
      */
+    @Deprecated
     public ProductTierPricesQuery value() {
         startField("value");
 
@@ -63,7 +75,10 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
 
     /**
      * The ID assigned to the website.
+     *
+     * @deprecated website_id is not relevant for storefront.
      */
+    @Deprecated
     public ProductTierPricesQuery websiteId() {
         startField("website_id");
 

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -22,8 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The PricedAdjustment object defines the amount of money to apply as an adjustment, the type of
- * adjustment to apply, and whether the item is included or excluded from the adjustment.
+ * PriceAdjustment is deprecated. Taxes will be included or excluded in the price. The PricedAdjustment
+ * object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and
+ * whether the item is included or excluded from the adjustment.
  */
 public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
     public PriceAdjustment() {
@@ -86,7 +87,6 @@ public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
     /**
      * The amount of the price adjustment and its currency code.
      */
-
     public Money getAmount() {
         return (Money) get("amount");
     }
@@ -98,8 +98,10 @@ public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
 
     /**
      * Indicates whether the adjustment involves tax, weee, or weee_tax.
+     *
+     * @deprecated PriceAdjustment is deprecated.
      */
-
+    @Deprecated
     public PriceAdjustmentCodesEnum getCode() {
         return (PriceAdjustmentCodesEnum) get("code");
     }
@@ -112,8 +114,10 @@ public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
     /**
      * Indicates whether the entity described by the code attribute is included or excluded from the
      * adjustment.
+     *
+     * @deprecated PriceAdjustment is deprecated.
      */
-
+    @Deprecated
     public PriceAdjustmentDescriptionEnum getDescription() {
         return (PriceAdjustmentDescriptionEnum) get("description");
     }

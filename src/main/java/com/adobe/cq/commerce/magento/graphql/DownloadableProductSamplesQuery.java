@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -24,18 +24,30 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
         super(_queryBuilder);
     }
 
+    /**
+     * @deprecated This information should not be exposed on frontend
+     */
+    @Deprecated
     public DownloadableProductSamplesQuery id() {
         startField("id");
 
         return this;
     }
 
+    /**
+     * @deprecated `sample_url` serves to get the downloadable sample
+     */
+    @Deprecated
     public DownloadableProductSamplesQuery sampleFile() {
         startField("sample_file");
 
         return this;
     }
 
+    /**
+     * @deprecated `sample_url` serves to get the downloadable sample
+     */
+    @Deprecated
     public DownloadableProductSamplesQuery sampleType() {
         startField("sample_type");
 

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -77,6 +77,17 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
                     break;
                 }
 
+                case "canonical_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "children_count": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -88,7 +99,29 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
                     break;
                 }
 
+                case "cms_block": {
+                    CmsBlock optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CmsBlock(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "created_at": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "custom_layout_update_file": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -341,6 +374,17 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
                     break;
                 }
 
+                case "url_suffix": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -382,13 +426,25 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * Breadcrumbs, parent categories info.
      */
-
     public List<Breadcrumb> getBreadcrumbs() {
         return (List<Breadcrumb>) get("breadcrumbs");
     }
 
     public UnknownCategoryInterface setBreadcrumbs(List<Breadcrumb> arg) {
         optimisticData.put(getKey("breadcrumbs"), arg);
+        return this;
+    }
+
+    /**
+     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
+     * Tag For Categories&#39; is enabled
+     */
+    public String getCanonicalUrl() {
+        return (String) get("canonical_url");
+    }
+
+    public UnknownCategoryInterface setCanonicalUrl(String arg) {
+        optimisticData.put(getKey("canonical_url"), arg);
         return this;
     }
 
@@ -402,9 +458,20 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
+     * Category CMS Block.
+     */
+    public CmsBlock getCmsBlock() {
+        return (CmsBlock) get("cms_block");
+    }
+
+    public UnknownCategoryInterface setCmsBlock(CmsBlock arg) {
+        optimisticData.put(getKey("cms_block"), arg);
+        return this;
+    }
+
+    /**
      * Timestamp indicating when the category was created.
      */
-
     public String getCreatedAt() {
         return (String) get("created_at");
     }
@@ -414,10 +481,18 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
         return this;
     }
 
+    public String getCustomLayoutUpdateFile() {
+        return (String) get("custom_layout_update_file");
+    }
+
+    public UnknownCategoryInterface setCustomLayoutUpdateFile(String arg) {
+        optimisticData.put(getKey("custom_layout_update_file"), arg);
+        return this;
+    }
+
     /**
      * The attribute to use for sorting.
      */
-
     public String getDefaultSortBy() {
         return (String) get("default_sort_by");
     }
@@ -430,7 +505,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * An optional description of the category.
      */
-
     public String getDescription() {
         return (String) get("description");
     }
@@ -461,7 +535,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * An ID that uniquely identifies the category.
      */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -510,7 +583,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * Indicates the depth of the category within the tree.
      */
-
     public Integer getLevel() {
         return (Integer) get("level");
     }
@@ -550,7 +622,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * The display name of the category.
      */
-
     public String getName() {
         return (String) get("name");
     }
@@ -563,7 +634,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * Category Path.
      */
-
     public String getPath() {
         return (String) get("path");
     }
@@ -576,7 +646,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * Category path in store.
      */
-
     public String getPathInStore() {
         return (String) get("path_in_store");
     }
@@ -589,7 +658,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * The position of the category relative to other categories at the same level in tree.
      */
-
     public Integer getPosition() {
         return (Integer) get("position");
     }
@@ -602,7 +670,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * The number of products in the category.
      */
-
     public Integer getProductCount() {
         return (Integer) get("product_count");
     }
@@ -615,7 +682,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * The list of products assigned to the category.
      */
-
     public CategoryProducts getProducts() {
         return (CategoryProducts) get("products");
     }
@@ -628,7 +694,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * Timestamp indicating when the category was updated.
      */
-
     public String getUpdatedAt() {
         return (String) get("updated_at");
     }
@@ -641,7 +706,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * The url key assigned to the category.
      */
-
     public String getUrlKey() {
         return (String) get("url_key");
     }
@@ -654,7 +718,6 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * The url path assigned to the category.
      */
-
     public String getUrlPath() {
         return (String) get("url_path");
     }
@@ -664,15 +727,33 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
         return this;
     }
 
+    /**
+     * The part of the category URL that is appended after the url key
+     */
+    public String getUrlSuffix() {
+        return (String) get("url_suffix");
+    }
+
+    public UnknownCategoryInterface setUrlSuffix(String arg) {
+        optimisticData.put(getKey("url_suffix"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "available_sort_by": return false;
 
             case "breadcrumbs": return true;
 
+            case "canonical_url": return false;
+
             case "children_count": return false;
 
+            case "cms_block": return true;
+
             case "created_at": return false;
+
+            case "custom_layout_update_file": return false;
 
             case "default_sort_by": return false;
 
@@ -717,6 +798,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
             case "url_key": return false;
 
             case "url_path": return false;
+
+            case "url_suffix": return false;
 
             default: return false;
         }

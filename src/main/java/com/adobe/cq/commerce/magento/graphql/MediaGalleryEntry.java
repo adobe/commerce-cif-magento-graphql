@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -164,7 +164,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * Contains a ProductMediaGalleryEntriesContent object.
      */
-
     public ProductMediaGalleryEntriesContent getContent() {
         return (ProductMediaGalleryEntriesContent) get("content");
     }
@@ -177,7 +176,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * Whether the image is hidden from vie.
      */
-
     public Boolean getDisabled() {
         return (Boolean) get("disabled");
     }
@@ -190,7 +188,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * The path of the image on the server.
      */
-
     public String getFile() {
         return (String) get("file");
     }
@@ -203,7 +200,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * The identifier assigned to the object.
      */
-
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -216,7 +212,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * The alt text displayed on the UI when the user points to the image.
      */
-
     public String getLabel() {
         return (String) get("label");
     }
@@ -229,7 +224,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * image or video.
      */
-
     public String getMediaType() {
         return (String) get("media_type");
     }
@@ -242,7 +236,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * The media item&#39;s position after it has been sorted.
      */
-
     public Integer getPosition() {
         return (Integer) get("position");
     }
@@ -255,7 +248,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * Array of image types. It can have the following values: image, small_image, thumbnail.
      */
-
     public List<String> getTypes() {
         return (List<String>) get("types");
     }
@@ -268,7 +260,6 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     /**
      * Contains a ProductMediaGalleryEntriesVideoContent object.
      */
-
     public ProductMediaGalleryEntriesVideoContent getVideoContent() {
         return (ProductMediaGalleryEntriesVideoContent) get("video_content");
     }

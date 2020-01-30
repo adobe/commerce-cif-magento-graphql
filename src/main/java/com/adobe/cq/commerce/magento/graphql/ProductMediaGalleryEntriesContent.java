@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -86,7 +86,6 @@ public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductM
     /**
      * The image in base64 format.
      */
-
     public String getBase64EncodedData() {
         return (String) get("base64_encoded_data");
     }
@@ -99,7 +98,6 @@ public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductM
     /**
      * The file name of the image.
      */
-
     public String getName() {
         return (String) get("name");
     }
@@ -112,7 +110,6 @@ public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductM
     /**
      * The MIME type of the file, such as image/png.
      */
-
     public String getType() {
         return (String) get("type");
     }

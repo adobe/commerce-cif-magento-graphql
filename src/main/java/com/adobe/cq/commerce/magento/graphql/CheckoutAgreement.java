@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -99,7 +99,6 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     /**
      * Checkout Agreement identifier
      */
-
     public Integer getAgreementId() {
         return (Integer) get("agreement_id");
     }
@@ -112,7 +111,6 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     /**
      * Checkout Agreement checkbox text
      */
-
     public String getCheckboxText() {
         return (String) get("checkbox_text");
     }
@@ -125,7 +123,6 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     /**
      * Checkout Agreement content
      */
-
     public String getContent() {
         return (String) get("content");
     }
@@ -138,7 +135,6 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     /**
      * Checkout Agreement content height
      */
-
     public String getContentHeight() {
         return (String) get("content_height");
     }
@@ -151,7 +147,6 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     /**
      * Is Checkout Agreement content in HTML format
      */
-
     public Boolean getIsHtml() {
         return (Boolean) get("is_html");
     }
@@ -173,7 +168,6 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     /**
      * Checkout Agreement name
      */
-
     public String getName() {
         return (String) get("name");
     }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -45,6 +45,16 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
+     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
+     * Tag For Categories&#39; is enabled
+     */
+    public CategoryTreeQuery canonicalUrl() {
+        startField("canonical_url");
+
+        return this;
+    }
+
+    /**
      * Child categories tree.
      */
     public CategoryTreeQuery children(CategoryTreeQueryDefinition queryDef) {
@@ -64,10 +74,29 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
+     * Category CMS Block.
+     */
+    public CategoryTreeQuery cmsBlock(CmsBlockQueryDefinition queryDef) {
+        startField("cms_block");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CmsBlockQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Timestamp indicating when the category was created.
      */
     public CategoryTreeQuery createdAt() {
         startField("created_at");
+
+        return this;
+    }
+
+    public CategoryTreeQuery customLayoutUpdateFile() {
+        startField("custom_layout_update_file");
 
         return this;
     }
@@ -235,10 +264,10 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
         }
 
         /**
-         * Specifies which attribute to sort on, and whether to return the results in ascending or descending
+         * Specifies which attributes to sort on, and whether to return the results in ascending or descending
          * order.
          */
-        public ProductsArguments sort(ProductSortInput value) {
+        public ProductsArguments sort(ProductAttributeSortInput value) {
             if (value != null) {
                 startArgument("sort");
                 value.appendTo(_queryBuilder);
@@ -298,6 +327,15 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
      */
     public CategoryTreeQuery urlPath() {
         startField("url_path");
+
+        return this;
+    }
+
+    /**
+     * The part of the category URL that is appended after the url key
+     */
+    public CategoryTreeQuery urlSuffix() {
+        startField("url_suffix");
 
         return this;
     }

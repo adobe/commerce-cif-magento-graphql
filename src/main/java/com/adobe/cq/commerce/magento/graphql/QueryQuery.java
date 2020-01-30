@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *    Copyright 2019 Adobe. All rights reserved.
+ *    Copyright 2020 Adobe. All rights reserved.
  *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License. You may obtain a copy
  *    of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -19,9 +19,6 @@ import java.util.List;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 
-/**
- * 
- */
 public class QueryQuery extends AbstractQuery<QueryQuery> {
     QueryQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -69,6 +66,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     /**
      * The category query searches for categories that match the criteria specified in the search and
      * filter attributes.
+     *
+     * @deprecated Use &#39;categoryList&#39; query instead of &#39;category&#39; query
      */
     public QueryQuery category(CategoryTreeQueryDefinition queryDef) {
         return category(args -> {}, queryDef);
@@ -77,13 +76,61 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     /**
      * The category query searches for categories that match the criteria specified in the search and
      * filter attributes.
+     *
+     * @deprecated Use &#39;categoryList&#39; query instead of &#39;category&#39; query
      */
+    @Deprecated
     public QueryQuery category(CategoryArgumentsDefinition argsDef, CategoryTreeQueryDefinition queryDef) {
         startField("category");
 
         CategoryArguments args = new CategoryArguments(_queryBuilder);
         argsDef.define(args);
         CategoryArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CategoryTreeQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class CategoryListArguments extends Arguments {
+        CategoryListArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Identifies which Category filter inputs to search for and return.
+         */
+        public CategoryListArguments filters(CategoryFilterInput value) {
+            if (value != null) {
+                startArgument("filters");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface CategoryListArgumentsDefinition {
+        void define(CategoryListArguments args);
+    }
+
+    /**
+     * Returns an array of categories based on the specified filters.
+     */
+    public QueryQuery categoryList(CategoryTreeQueryDefinition queryDef) {
+        return categoryList(args -> {}, queryDef);
+    }
+
+    /**
+     * Returns an array of categories based on the specified filters.
+     */
+    public QueryQuery categoryList(CategoryListArgumentsDefinition argsDef, CategoryTreeQueryDefinition queryDef) {
+        startField("categoryList");
+
+        CategoryListArguments args = new CategoryListArguments(_queryBuilder);
+        argsDef.define(args);
+        CategoryListArguments.end(args);
 
         _queryBuilder.append('{');
         queryDef.define(new CategoryTreeQuery(_queryBuilder));
@@ -233,9 +280,6 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
             super(_queryBuilder, true);
         }
 
-        /**
-         * 
-         */
         public CountryArguments id(String value) {
             if (value != null) {
                 startArgument("id");
@@ -322,6 +366,19 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CustomerQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Returns information about the customer shopping cart
+     */
+    public QueryQuery customerCart(CartQueryDefinition queryDef) {
+        startField("customerCart");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CartQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -437,7 +494,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         /**
          * Identifies which product attributes to search for and return.
          */
-        public ProductsArguments filter(ProductFilterInput value) {
+        public ProductsArguments filter(ProductAttributeFilterInput value) {
             if (value != null) {
                 startArgument("filter");
                 value.appendTo(_queryBuilder);
@@ -468,10 +525,10 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Specifies which attribute to sort on, and whether to return the results in ascending or descending
+         * Specifies which attributes to sort on, and whether to return the results in ascending or descending
          * order.
          */
-        public ProductsArguments sort(ProductSortInput value) {
+        public ProductsArguments sort(ProductAttributeSortInput value) {
             if (value != null) {
                 startArgument("sort");
                 value.appendTo(_queryBuilder);
@@ -524,7 +581,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The urlResolver query returns the relative URL for a specified product, category or CMS page
+     * The urlResolver query returns the relative URL for a specified product, category or CMS page, using
+     * as input a url_key appended by the url_suffix, if one exists
      */
     public QueryQuery urlResolver(String url, EntityUrlQueryDefinition queryDef) {
         startField("urlResolver");
@@ -543,7 +601,10 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
     /**
      * The wishlist query returns the contents of a customer&#39;s wish list
+     *
+     * @deprecated Moved under `Customer` `wishlist`
      */
+    @Deprecated
     public QueryQuery wishlist(WishlistOutputQueryDefinition queryDef) {
         startField("wishlist");
 
