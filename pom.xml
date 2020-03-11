@@ -69,6 +69,7 @@
                     <instructions>
                         <Export-Package>
                             com.adobe.cq.commerce.magento.graphql,
+                            com.adobe.cq.commerce.magento.graphql.introspection,
                             com.adobe.cq.commerce.magento.graphql.gson,
                             com.shopify.graphql.support
                         </Export-Package>
