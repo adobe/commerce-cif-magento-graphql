@@ -1,0 +1,1 @@
+{__type(name:"ProductAttributeFilterInput"){name,description,inputFields{name,type{name}}}}

@@ -618,4 +618,34 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     public String toString() {
         return _queryBuilder.toString();
     }
+
+    /**
+     * The root __schema field for introspection queries.
+     */
+    public QueryQuery __schema(__SchemaQueryDefinition queryDef) {
+        startField("__schema");
+
+        _queryBuilder.append('{');
+        queryDef.define(new __SchemaQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The root __type field for introspection queries.
+     */
+    public QueryQuery __type(String name, __TypeQueryDefinition queryDef) {
+        startField("__type");
+
+        _queryBuilder.append("(name:");
+        AbstractQuery.appendQuotedString(_queryBuilder, name);
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new __TypeQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
 }
