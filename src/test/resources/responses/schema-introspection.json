@@ -1,0 +1,6473 @@
+{
+  "__schema": {
+    "types": [
+      {
+        "name": "Query",
+        "fields": [
+          {
+            "name": "cart",
+            "description": "Returns information about shopping cart"
+          },
+          {
+            "name": "categoryList",
+            "description": "Returns an array of categories based on the specified filters."
+          },
+          {
+            "name": "checkoutAgreements",
+            "description": "The Checkout Agreements information"
+          },
+          {
+            "name": "cmsBlocks",
+            "description": "The CMS block query returns information about CMS blocks"
+          },
+          {
+            "name": "cmsPage",
+            "description": "The CMS page query returns information about a CMS page"
+          },
+          {
+            "name": "countries",
+            "description": "The countries query provides information for all countries."
+          },
+          {
+            "name": "country",
+            "description": "The countries query provides information for a single country."
+          },
+          {
+            "name": "currency",
+            "description": "The currency query returns information about store currency."
+          },
+          {
+            "name": "customAttributeMetadata",
+            "description": "The customAttributeMetadata query returns the attribute type, given an attribute code and entity type"
+          },
+          {
+            "name": "customer",
+            "description": "The customer query returns information about a customer account"
+          },
+          {
+            "name": "customerCart",
+            "description": "Returns information about the customer shopping cart"
+          },
+          {
+            "name": "customerDownloadableProducts",
+            "description": "The query returns the contents of a customer's downloadable products"
+          },
+          {
+            "name": "customerOrders",
+            "description": "List of customer orders"
+          },
+          {
+            "name": "customerPaymentTokens",
+            "description": "Return a list of customer payment tokens"
+          },
+          {
+            "name": "getHostedProUrl",
+            "description": "Retrieve secure PayPal url for Payments Pro Hosted Solution transaction."
+          },
+          {
+            "name": "getPayflowLinkToken",
+            "description": "Retrieve payment credentials for transaction. Use this query for Payflow Link and Payments Advanced payment methods."
+          },
+          {
+            "name": "giftCardAccount",
+            "description": "Get information for gift card account by code"
+          },
+          {
+            "name": "isEmailAvailable",
+            "description": null
+          },
+          {
+            "name": "products",
+            "description": "The products query searches for products that match the criteria specified in the search and filter attributes."
+          },
+          {
+            "name": "storeConfig",
+            "description": "The store config query"
+          },
+          {
+            "name": "urlResolver",
+            "description": "The urlResolver query returns the relative URL for a specified product, category or CMS page, using as input a url_key appended by the url_suffix, if one exists"
+          }
+        ]
+      },
+      {
+        "name": "String",
+        "fields": null
+      },
+      {
+        "name": "Cart",
+        "fields": [
+          {
+            "name": "applied_coupons",
+            "description": "An array of `AppliedCoupon` objects. Each object contains the `code` text attribute, which specifies the coupon code"
+          },
+          {
+            "name": "applied_gift_cards",
+            "description": "Contains the code attribute, which specifies the applied gift card codes"
+          },
+          {
+            "name": "applied_store_credit",
+            "description": "Contains store credit information applied on the cart"
+          },
+          {
+            "name": "available_payment_methods",
+            "description": "Available payment methods"
+          },
+          {
+            "name": "billing_address",
+            "description": null
+          },
+          {
+            "name": "email",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": "The ID of the cart."
+          },
+          {
+            "name": "is_virtual",
+            "description": null
+          },
+          {
+            "name": "items",
+            "description": null
+          },
+          {
+            "name": "prices",
+            "description": null
+          },
+          {
+            "name": "selected_payment_method",
+            "description": null
+          },
+          {
+            "name": "shipping_addresses",
+            "description": null
+          },
+          {
+            "name": "total_quantity",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AppliedCoupon",
+        "fields": [
+          {
+            "name": "code",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AppliedGiftCard",
+        "fields": [
+          {
+            "name": "applied_balance",
+            "description": "Applied balance to the current cart"
+          },
+          {
+            "name": "code",
+            "description": "Gift card account code"
+          },
+          {
+            "name": "current_balance",
+            "description": "Current balance remaining on gift card"
+          },
+          {
+            "name": "expiration_date",
+            "description": "Gift card expiration date"
+          }
+        ]
+      },
+      {
+        "name": "Money",
+        "fields": [
+          {
+            "name": "currency",
+            "description": "A three-letter currency code, such as USD or EUR"
+          },
+          {
+            "name": "value",
+            "description": "A number expressing a monetary value"
+          }
+        ]
+      },
+      {
+        "name": "CurrencyEnum",
+        "fields": null
+      },
+      {
+        "name": "Float",
+        "fields": null
+      },
+      {
+        "name": "AppliedStoreCredit",
+        "fields": [
+          {
+            "name": "applied_balance",
+            "description": "Applied store credit balance to the current cart"
+          },
+          {
+            "name": "current_balance",
+            "description": "Current balance remaining on store credit"
+          },
+          {
+            "name": "enabled",
+            "description": "Indicates whether store credits are enabled. If the feature is disabled, then the current balance will not be returned"
+          }
+        ]
+      },
+      {
+        "name": "Boolean",
+        "fields": null
+      },
+      {
+        "name": "AvailablePaymentMethod",
+        "fields": [
+          {
+            "name": "code",
+            "description": "The payment method code"
+          },
+          {
+            "name": "title",
+            "description": "The payment method title."
+          }
+        ]
+      },
+      {
+        "name": "BillingCartAddress",
+        "fields": [
+          {
+            "name": "city",
+            "description": null
+          },
+          {
+            "name": "company",
+            "description": null
+          },
+          {
+            "name": "country",
+            "description": null
+          },
+          {
+            "name": "firstname",
+            "description": null
+          },
+          {
+            "name": "lastname",
+            "description": null
+          },
+          {
+            "name": "postcode",
+            "description": null
+          },
+          {
+            "name": "region",
+            "description": null
+          },
+          {
+            "name": "street",
+            "description": null
+          },
+          {
+            "name": "telephone",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartAddressInterface",
+        "fields": [
+          {
+            "name": "city",
+            "description": null
+          },
+          {
+            "name": "company",
+            "description": null
+          },
+          {
+            "name": "country",
+            "description": null
+          },
+          {
+            "name": "firstname",
+            "description": null
+          },
+          {
+            "name": "lastname",
+            "description": null
+          },
+          {
+            "name": "postcode",
+            "description": null
+          },
+          {
+            "name": "region",
+            "description": null
+          },
+          {
+            "name": "street",
+            "description": null
+          },
+          {
+            "name": "telephone",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartAddressCountry",
+        "fields": [
+          {
+            "name": "code",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartAddressRegion",
+        "fields": [
+          {
+            "name": "code",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "ID",
+        "fields": null
+      },
+      {
+        "name": "CartItemInterface",
+        "fields": [
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "prices",
+            "description": null
+          },
+          {
+            "name": "product",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartItemPrices",
+        "fields": [
+          {
+            "name": "discounts",
+            "description": "An array of discounts to be applied to the cart item"
+          },
+          {
+            "name": "price",
+            "description": null
+          },
+          {
+            "name": "row_total",
+            "description": null
+          },
+          {
+            "name": "row_total_including_tax",
+            "description": null
+          },
+          {
+            "name": "total_item_discount",
+            "description": "The total of all discounts applied to the item"
+          }
+        ]
+      },
+      {
+        "name": "Discount",
+        "fields": [
+          {
+            "name": "amount",
+            "description": "The amount of the discount"
+          },
+          {
+            "name": "label",
+            "description": "A description of the discount"
+          }
+        ]
+      },
+      {
+        "name": "ProductInterface",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          }
+        ]
+      },
+      {
+        "name": "Int",
+        "fields": null
+      },
+      {
+        "name": "CategoryInterface",
+        "fields": [
+          {
+            "name": "automatic_sorting",
+            "description": null
+          },
+          {
+            "name": "available_sort_by",
+            "description": null
+          },
+          {
+            "name": "breadcrumbs",
+            "description": "Breadcrumbs, parent categories info."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Categories' is enabled"
+          },
+          {
+            "name": "children_count",
+            "description": null
+          },
+          {
+            "name": "cms_block",
+            "description": "Category CMS Block."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the category was created."
+          },
+          {
+            "name": "custom_layout_update_file",
+            "description": null
+          },
+          {
+            "name": "default_sort_by",
+            "description": "The attribute to use for sorting."
+          },
+          {
+            "name": "description",
+            "description": "An optional description of the category."
+          },
+          {
+            "name": "display_mode",
+            "description": null
+          },
+          {
+            "name": "filter_price_range",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": "An ID that uniquely identifies the category."
+          },
+          {
+            "name": "image",
+            "description": null
+          },
+          {
+            "name": "include_in_menu",
+            "description": null
+          },
+          {
+            "name": "is_anchor",
+            "description": null
+          },
+          {
+            "name": "landing_page",
+            "description": null
+          },
+          {
+            "name": "level",
+            "description": "Indicates the depth of the category within the tree."
+          },
+          {
+            "name": "meta_description",
+            "description": null
+          },
+          {
+            "name": "meta_keywords",
+            "description": null
+          },
+          {
+            "name": "meta_title",
+            "description": null
+          },
+          {
+            "name": "name",
+            "description": "The display name of the category."
+          },
+          {
+            "name": "path",
+            "description": "Category Path."
+          },
+          {
+            "name": "path_in_store",
+            "description": "Category path in store."
+          },
+          {
+            "name": "position",
+            "description": "The position of the category relative to other categories at the same level in tree."
+          },
+          {
+            "name": "product_count",
+            "description": "The number of products in the category."
+          },
+          {
+            "name": "products",
+            "description": "The list of products assigned to the category."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the category was updated."
+          },
+          {
+            "name": "url_key",
+            "description": "The url key assigned to the category."
+          },
+          {
+            "name": "url_path",
+            "description": "The url path assigned to the category."
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the category URL that is appended after the url key"
+          }
+        ]
+      },
+      {
+        "name": "Breadcrumb",
+        "fields": [
+          {
+            "name": "category_id",
+            "description": "Category ID."
+          },
+          {
+            "name": "category_level",
+            "description": "Category level."
+          },
+          {
+            "name": "category_name",
+            "description": "Category name."
+          },
+          {
+            "name": "category_url_key",
+            "description": "Category URL key."
+          },
+          {
+            "name": "category_url_path",
+            "description": "Category URL path."
+          }
+        ]
+      },
+      {
+        "name": "CmsBlock",
+        "fields": [
+          {
+            "name": "content",
+            "description": "CMS block content"
+          },
+          {
+            "name": "identifier",
+            "description": "CMS block identifier"
+          },
+          {
+            "name": "title",
+            "description": "CMS block title"
+          }
+        ]
+      },
+      {
+        "name": "ProductAttributeSortInput",
+        "fields": null
+      },
+      {
+        "name": "SortEnum",
+        "fields": null
+      },
+      {
+        "name": "CategoryProducts",
+        "fields": [
+          {
+            "name": "items",
+            "description": "An array of products that are assigned to the category."
+          },
+          {
+            "name": "page_info",
+            "description": "An object that includes the page_info and currentPage values specified in the query."
+          },
+          {
+            "name": "total_count",
+            "description": "The number of products returned."
+          }
+        ]
+      },
+      {
+        "name": "SearchResultPageInfo",
+        "fields": [
+          {
+            "name": "current_page",
+            "description": "Specifies which page of results to return"
+          },
+          {
+            "name": "page_size",
+            "description": "Specifies the maximum number of items to return"
+          },
+          {
+            "name": "total_pages",
+            "description": "Total pages"
+          }
+        ]
+      },
+      {
+        "name": "ComplexTextValue",
+        "fields": [
+          {
+            "name": "html",
+            "description": "HTML format"
+          }
+        ]
+      },
+      {
+        "name": "ProductImage",
+        "fields": [
+          {
+            "name": "disabled",
+            "description": "Whether the image is hidden from view."
+          },
+          {
+            "name": "label",
+            "description": "The label of the product image or video."
+          },
+          {
+            "name": "position",
+            "description": "The media item's position after it has been sorted."
+          },
+          {
+            "name": "url",
+            "description": "The URL of the product image or video."
+          }
+        ]
+      },
+      {
+        "name": "MediaGalleryInterface",
+        "fields": [
+          {
+            "name": "disabled",
+            "description": "Whether the image is hidden from view."
+          },
+          {
+            "name": "label",
+            "description": "The label of the product image or video."
+          },
+          {
+            "name": "position",
+            "description": "The media item's position after it has been sorted."
+          },
+          {
+            "name": "url",
+            "description": "The URL of the product image or video."
+          }
+        ]
+      },
+      {
+        "name": "MediaGalleryEntry",
+        "fields": [
+          {
+            "name": "content",
+            "description": "Contains a ProductMediaGalleryEntriesContent object."
+          },
+          {
+            "name": "disabled",
+            "description": "Whether the image is hidden from view."
+          },
+          {
+            "name": "file",
+            "description": "The path of the image on the server."
+          },
+          {
+            "name": "id",
+            "description": "The identifier assigned to the object."
+          },
+          {
+            "name": "label",
+            "description": "The alt text displayed on the UI when the user points to the image."
+          },
+          {
+            "name": "media_type",
+            "description": "image or video."
+          },
+          {
+            "name": "position",
+            "description": "The media item's position after it has been sorted."
+          },
+          {
+            "name": "types",
+            "description": "Array of image types. It can have the following values: image, small_image, thumbnail."
+          },
+          {
+            "name": "video_content",
+            "description": "Contains a ProductMediaGalleryEntriesVideoContent object."
+          }
+        ]
+      },
+      {
+        "name": "ProductMediaGalleryEntriesContent",
+        "fields": [
+          {
+            "name": "base64_encoded_data",
+            "description": "The image in base64 format."
+          },
+          {
+            "name": "name",
+            "description": "The file name of the image."
+          },
+          {
+            "name": "type",
+            "description": "The MIME type of the file, such as image/png."
+          }
+        ]
+      },
+      {
+        "name": "ProductMediaGalleryEntriesVideoContent",
+        "fields": [
+          {
+            "name": "media_type",
+            "description": "Must be external-video."
+          },
+          {
+            "name": "video_description",
+            "description": "A description of the video."
+          },
+          {
+            "name": "video_metadata",
+            "description": "Optional data about the video."
+          },
+          {
+            "name": "video_provider",
+            "description": "Describes the video source."
+          },
+          {
+            "name": "video_title",
+            "description": "The title of the video."
+          },
+          {
+            "name": "video_url",
+            "description": "The URL to the video."
+          }
+        ]
+      },
+      {
+        "name": "ProductPrices",
+        "fields": []
+      },
+      {
+        "name": "Price",
+        "fields": []
+      },
+      {
+        "name": "PriceAdjustment",
+        "fields": [
+          {
+            "name": "amount",
+            "description": "The amount of the price adjustment and its currency code."
+          }
+        ]
+      },
+      {
+        "name": "PriceAdjustmentCodesEnum",
+        "fields": null
+      },
+      {
+        "name": "PriceAdjustmentDescriptionEnum",
+        "fields": null
+      },
+      {
+        "name": "PriceRange",
+        "fields": [
+          {
+            "name": "maximum_price",
+            "description": "The highest possible price for the product."
+          },
+          {
+            "name": "minimum_price",
+            "description": "The lowest possible price for the product."
+          }
+        ]
+      },
+      {
+        "name": "ProductPrice",
+        "fields": [
+          {
+            "name": "discount",
+            "description": "The price discount. Represents the difference between the regular and final price."
+          },
+          {
+            "name": "final_price",
+            "description": "The final price of the product after discounts applied."
+          },
+          {
+            "name": "fixed_product_taxes",
+            "description": "The multiple FPTs that can be applied to a product price."
+          },
+          {
+            "name": "regular_price",
+            "description": "The regular price of the product."
+          }
+        ]
+      },
+      {
+        "name": "ProductDiscount",
+        "fields": [
+          {
+            "name": "amount_off",
+            "description": "The actual value of the discount."
+          },
+          {
+            "name": "percent_off",
+            "description": "The discount expressed a percentage."
+          }
+        ]
+      },
+      {
+        "name": "FixedProductTax",
+        "fields": [
+          {
+            "name": "amount",
+            "description": "Amount of the FPT as a money object."
+          },
+          {
+            "name": "label",
+            "description": "The label assigned to the FPT to be displayed on the frontend."
+          }
+        ]
+      },
+      {
+        "name": "TierPrice",
+        "fields": [
+          {
+            "name": "discount",
+            "description": "The price discount that this tier represents."
+          },
+          {
+            "name": "final_price",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": "The minimum number of items that must be purchased to qualify for this price tier."
+          }
+        ]
+      },
+      {
+        "name": "ProductLinksInterface",
+        "fields": [
+          {
+            "name": "link_type",
+            "description": "One of related, associated, upsell, or crosssell."
+          },
+          {
+            "name": "linked_product_sku",
+            "description": "The SKU of the linked product."
+          },
+          {
+            "name": "linked_product_type",
+            "description": "The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable)."
+          },
+          {
+            "name": "position",
+            "description": "The position within the list of product links."
+          },
+          {
+            "name": "sku",
+            "description": "The identifier of the linked product."
+          }
+        ]
+      },
+      {
+        "name": "ProductStockStatus",
+        "fields": null
+      },
+      {
+        "name": "ProductTierPrices",
+        "fields": []
+      },
+      {
+        "name": "UrlRewrite",
+        "fields": [
+          {
+            "name": "parameters",
+            "description": "Request parameters"
+          },
+          {
+            "name": "url",
+            "description": "Request URL"
+          }
+        ]
+      },
+      {
+        "name": "HttpQueryParameter",
+        "fields": [
+          {
+            "name": "name",
+            "description": "Parameter name"
+          },
+          {
+            "name": "value",
+            "description": "Parameter value"
+          }
+        ]
+      },
+      {
+        "name": "Website",
+        "fields": []
+      },
+      {
+        "name": "CartPrices",
+        "fields": [
+          {
+            "name": "applied_taxes",
+            "description": null
+          },
+          {
+            "name": "discounts",
+            "description": "An array of applied discounts"
+          },
+          {
+            "name": "grand_total",
+            "description": null
+          },
+          {
+            "name": "subtotal_excluding_tax",
+            "description": null
+          },
+          {
+            "name": "subtotal_including_tax",
+            "description": null
+          },
+          {
+            "name": "subtotal_with_discount_excluding_tax",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartTaxItem",
+        "fields": [
+          {
+            "name": "amount",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartDiscount",
+        "fields": [
+          {
+            "name": "amount",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SelectedPaymentMethod",
+        "fields": [
+          {
+            "name": "code",
+            "description": "The payment method code"
+          },
+          {
+            "name": "purchase_order_number",
+            "description": "The purchase order number."
+          },
+          {
+            "name": "title",
+            "description": "The payment method title."
+          }
+        ]
+      },
+      {
+        "name": "ShippingCartAddress",
+        "fields": [
+          {
+            "name": "available_shipping_methods",
+            "description": null
+          },
+          {
+            "name": "cart_items_v2",
+            "description": null
+          },
+          {
+            "name": "city",
+            "description": null
+          },
+          {
+            "name": "company",
+            "description": null
+          },
+          {
+            "name": "country",
+            "description": null
+          },
+          {
+            "name": "customer_notes",
+            "description": null
+          },
+          {
+            "name": "firstname",
+            "description": null
+          },
+          {
+            "name": "lastname",
+            "description": null
+          },
+          {
+            "name": "postcode",
+            "description": null
+          },
+          {
+            "name": "region",
+            "description": null
+          },
+          {
+            "name": "selected_shipping_method",
+            "description": null
+          },
+          {
+            "name": "street",
+            "description": null
+          },
+          {
+            "name": "telephone",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AvailableShippingMethod",
+        "fields": [
+          {
+            "name": "amount",
+            "description": null
+          },
+          {
+            "name": "available",
+            "description": null
+          },
+          {
+            "name": "carrier_code",
+            "description": null
+          },
+          {
+            "name": "carrier_title",
+            "description": null
+          },
+          {
+            "name": "error_message",
+            "description": null
+          },
+          {
+            "name": "method_code",
+            "description": "Could be null if method is not available"
+          },
+          {
+            "name": "method_title",
+            "description": "Could be null if method is not available"
+          },
+          {
+            "name": "price_excl_tax",
+            "description": null
+          },
+          {
+            "name": "price_incl_tax",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartItemQuantity",
+        "fields": []
+      },
+      {
+        "name": "SelectedShippingMethod",
+        "fields": [
+          {
+            "name": "amount",
+            "description": null
+          },
+          {
+            "name": "carrier_code",
+            "description": null
+          },
+          {
+            "name": "carrier_title",
+            "description": null
+          },
+          {
+            "name": "method_code",
+            "description": null
+          },
+          {
+            "name": "method_title",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CategoryTree",
+        "fields": [
+          {
+            "name": "automatic_sorting",
+            "description": null
+          },
+          {
+            "name": "available_sort_by",
+            "description": null
+          },
+          {
+            "name": "breadcrumbs",
+            "description": "Breadcrumbs, parent categories info."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Categories' is enabled"
+          },
+          {
+            "name": "children",
+            "description": "Child categories tree."
+          },
+          {
+            "name": "children_count",
+            "description": null
+          },
+          {
+            "name": "cms_block",
+            "description": "Category CMS Block."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the category was created."
+          },
+          {
+            "name": "custom_layout_update_file",
+            "description": null
+          },
+          {
+            "name": "default_sort_by",
+            "description": "The attribute to use for sorting."
+          },
+          {
+            "name": "description",
+            "description": "An optional description of the category."
+          },
+          {
+            "name": "display_mode",
+            "description": null
+          },
+          {
+            "name": "filter_price_range",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": "An ID that uniquely identifies the category."
+          },
+          {
+            "name": "image",
+            "description": null
+          },
+          {
+            "name": "include_in_menu",
+            "description": null
+          },
+          {
+            "name": "is_anchor",
+            "description": null
+          },
+          {
+            "name": "landing_page",
+            "description": null
+          },
+          {
+            "name": "level",
+            "description": "Indicates the depth of the category within the tree."
+          },
+          {
+            "name": "meta_description",
+            "description": null
+          },
+          {
+            "name": "meta_keywords",
+            "description": null
+          },
+          {
+            "name": "meta_title",
+            "description": null
+          },
+          {
+            "name": "name",
+            "description": "The display name of the category."
+          },
+          {
+            "name": "path",
+            "description": "Category Path."
+          },
+          {
+            "name": "path_in_store",
+            "description": "Category path in store."
+          },
+          {
+            "name": "position",
+            "description": "The position of the category relative to other categories at the same level in tree."
+          },
+          {
+            "name": "product_count",
+            "description": "The number of products in the category."
+          },
+          {
+            "name": "products",
+            "description": "The list of products assigned to the category."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the category was updated."
+          },
+          {
+            "name": "url_key",
+            "description": "The url key assigned to the category."
+          },
+          {
+            "name": "url_path",
+            "description": "The url path assigned to the category."
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the category URL that is appended after the url key"
+          }
+        ]
+      },
+      {
+        "name": "CategoryFilterInput",
+        "fields": null
+      },
+      {
+        "name": "FilterEqualTypeInput",
+        "fields": null
+      },
+      {
+        "name": "FilterMatchTypeInput",
+        "fields": null
+      },
+      {
+        "name": "CheckoutAgreement",
+        "fields": [
+          {
+            "name": "agreement_id",
+            "description": "Checkout Agreement identifier"
+          },
+          {
+            "name": "checkbox_text",
+            "description": "Checkout Agreement checkbox text"
+          },
+          {
+            "name": "content",
+            "description": "Checkout Agreement content"
+          },
+          {
+            "name": "content_height",
+            "description": "Checkout Agreement content height"
+          },
+          {
+            "name": "is_html",
+            "description": "Is Checkout Agreement content in HTML format"
+          },
+          {
+            "name": "mode",
+            "description": null
+          },
+          {
+            "name": "name",
+            "description": "Checkout Agreement name"
+          }
+        ]
+      },
+      {
+        "name": "CheckoutAgreementMode",
+        "fields": null
+      },
+      {
+        "name": "CmsBlocks",
+        "fields": [
+          {
+            "name": "items",
+            "description": "An array of CMS blocks"
+          }
+        ]
+      },
+      {
+        "name": "CmsPage",
+        "fields": [
+          {
+            "name": "content",
+            "description": "CMS page content"
+          },
+          {
+            "name": "content_heading",
+            "description": "CMS page content heading"
+          },
+          {
+            "name": "identifier",
+            "description": "Identifier of the CMS page"
+          },
+          {
+            "name": "meta_description",
+            "description": "CMS page meta description"
+          },
+          {
+            "name": "meta_keywords",
+            "description": "CMS page meta keywords"
+          },
+          {
+            "name": "meta_title",
+            "description": "CMS page meta title"
+          },
+          {
+            "name": "page_layout",
+            "description": "CMS page content heading"
+          },
+          {
+            "name": "title",
+            "description": "CMS page title"
+          },
+          {
+            "name": "url_key",
+            "description": "URL key of CMS page"
+          }
+        ]
+      },
+      {
+        "name": "Country",
+        "fields": [
+          {
+            "name": "available_regions",
+            "description": null
+          },
+          {
+            "name": "full_name_english",
+            "description": null
+          },
+          {
+            "name": "full_name_locale",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "three_letter_abbreviation",
+            "description": null
+          },
+          {
+            "name": "two_letter_abbreviation",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "Region",
+        "fields": [
+          {
+            "name": "code",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "name",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "Currency",
+        "fields": [
+          {
+            "name": "available_currency_codes",
+            "description": null
+          },
+          {
+            "name": "base_currency_code",
+            "description": null
+          },
+          {
+            "name": "base_currency_symbol",
+            "description": null
+          },
+          {
+            "name": "default_display_currency_code",
+            "description": null
+          },
+          {
+            "name": "default_display_currency_symbol",
+            "description": null
+          },
+          {
+            "name": "exchange_rates",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "ExchangeRate",
+        "fields": [
+          {
+            "name": "currency_to",
+            "description": null
+          },
+          {
+            "name": "rate",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AttributeInput",
+        "fields": null
+      },
+      {
+        "name": "CustomAttributeMetadata",
+        "fields": [
+          {
+            "name": "items",
+            "description": "An array of attributes"
+          }
+        ]
+      },
+      {
+        "name": "Attribute",
+        "fields": [
+          {
+            "name": "attribute_code",
+            "description": "The unique identifier for an attribute code. This value should be in lowercase letters without spaces."
+          },
+          {
+            "name": "attribute_options",
+            "description": "Attribute options list."
+          },
+          {
+            "name": "attribute_type",
+            "description": "The data type of the attribute"
+          },
+          {
+            "name": "entity_type",
+            "description": "The type of entity that defines the attribute"
+          },
+          {
+            "name": "input_type",
+            "description": "The frontend input type of the attribute"
+          }
+        ]
+      },
+      {
+        "name": "AttributeOption",
+        "fields": [
+          {
+            "name": "label",
+            "description": "Attribute option label."
+          },
+          {
+            "name": "value",
+            "description": "Attribute option value."
+          }
+        ]
+      },
+      {
+        "name": "Customer",
+        "fields": [
+          {
+            "name": "addresses",
+            "description": "An array containing the customer's shipping and billing addresses"
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the account was created"
+          },
+          {
+            "name": "date_of_birth",
+            "description": "The customer's date of birth"
+          },
+          {
+            "name": "default_billing",
+            "description": "The ID assigned to the billing address"
+          },
+          {
+            "name": "default_shipping",
+            "description": "The ID assigned to the shipping address"
+          },
+          {
+            "name": "email",
+            "description": "The customer's email address. Required"
+          },
+          {
+            "name": "firstname",
+            "description": "The customer's first name"
+          },
+          {
+            "name": "gender",
+            "description": "The customer's gender (Male - 1, Female - 2)"
+          },
+          {
+            "name": "is_subscribed",
+            "description": "Indicates whether the customer is subscribed to the company's newsletter"
+          },
+          {
+            "name": "lastname",
+            "description": "The customer's family name"
+          },
+          {
+            "name": "middlename",
+            "description": "The customer's middle name"
+          },
+          {
+            "name": "prefix",
+            "description": "An honorific, such as Dr., Mr., or Mrs."
+          },
+          {
+            "name": "store_credit",
+            "description": "Contains the store credit information applied for the logged in customer"
+          },
+          {
+            "name": "suffix",
+            "description": "A value such as Sr., Jr., or III"
+          },
+          {
+            "name": "taxvat",
+            "description": "The customer's Value-added tax (VAT) number (for corporate customers)"
+          },
+          {
+            "name": "wishlist",
+            "description": "The wishlist query returns the contents of a customer's wish lists"
+          }
+        ]
+      },
+      {
+        "name": "CustomerAddress",
+        "fields": [
+          {
+            "name": "city",
+            "description": "The city or town"
+          },
+          {
+            "name": "company",
+            "description": "The customer's company"
+          },
+          {
+            "name": "country_code",
+            "description": "The customer's country"
+          },
+          {
+            "name": "default_billing",
+            "description": "Indicates whether the address is the default billing address"
+          },
+          {
+            "name": "default_shipping",
+            "description": "Indicates whether the address is the default shipping address"
+          },
+          {
+            "name": "extension_attributes",
+            "description": "Address extension attributes"
+          },
+          {
+            "name": "fax",
+            "description": "The fax number"
+          },
+          {
+            "name": "firstname",
+            "description": "The first name of the person associated with the shipping/billing address"
+          },
+          {
+            "name": "id",
+            "description": "The ID assigned to the address object"
+          },
+          {
+            "name": "lastname",
+            "description": "The family name of the person associated with the shipping/billing address"
+          },
+          {
+            "name": "middlename",
+            "description": "The middle name of the person associated with the shipping/billing address"
+          },
+          {
+            "name": "postcode",
+            "description": "The customer's ZIP or postal code"
+          },
+          {
+            "name": "prefix",
+            "description": "An honorific, such as Dr., Mr., or Mrs."
+          },
+          {
+            "name": "region",
+            "description": "An object containing the region name, region code, and region ID"
+          },
+          {
+            "name": "street",
+            "description": "An array of strings that define the street number and name"
+          },
+          {
+            "name": "suffix",
+            "description": "A value such as Sr., Jr., or III"
+          },
+          {
+            "name": "telephone",
+            "description": "The telephone number"
+          },
+          {
+            "name": "vat_id",
+            "description": "The customer's Value-added tax (VAT) number (for corporate customers)"
+          }
+        ]
+      },
+      {
+        "name": "CountryCodeEnum",
+        "fields": null
+      },
+      {
+        "name": "CustomerAddressAttribute",
+        "fields": [
+          {
+            "name": "attribute_code",
+            "description": "Attribute code"
+          },
+          {
+            "name": "value",
+            "description": "Attribute value"
+          }
+        ]
+      },
+      {
+        "name": "CustomerAddressRegion",
+        "fields": [
+          {
+            "name": "region",
+            "description": "The state or province name"
+          },
+          {
+            "name": "region_code",
+            "description": "The address region code"
+          }
+        ]
+      },
+      {
+        "name": "CustomerStoreCredit",
+        "fields": [
+          {
+            "name": "balance_history",
+            "description": "Customer Store credit balance history. If the history or store credit feature is disabled, then a null value will be returned."
+          },
+          {
+            "name": "current_balance",
+            "description": "Current balance on store credit"
+          },
+          {
+            "name": "enabled",
+            "description": "Indicates whether store credits are enabled. If the feature is disabled, then the balance will not be returned"
+          }
+        ]
+      },
+      {
+        "name": "CustomerStoreCreditHistory",
+        "fields": [
+          {
+            "name": "items",
+            "description": "An array containing information about changes to the store credit available to the customer."
+          },
+          {
+            "name": "page_info",
+            "description": "An object that includes the current_page page_info and page_size values specified in the query."
+          },
+          {
+            "name": "total_count",
+            "description": "The number of items returned."
+          }
+        ]
+      },
+      {
+        "name": "CustomerStoreCreditHistoryItem",
+        "fields": [
+          {
+            "name": "action",
+            "description": "Action that was made on the store credit"
+          },
+          {
+            "name": "actual_balance",
+            "description": "The store credit available to the customer as a result of this action. "
+          },
+          {
+            "name": "balance_change",
+            "description": "The amount added to or subtracted from the store credit as a result of this action."
+          },
+          {
+            "name": "date_time_changed",
+            "description": "Date and time when the store credit change was made"
+          }
+        ]
+      },
+      {
+        "name": "Wishlist",
+        "fields": [
+          {
+            "name": "id",
+            "description": "Wishlist unique identifier"
+          },
+          {
+            "name": "items",
+            "description": "An array of items in the customer's wish list"
+          },
+          {
+            "name": "items_count",
+            "description": "The number of items in the wish list"
+          },
+          {
+            "name": "sharing_code",
+            "description": "An encrypted code that Magento uses to link to the wish list"
+          },
+          {
+            "name": "updated_at",
+            "description": "The time of the last modification to the wish list"
+          }
+        ]
+      },
+      {
+        "name": "WishlistItem",
+        "fields": [
+          {
+            "name": "added_at",
+            "description": "The time when the customer added the item to the wish list"
+          },
+          {
+            "name": "description",
+            "description": "The customer's comment about this item"
+          },
+          {
+            "name": "id",
+            "description": "The wish list item ID"
+          },
+          {
+            "name": "product",
+            "description": null
+          },
+          {
+            "name": "qty",
+            "description": "The quantity of this wish list item"
+          }
+        ]
+      },
+      {
+        "name": "CustomerDownloadableProducts",
+        "fields": [
+          {
+            "name": "items",
+            "description": "List of purchased downloadable items"
+          }
+        ]
+      },
+      {
+        "name": "CustomerDownloadableProduct",
+        "fields": [
+          {
+            "name": "date",
+            "description": null
+          },
+          {
+            "name": "download_url",
+            "description": null
+          },
+          {
+            "name": "order_increment_id",
+            "description": null
+          },
+          {
+            "name": "remaining_downloads",
+            "description": null
+          },
+          {
+            "name": "status",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CustomerOrders",
+        "fields": [
+          {
+            "name": "items",
+            "description": "Array of orders"
+          }
+        ]
+      },
+      {
+        "name": "CustomerOrder",
+        "fields": [
+          {
+            "name": "created_at",
+            "description": null
+          },
+          {
+            "name": "grand_total",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "order_number",
+            "description": "The order number"
+          },
+          {
+            "name": "status",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CustomerPaymentTokens",
+        "fields": [
+          {
+            "name": "items",
+            "description": "An array of payment tokens"
+          }
+        ]
+      },
+      {
+        "name": "PaymentToken",
+        "fields": [
+          {
+            "name": "details",
+            "description": "Stored account details"
+          },
+          {
+            "name": "payment_method_code",
+            "description": "The payment method code associated with the token"
+          },
+          {
+            "name": "public_hash",
+            "description": "The public hash of the token"
+          },
+          {
+            "name": "type",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "PaymentTokenTypeEnum",
+        "fields": null
+      },
+      {
+        "name": "HostedProUrlInput",
+        "fields": null
+      },
+      {
+        "name": "HostedProUrl",
+        "fields": [
+          {
+            "name": "secure_form_url",
+            "description": "Secure Url generated by PayPal"
+          }
+        ]
+      },
+      {
+        "name": "PayflowLinkTokenInput",
+        "fields": null
+      },
+      {
+        "name": "PayflowLinkToken",
+        "fields": [
+          {
+            "name": "mode",
+            "description": "Mode for Payflow transaction"
+          },
+          {
+            "name": "paypal_url",
+            "description": "PayPal URL used for requesting Payflow form"
+          },
+          {
+            "name": "secure_token",
+            "description": "Secure token generated by PayPal"
+          },
+          {
+            "name": "secure_token_id",
+            "description": "Secure token ID generated by PayPal"
+          }
+        ]
+      },
+      {
+        "name": "PayflowLinkMode",
+        "fields": null
+      },
+      {
+        "name": "GiftCardAccountInput",
+        "fields": null
+      },
+      {
+        "name": "GiftCardAccount",
+        "fields": [
+          {
+            "name": "balance",
+            "description": "Balance remaining on gift card"
+          },
+          {
+            "name": "code",
+            "description": "Gift card account code"
+          },
+          {
+            "name": "expiration_date",
+            "description": "Gift card expiration date"
+          }
+        ]
+      },
+      {
+        "name": "IsEmailAvailableOutput",
+        "fields": [
+          {
+            "name": "is_email_available",
+            "description": "Is email availabel value"
+          }
+        ]
+      },
+      {
+        "name": "ProductAttributeFilterInput",
+        "fields": null
+      },
+      {
+        "name": "FilterRangeTypeInput",
+        "fields": null
+      },
+      {
+        "name": "Products",
+        "fields": [
+          {
+            "name": "aggregations",
+            "description": "Layered navigation aggregations."
+          },
+          {
+            "name": "items",
+            "description": "An array of products that match the specified search criteria."
+          },
+          {
+            "name": "page_info",
+            "description": "An object that includes the page_info and currentPage values specified in the query."
+          },
+          {
+            "name": "sort_fields",
+            "description": "An object that includes the default sort field and all available sort fields."
+          },
+          {
+            "name": "total_count",
+            "description": "The number of products returned."
+          }
+        ]
+      },
+      {
+        "name": "Aggregation",
+        "fields": [
+          {
+            "name": "attribute_code",
+            "description": "Attribute code of the aggregation group."
+          },
+          {
+            "name": "count",
+            "description": "The number of options in the aggregation group."
+          },
+          {
+            "name": "label",
+            "description": "The aggregation display name."
+          },
+          {
+            "name": "options",
+            "description": "Array of options for the aggregation."
+          }
+        ]
+      },
+      {
+        "name": "AggregationOption",
+        "fields": [
+          {
+            "name": "count",
+            "description": "The number of items that match the aggregation option."
+          },
+          {
+            "name": "label",
+            "description": "Aggregation option display label."
+          },
+          {
+            "name": "value",
+            "description": "The internal ID that represents the value of the option."
+          }
+        ]
+      },
+      {
+        "name": "AggregationOptionInterface",
+        "fields": [
+          {
+            "name": "count",
+            "description": "The number of items that match the aggregation option."
+          },
+          {
+            "name": "label",
+            "description": "Aggregation option display label."
+          },
+          {
+            "name": "value",
+            "description": "The internal ID that represents the value of the option."
+          }
+        ]
+      },
+      {
+        "name": "LayerFilter",
+        "fields": []
+      },
+      {
+        "name": "LayerFilterItemInterface",
+        "fields": []
+      },
+      {
+        "name": "SortFields",
+        "fields": [
+          {
+            "name": "default",
+            "description": "Default value of sort fields."
+          },
+          {
+            "name": "options",
+            "description": "Available sort fields."
+          }
+        ]
+      },
+      {
+        "name": "SortField",
+        "fields": [
+          {
+            "name": "label",
+            "description": "Label of sort field."
+          },
+          {
+            "name": "value",
+            "description": "Attribute code of sort field."
+          }
+        ]
+      },
+      {
+        "name": "StoreConfig",
+        "fields": [
+          {
+            "name": "absolute_footer",
+            "description": "Footer Miscellaneous HTML"
+          },
+          {
+            "name": "base_currency_code",
+            "description": "Base currency code"
+          },
+          {
+            "name": "base_link_url",
+            "description": "Base link URL for the store"
+          },
+          {
+            "name": "base_media_url",
+            "description": "Base media URL for the store"
+          },
+          {
+            "name": "base_static_url",
+            "description": "Base static URL for the store"
+          },
+          {
+            "name": "base_url",
+            "description": "Base URL for the store"
+          },
+          {
+            "name": "catalog_default_sort_by",
+            "description": "Default Sort By."
+          },
+          {
+            "name": "category_fixed_product_tax_display_setting",
+            "description": "Corresponds to the 'Display Prices In Product Lists' field. It indicates how FPT information is displayed on category pages"
+          },
+          {
+            "name": "category_url_suffix",
+            "description": "Category URL Suffix."
+          },
+          {
+            "name": "cms_home_page",
+            "description": "CMS Home Page"
+          },
+          {
+            "name": "cms_no_cookies",
+            "description": "CMS No Cookies Page"
+          },
+          {
+            "name": "cms_no_route",
+            "description": "CMS No Route Page"
+          },
+          {
+            "name": "code",
+            "description": "A code assigned to the store to identify it"
+          },
+          {
+            "name": "copyright",
+            "description": "Copyright"
+          },
+          {
+            "name": "default_description",
+            "description": "Default Meta Description"
+          },
+          {
+            "name": "default_display_currency_code",
+            "description": "Default display currency code"
+          },
+          {
+            "name": "default_keywords",
+            "description": "Default Meta Keywords"
+          },
+          {
+            "name": "default_title",
+            "description": "Default Page Title"
+          },
+          {
+            "name": "demonotice",
+            "description": "Display Demo Store Notice"
+          },
+          {
+            "name": "front",
+            "description": "Default Web URL"
+          },
+          {
+            "name": "grid_per_page",
+            "description": "Products per Page on Grid Default Value."
+          },
+          {
+            "name": "grid_per_page_values",
+            "description": "Products per Page on Grid Allowed Values."
+          },
+          {
+            "name": "head_includes",
+            "description": "Scripts and Style Sheets"
+          },
+          {
+            "name": "head_shortcut_icon",
+            "description": "Favicon Icon"
+          },
+          {
+            "name": "header_logo_src",
+            "description": "Logo Image"
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the store"
+          },
+          {
+            "name": "list_mode",
+            "description": "List Mode."
+          },
+          {
+            "name": "list_per_page",
+            "description": "Products per Page on List Default Value."
+          },
+          {
+            "name": "list_per_page_values",
+            "description": "Products per Page on List Allowed Values."
+          },
+          {
+            "name": "locale",
+            "description": "Store locale"
+          },
+          {
+            "name": "logo_alt",
+            "description": "Logo Image Alt"
+          },
+          {
+            "name": "logo_height",
+            "description": "Logo Attribute Height"
+          },
+          {
+            "name": "logo_width",
+            "description": "Logo Attribute Width"
+          },
+          {
+            "name": "no_route",
+            "description": "Default No-route URL"
+          },
+          {
+            "name": "product_fixed_product_tax_display_setting",
+            "description": "Corresponds to the 'Display Prices On Product View Page' field. It indicates how FPT information is displayed on product pages"
+          },
+          {
+            "name": "product_url_suffix",
+            "description": "Product URL Suffix."
+          },
+          {
+            "name": "root_category_id",
+            "description": "The ID of the root category"
+          },
+          {
+            "name": "sales_fixed_product_tax_display_setting",
+            "description": "Corresponds to the 'Display Prices In Sales Modules' field. It indicates how FPT information is displayed on cart, checkout, and order pages"
+          },
+          {
+            "name": "secure_base_link_url",
+            "description": "Secure base link URL for the store"
+          },
+          {
+            "name": "secure_base_media_url",
+            "description": "Secure base media URL for the store"
+          },
+          {
+            "name": "secure_base_static_url",
+            "description": "Secure base static URL for the store"
+          },
+          {
+            "name": "secure_base_url",
+            "description": "Secure base URL for the store"
+          },
+          {
+            "name": "show_cms_breadcrumbs",
+            "description": "Show Breadcrumbs for CMS Pages"
+          },
+          {
+            "name": "store_name",
+            "description": "Name of the store"
+          },
+          {
+            "name": "timezone",
+            "description": "Timezone of the store"
+          },
+          {
+            "name": "title_prefix",
+            "description": "Page Title Prefix"
+          },
+          {
+            "name": "title_separator",
+            "description": "Page Title Separator."
+          },
+          {
+            "name": "title_suffix",
+            "description": "Page Title Suffix"
+          },
+          {
+            "name": "website_id",
+            "description": "The ID number assigned to the website store belongs"
+          },
+          {
+            "name": "weight_unit",
+            "description": "The unit of weight"
+          },
+          {
+            "name": "welcome",
+            "description": "Welcome Text"
+          }
+        ]
+      },
+      {
+        "name": "FixedProductTaxDisplaySettings",
+        "fields": null
+      },
+      {
+        "name": "EntityUrl",
+        "fields": [
+          {
+            "name": "id",
+            "description": "The ID assigned to the object associated with the specified url. This could be a product ID, category ID, or page ID."
+          },
+          {
+            "name": "redirectCode",
+            "description": "301 or 302 HTTP code for url permanent or temporary redirect or 0 for the 200 no redirect"
+          },
+          {
+            "name": "relative_url",
+            "description": "The internal relative URL. If the specified  url is a redirect, the query returns the redirected URL, not the original."
+          },
+          {
+            "name": "type",
+            "description": "One of PRODUCT, CATEGORY, or CMS_PAGE."
+          }
+        ]
+      },
+      {
+        "name": "UrlRewriteEntityTypeEnum",
+        "fields": null
+      },
+      {
+        "name": "WishlistOutput",
+        "fields": []
+      },
+      {
+        "name": "Mutation",
+        "fields": [
+          {
+            "name": "addBundleProductsToCart",
+            "description": null
+          },
+          {
+            "name": "addConfigurableProductsToCart",
+            "description": null
+          },
+          {
+            "name": "addDownloadableProductsToCart",
+            "description": null
+          },
+          {
+            "name": "addSimpleProductsToCart",
+            "description": null
+          },
+          {
+            "name": "addVirtualProductsToCart",
+            "description": null
+          },
+          {
+            "name": "applyCouponToCart",
+            "description": null
+          },
+          {
+            "name": "applyGiftCardToCart",
+            "description": "Apply a pre-defined gift card code to the specified cart."
+          },
+          {
+            "name": "applyStoreCreditToCart",
+            "description": "Apply store credit to the specified cart."
+          },
+          {
+            "name": "changeCustomerPassword",
+            "description": "Changes the password for the logged-in customer"
+          },
+          {
+            "name": "createBraintreeClientToken",
+            "description": "Creates Client Token for Braintree Javascript SDK initialization."
+          },
+          {
+            "name": "createCustomer",
+            "description": "Create customer account"
+          },
+          {
+            "name": "createCustomerAddress",
+            "description": "Create customer address"
+          },
+          {
+            "name": "createEmptyCart",
+            "description": "Creates an empty shopping cart for a guest or logged in user"
+          },
+          {
+            "name": "createPayflowProToken",
+            "description": "Initiates a transaction and receives a token. Use this mutation for Payflow Pro and Payments Pro payment methods"
+          },
+          {
+            "name": "createPaypalExpressToken",
+            "description": "Initiates an Express Checkout transaction and receives a token. Use this mutation for Express Checkout and Payments Standard payment methods."
+          },
+          {
+            "name": "deleteCustomerAddress",
+            "description": "Delete customer address"
+          },
+          {
+            "name": "deletePaymentToken",
+            "description": "Delete a customer payment token"
+          },
+          {
+            "name": "generateCustomerToken",
+            "description": "Retrieve the customer token"
+          },
+          {
+            "name": "handlePayflowProResponse",
+            "description": "Handles payment response and saves payment in Quote. Use this mutations for Payflow Pro and Payments Pro payment methods."
+          },
+          {
+            "name": "mergeCarts",
+            "description": "Merges the source cart into the destination cart"
+          },
+          {
+            "name": "placeOrder",
+            "description": null
+          },
+          {
+            "name": "redeemGiftCardBalanceAsStoreCredit",
+            "description": "Redeem gift card for store credit."
+          },
+          {
+            "name": "removeCouponFromCart",
+            "description": null
+          },
+          {
+            "name": "removeGiftCardFromCart",
+            "description": null
+          },
+          {
+            "name": "removeItemFromCart",
+            "description": null
+          },
+          {
+            "name": "removeStoreCreditFromCart",
+            "description": "Remove applied store credit from the specified cart."
+          },
+          {
+            "name": "revokeCustomerToken",
+            "description": "Revoke the customer token"
+          },
+          {
+            "name": "sendEmailToFriend",
+            "description": "Recommends Product by Sending Single/Multiple Email"
+          },
+          {
+            "name": "setBillingAddressOnCart",
+            "description": null
+          },
+          {
+            "name": "setGuestEmailOnCart",
+            "description": null
+          },
+          {
+            "name": "setPaymentMethodOnCart",
+            "description": null
+          },
+          {
+            "name": "setShippingAddressesOnCart",
+            "description": null
+          },
+          {
+            "name": "setShippingMethodsOnCart",
+            "description": null
+          },
+          {
+            "name": "updateCartItems",
+            "description": null
+          },
+          {
+            "name": "updateCustomer",
+            "description": "Update the customer's personal information"
+          },
+          {
+            "name": "updateCustomerAddress",
+            "description": "Update customer address"
+          }
+        ]
+      },
+      {
+        "name": "AddBundleProductsToCartInput",
+        "fields": null
+      },
+      {
+        "name": "BundleProductCartItemInput",
+        "fields": null
+      },
+      {
+        "name": "BundleOptionInput",
+        "fields": null
+      },
+      {
+        "name": "CustomizableOptionInput",
+        "fields": null
+      },
+      {
+        "name": "CartItemInput",
+        "fields": null
+      },
+      {
+        "name": "AddBundleProductsToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AddConfigurableProductsToCartInput",
+        "fields": null
+      },
+      {
+        "name": "ConfigurableProductCartItemInput",
+        "fields": null
+      },
+      {
+        "name": "AddConfigurableProductsToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AddDownloadableProductsToCartInput",
+        "fields": null
+      },
+      {
+        "name": "DownloadableProductCartItemInput",
+        "fields": null
+      },
+      {
+        "name": "DownloadableProductLinksInput",
+        "fields": null
+      },
+      {
+        "name": "AddDownloadableProductsToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AddSimpleProductsToCartInput",
+        "fields": null
+      },
+      {
+        "name": "SimpleProductCartItemInput",
+        "fields": null
+      },
+      {
+        "name": "AddSimpleProductsToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "AddVirtualProductsToCartInput",
+        "fields": null
+      },
+      {
+        "name": "VirtualProductCartItemInput",
+        "fields": null
+      },
+      {
+        "name": "AddVirtualProductsToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "ApplyCouponToCartInput",
+        "fields": null
+      },
+      {
+        "name": "ApplyCouponToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "ApplyGiftCardToCartInput",
+        "fields": null
+      },
+      {
+        "name": "ApplyGiftCardToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": "Describes the contents of the specified shopping cart"
+          }
+        ]
+      },
+      {
+        "name": "ApplyStoreCreditToCartInput",
+        "fields": null
+      },
+      {
+        "name": "ApplyStoreCreditToCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": "Describes the contents of the specified shopping cart"
+          }
+        ]
+      },
+      {
+        "name": "CustomerInput",
+        "fields": null
+      },
+      {
+        "name": "CustomerOutput",
+        "fields": [
+          {
+            "name": "customer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CustomerAddressInput",
+        "fields": null
+      },
+      {
+        "name": "CustomerAddressAttributeInput",
+        "fields": null
+      },
+      {
+        "name": "CustomerAddressRegionInput",
+        "fields": null
+      },
+      {
+        "name": "createEmptyCartInput",
+        "fields": null
+      },
+      {
+        "name": "PayflowProTokenInput",
+        "fields": null
+      },
+      {
+        "name": "PayflowProUrlInput",
+        "fields": null
+      },
+      {
+        "name": "CreatePayflowProTokenOutput",
+        "fields": [
+          {
+            "name": "response_message",
+            "description": null
+          },
+          {
+            "name": "result",
+            "description": null
+          },
+          {
+            "name": "result_code",
+            "description": null
+          },
+          {
+            "name": "secure_token",
+            "description": null
+          },
+          {
+            "name": "secure_token_id",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "PaypalExpressTokenInput",
+        "fields": null
+      },
+      {
+        "name": "PaypalExpressUrlsInput",
+        "fields": null
+      },
+      {
+        "name": "PaypalExpressTokenOutput",
+        "fields": [
+          {
+            "name": "paypal_urls",
+            "description": "A set of URLs that allow the buyer to authorize payment and adjust checkout details"
+          },
+          {
+            "name": "token",
+            "description": "The token returned by PayPal"
+          }
+        ]
+      },
+      {
+        "name": "PaypalExpressUrlList",
+        "fields": [
+          {
+            "name": "edit",
+            "description": "The PayPal URL that allows the buyer to edit their checkout details"
+          },
+          {
+            "name": "start",
+            "description": "The URL to the PayPal login page"
+          }
+        ]
+      },
+      {
+        "name": "DeletePaymentTokenOutput",
+        "fields": [
+          {
+            "name": "customerPaymentTokens",
+            "description": null
+          },
+          {
+            "name": "result",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CustomerToken",
+        "fields": [
+          {
+            "name": "token",
+            "description": "The customer token"
+          }
+        ]
+      },
+      {
+        "name": "PayflowProResponseInput",
+        "fields": null
+      },
+      {
+        "name": "PayflowProResponseOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "PlaceOrderInput",
+        "fields": null
+      },
+      {
+        "name": "PlaceOrderOutput",
+        "fields": [
+          {
+            "name": "order",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "Order",
+        "fields": [
+          {
+            "name": "order_number",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "RemoveCouponFromCartInput",
+        "fields": null
+      },
+      {
+        "name": "RemoveCouponFromCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "RemoveGiftCardFromCartInput",
+        "fields": null
+      },
+      {
+        "name": "RemoveGiftCardFromCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": "Describes the contents of the specified shopping cart"
+          }
+        ]
+      },
+      {
+        "name": "RemoveItemFromCartInput",
+        "fields": null
+      },
+      {
+        "name": "RemoveItemFromCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "RemoveStoreCreditFromCartInput",
+        "fields": null
+      },
+      {
+        "name": "RemoveStoreCreditFromCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": "Describes the contents of the specified shopping cart"
+          }
+        ]
+      },
+      {
+        "name": "RevokeCustomerTokenOutput",
+        "fields": [
+          {
+            "name": "result",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SendEmailToFriendInput",
+        "fields": null
+      },
+      {
+        "name": "SendEmailToFriendRecipientInput",
+        "fields": null
+      },
+      {
+        "name": "SendEmailToFriendSenderInput",
+        "fields": null
+      },
+      {
+        "name": "SendEmailToFriendOutput",
+        "fields": [
+          {
+            "name": "recipients",
+            "description": null
+          },
+          {
+            "name": "sender",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SendEmailToFriendRecipient",
+        "fields": [
+          {
+            "name": "email",
+            "description": null
+          },
+          {
+            "name": "name",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SendEmailToFriendSender",
+        "fields": [
+          {
+            "name": "email",
+            "description": null
+          },
+          {
+            "name": "message",
+            "description": null
+          },
+          {
+            "name": "name",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SetBillingAddressOnCartInput",
+        "fields": null
+      },
+      {
+        "name": "BillingAddressInput",
+        "fields": null
+      },
+      {
+        "name": "CartAddressInput",
+        "fields": null
+      },
+      {
+        "name": "SetBillingAddressOnCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SetGuestEmailOnCartInput",
+        "fields": null
+      },
+      {
+        "name": "SetGuestEmailOnCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SetPaymentMethodAndPlaceOrderInput",
+        "fields": null
+      },
+      {
+        "name": "PaymentMethodInput",
+        "fields": null
+      },
+      {
+        "name": "AuthorizenetInput",
+        "fields": null
+      },
+      {
+        "name": "BraintreeInput",
+        "fields": null
+      },
+      {
+        "name": "BraintreeCcVaultInput",
+        "fields": null
+      },
+      {
+        "name": "HostedProInput",
+        "fields": null
+      },
+      {
+        "name": "PayflowExpressInput",
+        "fields": null
+      },
+      {
+        "name": "PayflowLinkInput",
+        "fields": null
+      },
+      {
+        "name": "PayflowProInput",
+        "fields": null
+      },
+      {
+        "name": "CreditCardDetailsInput",
+        "fields": null
+      },
+      {
+        "name": "PaypalExpressInput",
+        "fields": null
+      },
+      {
+        "name": "SetPaymentMethodOnCartInput",
+        "fields": null
+      },
+      {
+        "name": "SetPaymentMethodOnCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SetShippingAddressesOnCartInput",
+        "fields": null
+      },
+      {
+        "name": "ShippingAddressInput",
+        "fields": null
+      },
+      {
+        "name": "SetShippingAddressesOnCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SetShippingMethodsOnCartInput",
+        "fields": null
+      },
+      {
+        "name": "ShippingMethodInput",
+        "fields": null
+      },
+      {
+        "name": "SetShippingMethodsOnCartOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "UpdateCartItemsInput",
+        "fields": null
+      },
+      {
+        "name": "CartItemUpdateInput",
+        "fields": null
+      },
+      {
+        "name": "UpdateCartItemsOutput",
+        "fields": [
+          {
+            "name": "cart",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "__Schema",
+        "fields": [
+          {
+            "name": "types",
+            "description": "A list of all types supported by this server."
+          },
+          {
+            "name": "queryType",
+            "description": "The type that query operations will be rooted at."
+          },
+          {
+            "name": "mutationType",
+            "description": "If this server supports mutation, the type that mutation operations will be rooted at."
+          },
+          {
+            "name": "subscriptionType",
+            "description": "If this server support subscription, the type that subscription operations will be rooted at."
+          },
+          {
+            "name": "directives",
+            "description": "A list of all directives supported by this server."
+          }
+        ]
+      },
+      {
+        "name": "__Type",
+        "fields": [
+          {
+            "name": "kind",
+            "description": null
+          },
+          {
+            "name": "name",
+            "description": null
+          },
+          {
+            "name": "description",
+            "description": null
+          },
+          {
+            "name": "fields",
+            "description": null
+          },
+          {
+            "name": "interfaces",
+            "description": null
+          },
+          {
+            "name": "possibleTypes",
+            "description": null
+          },
+          {
+            "name": "enumValues",
+            "description": null
+          },
+          {
+            "name": "inputFields",
+            "description": null
+          },
+          {
+            "name": "ofType",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "__TypeKind",
+        "fields": null
+      },
+      {
+        "name": "__Field",
+        "fields": [
+          {
+            "name": "name",
+            "description": null
+          },
+          {
+            "name": "description",
+            "description": null
+          },
+          {
+            "name": "args",
+            "description": null
+          },
+          {
+            "name": "type",
+            "description": null
+          },
+          {
+            "name": "isDeprecated",
+            "description": null
+          },
+          {
+            "name": "deprecationReason",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "__InputValue",
+        "fields": [
+          {
+            "name": "name",
+            "description": null
+          },
+          {
+            "name": "description",
+            "description": null
+          },
+          {
+            "name": "type",
+            "description": null
+          },
+          {
+            "name": "defaultValue",
+            "description": "A GraphQL-formatted string representing the default value for this input value."
+          }
+        ]
+      },
+      {
+        "name": "__EnumValue",
+        "fields": [
+          {
+            "name": "name",
+            "description": null
+          },
+          {
+            "name": "description",
+            "description": null
+          },
+          {
+            "name": "isDeprecated",
+            "description": null
+          },
+          {
+            "name": "deprecationReason",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "__Directive",
+        "fields": [
+          {
+            "name": "name",
+            "description": null
+          },
+          {
+            "name": "description",
+            "description": null
+          },
+          {
+            "name": "locations",
+            "description": null
+          },
+          {
+            "name": "args",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "__DirectiveLocation",
+        "fields": null
+      },
+      {
+        "name": "FilterTypeInput",
+        "fields": null
+      },
+      {
+        "name": "PriceTypeEnum",
+        "fields": null
+      },
+      {
+        "name": "ProductLinks",
+        "fields": [
+          {
+            "name": "link_type",
+            "description": "One of related, associated, upsell, or crosssell."
+          },
+          {
+            "name": "linked_product_sku",
+            "description": "The SKU of the linked product."
+          },
+          {
+            "name": "linked_product_type",
+            "description": "The type of linked product (simple, virtual, bundle, downloadable, grouped, configurable)."
+          },
+          {
+            "name": "position",
+            "description": "The position within the list of product links."
+          },
+          {
+            "name": "sku",
+            "description": "The identifier of the linked product."
+          }
+        ]
+      },
+      {
+        "name": "PhysicalProductInterface",
+        "fields": [
+          {
+            "name": "weight",
+            "description": "The weight of the item, in units defined by the store."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableAreaOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "product_sku",
+            "description": "The Stock Keeping Unit of the base product."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An object that defines a text area."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableOptionInterface",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableAreaValue",
+        "fields": [
+          {
+            "name": "max_characters",
+            "description": "The maximum number of characters that can be entered for this customizable option."
+          },
+          {
+            "name": "price",
+            "description": "The price assigned to this option."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableDateOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "product_sku",
+            "description": "The Stock Keeping Unit of the base product."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An object that defines a date field in a customizable option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableDateValue",
+        "fields": [
+          {
+            "name": "price",
+            "description": "The price assigned to this option."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableDropDownOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An array that defines the set of options for a drop down menu."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableDropDownValue",
+        "fields": [
+          {
+            "name": "option_type_id",
+            "description": "The ID assigned to the value."
+          },
+          {
+            "name": "price",
+            "description": "The price assigned to this option."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableMultipleOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An array that defines the set of options for a multiselect."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableMultipleValue",
+        "fields": [
+          {
+            "name": "option_type_id",
+            "description": "The ID assigned to the value."
+          },
+          {
+            "name": "price",
+            "description": "The price assigned to this option."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableFieldOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "product_sku",
+            "description": "The Stock Keeping Unit of the base product."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An object that defines a text field."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableFieldValue",
+        "fields": [
+          {
+            "name": "max_characters",
+            "description": "The maximum number of characters that can be entered for this customizable option."
+          },
+          {
+            "name": "price",
+            "description": "The price of the custom value."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableFileOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "product_sku",
+            "description": "The Stock Keeping Unit of the base product."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An object that defines a file value."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableFileValue",
+        "fields": [
+          {
+            "name": "file_extension",
+            "description": "The file extension to accept."
+          },
+          {
+            "name": "image_size_x",
+            "description": "The maximum width of an image."
+          },
+          {
+            "name": "image_size_y",
+            "description": "The maximum height of an image."
+          },
+          {
+            "name": "price",
+            "description": "The price assigned to this option."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          }
+        ]
+      },
+      {
+        "name": "ProductVideo",
+        "fields": [
+          {
+            "name": "disabled",
+            "description": "Whether the image is hidden from view."
+          },
+          {
+            "name": "label",
+            "description": "The label of the product image or video."
+          },
+          {
+            "name": "position",
+            "description": "The media item's position after it has been sorted."
+          },
+          {
+            "name": "url",
+            "description": "The URL of the product image or video."
+          },
+          {
+            "name": "video_content",
+            "description": "Contains a ProductMediaGalleryEntriesVideoContent object."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableProductInterface",
+        "fields": [
+          {
+            "name": "options",
+            "description": "An array of options for a customizable product."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableRadioOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An array that defines a set of radio buttons."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableRadioValue",
+        "fields": [
+          {
+            "name": "option_type_id",
+            "description": "The ID assigned to the value."
+          },
+          {
+            "name": "price",
+            "description": "The price assigned to this option."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the radio button is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableCheckboxOption",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "Option ID."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the option is required."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the option is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          },
+          {
+            "name": "value",
+            "description": "An array that defines a set of checkbox values."
+          }
+        ]
+      },
+      {
+        "name": "CustomizableCheckboxValue",
+        "fields": [
+          {
+            "name": "option_type_id",
+            "description": "The ID assigned to the value."
+          },
+          {
+            "name": "price",
+            "description": "The price assigned to this option."
+          },
+          {
+            "name": "price_type",
+            "description": "FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "sku",
+            "description": "The Stock Keeping Unit for this option."
+          },
+          {
+            "name": "sort_order",
+            "description": "The order in which the checkbox value is displayed."
+          },
+          {
+            "name": "title",
+            "description": "The display name for this option."
+          }
+        ]
+      },
+      {
+        "name": "VirtualProduct",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "options",
+            "description": "An array of options for a customizable product."
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          }
+        ]
+      },
+      {
+        "name": "SimpleProduct",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "options",
+            "description": "An array of options for a customizable product."
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          },
+          {
+            "name": "weight",
+            "description": "The weight of the item, in units defined by the store."
+          }
+        ]
+      },
+      {
+        "name": "ProductFilterInput",
+        "fields": null
+      },
+      {
+        "name": "ProductSortInput",
+        "fields": null
+      },
+      {
+        "name": "LayerFilterItem",
+        "fields": []
+      },
+      {
+        "name": "SimpleCartItem",
+        "fields": [
+          {
+            "name": "customizable_options",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "prices",
+            "description": null
+          },
+          {
+            "name": "product",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SelectedCustomizableOption",
+        "fields": [
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "is_required",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          },
+          {
+            "name": "sort_order",
+            "description": null
+          },
+          {
+            "name": "values",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SelectedCustomizableOptionValue",
+        "fields": [
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          },
+          {
+            "name": "price",
+            "description": null
+          },
+          {
+            "name": "value",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "CartItemSelectedOptionValuePrice",
+        "fields": [
+          {
+            "name": "type",
+            "description": null
+          },
+          {
+            "name": "units",
+            "description": null
+          },
+          {
+            "name": "value",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "VirtualCartItem",
+        "fields": [
+          {
+            "name": "customizable_options",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "prices",
+            "description": null
+          },
+          {
+            "name": "product",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "DownloadableCartItem",
+        "fields": [
+          {
+            "name": "customizable_options",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "links",
+            "description": "An array containing information about the links for the added to cart downloadable product"
+          },
+          {
+            "name": "prices",
+            "description": null
+          },
+          {
+            "name": "product",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": null
+          },
+          {
+            "name": "samples",
+            "description": "DownloadableProductSamples defines characteristics of a downloadable product"
+          }
+        ]
+      },
+      {
+        "name": "DownloadableProductLinks",
+        "fields": [
+          {
+            "name": "price",
+            "description": "The price of the downloadable product"
+          },
+          {
+            "name": "sample_url",
+            "description": "URL to the downloadable sample"
+          },
+          {
+            "name": "sort_order",
+            "description": "A number indicating the sort order"
+          },
+          {
+            "name": "title",
+            "description": "The display name of the link"
+          }
+        ]
+      },
+      {
+        "name": "DownloadableFileTypeEnum",
+        "fields": null
+      },
+      {
+        "name": "DownloadableProductSamples",
+        "fields": [
+          {
+            "name": "sample_url",
+            "description": "URL to the downloadable sample"
+          },
+          {
+            "name": "sort_order",
+            "description": "A number indicating the sort order"
+          },
+          {
+            "name": "title",
+            "description": "The display name of the sample"
+          }
+        ]
+      },
+      {
+        "name": "DownloadableProduct",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "downloadable_product_links",
+            "description": "An array containing information about the links for this downloadable product"
+          },
+          {
+            "name": "downloadable_product_samples",
+            "description": "An array containing information about samples of this downloadable product."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "links_purchased_separately",
+            "description": "A value of 1 indicates that each link in the array must be purchased separately"
+          },
+          {
+            "name": "links_title",
+            "description": "The heading above the list of downloadable products"
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "options",
+            "description": "An array of options for a customizable product."
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          }
+        ]
+      },
+      {
+        "name": "GiftCardProduct",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "allow_message",
+            "description": "Indicates whether the customer can provide a message to accompany the gift card."
+          },
+          {
+            "name": "allow_open_amount",
+            "description": "Indicates whether customers have the ability to set the value of the gift card."
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "giftcard_amounts",
+            "description": "An array that contains information about the values and ID of a gift card."
+          },
+          {
+            "name": "giftcard_type",
+            "description": "Either VIRTUAL, PHYSICAL, or COMBINED."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_redeemable",
+            "description": "Indicates whether the customer can redeem the value on the card for cash."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "lifetime",
+            "description": "The number of days after purchase until the gift card expires. A null value means there is no limit."
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "message_max_length",
+            "description": "Indicates whether the customer can provide a message to accompany the gift card."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "open_amount_max",
+            "description": "The minimum acceptable value of an open amount gift card."
+          },
+          {
+            "name": "open_amount_min",
+            "description": "The minimum acceptable value of an open amount gift card."
+          },
+          {
+            "name": "options",
+            "description": "An array of options for a customizable product."
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          },
+          {
+            "name": "weight",
+            "description": "The weight of the item, in units defined by the store."
+          }
+        ]
+      },
+      {
+        "name": "GiftCardAmounts",
+        "fields": [
+          {
+            "name": "attribute_id",
+            "description": "An internal attribute ID."
+          },
+          {
+            "name": "value",
+            "description": "The value of the gift card"
+          },
+          {
+            "name": "value_id",
+            "description": "An ID that is assigned to each unique gift card amount."
+          },
+          {
+            "name": "website_id",
+            "description": "ID of the website that generated the gift card"
+          },
+          {
+            "name": "website_value",
+            "description": "The value of the gift card"
+          }
+        ]
+      },
+      {
+        "name": "GiftCardTypeEnum",
+        "fields": null
+      },
+      {
+        "name": "BundleCartItem",
+        "fields": [
+          {
+            "name": "bundle_options",
+            "description": null
+          },
+          {
+            "name": "customizable_options",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "prices",
+            "description": null
+          },
+          {
+            "name": "product",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SelectedBundleOption",
+        "fields": [
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          },
+          {
+            "name": "type",
+            "description": null
+          },
+          {
+            "name": "values",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SelectedBundleOptionValue",
+        "fields": [
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "label",
+            "description": null
+          },
+          {
+            "name": "price",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "BundleItem",
+        "fields": [
+          {
+            "name": "option_id",
+            "description": "An ID assigned to each type of item in a bundle product."
+          },
+          {
+            "name": "options",
+            "description": "An array of additional options for this bundle item."
+          },
+          {
+            "name": "position",
+            "description": "he relative position of this item compared to the other bundle items."
+          },
+          {
+            "name": "required",
+            "description": "Indicates whether the item must be included in the bundle."
+          },
+          {
+            "name": "sku",
+            "description": "The SKU of the bundle product."
+          },
+          {
+            "name": "title",
+            "description": "The display name of the item."
+          },
+          {
+            "name": "type",
+            "description": "The input type that the customer uses to select the item. Examples include radio button and checkbox."
+          }
+        ]
+      },
+      {
+        "name": "BundleItemOption",
+        "fields": [
+          {
+            "name": "can_change_quantity",
+            "description": "Indicates whether the customer can change the number of items for this option."
+          },
+          {
+            "name": "id",
+            "description": "The ID assigned to the bundled item option."
+          },
+          {
+            "name": "is_default",
+            "description": "Indicates whether this option is the default option."
+          },
+          {
+            "name": "label",
+            "description": "The text that identifies the bundled item option."
+          },
+          {
+            "name": "position",
+            "description": "When a bundle item contains multiple options, the relative position of this option compared to the other options."
+          },
+          {
+            "name": "price",
+            "description": "The price of the selected option."
+          },
+          {
+            "name": "price_type",
+            "description": "One of FIXED, PERCENT, or DYNAMIC."
+          },
+          {
+            "name": "product",
+            "description": "Contains details about this product option."
+          },
+          {
+            "name": "quantity",
+            "description": "Indicates the quantity of this specific bundle item."
+          }
+        ]
+      },
+      {
+        "name": "BundleProduct",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "dynamic_price",
+            "description": "Indicates whether the bundle product has a dynamic price."
+          },
+          {
+            "name": "dynamic_sku",
+            "description": "Indicates whether the bundle product has a dynamic SK."
+          },
+          {
+            "name": "dynamic_weight",
+            "description": "Indicates whether the bundle product has a dynamically calculated weight."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "items",
+            "description": "An array containing information about individual bundle items."
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "options",
+            "description": "An array of options for a customizable product."
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "price_view",
+            "description": "One of PRICE_RANGE or AS_LOW_AS."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "ship_bundle_items",
+            "description": "Indicates whether to ship bundle items together or individually."
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          },
+          {
+            "name": "weight",
+            "description": "The weight of the item, in units defined by the store."
+          }
+        ]
+      },
+      {
+        "name": "PriceViewEnum",
+        "fields": null
+      },
+      {
+        "name": "ShipBundleItemsEnum",
+        "fields": null
+      },
+      {
+        "name": "GroupedProduct",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "items",
+            "description": "An array containing grouped product items"
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          },
+          {
+            "name": "weight",
+            "description": "The weight of the item, in units defined by the store."
+          }
+        ]
+      },
+      {
+        "name": "GroupedProductItem",
+        "fields": [
+          {
+            "name": "position",
+            "description": "The relative position of this item compared to the other group items"
+          },
+          {
+            "name": "product",
+            "description": "The ProductInterface object, which contains details about this product option"
+          },
+          {
+            "name": "qty",
+            "description": "The quantity of this grouped product item"
+          }
+        ]
+      },
+      {
+        "name": "PaypalExpressToken",
+        "fields": []
+      },
+      {
+        "name": "PayflowProToken",
+        "fields": [
+          {
+            "name": "response_message",
+            "description": null
+          },
+          {
+            "name": "result",
+            "description": null
+          },
+          {
+            "name": "result_code",
+            "description": null
+          },
+          {
+            "name": "secure_token",
+            "description": null
+          },
+          {
+            "name": "secure_token_id",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "ConfigurableProduct",
+        "fields": [
+          {
+            "name": "activity",
+            "description": null
+          },
+          {
+            "name": "attribute_set_id",
+            "description": "The attribute set assigned to the product."
+          },
+          {
+            "name": "canonical_url",
+            "description": "Relative canonical URL. This value is returned only if the system setting 'Use Canonical Link Meta Tag For Products' is enabled"
+          },
+          {
+            "name": "categories",
+            "description": "The categories assigned to a product."
+          },
+          {
+            "name": "category_gear",
+            "description": null
+          },
+          {
+            "name": "climate",
+            "description": null
+          },
+          {
+            "name": "collar",
+            "description": null
+          },
+          {
+            "name": "color",
+            "description": null
+          },
+          {
+            "name": "configurable_options",
+            "description": "An array of linked simple product items"
+          },
+          {
+            "name": "country_of_manufacture",
+            "description": "The product's country of origin."
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the product was created."
+          },
+          {
+            "name": "crosssell_products",
+            "description": "Crosssell Products"
+          },
+          {
+            "name": "description",
+            "description": "Detailed information about the product. The value can include simple HTML tags."
+          },
+          {
+            "name": "eco_collection",
+            "description": null
+          },
+          {
+            "name": "erin_recommends",
+            "description": null
+          },
+          {
+            "name": "features_bags",
+            "description": null
+          },
+          {
+            "name": "format",
+            "description": null
+          },
+          {
+            "name": "gender",
+            "description": null
+          },
+          {
+            "name": "gift_message_available",
+            "description": "Indicates whether a gift message is available."
+          },
+          {
+            "name": "id",
+            "description": "The ID number assigned to the product."
+          },
+          {
+            "name": "image",
+            "description": "The relative path to the main image on the product page."
+          },
+          {
+            "name": "is_returnable",
+            "description": "Indicates whether the product can be returned"
+          },
+          {
+            "name": "manufacturer",
+            "description": "A number representing the product's manufacturer."
+          },
+          {
+            "name": "material",
+            "description": null
+          },
+          {
+            "name": "media_gallery",
+            "description": "An array of Media Gallery objects."
+          },
+          {
+            "name": "meta_description",
+            "description": "A brief overview of the product for search results listings, maximum 255 characters."
+          },
+          {
+            "name": "meta_keyword",
+            "description": "A comma-separated list of keywords that are visible only to search engines."
+          },
+          {
+            "name": "meta_title",
+            "description": "A string that is displayed in the title bar and tab of the browser and in search results lists."
+          },
+          {
+            "name": "name",
+            "description": "The product name. Customers use this name to identify the product."
+          },
+          {
+            "name": "new",
+            "description": null
+          },
+          {
+            "name": "new_from_date",
+            "description": "The beginning date for new product listings, and determines if the product is featured as a new product."
+          },
+          {
+            "name": "new_to_date",
+            "description": "The end date for new product listings."
+          },
+          {
+            "name": "only_x_left_in_stock",
+            "description": "Product stock only x left count"
+          },
+          {
+            "name": "options",
+            "description": "An array of options for a customizable product."
+          },
+          {
+            "name": "options_container",
+            "description": "If the product has multiple options, determines where they appear on the product page."
+          },
+          {
+            "name": "pattern",
+            "description": null
+          },
+          {
+            "name": "performance_fabric",
+            "description": null
+          },
+          {
+            "name": "price_range",
+            "description": "A PriceRange object, indicating the range of prices for the product"
+          },
+          {
+            "name": "price_tiers",
+            "description": "An array of TierPrice objects."
+          },
+          {
+            "name": "product_links",
+            "description": "An array of ProductLinks objects."
+          },
+          {
+            "name": "purpose",
+            "description": null
+          },
+          {
+            "name": "related_products",
+            "description": "Related Products"
+          },
+          {
+            "name": "sale",
+            "description": null
+          },
+          {
+            "name": "short_description",
+            "description": "A short description of the product. Its use depends on the theme."
+          },
+          {
+            "name": "size",
+            "description": null
+          },
+          {
+            "name": "sku",
+            "description": "A number or code assigned to a product to identify the product, options, price, and manufacturer."
+          },
+          {
+            "name": "sleeve",
+            "description": null
+          },
+          {
+            "name": "small_image",
+            "description": "The relative path to the small image, which is used on catalog pages."
+          },
+          {
+            "name": "special_from_date",
+            "description": "The beginning date that a product has a special price."
+          },
+          {
+            "name": "special_price",
+            "description": "The discounted price of the product."
+          },
+          {
+            "name": "special_to_date",
+            "description": "The end date that a product has a special price."
+          },
+          {
+            "name": "stock_status",
+            "description": "Stock status of the product"
+          },
+          {
+            "name": "strap_bags",
+            "description": null
+          },
+          {
+            "name": "style_bags",
+            "description": null
+          },
+          {
+            "name": "style_bottom",
+            "description": null
+          },
+          {
+            "name": "style_general",
+            "description": null
+          },
+          {
+            "name": "swatch_image",
+            "description": "The file name of a swatch image"
+          },
+          {
+            "name": "thumbnail",
+            "description": "The relative path to the product's thumbnail image."
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating when the product was updated."
+          },
+          {
+            "name": "upsell_products",
+            "description": "Upsell Products"
+          },
+          {
+            "name": "url_key",
+            "description": "The part of the URL that identifies the product"
+          },
+          {
+            "name": "url_rewrites",
+            "description": "URL rewrites list"
+          },
+          {
+            "name": "url_suffix",
+            "description": "The part of the product URL that is appended after the url key"
+          },
+          {
+            "name": "variants",
+            "description": "An array of variants of products"
+          },
+          {
+            "name": "weight",
+            "description": "The weight of the item, in units defined by the store."
+          }
+        ]
+      },
+      {
+        "name": "ConfigurableProductOptions",
+        "fields": [
+          {
+            "name": "attribute_code",
+            "description": "A string that identifies the attribute"
+          },
+          {
+            "name": "attribute_id",
+            "description": "The ID assigned to the attribute"
+          },
+          {
+            "name": "id",
+            "description": "The configurable option ID number assigned by the system"
+          },
+          {
+            "name": "label",
+            "description": "A string that describes the configurable product option, which is displayed on the UI"
+          },
+          {
+            "name": "position",
+            "description": "A number that indicates the order in which the attribute is displayed"
+          },
+          {
+            "name": "product_id",
+            "description": "This is the same as a product's id field"
+          },
+          {
+            "name": "use_default",
+            "description": "Indicates whether the option is the default"
+          },
+          {
+            "name": "values",
+            "description": "An array that defines the value_index codes assigned to the configurable product"
+          }
+        ]
+      },
+      {
+        "name": "ConfigurableProductOptionsValues",
+        "fields": [
+          {
+            "name": "default_label",
+            "description": "The label of the product on the default store"
+          },
+          {
+            "name": "label",
+            "description": "The label of the product"
+          },
+          {
+            "name": "store_label",
+            "description": "The label of the product on the current store"
+          },
+          {
+            "name": "swatch_data",
+            "description": "Swatch data for configurable product option"
+          },
+          {
+            "name": "use_default_value",
+            "description": "Indicates whether to use the default_label"
+          },
+          {
+            "name": "value_index",
+            "description": "A unique index number assigned to the configurable product option"
+          }
+        ]
+      },
+      {
+        "name": "SwatchDataInterface",
+        "fields": [
+          {
+            "name": "value",
+            "description": "Value of swatch item (HEX color code, image link or textual value)"
+          }
+        ]
+      },
+      {
+        "name": "ConfigurableVariant",
+        "fields": [
+          {
+            "name": "attributes",
+            "description": null
+          },
+          {
+            "name": "product",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "ConfigurableAttributeOption",
+        "fields": [
+          {
+            "name": "code",
+            "description": "The ID assigned to the attribute"
+          },
+          {
+            "name": "label",
+            "description": "A string that describes the configurable attribute option"
+          },
+          {
+            "name": "value_index",
+            "description": "A unique index number assigned to the configurable product option"
+          }
+        ]
+      },
+      {
+        "name": "ConfigurableCartItem",
+        "fields": [
+          {
+            "name": "configurable_options",
+            "description": null
+          },
+          {
+            "name": "customizable_options",
+            "description": null
+          },
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "prices",
+            "description": null
+          },
+          {
+            "name": "product",
+            "description": null
+          },
+          {
+            "name": "quantity",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SelectedConfigurableOption",
+        "fields": [
+          {
+            "name": "id",
+            "description": null
+          },
+          {
+            "name": "option_label",
+            "description": null
+          },
+          {
+            "name": "value_id",
+            "description": null
+          },
+          {
+            "name": "value_label",
+            "description": null
+          }
+        ]
+      },
+      {
+        "name": "SwatchLayerFilterItemInterface",
+        "fields": [
+          {
+            "name": "swatch_data",
+            "description": "Data required to render swatch filter item"
+          }
+        ]
+      },
+      {
+        "name": "SwatchData",
+        "fields": [
+          {
+            "name": "type",
+            "description": "Type of swatch filter item: 1 - text, 2 - image"
+          },
+          {
+            "name": "value",
+            "description": "Value for swatch item (text or image link)"
+          }
+        ]
+      },
+      {
+        "name": "SwatchLayerFilterItem",
+        "fields": [
+          {
+            "name": "swatch_data",
+            "description": "Data required to render swatch filter item"
+          }
+        ]
+      },
+      {
+        "name": "ImageSwatchData",
+        "fields": [
+          {
+            "name": "thumbnail",
+            "description": "Thumbnail swatch image URL"
+          },
+          {
+            "name": "value",
+            "description": "Value of swatch item (HEX color code, image link or textual value)"
+          }
+        ]
+      },
+      {
+        "name": "TextSwatchData",
+        "fields": [
+          {
+            "name": "value",
+            "description": "Value of swatch item (HEX color code, image link or textual value)"
+          }
+        ]
+      },
+      {
+        "name": "ColorSwatchData",
+        "fields": [
+          {
+            "name": "value",
+            "description": "Value of swatch item (HEX color code, image link or textual value)"
+          }
+        ]
+      }
+    ]
+  }
+}

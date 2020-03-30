@@ -292,4 +292,66 @@ public class QueryBuilderTest {
         Assert.assertEquals("Zing Jump Rope", replacementProduct.getName());
         Assert.assertEquals(Integer.valueOf(42), replacementProduct.getAsInteger("weight"));
     }
+
+    @Test
+    public void testSchemaIntrospection() throws IOException {
+        String expectedQuery = getResource("queries/schema-introspection.txt");
+
+        // This is the real response of the query on Magento EE 2.3.5-develop
+        String jsonResponse = getResource("responses/schema-introspection.json");
+
+        __SchemaQueryDefinition schemaQuery = q -> q
+            .types(t -> t
+                .name()
+                .fields(f -> f
+                    .name()
+                    .description()));
+
+        // Check that the generated query matches the reference query
+        String queryString = Operations.query(query -> query.__schema(schemaQuery)).toString();
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Check that the reference response can be parsed and fields are properly set
+        Query query = QueryDeserializer.getGson().fromJson(jsonResponse, Query.class);
+        __Schema schema = query.__getSchema();
+        Assert.assertEquals(278, schema.getTypes().size());
+    }
+
+    @Test
+    public void testTypeIntrospection() throws IOException {
+        String expectedQuery = getResource("queries/type-introspection.txt");
+
+        // This is the real response of the query on Magento EE 2.3.5-develop with LUMA sample data
+        String jsonResponse = getResource("responses/type-introspection.json");
+
+        __TypeQueryDefinition typeQuery = q -> q
+            .name()
+            .description()
+            .inputFields(i -> i
+                .name()
+                .type(t -> t
+                    .name()));
+
+        // Check that the generated query matches the reference query
+        String queryString = Operations.query(query -> query.__type("ProductAttributeFilterInput", typeQuery)).toString();
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Check that the reference response can be parsed and fields are properly set
+        Query query = QueryDeserializer.getGson().fromJson(jsonResponse, Query.class);
+        __Type type = query.__getType();
+        Assert.assertEquals("ProductAttributeFilterInput", type.getName());
+        Assert.assertEquals(29, type.getInputFields().size());
+    }
+
+    @Test
+    public void testFullIntrospectionResponse() throws IOException {
+        // This is the real intropection response from Magento CE 2.3.4
+        String jsonResponse = getResource("responses/magento-schema-2.3.4.min.json");
+
+        // Check that the reference response can be parsed and fields are properly set
+        Query query = QueryDeserializer.getGson().fromJson(jsonResponse, Query.class);
+        __Schema schema = query.__getSchema();
+        Assert.assertEquals(256, schema.getTypes().size());
+        Assert.assertEquals(3, schema.getDirectives().size());
+    }
 }

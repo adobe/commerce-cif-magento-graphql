@@ -304,6 +304,28 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "__schema": {
+                    __Schema optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new __Schema(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "__type": {
+                    __Type optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new __Type(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 default: {
                     readCustomField(fieldName, field.getValue());
                 }
@@ -585,6 +607,20 @@ public class Query extends AbstractResponse<Query> {
     public Query setWishlist(WishlistOutput arg) {
         optimisticData.put(getKey("wishlist"), arg);
         return this;
+    }
+
+    /**
+     * The root __schema field for introspection queries.
+     */
+    public __Schema __getSchema() {
+        return (__Schema) get("__schema");
+    }
+
+    /**
+     * The root __type field for introspection queries.
+     */
+    public __Type __getType() {
+        return (__Type) get("__type");
     }
 
     public boolean unwrapsToObject(String key) {
