@@ -16,60 +16,40 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * Contains information about a product video.
- */
-public class ProductVideoQuery extends AbstractQuery<ProductVideoQuery> {
-    ProductVideoQuery(StringBuilder _queryBuilder) {
+public class SwatchDataInterfaceQuery extends AbstractQuery<SwatchDataInterfaceQuery> {
+    SwatchDataInterfaceQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
+
+        startField("__typename");
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Value of swatch item (HEX color code, image link or textual value)
      */
-    public ProductVideoQuery disabled() {
-        startField("disabled");
+    public SwatchDataInterfaceQuery value() {
+        startField("value");
 
         return this;
     }
 
-    /**
-     * The label of the product image or video.
-     */
-    public ProductVideoQuery label() {
-        startField("label");
-
-        return this;
-    }
-
-    /**
-     * The media item&#39;s position after it has been sorted.
-     */
-    public ProductVideoQuery position() {
-        startField("position");
-
-        return this;
-    }
-
-    /**
-     * The URL of the product image or video.
-     */
-    public ProductVideoQuery url() {
-        startField("url");
-
-        return this;
-    }
-
-    /**
-     * Contains a ProductMediaGalleryEntriesVideoContent object.
-     */
-    public ProductVideoQuery videoContent(ProductMediaGalleryEntriesVideoContentQueryDefinition queryDef) {
-        startField("video_content");
-
-        _queryBuilder.append('{');
-        queryDef.define(new ProductMediaGalleryEntriesVideoContentQuery(_queryBuilder));
+    public SwatchDataInterfaceQuery onColorSwatchData(ColorSwatchDataQueryDefinition queryDef) {
+        startInlineFragment("ColorSwatchData");
+        queryDef.define(new ColorSwatchDataQuery(_queryBuilder));
         _queryBuilder.append('}');
+        return this;
+    }
 
+    public SwatchDataInterfaceQuery onImageSwatchData(ImageSwatchDataQueryDefinition queryDef) {
+        startInlineFragment("ImageSwatchData");
+        queryDef.define(new ImageSwatchDataQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public SwatchDataInterfaceQuery onTextSwatchData(TextSwatchDataQueryDefinition queryDef) {
+        startInlineFragment("TextSwatchData");
+        queryDef.define(new TextSwatchDataQuery(_queryBuilder));
+        _queryBuilder.append('}');
         return this;
     }
 }

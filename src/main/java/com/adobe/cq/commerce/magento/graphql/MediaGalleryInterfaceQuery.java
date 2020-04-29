@@ -27,10 +27,28 @@ public class MediaGalleryInterfaceQuery extends AbstractQuery<MediaGalleryInterf
     }
 
     /**
+     * Whether the image is hidden from view.
+     */
+    public MediaGalleryInterfaceQuery disabled() {
+        startField("disabled");
+
+        return this;
+    }
+
+    /**
      * The label of the product image or video.
      */
     public MediaGalleryInterfaceQuery label() {
         startField("label");
+
+        return this;
+    }
+
+    /**
+     * The media item&#39;s position after it has been sorted.
+     */
+    public MediaGalleryInterfaceQuery position() {
+        startField("position");
 
         return this;
     }

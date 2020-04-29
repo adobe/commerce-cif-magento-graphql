@@ -66,6 +66,17 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
                     break;
                 }
 
+                case "swatch_data": {
+                    SwatchDataInterface optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = UnknownSwatchDataInterface.create(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "use_default_value": {
                     Boolean optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -141,6 +152,18 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
+     * Swatch data for configurable product option
+     */
+    public SwatchDataInterface getSwatchData() {
+        return (SwatchDataInterface) get("swatch_data");
+    }
+
+    public ConfigurableProductOptionsValues setSwatchData(SwatchDataInterface arg) {
+        optimisticData.put(getKey("swatch_data"), arg);
+        return this;
+    }
+
+    /**
      * Indicates whether to use the default_label
      */
     public Boolean getUseDefaultValue() {
@@ -171,6 +194,8 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
             case "label": return false;
 
             case "store_label": return false;
+
+            case "swatch_data": return false;
 
             case "use_default_value": return false;
 

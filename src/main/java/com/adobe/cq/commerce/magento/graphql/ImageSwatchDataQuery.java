@@ -14,33 +14,28 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import com.shopify.graphql.support.CustomFieldInterface;
+import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * Contains basic information about a product image or video.
- */
-
-public interface MediaGalleryInterface extends CustomFieldInterface {
-    String getGraphQlTypeName();
+public class ImageSwatchDataQuery extends AbstractQuery<ImageSwatchDataQuery> {
+    ImageSwatchDataQuery(StringBuilder _queryBuilder) {
+        super(_queryBuilder);
+    }
 
     /**
-     * Whether the image is hidden from view.
+     * Thumbnail swatch image URL
      */
-    Boolean getDisabled();
+    public ImageSwatchDataQuery thumbnail() {
+        startField("thumbnail");
+
+        return this;
+    }
 
     /**
-     * The label of the product image or video.
+     * Value of swatch item (HEX color code, image link or textual value)
      */
-    String getLabel();
+    public ImageSwatchDataQuery value() {
+        startField("value");
 
-    /**
-     * The media item&#39;s position after it has been sorted.
-     */
-    Integer getPosition();
-
-    /**
-     * The URL of the product image or video.
-     */
-    String getUrl();
+        return this;
+    }
 }
-

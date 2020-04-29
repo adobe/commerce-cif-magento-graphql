@@ -52,6 +52,19 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
+     * Swatch data for configurable product option
+     */
+    public ConfigurableProductOptionsValuesQuery swatchData(SwatchDataInterfaceQueryDefinition queryDef) {
+        startField("swatch_data");
+
+        _queryBuilder.append('{');
+        queryDef.define(new SwatchDataInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Indicates whether to use the default_label
      */
     public ConfigurableProductOptionsValuesQuery useDefaultValue() {

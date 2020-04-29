@@ -39,7 +39,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Whether the image is hidden from vie.
+     * Whether the image is hidden from view.
      */
     public MediaGalleryEntryQuery disabled() {
         startField("disabled");

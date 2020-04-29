@@ -33,10 +33,32 @@ public class ProductVideo extends AbstractResponse<ProductVideo> implements Medi
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "disabled": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "label": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "position": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -83,6 +105,18 @@ public class ProductVideo extends AbstractResponse<ProductVideo> implements Medi
     }
 
     /**
+     * Whether the image is hidden from view.
+     */
+    public Boolean getDisabled() {
+        return (Boolean) get("disabled");
+    }
+
+    public ProductVideo setDisabled(Boolean arg) {
+        optimisticData.put(getKey("disabled"), arg);
+        return this;
+    }
+
+    /**
      * The label of the product image or video.
      */
     public String getLabel() {
@@ -91,6 +125,18 @@ public class ProductVideo extends AbstractResponse<ProductVideo> implements Medi
 
     public ProductVideo setLabel(String arg) {
         optimisticData.put(getKey("label"), arg);
+        return this;
+    }
+
+    /**
+     * The media item&#39;s position after it has been sorted.
+     */
+    public Integer getPosition() {
+        return (Integer) get("position");
+    }
+
+    public ProductVideo setPosition(Integer arg) {
+        optimisticData.put(getKey("position"), arg);
         return this;
     }
 
@@ -120,7 +166,11 @@ public class ProductVideo extends AbstractResponse<ProductVideo> implements Medi
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "disabled": return false;
+
             case "label": return false;
+
+            case "position": return false;
 
             case "url": return false;
 

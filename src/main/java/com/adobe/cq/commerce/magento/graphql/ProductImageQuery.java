@@ -25,10 +25,28 @@ public class ProductImageQuery extends AbstractQuery<ProductImageQuery> {
     }
 
     /**
+     * Whether the image is hidden from view.
+     */
+    public ProductImageQuery disabled() {
+        startField("disabled");
+
+        return this;
+    }
+
+    /**
      * The label of the product image or video.
      */
     public ProductImageQuery label() {
         startField("label");
+
+        return this;
+    }
+
+    /**
+     * The media item&#39;s position after it has been sorted.
+     */
+    public ProductImageQuery position() {
+        startField("position");
 
         return this;
     }
