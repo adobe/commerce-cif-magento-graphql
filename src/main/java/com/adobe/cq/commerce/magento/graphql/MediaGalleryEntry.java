@@ -174,7 +174,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Whether the image is hidden from vie.
+     * Whether the image is hidden from view.
      */
     public Boolean getDisabled() {
         return (Boolean) get("disabled");

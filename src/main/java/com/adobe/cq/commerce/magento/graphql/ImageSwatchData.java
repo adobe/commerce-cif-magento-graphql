@@ -21,30 +21,16 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-/**
- * Product image information. Contains the image URL and label.
- */
-public class ProductImage extends AbstractResponse<ProductImage> implements MediaGalleryInterface {
-    public ProductImage() {
+public class ImageSwatchData extends AbstractResponse<ImageSwatchData> implements SwatchDataInterface {
+    public ImageSwatchData() {
     }
 
-    public ProductImage(JsonObject fields) throws SchemaViolationError {
+    public ImageSwatchData(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
-                case "disabled": {
-                    Boolean optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsBoolean(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "label": {
+                case "thumbnail": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -55,18 +41,7 @@ public class ProductImage extends AbstractResponse<ProductImage> implements Medi
                     break;
                 }
 
-                case "position": {
-                    Integer optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsInteger(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "url": {
+                case "value": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -90,66 +65,38 @@ public class ProductImage extends AbstractResponse<ProductImage> implements Medi
     }
 
     public String getGraphQlTypeName() {
-        return "ProductImage";
+        return "ImageSwatchData";
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Thumbnail swatch image URL
      */
-    public Boolean getDisabled() {
-        return (Boolean) get("disabled");
+    public String getThumbnail() {
+        return (String) get("thumbnail");
     }
 
-    public ProductImage setDisabled(Boolean arg) {
-        optimisticData.put(getKey("disabled"), arg);
+    public ImageSwatchData setThumbnail(String arg) {
+        optimisticData.put(getKey("thumbnail"), arg);
         return this;
     }
 
     /**
-     * The label of the product image or video.
+     * Value of swatch item (HEX color code, image link or textual value)
      */
-    public String getLabel() {
-        return (String) get("label");
+    public String getValue() {
+        return (String) get("value");
     }
 
-    public ProductImage setLabel(String arg) {
-        optimisticData.put(getKey("label"), arg);
-        return this;
-    }
-
-    /**
-     * The media item&#39;s position after it has been sorted.
-     */
-    public Integer getPosition() {
-        return (Integer) get("position");
-    }
-
-    public ProductImage setPosition(Integer arg) {
-        optimisticData.put(getKey("position"), arg);
-        return this;
-    }
-
-    /**
-     * The URL of the product image or video.
-     */
-    public String getUrl() {
-        return (String) get("url");
-    }
-
-    public ProductImage setUrl(String arg) {
-        optimisticData.put(getKey("url"), arg);
+    public ImageSwatchData setValue(String arg) {
+        optimisticData.put(getKey("value"), arg);
         return this;
     }
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "disabled": return false;
+            case "thumbnail": return false;
 
-            case "label": return false;
-
-            case "position": return false;
-
-            case "url": return false;
+            case "value": return false;
 
             default: return false;
         }

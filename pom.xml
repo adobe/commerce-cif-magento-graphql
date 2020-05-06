@@ -17,7 +17,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.adobe.commerce.cif</groupId>
     <artifactId>magento-graphql</artifactId>
-    <version>5.1.1-magento234-SNAPSHOT</version>
+    <version>6.0.0-magento235-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <name>Magento GraphQL data models and query builders</name>
