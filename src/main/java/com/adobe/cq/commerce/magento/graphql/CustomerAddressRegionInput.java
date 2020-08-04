@@ -96,24 +96,21 @@ public class CustomerAddressRegionInput implements Serializable {
     }
 
     /**
-     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
-     * scenarios
+     * The unique ID for a pre-defined region
      */
     public Integer getRegionId() {
         return regionId.getValue();
     }
 
     /**
-     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
-     * scenarios
+     * The unique ID for a pre-defined region
      */
     public Input<Integer> getRegionIdInput() {
         return regionId;
     }
 
     /**
-     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
-     * scenarios
+     * The unique ID for a pre-defined region
      */
     public CustomerAddressRegionInput setRegionId(Integer regionId) {
         this.regionId = Input.optional(regionId);
@@ -121,8 +118,7 @@ public class CustomerAddressRegionInput implements Serializable {
     }
 
     /**
-     * region_id is deprecated. Region ID is excessive on storefront and region code should suffice for all
-     * scenarios
+     * The unique ID for a pre-defined region
      */
     public CustomerAddressRegionInput setRegionIdInput(Input<Integer> regionId) {
         if (regionId == null) {

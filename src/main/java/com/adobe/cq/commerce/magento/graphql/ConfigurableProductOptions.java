@@ -57,6 +57,17 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
                     break;
                 }
 
+                case "attribute_id_v2": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -163,13 +174,28 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
 
     /**
      * The ID assigned to the attribute
+     *
+     * @deprecated Use attribute_id_v2 instead
      */
+    @Deprecated
     public String getAttributeId() {
         return (String) get("attribute_id");
     }
 
     public ConfigurableProductOptions setAttributeId(String arg) {
         optimisticData.put(getKey("attribute_id"), arg);
+        return this;
+    }
+
+    /**
+     * The ID assigned to the attribute
+     */
+    public Integer getAttributeIdV2() {
+        return (Integer) get("attribute_id_v2");
+    }
+
+    public ConfigurableProductOptions setAttributeIdV2(Integer arg) {
+        optimisticData.put(getKey("attribute_id_v2"), arg);
         return this;
     }
 
@@ -250,6 +276,8 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
             case "attribute_code": return false;
 
             case "attribute_id": return false;
+
+            case "attribute_id_v2": return false;
 
             case "id": return false;
 

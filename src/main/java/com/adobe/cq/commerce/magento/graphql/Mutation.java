@@ -107,12 +107,6 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
-                case "createBraintreeClientToken": {
-                    responseData.put(key, jsonAsString(field.getValue(), key));
-
-                    break;
-                }
-
                 case "createCustomer": {
                     CustomerOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -244,6 +238,39 @@ public class Mutation extends AbstractResponse<Mutation> {
                     RemoveItemFromCartOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new RemoveItemFromCartOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "reorderItems": {
+                    ReorderItemsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ReorderItemsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "requestPasswordResetEmail": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "resetPassword": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -455,18 +482,6 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
-     * Creates Client Token for Braintree Javascript SDK initialization.
-     */
-    public String getCreateBraintreeClientToken() {
-        return (String) get("createBraintreeClientToken");
-    }
-
-    public Mutation setCreateBraintreeClientToken(String arg) {
-        optimisticData.put(getKey("createBraintreeClientToken"), arg);
-        return this;
-    }
-
-    /**
      * Create customer account
      */
     public CustomerOutput getCreateCustomer() {
@@ -617,6 +632,44 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Adds all products from a customer&#39;s previous order to the cart.
+     */
+    public ReorderItemsOutput getReorderItems() {
+        return (ReorderItemsOutput) get("reorderItems");
+    }
+
+    public Mutation setReorderItems(ReorderItemsOutput arg) {
+        optimisticData.put(getKey("reorderItems"), arg);
+        return this;
+    }
+
+    /**
+     * Request an email with a reset password token for the registered customer identified by the specified
+     * email.
+     */
+    public Boolean getRequestPasswordResetEmail() {
+        return (Boolean) get("requestPasswordResetEmail");
+    }
+
+    public Mutation setRequestPasswordResetEmail(Boolean arg) {
+        optimisticData.put(getKey("requestPasswordResetEmail"), arg);
+        return this;
+    }
+
+    /**
+     * Reset a customer&#39;s password using the reset password token that the customer received in an email
+     * after requesting it using requestPasswordResetEmail.
+     */
+    public Boolean getResetPassword() {
+        return (Boolean) get("resetPassword");
+    }
+
+    public Mutation setResetPassword(Boolean arg) {
+        optimisticData.put(getKey("resetPassword"), arg);
+        return this;
+    }
+
+    /**
      * Revoke the customer token
      */
     public RevokeCustomerTokenOutput getRevokeCustomerToken() {
@@ -747,8 +800,6 @@ public class Mutation extends AbstractResponse<Mutation> {
 
             case "changeCustomerPassword": return true;
 
-            case "createBraintreeClientToken": return false;
-
             case "createCustomer": return true;
 
             case "createCustomerAddress": return true;
@@ -774,6 +825,12 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "removeCouponFromCart": return true;
 
             case "removeItemFromCart": return true;
+
+            case "reorderItems": return true;
+
+            case "requestPasswordResetEmail": return false;
+
+            case "resetPassword": return false;
 
             case "revokeCustomerToken": return true;
 

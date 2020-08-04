@@ -34,6 +34,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Enable autocomplete on login and forgot password forms
+     */
+    public StoreConfigQuery autocompleteOnStorefront() {
+        startField("autocomplete_on_storefront");
+
+        return this;
+    }
+
+    /**
      * Base currency code
      */
     public StoreConfigQuery baseCurrencyCode() {
@@ -323,6 +332,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * The minimum number of characters required for a valid password.
+     */
+    public StoreConfigQuery minimumPasswordLength() {
+        startField("minimum_password_length");
+
+        return this;
+    }
+
+    /**
      * Default No-route URL
      */
     public StoreConfigQuery noRoute() {
@@ -346,6 +364,16 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery productUrlSuffix() {
         startField("product_url_suffix");
+
+        return this;
+    }
+
+    /**
+     * The number of different character classes required in a password (lowercase, uppercase, digits,
+     * special characters).
+     */
+    public StoreConfigQuery requiredCharacterClassesNumber() {
+        startField("required_character_classes_number");
 
         return this;
     }
@@ -401,6 +429,19 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery secureBaseUrl() {
         startField("secure_base_url");
+
+        return this;
+    }
+
+    /**
+     * Email to a Friend configuration.
+     */
+    public StoreConfigQuery sendFriend(SendFriendConfigurationQueryDefinition queryDef) {
+        startField("send_friend");
+
+        _queryBuilder.append('{');
+        queryDef.define(new SendFriendConfigurationQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

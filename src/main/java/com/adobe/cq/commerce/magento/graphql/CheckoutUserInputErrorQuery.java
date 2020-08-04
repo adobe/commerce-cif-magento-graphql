@@ -16,25 +16,38 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-public class CartAddressRegionQuery extends AbstractQuery<CartAddressRegionQuery> {
-    CartAddressRegionQuery(StringBuilder _queryBuilder) {
+/**
+ * An error encountered while adding an item the the cart.
+ */
+public class CheckoutUserInputErrorQuery extends AbstractQuery<CheckoutUserInputErrorQuery> {
+    CheckoutUserInputErrorQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
-    public CartAddressRegionQuery code() {
+    /**
+     * Checkout-specific error code
+     */
+    public CheckoutUserInputErrorQuery code() {
         startField("code");
 
         return this;
     }
 
-    public CartAddressRegionQuery label() {
-        startField("label");
+    /**
+     * Localized error message
+     */
+    public CheckoutUserInputErrorQuery message() {
+        startField("message");
 
         return this;
     }
 
-    public CartAddressRegionQuery regionId() {
-        startField("region_id");
+    /**
+     * Path to the input field that caused an error. See the GraphQL specification about path errors for
+     * details: http://spec.graphql.org/draft/#sec-Errors
+     */
+    public CheckoutUserInputErrorQuery path() {
+        startField("path");
 
         return this;
     }

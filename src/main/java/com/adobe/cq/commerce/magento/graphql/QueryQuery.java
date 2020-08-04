@@ -42,6 +42,67 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         return this;
     }
 
+    public class CategoriesArguments extends Arguments {
+        CategoriesArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Identifies which Category filter inputs to search for and return.
+         */
+        public CategoriesArguments filters(CategoryFilterInput value) {
+            if (value != null) {
+                startArgument("filters");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once. This attribute is optional.
+         */
+        public CategoriesArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return. The default value is 1.
+         */
+        public CategoriesArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface CategoriesArgumentsDefinition {
+        void define(CategoriesArguments args);
+    }
+
+    public QueryQuery categories(CategoryResultQueryDefinition queryDef) {
+        return categories(args -> {}, queryDef);
+    }
+
+    public QueryQuery categories(CategoriesArgumentsDefinition argsDef, CategoryResultQueryDefinition queryDef) {
+        startField("categories");
+
+        CategoriesArguments args = new CategoriesArguments(_queryBuilder);
+        argsDef.define(args);
+        CategoriesArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CategoryResultQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class CategoryArguments extends Arguments {
         CategoryArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);

@@ -16,46 +16,33 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-/**
- * The category products object returned in the Category query.
- */
-public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> {
-    CategoryProductsQuery(StringBuilder _queryBuilder) {
+public class ReorderItemsOutputQuery extends AbstractQuery<ReorderItemsOutputQuery> {
+    ReorderItemsOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of products that are assigned to the category.
+     * Contains detailed information about the customer&#39;s cart.
      */
-    public CategoryProductsQuery items(ProductInterfaceQueryDefinition queryDef) {
-        startField("items");
+    public ReorderItemsOutputQuery cart(CartQueryDefinition queryDef) {
+        startField("cart");
 
         _queryBuilder.append('{');
-        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        queryDef.define(new CartQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
     }
 
     /**
-     * An object that includes the page_info and currentPage values specified in the query.
+     * An array of reordering errors.
      */
-    public CategoryProductsQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
-        startField("page_info");
+    public ReorderItemsOutputQuery userInputErrors(CheckoutUserInputErrorQueryDefinition queryDef) {
+        startField("userInputErrors");
 
         _queryBuilder.append('{');
-        queryDef.define(new SearchResultPageInfoQuery(_queryBuilder));
+        queryDef.define(new CheckoutUserInputErrorQuery(_queryBuilder));
         _queryBuilder.append('}');
-
-        return this;
-    }
-
-    /**
-     * The number of products in the category that are marked as visible. By default, in complex products,
-     * parent products are visible, but their child products are not.
-     */
-    public CategoryProductsQuery totalCount() {
-        startField("total_count");
 
         return this;
     }

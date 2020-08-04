@@ -21,44 +21,23 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
-    public CartAddressRegion() {
+public class SendFriendConfiguration extends AbstractResponse<SendFriendConfiguration> {
+    public SendFriendConfiguration() {
     }
 
-    public CartAddressRegion(JsonObject fields) throws SchemaViolationError {
+    public SendFriendConfiguration(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
-                case "code": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                case "enabled_for_customers": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
 
                     break;
                 }
 
-                case "label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "region_id": {
-                    Integer optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsInteger(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                case "enabled_for_guests": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
 
                     break;
                 }
@@ -76,43 +55,38 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
     }
 
     public String getGraphQlTypeName() {
-        return "CartAddressRegion";
+        return "SendFriendConfiguration";
     }
 
-    public String getCode() {
-        return (String) get("code");
+    /**
+     * Indicates whether the Email to a Friend feature is enabled.
+     */
+    public Boolean getEnabledForCustomers() {
+        return (Boolean) get("enabled_for_customers");
     }
 
-    public CartAddressRegion setCode(String arg) {
-        optimisticData.put(getKey("code"), arg);
+    public SendFriendConfiguration setEnabledForCustomers(Boolean arg) {
+        optimisticData.put(getKey("enabled_for_customers"), arg);
         return this;
     }
 
-    public String getLabel() {
-        return (String) get("label");
+    /**
+     * Indicates whether the Email to a Friend feature is enabled for guests.
+     */
+    public Boolean getEnabledForGuests() {
+        return (Boolean) get("enabled_for_guests");
     }
 
-    public CartAddressRegion setLabel(String arg) {
-        optimisticData.put(getKey("label"), arg);
-        return this;
-    }
-
-    public Integer getRegionId() {
-        return (Integer) get("region_id");
-    }
-
-    public CartAddressRegion setRegionId(Integer arg) {
-        optimisticData.put(getKey("region_id"), arg);
+    public SendFriendConfiguration setEnabledForGuests(Boolean arg) {
+        optimisticData.put(getKey("enabled_for_guests"), arg);
         return this;
     }
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "enabled_for_customers": return false;
 
-            case "label": return false;
-
-            case "region_id": return false;
+            case "enabled_for_guests": return false;
 
             default: return false;
         }

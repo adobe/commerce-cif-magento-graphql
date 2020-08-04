@@ -107,9 +107,8 @@ public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegio
     }
 
     /**
-     * @deprecated Region ID is excessive on storefront and region code should suffice for all scenarios
+     * The unique ID for a pre-defined region
      */
-    @Deprecated
     public Integer getRegionId() {
         return (Integer) get("region_id");
     }

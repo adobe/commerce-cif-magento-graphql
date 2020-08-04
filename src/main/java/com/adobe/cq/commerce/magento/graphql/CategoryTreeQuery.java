@@ -228,7 +228,8 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     }
 
     /**
-     * The number of products in the category.
+     * The number of products in the category that are marked as visible. By default, in complex products,
+     * parent products are visible, but their child products are not.
      */
     public CategoryTreeQuery productCount() {
         startField("product_count");

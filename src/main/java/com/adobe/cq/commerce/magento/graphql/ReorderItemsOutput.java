@@ -14,6 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.JsonElement;
@@ -21,44 +23,33 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
-    public CartAddressRegion() {
+public class ReorderItemsOutput extends AbstractResponse<ReorderItemsOutput> {
+    public ReorderItemsOutput() {
     }
 
-    public CartAddressRegion(JsonObject fields) throws SchemaViolationError {
+    public ReorderItemsOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
-                case "code": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                case "cart": {
+                    responseData.put(key, new Cart(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
 
-                case "label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                case "userInputErrors": {
+                    List<CheckoutUserInputError> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        CheckoutUserInputError optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = new CheckoutUserInputError(jsonAsObject(element1, key));
+                        }
+
+                        list1.add(optional2);
                     }
 
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "region_id": {
-                    Integer optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsInteger(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, list1);
 
                     break;
                 }
@@ -76,43 +67,38 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
     }
 
     public String getGraphQlTypeName() {
-        return "CartAddressRegion";
+        return "ReorderItemsOutput";
     }
 
-    public String getCode() {
-        return (String) get("code");
+    /**
+     * Contains detailed information about the customer&#39;s cart.
+     */
+    public Cart getCart() {
+        return (Cart) get("cart");
     }
 
-    public CartAddressRegion setCode(String arg) {
-        optimisticData.put(getKey("code"), arg);
+    public ReorderItemsOutput setCart(Cart arg) {
+        optimisticData.put(getKey("cart"), arg);
         return this;
     }
 
-    public String getLabel() {
-        return (String) get("label");
+    /**
+     * An array of reordering errors.
+     */
+    public List<CheckoutUserInputError> getUserInputErrors() {
+        return (List<CheckoutUserInputError>) get("userInputErrors");
     }
 
-    public CartAddressRegion setLabel(String arg) {
-        optimisticData.put(getKey("label"), arg);
-        return this;
-    }
-
-    public Integer getRegionId() {
-        return (Integer) get("region_id");
-    }
-
-    public CartAddressRegion setRegionId(Integer arg) {
-        optimisticData.put(getKey("region_id"), arg);
+    public ReorderItemsOutput setUserInputErrors(List<CheckoutUserInputError> arg) {
+        optimisticData.put(getKey("userInputErrors"), arg);
         return this;
     }
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "cart": return true;
 
-            case "label": return false;
-
-            case "region_id": return false;
+            case "userInputErrors": return true;
 
             default: return false;
         }

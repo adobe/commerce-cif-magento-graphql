@@ -43,6 +43,17 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "categories": {
+                    CategoryResult optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CategoryResult(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "category": {
                     CategoryTree optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -349,6 +360,15 @@ public class Query extends AbstractResponse<Query> {
         return this;
     }
 
+    public CategoryResult getCategories() {
+        return (CategoryResult) get("categories");
+    }
+
+    public Query setCategories(CategoryResult arg) {
+        optimisticData.put(getKey("categories"), arg);
+        return this;
+    }
+
     /**
      * The category query searches for categories that match the criteria specified in the search and
      * filter attributes.
@@ -626,6 +646,8 @@ public class Query extends AbstractResponse<Query> {
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "cart": return true;
+
+            case "categories": return true;
 
             case "category": return true;
 
