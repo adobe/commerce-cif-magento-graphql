@@ -119,7 +119,8 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
     }
 
     /**
-     * The number of products returned.
+     * The number of products in the category that are marked as visible. By default, in complex products,
+     * parent products are visible, but their child products are not.
      */
     public Integer getTotalCount() {
         return (Integer) get("total_count");

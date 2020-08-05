@@ -197,9 +197,8 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * @deprecated Region ID is excessive on storefront and region code should suffice for all scenarios
+     * The unique ID for a pre-defined region
      */
-    @Deprecated
     public CustomerAddressQuery regionId() {
         startField("region_id");
 

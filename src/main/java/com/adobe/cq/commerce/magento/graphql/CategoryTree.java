@@ -688,7 +688,8 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The number of products in the category.
+     * The number of products in the category that are marked as visible. By default, in complex products,
+     * parent products are visible, but their child products are not.
      */
     public Integer getProductCount() {
         return (Integer) get("product_count");

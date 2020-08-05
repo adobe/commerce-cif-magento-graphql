@@ -260,15 +260,6 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
-     * Creates Client Token for Braintree Javascript SDK initialization.
-     */
-    public MutationQuery createBraintreeClientToken() {
-        startField("createBraintreeClientToken");
-
-        return this;
-    }
-
-    /**
      * Create customer account
      */
     public MutationQuery createCustomer(CustomerInput input, CustomerOutputQueryDefinition queryDef) {
@@ -577,6 +568,60 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         _queryBuilder.append('{');
         queryDef.define(new RemoveItemFromCartOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Adds all products from a customer&#39;s previous order to the cart.
+     */
+    public MutationQuery reorderItems(String orderNumber, ReorderItemsOutputQueryDefinition queryDef) {
+        startField("reorderItems");
+
+        _queryBuilder.append("(orderNumber:");
+        AbstractQuery.appendQuotedString(_queryBuilder, orderNumber.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new ReorderItemsOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Request an email with a reset password token for the registered customer identified by the specified
+     * email.
+     */
+    public MutationQuery requestPasswordResetEmail(String email) {
+        startField("requestPasswordResetEmail");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(')');
+
+        return this;
+    }
+
+    /**
+     * Reset a customer&#39;s password using the reset password token that the customer received in an email
+     * after requesting it using requestPasswordResetEmail.
+     */
+    public MutationQuery resetPassword(String email, String resetPasswordToken, String newPassword) {
+        startField("resetPassword");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(",resetPasswordToken:");
+        AbstractQuery.appendQuotedString(_queryBuilder, resetPasswordToken.toString());
+
+        _queryBuilder.append(",newPassword:");
+        AbstractQuery.appendQuotedString(_queryBuilder, newPassword.toString());
+
+        _queryBuilder.append(')');
 
         return this;
     }

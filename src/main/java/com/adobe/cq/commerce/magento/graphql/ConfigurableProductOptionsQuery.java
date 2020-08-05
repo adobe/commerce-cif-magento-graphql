@@ -35,9 +35,21 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
 
     /**
      * The ID assigned to the attribute
+     *
+     * @deprecated Use attribute_id_v2 instead
      */
+    @Deprecated
     public ConfigurableProductOptionsQuery attributeId() {
         startField("attribute_id");
+
+        return this;
+    }
+
+    /**
+     * The ID assigned to the attribute
+     */
+    public ConfigurableProductOptionsQuery attributeIdV2() {
+        startField("attribute_id_v2");
 
         return this;
     }

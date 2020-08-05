@@ -68,7 +68,7 @@ public enum CurrencyEnum {
 
     BWP,
 
-    BYR,
+    BYN,
 
     BZD,
 
@@ -466,8 +466,8 @@ public enum CurrencyEnum {
                 return BWP;
             }
 
-            case "BYR": {
-                return BYR;
+            case "BYN": {
+                return BYN;
             }
 
             case "BZD": {
@@ -1153,8 +1153,8 @@ public enum CurrencyEnum {
                 return "BWP";
             }
 
-            case BYR: {
-                return "BYR";
+            case BYN: {
+                return "BYN";
             }
 
             case BZD: {

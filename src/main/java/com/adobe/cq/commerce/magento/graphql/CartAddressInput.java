@@ -39,6 +39,8 @@ public class CartAddressInput implements Serializable {
 
     private Input<String> region = Input.undefined();
 
+    private Input<Integer> regionId = Input.undefined();
+
     private Input<Boolean> saveInAddressBook = Input.undefined();
 
     public CartAddressInput(String city, String countryCode, String firstname, String lastname, List<String> street, String telephone) {
@@ -172,19 +174,52 @@ public class CartAddressInput implements Serializable {
         return this;
     }
 
+    public Integer getRegionId() {
+        return regionId.getValue();
+    }
+
+    public Input<Integer> getRegionIdInput() {
+        return regionId;
+    }
+
+    public CartAddressInput setRegionId(Integer regionId) {
+        this.regionId = Input.optional(regionId);
+        return this;
+    }
+
+    public CartAddressInput setRegionIdInput(Input<Integer> regionId) {
+        if (regionId == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * Determines whether to save the address in the customer&#39;s address book. The default value is true
+     */
     public Boolean getSaveInAddressBook() {
         return saveInAddressBook.getValue();
     }
 
+    /**
+     * Determines whether to save the address in the customer&#39;s address book. The default value is true
+     */
     public Input<Boolean> getSaveInAddressBookInput() {
         return saveInAddressBook;
     }
 
+    /**
+     * Determines whether to save the address in the customer&#39;s address book. The default value is true
+     */
     public CartAddressInput setSaveInAddressBook(Boolean saveInAddressBook) {
         this.saveInAddressBook = Input.optional(saveInAddressBook);
         return this;
     }
 
+    /**
+     * Determines whether to save the address in the customer&#39;s address book. The default value is true
+     */
     public CartAddressInput setSaveInAddressBookInput(Input<Boolean> saveInAddressBook) {
         if (saveInAddressBook == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -264,6 +299,17 @@ public class CartAddressInput implements Serializable {
             _queryBuilder.append("region:");
             if (region.getValue() != null) {
                 AbstractQuery.appendQuotedString(_queryBuilder, region.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.regionId.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("region_id:");
+            if (regionId.getValue() != null) {
+                _queryBuilder.append(regionId.getValue());
             } else {
                 _queryBuilder.append("null");
             }

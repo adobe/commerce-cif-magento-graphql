@@ -14,6 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.JsonElement;
@@ -21,19 +23,32 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
-    public CartAddressRegion() {
+/**
+ * A collection of CategoryTree objects and pagination information.
+ */
+public class CategoryResult extends AbstractResponse<CategoryResult> {
+    public CategoryResult() {
     }
 
-    public CartAddressRegion(JsonObject fields) throws SchemaViolationError {
+    public CategoryResult(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
-                case "code": {
-                    String optional1 = null;
+                case "items": {
+                    List<CategoryTree> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        List<CategoryTree> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            CategoryTree optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new CategoryTree(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
                     }
 
                     responseData.put(key, optional1);
@@ -41,10 +56,10 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
                     break;
                 }
 
-                case "label": {
-                    String optional1 = null;
+                case "page_info": {
+                    SearchResultPageInfo optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
+                        optional1 = new SearchResultPageInfo(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -52,7 +67,7 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
                     break;
                 }
 
-                case "region_id": {
+                case "total_count": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
@@ -76,43 +91,52 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
     }
 
     public String getGraphQlTypeName() {
-        return "CartAddressRegion";
+        return "CategoryResult";
     }
 
-    public String getCode() {
-        return (String) get("code");
+    /**
+     * A list of categories that match the filter criteria.
+     */
+    public List<CategoryTree> getItems() {
+        return (List<CategoryTree>) get("items");
     }
 
-    public CartAddressRegion setCode(String arg) {
-        optimisticData.put(getKey("code"), arg);
+    public CategoryResult setItems(List<CategoryTree> arg) {
+        optimisticData.put(getKey("items"), arg);
         return this;
     }
 
-    public String getLabel() {
-        return (String) get("label");
+    /**
+     * An object that includes the page_info and currentPage values specified in the query.
+     */
+    public SearchResultPageInfo getPageInfo() {
+        return (SearchResultPageInfo) get("page_info");
     }
 
-    public CartAddressRegion setLabel(String arg) {
-        optimisticData.put(getKey("label"), arg);
+    public CategoryResult setPageInfo(SearchResultPageInfo arg) {
+        optimisticData.put(getKey("page_info"), arg);
         return this;
     }
 
-    public Integer getRegionId() {
-        return (Integer) get("region_id");
+    /**
+     * The total number of categories that match the criteria.
+     */
+    public Integer getTotalCount() {
+        return (Integer) get("total_count");
     }
 
-    public CartAddressRegion setRegionId(Integer arg) {
-        optimisticData.put(getKey("region_id"), arg);
+    public CategoryResult setTotalCount(Integer arg) {
+        optimisticData.put(getKey("total_count"), arg);
         return this;
     }
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "items": return true;
 
-            case "label": return false;
+            case "page_info": return true;
 
-            case "region_id": return false;
+            case "total_count": return false;
 
             default: return false;
         }

@@ -16,25 +16,25 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 
-public class CartAddressRegionQuery extends AbstractQuery<CartAddressRegionQuery> {
-    CartAddressRegionQuery(StringBuilder _queryBuilder) {
+public class SendFriendConfigurationQuery extends AbstractQuery<SendFriendConfigurationQuery> {
+    SendFriendConfigurationQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
-    public CartAddressRegionQuery code() {
-        startField("code");
+    /**
+     * Indicates whether the Email to a Friend feature is enabled.
+     */
+    public SendFriendConfigurationQuery enabledForCustomers() {
+        startField("enabled_for_customers");
 
         return this;
     }
 
-    public CartAddressRegionQuery label() {
-        startField("label");
-
-        return this;
-    }
-
-    public CartAddressRegionQuery regionId() {
-        startField("region_id");
+    /**
+     * Indicates whether the Email to a Friend feature is enabled for guests.
+     */
+    public SendFriendConfigurationQuery enabledForGuests() {
+        startField("enabled_for_guests");
 
         return this;
     }

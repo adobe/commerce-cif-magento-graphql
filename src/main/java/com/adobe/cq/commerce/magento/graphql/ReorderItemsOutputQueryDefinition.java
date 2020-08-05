@@ -14,28 +14,6 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import com.shopify.graphql.support.AbstractQuery;
-
-public class CartAddressRegionQuery extends AbstractQuery<CartAddressRegionQuery> {
-    CartAddressRegionQuery(StringBuilder _queryBuilder) {
-        super(_queryBuilder);
-    }
-
-    public CartAddressRegionQuery code() {
-        startField("code");
-
-        return this;
-    }
-
-    public CartAddressRegionQuery label() {
-        startField("label");
-
-        return this;
-    }
-
-    public CartAddressRegionQuery regionId() {
-        startField("region_id");
-
-        return this;
-    }
+public interface ReorderItemsOutputQueryDefinition {
+    void define(ReorderItemsOutputQuery _queryBuilder);
 }

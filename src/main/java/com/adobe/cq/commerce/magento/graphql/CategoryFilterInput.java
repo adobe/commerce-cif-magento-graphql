@@ -29,6 +29,8 @@ public class CategoryFilterInput implements Serializable {
 
     private Input<FilterEqualTypeInput> urlKey = Input.undefined();
 
+    private Input<FilterEqualTypeInput> urlPath = Input.undefined();
+
     /**
      * Filter by category ID that uniquely identifies the category.
      */
@@ -96,21 +98,21 @@ public class CategoryFilterInput implements Serializable {
     }
 
     /**
-     * Filter by the part of the URL that identifies the category
+     * Filter by the part of the URL that identifies the category.
      */
     public FilterEqualTypeInput getUrlKey() {
         return urlKey.getValue();
     }
 
     /**
-     * Filter by the part of the URL that identifies the category
+     * Filter by the part of the URL that identifies the category.
      */
     public Input<FilterEqualTypeInput> getUrlKeyInput() {
         return urlKey;
     }
 
     /**
-     * Filter by the part of the URL that identifies the category
+     * Filter by the part of the URL that identifies the category.
      */
     public CategoryFilterInput setUrlKey(FilterEqualTypeInput urlKey) {
         this.urlKey = Input.optional(urlKey);
@@ -118,13 +120,46 @@ public class CategoryFilterInput implements Serializable {
     }
 
     /**
-     * Filter by the part of the URL that identifies the category
+     * Filter by the part of the URL that identifies the category.
      */
     public CategoryFilterInput setUrlKeyInput(Input<FilterEqualTypeInput> urlKey) {
         if (urlKey == null) {
             throw new IllegalArgumentException("Input can not be null");
         }
         this.urlKey = urlKey;
+        return this;
+    }
+
+    /**
+     * Filter by the URL path for the category.
+     */
+    public FilterEqualTypeInput getUrlPath() {
+        return urlPath.getValue();
+    }
+
+    /**
+     * Filter by the URL path for the category.
+     */
+    public Input<FilterEqualTypeInput> getUrlPathInput() {
+        return urlPath;
+    }
+
+    /**
+     * Filter by the URL path for the category.
+     */
+    public CategoryFilterInput setUrlPath(FilterEqualTypeInput urlPath) {
+        this.urlPath = Input.optional(urlPath);
+        return this;
+    }
+
+    /**
+     * Filter by the URL path for the category.
+     */
+    public CategoryFilterInput setUrlPathInput(Input<FilterEqualTypeInput> urlPath) {
+        if (urlPath == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.urlPath = urlPath;
         return this;
     }
 
@@ -160,6 +195,17 @@ public class CategoryFilterInput implements Serializable {
             _queryBuilder.append("url_key:");
             if (urlKey.getValue() != null) {
                 urlKey.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.urlPath.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("url_path:");
+            if (urlPath.getValue() != null) {
+                urlPath.getValue().appendTo(_queryBuilder);
             } else {
                 _queryBuilder.append("null");
             }

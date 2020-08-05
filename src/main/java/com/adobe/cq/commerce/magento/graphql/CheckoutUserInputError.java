@@ -14,6 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.JsonElement;
@@ -21,44 +23,42 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
-    public CartAddressRegion() {
+/**
+ * An error encountered while adding an item the the cart.
+ */
+public class CheckoutUserInputError extends AbstractResponse<CheckoutUserInputError> {
+    public CheckoutUserInputError() {
     }
 
-    public CartAddressRegion(JsonObject fields) throws SchemaViolationError {
+    public CheckoutUserInputError(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
                 case "code": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                    responseData.put(key, CheckoutUserInputErrorCodes.fromGraphQl(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
 
-                case "label": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
+                case "message": {
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
 
-                case "region_id": {
-                    Integer optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsInteger(field.getValue(), key);
+                case "path": {
+                    List<String> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        String optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = jsonAsString(element1, key);
+                        }
+
+                        list1.add(optional2);
                     }
 
-                    responseData.put(key, optional1);
+                    responseData.put(key, list1);
 
                     break;
                 }
@@ -76,33 +76,43 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
     }
 
     public String getGraphQlTypeName() {
-        return "CartAddressRegion";
+        return "CheckoutUserInputError";
     }
 
-    public String getCode() {
-        return (String) get("code");
+    /**
+     * Checkout-specific error code
+     */
+    public CheckoutUserInputErrorCodes getCode() {
+        return (CheckoutUserInputErrorCodes) get("code");
     }
 
-    public CartAddressRegion setCode(String arg) {
+    public CheckoutUserInputError setCode(CheckoutUserInputErrorCodes arg) {
         optimisticData.put(getKey("code"), arg);
         return this;
     }
 
-    public String getLabel() {
-        return (String) get("label");
+    /**
+     * Localized error message
+     */
+    public String getMessage() {
+        return (String) get("message");
     }
 
-    public CartAddressRegion setLabel(String arg) {
-        optimisticData.put(getKey("label"), arg);
+    public CheckoutUserInputError setMessage(String arg) {
+        optimisticData.put(getKey("message"), arg);
         return this;
     }
 
-    public Integer getRegionId() {
-        return (Integer) get("region_id");
+    /**
+     * Path to the input field that caused an error. See the GraphQL specification about path errors for
+     * details: http://spec.graphql.org/draft/#sec-Errors
+     */
+    public List<String> getPath() {
+        return (List<String>) get("path");
     }
 
-    public CartAddressRegion setRegionId(Integer arg) {
-        optimisticData.put(getKey("region_id"), arg);
+    public CheckoutUserInputError setPath(List<String> arg) {
+        optimisticData.put(getKey("path"), arg);
         return this;
     }
 
@@ -110,9 +120,9 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
         switch (getFieldName(key)) {
             case "code": return false;
 
-            case "label": return false;
+            case "message": return false;
 
-            case "region_id": return false;
+            case "path": return false;
 
             default: return false;
         }

@@ -44,6 +44,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "autocomplete_on_storefront": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "base_currency_code": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -396,6 +407,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "minimum_password_length": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "no_route": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -419,6 +441,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                 }
 
                 case "product_url_suffix": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "required_character_classes_number": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -488,6 +521,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "send_friend": {
+                    SendFriendConfiguration optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new SendFriendConfiguration(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -619,6 +663,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setAbsoluteFooter(String arg) {
         optimisticData.put(getKey("absolute_footer"), arg);
+        return this;
+    }
+
+    /**
+     * Enable autocomplete on login and forgot password forms
+     */
+    public Boolean getAutocompleteOnStorefront() {
+        return (Boolean) get("autocomplete_on_storefront");
+    }
+
+    public StoreConfig setAutocompleteOnStorefront(Boolean arg) {
+        optimisticData.put(getKey("autocomplete_on_storefront"), arg);
         return this;
     }
 
@@ -1008,6 +1064,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * The minimum number of characters required for a valid password.
+     */
+    public String getMinimumPasswordLength() {
+        return (String) get("minimum_password_length");
+    }
+
+    public StoreConfig setMinimumPasswordLength(String arg) {
+        optimisticData.put(getKey("minimum_password_length"), arg);
+        return this;
+    }
+
+    /**
      * Default No-route URL
      */
     public String getNoRoute() {
@@ -1041,6 +1109,19 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setProductUrlSuffix(String arg) {
         optimisticData.put(getKey("product_url_suffix"), arg);
+        return this;
+    }
+
+    /**
+     * The number of different character classes required in a password (lowercase, uppercase, digits,
+     * special characters).
+     */
+    public String getRequiredCharacterClassesNumber() {
+        return (String) get("required_character_classes_number");
+    }
+
+    public StoreConfig setRequiredCharacterClassesNumber(String arg) {
+        optimisticData.put(getKey("required_character_classes_number"), arg);
         return this;
     }
 
@@ -1114,6 +1195,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setSecureBaseUrl(String arg) {
         optimisticData.put(getKey("secure_base_url"), arg);
+        return this;
+    }
+
+    /**
+     * Email to a Friend configuration.
+     */
+    public SendFriendConfiguration getSendFriend() {
+        return (SendFriendConfiguration) get("send_friend");
+    }
+
+    public StoreConfig setSendFriend(SendFriendConfiguration arg) {
+        optimisticData.put(getKey("send_friend"), arg);
         return this;
     }
 
@@ -1229,6 +1322,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
         switch (getFieldName(key)) {
             case "absolute_footer": return false;
 
+            case "autocomplete_on_storefront": return false;
+
             case "base_currency_code": return false;
 
             case "base_link_url": return false;
@@ -1293,11 +1388,15 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
             case "logo_width": return false;
 
+            case "minimum_password_length": return false;
+
             case "no_route": return false;
 
             case "product_fixed_product_tax_display_setting": return false;
 
             case "product_url_suffix": return false;
+
+            case "required_character_classes_number": return false;
 
             case "root_category_id": return false;
 
@@ -1310,6 +1409,8 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "secure_base_static_url": return false;
 
             case "secure_base_url": return false;
+
+            case "send_friend": return true;
 
             case "show_cms_breadcrumbs": return false;
 

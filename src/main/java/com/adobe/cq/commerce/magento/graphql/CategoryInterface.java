@@ -111,7 +111,8 @@ public interface CategoryInterface extends CustomFieldInterface {
     Integer getPosition();
 
     /**
-     * The number of products in the category.
+     * The number of products in the category that are marked as visible. By default, in complex products,
+     * parent products are visible, but their child products are not.
      */
     Integer getProductCount();
 

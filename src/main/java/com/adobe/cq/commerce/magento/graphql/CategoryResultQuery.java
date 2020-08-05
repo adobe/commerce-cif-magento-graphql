@@ -17,21 +17,21 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * The category products object returned in the Category query.
+ * A collection of CategoryTree objects and pagination information.
  */
-public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> {
-    CategoryProductsQuery(StringBuilder _queryBuilder) {
+public class CategoryResultQuery extends AbstractQuery<CategoryResultQuery> {
+    CategoryResultQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of products that are assigned to the category.
+     * A list of categories that match the filter criteria.
      */
-    public CategoryProductsQuery items(ProductInterfaceQueryDefinition queryDef) {
+    public CategoryResultQuery items(CategoryTreeQueryDefinition queryDef) {
         startField("items");
 
         _queryBuilder.append('{');
-        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        queryDef.define(new CategoryTreeQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -40,7 +40,7 @@ public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> 
     /**
      * An object that includes the page_info and currentPage values specified in the query.
      */
-    public CategoryProductsQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
+    public CategoryResultQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");
 
         _queryBuilder.append('{');
@@ -51,10 +51,9 @@ public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> 
     }
 
     /**
-     * The number of products in the category that are marked as visible. By default, in complex products,
-     * parent products are visible, but their child products are not.
+     * The total number of categories that match the criteria.
      */
-    public CategoryProductsQuery totalCount() {
+    public CategoryResultQuery totalCount() {
         startField("total_count");
 
         return this;

@@ -93,7 +93,8 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     }
 
     /**
-     * The number of products returned.
+     * The number of products that are marked as visible. By default, in complex products, parent products
+     * are visible, but their child products are not.
      */
     public ProductsQuery totalCount() {
         startField("total_count");
