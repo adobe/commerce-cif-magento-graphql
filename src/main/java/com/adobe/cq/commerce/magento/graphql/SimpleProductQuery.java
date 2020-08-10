@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Fragment;
 
 /**
  * A simple product is tangible and are usually sold as single units or in fixed quantities.
@@ -547,6 +548,69 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     public SimpleProductQuery weight() {
         startField("weight");
 
+        return this;
+    }
+
+    /**
+     * Creates a GraphQL "named" fragment with the specified query type definition.
+     * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
+     * 
+     * @param name The name of the fragment, must be unique for a given GraphQL request.
+     * @param queryDef The fragment definition.
+     * @return The fragment of a given generics type.
+     */
+    public static Fragment<SimpleProductQuery> createFragment(String name, SimpleProductQueryDefinition queryDef) {
+        StringBuilder sb = new StringBuilder();
+        queryDef.define(new SimpleProductQuery(sb));
+        return new Fragment<>(name, "SimpleProduct", sb.toString());
+    }
+
+    /**
+     * Adds a <code>SimpleProductQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query. For GraphQL types implementing an interface, there
+     * will be some similar methods using the Query type of each implemented interface.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public SimpleProductQuery addFragmentReference(Fragment<SimpleProductQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>CustomizableProductInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public SimpleProductQuery addCustomizableProductInterfaceFragmentReference(Fragment<CustomizableProductInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>PhysicalProductInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public SimpleProductQuery addPhysicalProductInterfaceFragmentReference(Fragment<PhysicalProductInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>ProductInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public SimpleProductQuery addProductInterfaceFragmentReference(Fragment<ProductInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
         return this;
     }
 }

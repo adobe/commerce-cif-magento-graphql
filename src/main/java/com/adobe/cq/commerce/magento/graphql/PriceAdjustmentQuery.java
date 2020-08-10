@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Fragment;
 
 /**
  * PriceAdjustment is deprecated. Taxes will be included or excluded in the price. The PricedAdjustment
@@ -61,6 +62,33 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
     public PriceAdjustmentQuery description() {
         startField("description");
 
+        return this;
+    }
+
+    /**
+     * Creates a GraphQL "named" fragment with the specified query type definition.
+     * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
+     * 
+     * @param name The name of the fragment, must be unique for a given GraphQL request.
+     * @param queryDef The fragment definition.
+     * @return The fragment of a given generics type.
+     */
+    public static Fragment<PriceAdjustmentQuery> createFragment(String name, PriceAdjustmentQueryDefinition queryDef) {
+        StringBuilder sb = new StringBuilder();
+        queryDef.define(new PriceAdjustmentQuery(sb));
+        return new Fragment<>(name, "PriceAdjustment", sb.toString());
+    }
+
+    /**
+     * Adds a <code>PriceAdjustmentQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query. For GraphQL types implementing an interface, there
+     * will be some similar methods using the Query type of each implemented interface.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public PriceAdjustmentQuery addFragmentReference(Fragment<PriceAdjustmentQuery> fragment) {
+        startField("..." + fragment.getName());
         return this;
     }
 }

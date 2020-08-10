@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Fragment;
 
 /**
  * CustomizableDropDownValue defines the price and sku of a product whose page contains a customized
@@ -76,6 +77,33 @@ public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDr
     public CustomizableDropDownValueQuery title() {
         startField("title");
 
+        return this;
+    }
+
+    /**
+     * Creates a GraphQL "named" fragment with the specified query type definition.
+     * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
+     * 
+     * @param name The name of the fragment, must be unique for a given GraphQL request.
+     * @param queryDef The fragment definition.
+     * @return The fragment of a given generics type.
+     */
+    public static Fragment<CustomizableDropDownValueQuery> createFragment(String name, CustomizableDropDownValueQueryDefinition queryDef) {
+        StringBuilder sb = new StringBuilder();
+        queryDef.define(new CustomizableDropDownValueQuery(sb));
+        return new Fragment<>(name, "CustomizableDropDownValue", sb.toString());
+    }
+
+    /**
+     * Adds a <code>CustomizableDropDownValueQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query. For GraphQL types implementing an interface, there
+     * will be some similar methods using the Query type of each implemented interface.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public CustomizableDropDownValueQuery addFragmentReference(Fragment<CustomizableDropDownValueQuery> fragment) {
+        startField("..." + fragment.getName());
         return this;
     }
 }

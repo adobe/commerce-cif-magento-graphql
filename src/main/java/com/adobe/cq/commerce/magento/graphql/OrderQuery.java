@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Fragment;
 
 public class OrderQuery extends AbstractQuery<OrderQuery> {
     OrderQuery(StringBuilder _queryBuilder) {
@@ -34,6 +35,33 @@ public class OrderQuery extends AbstractQuery<OrderQuery> {
     public OrderQuery orderNumber() {
         startField("order_number");
 
+        return this;
+    }
+
+    /**
+     * Creates a GraphQL "named" fragment with the specified query type definition.
+     * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
+     * 
+     * @param name The name of the fragment, must be unique for a given GraphQL request.
+     * @param queryDef The fragment definition.
+     * @return The fragment of a given generics type.
+     */
+    public static Fragment<OrderQuery> createFragment(String name, OrderQueryDefinition queryDef) {
+        StringBuilder sb = new StringBuilder();
+        queryDef.define(new OrderQuery(sb));
+        return new Fragment<>(name, "Order", sb.toString());
+    }
+
+    /**
+     * Adds a <code>OrderQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query. For GraphQL types implementing an interface, there
+     * will be some similar methods using the Query type of each implemented interface.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public OrderQuery addFragmentReference(Fragment<OrderQuery> fragment) {
+        startField("..." + fragment.getName());
         return this;
     }
 }
