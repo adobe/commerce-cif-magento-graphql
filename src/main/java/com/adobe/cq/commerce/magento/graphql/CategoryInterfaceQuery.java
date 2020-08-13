@@ -16,15 +16,20 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
+import com.shopify.graphql.support.Fragment;
 
 /**
  * CategoryInterface contains the full set of attributes that can be returned in a category search.
  */
 public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery> {
     CategoryInterfaceQuery(StringBuilder _queryBuilder) {
+        this(_queryBuilder, true);
+    }
+    CategoryInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
-
-        startField("__typename");
+        if (addTypename) {
+            startField("__typename");
+        }
     }
 
     public CategoryInterfaceQuery availableSortBy() {
@@ -334,6 +339,33 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         startInlineFragment("CategoryTree");
         queryDef.define(new CategoryTreeQuery(_queryBuilder));
         _queryBuilder.append('}');
+        return this;
+    }
+
+    /**
+     * Creates a GraphQL "named" fragment with the specified query type definition.
+     * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
+     * 
+     * @param name The name of the fragment, must be unique for a given GraphQL request.
+     * @param queryDef The fragment definition.
+     * @return The fragment of a given generics type.
+     */
+    public static Fragment<CategoryInterfaceQuery> createFragment(String name, CategoryInterfaceQueryDefinition queryDef) {
+        StringBuilder sb = new StringBuilder();
+        queryDef.define(new CategoryInterfaceQuery(sb, false));
+        return new Fragment<>(name, "CategoryInterface", sb.toString());
+    }
+
+    /**
+     * Adds a <code>CategoryInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query. For GraphQL types implementing an interface, there
+     * will be some similar methods using the Query type of each implemented interface.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public CategoryInterfaceQuery addFragmentReference(Fragment<CategoryInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
         return this;
     }
 }

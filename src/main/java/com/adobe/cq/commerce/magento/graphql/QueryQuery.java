@@ -14,10 +14,13 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
+import com.shopify.graphql.support.Fragment;
 
 public class QueryQuery extends AbstractQuery<QueryQuery> {
     QueryQuery(StringBuilder _queryBuilder) {
@@ -677,7 +680,28 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     public String toString() {
+        if (fragments != null) {
+            for (Fragment fragment : fragments.values()) {
+                _queryBuilder.append(fragment.toString());
+            }
+        }
         return _queryBuilder.toString();
+    }
+
+    private Map<String, Fragment> fragments;
+
+    /**
+     * Adds a GraphQL "named" fragment to the query. If a fragment with the same name is already added,
+     * calling this method will replace the existing fragment.
+     * 
+     * @param fragment The fragment to add.
+     */
+    public QueryQuery addFragment(Fragment fragment) {
+        if (fragments == null) {
+            fragments = new LinkedHashMap<>();
+        }
+        fragments.put(fragment.getName(), fragment);
+        return this;
     }
 
     /**
@@ -707,6 +731,33 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         queryDef.define(new __TypeQuery(_queryBuilder));
         _queryBuilder.append('}');
 
+        return this;
+    }
+
+    /**
+     * Creates a GraphQL "named" fragment with the specified query type definition.
+     * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
+     * 
+     * @param name The name of the fragment, must be unique for a given GraphQL request.
+     * @param queryDef The fragment definition.
+     * @return The fragment of a given generics type.
+     */
+    public static Fragment<QueryQuery> createFragment(String name, QueryQueryDefinition queryDef) {
+        StringBuilder sb = new StringBuilder();
+        queryDef.define(new QueryQuery(sb));
+        return new Fragment<>(name, "Query", sb.toString());
+    }
+
+    /**
+     * Adds a <code>QueryQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query. For GraphQL types implementing an interface, there
+     * will be some similar methods using the Query type of each implemented interface.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public QueryQuery addFragmentReference(Fragment<QueryQuery> fragment) {
+        startField("..." + fragment.getName());
         return this;
     }
 }

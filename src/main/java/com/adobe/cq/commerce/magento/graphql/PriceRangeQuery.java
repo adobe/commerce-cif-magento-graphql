@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Fragment;
 
 /**
  * Price range for a product. If the product has a single price, the minimum and maximum price will be
@@ -48,6 +49,33 @@ public class PriceRangeQuery extends AbstractQuery<PriceRangeQuery> {
         queryDef.define(new ProductPriceQuery(_queryBuilder));
         _queryBuilder.append('}');
 
+        return this;
+    }
+
+    /**
+     * Creates a GraphQL "named" fragment with the specified query type definition.
+     * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
+     * 
+     * @param name The name of the fragment, must be unique for a given GraphQL request.
+     * @param queryDef The fragment definition.
+     * @return The fragment of a given generics type.
+     */
+    public static Fragment<PriceRangeQuery> createFragment(String name, PriceRangeQueryDefinition queryDef) {
+        StringBuilder sb = new StringBuilder();
+        queryDef.define(new PriceRangeQuery(sb));
+        return new Fragment<>(name, "PriceRange", sb.toString());
+    }
+
+    /**
+     * Adds a <code>PriceRangeQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query. For GraphQL types implementing an interface, there
+     * will be some similar methods using the Query type of each implemented interface.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public PriceRangeQuery addFragmentReference(Fragment<PriceRangeQuery> fragment) {
+        startField("..." + fragment.getName());
         return this;
     }
 }

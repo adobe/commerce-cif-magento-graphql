@@ -29,6 +29,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Fragment;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class QueryBuilderTest {
@@ -353,5 +354,100 @@ public class QueryBuilderTest {
         __Schema schema = query.__getSchema();
         Assert.assertEquals(256, schema.getTypes().size());
         Assert.assertEquals(3, schema.getDirectives().size());
+    }
+
+    @Test
+    public void testQueryWithFragments() throws IOException {
+        String expectedQuery = getResource("queries/product-query-with-fragments.txt");
+
+        // This tests the same query than the CIF Product component version 1.2.0
+        // but it uses "names" fragments to generate the query.
+
+        // Search parameters
+        FilterEqualTypeInput input = new FilterEqualTypeInput().setEq("chaz-kangeroo-hoodie");
+        ProductAttributeFilterInput filter = new ProductAttributeFilterInput().setUrlKey(input);
+        ProductsArgumentsDefinition searchArgs = s -> s.filter(filter);
+
+        // Fragment
+        Fragment<ProductInterfaceQuery> simpleProductFragment = ProductInterfaceQuery.createFragment("simpleProduct", q -> q
+            .sku()
+            .name()
+            .description(d -> d.html())
+            .image(i -> i.label().url())
+            .thumbnail(t -> t.label().url())
+            .urlKey()
+            .stockStatus());
+
+        Fragment<ProductPriceQuery> priceFragment = ProductPriceQuery.createFragment("price", p -> p
+            .regularPrice(r -> r
+                .value()
+                .currency())
+            .finalPrice(f -> f
+                .value()
+                .currency())
+            .discount(d -> d
+                .amountOff()
+                .percentOff()));
+        
+        Fragment<ProductInterfaceQuery> minPriceFragment = ProductInterfaceQuery.createFragment("minPrice", q -> q
+            .priceRange(r -> r
+                .minimumPrice(p -> p.addFragmentReference(priceFragment))));
+        
+        Fragment<ProductInterfaceQuery> maxPriceFragment = ProductInterfaceQuery.createFragment("maxPrice", q -> q
+            .priceRange(r -> r
+                .maximumPrice(p -> p.addFragmentReference(priceFragment))));
+
+        Fragment<ProductInterfaceQuery> mediaGalleryFragment = ProductInterfaceQuery.createFragment("mediaGallery", q -> q
+            .mediaGallery(g -> g
+                .disabled()
+                .url()
+                .label()
+                .position()));
+        
+        // Main query
+        ProductsQueryDefinition queryArgs = q -> q
+            .items(p -> p
+                .addFragmentReference(simpleProductFragment)
+                .addFragmentReference(minPriceFragment)
+                .addFragmentReference(mediaGalleryFragment)
+                .onConfigurableProduct(cp -> cp
+                    .addProductInterfaceFragmentReference(maxPriceFragment)
+                    .configurableOptions(o -> o
+                        .label()
+                        .attributeCode()
+                        .values(v -> v
+                            .valueIndex()
+                            .label()))
+                    .variants(v -> v
+                        .attributes(a -> a
+                            .code()
+                            .valueIndex())
+                        .product(vp -> vp
+                            .addProductInterfaceFragmentReference(simpleProductFragment)
+                            .color()
+                            .addProductInterfaceFragmentReference(minPriceFragment)
+                            .addProductInterfaceFragmentReference(mediaGalleryFragment))))
+                .onGroupedProduct(gp -> gp
+                    .items(i -> i
+                        .position()
+                        .qty()
+                        .product(ip -> ip
+                            .sku()
+                            .name()
+                            .addFragmentReference(minPriceFragment))))
+                .onBundleProduct(bp -> bp
+                    .addProductInterfaceFragmentReference(maxPriceFragment)));
+
+        // Check that the generated query matches the reference query
+        String queryString = Operations
+            .query(query -> query.products(searchArgs, queryArgs))
+            .addFragment(simpleProductFragment)
+            .addFragment(priceFragment)
+            .addFragment(minPriceFragment)
+            .addFragment(maxPriceFragment)
+            .addFragment(mediaGalleryFragment)
+            .toString();
+
+        Assert.assertEquals(expectedQuery, queryString);
     }
 }
