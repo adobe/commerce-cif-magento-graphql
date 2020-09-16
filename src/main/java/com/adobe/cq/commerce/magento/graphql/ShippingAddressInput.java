@@ -26,6 +26,8 @@ public class ShippingAddressInput implements Serializable {
 
     private Input<String> customerNotes = Input.undefined();
 
+    private Input<String> pickupLocationCode = Input.undefined();
+
     public CartAddressInput getAddress() {
         return address.getValue();
     }
@@ -89,6 +91,39 @@ public class ShippingAddressInput implements Serializable {
         return this;
     }
 
+    /**
+     * The code of Pickup Location which will be used for In-Store Pickup.
+     */
+    public String getPickupLocationCode() {
+        return pickupLocationCode.getValue();
+    }
+
+    /**
+     * The code of Pickup Location which will be used for In-Store Pickup.
+     */
+    public Input<String> getPickupLocationCodeInput() {
+        return pickupLocationCode;
+    }
+
+    /**
+     * The code of Pickup Location which will be used for In-Store Pickup.
+     */
+    public ShippingAddressInput setPickupLocationCode(String pickupLocationCode) {
+        this.pickupLocationCode = Input.optional(pickupLocationCode);
+        return this;
+    }
+
+    /**
+     * The code of Pickup Location which will be used for In-Store Pickup.
+     */
+    public ShippingAddressInput setPickupLocationCodeInput(Input<String> pickupLocationCode) {
+        if (pickupLocationCode == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.pickupLocationCode = pickupLocationCode;
+        return this;
+    }
+
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
@@ -121,6 +156,17 @@ public class ShippingAddressInput implements Serializable {
             _queryBuilder.append("customer_notes:");
             if (customerNotes.getValue() != null) {
                 AbstractQuery.appendQuotedString(_queryBuilder, customerNotes.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.pickupLocationCode.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("pickup_location_code:");
+            if (pickupLocationCode.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, pickupLocationCode.getValue().toString());
             } else {
                 _queryBuilder.append("null");
             }

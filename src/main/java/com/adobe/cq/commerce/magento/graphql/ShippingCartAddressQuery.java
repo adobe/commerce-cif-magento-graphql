@@ -106,6 +106,12 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    public ShippingCartAddressQuery pickupLocationCode() {
+        startField("pickup_location_code");
+
+        return this;
+    }
+
     public ShippingCartAddressQuery postcode() {
         startField("postcode");
 

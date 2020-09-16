@@ -264,6 +264,15 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Creates Client Token for Braintree Javascript SDK initialization.
+     */
+    public MutationQuery createBraintreeClientToken() {
+        startField("createBraintreeClientToken");
+
+        return this;
+    }
+
+    /**
      * Create customer account
      */
     public MutationQuery createCustomer(CustomerInput input, CustomerOutputQueryDefinition queryDef) {

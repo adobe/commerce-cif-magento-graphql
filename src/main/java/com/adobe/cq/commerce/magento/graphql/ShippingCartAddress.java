@@ -152,6 +152,17 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
                     break;
                 }
 
+                case "pickup_location_code": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "postcode": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -321,6 +332,15 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    public String getPickupLocationCode() {
+        return (String) get("pickup_location_code");
+    }
+
+    public ShippingCartAddress setPickupLocationCode(String arg) {
+        optimisticData.put(getKey("pickup_location_code"), arg);
+        return this;
+    }
+
     public String getPostcode() {
         return (String) get("postcode");
     }
@@ -387,6 +407,8 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
             case "items_weight": return false;
 
             case "lastname": return false;
+
+            case "pickup_location_code": return false;
 
             case "postcode": return false;
 

@@ -539,6 +539,96 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         return this;
     }
 
+    public class PickupLocationsArguments extends Arguments {
+        PickupLocationsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Perform search by location using radius and search term.
+         */
+        public PickupLocationsArguments area(AreaInput value) {
+            if (value != null) {
+                startArgument("area");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+
+        /**
+         * Apply filters by attributes.
+         */
+        public PickupLocationsArguments filters(PickupLocationFilterInput value) {
+            if (value != null) {
+                startArgument("filters");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which attribute to sort on, and whether to return the results in ascending or descending
+         * order.
+         */
+        public PickupLocationsArguments sort(PickupLocationSortInput value) {
+            if (value != null) {
+                startArgument("sort");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+
+        /**
+         * The maximum number of pickup locations to return at once. The attribute is optional.
+         */
+        public PickupLocationsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return. The default value is 1.
+         */
+        public PickupLocationsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface PickupLocationsArgumentsDefinition {
+        void define(PickupLocationsArguments args);
+    }
+
+    /**
+     * The pickup locations query searches for locations that match the search request requirements.
+     */
+    public QueryQuery pickupLocations(PickupLocationsQueryDefinition queryDef) {
+        return pickupLocations(args -> {}, queryDef);
+    }
+
+    /**
+     * The pickup locations query searches for locations that match the search request requirements.
+     */
+    public QueryQuery pickupLocations(PickupLocationsArgumentsDefinition argsDef, PickupLocationsQueryDefinition queryDef) {
+        startField("pickupLocations");
+
+        PickupLocationsArguments args = new PickupLocationsArguments(_queryBuilder);
+        argsDef.define(args);
+        PickupLocationsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new PickupLocationsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class ProductsArguments extends Arguments {
         ProductsArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
