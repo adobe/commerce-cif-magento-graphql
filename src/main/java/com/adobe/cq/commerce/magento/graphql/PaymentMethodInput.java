@@ -22,6 +22,10 @@ import com.shopify.graphql.support.Input;
 public class PaymentMethodInput implements Serializable {
     private String code;
 
+    private Input<BraintreeInput> braintree = Input.undefined();
+
+    private Input<BraintreeCcVaultInput> braintreeCcVault = Input.undefined();
+
     private Input<HostedProInput> hostedPro = Input.undefined();
 
     private Input<PayflowExpressInput> payflowExpress = Input.undefined();
@@ -50,6 +54,48 @@ public class PaymentMethodInput implements Serializable {
      */
     public PaymentMethodInput setCode(String code) {
         this.code = code;
+        return this;
+    }
+
+    public BraintreeInput getBraintree() {
+        return braintree.getValue();
+    }
+
+    public Input<BraintreeInput> getBraintreeInput() {
+        return braintree;
+    }
+
+    public PaymentMethodInput setBraintree(BraintreeInput braintree) {
+        this.braintree = Input.optional(braintree);
+        return this;
+    }
+
+    public PaymentMethodInput setBraintreeInput(Input<BraintreeInput> braintree) {
+        if (braintree == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.braintree = braintree;
+        return this;
+    }
+
+    public BraintreeCcVaultInput getBraintreeCcVault() {
+        return braintreeCcVault.getValue();
+    }
+
+    public Input<BraintreeCcVaultInput> getBraintreeCcVaultInput() {
+        return braintreeCcVault;
+    }
+
+    public PaymentMethodInput setBraintreeCcVault(BraintreeCcVaultInput braintreeCcVault) {
+        this.braintreeCcVault = Input.optional(braintreeCcVault);
+        return this;
+    }
+
+    public PaymentMethodInput setBraintreeCcVaultInput(Input<BraintreeCcVaultInput> braintreeCcVault) {
+        if (braintreeCcVault == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.braintreeCcVault = braintreeCcVault;
         return this;
     }
 
@@ -259,6 +305,28 @@ public class PaymentMethodInput implements Serializable {
         separator = ",";
         _queryBuilder.append("code:");
         AbstractQuery.appendQuotedString(_queryBuilder, code.toString());
+
+        if (this.braintree.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("braintree:");
+            if (braintree.getValue() != null) {
+                braintree.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.braintreeCcVault.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("braintree_cc_vault:");
+            if (braintreeCcVault.getValue() != null) {
+                braintreeCcVault.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         if (this.hostedPro.isDefined()) {
             _queryBuilder.append(separator);

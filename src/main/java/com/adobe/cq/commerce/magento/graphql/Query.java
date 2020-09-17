@@ -266,6 +266,17 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "pickupLocations": {
+                    PickupLocations optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new PickupLocations(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "products": {
                     Products optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -577,6 +588,18 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * The pickup locations query searches for locations that match the search request requirements.
+     */
+    public PickupLocations getPickupLocations() {
+        return (PickupLocations) get("pickupLocations");
+    }
+
+    public Query setPickupLocations(PickupLocations arg) {
+        optimisticData.put(getKey("pickupLocations"), arg);
+        return this;
+    }
+
+    /**
      * The products query searches for products that match the criteria specified in the search and filter
      * attributes.
      */
@@ -682,6 +705,8 @@ public class Query extends AbstractResponse<Query> {
             case "getPayflowLinkToken": return true;
 
             case "isEmailAvailable": return true;
+
+            case "pickupLocations": return true;
 
             case "products": return true;
 

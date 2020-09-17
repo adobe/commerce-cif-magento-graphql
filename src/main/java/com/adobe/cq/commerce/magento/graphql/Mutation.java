@@ -107,6 +107,12 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "createBraintreeClientToken": {
+                    responseData.put(key, jsonAsString(field.getValue(), key));
+
+                    break;
+                }
+
                 case "createCustomer": {
                     CustomerOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -482,6 +488,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Creates Client Token for Braintree Javascript SDK initialization.
+     */
+    public String getCreateBraintreeClientToken() {
+        return (String) get("createBraintreeClientToken");
+    }
+
+    public Mutation setCreateBraintreeClientToken(String arg) {
+        optimisticData.put(getKey("createBraintreeClientToken"), arg);
+        return this;
+    }
+
+    /**
      * Create customer account
      */
     public CustomerOutput getCreateCustomer() {
@@ -799,6 +817,8 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "applyCouponToCart": return true;
 
             case "changeCustomerPassword": return true;
+
+            case "createBraintreeClientToken": return false;
 
             case "createCustomer": return true;
 
