@@ -90,7 +90,8 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<DownloadableProductSamplesQuery> createFragment(String name, DownloadableProductSamplesQueryDefinition queryDef) {
+    public static Fragment<DownloadableProductSamplesQuery> createFragment(String name,
+        DownloadableProductSamplesQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new DownloadableProductSamplesQuery(sb));
         return new Fragment<>(name, "DownloadableProductSamples", sb.toString());

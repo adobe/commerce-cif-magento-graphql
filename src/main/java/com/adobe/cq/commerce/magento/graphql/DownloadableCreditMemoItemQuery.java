@@ -120,7 +120,8 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<DownloadableCreditMemoItemQuery> createFragment(String name, DownloadableCreditMemoItemQueryDefinition queryDef) {
+    public static Fragment<DownloadableCreditMemoItemQuery> createFragment(String name,
+        DownloadableCreditMemoItemQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new DownloadableCreditMemoItemQuery(sb));
         return new Fragment<>(name, "DownloadableCreditMemoItem", sb.toString());

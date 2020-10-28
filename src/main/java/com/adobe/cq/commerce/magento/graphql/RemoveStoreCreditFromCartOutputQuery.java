@@ -46,7 +46,8 @@ public class RemoveStoreCreditFromCartOutputQuery extends AbstractQuery<RemoveSt
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<RemoveStoreCreditFromCartOutputQuery> createFragment(String name, RemoveStoreCreditFromCartOutputQueryDefinition queryDef) {
+    public static Fragment<RemoveStoreCreditFromCartOutputQuery> createFragment(String name,
+        RemoveStoreCreditFromCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new RemoveStoreCreditFromCartOutputQuery(sb));
         return new Fragment<>(name, "RemoveStoreCreditFromCartOutput", sb.toString());

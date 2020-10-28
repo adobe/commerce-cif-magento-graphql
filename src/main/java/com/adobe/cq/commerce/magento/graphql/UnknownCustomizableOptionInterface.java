@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The CustomizableOptionInterface contains basic information about a customizable option. It can be
  * implemented by several types of configurable options.
  */
-public class UnknownCustomizableOptionInterface extends AbstractResponse<UnknownCustomizableOptionInterface> implements CustomizableOptionInterface {
+public class UnknownCustomizableOptionInterface extends AbstractResponse<UnknownCustomizableOptionInterface> implements
+    CustomizableOptionInterface {
     public UnknownCustomizableOptionInterface() {}
 
     public UnknownCustomizableOptionInterface(JsonObject fields) throws SchemaViolationError {

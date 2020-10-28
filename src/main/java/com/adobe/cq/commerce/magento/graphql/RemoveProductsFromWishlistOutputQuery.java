@@ -59,7 +59,8 @@ public class RemoveProductsFromWishlistOutputQuery extends AbstractQuery<RemoveP
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<RemoveProductsFromWishlistOutputQuery> createFragment(String name, RemoveProductsFromWishlistOutputQueryDefinition queryDef) {
+    public static Fragment<RemoveProductsFromWishlistOutputQuery> createFragment(String name,
+        RemoveProductsFromWishlistOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new RemoveProductsFromWishlistOutputQuery(sb));
         return new Fragment<>(name, "RemoveProductsFromWishlistOutput", sb.toString());

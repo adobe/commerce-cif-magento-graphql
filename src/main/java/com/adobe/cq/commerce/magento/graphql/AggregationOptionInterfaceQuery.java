@@ -72,7 +72,8 @@ public class AggregationOptionInterfaceQuery extends AbstractQuery<AggregationOp
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<AggregationOptionInterfaceQuery> createFragment(String name, AggregationOptionInterfaceQueryDefinition queryDef) {
+    public static Fragment<AggregationOptionInterfaceQuery> createFragment(String name,
+        AggregationOptionInterfaceQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new AggregationOptionInterfaceQuery(sb, false));
         return new Fragment<>(name, "AggregationOptionInterface", sb.toString());

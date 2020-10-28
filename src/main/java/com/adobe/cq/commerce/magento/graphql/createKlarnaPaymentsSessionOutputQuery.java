@@ -52,7 +52,8 @@ public class createKlarnaPaymentsSessionOutputQuery extends AbstractQuery<create
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<createKlarnaPaymentsSessionOutputQuery> createFragment(String name, createKlarnaPaymentsSessionOutputQueryDefinition queryDef) {
+    public static Fragment<createKlarnaPaymentsSessionOutputQuery> createFragment(String name,
+        createKlarnaPaymentsSessionOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new createKlarnaPaymentsSessionOutputQuery(sb));
         return new Fragment<>(name, "createKlarnaPaymentsSessionOutput", sb.toString());

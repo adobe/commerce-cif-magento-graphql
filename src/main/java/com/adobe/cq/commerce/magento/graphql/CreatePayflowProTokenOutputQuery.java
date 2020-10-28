@@ -64,7 +64,8 @@ public class CreatePayflowProTokenOutputQuery extends AbstractQuery<CreatePayflo
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CreatePayflowProTokenOutputQuery> createFragment(String name, CreatePayflowProTokenOutputQueryDefinition queryDef) {
+    public static Fragment<CreatePayflowProTokenOutputQuery> createFragment(String name,
+        CreatePayflowProTokenOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CreatePayflowProTokenOutputQuery(sb));
         return new Fragment<>(name, "CreatePayflowProTokenOutput", sb.toString());

@@ -40,7 +40,8 @@ public class AddBundleProductsToCartOutputQuery extends AbstractQuery<AddBundleP
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<AddBundleProductsToCartOutputQuery> createFragment(String name, AddBundleProductsToCartOutputQueryDefinition queryDef) {
+    public static Fragment<AddBundleProductsToCartOutputQuery> createFragment(String name,
+        AddBundleProductsToCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new AddBundleProductsToCartOutputQuery(sb));
         return new Fragment<>(name, "AddBundleProductsToCartOutput", sb.toString());

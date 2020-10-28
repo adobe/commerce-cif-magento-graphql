@@ -46,7 +46,8 @@ public class RemoveGiftCardFromCartOutputQuery extends AbstractQuery<RemoveGiftC
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<RemoveGiftCardFromCartOutputQuery> createFragment(String name, RemoveGiftCardFromCartOutputQueryDefinition queryDef) {
+    public static Fragment<RemoveGiftCardFromCartOutputQuery> createFragment(String name,
+        RemoveGiftCardFromCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new RemoveGiftCardFromCartOutputQuery(sb));
         return new Fragment<>(name, "RemoveGiftCardFromCartOutput", sb.toString());

@@ -50,7 +50,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addBundleProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addBundleProductsToCart(AddBundleProductsToCartArgumentsDefinition argsDef, AddBundleProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addBundleProductsToCart(AddBundleProductsToCartArgumentsDefinition argsDef,
+        AddBundleProductsToCartOutputQueryDefinition queryDef) {
         startField("addBundleProductsToCart");
 
         AddBundleProductsToCartArguments args = new AddBundleProductsToCartArguments(_queryBuilder);
@@ -86,7 +87,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addConfigurableProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addConfigurableProductsToCart(AddConfigurableProductsToCartArgumentsDefinition argsDef, AddConfigurableProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addConfigurableProductsToCart(AddConfigurableProductsToCartArgumentsDefinition argsDef,
+        AddConfigurableProductsToCartOutputQueryDefinition queryDef) {
         startField("addConfigurableProductsToCart");
 
         AddConfigurableProductsToCartArguments args = new AddConfigurableProductsToCartArguments(_queryBuilder);
@@ -122,7 +124,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addDownloadableProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addDownloadableProductsToCart(AddDownloadableProductsToCartArgumentsDefinition argsDef, AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addDownloadableProductsToCart(AddDownloadableProductsToCartArgumentsDefinition argsDef,
+        AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
         startField("addDownloadableProductsToCart");
 
         AddDownloadableProductsToCartArguments args = new AddDownloadableProductsToCartArguments(_queryBuilder);
@@ -169,7 +172,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Adds one or more products to the specified wish list. This mutation supports all product types
      */
-    public MutationQuery addProductsToWishlist(ID wishlistId, List<WishlistItemInput> wishlistItems, AddProductsToWishlistOutputQueryDefinition queryDef) {
+    public MutationQuery addProductsToWishlist(ID wishlistId, List<WishlistItemInput> wishlistItems,
+        AddProductsToWishlistOutputQueryDefinition queryDef) {
         startField("addProductsToWishlist");
 
         _queryBuilder.append("(wishlistId:");
@@ -218,7 +222,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addSimpleProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addSimpleProductsToCart(AddSimpleProductsToCartArgumentsDefinition argsDef, AddSimpleProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addSimpleProductsToCart(AddSimpleProductsToCartArgumentsDefinition argsDef,
+        AddSimpleProductsToCartOutputQueryDefinition queryDef) {
         startField("addSimpleProductsToCart");
 
         AddSimpleProductsToCartArguments args = new AddSimpleProductsToCartArguments(_queryBuilder);
@@ -254,7 +259,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addVirtualProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addVirtualProductsToCart(AddVirtualProductsToCartArgumentsDefinition argsDef, AddVirtualProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addVirtualProductsToCart(AddVirtualProductsToCartArgumentsDefinition argsDef,
+        AddVirtualProductsToCartOutputQueryDefinition queryDef) {
         startField("addVirtualProductsToCart");
 
         AddVirtualProductsToCartArguments args = new AddVirtualProductsToCartArguments(_queryBuilder);
@@ -332,7 +338,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Apply a pre-defined gift card code to the specified cart.
      */
-    public MutationQuery applyGiftCardToCart(ApplyGiftCardToCartArgumentsDefinition argsDef, ApplyGiftCardToCartOutputQueryDefinition queryDef) {
+    public MutationQuery applyGiftCardToCart(ApplyGiftCardToCartArgumentsDefinition argsDef,
+        ApplyGiftCardToCartOutputQueryDefinition queryDef) {
         startField("applyGiftCardToCart");
 
         ApplyGiftCardToCartArguments args = new ApplyGiftCardToCartArguments(_queryBuilder);
@@ -532,7 +539,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Creates a Klarna Payments Session.
      */
-    public MutationQuery createKlarnaPaymentsSession(CreateKlarnaPaymentsSessionArgumentsDefinition argsDef, createKlarnaPaymentsSessionOutputQueryDefinition queryDef) {
+    public MutationQuery createKlarnaPaymentsSession(CreateKlarnaPaymentsSessionArgumentsDefinition argsDef,
+        createKlarnaPaymentsSessionOutputQueryDefinition queryDef) {
         startField("createKlarnaPaymentsSession");
 
         CreateKlarnaPaymentsSessionArguments args = new CreateKlarnaPaymentsSessionArguments(_queryBuilder);
@@ -771,7 +779,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return removeCouponFromCart(args -> {}, queryDef);
     }
 
-    public MutationQuery removeCouponFromCart(RemoveCouponFromCartArgumentsDefinition argsDef, RemoveCouponFromCartOutputQueryDefinition queryDef) {
+    public MutationQuery removeCouponFromCart(RemoveCouponFromCartArgumentsDefinition argsDef,
+        RemoveCouponFromCartOutputQueryDefinition queryDef) {
         startField("removeCouponFromCart");
 
         RemoveCouponFromCartArguments args = new RemoveCouponFromCartArguments(_queryBuilder);
@@ -807,7 +816,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return removeGiftCardFromCart(args -> {}, queryDef);
     }
 
-    public MutationQuery removeGiftCardFromCart(RemoveGiftCardFromCartArgumentsDefinition argsDef, RemoveGiftCardFromCartOutputQueryDefinition queryDef) {
+    public MutationQuery removeGiftCardFromCart(RemoveGiftCardFromCartArgumentsDefinition argsDef,
+        RemoveGiftCardFromCartOutputQueryDefinition queryDef) {
         startField("removeGiftCardFromCart");
 
         RemoveGiftCardFromCartArguments args = new RemoveGiftCardFromCartArguments(_queryBuilder);
@@ -843,7 +853,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return removeItemFromCart(args -> {}, queryDef);
     }
 
-    public MutationQuery removeItemFromCart(RemoveItemFromCartArgumentsDefinition argsDef, RemoveItemFromCartOutputQueryDefinition queryDef) {
+    public MutationQuery removeItemFromCart(RemoveItemFromCartArgumentsDefinition argsDef,
+        RemoveItemFromCartOutputQueryDefinition queryDef) {
         startField("removeItemFromCart");
 
         RemoveItemFromCartArguments args = new RemoveItemFromCartArguments(_queryBuilder);
@@ -860,7 +871,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Removes one or more products from the specified wish list
      */
-    public MutationQuery removeProductsFromWishlist(ID wishlistId, List<ID> wishlistItemsIds, RemoveProductsFromWishlistOutputQueryDefinition queryDef) {
+    public MutationQuery removeProductsFromWishlist(ID wishlistId, List<ID> wishlistItemsIds,
+        RemoveProductsFromWishlistOutputQueryDefinition queryDef) {
         startField("removeProductsFromWishlist");
 
         _queryBuilder.append("(wishlistId:");
@@ -908,7 +920,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Remove applied store credit from the specified cart.
      */
-    public MutationQuery removeStoreCreditFromCart(RemoveStoreCreditFromCartInput input, RemoveStoreCreditFromCartOutputQueryDefinition queryDef) {
+    public MutationQuery removeStoreCreditFromCart(RemoveStoreCreditFromCartInput input,
+        RemoveStoreCreditFromCartOutputQueryDefinition queryDef) {
         startField("removeStoreCreditFromCart");
 
         _queryBuilder.append("(input:");
@@ -1054,7 +1067,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setBillingAddressOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setBillingAddressOnCart(SetBillingAddressOnCartArgumentsDefinition argsDef, SetBillingAddressOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setBillingAddressOnCart(SetBillingAddressOnCartArgumentsDefinition argsDef,
+        SetBillingAddressOnCartOutputQueryDefinition queryDef) {
         startField("setBillingAddressOnCart");
 
         SetBillingAddressOnCartArguments args = new SetBillingAddressOnCartArguments(_queryBuilder);
@@ -1096,7 +1110,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Set gift options like gift wrapping or gift message for the entire cart
      */
-    public MutationQuery setGiftOptionsOnCart(SetGiftOptionsOnCartArgumentsDefinition argsDef, SetGiftOptionsOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setGiftOptionsOnCart(SetGiftOptionsOnCartArgumentsDefinition argsDef,
+        SetGiftOptionsOnCartOutputQueryDefinition queryDef) {
         startField("setGiftOptionsOnCart");
 
         SetGiftOptionsOnCartArguments args = new SetGiftOptionsOnCartArguments(_queryBuilder);
@@ -1132,7 +1147,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setGuestEmailOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setGuestEmailOnCart(SetGuestEmailOnCartArgumentsDefinition argsDef, SetGuestEmailOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setGuestEmailOnCart(SetGuestEmailOnCartArgumentsDefinition argsDef,
+        SetGuestEmailOnCartOutputQueryDefinition queryDef) {
         startField("setGuestEmailOnCart");
 
         SetGuestEmailOnCartArguments args = new SetGuestEmailOnCartArguments(_queryBuilder);
@@ -1175,7 +1191,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
      * @deprecated Should use setPaymentMethodOnCart and placeOrder mutations in single request.
      */
     @Deprecated
-    public MutationQuery setPaymentMethodAndPlaceOrder(SetPaymentMethodAndPlaceOrderArgumentsDefinition argsDef, PlaceOrderOutputQueryDefinition queryDef) {
+    public MutationQuery setPaymentMethodAndPlaceOrder(SetPaymentMethodAndPlaceOrderArgumentsDefinition argsDef,
+        PlaceOrderOutputQueryDefinition queryDef) {
         startField("setPaymentMethodAndPlaceOrder");
 
         SetPaymentMethodAndPlaceOrderArguments args = new SetPaymentMethodAndPlaceOrderArguments(_queryBuilder);
@@ -1211,7 +1228,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setPaymentMethodOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setPaymentMethodOnCart(SetPaymentMethodOnCartArgumentsDefinition argsDef, SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setPaymentMethodOnCart(SetPaymentMethodOnCartArgumentsDefinition argsDef,
+        SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
         startField("setPaymentMethodOnCart");
 
         SetPaymentMethodOnCartArguments args = new SetPaymentMethodOnCartArguments(_queryBuilder);
@@ -1247,7 +1265,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setShippingAddressesOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setShippingAddressesOnCart(SetShippingAddressesOnCartArgumentsDefinition argsDef, SetShippingAddressesOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setShippingAddressesOnCart(SetShippingAddressesOnCartArgumentsDefinition argsDef,
+        SetShippingAddressesOnCartOutputQueryDefinition queryDef) {
         startField("setShippingAddressesOnCart");
 
         SetShippingAddressesOnCartArguments args = new SetShippingAddressesOnCartArguments(_queryBuilder);
@@ -1283,7 +1302,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setShippingMethodsOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setShippingMethodsOnCart(SetShippingMethodsOnCartArgumentsDefinition argsDef, SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setShippingMethodsOnCart(SetShippingMethodsOnCartArgumentsDefinition argsDef,
+        SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
         startField("setShippingMethodsOnCart");
 
         SetShippingMethodsOnCartArguments args = new SetShippingMethodsOnCartArguments(_queryBuilder);
@@ -1397,7 +1417,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Update customer address
      */
-    public MutationQuery updateCustomerAddress(int id, UpdateCustomerAddressArgumentsDefinition argsDef, CustomerAddressQueryDefinition queryDef) {
+    public MutationQuery updateCustomerAddress(int id, UpdateCustomerAddressArgumentsDefinition argsDef,
+        CustomerAddressQueryDefinition queryDef) {
         startField("updateCustomerAddress");
 
         _queryBuilder.append("(id:");
@@ -1453,7 +1474,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Updates one or more products in the specified wish list
      */
-    public MutationQuery updateProductsInWishlist(ID wishlistId, List<WishlistItemUpdateInput> wishlistItems, UpdateProductsInWishlistOutputQueryDefinition queryDef) {
+    public MutationQuery updateProductsInWishlist(ID wishlistId, List<WishlistItemUpdateInput> wishlistItems,
+        UpdateProductsInWishlistOutputQueryDefinition queryDef) {
         startField("updateProductsInWishlist");
 
         _queryBuilder.append("(wishlistId:");

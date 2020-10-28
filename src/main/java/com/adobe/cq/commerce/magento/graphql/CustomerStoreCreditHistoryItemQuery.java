@@ -77,7 +77,8 @@ public class CustomerStoreCreditHistoryItemQuery extends AbstractQuery<CustomerS
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomerStoreCreditHistoryItemQuery> createFragment(String name, CustomerStoreCreditHistoryItemQueryDefinition queryDef) {
+    public static Fragment<CustomerStoreCreditHistoryItemQuery> createFragment(String name,
+        CustomerStoreCreditHistoryItemQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomerStoreCreditHistoryItemQuery(sb));
         return new Fragment<>(name, "CustomerStoreCreditHistoryItem", sb.toString());

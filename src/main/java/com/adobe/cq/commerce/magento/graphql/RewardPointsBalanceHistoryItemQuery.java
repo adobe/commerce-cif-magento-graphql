@@ -70,7 +70,8 @@ public class RewardPointsBalanceHistoryItemQuery extends AbstractQuery<RewardPoi
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<RewardPointsBalanceHistoryItemQuery> createFragment(String name, RewardPointsBalanceHistoryItemQueryDefinition queryDef) {
+    public static Fragment<RewardPointsBalanceHistoryItemQuery> createFragment(String name,
+        RewardPointsBalanceHistoryItemQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new RewardPointsBalanceHistoryItemQuery(sb));
         return new Fragment<>(name, "RewardPointsBalanceHistoryItem", sb.toString());

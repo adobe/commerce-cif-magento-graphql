@@ -61,7 +61,8 @@ public class ProductMediaGalleryEntriesContentQuery extends AbstractQuery<Produc
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ProductMediaGalleryEntriesContentQuery> createFragment(String name, ProductMediaGalleryEntriesContentQueryDefinition queryDef) {
+    public static Fragment<ProductMediaGalleryEntriesContentQuery> createFragment(String name,
+        ProductMediaGalleryEntriesContentQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ProductMediaGalleryEntriesContentQuery(sb));
         return new Fragment<>(name, "ProductMediaGalleryEntriesContent", sb.toString());

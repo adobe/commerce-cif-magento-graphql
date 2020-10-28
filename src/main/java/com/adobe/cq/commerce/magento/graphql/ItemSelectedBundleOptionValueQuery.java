@@ -82,7 +82,8 @@ public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelect
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ItemSelectedBundleOptionValueQuery> createFragment(String name, ItemSelectedBundleOptionValueQueryDefinition queryDef) {
+    public static Fragment<ItemSelectedBundleOptionValueQuery> createFragment(String name,
+        ItemSelectedBundleOptionValueQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ItemSelectedBundleOptionValueQuery(sb));
         return new Fragment<>(name, "ItemSelectedBundleOptionValue", sb.toString());

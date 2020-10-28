@@ -21,7 +21,8 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
-public class SwatchLayerFilterItem extends AbstractResponse<SwatchLayerFilterItem> implements LayerFilterItemInterface, SwatchLayerFilterItemInterface {
+public class SwatchLayerFilterItem extends AbstractResponse<SwatchLayerFilterItem> implements LayerFilterItemInterface,
+    SwatchLayerFilterItemInterface {
     public SwatchLayerFilterItem() {}
 
     public SwatchLayerFilterItem(JsonObject fields) throws SchemaViolationError {

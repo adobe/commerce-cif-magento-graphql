@@ -84,7 +84,8 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomizableDropDownOptionQuery> createFragment(String name, CustomizableDropDownOptionQueryDefinition queryDef) {
+    public static Fragment<CustomizableDropDownOptionQuery> createFragment(String name,
+        CustomizableDropDownOptionQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomizableDropDownOptionQuery(sb));
         return new Fragment<>(name, "CustomizableDropDownOption", sb.toString());
@@ -110,7 +111,8 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
      * 
      * @param fragment The fragment to reference.
      */
-    public CustomizableDropDownOptionQuery addCustomizableOptionInterfaceFragmentReference(Fragment<CustomizableOptionInterfaceQuery> fragment) {
+    public CustomizableDropDownOptionQuery addCustomizableOptionInterfaceFragmentReference(
+        Fragment<CustomizableOptionInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

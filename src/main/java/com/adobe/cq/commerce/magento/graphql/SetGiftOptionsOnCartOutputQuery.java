@@ -43,7 +43,8 @@ public class SetGiftOptionsOnCartOutputQuery extends AbstractQuery<SetGiftOption
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SetGiftOptionsOnCartOutputQuery> createFragment(String name, SetGiftOptionsOnCartOutputQueryDefinition queryDef) {
+    public static Fragment<SetGiftOptionsOnCartOutputQuery> createFragment(String name,
+        SetGiftOptionsOnCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SetGiftOptionsOnCartOutputQuery(sb));
         return new Fragment<>(name, "SetGiftOptionsOnCartOutput", sb.toString());

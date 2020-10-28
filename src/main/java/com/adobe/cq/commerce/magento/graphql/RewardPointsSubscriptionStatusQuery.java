@@ -48,7 +48,8 @@ public class RewardPointsSubscriptionStatusQuery extends AbstractQuery<RewardPoi
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<RewardPointsSubscriptionStatusQuery> createFragment(String name, RewardPointsSubscriptionStatusQueryDefinition queryDef) {
+    public static Fragment<RewardPointsSubscriptionStatusQuery> createFragment(String name,
+        RewardPointsSubscriptionStatusQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new RewardPointsSubscriptionStatusQuery(sb));
         return new Fragment<>(name, "RewardPointsSubscriptionStatus", sb.toString());

@@ -40,7 +40,8 @@ public class SetPaymentMethodOnCartOutputQuery extends AbstractQuery<SetPaymentM
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SetPaymentMethodOnCartOutputQuery> createFragment(String name, SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
+    public static Fragment<SetPaymentMethodOnCartOutputQuery> createFragment(String name,
+        SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SetPaymentMethodOnCartOutputQuery(sb));
         return new Fragment<>(name, "SetPaymentMethodOnCartOutput", sb.toString());

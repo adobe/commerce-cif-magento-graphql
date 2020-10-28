@@ -88,7 +88,8 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ProductMediaGalleryEntriesVideoContentQuery> createFragment(String name, ProductMediaGalleryEntriesVideoContentQueryDefinition queryDef) {
+    public static Fragment<ProductMediaGalleryEntriesVideoContentQuery> createFragment(String name,
+        ProductMediaGalleryEntriesVideoContentQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ProductMediaGalleryEntriesVideoContentQuery(sb));
         return new Fragment<>(name, "ProductMediaGalleryEntriesVideoContent", sb.toString());
@@ -102,7 +103,8 @@ public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<P
      * 
      * @param fragment The fragment to reference.
      */
-    public ProductMediaGalleryEntriesVideoContentQuery addFragmentReference(Fragment<ProductMediaGalleryEntriesVideoContentQuery> fragment) {
+    public ProductMediaGalleryEntriesVideoContentQuery addFragmentReference(
+        Fragment<ProductMediaGalleryEntriesVideoContentQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

@@ -28,7 +28,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * GiftCardProduct defines properties of a gift card, including the minimum and maximum values and an
  * array that contains the current and past values on the specific gift card
  */
-public class GiftCardProduct extends AbstractResponse<GiftCardProduct> implements CustomizableProductInterface, PhysicalProductInterface, ProductInterface {
+public class GiftCardProduct extends AbstractResponse<GiftCardProduct> implements CustomizableProductInterface, PhysicalProductInterface,
+    ProductInterface {
     public GiftCardProduct() {}
 
     public GiftCardProduct(JsonObject fields) throws SchemaViolationError {

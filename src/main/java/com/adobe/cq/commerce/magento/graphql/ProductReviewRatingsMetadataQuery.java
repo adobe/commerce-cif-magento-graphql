@@ -45,7 +45,8 @@ public class ProductReviewRatingsMetadataQuery extends AbstractQuery<ProductRevi
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ProductReviewRatingsMetadataQuery> createFragment(String name, ProductReviewRatingsMetadataQueryDefinition queryDef) {
+    public static Fragment<ProductReviewRatingsMetadataQuery> createFragment(String name,
+        ProductReviewRatingsMetadataQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ProductReviewRatingsMetadataQuery(sb));
         return new Fragment<>(name, "ProductReviewRatingsMetadata", sb.toString());

@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
-public class UnknownAggregationOptionInterface extends AbstractResponse<UnknownAggregationOptionInterface> implements AggregationOptionInterface {
+public class UnknownAggregationOptionInterface extends AbstractResponse<UnknownAggregationOptionInterface> implements
+    AggregationOptionInterface {
     public UnknownAggregationOptionInterface() {}
 
     public UnknownAggregationOptionInterface(JsonObject fields) throws SchemaViolationError {

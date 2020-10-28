@@ -71,7 +71,8 @@ public class CustomerStoreCreditQuery extends AbstractQuery<CustomerStoreCreditQ
      * Customer Store credit balance history. If the history or store credit feature is disabled, then a
      * null value will be returned.
      */
-    public CustomerStoreCreditQuery balanceHistory(BalanceHistoryArgumentsDefinition argsDef, CustomerStoreCreditHistoryQueryDefinition queryDef) {
+    public CustomerStoreCreditQuery balanceHistory(BalanceHistoryArgumentsDefinition argsDef,
+        CustomerStoreCreditHistoryQueryDefinition queryDef) {
         startField("balance_history");
 
         BalanceHistoryArguments args = new BalanceHistoryArguments(_queryBuilder);

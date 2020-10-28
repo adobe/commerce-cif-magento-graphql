@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
 /**
  * ConfigurableProduct defines basic features of a configurable product and its simple product variants
  */
-public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> implements CustomizableProductInterface, PhysicalProductInterface, ProductInterface {
+public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> implements CustomizableProductInterface,
+    PhysicalProductInterface, ProductInterface {
     public ConfigurableProduct() {}
 
     public ConfigurableProduct(JsonObject fields) throws SchemaViolationError {

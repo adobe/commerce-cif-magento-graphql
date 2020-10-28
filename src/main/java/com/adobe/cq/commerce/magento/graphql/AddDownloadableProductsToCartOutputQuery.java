@@ -40,7 +40,8 @@ public class AddDownloadableProductsToCartOutputQuery extends AbstractQuery<AddD
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<AddDownloadableProductsToCartOutputQuery> createFragment(String name, AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
+    public static Fragment<AddDownloadableProductsToCartOutputQuery> createFragment(String name,
+        AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new AddDownloadableProductsToCartOutputQuery(sb));
         return new Fragment<>(name, "AddDownloadableProductsToCartOutput", sb.toString());

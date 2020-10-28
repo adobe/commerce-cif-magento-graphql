@@ -46,7 +46,8 @@ public class ApplyStoreCreditToCartOutputQuery extends AbstractQuery<ApplyStoreC
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ApplyStoreCreditToCartOutputQuery> createFragment(String name, ApplyStoreCreditToCartOutputQueryDefinition queryDef) {
+    public static Fragment<ApplyStoreCreditToCartOutputQuery> createFragment(String name,
+        ApplyStoreCreditToCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ApplyStoreCreditToCartOutputQuery(sb));
         return new Fragment<>(name, "ApplyStoreCreditToCartOutput", sb.toString());

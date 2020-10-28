@@ -95,7 +95,8 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomizableProductInterfaceQuery> createFragment(String name, CustomizableProductInterfaceQueryDefinition queryDef) {
+    public static Fragment<CustomizableProductInterfaceQuery> createFragment(String name,
+        CustomizableProductInterfaceQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomizableProductInterfaceQuery(sb, false));
         return new Fragment<>(name, "CustomizableProductInterface", sb.toString());

@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
 /**
  * A simple product is tangible and are usually sold as single units or in fixed quantities.
  */
-public class SimpleProduct extends AbstractResponse<SimpleProduct> implements CustomizableProductInterface, PhysicalProductInterface, ProductInterface {
+public class SimpleProduct extends AbstractResponse<SimpleProduct> implements CustomizableProductInterface, PhysicalProductInterface,
+    ProductInterface {
     public SimpleProduct() {}
 
     public SimpleProduct(JsonObject fields) throws SchemaViolationError {

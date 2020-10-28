@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
 /**
  * BundleProduct defines basic features of a bundle product and contains multiple BundleItems.
  */
-public class BundleProduct extends AbstractResponse<BundleProduct> implements CustomizableProductInterface, PhysicalProductInterface, ProductInterface {
+public class BundleProduct extends AbstractResponse<BundleProduct> implements CustomizableProductInterface, PhysicalProductInterface,
+    ProductInterface {
     public BundleProduct() {}
 
     public BundleProduct(JsonObject fields) throws SchemaViolationError {

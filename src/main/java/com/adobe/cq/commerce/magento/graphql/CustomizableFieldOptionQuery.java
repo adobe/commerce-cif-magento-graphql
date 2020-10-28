@@ -119,7 +119,8 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
      * 
      * @param fragment The fragment to reference.
      */
-    public CustomizableFieldOptionQuery addCustomizableOptionInterfaceFragmentReference(Fragment<CustomizableOptionInterfaceQuery> fragment) {
+    public CustomizableFieldOptionQuery addCustomizableOptionInterfaceFragmentReference(
+        Fragment<CustomizableOptionInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

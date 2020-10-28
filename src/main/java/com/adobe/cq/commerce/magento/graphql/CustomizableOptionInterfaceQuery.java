@@ -134,7 +134,8 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomizableOptionInterfaceQuery> createFragment(String name, CustomizableOptionInterfaceQueryDefinition queryDef) {
+    public static Fragment<CustomizableOptionInterfaceQuery> createFragment(String name,
+        CustomizableOptionInterfaceQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomizableOptionInterfaceQuery(sb, false));
         return new Fragment<>(name, "CustomizableOptionInterface", sb.toString());

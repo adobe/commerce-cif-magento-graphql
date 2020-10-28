@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
 /**
  * CustomizableProductInterface contains information about customizable product options.
  */
-public class UnknownCustomizableProductInterface extends AbstractResponse<UnknownCustomizableProductInterface> implements CustomizableProductInterface {
+public class UnknownCustomizableProductInterface extends AbstractResponse<UnknownCustomizableProductInterface> implements
+    CustomizableProductInterface {
     public UnknownCustomizableProductInterface() {}
 
     public UnknownCustomizableProductInterface(JsonObject fields) throws SchemaViolationError {

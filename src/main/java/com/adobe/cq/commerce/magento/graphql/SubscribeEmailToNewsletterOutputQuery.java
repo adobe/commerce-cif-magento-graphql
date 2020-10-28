@@ -39,7 +39,8 @@ public class SubscribeEmailToNewsletterOutputQuery extends AbstractQuery<Subscri
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SubscribeEmailToNewsletterOutputQuery> createFragment(String name, SubscribeEmailToNewsletterOutputQueryDefinition queryDef) {
+    public static Fragment<SubscribeEmailToNewsletterOutputQuery> createFragment(String name,
+        SubscribeEmailToNewsletterOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SubscribeEmailToNewsletterOutputQuery(sb));
         return new Fragment<>(name, "SubscribeEmailToNewsletterOutput", sb.toString());

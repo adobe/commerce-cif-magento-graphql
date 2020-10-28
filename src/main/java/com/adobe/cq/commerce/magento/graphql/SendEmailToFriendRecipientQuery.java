@@ -42,7 +42,8 @@ public class SendEmailToFriendRecipientQuery extends AbstractQuery<SendEmailToFr
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SendEmailToFriendRecipientQuery> createFragment(String name, SendEmailToFriendRecipientQueryDefinition queryDef) {
+    public static Fragment<SendEmailToFriendRecipientQuery> createFragment(String name,
+        SendEmailToFriendRecipientQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SendEmailToFriendRecipientQuery(sb));
         return new Fragment<>(name, "SendEmailToFriendRecipient", sb.toString());

@@ -71,7 +71,8 @@ public class ConfigurableAttributeOptionQuery extends AbstractQuery<Configurable
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ConfigurableAttributeOptionQuery> createFragment(String name, ConfigurableAttributeOptionQueryDefinition queryDef) {
+    public static Fragment<ConfigurableAttributeOptionQuery> createFragment(String name,
+        ConfigurableAttributeOptionQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ConfigurableAttributeOptionQuery(sb));
         return new Fragment<>(name, "ConfigurableAttributeOption", sb.toString());

@@ -48,7 +48,8 @@ public class CartItemSelectedOptionValuePriceQuery extends AbstractQuery<CartIte
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CartItemSelectedOptionValuePriceQuery> createFragment(String name, CartItemSelectedOptionValuePriceQueryDefinition queryDef) {
+    public static Fragment<CartItemSelectedOptionValuePriceQuery> createFragment(String name,
+        CartItemSelectedOptionValuePriceQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CartItemSelectedOptionValuePriceQuery(sb));
         return new Fragment<>(name, "CartItemSelectedOptionValuePrice", sb.toString());

@@ -73,7 +73,8 @@ public class DownloadableProductCartItemInput implements Serializable {
         return this;
     }
 
-    public DownloadableProductCartItemInput setDownloadableProductLinksInput(Input<List<DownloadableProductLinksInput>> downloadableProductLinks) {
+    public DownloadableProductCartItemInput setDownloadableProductLinksInput(
+        Input<List<DownloadableProductLinksInput>> downloadableProductLinks) {
         if (downloadableProductLinks == null) {
             throw new IllegalArgumentException("Input can not be null");
         }

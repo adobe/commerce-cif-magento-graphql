@@ -45,7 +45,8 @@ public class CustomerDownloadableProductsQuery extends AbstractQuery<CustomerDow
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomerDownloadableProductsQuery> createFragment(String name, CustomerDownloadableProductsQueryDefinition queryDef) {
+    public static Fragment<CustomerDownloadableProductsQuery> createFragment(String name,
+        CustomerDownloadableProductsQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomerDownloadableProductsQuery(sb));
         return new Fragment<>(name, "CustomerDownloadableProducts", sb.toString());

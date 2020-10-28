@@ -119,7 +119,8 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
      * 
      * @param fragment The fragment to reference.
      */
-    public CustomizableDateOptionQuery addCustomizableOptionInterfaceFragmentReference(Fragment<CustomizableOptionInterfaceQuery> fragment) {
+    public CustomizableDateOptionQuery addCustomizableOptionInterfaceFragmentReference(
+        Fragment<CustomizableOptionInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

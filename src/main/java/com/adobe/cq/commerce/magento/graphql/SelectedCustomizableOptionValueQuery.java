@@ -58,7 +58,8 @@ public class SelectedCustomizableOptionValueQuery extends AbstractQuery<Selected
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SelectedCustomizableOptionValueQuery> createFragment(String name, SelectedCustomizableOptionValueQueryDefinition queryDef) {
+    public static Fragment<SelectedCustomizableOptionValueQuery> createFragment(String name,
+        SelectedCustomizableOptionValueQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SelectedCustomizableOptionValueQuery(sb));
         return new Fragment<>(name, "SelectedCustomizableOptionValue", sb.toString());

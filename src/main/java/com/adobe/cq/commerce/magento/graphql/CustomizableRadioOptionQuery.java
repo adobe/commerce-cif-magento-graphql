@@ -110,7 +110,8 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
      * 
      * @param fragment The fragment to reference.
      */
-    public CustomizableRadioOptionQuery addCustomizableOptionInterfaceFragmentReference(Fragment<CustomizableOptionInterfaceQuery> fragment) {
+    public CustomizableRadioOptionQuery addCustomizableOptionInterfaceFragmentReference(
+        Fragment<CustomizableOptionInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

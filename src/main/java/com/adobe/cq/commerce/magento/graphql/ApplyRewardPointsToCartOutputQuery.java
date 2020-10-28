@@ -43,7 +43,8 @@ public class ApplyRewardPointsToCartOutputQuery extends AbstractQuery<ApplyRewar
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ApplyRewardPointsToCartOutputQuery> createFragment(String name, ApplyRewardPointsToCartOutputQueryDefinition queryDef) {
+    public static Fragment<ApplyRewardPointsToCartOutputQuery> createFragment(String name,
+        ApplyRewardPointsToCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ApplyRewardPointsToCartOutputQuery(sb));
         return new Fragment<>(name, "ApplyRewardPointsToCartOutput", sb.toString());
