@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCustomizableOptionValue> {
-    public SelectedCustomizableOptionValue() {
-    }
+    public SelectedCustomizableOptionValue() {}
 
     public SelectedCustomizableOptionValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -108,15 +107,20 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "price": return true;
+            case "price":
+                return true;
 
-            case "value": return false;
+            case "value":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

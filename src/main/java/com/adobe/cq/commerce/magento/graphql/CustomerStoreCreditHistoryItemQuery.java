@@ -35,7 +35,7 @@ public class CustomerStoreCreditHistoryItemQuery extends AbstractQuery<CustomerS
     }
 
     /**
-     * The store credit available to the customer as a result of this action. 
+     * The store credit available to the customer as a result of this action.
      */
     public CustomerStoreCreditHistoryItemQuery actualBalance(MoneyQueryDefinition queryDef) {
         startField("actual_balance");

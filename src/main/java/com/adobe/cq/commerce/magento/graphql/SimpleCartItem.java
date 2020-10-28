@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Simple Cart Item
  */
 public class SimpleCartItem extends AbstractResponse<SimpleCartItem> implements CartItemInterface {
-    public SimpleCartItem() {
-    }
+    public SimpleCartItem() {}
 
     public SimpleCartItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -222,23 +221,32 @@ public class SimpleCartItem extends AbstractResponse<SimpleCartItem> implements 
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "available_gift_wrapping": return true;
+            case "available_gift_wrapping":
+                return true;
 
-            case "customizable_options": return true;
+            case "customizable_options":
+                return true;
 
-            case "gift_message": return true;
+            case "gift_message":
+                return true;
 
-            case "gift_wrapping": return true;
+            case "gift_wrapping":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "prices": return true;
+            case "prices":
+                return true;
 
-            case "product": return false;
+            case "product":
+                return false;
 
-            case "quantity": return false;
+            case "quantity":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

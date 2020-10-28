@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Represents a product price.
  */
 public class ProductPrice extends AbstractResponse<ProductPrice> {
-    public ProductPrice() {
-    }
+    public ProductPrice() {}
 
     public ProductPrice(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -145,15 +144,20 @@ public class ProductPrice extends AbstractResponse<ProductPrice> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "discount": return true;
+            case "discount":
+                return true;
 
-            case "final_price": return true;
+            case "final_price":
+                return true;
 
-            case "fixed_product_taxes": return true;
+            case "fixed_product_taxes":
+                return true;
 
-            case "regular_price": return true;
+            case "regular_price":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

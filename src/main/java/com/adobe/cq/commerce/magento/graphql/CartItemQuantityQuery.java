@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Deprecated: `cart_items` field of `ShippingCartAddress` returns now  `CartItemInterface` instead of
+ * Deprecated: `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of
  * `CartItemQuantity`
  */
 public class CartItemQuantityQuery extends AbstractQuery<CartItemQuantityQuery> {

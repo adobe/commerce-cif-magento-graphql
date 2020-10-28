@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * CustomAttributeMetadata defines an array of attribute_codes and entity_types
  */
 public class CustomAttributeMetadata extends AbstractResponse<CustomAttributeMetadata> {
-    public CustomAttributeMetadata() {
-    }
+    public CustomAttributeMetadata() {}
 
     public CustomAttributeMetadata(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -86,9 +85,11 @@ public class CustomAttributeMetadata extends AbstractResponse<CustomAttributeMet
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items": return true;
+            case "items":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

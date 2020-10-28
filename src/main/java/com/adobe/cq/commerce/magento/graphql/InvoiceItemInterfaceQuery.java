@@ -25,6 +25,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     InvoiceItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     InvoiceItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

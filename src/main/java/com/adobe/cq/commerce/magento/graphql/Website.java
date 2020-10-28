@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * about a website
  */
 public class Website extends AbstractResponse<Website> {
-    public Website() {
-    }
+    public Website() {}
 
     public Website(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -209,19 +208,26 @@ public class Website extends AbstractResponse<Website> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "code":
+                return false;
 
-            case "default_group_id": return false;
+            case "default_group_id":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "is_default": return false;
+            case "is_default":
+                return false;
 
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

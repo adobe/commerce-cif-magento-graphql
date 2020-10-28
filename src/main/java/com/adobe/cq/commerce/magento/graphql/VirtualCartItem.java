@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Virtual Cart Item
  */
 public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implements CartItemInterface {
-    public VirtualCartItem() {
-    }
+    public VirtualCartItem() {}
 
     public VirtualCartItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -148,17 +147,23 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "customizable_options": return true;
+            case "customizable_options":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "prices": return true;
+            case "prices":
+                return true;
 
-            case "product": return false;
+            case "product":
+                return false;
 
-            case "quantity": return false;
+            case "quantity":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

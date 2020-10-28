@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemInterface {
-    public OrderItem() {
-    }
+    public OrderItem() {}
 
     public OrderItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -457,41 +456,59 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "discounts": return true;
+            case "discounts":
+                return true;
 
-            case "entered_options": return true;
+            case "entered_options":
+                return true;
 
-            case "gift_wrapping": return true;
+            case "gift_wrapping":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "product_name": return false;
+            case "product_name":
+                return false;
 
-            case "product_sale_price": return true;
+            case "product_sale_price":
+                return true;
 
-            case "product_sku": return false;
+            case "product_sku":
+                return false;
 
-            case "product_type": return false;
+            case "product_type":
+                return false;
 
-            case "product_url_key": return false;
+            case "product_url_key":
+                return false;
 
-            case "quantity_canceled": return false;
+            case "quantity_canceled":
+                return false;
 
-            case "quantity_invoiced": return false;
+            case "quantity_invoiced":
+                return false;
 
-            case "quantity_ordered": return false;
+            case "quantity_ordered":
+                return false;
 
-            case "quantity_refunded": return false;
+            case "quantity_refunded":
+                return false;
 
-            case "quantity_returned": return false;
+            case "quantity_returned":
+                return false;
 
-            case "quantity_shipped": return false;
+            case "quantity_shipped":
+                return false;
 
-            case "selected_options": return true;
+            case "selected_options":
+                return true;
 
-            case "status": return false;
+            case "status":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

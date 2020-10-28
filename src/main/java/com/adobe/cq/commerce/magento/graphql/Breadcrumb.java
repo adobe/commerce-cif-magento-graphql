@@ -26,8 +26,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Breadcrumb item.
  */
 public class Breadcrumb extends AbstractResponse<Breadcrumb> {
-    public Breadcrumb() {
-    }
+    public Breadcrumb() {}
 
     public Breadcrumb(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -167,17 +166,23 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "category_id": return false;
+            case "category_id":
+                return false;
 
-            case "category_level": return false;
+            case "category_level":
+                return false;
 
-            case "category_name": return false;
+            case "category_name":
+                return false;
 
-            case "category_url_key": return false;
+            case "category_url_key":
+                return false;
 
-            case "category_url_path": return false;
+            case "category_url_path":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

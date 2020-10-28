@@ -24,8 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Currency extends AbstractResponse<Currency> {
-    public Currency() {
-    }
+    public Currency() {}
 
     public Currency(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -238,23 +237,32 @@ public class Currency extends AbstractResponse<Currency> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "available_currency_codes": return false;
+            case "available_currency_codes":
+                return false;
 
-            case "base_currency_code": return false;
+            case "base_currency_code":
+                return false;
 
-            case "base_currency_symbol": return false;
+            case "base_currency_symbol":
+                return false;
 
-            case "default_display_currecy_code": return false;
+            case "default_display_currecy_code":
+                return false;
 
-            case "default_display_currecy_symbol": return false;
+            case "default_display_currecy_symbol":
+                return false;
 
-            case "default_display_currency_code": return false;
+            case "default_display_currency_code":
+                return false;
 
-            case "default_display_currency_symbol": return false;
+            case "default_display_currency_symbol":
+                return false;
 
-            case "exchange_rates": return true;
+            case "exchange_rates":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

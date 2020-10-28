@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * An error encountered while performing operations with WishList.
  */
 public class WishListUserInputError extends AbstractResponse<WishListUserInputError> {
-    public WishListUserInputError() {
-    }
+    public WishListUserInputError() {}
 
     public WishListUserInputError(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -87,11 +86,14 @@ public class WishListUserInputError extends AbstractResponse<WishListUserInputEr
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "code":
+                return false;
 
-            case "message": return false;
+            case "message":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

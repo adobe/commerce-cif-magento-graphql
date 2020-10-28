@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SubscribeEmailToNewsletterOutput extends AbstractResponse<SubscribeEmailToNewsletterOutput> {
-    public SubscribeEmailToNewsletterOutput() {
-    }
+    public SubscribeEmailToNewsletterOutput() {}
 
     public SubscribeEmailToNewsletterOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -71,9 +70,11 @@ public class SubscribeEmailToNewsletterOutput extends AbstractResponse<Subscribe
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "status": return false;
+            case "status":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

@@ -24,8 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class AddProductsToCartOutput extends AbstractResponse<AddProductsToCartOutput> {
-    public AddProductsToCartOutput() {
-    }
+    public AddProductsToCartOutput() {}
 
     public AddProductsToCartOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -96,11 +95,14 @@ public class AddProductsToCartOutput extends AbstractResponse<AddProductsToCartO
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart": return true;
+            case "cart":
+                return true;
 
-            case "user_errors": return true;
+            case "user_errors":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

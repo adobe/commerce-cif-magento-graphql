@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * SortFields contains a default value for sort fields and all available sort fields.
  */
 public class SortFields extends AbstractResponse<SortFields> {
-    public SortFields() {
-    }
+    public SortFields() {}
 
     public SortFields(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -109,11 +108,14 @@ public class SortFields extends AbstractResponse<SortFields> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "default": return false;
+            case "default":
+                return false;
 
-            case "options": return true;
+            case "options":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

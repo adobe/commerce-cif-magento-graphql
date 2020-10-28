@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SendEmailToFriendSender extends AbstractResponse<SendEmailToFriendSender> {
-    public SendEmailToFriendSender() {
-    }
+    public SendEmailToFriendSender() {}
 
     public SendEmailToFriendSender(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -93,13 +92,17 @@ public class SendEmailToFriendSender extends AbstractResponse<SendEmailToFriendS
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "email": return false;
+            case "email":
+                return false;
 
-            case "message": return false;
+            case "message":
+                return false;
 
-            case "name": return false;
+            case "name":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

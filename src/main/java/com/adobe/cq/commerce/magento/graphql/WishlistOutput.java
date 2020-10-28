@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Deprecated: `Wishlist` type should be used instead
  */
 public class WishlistOutput extends AbstractResponse<WishlistOutput> {
-    public WishlistOutput() {
-    }
+    public WishlistOutput() {}
 
     public WishlistOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -193,17 +192,23 @@ public class WishlistOutput extends AbstractResponse<WishlistOutput> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items": return true;
+            case "items":
+                return true;
 
-            case "items_count": return false;
+            case "items_count":
+                return false;
 
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "sharing_code": return false;
+            case "sharing_code":
+                return false;
 
-            case "updated_at": return false;
+            case "updated_at":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

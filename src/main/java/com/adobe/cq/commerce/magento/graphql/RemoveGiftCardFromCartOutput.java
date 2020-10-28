@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines the possible output for the removeGiftCardFromCart mutation
  */
 public class RemoveGiftCardFromCartOutput extends AbstractResponse<RemoveGiftCardFromCartOutput> {
-    public RemoveGiftCardFromCartOutput() {
-    }
+    public RemoveGiftCardFromCartOutput() {}
 
     public RemoveGiftCardFromCartOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -69,9 +68,11 @@ public class RemoveGiftCardFromCartOutput extends AbstractResponse<RemoveGiftCar
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart": return true;
+            case "cart":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

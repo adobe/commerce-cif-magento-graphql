@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * a list of arguments, and a return type.
  */
 public class __Field extends AbstractResponse<__Field> {
-    public __Field() {
-    }
+    public __Field() {}
 
     public __Field(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -159,19 +158,26 @@ public class __Field extends AbstractResponse<__Field> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "description": return false;
+            case "description":
+                return false;
 
-            case "args": return true;
+            case "args":
+                return true;
 
-            case "type": return true;
+            case "type":
+                return true;
 
-            case "isDeprecated": return false;
+            case "isDeprecated":
+                return false;
 
-            case "deprecationReason": return false;
+            case "deprecationReason":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

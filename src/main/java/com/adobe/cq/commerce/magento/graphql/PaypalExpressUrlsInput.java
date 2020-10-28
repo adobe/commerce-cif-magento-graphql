@@ -83,7 +83,7 @@ public class PaypalExpressUrlsInput implements Serializable {
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
-     * paypal/action/success_pending.html. 
+     * paypal/action/success_pending.html.
      */
     public String getPendingUrl() {
         return pendingUrl.getValue();
@@ -94,7 +94,7 @@ public class PaypalExpressUrlsInput implements Serializable {
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
-     * paypal/action/success_pending.html. 
+     * paypal/action/success_pending.html.
      */
     public Input<String> getPendingUrlInput() {
         return pendingUrl;
@@ -105,7 +105,7 @@ public class PaypalExpressUrlsInput implements Serializable {
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
-     * paypal/action/success_pending.html. 
+     * paypal/action/success_pending.html.
      */
     public PaypalExpressUrlsInput setPendingUrl(String pendingUrl) {
         this.pendingUrl = Input.optional(pendingUrl);
@@ -117,7 +117,7 @@ public class PaypalExpressUrlsInput implements Serializable {
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
-     * paypal/action/success_pending.html. 
+     * paypal/action/success_pending.html.
      */
     public PaypalExpressUrlsInput setPendingUrlInput(Input<String> pendingUrl) {
         if (pendingUrl == null) {

@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Wishlist extends AbstractResponse<Wishlist> {
-    public Wishlist() {
-    }
+    public Wishlist() {}
 
     public Wishlist(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -176,17 +175,23 @@ public class Wishlist extends AbstractResponse<Wishlist> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "items": return true;
+            case "items":
+                return true;
 
-            case "items_count": return false;
+            case "items_count":
+                return false;
 
-            case "sharing_code": return false;
+            case "sharing_code":
+                return false;
 
-            case "updated_at": return false;
+            case "updated_at":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

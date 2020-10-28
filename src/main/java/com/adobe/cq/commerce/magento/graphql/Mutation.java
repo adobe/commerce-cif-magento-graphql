@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Mutation extends AbstractResponse<Mutation> {
-    public Mutation() {
-    }
+    public Mutation() {}
 
     public Mutation(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -1207,113 +1206,167 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "addBundleProductsToCart": return true;
+            case "addBundleProductsToCart":
+                return true;
 
-            case "addConfigurableProductsToCart": return true;
+            case "addConfigurableProductsToCart":
+                return true;
 
-            case "addDownloadableProductsToCart": return true;
+            case "addDownloadableProductsToCart":
+                return true;
 
-            case "addProductsToCart": return true;
+            case "addProductsToCart":
+                return true;
 
-            case "addProductsToWishlist": return true;
+            case "addProductsToWishlist":
+                return true;
 
-            case "addSimpleProductsToCart": return true;
+            case "addSimpleProductsToCart":
+                return true;
 
-            case "addVirtualProductsToCart": return true;
+            case "addVirtualProductsToCart":
+                return true;
 
-            case "applyCouponToCart": return true;
+            case "applyCouponToCart":
+                return true;
 
-            case "applyGiftCardToCart": return true;
+            case "applyGiftCardToCart":
+                return true;
 
-            case "applyRewardPointsToCart": return true;
+            case "applyRewardPointsToCart":
+                return true;
 
-            case "applyStoreCreditToCart": return true;
+            case "applyStoreCreditToCart":
+                return true;
 
-            case "changeCustomerPassword": return true;
+            case "changeCustomerPassword":
+                return true;
 
-            case "createBraintreeClientToken": return false;
+            case "createBraintreeClientToken":
+                return false;
 
-            case "createCustomer": return true;
+            case "createCustomer":
+                return true;
 
-            case "createCustomerAddress": return true;
+            case "createCustomerAddress":
+                return true;
 
-            case "createCustomerV2": return true;
+            case "createCustomerV2":
+                return true;
 
-            case "createEmptyCart": return false;
+            case "createEmptyCart":
+                return false;
 
-            case "createKlarnaPaymentsSession": return true;
+            case "createKlarnaPaymentsSession":
+                return true;
 
-            case "createPayflowProToken": return true;
+            case "createPayflowProToken":
+                return true;
 
-            case "createPaypalExpressToken": return true;
+            case "createPaypalExpressToken":
+                return true;
 
-            case "createProductReview": return true;
+            case "createProductReview":
+                return true;
 
-            case "deleteCustomerAddress": return false;
+            case "deleteCustomerAddress":
+                return false;
 
-            case "deletePaymentToken": return true;
+            case "deletePaymentToken":
+                return true;
 
-            case "generateCustomerToken": return true;
+            case "generateCustomerToken":
+                return true;
 
-            case "handlePayflowProResponse": return true;
+            case "handlePayflowProResponse":
+                return true;
 
-            case "mergeCarts": return true;
+            case "mergeCarts":
+                return true;
 
-            case "placeOrder": return true;
+            case "placeOrder":
+                return true;
 
-            case "redeemGiftCardBalanceAsStoreCredit": return true;
+            case "redeemGiftCardBalanceAsStoreCredit":
+                return true;
 
-            case "removeCouponFromCart": return true;
+            case "removeCouponFromCart":
+                return true;
 
-            case "removeGiftCardFromCart": return true;
+            case "removeGiftCardFromCart":
+                return true;
 
-            case "removeItemFromCart": return true;
+            case "removeItemFromCart":
+                return true;
 
-            case "removeProductsFromWishlist": return true;
+            case "removeProductsFromWishlist":
+                return true;
 
-            case "removeRewardPointsFromCart": return true;
+            case "removeRewardPointsFromCart":
+                return true;
 
-            case "removeStoreCreditFromCart": return true;
+            case "removeStoreCreditFromCart":
+                return true;
 
-            case "reorderItems": return true;
+            case "reorderItems":
+                return true;
 
-            case "requestPasswordResetEmail": return false;
+            case "requestPasswordResetEmail":
+                return false;
 
-            case "resetPassword": return false;
+            case "resetPassword":
+                return false;
 
-            case "revokeCustomerToken": return true;
+            case "revokeCustomerToken":
+                return true;
 
-            case "sendEmailToFriend": return true;
+            case "sendEmailToFriend":
+                return true;
 
-            case "setBillingAddressOnCart": return true;
+            case "setBillingAddressOnCart":
+                return true;
 
-            case "setGiftOptionsOnCart": return true;
+            case "setGiftOptionsOnCart":
+                return true;
 
-            case "setGuestEmailOnCart": return true;
+            case "setGuestEmailOnCart":
+                return true;
 
-            case "setPaymentMethodAndPlaceOrder": return true;
+            case "setPaymentMethodAndPlaceOrder":
+                return true;
 
-            case "setPaymentMethodOnCart": return true;
+            case "setPaymentMethodOnCart":
+                return true;
 
-            case "setShippingAddressesOnCart": return true;
+            case "setShippingAddressesOnCart":
+                return true;
 
-            case "setShippingMethodsOnCart": return true;
+            case "setShippingMethodsOnCart":
+                return true;
 
-            case "subscribeEmailToNewsletter": return true;
+            case "subscribeEmailToNewsletter":
+                return true;
 
-            case "updateCartItems": return true;
+            case "updateCartItems":
+                return true;
 
-            case "updateCustomer": return true;
+            case "updateCustomer":
+                return true;
 
-            case "updateCustomerAddress": return true;
+            case "updateCustomerAddress":
+                return true;
 
-            case "updateCustomerEmail": return true;
+            case "updateCustomerEmail":
+                return true;
 
-            case "updateCustomerV2": return true;
+            case "updateCustomerV2":
+                return true;
 
-            case "updateProductsInWishlist": return true;
+            case "updateProductsInWishlist":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

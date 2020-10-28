@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class GiftCardInvoiceItem extends AbstractResponse<GiftCardInvoiceItem> implements InvoiceItemInterface {
-    public GiftCardInvoiceItem() {
-    }
+    public GiftCardInvoiceItem() {}
 
     public GiftCardInvoiceItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -231,23 +230,32 @@ public class GiftCardInvoiceItem extends AbstractResponse<GiftCardInvoiceItem> i
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "discounts": return true;
+            case "discounts":
+                return true;
 
-            case "gift_card": return true;
+            case "gift_card":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "order_item": return false;
+            case "order_item":
+                return false;
 
-            case "product_name": return false;
+            case "product_name":
+                return false;
 
-            case "product_sale_price": return true;
+            case "product_sale_price":
+                return true;
 
-            case "product_sku": return false;
+            case "product_sku":
+                return false;
 
-            case "quantity_invoiced": return false;
+            case "quantity_invoiced":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

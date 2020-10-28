@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> implements ShipmentItemInterface {
-    public BundleShipmentItem() {
-    }
+    public BundleShipmentItem() {}
 
     public BundleShipmentItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -202,21 +201,29 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "bundle_options": return true;
+            case "bundle_options":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "order_item": return false;
+            case "order_item":
+                return false;
 
-            case "product_name": return false;
+            case "product_name":
+                return false;
 
-            case "product_sale_price": return true;
+            case "product_sale_price":
+                return true;
 
-            case "product_sku": return false;
+            case "product_sku":
+                return false;
 
-            case "quantity_shipped": return false;
+            case "quantity_shipped":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

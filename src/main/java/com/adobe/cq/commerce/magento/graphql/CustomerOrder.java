@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains details about each of the customer&#39;s orders
  */
 public class CustomerOrder extends AbstractResponse<CustomerOrder> {
-    public CustomerOrder() {
-    }
+    public CustomerOrder() {}
 
     public CustomerOrder(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -607,53 +606,77 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "billing_address": return true;
+            case "billing_address":
+                return true;
 
-            case "carrier": return false;
+            case "carrier":
+                return false;
 
-            case "comments": return true;
+            case "comments":
+                return true;
 
-            case "created_at": return false;
+            case "created_at":
+                return false;
 
-            case "credit_memos": return true;
+            case "credit_memos":
+                return true;
 
-            case "gift_message": return true;
+            case "gift_message":
+                return true;
 
-            case "gift_receipt_included": return false;
+            case "gift_receipt_included":
+                return false;
 
-            case "gift_wrapping": return true;
+            case "gift_wrapping":
+                return true;
 
-            case "grand_total": return false;
+            case "grand_total":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "increment_id": return false;
+            case "increment_id":
+                return false;
 
-            case "invoices": return true;
+            case "invoices":
+                return true;
 
-            case "items": return false;
+            case "items":
+                return false;
 
-            case "number": return false;
+            case "number":
+                return false;
 
-            case "order_date": return false;
+            case "order_date":
+                return false;
 
-            case "order_number": return false;
+            case "order_number":
+                return false;
 
-            case "payment_methods": return true;
+            case "payment_methods":
+                return true;
 
-            case "printed_card_included": return false;
+            case "printed_card_included":
+                return false;
 
-            case "shipments": return true;
+            case "shipments":
+                return true;
 
-            case "shipping_address": return true;
+            case "shipping_address":
+                return true;
 
-            case "shipping_method": return false;
+            case "shipping_method":
+                return false;
 
-            case "status": return false;
+            case "status":
+                return false;
 
-            case "total": return true;
+            case "total":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

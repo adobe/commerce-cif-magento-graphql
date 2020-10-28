@@ -26,8 +26,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * and adjust checkout details. Applies to Express Checkout and Payments Standard payment methods.
  */
 public class PaypalExpressTokenOutput extends AbstractResponse<PaypalExpressTokenOutput> {
-    public PaypalExpressTokenOutput() {
-    }
+    public PaypalExpressTokenOutput() {}
 
     public PaypalExpressTokenOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -98,11 +97,14 @@ public class PaypalExpressTokenOutput extends AbstractResponse<PaypalExpressToke
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "paypal_urls": return true;
+            case "paypal_urls":
+                return true;
 
-            case "token": return false;
+            case "token":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

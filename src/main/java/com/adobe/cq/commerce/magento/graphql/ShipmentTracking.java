@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Order shipment tracking details
  */
 public class ShipmentTracking extends AbstractResponse<ShipmentTracking> {
-    public ShipmentTracking() {
-    }
+    public ShipmentTracking() {}
 
     public ShipmentTracking(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -110,13 +109,17 @@ public class ShipmentTracking extends AbstractResponse<ShipmentTracking> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "carrier": return false;
+            case "carrier":
+                return false;
 
-            case "number": return false;
+            case "number":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * picker.
  */
 public class CustomizableDateValue extends AbstractResponse<CustomizableDateValue> {
-    public CustomizableDateValue() {
-    }
+    public CustomizableDateValue() {}
 
     public CustomizableDateValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -140,15 +139,20 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "price": return false;
+            case "price":
+                return false;
 
-            case "price_type": return false;
+            case "price_type":
+                return false;
 
-            case "sku": return false;
+            case "sku":
+                return false;
 
-            case "uid": return false;
+            case "uid":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

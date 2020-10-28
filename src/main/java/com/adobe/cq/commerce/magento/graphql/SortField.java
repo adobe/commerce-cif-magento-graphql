@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SortField extends AbstractResponse<SortField> {
-    public SortField() {
-    }
+    public SortField() {}
 
     public SortField(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -94,11 +93,14 @@ public class SortField extends AbstractResponse<SortField> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "value": return false;
+            case "value":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

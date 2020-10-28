@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * picker.
  */
 public class CustomizableFileValue extends AbstractResponse<CustomizableFileValue> {
-    public CustomizableFileValue() {
-    }
+    public CustomizableFileValue() {}
 
     public CustomizableFileValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -209,21 +208,29 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "file_extension": return false;
+            case "file_extension":
+                return false;
 
-            case "image_size_x": return false;
+            case "image_size_x":
+                return false;
 
-            case "image_size_y": return false;
+            case "image_size_y":
+                return false;
 
-            case "price": return false;
+            case "price":
+                return false;
 
-            case "price_type": return false;
+            case "price_type":
+                return false;
 
-            case "sku": return false;
+            case "sku":
+                return false;
 
-            case "uid": return false;
+            case "uid":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

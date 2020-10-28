@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * SearchResultPageInfo provides navigation for the query response
  */
 public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo> {
-    public SearchResultPageInfo() {
-    }
+    public SearchResultPageInfo() {}
 
     public SearchResultPageInfo(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -120,13 +119,17 @@ public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo>
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "current_page": return false;
+            case "current_page":
+                return false;
 
-            case "page_size": return false;
+            case "page_size":
+                return false;
 
-            case "total_pages": return false;
+            case "total_pages":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

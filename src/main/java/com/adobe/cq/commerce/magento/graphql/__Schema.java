@@ -29,8 +29,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * operations.
  */
 public class __Schema extends AbstractResponse<__Schema> {
-    public __Schema() {
-    }
+    public __Schema() {}
 
     public __Schema(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -165,17 +164,23 @@ public class __Schema extends AbstractResponse<__Schema> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "types": return true;
+            case "types":
+                return true;
 
-            case "queryType": return true;
+            case "queryType":
+                return true;
 
-            case "mutationType": return true;
+            case "mutationType":
+                return true;
 
-            case "subscriptionType": return true;
+            case "subscriptionType":
+                return true;
 
-            case "directives": return true;
+            case "directives":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

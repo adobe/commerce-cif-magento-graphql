@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The object details of target path parameters
  */
 public class HttpQueryParameter extends AbstractResponse<HttpQueryParameter> {
-    public HttpQueryParameter() {
-    }
+    public HttpQueryParameter() {}
 
     public HttpQueryParameter(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -97,11 +96,14 @@ public class HttpQueryParameter extends AbstractResponse<HttpQueryParameter> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "value": return false;
+            case "value":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

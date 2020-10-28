@@ -27,6 +27,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     ProductInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     ProductInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

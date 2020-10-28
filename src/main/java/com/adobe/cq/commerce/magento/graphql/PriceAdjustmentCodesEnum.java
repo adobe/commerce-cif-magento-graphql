@@ -32,7 +32,8 @@ public enum PriceAdjustmentCodesEnum {
     WEEE,
 
     /**
-     * @deprecated Use fixed_product_taxes. PriceAdjustmentCodesEnum is deprecated. Tax is included or excluded in price. Tax is not shown separtely in Catalog
+     * @deprecated Use fixed_product_taxes. PriceAdjustmentCodesEnum is deprecated. Tax is included or excluded in price. Tax is not shown
+     *             separtely in Catalog
      */
     @Deprecated
     WEEE_TAX,
@@ -62,6 +63,7 @@ public enum PriceAdjustmentCodesEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case TAX: {

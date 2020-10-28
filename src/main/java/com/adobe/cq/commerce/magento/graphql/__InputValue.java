@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Input Values which describe their type and optionally a default value.
  */
 public class __InputValue extends AbstractResponse<__InputValue> {
-    public __InputValue() {
-    }
+    public __InputValue() {}
 
     public __InputValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -127,15 +126,20 @@ public class __InputValue extends AbstractResponse<__InputValue> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "description": return false;
+            case "description":
+                return false;
 
-            case "type": return true;
+            case "type":
+                return true;
 
-            case "defaultValue": return false;
+            case "defaultValue":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

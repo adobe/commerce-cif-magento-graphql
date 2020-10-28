@@ -43,6 +43,7 @@ public enum PaymentTokenTypeEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case ACCOUNT: {

@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * CustomerAddress contains detailed information about a customer&#39;s billing and shipping addresses
  */
 public class CustomerAddress extends AbstractResponse<CustomerAddress> {
-    public CustomerAddress() {
-    }
+    public CustomerAddress() {}
 
     public CustomerAddress(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -597,51 +596,74 @@ public class CustomerAddress extends AbstractResponse<CustomerAddress> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "city": return false;
+            case "city":
+                return false;
 
-            case "company": return false;
+            case "company":
+                return false;
 
-            case "country_code": return false;
+            case "country_code":
+                return false;
 
-            case "country_id": return false;
+            case "country_id":
+                return false;
 
-            case "custom_attributes": return true;
+            case "custom_attributes":
+                return true;
 
-            case "customer_id": return false;
+            case "customer_id":
+                return false;
 
-            case "default_billing": return false;
+            case "default_billing":
+                return false;
 
-            case "default_shipping": return false;
+            case "default_shipping":
+                return false;
 
-            case "extension_attributes": return true;
+            case "extension_attributes":
+                return true;
 
-            case "fax": return false;
+            case "fax":
+                return false;
 
-            case "firstname": return false;
+            case "firstname":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "lastname": return false;
+            case "lastname":
+                return false;
 
-            case "middlename": return false;
+            case "middlename":
+                return false;
 
-            case "postcode": return false;
+            case "postcode":
+                return false;
 
-            case "prefix": return false;
+            case "prefix":
+                return false;
 
-            case "region": return true;
+            case "region":
+                return true;
 
-            case "region_id": return false;
+            case "region_id":
+                return false;
 
-            case "street": return false;
+            case "street":
+                return false;
 
-            case "suffix": return false;
+            case "suffix":
+                return false;
 
-            case "telephone": return false;
+            case "telephone":
+                return false;
 
-            case "vat_id": return false;
+            case "vat_id":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

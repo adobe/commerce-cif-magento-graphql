@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains the customer&#39;s wish list and any errors encountered
  */
 public class AddProductsToWishlistOutput extends AbstractResponse<AddProductsToWishlistOutput> {
-    public AddProductsToWishlistOutput() {
-    }
+    public AddProductsToWishlistOutput() {}
 
     public AddProductsToWishlistOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -99,11 +98,14 @@ public class AddProductsToWishlistOutput extends AbstractResponse<AddProductsToW
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "user_errors": return true;
+            case "user_errors":
+                return true;
 
-            case "wishlist": return true;
+            case "wishlist":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

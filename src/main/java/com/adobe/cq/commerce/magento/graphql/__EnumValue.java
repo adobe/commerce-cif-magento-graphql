@@ -26,8 +26,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * or numeric value. However an Enum value is returned in a JSON response as a string.
  */
 public class __EnumValue extends AbstractResponse<__EnumValue> {
-    public __EnumValue() {
-    }
+    public __EnumValue() {}
 
     public __EnumValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -122,15 +121,20 @@ public class __EnumValue extends AbstractResponse<__EnumValue> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "description": return false;
+            case "description":
+                return false;
 
-            case "isDeprecated": return false;
+            case "isDeprecated":
+                return false;
 
-            case "deprecationReason": return false;
+            case "deprecationReason":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

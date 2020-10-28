@@ -21,6 +21,7 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
     CartItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CartItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

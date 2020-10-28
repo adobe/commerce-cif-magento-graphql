@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The collection of orders that match the conditions defined in the filter
  */
 public class CustomerOrders extends AbstractResponse<CustomerOrders> {
-    public CustomerOrders() {
-    }
+    public CustomerOrders() {}
 
     public CustomerOrders(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -127,13 +126,17 @@ public class CustomerOrders extends AbstractResponse<CustomerOrders> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items": return true;
+            case "items":
+                return true;
 
-            case "page_info": return true;
+            case "page_info":
+                return true;
 
-            case "total_count": return false;
+            case "total_count":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

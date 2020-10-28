@@ -24,8 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class createKlarnaPaymentsSessionOutput extends AbstractResponse<createKlarnaPaymentsSessionOutput> {
-    public createKlarnaPaymentsSessionOutput() {
-    }
+    public createKlarnaPaymentsSessionOutput() {}
 
     public createKlarnaPaymentsSessionOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -106,11 +105,14 @@ public class createKlarnaPaymentsSessionOutput extends AbstractResponse<createKl
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "client_token": return false;
+            case "client_token":
+                return false;
 
-            case "payment_method_categories": return true;
+            case "payment_method_categories":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

@@ -26,6 +26,7 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     CustomizableOptionInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CustomizableOptionInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

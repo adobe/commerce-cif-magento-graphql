@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * information
  */
 public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
-    public GiftCardAmounts() {
-    }
+    public GiftCardAmounts() {}
 
     public GiftCardAmounts(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -186,19 +185,26 @@ public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "attribute_id": return false;
+            case "attribute_id":
+                return false;
 
-            case "uid": return false;
+            case "uid":
+                return false;
 
-            case "value": return false;
+            case "value":
+                return false;
 
-            case "value_id": return false;
+            case "value_id":
+                return false;
 
-            case "website_id": return false;
+            case "website_id":
+                return false;
 
-            case "website_value": return false;
+            case "website_value":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

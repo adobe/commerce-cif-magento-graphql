@@ -29,8 +29,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * of a customizable option.
  */
 public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioOption> implements CustomizableOptionInterface {
-    public CustomizableRadioOption() {
-    }
+    public CustomizableRadioOption() {}
 
     public CustomizableRadioOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -180,17 +179,23 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "option_id": return false;
+            case "option_id":
+                return false;
 
-            case "required": return false;
+            case "required":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            case "value": return true;
+            case "value":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

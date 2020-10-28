@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines the possible output for the applyGiftCardToCart mutation
  */
 public class ApplyGiftCardToCartOutput extends AbstractResponse<ApplyGiftCardToCartOutput> {
-    public ApplyGiftCardToCartOutput() {
-    }
+    public ApplyGiftCardToCartOutput() {}
 
     public ApplyGiftCardToCartOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -69,9 +68,11 @@ public class ApplyGiftCardToCartOutput extends AbstractResponse<ApplyGiftCardToC
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart": return true;
+            case "cart":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

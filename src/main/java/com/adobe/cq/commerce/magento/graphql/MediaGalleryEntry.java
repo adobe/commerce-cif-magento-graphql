@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * product.
  */
 public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
-    public MediaGalleryEntry() {
-    }
+    public MediaGalleryEntry() {}
 
     public MediaGalleryEntry(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -271,25 +270,35 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "content": return true;
+            case "content":
+                return true;
 
-            case "disabled": return false;
+            case "disabled":
+                return false;
 
-            case "file": return false;
+            case "file":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "media_type": return false;
+            case "media_type":
+                return false;
 
-            case "position": return false;
+            case "position":
+                return false;
 
-            case "types": return false;
+            case "types":
+                return false;
 
-            case "video_content": return true;
+            case "video_content":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

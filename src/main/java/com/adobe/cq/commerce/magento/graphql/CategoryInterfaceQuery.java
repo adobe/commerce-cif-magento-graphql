@@ -26,6 +26,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     CategoryInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CategoryInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

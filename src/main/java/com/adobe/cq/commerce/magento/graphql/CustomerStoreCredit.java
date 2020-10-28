@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains store credit information with balance and history
  */
 public class CustomerStoreCredit extends AbstractResponse<CustomerStoreCredit> {
-    public CustomerStoreCredit() {
-    }
+    public CustomerStoreCredit() {}
 
     public CustomerStoreCredit(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -122,13 +121,17 @@ public class CustomerStoreCredit extends AbstractResponse<CustomerStoreCredit> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "balance_history": return true;
+            case "balance_history":
+                return true;
 
-            case "current_balance": return true;
+            case "current_balance":
+                return true;
 
-            case "enabled": return false;
+            case "enabled":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

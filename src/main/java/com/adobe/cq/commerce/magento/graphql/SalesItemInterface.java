@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SalesItemInterface extends AbstractResponse<SalesItemInterface> {
-    public SalesItemInterface() {
-    }
+    public SalesItemInterface() {}
 
     public SalesItemInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -71,9 +70,11 @@ public class SalesItemInterface extends AbstractResponse<SalesItemInterface> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "gift_message": return true;
+            case "gift_message":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

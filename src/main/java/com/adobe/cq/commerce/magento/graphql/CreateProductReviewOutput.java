@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class CreateProductReviewOutput extends AbstractResponse<CreateProductReviewOutput> {
-    public CreateProductReviewOutput() {
-    }
+    public CreateProductReviewOutput() {}
 
     public CreateProductReviewOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -66,9 +65,11 @@ public class CreateProductReviewOutput extends AbstractResponse<CreateProductRev
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "review": return true;
+            case "review":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

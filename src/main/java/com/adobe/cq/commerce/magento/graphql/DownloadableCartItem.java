@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Downloadable Cart Item
  */
 public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem> implements CartItemInterface {
-    public DownloadableCartItem() {
-    }
+    public DownloadableCartItem() {}
 
     public DownloadableCartItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -214,21 +213,29 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "customizable_options": return true;
+            case "customizable_options":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "links": return true;
+            case "links":
+                return true;
 
-            case "prices": return true;
+            case "prices":
+                return true;
 
-            case "product": return false;
+            case "product":
+                return false;
 
-            case "quantity": return false;
+            case "quantity":
+                return false;
 
-            case "samples": return true;
+            case "samples":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Comment item details
  */
 public class SalesCommentItem extends AbstractResponse<SalesCommentItem> {
-    public SalesCommentItem() {
-    }
+    public SalesCommentItem() {}
 
     public SalesCommentItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -87,11 +86,14 @@ public class SalesCommentItem extends AbstractResponse<SalesCommentItem> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "message": return false;
+            case "message":
+                return false;
 
-            case "timestamp": return false;
+            case "timestamp":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

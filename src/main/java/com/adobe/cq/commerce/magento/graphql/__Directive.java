@@ -31,8 +31,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * this by describing additional information to the executor.
  */
 public class __Directive extends AbstractResponse<__Directive> {
-    public __Directive() {
-    }
+    public __Directive() {}
 
     public __Directive(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -189,21 +188,29 @@ public class __Directive extends AbstractResponse<__Directive> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "description": return false;
+            case "description":
+                return false;
 
-            case "locations": return false;
+            case "locations":
+                return false;
 
-            case "args": return true;
+            case "args":
+                return true;
 
-            case "onOperation": return false;
+            case "onOperation":
+                return false;
 
-            case "onFragment": return false;
+            case "onFragment":
+                return false;
 
-            case "onField": return false;
+            case "onField":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

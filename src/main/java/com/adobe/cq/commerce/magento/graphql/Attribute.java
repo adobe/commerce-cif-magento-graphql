@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Attribute contains the attribute_type of the specified attribute_code and entity_type
  */
 public class Attribute extends AbstractResponse<Attribute> {
-    public Attribute() {
-    }
+    public Attribute() {}
 
     public Attribute(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -179,17 +178,23 @@ public class Attribute extends AbstractResponse<Attribute> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "attribute_code": return false;
+            case "attribute_code":
+                return false;
 
-            case "attribute_options": return true;
+            case "attribute_options":
+                return true;
 
-            case "attribute_type": return false;
+            case "attribute_type":
+                return false;
 
-            case "entity_type": return false;
+            case "entity_type":
+                return false;
 
-            case "input_type": return false;
+            case "input_type":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

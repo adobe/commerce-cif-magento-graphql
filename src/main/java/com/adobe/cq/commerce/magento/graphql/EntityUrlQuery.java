@@ -56,7 +56,7 @@ public class EntityUrlQuery extends AbstractQuery<EntityUrlQuery> {
     }
 
     /**
-     * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
+     * The internal relative URL. If the specified url is a redirect, the query returns the redirected
      * URL, not the original.
      */
     public EntityUrlQuery relativeUrl() {

@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines Pickup Location information.
  */
 public class PickupLocation extends AbstractResponse<PickupLocation> {
-    public PickupLocation() {
-    }
+    public PickupLocation() {}
 
     public PickupLocation(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -351,37 +350,53 @@ public class PickupLocation extends AbstractResponse<PickupLocation> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "city": return false;
+            case "city":
+                return false;
 
-            case "contact_name": return false;
+            case "contact_name":
+                return false;
 
-            case "country_id": return false;
+            case "country_id":
+                return false;
 
-            case "description": return false;
+            case "description":
+                return false;
 
-            case "email": return false;
+            case "email":
+                return false;
 
-            case "fax": return false;
+            case "fax":
+                return false;
 
-            case "latitude": return false;
+            case "latitude":
+                return false;
 
-            case "longitude": return false;
+            case "longitude":
+                return false;
 
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "phone": return false;
+            case "phone":
+                return false;
 
-            case "pickup_location_code": return false;
+            case "pickup_location_code":
+                return false;
 
-            case "postcode": return false;
+            case "postcode":
+                return false;
 
-            case "region": return false;
+            case "region":
+                return false;
 
-            case "region_id": return false;
+            case "region_id":
+                return false;
 
-            case "street": return false;
+            case "street":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

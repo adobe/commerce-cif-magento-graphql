@@ -1051,6 +1051,7 @@ public enum CurrencyEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case AED: {

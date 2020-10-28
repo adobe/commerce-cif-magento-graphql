@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * implemented by several types of configurable options.
  */
 public class UnknownCustomizableOptionInterface extends AbstractResponse<UnknownCustomizableOptionInterface> implements CustomizableOptionInterface {
-    public UnknownCustomizableOptionInterface() {
-    }
+    public UnknownCustomizableOptionInterface() {}
 
     public UnknownCustomizableOptionInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -186,15 +185,20 @@ public class UnknownCustomizableOptionInterface extends AbstractResponse<Unknown
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "option_id": return false;
+            case "option_id":
+                return false;
 
-            case "required": return false;
+            case "required":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

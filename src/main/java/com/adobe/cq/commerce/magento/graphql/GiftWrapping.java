@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class GiftWrapping extends AbstractResponse<GiftWrapping> {
-    public GiftWrapping() {
-    }
+    public GiftWrapping() {}
 
     public GiftWrapping(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -126,15 +125,20 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "design": return false;
+            case "design":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "image": return true;
+            case "image":
+                return true;
 
-            case "price": return true;
+            case "price":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

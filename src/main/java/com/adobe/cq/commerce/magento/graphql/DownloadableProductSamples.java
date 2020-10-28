@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * DownloadableProductSamples defines characteristics of a downloadable product
  */
 public class DownloadableProductSamples extends AbstractResponse<DownloadableProductSamples> {
-    public DownloadableProductSamples() {
-    }
+    public DownloadableProductSamples() {}
 
     public DownloadableProductSamples(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -192,19 +191,26 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "sample_file": return false;
+            case "sample_file":
+                return false;
 
-            case "sample_type": return false;
+            case "sample_type":
+                return false;
 
-            case "sample_url": return false;
+            case "sample_url":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

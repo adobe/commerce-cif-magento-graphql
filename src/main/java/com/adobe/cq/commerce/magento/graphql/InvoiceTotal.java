@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains price details from an invoice
  */
 public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
-    public InvoiceTotal() {
-    }
+    public InvoiceTotal() {}
 
     public InvoiceTotal(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -232,23 +231,32 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "base_grand_total": return true;
+            case "base_grand_total":
+                return true;
 
-            case "discounts": return true;
+            case "discounts":
+                return true;
 
-            case "grand_total": return true;
+            case "grand_total":
+                return true;
 
-            case "shipping_handling": return true;
+            case "shipping_handling":
+                return true;
 
-            case "subtotal": return true;
+            case "subtotal":
+                return true;
 
-            case "taxes": return true;
+            case "taxes":
+                return true;
 
-            case "total_shipping": return true;
+            case "total_shipping":
+                return true;
 
-            case "total_tax": return true;
+            case "total_tax":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

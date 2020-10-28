@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SendFriendConfiguration extends AbstractResponse<SendFriendConfiguration> {
-    public SendFriendConfiguration() {
-    }
+    public SendFriendConfiguration() {}
 
     public SendFriendConfiguration(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -84,11 +83,14 @@ public class SendFriendConfiguration extends AbstractResponse<SendFriendConfigur
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "enabled_for_customers": return false;
+            case "enabled_for_customers":
+                return false;
 
-            case "enabled_for_guests": return false;
+            case "enabled_for_guests":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

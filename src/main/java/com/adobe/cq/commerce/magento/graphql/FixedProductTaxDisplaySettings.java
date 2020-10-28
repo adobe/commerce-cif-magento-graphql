@@ -32,7 +32,7 @@ public enum FixedProductTaxDisplaySettings {
     EXCLUDE_FPT_WITHOUT_DETAILS,
 
     /**
-     * The FPT feature is not enabled. You can omit  ProductPrice.fixed_product_taxes from your query
+     * The FPT feature is not enabled. You can omit ProductPrice.fixed_product_taxes from your query
      */
     FPT_DISABLED,
 
@@ -82,6 +82,7 @@ public enum FixedProductTaxDisplaySettings {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS: {

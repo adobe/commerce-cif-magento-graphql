@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Credit memo details
  */
 public class CreditMemo extends AbstractResponse<CreditMemo> {
-    public CreditMemo() {
-    }
+    public CreditMemo() {}
 
     public CreditMemo(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -179,17 +178,23 @@ public class CreditMemo extends AbstractResponse<CreditMemo> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "comments": return true;
+            case "comments":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "items": return false;
+            case "items":
+                return false;
 
-            case "number": return false;
+            case "number":
+                return false;
 
-            case "total": return true;
+            case "total":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

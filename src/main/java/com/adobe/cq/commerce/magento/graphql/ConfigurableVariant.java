@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * An array containing all the simple product variants of a configurable product
  */
 public class ConfigurableVariant extends AbstractResponse<ConfigurableVariant> {
-    public ConfigurableVariant() {
-    }
+    public ConfigurableVariant() {}
 
     public ConfigurableVariant(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -103,11 +102,14 @@ public class ConfigurableVariant extends AbstractResponse<ConfigurableVariant> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "attributes": return true;
+            case "attributes":
+                return true;
 
-            case "product": return true;
+            case "product":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

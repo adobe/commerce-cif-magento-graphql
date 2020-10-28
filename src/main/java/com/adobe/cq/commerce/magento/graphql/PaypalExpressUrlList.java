@@ -26,8 +26,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Checkout and Payments Standard transactions.
  */
 public class PaypalExpressUrlList extends AbstractResponse<PaypalExpressUrlList> {
-    public PaypalExpressUrlList() {
-    }
+    public PaypalExpressUrlList() {}
 
     public PaypalExpressUrlList(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -98,11 +97,14 @@ public class PaypalExpressUrlList extends AbstractResponse<PaypalExpressUrlList>
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "edit": return false;
+            case "edit":
+                return false;
 
-            case "start": return false;
+            case "start":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

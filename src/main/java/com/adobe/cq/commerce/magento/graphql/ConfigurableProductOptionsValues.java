@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * ConfigurableProductOptionsValues contains the index number assigned to a configurable product option
  */
 public class ConfigurableProductOptionsValues extends AbstractResponse<ConfigurableProductOptionsValues> {
-    public ConfigurableProductOptionsValues() {
-    }
+    public ConfigurableProductOptionsValues() {}
 
     public ConfigurableProductOptionsValues(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -189,19 +188,26 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "default_label": return false;
+            case "default_label":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "store_label": return false;
+            case "store_label":
+                return false;
 
-            case "swatch_data": return false;
+            case "swatch_data":
+                return false;
 
-            case "use_default_value": return false;
+            case "use_default_value":
+                return false;
 
-            case "value_index": return false;
+            case "value_index":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

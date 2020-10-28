@@ -24,6 +24,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     OrderItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     OrderItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

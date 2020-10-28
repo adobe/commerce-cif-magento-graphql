@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * of radio buttons.
  */
 public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioValue> {
-    public CustomizableRadioValue() {
-    }
+    public CustomizableRadioValue() {}
 
     public CustomizableRadioValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -209,21 +208,29 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "option_type_id": return false;
+            case "option_type_id":
+                return false;
 
-            case "price": return false;
+            case "price":
+                return false;
 
-            case "price_type": return false;
+            case "price_type":
+                return false;
 
-            case "sku": return false;
+            case "sku":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            case "uid": return false;
+            case "uid":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

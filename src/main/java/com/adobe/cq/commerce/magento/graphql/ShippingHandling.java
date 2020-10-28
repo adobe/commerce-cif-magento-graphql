@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The Shipping handling details
  */
 public class ShippingHandling extends AbstractResponse<ShippingHandling> {
-    public ShippingHandling() {
-    }
+    public ShippingHandling() {}
 
     public ShippingHandling(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -183,17 +182,23 @@ public class ShippingHandling extends AbstractResponse<ShippingHandling> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount_excluding_tax": return true;
+            case "amount_excluding_tax":
+                return true;
 
-            case "amount_including_tax": return true;
+            case "amount_including_tax":
+                return true;
 
-            case "discounts": return true;
+            case "discounts":
+                return true;
 
-            case "taxes": return true;
+            case "taxes":
+                return true;
 
-            case "total_amount": return true;
+            case "total_amount":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

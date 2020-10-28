@@ -44,6 +44,7 @@ public enum PriceAdjustmentDescriptionEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case EXCLUDED: {

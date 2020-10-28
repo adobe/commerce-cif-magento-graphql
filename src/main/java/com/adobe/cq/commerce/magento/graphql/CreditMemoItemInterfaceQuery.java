@@ -25,6 +25,7 @@ public class CreditMemoItemInterfaceQuery extends AbstractQuery<CreditMemoItemIn
     CreditMemoItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CreditMemoItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

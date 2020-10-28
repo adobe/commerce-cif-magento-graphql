@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class PlaceOrderOutput extends AbstractResponse<PlaceOrderOutput> {
-    public PlaceOrderOutput() {
-    }
+    public PlaceOrderOutput() {}
 
     public PlaceOrderOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -63,9 +62,11 @@ public class PlaceOrderOutput extends AbstractResponse<PlaceOrderOutput> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "order": return true;
+            case "order":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

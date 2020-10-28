@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ProductReviewRatingMetadata extends AbstractResponse<ProductReviewRatingMetadata> {
-    public ProductReviewRatingMetadata() {
-    }
+    public ProductReviewRatingMetadata() {}
 
     public ProductReviewRatingMetadata(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -115,13 +114,17 @@ public class ProductReviewRatingMetadata extends AbstractResponse<ProductReviewR
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "name": return false;
+            case "name":
+                return false;
 
-            case "values": return true;
+            case "values":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

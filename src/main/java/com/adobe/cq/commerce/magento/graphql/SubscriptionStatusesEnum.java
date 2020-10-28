@@ -52,6 +52,7 @@ public enum SubscriptionStatusesEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case NOT_ACTIVE: {

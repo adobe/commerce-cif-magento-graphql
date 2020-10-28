@@ -22,12 +22,11 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Deprecated: `cart_items` field of `ShippingCartAddress` returns now  `CartItemInterface` instead of
+ * Deprecated: `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of
  * `CartItemQuantity`
  */
 public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
-    public CartItemQuantity() {
-    }
+    public CartItemQuantity() {}
 
     public CartItemQuantity(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -90,11 +89,14 @@ public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart_item_id": return false;
+            case "cart_item_id":
+                return false;
 
-            case "quantity": return false;
+            case "quantity":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

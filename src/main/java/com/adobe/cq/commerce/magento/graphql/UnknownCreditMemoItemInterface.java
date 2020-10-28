@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Credit memo item details
  */
 public class UnknownCreditMemoItemInterface extends AbstractResponse<UnknownCreditMemoItemInterface> implements CreditMemoItemInterface {
-    public UnknownCreditMemoItemInterface() {
-    }
+    public UnknownCreditMemoItemInterface() {}
 
     public UnknownCreditMemoItemInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -236,21 +235,29 @@ public class UnknownCreditMemoItemInterface extends AbstractResponse<UnknownCred
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "discounts": return true;
+            case "discounts":
+                return true;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "order_item": return false;
+            case "order_item":
+                return false;
 
-            case "product_name": return false;
+            case "product_name":
+                return false;
 
-            case "product_sale_price": return true;
+            case "product_sale_price":
+                return true;
 
-            case "product_sku": return false;
+            case "product_sku":
+                return false;
 
-            case "quantity_refunded": return false;
+            case "quantity_refunded":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }

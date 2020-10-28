@@ -28,8 +28,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * well as any tax-related adjustments.
  */
 public class Price extends AbstractResponse<Price> {
-    public Price() {
-    }
+    public Price() {}
 
     public Price(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -116,11 +115,14 @@ public class Price extends AbstractResponse<Price> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "adjustments": return true;
+            case "adjustments":
+                return true;
 
-            case "amount": return true;
+            case "amount":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
