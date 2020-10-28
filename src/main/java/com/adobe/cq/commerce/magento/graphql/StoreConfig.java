@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The type contains information about a store config
  */
 public class StoreConfig extends AbstractResponse<StoreConfig> {
-    public StoreConfig() {}
+    public StoreConfig() {
+    }
 
     public StoreConfig(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -1967,257 +1968,173 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "absolute_footer":
-                return false;
+            case "absolute_footer": return false;
 
-            case "allow_gift_receipt":
-                return false;
+            case "allow_gift_receipt": return false;
 
-            case "allow_gift_wrapping_on_order":
-                return false;
+            case "allow_gift_wrapping_on_order": return false;
 
-            case "allow_gift_wrapping_on_order_items":
-                return false;
+            case "allow_gift_wrapping_on_order_items": return false;
 
-            case "allow_guests_to_write_product_reviews":
-                return false;
+            case "allow_guests_to_write_product_reviews": return false;
 
-            case "allow_items":
-                return false;
+            case "allow_items": return false;
 
-            case "allow_order":
-                return false;
+            case "allow_order": return false;
 
-            case "allow_printed_card":
-                return false;
+            case "allow_printed_card": return false;
 
-            case "autocomplete_on_storefront":
-                return false;
+            case "autocomplete_on_storefront": return false;
 
-            case "base_currency_code":
-                return false;
+            case "base_currency_code": return false;
 
-            case "base_link_url":
-                return false;
+            case "base_link_url": return false;
 
-            case "base_media_url":
-                return false;
+            case "base_media_url": return false;
 
-            case "base_static_url":
-                return false;
+            case "base_static_url": return false;
 
-            case "base_url":
-                return false;
+            case "base_url": return false;
 
-            case "cart_gift_wrapping":
-                return false;
+            case "cart_gift_wrapping": return false;
 
-            case "cart_printed_card":
-                return false;
+            case "cart_printed_card": return false;
 
-            case "catalog_default_sort_by":
-                return false;
+            case "catalog_default_sort_by": return false;
 
-            case "category_fixed_product_tax_display_setting":
-                return false;
+            case "category_fixed_product_tax_display_setting": return false;
 
-            case "category_url_suffix":
-                return false;
+            case "category_url_suffix": return false;
 
-            case "cms_home_page":
-                return false;
+            case "cms_home_page": return false;
 
-            case "cms_no_cookies":
-                return false;
+            case "cms_no_cookies": return false;
 
-            case "cms_no_route":
-                return false;
+            case "cms_no_route": return false;
 
-            case "code":
-                return false;
+            case "code": return false;
 
-            case "copyright":
-                return false;
+            case "copyright": return false;
 
-            case "default_description":
-                return false;
+            case "default_description": return false;
 
-            case "default_display_currency_code":
-                return false;
+            case "default_display_currency_code": return false;
 
-            case "default_keywords":
-                return false;
+            case "default_keywords": return false;
 
-            case "default_title":
-                return false;
+            case "default_title": return false;
 
-            case "demonotice":
-                return false;
+            case "demonotice": return false;
 
-            case "front":
-                return false;
+            case "front": return false;
 
-            case "grid_per_page":
-                return false;
+            case "grid_per_page": return false;
 
-            case "grid_per_page_values":
-                return false;
+            case "grid_per_page_values": return false;
 
-            case "head_includes":
-                return false;
+            case "head_includes": return false;
 
-            case "head_shortcut_icon":
-                return false;
+            case "head_shortcut_icon": return false;
 
-            case "header_logo_src":
-                return false;
+            case "header_logo_src": return false;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "list_mode":
-                return false;
+            case "list_mode": return false;
 
-            case "list_per_page":
-                return false;
+            case "list_per_page": return false;
 
-            case "list_per_page_values":
-                return false;
+            case "list_per_page_values": return false;
 
-            case "locale":
-                return false;
+            case "locale": return false;
 
-            case "logo_alt":
-                return false;
+            case "logo_alt": return false;
 
-            case "logo_height":
-                return false;
+            case "logo_height": return false;
 
-            case "logo_width":
-                return false;
+            case "logo_width": return false;
 
-            case "magento_reward_general_is_enabled":
-                return false;
+            case "magento_reward_general_is_enabled": return false;
 
-            case "magento_reward_general_is_enabled_on_front":
-                return false;
+            case "magento_reward_general_is_enabled_on_front": return false;
 
-            case "magento_reward_general_min_points_balance":
-                return false;
+            case "magento_reward_general_min_points_balance": return false;
 
-            case "magento_reward_general_publish_history":
-                return false;
+            case "magento_reward_general_publish_history": return false;
 
-            case "magento_reward_points_invitation_customer":
-                return false;
+            case "magento_reward_points_invitation_customer": return false;
 
-            case "magento_reward_points_invitation_customer_limit":
-                return false;
+            case "magento_reward_points_invitation_customer_limit": return false;
 
-            case "magento_reward_points_invitation_order":
-                return false;
+            case "magento_reward_points_invitation_order": return false;
 
-            case "magento_reward_points_invitation_order_limit":
-                return false;
+            case "magento_reward_points_invitation_order_limit": return false;
 
-            case "magento_reward_points_newsletter":
-                return false;
+            case "magento_reward_points_newsletter": return false;
 
-            case "magento_reward_points_order":
-                return false;
+            case "magento_reward_points_order": return false;
 
-            case "magento_reward_points_register":
-                return false;
+            case "magento_reward_points_register": return false;
 
-            case "magento_reward_points_review":
-                return false;
+            case "magento_reward_points_review": return false;
 
-            case "magento_reward_points_review_limit":
-                return false;
+            case "magento_reward_points_review_limit": return false;
 
-            case "magento_wishlist_general_is_enabled":
-                return false;
+            case "magento_wishlist_general_is_enabled": return false;
 
-            case "minimum_password_length":
-                return false;
+            case "minimum_password_length": return false;
 
-            case "no_route":
-                return false;
+            case "no_route": return false;
 
-            case "payment_payflowpro_cc_vault_active":
-                return false;
+            case "payment_payflowpro_cc_vault_active": return false;
 
-            case "printed_card_price":
-                return false;
+            case "printed_card_price": return false;
 
-            case "product_fixed_product_tax_display_setting":
-                return false;
+            case "product_fixed_product_tax_display_setting": return false;
 
-            case "product_reviews_enabled":
-                return false;
+            case "product_reviews_enabled": return false;
 
-            case "product_url_suffix":
-                return false;
+            case "product_url_suffix": return false;
 
-            case "required_character_classes_number":
-                return false;
+            case "required_character_classes_number": return false;
 
-            case "root_category_id":
-                return false;
+            case "root_category_id": return false;
 
-            case "sales_fixed_product_tax_display_setting":
-                return false;
+            case "sales_fixed_product_tax_display_setting": return false;
 
-            case "sales_gift_wrapping":
-                return false;
+            case "sales_gift_wrapping": return false;
 
-            case "sales_printed_card":
-                return false;
+            case "sales_printed_card": return false;
 
-            case "secure_base_link_url":
-                return false;
+            case "secure_base_link_url": return false;
 
-            case "secure_base_media_url":
-                return false;
+            case "secure_base_media_url": return false;
 
-            case "secure_base_static_url":
-                return false;
+            case "secure_base_static_url": return false;
 
-            case "secure_base_url":
-                return false;
+            case "secure_base_url": return false;
 
-            case "send_friend":
-                return true;
+            case "send_friend": return true;
 
-            case "show_cms_breadcrumbs":
-                return false;
+            case "show_cms_breadcrumbs": return false;
 
-            case "store_name":
-                return false;
+            case "store_name": return false;
 
-            case "timezone":
-                return false;
+            case "timezone": return false;
 
-            case "title_prefix":
-                return false;
+            case "title_prefix": return false;
 
-            case "title_separator":
-                return false;
+            case "title_separator": return false;
 
-            case "title_suffix":
-                return false;
+            case "title_suffix": return false;
 
-            case "website_id":
-                return false;
+            case "website_id": return false;
 
-            case "weight_unit":
-                return false;
+            case "weight_unit": return false;
 
-            case "welcome":
-                return false;
+            case "welcome": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

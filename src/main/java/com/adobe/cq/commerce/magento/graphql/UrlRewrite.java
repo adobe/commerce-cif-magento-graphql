@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The object contains URL rewrite details
  */
 public class UrlRewrite extends AbstractResponse<UrlRewrite> {
-    public UrlRewrite() {}
+    public UrlRewrite() {
+    }
 
     public UrlRewrite(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -108,14 +109,11 @@ public class UrlRewrite extends AbstractResponse<UrlRewrite> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "parameters":
-                return true;
+            case "parameters": return true;
 
-            case "url":
-                return false;
+            case "url": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

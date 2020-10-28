@@ -24,7 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption> {
-    public SelectedBundleOption() {}
+    public SelectedBundleOption() {
+    }
 
     public SelectedBundleOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -119,20 +120,15 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "label":
-                return false;
+            case "label": return false;
 
-            case "type":
-                return false;
+            case "type": return false;
 
-            case "values":
-                return true;
+            case "values": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

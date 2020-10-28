@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Pro payment methods.
  */
 public class PayflowProToken extends AbstractResponse<PayflowProToken> {
-    public PayflowProToken() {}
+    public PayflowProToken() {
+    }
 
     public PayflowProToken(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -126,23 +127,17 @@ public class PayflowProToken extends AbstractResponse<PayflowProToken> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "response_message":
-                return false;
+            case "response_message": return false;
 
-            case "result":
-                return false;
+            case "result": return false;
 
-            case "result_code":
-                return false;
+            case "result_code": return false;
 
-            case "secure_token":
-                return false;
+            case "secure_token": return false;
 
-            case "secure_token_id":
-                return false;
+            case "secure_token_id": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

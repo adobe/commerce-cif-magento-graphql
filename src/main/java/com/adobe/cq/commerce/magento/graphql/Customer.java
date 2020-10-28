@@ -28,7 +28,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Customer defines the customer name and address and other details
  */
 public class Customer extends AbstractResponse<Customer> {
-    public Customer() {}
+    public Customer() {
+    }
 
     public Customer(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -420,8 +421,7 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * The ID assigned to the customer
      *
-     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for
-     *             authentication. There is no need to know customer ID on the client side.
+     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for authentication. There is no need to know customer ID on the client side.
      */
     @Deprecated
     public Integer getId() {
@@ -564,74 +564,51 @@ public class Customer extends AbstractResponse<Customer> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "addresses":
-                return true;
+            case "addresses": return true;
 
-            case "created_at":
-                return false;
+            case "created_at": return false;
 
-            case "date_of_birth":
-                return false;
+            case "date_of_birth": return false;
 
-            case "default_billing":
-                return false;
+            case "default_billing": return false;
 
-            case "default_shipping":
-                return false;
+            case "default_shipping": return false;
 
-            case "dob":
-                return false;
+            case "dob": return false;
 
-            case "email":
-                return false;
+            case "email": return false;
 
-            case "firstname":
-                return false;
+            case "firstname": return false;
 
-            case "gender":
-                return false;
+            case "gender": return false;
 
-            case "group_id":
-                return false;
+            case "group_id": return false;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "is_subscribed":
-                return false;
+            case "is_subscribed": return false;
 
-            case "lastname":
-                return false;
+            case "lastname": return false;
 
-            case "middlename":
-                return false;
+            case "middlename": return false;
 
-            case "orders":
-                return true;
+            case "orders": return true;
 
-            case "prefix":
-                return false;
+            case "prefix": return false;
 
-            case "reviews":
-                return true;
+            case "reviews": return true;
 
-            case "reward_points":
-                return true;
+            case "reward_points": return true;
 
-            case "store_credit":
-                return true;
+            case "store_credit": return true;
 
-            case "suffix":
-                return false;
+            case "suffix": return false;
 
-            case "taxvat":
-                return false;
+            case "taxvat": return false;
 
-            case "wishlist":
-                return true;
+            case "wishlist": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

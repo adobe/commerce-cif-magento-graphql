@@ -43,7 +43,6 @@ public enum SortEnum {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case ASC: {

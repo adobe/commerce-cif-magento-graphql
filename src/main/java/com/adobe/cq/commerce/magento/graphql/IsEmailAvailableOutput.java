@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class IsEmailAvailableOutput extends AbstractResponse<IsEmailAvailableOutput> {
-    public IsEmailAvailableOutput() {}
+    public IsEmailAvailableOutput() {
+    }
 
     public IsEmailAvailableOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -70,11 +71,9 @@ public class IsEmailAvailableOutput extends AbstractResponse<IsEmailAvailableOut
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "is_email_available":
-                return false;
+            case "is_email_available": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -43,7 +43,6 @@ public enum PayflowLinkMode {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case LIVE: {

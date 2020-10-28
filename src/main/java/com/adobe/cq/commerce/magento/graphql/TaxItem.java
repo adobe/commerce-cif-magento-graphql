@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The tax item details
  */
 public class TaxItem extends AbstractResponse<TaxItem> {
-    public TaxItem() {}
+    public TaxItem() {
+    }
 
     public TaxItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -104,17 +105,13 @@ public class TaxItem extends AbstractResponse<TaxItem> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount":
-                return true;
+            case "amount": return true;
 
-            case "rate":
-                return false;
+            case "rate": return false;
 
-            case "title":
-                return false;
+            case "title": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

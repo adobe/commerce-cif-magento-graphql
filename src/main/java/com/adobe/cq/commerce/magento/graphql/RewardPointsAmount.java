@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class RewardPointsAmount extends AbstractResponse<RewardPointsAmount> {
-    public RewardPointsAmount() {}
+    public RewardPointsAmount() {
+    }
 
     public RewardPointsAmount(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -83,14 +84,11 @@ public class RewardPointsAmount extends AbstractResponse<RewardPointsAmount> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "money":
-                return true;
+            case "money": return true;
 
-            case "points":
-                return false;
+            case "points": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

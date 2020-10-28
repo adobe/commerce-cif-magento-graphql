@@ -28,7 +28,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * DownloadableProduct defines a product that the customer downloads
  */
 public class DownloadableProduct extends AbstractResponse<DownloadableProduct> implements CustomizableProductInterface, ProductInterface {
-    public DownloadableProduct() {}
+    public DownloadableProduct() {
+    }
 
     public DownloadableProduct(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -1456,173 +1457,117 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "attribute_set_id":
-                return false;
+            case "attribute_set_id": return false;
 
-            case "canonical_url":
-                return false;
+            case "canonical_url": return false;
 
-            case "categories":
-                return false;
+            case "categories": return false;
 
-            case "color":
-                return false;
+            case "color": return false;
 
-            case "country_of_manufacture":
-                return false;
+            case "country_of_manufacture": return false;
 
-            case "created_at":
-                return false;
+            case "created_at": return false;
 
-            case "crosssell_products":
-                return false;
+            case "crosssell_products": return false;
 
-            case "description":
-                return true;
+            case "description": return true;
 
-            case "downloadable_product_links":
-                return true;
+            case "downloadable_product_links": return true;
 
-            case "downloadable_product_samples":
-                return true;
+            case "downloadable_product_samples": return true;
 
-            case "gift_message_available":
-                return false;
+            case "gift_message_available": return false;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "image":
-                return true;
+            case "image": return true;
 
-            case "is_returnable":
-                return false;
+            case "is_returnable": return false;
 
-            case "links_purchased_separately":
-                return false;
+            case "links_purchased_separately": return false;
 
-            case "links_title":
-                return false;
+            case "links_title": return false;
 
-            case "manufacturer":
-                return false;
+            case "manufacturer": return false;
 
-            case "media_gallery":
-                return false;
+            case "media_gallery": return false;
 
-            case "media_gallery_entries":
-                return true;
+            case "media_gallery_entries": return true;
 
-            case "meta_description":
-                return false;
+            case "meta_description": return false;
 
-            case "meta_keyword":
-                return false;
+            case "meta_keyword": return false;
 
-            case "meta_title":
-                return false;
+            case "meta_title": return false;
 
-            case "name":
-                return false;
+            case "name": return false;
 
-            case "new_from_date":
-                return false;
+            case "new_from_date": return false;
 
-            case "new_to_date":
-                return false;
+            case "new_to_date": return false;
 
-            case "only_x_left_in_stock":
-                return false;
+            case "only_x_left_in_stock": return false;
 
-            case "options":
-                return false;
+            case "options": return false;
 
-            case "options_container":
-                return false;
+            case "options_container": return false;
 
-            case "price":
-                return true;
+            case "price": return true;
 
-            case "price_range":
-                return true;
+            case "price_range": return true;
 
-            case "price_tiers":
-                return true;
+            case "price_tiers": return true;
 
-            case "product_links":
-                return false;
+            case "product_links": return false;
 
-            case "rating_summary":
-                return false;
+            case "rating_summary": return false;
 
-            case "related_products":
-                return false;
+            case "related_products": return false;
 
-            case "review_count":
-                return false;
+            case "review_count": return false;
 
-            case "reviews":
-                return true;
+            case "reviews": return true;
 
-            case "short_description":
-                return true;
+            case "short_description": return true;
 
-            case "sku":
-                return false;
+            case "sku": return false;
 
-            case "small_image":
-                return true;
+            case "small_image": return true;
 
-            case "special_from_date":
-                return false;
+            case "special_from_date": return false;
 
-            case "special_price":
-                return false;
+            case "special_price": return false;
 
-            case "special_to_date":
-                return false;
+            case "special_to_date": return false;
 
-            case "stock_status":
-                return false;
+            case "stock_status": return false;
 
-            case "swatch_image":
-                return false;
+            case "swatch_image": return false;
 
-            case "thumbnail":
-                return true;
+            case "thumbnail": return true;
 
-            case "tier_price":
-                return false;
+            case "tier_price": return false;
 
-            case "tier_prices":
-                return true;
+            case "tier_prices": return true;
 
-            case "type_id":
-                return false;
+            case "type_id": return false;
 
-            case "updated_at":
-                return false;
+            case "updated_at": return false;
 
-            case "upsell_products":
-                return false;
+            case "upsell_products": return false;
 
-            case "url_key":
-                return false;
+            case "url_key": return false;
 
-            case "url_path":
-                return false;
+            case "url_path": return false;
 
-            case "url_rewrites":
-                return true;
+            case "url_rewrites": return true;
 
-            case "url_suffix":
-                return false;
+            case "url_suffix": return false;
 
-            case "websites":
-                return true;
+            case "websites": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

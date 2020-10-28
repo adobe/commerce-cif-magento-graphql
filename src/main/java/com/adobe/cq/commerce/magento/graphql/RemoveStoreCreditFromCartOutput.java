@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines the possible output for the removeStoreCreditFromCart mutation
  */
 public class RemoveStoreCreditFromCartOutput extends AbstractResponse<RemoveStoreCreditFromCartOutput> {
-    public RemoveStoreCreditFromCartOutput() {}
+    public RemoveStoreCreditFromCartOutput() {
+    }
 
     public RemoveStoreCreditFromCartOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -68,11 +69,9 @@ public class RemoveStoreCreditFromCartOutput extends AbstractResponse<RemoveStor
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart":
-                return true;
+            case "cart": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

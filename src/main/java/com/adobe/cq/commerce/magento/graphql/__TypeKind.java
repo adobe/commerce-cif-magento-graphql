@@ -103,7 +103,6 @@ public enum __TypeKind {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case ENUM: {

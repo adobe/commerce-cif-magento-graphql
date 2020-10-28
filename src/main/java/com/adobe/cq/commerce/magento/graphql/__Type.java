@@ -32,7 +32,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * the Object types possible at runtime. List and NonNull types compose other types.
  */
 public class __Type extends AbstractResponse<__Type> {
-    public __Type() {}
+    public __Type() {
+    }
 
     public __Type(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -257,35 +258,25 @@ public class __Type extends AbstractResponse<__Type> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "kind":
-                return false;
+            case "kind": return false;
 
-            case "name":
-                return false;
+            case "name": return false;
 
-            case "description":
-                return false;
+            case "description": return false;
 
-            case "fields":
-                return true;
+            case "fields": return true;
 
-            case "interfaces":
-                return true;
+            case "interfaces": return true;
 
-            case "possibleTypes":
-                return true;
+            case "possibleTypes": return true;
 
-            case "enumValues":
-                return true;
+            case "enumValues": return true;
 
-            case "inputFields":
-                return true;
+            case "inputFields": return true;
 
-            case "ofType":
-                return true;
+            case "ofType": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

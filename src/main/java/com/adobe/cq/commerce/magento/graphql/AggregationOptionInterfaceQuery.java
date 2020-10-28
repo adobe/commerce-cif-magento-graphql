@@ -22,7 +22,6 @@ public class AggregationOptionInterfaceQuery extends AbstractQuery<AggregationOp
     AggregationOptionInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
-
     AggregationOptionInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

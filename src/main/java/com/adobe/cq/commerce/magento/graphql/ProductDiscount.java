@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * A discount applied to a product price.
  */
 public class ProductDiscount extends AbstractResponse<ProductDiscount> {
-    public ProductDiscount() {}
+    public ProductDiscount() {
+    }
 
     public ProductDiscount(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -96,14 +97,11 @@ public class ProductDiscount extends AbstractResponse<ProductDiscount> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount_off":
-                return false;
+            case "amount_off": return false;
 
-            case "percent_off":
-                return false;
+            case "percent_off": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

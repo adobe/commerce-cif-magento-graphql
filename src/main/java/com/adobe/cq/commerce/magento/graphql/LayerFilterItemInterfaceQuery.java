@@ -21,7 +21,6 @@ public class LayerFilterItemInterfaceQuery extends AbstractQuery<LayerFilterItem
     LayerFilterItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
-
     LayerFilterItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

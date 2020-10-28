@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * An error encountered while adding an item to the the cart.
  */
 public class CartUserInputError extends AbstractResponse<CartUserInputError> {
-    public CartUserInputError() {}
+    public CartUserInputError() {
+    }
 
     public CartUserInputError(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -86,14 +87,11 @@ public class CartUserInputError extends AbstractResponse<CartUserInputError> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code":
-                return false;
+            case "code": return false;
 
-            case "message":
-                return false;
+            case "message": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

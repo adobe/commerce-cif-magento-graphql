@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Assets extends AbstractResponse<Assets> {
-    public Assets() {}
+    public Assets() {
+    }
 
     public Assets(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -93,14 +94,11 @@ public class Assets extends AbstractResponse<Assets> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "descriptive":
-                return false;
+            case "descriptive": return false;
 
-            case "standard":
-                return false;
+            case "standard": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

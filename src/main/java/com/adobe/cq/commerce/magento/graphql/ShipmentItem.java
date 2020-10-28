@@ -23,7 +23,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ShipmentItem extends AbstractResponse<ShipmentItem> implements ShipmentItemInterface {
-    public ShipmentItem() {}
+    public ShipmentItem() {
+    }
 
     public ShipmentItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -166,26 +167,19 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "order_item":
-                return false;
+            case "order_item": return false;
 
-            case "product_name":
-                return false;
+            case "product_name": return false;
 
-            case "product_sale_price":
-                return true;
+            case "product_sale_price": return true;
 
-            case "product_sku":
-                return false;
+            case "product_sku": return false;
 
-            case "quantity_shipped":
-                return false;
+            case "quantity_shipped": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

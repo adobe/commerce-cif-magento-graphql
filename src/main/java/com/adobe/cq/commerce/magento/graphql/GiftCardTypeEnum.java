@@ -49,7 +49,6 @@ public enum GiftCardTypeEnum {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case COMBINED: {

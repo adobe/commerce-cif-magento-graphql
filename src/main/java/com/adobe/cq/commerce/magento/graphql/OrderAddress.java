@@ -28,7 +28,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * OrderAddress contains detailed information about an order&#39;s billing and shipping addresses
  */
 public class OrderAddress extends AbstractResponse<OrderAddress> {
-    public OrderAddress() {}
+    public OrderAddress() {
+    }
 
     public OrderAddress(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -383,53 +384,37 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "city":
-                return false;
+            case "city": return false;
 
-            case "company":
-                return false;
+            case "company": return false;
 
-            case "country_code":
-                return false;
+            case "country_code": return false;
 
-            case "fax":
-                return false;
+            case "fax": return false;
 
-            case "firstname":
-                return false;
+            case "firstname": return false;
 
-            case "lastname":
-                return false;
+            case "lastname": return false;
 
-            case "middlename":
-                return false;
+            case "middlename": return false;
 
-            case "postcode":
-                return false;
+            case "postcode": return false;
 
-            case "prefix":
-                return false;
+            case "prefix": return false;
 
-            case "region":
-                return false;
+            case "region": return false;
 
-            case "region_id":
-                return false;
+            case "region_id": return false;
 
-            case "street":
-                return false;
+            case "street": return false;
 
-            case "suffix":
-                return false;
+            case "suffix": return false;
 
-            case "telephone":
-                return false;
+            case "telephone": return false;
 
-            case "vat_id":
-                return false;
+            case "vat_id": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

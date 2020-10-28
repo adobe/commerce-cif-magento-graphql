@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * image.
  */
 public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductMediaGalleryEntriesContent> {
-    public ProductMediaGalleryEntriesContent() {}
+    public ProductMediaGalleryEntriesContent() {
+    }
 
     public ProductMediaGalleryEntriesContent(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -120,17 +121,13 @@ public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductM
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "base64_encoded_data":
-                return false;
+            case "base64_encoded_data": return false;
 
-            case "name":
-                return false;
+            case "name": return false;
 
-            case "type":
-                return false;
+            case "type": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

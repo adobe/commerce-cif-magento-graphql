@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The key-value type
  */
 public class KeyValue extends AbstractResponse<KeyValue> {
-    public KeyValue() {}
+    public KeyValue() {
+    }
 
     public KeyValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -96,14 +97,11 @@ public class KeyValue extends AbstractResponse<KeyValue> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "name":
-                return false;
+            case "name": return false;
 
-            case "value":
-                return false;
+            case "value": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ComplexTextValue extends AbstractResponse<ComplexTextValue> {
-    public ComplexTextValue() {}
+    public ComplexTextValue() {
+    }
 
     public ComplexTextValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -65,11 +66,9 @@ public class ComplexTextValue extends AbstractResponse<ComplexTextValue> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "html":
-                return false;
+            case "html": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

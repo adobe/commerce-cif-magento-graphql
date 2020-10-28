@@ -24,7 +24,6 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
     CustomizableProductInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
-
     CustomizableProductInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

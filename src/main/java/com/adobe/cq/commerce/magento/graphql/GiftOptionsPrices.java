@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class GiftOptionsPrices extends AbstractResponse<GiftOptionsPrices> {
-    public GiftOptionsPrices() {}
+    public GiftOptionsPrices() {
+    }
 
     public GiftOptionsPrices(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -116,17 +117,13 @@ public class GiftOptionsPrices extends AbstractResponse<GiftOptionsPrices> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "gift_wrapping_for_items":
-                return true;
+            case "gift_wrapping_for_items": return true;
 
-            case "gift_wrapping_for_order":
-                return true;
+            case "gift_wrapping_for_order": return true;
 
-            case "printed_card":
-                return true;
+            case "printed_card": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

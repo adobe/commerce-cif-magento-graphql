@@ -128,8 +128,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     /**
      * The ID assigned to the customer
      *
-     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for
-     *             authentication. There is no need to know customer ID on the client side.
+     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for authentication. There is no need to know customer ID on the client side.
      */
     @Deprecated
     public CustomerQuery id() {

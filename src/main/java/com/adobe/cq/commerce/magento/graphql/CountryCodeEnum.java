@@ -2238,7 +2238,6 @@ public enum CountryCodeEnum {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case AD: {

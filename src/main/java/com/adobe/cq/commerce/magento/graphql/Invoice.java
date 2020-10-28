@@ -28,7 +28,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Invoice details
  */
 public class Invoice extends AbstractResponse<Invoice> {
-    public Invoice() {}
+    public Invoice() {
+    }
 
     public Invoice(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -178,23 +179,17 @@ public class Invoice extends AbstractResponse<Invoice> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "comments":
-                return true;
+            case "comments": return true;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "items":
-                return false;
+            case "items": return false;
 
-            case "number":
-                return false;
+            case "number": return false;
 
-            case "total":
-                return true;
+            case "total": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

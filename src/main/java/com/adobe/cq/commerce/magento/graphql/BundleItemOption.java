@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * BundleItemOption defines characteristics and options for a specific bundle item.
  */
 public class BundleItemOption extends AbstractResponse<BundleItemOption> {
-    public BundleItemOption() {}
+    public BundleItemOption() {
+    }
 
     public BundleItemOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -303,41 +304,29 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "can_change_quantity":
-                return false;
+            case "can_change_quantity": return false;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "is_default":
-                return false;
+            case "is_default": return false;
 
-            case "label":
-                return false;
+            case "label": return false;
 
-            case "position":
-                return false;
+            case "position": return false;
 
-            case "price":
-                return false;
+            case "price": return false;
 
-            case "price_type":
-                return false;
+            case "price_type": return false;
 
-            case "product":
-                return false;
+            case "product": return false;
 
-            case "qty":
-                return false;
+            case "qty": return false;
 
-            case "quantity":
-                return false;
+            case "quantity": return false;
 
-            case "uid":
-                return false;
+            case "uid": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

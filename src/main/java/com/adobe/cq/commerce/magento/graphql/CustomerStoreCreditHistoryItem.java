@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines store credit history information
  */
 public class CustomerStoreCreditHistoryItem extends AbstractResponse<CustomerStoreCreditHistoryItem> {
-    public CustomerStoreCreditHistoryItem() {}
+    public CustomerStoreCreditHistoryItem() {
+    }
 
     public CustomerStoreCreditHistoryItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -105,7 +106,7 @@ public class CustomerStoreCreditHistoryItem extends AbstractResponse<CustomerSto
     }
 
     /**
-     * The store credit available to the customer as a result of this action.
+     * The store credit available to the customer as a result of this action. 
      */
     public Money getActualBalance() {
         return (Money) get("actual_balance");
@@ -142,20 +143,15 @@ public class CustomerStoreCreditHistoryItem extends AbstractResponse<CustomerSto
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "action":
-                return false;
+            case "action": return false;
 
-            case "actual_balance":
-                return true;
+            case "actual_balance": return true;
 
-            case "balance_change":
-                return true;
+            case "balance_change": return true;
 
-            case "date_time_changed":
-                return false;
+            case "date_time_changed": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

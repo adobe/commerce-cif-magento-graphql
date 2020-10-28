@@ -25,7 +25,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Cart extends AbstractResponse<Cart> {
-    public Cart() {}
+    public Cart() {
+    }
 
     public Cart(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -296,7 +297,7 @@ public class Cart extends AbstractResponse<Cart> {
     /**
      * An array of coupons that have been applied to the cart
      *
-     * @deprecated Use applied_coupons instead
+     * @deprecated Use applied_coupons instead 
      */
     @Deprecated
     public AppliedCoupon getAppliedCoupon() {
@@ -515,68 +516,47 @@ public class Cart extends AbstractResponse<Cart> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "applied_coupon":
-                return true;
+            case "applied_coupon": return true;
 
-            case "applied_coupons":
-                return true;
+            case "applied_coupons": return true;
 
-            case "applied_gift_cards":
-                return true;
+            case "applied_gift_cards": return true;
 
-            case "applied_reward_points":
-                return true;
+            case "applied_reward_points": return true;
 
-            case "applied_store_credit":
-                return true;
+            case "applied_store_credit": return true;
 
-            case "available_gift_wrappings":
-                return true;
+            case "available_gift_wrappings": return true;
 
-            case "available_payment_methods":
-                return true;
+            case "available_payment_methods": return true;
 
-            case "billing_address":
-                return true;
+            case "billing_address": return true;
 
-            case "email":
-                return false;
+            case "email": return false;
 
-            case "gift_message":
-                return true;
+            case "gift_message": return true;
 
-            case "gift_receipt_included":
-                return false;
+            case "gift_receipt_included": return false;
 
-            case "gift_wrapping":
-                return true;
+            case "gift_wrapping": return true;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "is_virtual":
-                return false;
+            case "is_virtual": return false;
 
-            case "items":
-                return false;
+            case "items": return false;
 
-            case "prices":
-                return true;
+            case "prices": return true;
 
-            case "printed_card_included":
-                return false;
+            case "printed_card_included": return false;
 
-            case "selected_payment_method":
-                return true;
+            case "selected_payment_method": return true;
 
-            case "shipping_addresses":
-                return true;
+            case "shipping_addresses": return true;
 
-            case "total_quantity":
-                return false;
+            case "total_quantity": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

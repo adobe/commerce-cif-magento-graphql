@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * bundle, configurable, and grouped products, can contain a minimum and maximum price.
  */
 public class ProductPrices extends AbstractResponse<ProductPrices> {
-    public ProductPrices() {}
+    public ProductPrices() {
+    }
 
     public ProductPrices(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -132,17 +133,13 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "maximalPrice":
-                return true;
+            case "maximalPrice": return true;
 
-            case "minimalPrice":
-                return true;
+            case "minimalPrice": return true;
 
-            case "regularPrice":
-                return true;
+            case "regularPrice": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

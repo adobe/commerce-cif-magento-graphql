@@ -24,7 +24,6 @@ public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterf
     ShipmentItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
-
     ShipmentItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * field.
  */
 public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldValue> {
-    public CustomizableFieldValue() {}
+    public CustomizableFieldValue() {
+    }
 
     public CustomizableFieldValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -162,23 +163,17 @@ public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldVa
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "max_characters":
-                return false;
+            case "max_characters": return false;
 
-            case "price":
-                return false;
+            case "price": return false;
 
-            case "price_type":
-                return false;
+            case "price_type": return false;
 
-            case "sku":
-                return false;
+            case "sku": return false;
 
-            case "uid":
-                return false;
+            case "uid": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

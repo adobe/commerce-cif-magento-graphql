@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemInterface> implements CartItemInterface {
-    public UnknownCartItemInterface() {}
+    public UnknownCartItemInterface() {
+    }
 
     public UnknownCartItemInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -145,20 +146,15 @@ public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemIn
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "prices":
-                return true;
+            case "prices": return true;
 
-            case "product":
-                return false;
+            case "product": return false;
 
-            case "quantity":
-                return false;
+            case "quantity": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * A Money object defines a monetary value, including a numeric value and a currency code.
  */
 public class Money extends AbstractResponse<Money> {
-    public Money() {}
+    public Money() {
+    }
 
     public Money(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -96,14 +97,11 @@ public class Money extends AbstractResponse<Money> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "currency":
-                return false;
+            case "currency": return false;
 
-            case "value":
-                return false;
+            case "value": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

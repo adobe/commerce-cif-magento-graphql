@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The Products object is the top-level object returned in a product search.
  */
 public class Products extends AbstractResponse<Products> {
-    public Products() {}
+    public Products() {
+    }
 
     public Products(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -224,26 +225,19 @@ public class Products extends AbstractResponse<Products> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "aggregations":
-                return true;
+            case "aggregations": return true;
 
-            case "filters":
-                return true;
+            case "filters": return true;
 
-            case "items":
-                return false;
+            case "items": return false;
 
-            case "page_info":
-                return true;
+            case "page_info": return true;
 
-            case "sort_fields":
-                return true;
+            case "sort_fields": return true;
 
-            case "total_count":
-                return false;
+            case "total_count": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * A price based on the quantity purchased.
  */
 public class TierPrice extends AbstractResponse<TierPrice> {
-    public TierPrice() {}
+    public TierPrice() {
+    }
 
     public TierPrice(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -116,17 +117,13 @@ public class TierPrice extends AbstractResponse<TierPrice> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "discount":
-                return true;
+            case "discount": return true;
 
-            case "final_price":
-                return true;
+            case "final_price": return true;
 
-            case "quantity":
-                return false;
+            case "quantity": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

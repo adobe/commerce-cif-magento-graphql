@@ -21,7 +21,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
 /**
- * FilterTypeInput specifies which action will be performed in a query
+ * FilterTypeInput specifies which action will be performed in a query 
  */
 public class FilterTypeInput implements Serializable {
     private Input<String> eq = Input.undefined();

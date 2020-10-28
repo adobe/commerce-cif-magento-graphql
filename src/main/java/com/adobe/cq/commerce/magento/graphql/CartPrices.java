@@ -24,7 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class CartPrices extends AbstractResponse<CartPrices> {
-    public CartPrices() {}
+    public CartPrices() {
+    }
 
     public CartPrices(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -165,7 +166,7 @@ public class CartPrices extends AbstractResponse<CartPrices> {
     }
 
     /**
-     * @deprecated Use discounts instead
+     * @deprecated Use discounts instead 
      */
     @Deprecated
     public CartDiscount getDiscount() {
@@ -239,32 +240,23 @@ public class CartPrices extends AbstractResponse<CartPrices> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "applied_taxes":
-                return true;
+            case "applied_taxes": return true;
 
-            case "discount":
-                return true;
+            case "discount": return true;
 
-            case "discounts":
-                return true;
+            case "discounts": return true;
 
-            case "gift_options":
-                return true;
+            case "gift_options": return true;
 
-            case "grand_total":
-                return true;
+            case "grand_total": return true;
 
-            case "subtotal_excluding_tax":
-                return true;
+            case "subtotal_excluding_tax": return true;
 
-            case "subtotal_including_tax":
-                return true;
+            case "subtotal_including_tax": return true;
 
-            case "subtotal_with_discount_excluding_tax":
-                return true;
+            case "subtotal_with_discount_excluding_tax": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

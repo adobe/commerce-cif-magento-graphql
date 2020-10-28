@@ -21,7 +21,6 @@ public class SwatchLayerFilterItemInterfaceQuery extends AbstractQuery<SwatchLay
     SwatchLayerFilterItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
-
     SwatchLayerFilterItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

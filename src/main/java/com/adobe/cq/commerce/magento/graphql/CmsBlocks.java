@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * CMS blocks information
  */
 public class CmsBlocks extends AbstractResponse<CmsBlocks> {
-    public CmsBlocks() {}
+    public CmsBlocks() {
+    }
 
     public CmsBlocks(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -85,11 +86,9 @@ public class CmsBlocks extends AbstractResponse<CmsBlocks> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items":
-                return true;
+            case "items": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

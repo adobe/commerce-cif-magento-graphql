@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * DownloadableProductLinks defines characteristics of a downloadable product
  */
 public class DownloadableItemsLinks extends AbstractResponse<DownloadableItemsLinks> {
-    public DownloadableItemsLinks() {}
+    public DownloadableItemsLinks() {
+    }
 
     public DownloadableItemsLinks(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -115,17 +116,13 @@ public class DownloadableItemsLinks extends AbstractResponse<DownloadableItemsLi
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "sort_order":
-                return false;
+            case "sort_order": return false;
 
-            case "title":
-                return false;
+            case "title": return false;
 
-            case "uid":
-                return false;
+            case "uid": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

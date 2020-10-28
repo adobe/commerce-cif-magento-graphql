@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * configurable product option
  */
 public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAttributeOption> {
-    public ConfigurableAttributeOption() {}
+    public ConfigurableAttributeOption() {
+    }
 
     public ConfigurableAttributeOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -139,20 +140,15 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code":
-                return false;
+            case "code": return false;
 
-            case "label":
-                return false;
+            case "label": return false;
 
-            case "uid":
-                return false;
+            case "uid": return false;
 
-            case "value_index":
-                return false;
+            case "value_index": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

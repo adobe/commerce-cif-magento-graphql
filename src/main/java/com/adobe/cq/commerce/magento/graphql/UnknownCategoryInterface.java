@@ -28,7 +28,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * CategoryInterface contains the full set of attributes that can be returned in a category search.
  */
 public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryInterface> implements CategoryInterface {
-    public UnknownCategoryInterface() {}
+    public UnknownCategoryInterface() {
+    }
 
     public UnknownCategoryInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -762,101 +763,69 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "automatic_sorting":
-                return false;
+            case "automatic_sorting": return false;
 
-            case "available_sort_by":
-                return false;
+            case "available_sort_by": return false;
 
-            case "breadcrumbs":
-                return true;
+            case "breadcrumbs": return true;
 
-            case "canonical_url":
-                return false;
+            case "canonical_url": return false;
 
-            case "children_count":
-                return false;
+            case "children_count": return false;
 
-            case "cms_block":
-                return true;
+            case "cms_block": return true;
 
-            case "created_at":
-                return false;
+            case "created_at": return false;
 
-            case "custom_layout_update_file":
-                return false;
+            case "custom_layout_update_file": return false;
 
-            case "default_sort_by":
-                return false;
+            case "default_sort_by": return false;
 
-            case "description":
-                return false;
+            case "description": return false;
 
-            case "display_mode":
-                return false;
+            case "display_mode": return false;
 
-            case "filter_price_range":
-                return false;
+            case "filter_price_range": return false;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "image":
-                return false;
+            case "image": return false;
 
-            case "include_in_menu":
-                return false;
+            case "include_in_menu": return false;
 
-            case "is_anchor":
-                return false;
+            case "is_anchor": return false;
 
-            case "landing_page":
-                return false;
+            case "landing_page": return false;
 
-            case "level":
-                return false;
+            case "level": return false;
 
-            case "meta_description":
-                return false;
+            case "meta_description": return false;
 
-            case "meta_keywords":
-                return false;
+            case "meta_keywords": return false;
 
-            case "meta_title":
-                return false;
+            case "meta_title": return false;
 
-            case "name":
-                return false;
+            case "name": return false;
 
-            case "path":
-                return false;
+            case "path": return false;
 
-            case "path_in_store":
-                return false;
+            case "path_in_store": return false;
 
-            case "position":
-                return false;
+            case "position": return false;
 
-            case "product_count":
-                return false;
+            case "product_count": return false;
 
-            case "products":
-                return true;
+            case "products": return true;
 
-            case "updated_at":
-                return false;
+            case "updated_at": return false;
 
-            case "url_key":
-                return false;
+            case "url_key": return false;
 
-            case "url_path":
-                return false;
+            case "url_path": return false;
 
-            case "url_suffix":
-                return false;
+            case "url_suffix": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

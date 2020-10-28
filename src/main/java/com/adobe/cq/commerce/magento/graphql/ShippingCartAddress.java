@@ -24,7 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> implements CartAddressInterface {
-    public ShippingCartAddress() {}
+    public ShippingCartAddress() {
+    }
 
     public ShippingCartAddress(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -387,56 +388,39 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "available_shipping_methods":
-                return true;
+            case "available_shipping_methods": return true;
 
-            case "cart_items":
-                return true;
+            case "cart_items": return true;
 
-            case "cart_items_v2":
-                return false;
+            case "cart_items_v2": return false;
 
-            case "city":
-                return false;
+            case "city": return false;
 
-            case "company":
-                return false;
+            case "company": return false;
 
-            case "country":
-                return true;
+            case "country": return true;
 
-            case "customer_notes":
-                return false;
+            case "customer_notes": return false;
 
-            case "firstname":
-                return false;
+            case "firstname": return false;
 
-            case "items_weight":
-                return false;
+            case "items_weight": return false;
 
-            case "lastname":
-                return false;
+            case "lastname": return false;
 
-            case "pickup_location_code":
-                return false;
+            case "pickup_location_code": return false;
 
-            case "postcode":
-                return false;
+            case "postcode": return false;
 
-            case "region":
-                return true;
+            case "region": return true;
 
-            case "selected_shipping_method":
-                return true;
+            case "selected_shipping_method": return true;
 
-            case "street":
-                return false;
+            case "street": return false;
 
-            case "telephone":
-                return false;
+            case "telephone": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The stored payment method available to the customer
  */
 public class PaymentToken extends AbstractResponse<PaymentToken> {
-    public PaymentToken() {}
+    public PaymentToken() {
+    }
 
     public PaymentToken(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -124,20 +125,15 @@ public class PaymentToken extends AbstractResponse<PaymentToken> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "details":
-                return false;
+            case "details": return false;
 
-            case "payment_method_code":
-                return false;
+            case "payment_method_code": return false;
 
-            case "public_hash":
-                return false;
+            case "public_hash": return false;
 
-            case "type":
-                return false;
+            case "type": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

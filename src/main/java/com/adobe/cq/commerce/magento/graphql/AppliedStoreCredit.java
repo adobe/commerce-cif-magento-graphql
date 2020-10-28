@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Applied and current balance
  */
 public class AppliedStoreCredit extends AbstractResponse<AppliedStoreCredit> {
-    public AppliedStoreCredit() {}
+    public AppliedStoreCredit() {
+    }
 
     public AppliedStoreCredit(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -120,17 +121,13 @@ public class AppliedStoreCredit extends AbstractResponse<AppliedStoreCredit> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "applied_balance":
-                return true;
+            case "applied_balance": return true;
 
-            case "current_balance":
-                return true;
+            case "current_balance": return true;
 
-            case "enabled":
-                return false;
+            case "enabled": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

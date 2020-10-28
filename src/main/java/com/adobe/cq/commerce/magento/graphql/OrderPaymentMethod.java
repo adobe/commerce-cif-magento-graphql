@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains details about the payment method used to pay for the order
  */
 public class OrderPaymentMethod extends AbstractResponse<OrderPaymentMethod> {
-    public OrderPaymentMethod() {}
+    public OrderPaymentMethod() {
+    }
 
     public OrderPaymentMethod(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -121,17 +122,13 @@ public class OrderPaymentMethod extends AbstractResponse<OrderPaymentMethod> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "additional_data":
-                return true;
+            case "additional_data": return true;
 
-            case "name":
-                return false;
+            case "name": return false;
 
-            case "type":
-                return false;
+            case "type": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -33,7 +33,7 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
     }
 
     /**
-     * @deprecated Use discounts instead
+     * @deprecated Use discounts instead 
      */
     @Deprecated
     public CartPricesQuery discount(CartDiscountQueryDefinition queryDef) {

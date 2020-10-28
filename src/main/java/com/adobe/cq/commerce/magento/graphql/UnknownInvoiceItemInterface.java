@@ -28,7 +28,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Invoice item details
  */
 public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoiceItemInterface> implements InvoiceItemInterface {
-    public UnknownInvoiceItemInterface() {}
+    public UnknownInvoiceItemInterface() {
+    }
 
     public UnknownInvoiceItemInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -235,29 +236,21 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "discounts":
-                return true;
+            case "discounts": return true;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "order_item":
-                return false;
+            case "order_item": return false;
 
-            case "product_name":
-                return false;
+            case "product_name": return false;
 
-            case "product_sale_price":
-                return true;
+            case "product_sale_price": return true;
 
-            case "product_sku":
-                return false;
+            case "product_sku": return false;
 
-            case "quantity_invoiced":
-                return false;
+            case "quantity_invoiced": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

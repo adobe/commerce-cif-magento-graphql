@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class CartItemSelectedOptionValuePrice extends AbstractResponse<CartItemSelectedOptionValuePrice> {
-    public CartItemSelectedOptionValuePrice() {}
+    public CartItemSelectedOptionValuePrice() {
+    }
 
     public CartItemSelectedOptionValuePrice(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -92,17 +93,13 @@ public class CartItemSelectedOptionValuePrice extends AbstractResponse<CartItemS
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "type":
-                return false;
+            case "type": return false;
 
-            case "units":
-                return false;
+            case "units": return false;
 
-            case "value":
-                return false;
+            case "value": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class AvailableShippingMethod extends AbstractResponse<AvailableShippingMethod> {
-    public AvailableShippingMethod() {}
+    public AvailableShippingMethod() {
+    }
 
     public AvailableShippingMethod(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -227,38 +228,27 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount":
-                return true;
+            case "amount": return true;
 
-            case "available":
-                return false;
+            case "available": return false;
 
-            case "base_amount":
-                return true;
+            case "base_amount": return true;
 
-            case "carrier_code":
-                return false;
+            case "carrier_code": return false;
 
-            case "carrier_title":
-                return false;
+            case "carrier_title": return false;
 
-            case "error_message":
-                return false;
+            case "error_message": return false;
 
-            case "method_code":
-                return false;
+            case "method_code": return false;
 
-            case "method_title":
-                return false;
+            case "method_title": return false;
 
-            case "price_excl_tax":
-                return true;
+            case "price_excl_tax": return true;
 
-            case "price_incl_tax":
-                return true;
+            case "price_incl_tax": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

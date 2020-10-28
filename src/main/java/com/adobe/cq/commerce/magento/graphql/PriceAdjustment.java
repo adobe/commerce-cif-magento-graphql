@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * whether the item is included or excluded from the adjustment.
  */
 public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
-    public PriceAdjustment() {}
+    public PriceAdjustment() {
+    }
 
     public PriceAdjustment(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -128,17 +129,13 @@ public class PriceAdjustment extends AbstractResponse<PriceAdjustment> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount":
-                return true;
+            case "amount": return true;
 
-            case "code":
-                return false;
+            case "code": return false;
 
-            case "description":
-                return false;
+            case "description": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

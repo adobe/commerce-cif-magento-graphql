@@ -24,7 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Query extends AbstractResponse<Query> {
-    public Query() {}
+    public Query() {
+    }
 
     public Query(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -742,89 +743,61 @@ public class Query extends AbstractResponse<Query> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "availableStores":
-                return true;
+            case "availableStores": return true;
 
-            case "cart":
-                return true;
+            case "cart": return true;
 
-            case "categories":
-                return true;
+            case "categories": return true;
 
-            case "category":
-                return true;
+            case "category": return true;
 
-            case "categoryList":
-                return true;
+            case "categoryList": return true;
 
-            case "checkoutAgreements":
-                return true;
+            case "checkoutAgreements": return true;
 
-            case "cmsBlocks":
-                return true;
+            case "cmsBlocks": return true;
 
-            case "cmsPage":
-                return true;
+            case "cmsPage": return true;
 
-            case "countries":
-                return true;
+            case "countries": return true;
 
-            case "country":
-                return true;
+            case "country": return true;
 
-            case "currency":
-                return true;
+            case "currency": return true;
 
-            case "customAttributeMetadata":
-                return true;
+            case "customAttributeMetadata": return true;
 
-            case "customer":
-                return true;
+            case "customer": return true;
 
-            case "customerCart":
-                return true;
+            case "customerCart": return true;
 
-            case "customerDownloadableProducts":
-                return true;
+            case "customerDownloadableProducts": return true;
 
-            case "customerOrders":
-                return true;
+            case "customerOrders": return true;
 
-            case "customerPaymentTokens":
-                return true;
+            case "customerPaymentTokens": return true;
 
-            case "getHostedProUrl":
-                return true;
+            case "getHostedProUrl": return true;
 
-            case "getPayflowLinkToken":
-                return true;
+            case "getPayflowLinkToken": return true;
 
-            case "giftCardAccount":
-                return true;
+            case "giftCardAccount": return true;
 
-            case "isEmailAvailable":
-                return true;
+            case "isEmailAvailable": return true;
 
-            case "pickupLocations":
-                return true;
+            case "pickupLocations": return true;
 
-            case "productReviewRatingsMetadata":
-                return true;
+            case "productReviewRatingsMetadata": return true;
 
-            case "products":
-                return true;
+            case "products": return true;
 
-            case "storeConfig":
-                return true;
+            case "storeConfig": return true;
 
-            case "urlResolver":
-                return true;
+            case "urlResolver": return true;
 
-            case "wishlist":
-                return true;
+            case "wishlist": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

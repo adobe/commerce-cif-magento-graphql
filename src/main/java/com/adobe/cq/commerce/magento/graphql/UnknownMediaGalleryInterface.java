@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains basic information about a product image or video.
  */
 public class UnknownMediaGalleryInterface extends AbstractResponse<UnknownMediaGalleryInterface> implements MediaGalleryInterface {
-    public UnknownMediaGalleryInterface() {}
+    public UnknownMediaGalleryInterface() {
+    }
 
     public UnknownMediaGalleryInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -159,20 +160,15 @@ public class UnknownMediaGalleryInterface extends AbstractResponse<UnknownMediaG
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "disabled":
-                return false;
+            case "disabled": return false;
 
-            case "label":
-                return false;
+            case "label": return false;
 
-            case "position":
-                return false;
+            case "position": return false;
 
-            case "url":
-                return false;
+            case "url": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

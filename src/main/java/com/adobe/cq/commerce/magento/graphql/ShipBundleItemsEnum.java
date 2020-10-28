@@ -43,7 +43,6 @@ public enum ShipBundleItemsEnum {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case SEPARATELY: {

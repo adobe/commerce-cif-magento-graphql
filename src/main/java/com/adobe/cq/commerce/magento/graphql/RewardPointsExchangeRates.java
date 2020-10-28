@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Exchange rates depend on the customer group
  */
 public class RewardPointsExchangeRates extends AbstractResponse<RewardPointsExchangeRates> {
-    public RewardPointsExchangeRates() {}
+    public RewardPointsExchangeRates() {
+    }
 
     public RewardPointsExchangeRates(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -96,14 +97,11 @@ public class RewardPointsExchangeRates extends AbstractResponse<RewardPointsExch
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "earning":
-                return true;
+            case "earning": return true;
 
-            case "redemption":
-                return true;
+            case "redemption": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

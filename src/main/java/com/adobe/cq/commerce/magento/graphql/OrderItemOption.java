@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Represents order item options like selected or entered
  */
 public class OrderItemOption extends AbstractResponse<OrderItemOption> {
-    public OrderItemOption() {}
+    public OrderItemOption() {
+    }
 
     public OrderItemOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -86,14 +87,11 @@ public class OrderItemOption extends AbstractResponse<OrderItemOption> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "label":
-                return false;
+            case "label": return false;
 
-            case "value":
-                return false;
+            case "value": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

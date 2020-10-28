@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * The category products object returned in the Category query.
  */
 public class CategoryProducts extends AbstractResponse<CategoryProducts> {
-    public CategoryProducts() {}
+    public CategoryProducts() {
+    }
 
     public CategoryProducts(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -132,17 +133,13 @@ public class CategoryProducts extends AbstractResponse<CategoryProducts> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items":
-                return false;
+            case "items": return false;
 
-            case "page_info":
-                return true;
+            case "page_info": return true;
 
-            case "total_count":
-                return false;
+            case "total_count": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

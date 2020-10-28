@@ -21,7 +21,6 @@ public class CartAddressInterfaceQuery extends AbstractQuery<CartAddressInterfac
     CartAddressInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
-
     CartAddressInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

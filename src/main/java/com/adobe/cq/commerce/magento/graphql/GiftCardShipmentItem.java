@@ -23,7 +23,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem> implements ShipmentItemInterface {
-    public GiftCardShipmentItem() {}
+    public GiftCardShipmentItem() {
+    }
 
     public GiftCardShipmentItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -189,29 +190,21 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "gift_card":
-                return true;
+            case "gift_card": return true;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "order_item":
-                return false;
+            case "order_item": return false;
 
-            case "product_name":
-                return false;
+            case "product_name": return false;
 
-            case "product_sale_price":
-                return true;
+            case "product_sale_price": return true;
 
-            case "product_sku":
-                return false;
+            case "product_sku": return false;
 
-            case "quantity_shipped":
-                return false;
+            case "quantity_shipped": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

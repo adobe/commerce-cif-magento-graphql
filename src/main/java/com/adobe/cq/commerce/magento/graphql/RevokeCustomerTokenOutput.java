@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class RevokeCustomerTokenOutput extends AbstractResponse<RevokeCustomerTokenOutput> {
-    public RevokeCustomerTokenOutput() {}
+    public RevokeCustomerTokenOutput() {
+    }
 
     public RevokeCustomerTokenOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -62,11 +63,9 @@ public class RevokeCustomerTokenOutput extends AbstractResponse<RevokeCustomerTo
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "result":
-                return false;
+            case "result": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

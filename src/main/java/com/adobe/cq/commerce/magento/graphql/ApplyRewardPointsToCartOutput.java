@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ApplyRewardPointsToCartOutput extends AbstractResponse<ApplyRewardPointsToCartOutput> {
-    public ApplyRewardPointsToCartOutput() {}
+    public ApplyRewardPointsToCartOutput() {
+    }
 
     public ApplyRewardPointsToCartOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -65,11 +66,9 @@ public class ApplyRewardPointsToCartOutput extends AbstractResponse<ApplyRewardP
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart":
-                return true;
+            case "cart": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

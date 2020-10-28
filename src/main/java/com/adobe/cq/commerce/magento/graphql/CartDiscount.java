@@ -24,7 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class CartDiscount extends AbstractResponse<CartDiscount> {
-    public CartDiscount() {}
+    public CartDiscount() {
+    }
 
     public CartDiscount(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -89,14 +90,11 @@ public class CartDiscount extends AbstractResponse<CartDiscount> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount":
-                return true;
+            case "amount": return true;
 
-            case "label":
-                return false;
+            case "label": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

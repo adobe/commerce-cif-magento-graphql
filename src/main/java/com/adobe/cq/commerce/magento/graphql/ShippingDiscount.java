@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines an individual shipping discount. This discount can be applied to shipping.
  */
 public class ShippingDiscount extends AbstractResponse<ShippingDiscount> {
-    public ShippingDiscount() {}
+    public ShippingDiscount() {
+    }
 
     public ShippingDiscount(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -68,11 +69,9 @@ public class ShippingDiscount extends AbstractResponse<ShippingDiscount> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount":
-                return true;
+            case "amount": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

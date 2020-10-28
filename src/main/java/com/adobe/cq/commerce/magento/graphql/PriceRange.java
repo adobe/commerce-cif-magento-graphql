@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * the same.
  */
 public class PriceRange extends AbstractResponse<PriceRange> {
-    public PriceRange() {}
+    public PriceRange() {
+    }
 
     public PriceRange(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -92,14 +93,11 @@ public class PriceRange extends AbstractResponse<PriceRange> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "maximum_price":
-                return true;
+            case "maximum_price": return true;
 
-            case "minimum_price":
-                return true;
+            case "minimum_price": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

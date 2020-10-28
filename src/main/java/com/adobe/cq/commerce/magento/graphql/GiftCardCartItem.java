@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains details about a gift card
  */
 public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> implements CartItemInterface {
-    public GiftCardCartItem() {}
+    public GiftCardCartItem() {
+    }
 
     public GiftCardCartItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -273,41 +274,29 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount":
-                return true;
+            case "amount": return true;
 
-            case "customizable_options":
-                return true;
+            case "customizable_options": return true;
 
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "message":
-                return false;
+            case "message": return false;
 
-            case "prices":
-                return true;
+            case "prices": return true;
 
-            case "product":
-                return false;
+            case "product": return false;
 
-            case "quantity":
-                return false;
+            case "quantity": return false;
 
-            case "recipient_email":
-                return false;
+            case "recipient_email": return false;
 
-            case "recipient_name":
-                return false;
+            case "recipient_name": return false;
 
-            case "sender_email":
-                return false;
+            case "sender_email": return false;
 
-            case "sender_name":
-                return false;
+            case "sender_name": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

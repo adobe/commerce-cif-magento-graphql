@@ -24,7 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Categories extends AbstractResponse<Categories> {
-    public Categories() {}
+    public Categories() {
+    }
 
     public Categories(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -118,17 +119,13 @@ public class Categories extends AbstractResponse<Categories> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "asset_urls":
-                return true;
+            case "asset_urls": return true;
 
-            case "identifier":
-                return false;
+            case "identifier": return false;
 
-            case "name":
-                return false;
+            case "name": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

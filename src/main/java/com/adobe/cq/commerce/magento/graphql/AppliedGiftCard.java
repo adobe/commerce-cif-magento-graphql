@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains the applied gift card with applied and remaining balance
  */
 public class AppliedGiftCard extends AbstractResponse<AppliedGiftCard> {
-    public AppliedGiftCard() {}
+    public AppliedGiftCard() {
+    }
 
     public AppliedGiftCard(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -142,20 +143,15 @@ public class AppliedGiftCard extends AbstractResponse<AppliedGiftCard> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "applied_balance":
-                return true;
+            case "applied_balance": return true;
 
-            case "code":
-                return false;
+            case "code": return false;
 
-            case "current_balance":
-                return true;
+            case "current_balance": return true;
 
-            case "expiration_date":
-                return false;
+            case "expiration_date": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * A list of values for the selected bundle product
  */
 public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelectedBundleOptionValue> {
-    public ItemSelectedBundleOptionValue() {}
+    public ItemSelectedBundleOptionValue() {
+    }
 
     public ItemSelectedBundleOptionValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -141,23 +142,17 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id":
-                return false;
+            case "id": return false;
 
-            case "price":
-                return true;
+            case "price": return true;
 
-            case "product_name":
-                return false;
+            case "product_name": return false;
 
-            case "product_sku":
-                return false;
+            case "product_sku": return false;
 
-            case "quantity":
-                return false;
+            case "quantity": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

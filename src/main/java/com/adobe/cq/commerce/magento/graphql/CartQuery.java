@@ -26,7 +26,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     /**
      * An array of coupons that have been applied to the cart
      *
-     * @deprecated Use applied_coupons instead
+     * @deprecated Use applied_coupons instead 
      */
     @Deprecated
     public CartQuery appliedCoupon(AppliedCouponQueryDefinition queryDef) {

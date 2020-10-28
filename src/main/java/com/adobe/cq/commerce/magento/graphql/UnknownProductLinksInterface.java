@@ -26,7 +26,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * each item.
  */
 public class UnknownProductLinksInterface extends AbstractResponse<UnknownProductLinksInterface> implements ProductLinksInterface {
-    public UnknownProductLinksInterface() {}
+    public UnknownProductLinksInterface() {
+    }
 
     public UnknownProductLinksInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -179,23 +180,17 @@ public class UnknownProductLinksInterface extends AbstractResponse<UnknownProduc
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "link_type":
-                return false;
+            case "link_type": return false;
 
-            case "linked_product_sku":
-                return false;
+            case "linked_product_sku": return false;
 
-            case "linked_product_type":
-                return false;
+            case "linked_product_type": return false;
 
-            case "position":
-                return false;
+            case "position": return false;
 
-            case "sku":
-                return false;
+            case "sku": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

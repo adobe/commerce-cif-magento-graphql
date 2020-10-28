@@ -49,7 +49,6 @@ public enum UrlRewriteEntityTypeEnum {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case CATEGORY: {

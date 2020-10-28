@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implements LayerFilterItemInterface {
-    public LayerFilterItem() {}
+    public LayerFilterItem() {
+    }
 
     public LayerFilterItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -125,17 +126,13 @@ public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implement
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items_count":
-                return false;
+            case "items_count": return false;
 
-            case "label":
-                return false;
+            case "label": return false;
 
-            case "value_string":
-                return false;
+            case "value_string": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

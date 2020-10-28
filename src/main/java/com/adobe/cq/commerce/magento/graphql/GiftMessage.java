@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Contains the text of a gift message, its sender, and recipient
  */
 public class GiftMessage extends AbstractResponse<GiftMessage> {
-    public GiftMessage() {}
+    public GiftMessage() {
+    }
 
     public GiftMessage(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -104,17 +105,13 @@ public class GiftMessage extends AbstractResponse<GiftMessage> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "from":
-                return false;
+            case "from": return false;
 
-            case "message":
-                return false;
+            case "message": return false;
 
-            case "to":
-                return false;
+            case "to": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

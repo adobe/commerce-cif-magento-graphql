@@ -27,7 +27,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Credit memo price details
  */
 public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
-    public CreditMemoTotal() {}
+    public CreditMemoTotal() {
+    }
 
     public CreditMemoTotal(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -249,35 +250,25 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "adjustment":
-                return true;
+            case "adjustment": return true;
 
-            case "base_grand_total":
-                return true;
+            case "base_grand_total": return true;
 
-            case "discounts":
-                return true;
+            case "discounts": return true;
 
-            case "grand_total":
-                return true;
+            case "grand_total": return true;
 
-            case "shipping_handling":
-                return true;
+            case "shipping_handling": return true;
 
-            case "subtotal":
-                return true;
+            case "subtotal": return true;
 
-            case "taxes":
-                return true;
+            case "taxes": return true;
 
-            case "total_shipping":
-                return true;
+            case "total_shipping": return true;
 
-            case "total_tax":
-                return true;
+            case "total_tax": return true;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

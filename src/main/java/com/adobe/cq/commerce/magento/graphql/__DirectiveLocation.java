@@ -194,7 +194,6 @@ public enum __DirectiveLocation {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case ARGUMENT_DEFINITION: {

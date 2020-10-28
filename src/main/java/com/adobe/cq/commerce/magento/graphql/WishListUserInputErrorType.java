@@ -40,7 +40,6 @@ public enum WishListUserInputErrorType {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case PRODUCT_NOT_FOUND: {

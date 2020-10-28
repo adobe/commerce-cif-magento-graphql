@@ -25,7 +25,8 @@ import com.shopify.graphql.support.SchemaViolationError;
  * CMS page defines all CMS page information
  */
 public class CmsPage extends AbstractResponse<CmsPage> {
-    public CmsPage() {}
+    public CmsPage() {
+    }
 
     public CmsPage(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -257,35 +258,25 @@ public class CmsPage extends AbstractResponse<CmsPage> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "content":
-                return false;
+            case "content": return false;
 
-            case "content_heading":
-                return false;
+            case "content_heading": return false;
 
-            case "identifier":
-                return false;
+            case "identifier": return false;
 
-            case "meta_description":
-                return false;
+            case "meta_description": return false;
 
-            case "meta_keywords":
-                return false;
+            case "meta_keywords": return false;
 
-            case "meta_title":
-                return false;
+            case "meta_title": return false;
 
-            case "page_layout":
-                return false;
+            case "page_layout": return false;
 
-            case "title":
-                return false;
+            case "title": return false;
 
-            case "url_key":
-                return false;
+            case "url_key": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

@@ -40,7 +40,6 @@ public enum RewardPointsSubscriptionStatusesEnum {
             }
         }
     }
-
     public String toString() {
         switch (this) {
             case NOT_SUBSCRIBED: {

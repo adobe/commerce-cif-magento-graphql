@@ -22,7 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class AppliedCoupon extends AbstractResponse<AppliedCoupon> {
-    public AppliedCoupon() {}
+    public AppliedCoupon() {
+    }
 
     public AppliedCoupon(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -62,11 +63,9 @@ public class AppliedCoupon extends AbstractResponse<AppliedCoupon> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code":
-                return false;
+            case "code": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

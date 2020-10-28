@@ -23,7 +23,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class AggregationOption extends AbstractResponse<AggregationOption> implements AggregationOptionInterface {
-    public AggregationOption() {}
+    public AggregationOption() {
+    }
 
     public AggregationOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -112,17 +113,13 @@ public class AggregationOption extends AbstractResponse<AggregationOption> imple
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "count":
-                return false;
+            case "count": return false;
 
-            case "label":
-                return false;
+            case "label": return false;
 
-            case "value":
-                return false;
+            case "value": return false;
 
-            default:
-                return false;
+            default: return false;
         }
     }
 }

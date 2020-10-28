@@ -24,7 +24,6 @@ public class PhysicalProductInterfaceQuery extends AbstractQuery<PhysicalProduct
     PhysicalProductInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
-
     PhysicalProductInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
