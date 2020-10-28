@@ -24,4 +24,3 @@ public interface SwatchDataInterface extends CustomFieldInterface {
      */
     String getValue();
 }
-

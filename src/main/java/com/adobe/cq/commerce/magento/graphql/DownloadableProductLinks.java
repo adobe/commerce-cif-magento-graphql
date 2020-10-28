@@ -19,14 +19,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * DownloadableProductLinks defines characteristics of a downloadable product
  */
 public class DownloadableProductLinks extends AbstractResponse<DownloadableProductLinks> {
-    public DownloadableProductLinks() {
-    }
+    public DownloadableProductLinks() {}
 
     public DownloadableProductLinks(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -139,6 +139,12 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -285,30 +291,55 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
         return this;
     }
 
+    /**
+     * A string that encodes option details.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public DownloadableProductLinks setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "is_shareable": return false;
+            case "is_shareable":
+                return false;
 
-            case "link_type": return false;
+            case "link_type":
+                return false;
 
-            case "number_of_downloads": return false;
+            case "number_of_downloads":
+                return false;
 
-            case "price": return false;
+            case "price":
+                return false;
 
-            case "sample_file": return false;
+            case "sample_file":
+                return false;
 
-            case "sample_type": return false;
+            case "sample_type":
+                return false;
 
-            case "sample_url": return false;
+            case "sample_url":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            default: return false;
+            case "uid":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

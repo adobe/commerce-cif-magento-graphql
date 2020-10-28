@@ -19,14 +19,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CustomerAddressRegion defines the customer&#39;s state or province
  */
 public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegion> {
-    public CustomerAddressRegion() {
-    }
+    public CustomerAddressRegion() {}
 
     public CustomerAddressRegion(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -120,14 +120,17 @@ public class CustomerAddressRegion extends AbstractResponse<CustomerAddressRegio
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "region": return false;
+            case "region":
+                return false;
 
-            case "region_code": return false;
+            case "region_code":
+                return false;
 
-            case "region_id": return false;
+            case "region_id":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

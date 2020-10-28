@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -26,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * configurable product option
  */
 public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAttributeOption> {
-    public ConfigurableAttributeOption() {
-    }
+    public ConfigurableAttributeOption() {}
 
     public ConfigurableAttributeOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -52,6 +52,12 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -108,6 +114,18 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     }
 
     /**
+     * A string that encodes option details.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public ConfigurableAttributeOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * A unique index number assigned to the configurable product option
      */
     public Integer getValueIndex() {
@@ -121,14 +139,20 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "code":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "value_index": return false;
+            case "uid":
+                return false;
 
-            default: return false;
+            case "value_index":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

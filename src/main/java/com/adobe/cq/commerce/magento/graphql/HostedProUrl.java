@@ -21,9 +21,11 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains secure URL used for Payments Pro Hosted Solution payment method.
+ */
 public class HostedProUrl extends AbstractResponse<HostedProUrl> {
-    public HostedProUrl() {
-    }
+    public HostedProUrl() {}
 
     public HostedProUrl(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -71,10 +73,11 @@ public class HostedProUrl extends AbstractResponse<HostedProUrl> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "secure_form_url": return false;
+            case "secure_form_url":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

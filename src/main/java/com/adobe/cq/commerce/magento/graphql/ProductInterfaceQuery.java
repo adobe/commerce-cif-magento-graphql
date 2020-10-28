@@ -15,7 +15,9 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * The ProductInterface contains attributes that are common to all types of products. Note that
@@ -25,6 +27,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     ProductInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     ProductInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
@@ -141,6 +144,15 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         _queryBuilder.append('{');
         queryDef.define(new ProductImageQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public ProductInterfaceQuery isReturnable() {
+        startField("is_returnable");
 
         return this;
     }
@@ -312,6 +324,15 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
+     * The average of all the ratings given to the product.
+     */
+    public ProductInterfaceQuery ratingSummary() {
+        startField("rating_summary");
+
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public ProductInterfaceQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
@@ -319,6 +340,71 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
 
         _queryBuilder.append('{');
         queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The total count of all the reviews given to the product.
+     */
+    public ProductInterfaceQuery reviewCount() {
+        startField("review_count");
+
+        return this;
+    }
+
+    public class ReviewsArguments extends Arguments {
+        ReviewsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once.
+         */
+        public ReviewsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return.
+         */
+        public ReviewsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface ReviewsArgumentsDefinition {
+        void define(ReviewsArguments args);
+    }
+
+    /**
+     * The list of products reviews.
+     */
+    public ProductInterfaceQuery reviews(ProductReviewsQueryDefinition queryDef) {
+        return reviews(args -> {}, queryDef);
+    }
+
+    /**
+     * The list of products reviews.
+     */
+    public ProductInterfaceQuery reviews(ReviewsArgumentsDefinition argsDef, ProductReviewsQueryDefinition queryDef) {
+        startField("reviews");
+
+        ReviewsArguments args = new ReviewsArguments(_queryBuilder);
+        argsDef.define(args);
+        ReviewsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductReviewsQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -553,6 +639,13 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     public ProductInterfaceQuery onDownloadableProduct(DownloadableProductQueryDefinition queryDef) {
         startInlineFragment("DownloadableProduct");
         queryDef.define(new DownloadableProductQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public ProductInterfaceQuery onGiftCardProduct(GiftCardProductQueryDefinition queryDef) {
+        startInlineFragment("GiftCardProduct");
+        queryDef.define(new GiftCardProductQuery(_queryBuilder));
         _queryBuilder.append('}');
         return this;
     }

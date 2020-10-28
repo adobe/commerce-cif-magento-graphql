@@ -24,8 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class CartPrices extends AbstractResponse<CartPrices> {
-    public CartPrices() {
-    }
+    public CartPrices() {}
 
     public CartPrices(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -78,6 +77,17 @@ public class CartPrices extends AbstractResponse<CartPrices> {
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "gift_options": {
+                    GiftOptionsPrices optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftOptionsPrices(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -155,7 +165,7 @@ public class CartPrices extends AbstractResponse<CartPrices> {
     }
 
     /**
-     * @deprecated Use discounts instead 
+     * @deprecated Use discounts instead
      */
     @Deprecated
     public CartDiscount getDiscount() {
@@ -176,6 +186,18 @@ public class CartPrices extends AbstractResponse<CartPrices> {
 
     public CartPrices setDiscounts(List<Discount> arg) {
         optimisticData.put(getKey("discounts"), arg);
+        return this;
+    }
+
+    /**
+     * The list of prices for the selected gift options
+     */
+    public GiftOptionsPrices getGiftOptions() {
+        return (GiftOptionsPrices) get("gift_options");
+    }
+
+    public CartPrices setGiftOptions(GiftOptionsPrices arg) {
+        optimisticData.put(getKey("gift_options"), arg);
         return this;
     }
 
@@ -217,22 +239,32 @@ public class CartPrices extends AbstractResponse<CartPrices> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "applied_taxes": return true;
+            case "applied_taxes":
+                return true;
 
-            case "discount": return true;
+            case "discount":
+                return true;
 
-            case "discounts": return true;
+            case "discounts":
+                return true;
 
-            case "grand_total": return true;
+            case "gift_options":
+                return true;
 
-            case "subtotal_excluding_tax": return true;
+            case "grand_total":
+                return true;
 
-            case "subtotal_including_tax": return true;
+            case "subtotal_excluding_tax":
+                return true;
 
-            case "subtotal_with_discount_excluding_tax": return true;
+            case "subtotal_including_tax":
+                return true;
 
-            default: return false;
+            case "subtotal_with_discount_excluding_tax":
+                return true;
+
+            default:
+                return false;
         }
     }
 }
-

@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -26,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * multiselect.
  */
 public class CustomizableMultipleValue extends AbstractResponse<CustomizableMultipleValue> {
-    public CustomizableMultipleValue() {
-    }
+    public CustomizableMultipleValue() {}
 
     public CustomizableMultipleValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -96,6 +96,12 @@ public class CustomizableMultipleValue extends AbstractResponse<CustomizableMult
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -188,22 +194,43 @@ public class CustomizableMultipleValue extends AbstractResponse<CustomizableMult
         return this;
     }
 
+    /**
+     * A string that encodes option details.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public CustomizableMultipleValue setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "option_type_id": return false;
+            case "option_type_id":
+                return false;
 
-            case "price": return false;
+            case "price":
+                return false;
 
-            case "price_type": return false;
+            case "price_type":
+                return false;
 
-            case "sku": return false;
+            case "sku":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            default: return false;
+            case "uid":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

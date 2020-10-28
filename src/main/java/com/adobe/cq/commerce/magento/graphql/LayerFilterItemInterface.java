@@ -43,4 +43,3 @@ public interface LayerFilterItemInterface extends CustomFieldInterface {
     @Deprecated
     String getValueString();
 }
-

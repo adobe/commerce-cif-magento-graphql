@@ -49,6 +49,7 @@ public enum PriceTypeEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case DYNAMIC: {
@@ -69,4 +70,3 @@ public enum PriceTypeEnum {
         }
     }
 }
-

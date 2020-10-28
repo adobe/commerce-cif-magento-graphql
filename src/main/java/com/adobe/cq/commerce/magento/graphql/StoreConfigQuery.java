@@ -14,8 +14,11 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.List;
+
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * The type contains information about a store config
@@ -30,6 +33,69 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery absoluteFooter() {
         startField("absolute_footer");
+
+        return this;
+    }
+
+    /**
+     * Allow Gift Receipt
+     */
+    public StoreConfigQuery allowGiftReceipt() {
+        startField("allow_gift_receipt");
+
+        return this;
+    }
+
+    /**
+     * Allow Gift Wrapping on Order Level
+     */
+    public StoreConfigQuery allowGiftWrappingOnOrder() {
+        startField("allow_gift_wrapping_on_order");
+
+        return this;
+    }
+
+    /**
+     * Allow Gift Wrapping for Order Items
+     */
+    public StoreConfigQuery allowGiftWrappingOnOrderItems() {
+        startField("allow_gift_wrapping_on_order_items");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether guest users can write product reviews. Possible values: 1 (Yes) and 0 (No)
+     */
+    public StoreConfigQuery allowGuestsToWriteProductReviews() {
+        startField("allow_guests_to_write_product_reviews");
+
+        return this;
+    }
+
+    /**
+     * The value of the Allow Gift Messages for Order Items option
+     */
+    public StoreConfigQuery allowItems() {
+        startField("allow_items");
+
+        return this;
+    }
+
+    /**
+     * The value of the Allow Gift Messages on Order Level option
+     */
+    public StoreConfigQuery allowOrder() {
+        startField("allow_order");
+
+        return this;
+    }
+
+    /**
+     * Allow Printed Card
+     */
+    public StoreConfigQuery allowPrintedCard() {
+        startField("allow_printed_card");
 
         return this;
     }
@@ -84,6 +150,24 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery baseUrl() {
         startField("base_url");
+
+        return this;
+    }
+
+    /**
+     * Display Gift Wrapping Prices
+     */
+    public StoreConfigQuery cartGiftWrapping() {
+        startField("cart_gift_wrapping");
+
+        return this;
+    }
+
+    /**
+     * Display Printed Card Prices
+     */
+    public StoreConfigQuery cartPrintedCard() {
+        startField("cart_printed_card");
 
         return this;
     }
@@ -333,6 +417,134 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Reward points functionality status: enabled/disabled
+     */
+    public StoreConfigQuery magentoRewardGeneralIsEnabled() {
+        startField("magento_reward_general_is_enabled");
+
+        return this;
+    }
+
+    /**
+     * Reward points functionality status on the storefront: enabled/disabled
+     */
+    public StoreConfigQuery magentoRewardGeneralIsEnabledOnFront() {
+        startField("magento_reward_general_is_enabled_on_front");
+
+        return this;
+    }
+
+    /**
+     * Reward points redemption minimum threshold
+     */
+    public StoreConfigQuery magentoRewardGeneralMinPointsBalance() {
+        startField("magento_reward_general_min_points_balance");
+
+        return this;
+    }
+
+    /**
+     * Enable reward points history for the customer
+     */
+    public StoreConfigQuery magentoRewardGeneralPublishHistory() {
+        startField("magento_reward_general_publish_history");
+
+        return this;
+    }
+
+    /**
+     * Number of points for referral, when invitee registers on the site
+     */
+    public StoreConfigQuery magentoRewardPointsInvitationCustomer() {
+        startField("magento_reward_points_invitation_customer");
+
+        return this;
+    }
+
+    /**
+     * Maximum number of registration referrals that will qualify for rewards
+     */
+    public StoreConfigQuery magentoRewardPointsInvitationCustomerLimit() {
+        startField("magento_reward_points_invitation_customer_limit");
+
+        return this;
+    }
+
+    /**
+     * Number of points for referral, when invitee places an initial order on the site
+     */
+    public StoreConfigQuery magentoRewardPointsInvitationOrder() {
+        startField("magento_reward_points_invitation_order");
+
+        return this;
+    }
+
+    /**
+     * Maximum number of order placements by invitees that will qualify for rewards
+     */
+    public StoreConfigQuery magentoRewardPointsInvitationOrderLimit() {
+        startField("magento_reward_points_invitation_order_limit");
+
+        return this;
+    }
+
+    /**
+     * Number of points for newsletter subscription
+     */
+    public StoreConfigQuery magentoRewardPointsNewsletter() {
+        startField("magento_reward_points_newsletter");
+
+        return this;
+    }
+
+    /**
+     * Whether customer earns points for shopping according to the reward point exchange rate. In Luma this
+     * also controls whether to show a message in shopping cart about the rewards points earned for the
+     * purchase, as well as the customer’s current reward point balance
+     */
+    public StoreConfigQuery magentoRewardPointsOrder() {
+        startField("magento_reward_points_order");
+
+        return this;
+    }
+
+    /**
+     * Number of points customer gets for registration
+     */
+    public StoreConfigQuery magentoRewardPointsRegister() {
+        startField("magento_reward_points_register");
+
+        return this;
+    }
+
+    /**
+     * Number of points for writing a review
+     */
+    public StoreConfigQuery magentoRewardPointsReview() {
+        startField("magento_reward_points_review");
+
+        return this;
+    }
+
+    /**
+     * Maximum number of reviews that will qualify for the rewards
+     */
+    public StoreConfigQuery magentoRewardPointsReviewLimit() {
+        startField("magento_reward_points_review_limit");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether wishlists are enabled (1) or disabled (0)
+     */
+    public StoreConfigQuery magentoWishlistGeneralIsEnabled() {
+        startField("magento_wishlist_general_is_enabled");
+
+        return this;
+    }
+
+    /**
      * The minimum number of characters required for a valid password.
      */
     public StoreConfigQuery minimumPasswordLength() {
@@ -351,11 +563,38 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Payflow Pro vault status.
+     */
+    public StoreConfigQuery paymentPayflowproCcVaultActive() {
+        startField("payment_payflowpro_cc_vault_active");
+
+        return this;
+    }
+
+    /**
+     * Default Price for Printed Card
+     */
+    public StoreConfigQuery printedCardPrice() {
+        startField("printed_card_price");
+
+        return this;
+    }
+
+    /**
      * Corresponds to the &#39;Display Prices On Product View Page&#39; field. It indicates how FPT information is
      * displayed on product pages
      */
     public StoreConfigQuery productFixedProductTaxDisplaySetting() {
         startField("product_fixed_product_tax_display_setting");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether product reviews are enabled. Possible values: 1 (Yes) and 0 (No)
+     */
+    public StoreConfigQuery productReviewsEnabled() {
+        startField("product_reviews_enabled");
 
         return this;
     }
@@ -394,6 +633,24 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery salesFixedProductTaxDisplaySetting() {
         startField("sales_fixed_product_tax_display_setting");
+
+        return this;
+    }
+
+    /**
+     * Display Gift Wrapping Prices
+     */
+    public StoreConfigQuery salesGiftWrapping() {
+        startField("sales_gift_wrapping");
+
+        return this;
+    }
+
+    /**
+     * Display Printed Card Prices
+     */
+    public StoreConfigQuery salesPrintedCard() {
+        startField("sales_printed_card");
 
         return this;
     }

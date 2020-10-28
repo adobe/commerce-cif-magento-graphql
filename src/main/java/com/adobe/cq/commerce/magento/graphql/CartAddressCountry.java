@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class CartAddressCountry extends AbstractResponse<CartAddressCountry> {
-    public CartAddressCountry() {
-    }
+    public CartAddressCountry() {}
 
     public CartAddressCountry(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -78,12 +77,14 @@ public class CartAddressCountry extends AbstractResponse<CartAddressCountry> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "code":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

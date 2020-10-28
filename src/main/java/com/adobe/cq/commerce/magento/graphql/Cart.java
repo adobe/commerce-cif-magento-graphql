@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Cart extends AbstractResponse<Cart> {
-    public Cart() {
-    }
+    public Cart() {}
 
     public Cart(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -61,6 +60,65 @@ public class Cart extends AbstractResponse<Cart> {
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "applied_gift_cards": {
+                    List<AppliedGiftCard> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<AppliedGiftCard> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            AppliedGiftCard optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new AppliedGiftCard(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "applied_reward_points": {
+                    RewardPointsAmount optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RewardPointsAmount(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "applied_store_credit": {
+                    AppliedStoreCredit optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AppliedStoreCredit(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "available_gift_wrappings": {
+                    List<GiftWrapping> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        GiftWrapping optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = new GiftWrapping(jsonAsObject(element1, key));
+                        }
+
+                        list1.add(optional2);
+                    }
+
+                    responseData.put(key, list1);
 
                     break;
                 }
@@ -108,6 +166,34 @@ public class Cart extends AbstractResponse<Cart> {
                     break;
                 }
 
+                case "gift_message": {
+                    GiftMessage optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftMessage(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "gift_receipt_included": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
+
+                    break;
+                }
+
+                case "gift_wrapping": {
+                    GiftWrapping optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftWrapping(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "id": {
                     responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
@@ -148,6 +234,12 @@ public class Cart extends AbstractResponse<Cart> {
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "printed_card_included": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
 
                     break;
                 }
@@ -204,7 +296,7 @@ public class Cart extends AbstractResponse<Cart> {
     /**
      * An array of coupons that have been applied to the cart
      *
-     * @deprecated Use applied_coupons instead 
+     * @deprecated Use applied_coupons instead
      */
     @Deprecated
     public AppliedCoupon getAppliedCoupon() {
@@ -226,6 +318,54 @@ public class Cart extends AbstractResponse<Cart> {
 
     public Cart setAppliedCoupons(List<AppliedCoupon> arg) {
         optimisticData.put(getKey("applied_coupons"), arg);
+        return this;
+    }
+
+    /**
+     * Contains the code attribute, which specifies the applied gift card codes
+     */
+    public List<AppliedGiftCard> getAppliedGiftCards() {
+        return (List<AppliedGiftCard>) get("applied_gift_cards");
+    }
+
+    public Cart setAppliedGiftCards(List<AppliedGiftCard> arg) {
+        optimisticData.put(getKey("applied_gift_cards"), arg);
+        return this;
+    }
+
+    /**
+     * The amount of reward points applied to the cart
+     */
+    public RewardPointsAmount getAppliedRewardPoints() {
+        return (RewardPointsAmount) get("applied_reward_points");
+    }
+
+    public Cart setAppliedRewardPoints(RewardPointsAmount arg) {
+        optimisticData.put(getKey("applied_reward_points"), arg);
+        return this;
+    }
+
+    /**
+     * Contains store credit information applied on the cart
+     */
+    public AppliedStoreCredit getAppliedStoreCredit() {
+        return (AppliedStoreCredit) get("applied_store_credit");
+    }
+
+    public Cart setAppliedStoreCredit(AppliedStoreCredit arg) {
+        optimisticData.put(getKey("applied_store_credit"), arg);
+        return this;
+    }
+
+    /**
+     * The list of available gift wrapping options for the cart
+     */
+    public List<GiftWrapping> getAvailableGiftWrappings() {
+        return (List<GiftWrapping>) get("available_gift_wrappings");
+    }
+
+    public Cart setAvailableGiftWrappings(List<GiftWrapping> arg) {
+        optimisticData.put(getKey("available_gift_wrappings"), arg);
         return this;
     }
 
@@ -256,6 +396,42 @@ public class Cart extends AbstractResponse<Cart> {
 
     public Cart setEmail(String arg) {
         optimisticData.put(getKey("email"), arg);
+        return this;
+    }
+
+    /**
+     * The entered gift message for the cart
+     */
+    public GiftMessage getGiftMessage() {
+        return (GiftMessage) get("gift_message");
+    }
+
+    public Cart setGiftMessage(GiftMessage arg) {
+        optimisticData.put(getKey("gift_message"), arg);
+        return this;
+    }
+
+    /**
+     * Wether customer requested gift receipt for the cart
+     */
+    public Boolean getGiftReceiptIncluded() {
+        return (Boolean) get("gift_receipt_included");
+    }
+
+    public Cart setGiftReceiptIncluded(Boolean arg) {
+        optimisticData.put(getKey("gift_receipt_included"), arg);
+        return this;
+    }
+
+    /**
+     * The selected gift wrapping for the cart
+     */
+    public GiftWrapping getGiftWrapping() {
+        return (GiftWrapping) get("gift_wrapping");
+    }
+
+    public Cart setGiftWrapping(GiftWrapping arg) {
+        optimisticData.put(getKey("gift_wrapping"), arg);
         return this;
     }
 
@@ -298,6 +474,18 @@ public class Cart extends AbstractResponse<Cart> {
         return this;
     }
 
+    /**
+     * Wether customer requested printed card for the cart
+     */
+    public Boolean getPrintedCardIncluded() {
+        return (Boolean) get("printed_card_included");
+    }
+
+    public Cart setPrintedCardIncluded(Boolean arg) {
+        optimisticData.put(getKey("printed_card_included"), arg);
+        return this;
+    }
+
     public SelectedPaymentMethod getSelectedPaymentMethod() {
         return (SelectedPaymentMethod) get("selected_payment_method");
     }
@@ -327,32 +515,68 @@ public class Cart extends AbstractResponse<Cart> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "applied_coupon": return true;
+            case "applied_coupon":
+                return true;
 
-            case "applied_coupons": return true;
+            case "applied_coupons":
+                return true;
 
-            case "available_payment_methods": return true;
+            case "applied_gift_cards":
+                return true;
 
-            case "billing_address": return true;
+            case "applied_reward_points":
+                return true;
 
-            case "email": return false;
+            case "applied_store_credit":
+                return true;
 
-            case "id": return false;
+            case "available_gift_wrappings":
+                return true;
 
-            case "is_virtual": return false;
+            case "available_payment_methods":
+                return true;
 
-            case "items": return false;
+            case "billing_address":
+                return true;
 
-            case "prices": return true;
+            case "email":
+                return false;
 
-            case "selected_payment_method": return true;
+            case "gift_message":
+                return true;
 
-            case "shipping_addresses": return true;
+            case "gift_receipt_included":
+                return false;
 
-            case "total_quantity": return false;
+            case "gift_wrapping":
+                return true;
 
-            default: return false;
+            case "id":
+                return false;
+
+            case "is_virtual":
+                return false;
+
+            case "items":
+                return false;
+
+            case "prices":
+                return true;
+
+            case "printed_card_included":
+                return false;
+
+            case "selected_payment_method":
+                return true;
+
+            case "shipping_addresses":
+                return true;
+
+            case "total_quantity":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

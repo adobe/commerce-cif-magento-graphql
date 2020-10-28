@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class TextSwatchData extends AbstractResponse<TextSwatchData> implements SwatchDataInterface {
-    public TextSwatchData() {
-    }
+    public TextSwatchData() {}
 
     public TextSwatchData(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -71,10 +70,11 @@ public class TextSwatchData extends AbstractResponse<TextSwatchData> implements 
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "value": return false;
+            case "value":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

@@ -43,4 +43,3 @@ public interface MediaGalleryInterface extends CustomFieldInterface {
      */
     String getUrl();
 }
-

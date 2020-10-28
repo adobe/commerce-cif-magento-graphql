@@ -21,20 +21,31 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * CategoryInterface contains the full set of attributes that can be returned in a category search.
  */
 public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryInterface> implements CategoryInterface {
-    public UnknownCategoryInterface() {
-    }
+    public UnknownCategoryInterface() {}
 
     public UnknownCategoryInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "automatic_sorting": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "available_sort_by": {
                     List<String> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -414,6 +425,15 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
         return (String) get("__typename");
     }
 
+    public String getAutomaticSorting() {
+        return (String) get("automatic_sorting");
+    }
+
+    public UnknownCategoryInterface setAutomaticSorting(String arg) {
+        optimisticData.put(getKey("automatic_sorting"), arg);
+        return this;
+    }
+
     public List<String> getAvailableSortBy() {
         return (List<String>) get("available_sort_by");
     }
@@ -742,68 +762,101 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "available_sort_by": return false;
+            case "automatic_sorting":
+                return false;
 
-            case "breadcrumbs": return true;
+            case "available_sort_by":
+                return false;
 
-            case "canonical_url": return false;
+            case "breadcrumbs":
+                return true;
 
-            case "children_count": return false;
+            case "canonical_url":
+                return false;
 
-            case "cms_block": return true;
+            case "children_count":
+                return false;
 
-            case "created_at": return false;
+            case "cms_block":
+                return true;
 
-            case "custom_layout_update_file": return false;
+            case "created_at":
+                return false;
 
-            case "default_sort_by": return false;
+            case "custom_layout_update_file":
+                return false;
 
-            case "description": return false;
+            case "default_sort_by":
+                return false;
 
-            case "display_mode": return false;
+            case "description":
+                return false;
 
-            case "filter_price_range": return false;
+            case "display_mode":
+                return false;
 
-            case "id": return false;
+            case "filter_price_range":
+                return false;
 
-            case "image": return false;
+            case "id":
+                return false;
 
-            case "include_in_menu": return false;
+            case "image":
+                return false;
 
-            case "is_anchor": return false;
+            case "include_in_menu":
+                return false;
 
-            case "landing_page": return false;
+            case "is_anchor":
+                return false;
 
-            case "level": return false;
+            case "landing_page":
+                return false;
 
-            case "meta_description": return false;
+            case "level":
+                return false;
 
-            case "meta_keywords": return false;
+            case "meta_description":
+                return false;
 
-            case "meta_title": return false;
+            case "meta_keywords":
+                return false;
 
-            case "name": return false;
+            case "meta_title":
+                return false;
 
-            case "path": return false;
+            case "name":
+                return false;
 
-            case "path_in_store": return false;
+            case "path":
+                return false;
 
-            case "position": return false;
+            case "path_in_store":
+                return false;
 
-            case "product_count": return false;
+            case "position":
+                return false;
 
-            case "products": return true;
+            case "product_count":
+                return false;
 
-            case "updated_at": return false;
+            case "products":
+                return true;
 
-            case "url_key": return false;
+            case "updated_at":
+                return false;
 
-            case "url_path": return false;
+            case "url_key":
+                return false;
 
-            case "url_suffix": return false;
+            case "url_path":
+                return false;
 
-            default: return false;
+            case "url_suffix":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

@@ -27,14 +27,29 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Simple Cart Item
  */
 public class SimpleCartItem extends AbstractResponse<SimpleCartItem> implements CartItemInterface {
-    public SimpleCartItem() {
-    }
+    public SimpleCartItem() {}
 
     public SimpleCartItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "available_gift_wrapping": {
+                    List<GiftWrapping> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        GiftWrapping optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = new GiftWrapping(jsonAsObject(element1, key));
+                        }
+
+                        list1.add(optional2);
+                    }
+
+                    responseData.put(key, list1);
+
+                    break;
+                }
+
                 case "customizable_options": {
                     List<SelectedCustomizableOption> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -49,6 +64,28 @@ public class SimpleCartItem extends AbstractResponse<SimpleCartItem> implements 
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "gift_message": {
+                    GiftMessage optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftMessage(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "gift_wrapping": {
+                    GiftWrapping optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftWrapping(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -101,12 +138,48 @@ public class SimpleCartItem extends AbstractResponse<SimpleCartItem> implements 
         return "SimpleCartItem";
     }
 
+    /**
+     * The list of available gift wrapping options for the cart item
+     */
+    public List<GiftWrapping> getAvailableGiftWrapping() {
+        return (List<GiftWrapping>) get("available_gift_wrapping");
+    }
+
+    public SimpleCartItem setAvailableGiftWrapping(List<GiftWrapping> arg) {
+        optimisticData.put(getKey("available_gift_wrapping"), arg);
+        return this;
+    }
+
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
     }
 
     public SimpleCartItem setCustomizableOptions(List<SelectedCustomizableOption> arg) {
         optimisticData.put(getKey("customizable_options"), arg);
+        return this;
+    }
+
+    /**
+     * The entered gift message for the cart item
+     */
+    public GiftMessage getGiftMessage() {
+        return (GiftMessage) get("gift_message");
+    }
+
+    public SimpleCartItem setGiftMessage(GiftMessage arg) {
+        optimisticData.put(getKey("gift_message"), arg);
+        return this;
+    }
+
+    /**
+     * The selected gift wrapping for the cart item
+     */
+    public GiftWrapping getGiftWrapping() {
+        return (GiftWrapping) get("gift_wrapping");
+    }
+
+    public SimpleCartItem setGiftWrapping(GiftWrapping arg) {
+        optimisticData.put(getKey("gift_wrapping"), arg);
         return this;
     }
 
@@ -148,18 +221,32 @@ public class SimpleCartItem extends AbstractResponse<SimpleCartItem> implements 
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "customizable_options": return true;
+            case "available_gift_wrapping":
+                return true;
 
-            case "id": return false;
+            case "customizable_options":
+                return true;
 
-            case "prices": return true;
+            case "gift_message":
+                return true;
 
-            case "product": return false;
+            case "gift_wrapping":
+                return true;
 
-            case "quantity": return false;
+            case "id":
+                return false;
 
-            default: return false;
+            case "prices":
+                return true;
+
+            case "product":
+                return false;
+
+            case "quantity":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

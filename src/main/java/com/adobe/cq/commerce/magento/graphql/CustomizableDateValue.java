@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -26,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * picker.
  */
 public class CustomizableDateValue extends AbstractResponse<CustomizableDateValue> {
-    public CustomizableDateValue() {
-    }
+    public CustomizableDateValue() {}
 
     public CustomizableDateValue(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -63,6 +63,12 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -119,16 +125,34 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
         return this;
     }
 
+    /**
+     * A string that encodes option details.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public CustomizableDateValue setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "price": return false;
+            case "price":
+                return false;
 
-            case "price_type": return false;
+            case "price_type":
+                return false;
 
-            case "sku": return false;
+            case "sku":
+                return false;
 
-            default: return false;
+            case "uid":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

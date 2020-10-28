@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines an individual discount. A discount can be applied to the cart as a whole or to an item.
  */
 public class Discount extends AbstractResponse<Discount> {
-    public Discount() {
-    }
+    public Discount() {}
 
     public Discount(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -87,12 +86,14 @@ public class Discount extends AbstractResponse<Discount> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount": return true;
+            case "amount":
+                return true;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

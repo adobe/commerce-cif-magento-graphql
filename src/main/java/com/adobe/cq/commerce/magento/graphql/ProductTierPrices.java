@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -26,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * defines a tier price, which is a quantity discount offered to a specific customer group.
  */
 public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
-    public ProductTierPrices() {
-    }
+    public ProductTierPrices() {}
 
     public ProductTierPrices(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -182,18 +182,23 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "customer_group_id": return false;
+            case "customer_group_id":
+                return false;
 
-            case "percentage_value": return false;
+            case "percentage_value":
+                return false;
 
-            case "qty": return false;
+            case "qty":
+                return false;
 
-            case "value": return false;
+            case "value":
+                return false;
 
-            case "website_id": return false;
+            case "website_id":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

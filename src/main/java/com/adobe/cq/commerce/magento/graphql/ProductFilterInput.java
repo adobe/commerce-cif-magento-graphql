@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.io.Serializable;
 
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 /**
@@ -43,6 +44,8 @@ public class ProductFilterInput implements Serializable {
     private Input<FilterTypeInput> image = Input.undefined();
 
     private Input<FilterTypeInput> imageLabel = Input.undefined();
+
+    private Input<FilterTypeInput> isReturnable = Input.undefined();
 
     private Input<FilterTypeInput> manufacturer = Input.undefined();
 
@@ -427,6 +430,39 @@ public class ProductFilterInput implements Serializable {
             throw new IllegalArgumentException("Input can not be null");
         }
         this.imageLabel = imageLabel;
+        return this;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public FilterTypeInput getIsReturnable() {
+        return isReturnable.getValue();
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public Input<FilterTypeInput> getIsReturnableInput() {
+        return isReturnable;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public ProductFilterInput setIsReturnable(FilterTypeInput isReturnable) {
+        this.isReturnable = Input.optional(isReturnable);
+        return this;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public ProductFilterInput setIsReturnableInput(Input<FilterTypeInput> isReturnable) {
+        if (isReturnable == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.isReturnable = isReturnable;
         return this;
     }
 
@@ -1455,6 +1491,17 @@ public class ProductFilterInput implements Serializable {
             _queryBuilder.append("image_label:");
             if (imageLabel.getValue() != null) {
                 imageLabel.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.isReturnable.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("is_returnable:");
+            if (isReturnable.getValue() != null) {
+                isReturnable.getValue().appendTo(_queryBuilder);
             } else {
                 _queryBuilder.append("null");
             }

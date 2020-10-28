@@ -44,6 +44,7 @@ public enum PriceViewEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case AS_LOW_AS: {
@@ -60,4 +61,3 @@ public enum PriceViewEnum {
         }
     }
 }
-

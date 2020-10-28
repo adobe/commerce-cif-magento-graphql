@@ -28,11 +28,15 @@ public class PaymentMethodInput implements Serializable {
 
     private Input<HostedProInput> hostedPro = Input.undefined();
 
+    private Input<KlarnaInput> klarna = Input.undefined();
+
     private Input<PayflowExpressInput> payflowExpress = Input.undefined();
 
     private Input<PayflowLinkInput> payflowLink = Input.undefined();
 
     private Input<PayflowProInput> payflowpro = Input.undefined();
+
+    private Input<VaultTokenInput> payflowproCcVault = Input.undefined();
 
     private Input<PaypalExpressInput> paypalExpress = Input.undefined();
 
@@ -132,6 +136,27 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
+    public KlarnaInput getKlarna() {
+        return klarna.getValue();
+    }
+
+    public Input<KlarnaInput> getKlarnaInput() {
+        return klarna;
+    }
+
+    public PaymentMethodInput setKlarna(KlarnaInput klarna) {
+        this.klarna = Input.optional(klarna);
+        return this;
+    }
+
+    public PaymentMethodInput setKlarnaInput(Input<KlarnaInput> klarna) {
+        if (klarna == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.klarna = klarna;
+        return this;
+    }
+
     /**
      * Required input for Payflow Express Checkout payments
      */
@@ -228,6 +253,39 @@ public class PaymentMethodInput implements Serializable {
             throw new IllegalArgumentException("Input can not be null");
         }
         this.payflowpro = payflowpro;
+        return this;
+    }
+
+    /**
+     * Required input type for PayPal Payflow Pro vault payments
+     */
+    public VaultTokenInput getPayflowproCcVault() {
+        return payflowproCcVault.getValue();
+    }
+
+    /**
+     * Required input type for PayPal Payflow Pro vault payments
+     */
+    public Input<VaultTokenInput> getPayflowproCcVaultInput() {
+        return payflowproCcVault;
+    }
+
+    /**
+     * Required input type for PayPal Payflow Pro vault payments
+     */
+    public PaymentMethodInput setPayflowproCcVault(VaultTokenInput payflowproCcVault) {
+        this.payflowproCcVault = Input.optional(payflowproCcVault);
+        return this;
+    }
+
+    /**
+     * Required input type for PayPal Payflow Pro vault payments
+     */
+    public PaymentMethodInput setPayflowproCcVaultInput(Input<VaultTokenInput> payflowproCcVault) {
+        if (payflowproCcVault == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.payflowproCcVault = payflowproCcVault;
         return this;
     }
 
@@ -339,6 +397,17 @@ public class PaymentMethodInput implements Serializable {
             }
         }
 
+        if (this.klarna.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("klarna:");
+            if (klarna.getValue() != null) {
+                klarna.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
         if (this.payflowExpress.isDefined()) {
             _queryBuilder.append(separator);
             separator = ",";
@@ -367,6 +436,17 @@ public class PaymentMethodInput implements Serializable {
             _queryBuilder.append("payflowpro:");
             if (payflowpro.getValue() != null) {
                 payflowpro.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.payflowproCcVault.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("payflowpro_cc_vault:");
+            if (payflowproCcVault.getValue() != null) {
+                payflowproCcVault.getValue().appendTo(_queryBuilder);
             } else {
                 _queryBuilder.append("null");
             }

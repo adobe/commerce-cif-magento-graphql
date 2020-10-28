@@ -17,6 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * CategoryInterface contains the full set of attributes that can be returned in a category search.
@@ -25,11 +26,18 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     CategoryInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CategoryInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
             startField("__typename");
         }
+    }
+
+    public CategoryInterfaceQuery automaticSorting() {
+        startField("automatic_sorting");
+
+        return this;
     }
 
     public CategoryInterfaceQuery availableSortBy() {

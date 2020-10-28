@@ -28,6 +28,19 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
+     * Get a list of available store views and their config information.
+     */
+    public QueryQuery availableStores(StoreConfigQueryDefinition queryDef) {
+        startField("availableStores");
+
+        _queryBuilder.append('{');
+        queryDef.define(new StoreConfigQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Returns information about shopping cart
      */
     public QueryQuery cart(String cartId, CartQueryDefinition queryDef) {
@@ -462,8 +475,9 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * List of customer orders
+     * @deprecated Use orders from customer instead
      */
+    @Deprecated
     public QueryQuery customerOrders(CustomerOrdersQueryDefinition queryDef) {
         startField("customerOrders");
 
@@ -519,6 +533,24 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new PayflowLinkTokenQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Get information for gift card account by code
+     */
+    public QueryQuery giftCardAccount(GiftCardAccountInput input, GiftCardAccountQueryDefinition queryDef) {
+        startField("giftCardAccount");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftCardAccountQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -624,6 +656,19 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new PickupLocationsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Retrieves metadata required by clients to render the Reviews section.
+     */
+    public QueryQuery productReviewRatingsMetadata(ProductReviewRatingsMetadataQueryDefinition queryDef) {
+        startField("productReviewRatingsMetadata");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductReviewRatingsMetadataQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * The collection of orders that match the conditions defined in the filter
+ */
 public class CustomerOrdersQuery extends AbstractQuery<CustomerOrdersQuery> {
     CustomerOrdersQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Array of orders
+     * An array of customer orders
      */
     public CustomerOrdersQuery items(CustomerOrderQueryDefinition queryDef) {
         startField("items");
@@ -31,6 +34,28 @@ public class CustomerOrdersQuery extends AbstractQuery<CustomerOrdersQuery> {
         _queryBuilder.append('{');
         queryDef.define(new CustomerOrderQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An object that includes the current_page, page_info, and page_size values specified in the query
+     */
+    public CustomerOrdersQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
+        startField("page_info");
+
+        _queryBuilder.append('{');
+        queryDef.define(new SearchResultPageInfoQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The total count of customer orders
+     */
+    public CustomerOrdersQuery totalCount() {
+        startField("total_count");
 
         return this;
     }

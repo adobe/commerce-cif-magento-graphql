@@ -17,6 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import java.util.List;
 
 import com.shopify.graphql.support.CustomFieldInterface;
+import com.shopify.graphql.support.ID;
 
 /**
  * The ProductInterface contains attributes that are common to all types of products. Note that
@@ -78,6 +79,11 @@ public interface ProductInterface extends CustomFieldInterface {
      * The relative path to the main image on the product page.
      */
     ProductImage getImage();
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    String getIsReturnable();
 
     /**
      * A number representing the product&#39;s manufacturer.
@@ -162,9 +168,24 @@ public interface ProductInterface extends CustomFieldInterface {
     List<ProductLinksInterface> getProductLinks();
 
     /**
+     * The average of all the ratings given to the product.
+     */
+    Double getRatingSummary();
+
+    /**
      * Related Products
      */
     List<ProductInterface> getRelatedProducts();
+
+    /**
+     * The total count of all the reviews given to the product.
+     */
+    Integer getReviewCount();
+
+    /**
+     * The list of products reviews.
+     */
+    ProductReviews getReviews();
 
     /**
      * A short description of the product. Its use depends on the theme.
@@ -274,4 +295,3 @@ public interface ProductInterface extends CustomFieldInterface {
     @Deprecated
     List<Website> getWebsites();
 }
-

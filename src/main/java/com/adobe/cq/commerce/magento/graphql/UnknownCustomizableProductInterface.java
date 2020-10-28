@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * CustomizableProductInterface contains information about customizable product options.
  */
 public class UnknownCustomizableProductInterface extends AbstractResponse<UnknownCustomizableProductInterface> implements CustomizableProductInterface {
-    public UnknownCustomizableProductInterface() {
-    }
+    public UnknownCustomizableProductInterface() {}
 
     public UnknownCustomizableProductInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -83,6 +82,10 @@ public class UnknownCustomizableProductInterface extends AbstractResponse<Unknow
                 return new DownloadableProduct(fields);
             }
 
+            case "GiftCardProduct": {
+                return new GiftCardProduct(fields);
+            }
+
             case "SimpleProduct": {
                 return new SimpleProduct(fields);
             }
@@ -115,10 +118,11 @@ public class UnknownCustomizableProductInterface extends AbstractResponse<Unknow
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "options": return false;
+            case "options":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

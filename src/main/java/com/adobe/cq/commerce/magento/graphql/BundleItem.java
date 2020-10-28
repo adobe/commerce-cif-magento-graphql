@@ -21,14 +21,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * BundleItem defines an individual item in a bundle product.
  */
 public class BundleItem extends AbstractResponse<BundleItem> {
-    public BundleItem() {
-    }
+    public BundleItem() {}
 
     public BundleItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -225,22 +225,29 @@ public class BundleItem extends AbstractResponse<BundleItem> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "option_id": return false;
+            case "option_id":
+                return false;
 
-            case "options": return true;
+            case "options":
+                return true;
 
-            case "position": return false;
+            case "position":
+                return false;
 
-            case "required": return false;
+            case "required":
+                return false;
 
-            case "sku": return false;
+            case "sku":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            case "type": return false;
+            case "type":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

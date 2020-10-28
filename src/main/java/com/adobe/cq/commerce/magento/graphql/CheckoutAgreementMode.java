@@ -40,6 +40,7 @@ public enum CheckoutAgreementMode {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case AUTO: {
@@ -56,4 +57,3 @@ public enum CheckoutAgreementMode {
         }
     }
 }
-

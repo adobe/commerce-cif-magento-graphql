@@ -14,19 +14,20 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * The type contains information about a store config
  */
 public class StoreConfig extends AbstractResponse<StoreConfig> {
-    public StoreConfig() {
-    }
+    public StoreConfig() {}
 
     public StoreConfig(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -34,6 +35,83 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             String fieldName = getFieldName(key);
             switch (fieldName) {
                 case "absolute_footer": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_gift_receipt": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_gift_wrapping_on_order": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_gift_wrapping_on_order_items": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_guests_to_write_product_reviews": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_items": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_order": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_printed_card": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -100,6 +178,28 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                 }
 
                 case "base_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "cart_gift_wrapping": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "cart_printed_card": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -407,6 +507,160 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "magento_reward_general_is_enabled": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_general_is_enabled_on_front": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_general_min_points_balance": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_general_publish_history": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_invitation_customer": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_invitation_customer_limit": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_invitation_order": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_invitation_order_limit": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_newsletter": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_order": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_register": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_review": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_reward_points_review_limit": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "magento_wishlist_general_is_enabled": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "minimum_password_length": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -429,10 +683,43 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "payment_payflowpro_cc_vault_active": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "printed_card_price": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "product_fixed_product_tax_display_setting": {
                     FixedProductTaxDisplaySettings optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = FixedProductTaxDisplaySettings.fromGraphQl(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "product_reviews_enabled": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -477,6 +764,28 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     FixedProductTaxDisplaySettings optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = FixedProductTaxDisplaySettings.fromGraphQl(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "sales_gift_wrapping": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "sales_printed_card": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -667,6 +976,90 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Allow Gift Receipt
+     */
+    public String getAllowGiftReceipt() {
+        return (String) get("allow_gift_receipt");
+    }
+
+    public StoreConfig setAllowGiftReceipt(String arg) {
+        optimisticData.put(getKey("allow_gift_receipt"), arg);
+        return this;
+    }
+
+    /**
+     * Allow Gift Wrapping on Order Level
+     */
+    public String getAllowGiftWrappingOnOrder() {
+        return (String) get("allow_gift_wrapping_on_order");
+    }
+
+    public StoreConfig setAllowGiftWrappingOnOrder(String arg) {
+        optimisticData.put(getKey("allow_gift_wrapping_on_order"), arg);
+        return this;
+    }
+
+    /**
+     * Allow Gift Wrapping for Order Items
+     */
+    public String getAllowGiftWrappingOnOrderItems() {
+        return (String) get("allow_gift_wrapping_on_order_items");
+    }
+
+    public StoreConfig setAllowGiftWrappingOnOrderItems(String arg) {
+        optimisticData.put(getKey("allow_gift_wrapping_on_order_items"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether guest users can write product reviews. Possible values: 1 (Yes) and 0 (No)
+     */
+    public String getAllowGuestsToWriteProductReviews() {
+        return (String) get("allow_guests_to_write_product_reviews");
+    }
+
+    public StoreConfig setAllowGuestsToWriteProductReviews(String arg) {
+        optimisticData.put(getKey("allow_guests_to_write_product_reviews"), arg);
+        return this;
+    }
+
+    /**
+     * The value of the Allow Gift Messages for Order Items option
+     */
+    public String getAllowItems() {
+        return (String) get("allow_items");
+    }
+
+    public StoreConfig setAllowItems(String arg) {
+        optimisticData.put(getKey("allow_items"), arg);
+        return this;
+    }
+
+    /**
+     * The value of the Allow Gift Messages on Order Level option
+     */
+    public String getAllowOrder() {
+        return (String) get("allow_order");
+    }
+
+    public StoreConfig setAllowOrder(String arg) {
+        optimisticData.put(getKey("allow_order"), arg);
+        return this;
+    }
+
+    /**
+     * Allow Printed Card
+     */
+    public String getAllowPrintedCard() {
+        return (String) get("allow_printed_card");
+    }
+
+    public StoreConfig setAllowPrintedCard(String arg) {
+        optimisticData.put(getKey("allow_printed_card"), arg);
+        return this;
+    }
+
+    /**
      * Enable autocomplete on login and forgot password forms
      */
     public Boolean getAutocompleteOnStorefront() {
@@ -735,6 +1128,30 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setBaseUrl(String arg) {
         optimisticData.put(getKey("base_url"), arg);
+        return this;
+    }
+
+    /**
+     * Display Gift Wrapping Prices
+     */
+    public String getCartGiftWrapping() {
+        return (String) get("cart_gift_wrapping");
+    }
+
+    public StoreConfig setCartGiftWrapping(String arg) {
+        optimisticData.put(getKey("cart_gift_wrapping"), arg);
+        return this;
+    }
+
+    /**
+     * Display Printed Card Prices
+     */
+    public String getCartPrintedCard() {
+        return (String) get("cart_printed_card");
+    }
+
+    public StoreConfig setCartPrintedCard(String arg) {
+        optimisticData.put(getKey("cart_printed_card"), arg);
         return this;
     }
 
@@ -1064,6 +1481,176 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Reward points functionality status: enabled/disabled
+     */
+    public String getMagentoRewardGeneralIsEnabled() {
+        return (String) get("magento_reward_general_is_enabled");
+    }
+
+    public StoreConfig setMagentoRewardGeneralIsEnabled(String arg) {
+        optimisticData.put(getKey("magento_reward_general_is_enabled"), arg);
+        return this;
+    }
+
+    /**
+     * Reward points functionality status on the storefront: enabled/disabled
+     */
+    public String getMagentoRewardGeneralIsEnabledOnFront() {
+        return (String) get("magento_reward_general_is_enabled_on_front");
+    }
+
+    public StoreConfig setMagentoRewardGeneralIsEnabledOnFront(String arg) {
+        optimisticData.put(getKey("magento_reward_general_is_enabled_on_front"), arg);
+        return this;
+    }
+
+    /**
+     * Reward points redemption minimum threshold
+     */
+    public String getMagentoRewardGeneralMinPointsBalance() {
+        return (String) get("magento_reward_general_min_points_balance");
+    }
+
+    public StoreConfig setMagentoRewardGeneralMinPointsBalance(String arg) {
+        optimisticData.put(getKey("magento_reward_general_min_points_balance"), arg);
+        return this;
+    }
+
+    /**
+     * Enable reward points history for the customer
+     */
+    public String getMagentoRewardGeneralPublishHistory() {
+        return (String) get("magento_reward_general_publish_history");
+    }
+
+    public StoreConfig setMagentoRewardGeneralPublishHistory(String arg) {
+        optimisticData.put(getKey("magento_reward_general_publish_history"), arg);
+        return this;
+    }
+
+    /**
+     * Number of points for referral, when invitee registers on the site
+     */
+    public String getMagentoRewardPointsInvitationCustomer() {
+        return (String) get("magento_reward_points_invitation_customer");
+    }
+
+    public StoreConfig setMagentoRewardPointsInvitationCustomer(String arg) {
+        optimisticData.put(getKey("magento_reward_points_invitation_customer"), arg);
+        return this;
+    }
+
+    /**
+     * Maximum number of registration referrals that will qualify for rewards
+     */
+    public String getMagentoRewardPointsInvitationCustomerLimit() {
+        return (String) get("magento_reward_points_invitation_customer_limit");
+    }
+
+    public StoreConfig setMagentoRewardPointsInvitationCustomerLimit(String arg) {
+        optimisticData.put(getKey("magento_reward_points_invitation_customer_limit"), arg);
+        return this;
+    }
+
+    /**
+     * Number of points for referral, when invitee places an initial order on the site
+     */
+    public String getMagentoRewardPointsInvitationOrder() {
+        return (String) get("magento_reward_points_invitation_order");
+    }
+
+    public StoreConfig setMagentoRewardPointsInvitationOrder(String arg) {
+        optimisticData.put(getKey("magento_reward_points_invitation_order"), arg);
+        return this;
+    }
+
+    /**
+     * Maximum number of order placements by invitees that will qualify for rewards
+     */
+    public String getMagentoRewardPointsInvitationOrderLimit() {
+        return (String) get("magento_reward_points_invitation_order_limit");
+    }
+
+    public StoreConfig setMagentoRewardPointsInvitationOrderLimit(String arg) {
+        optimisticData.put(getKey("magento_reward_points_invitation_order_limit"), arg);
+        return this;
+    }
+
+    /**
+     * Number of points for newsletter subscription
+     */
+    public String getMagentoRewardPointsNewsletter() {
+        return (String) get("magento_reward_points_newsletter");
+    }
+
+    public StoreConfig setMagentoRewardPointsNewsletter(String arg) {
+        optimisticData.put(getKey("magento_reward_points_newsletter"), arg);
+        return this;
+    }
+
+    /**
+     * Whether customer earns points for shopping according to the reward point exchange rate. In Luma this
+     * also controls whether to show a message in shopping cart about the rewards points earned for the
+     * purchase, as well as the customer’s current reward point balance
+     */
+    public String getMagentoRewardPointsOrder() {
+        return (String) get("magento_reward_points_order");
+    }
+
+    public StoreConfig setMagentoRewardPointsOrder(String arg) {
+        optimisticData.put(getKey("magento_reward_points_order"), arg);
+        return this;
+    }
+
+    /**
+     * Number of points customer gets for registration
+     */
+    public String getMagentoRewardPointsRegister() {
+        return (String) get("magento_reward_points_register");
+    }
+
+    public StoreConfig setMagentoRewardPointsRegister(String arg) {
+        optimisticData.put(getKey("magento_reward_points_register"), arg);
+        return this;
+    }
+
+    /**
+     * Number of points for writing a review
+     */
+    public String getMagentoRewardPointsReview() {
+        return (String) get("magento_reward_points_review");
+    }
+
+    public StoreConfig setMagentoRewardPointsReview(String arg) {
+        optimisticData.put(getKey("magento_reward_points_review"), arg);
+        return this;
+    }
+
+    /**
+     * Maximum number of reviews that will qualify for the rewards
+     */
+    public String getMagentoRewardPointsReviewLimit() {
+        return (String) get("magento_reward_points_review_limit");
+    }
+
+    public StoreConfig setMagentoRewardPointsReviewLimit(String arg) {
+        optimisticData.put(getKey("magento_reward_points_review_limit"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether wishlists are enabled (1) or disabled (0)
+     */
+    public String getMagentoWishlistGeneralIsEnabled() {
+        return (String) get("magento_wishlist_general_is_enabled");
+    }
+
+    public StoreConfig setMagentoWishlistGeneralIsEnabled(String arg) {
+        optimisticData.put(getKey("magento_wishlist_general_is_enabled"), arg);
+        return this;
+    }
+
+    /**
      * The minimum number of characters required for a valid password.
      */
     public String getMinimumPasswordLength() {
@@ -1088,6 +1675,30 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Payflow Pro vault status.
+     */
+    public String getPaymentPayflowproCcVaultActive() {
+        return (String) get("payment_payflowpro_cc_vault_active");
+    }
+
+    public StoreConfig setPaymentPayflowproCcVaultActive(String arg) {
+        optimisticData.put(getKey("payment_payflowpro_cc_vault_active"), arg);
+        return this;
+    }
+
+    /**
+     * Default Price for Printed Card
+     */
+    public String getPrintedCardPrice() {
+        return (String) get("printed_card_price");
+    }
+
+    public StoreConfig setPrintedCardPrice(String arg) {
+        optimisticData.put(getKey("printed_card_price"), arg);
+        return this;
+    }
+
+    /**
      * Corresponds to the &#39;Display Prices On Product View Page&#39; field. It indicates how FPT information is
      * displayed on product pages
      */
@@ -1097,6 +1708,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setProductFixedProductTaxDisplaySetting(FixedProductTaxDisplaySettings arg) {
         optimisticData.put(getKey("product_fixed_product_tax_display_setting"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether product reviews are enabled. Possible values: 1 (Yes) and 0 (No)
+     */
+    public String getProductReviewsEnabled() {
+        return (String) get("product_reviews_enabled");
+    }
+
+    public StoreConfig setProductReviewsEnabled(String arg) {
+        optimisticData.put(getKey("product_reviews_enabled"), arg);
         return this;
     }
 
@@ -1147,6 +1770,30 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setSalesFixedProductTaxDisplaySetting(FixedProductTaxDisplaySettings arg) {
         optimisticData.put(getKey("sales_fixed_product_tax_display_setting"), arg);
+        return this;
+    }
+
+    /**
+     * Display Gift Wrapping Prices
+     */
+    public String getSalesGiftWrapping() {
+        return (String) get("sales_gift_wrapping");
+    }
+
+    public StoreConfig setSalesGiftWrapping(String arg) {
+        optimisticData.put(getKey("sales_gift_wrapping"), arg);
+        return this;
+    }
+
+    /**
+     * Display Printed Card Prices
+     */
+    public String getSalesPrintedCard() {
+        return (String) get("sales_printed_card");
+    }
+
+    public StoreConfig setSalesPrintedCard(String arg) {
+        optimisticData.put(getKey("sales_printed_card"), arg);
         return this;
     }
 
@@ -1320,118 +1967,257 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "absolute_footer": return false;
+            case "absolute_footer":
+                return false;
 
-            case "autocomplete_on_storefront": return false;
+            case "allow_gift_receipt":
+                return false;
 
-            case "base_currency_code": return false;
+            case "allow_gift_wrapping_on_order":
+                return false;
 
-            case "base_link_url": return false;
+            case "allow_gift_wrapping_on_order_items":
+                return false;
 
-            case "base_media_url": return false;
+            case "allow_guests_to_write_product_reviews":
+                return false;
 
-            case "base_static_url": return false;
+            case "allow_items":
+                return false;
 
-            case "base_url": return false;
+            case "allow_order":
+                return false;
 
-            case "catalog_default_sort_by": return false;
+            case "allow_printed_card":
+                return false;
 
-            case "category_fixed_product_tax_display_setting": return false;
+            case "autocomplete_on_storefront":
+                return false;
 
-            case "category_url_suffix": return false;
+            case "base_currency_code":
+                return false;
 
-            case "cms_home_page": return false;
+            case "base_link_url":
+                return false;
 
-            case "cms_no_cookies": return false;
+            case "base_media_url":
+                return false;
 
-            case "cms_no_route": return false;
+            case "base_static_url":
+                return false;
 
-            case "code": return false;
+            case "base_url":
+                return false;
 
-            case "copyright": return false;
+            case "cart_gift_wrapping":
+                return false;
 
-            case "default_description": return false;
+            case "cart_printed_card":
+                return false;
 
-            case "default_display_currency_code": return false;
+            case "catalog_default_sort_by":
+                return false;
 
-            case "default_keywords": return false;
+            case "category_fixed_product_tax_display_setting":
+                return false;
 
-            case "default_title": return false;
+            case "category_url_suffix":
+                return false;
 
-            case "demonotice": return false;
+            case "cms_home_page":
+                return false;
 
-            case "front": return false;
+            case "cms_no_cookies":
+                return false;
 
-            case "grid_per_page": return false;
+            case "cms_no_route":
+                return false;
 
-            case "grid_per_page_values": return false;
+            case "code":
+                return false;
 
-            case "head_includes": return false;
+            case "copyright":
+                return false;
 
-            case "head_shortcut_icon": return false;
+            case "default_description":
+                return false;
 
-            case "header_logo_src": return false;
+            case "default_display_currency_code":
+                return false;
 
-            case "id": return false;
+            case "default_keywords":
+                return false;
 
-            case "list_mode": return false;
+            case "default_title":
+                return false;
 
-            case "list_per_page": return false;
+            case "demonotice":
+                return false;
 
-            case "list_per_page_values": return false;
+            case "front":
+                return false;
 
-            case "locale": return false;
+            case "grid_per_page":
+                return false;
 
-            case "logo_alt": return false;
+            case "grid_per_page_values":
+                return false;
 
-            case "logo_height": return false;
+            case "head_includes":
+                return false;
 
-            case "logo_width": return false;
+            case "head_shortcut_icon":
+                return false;
 
-            case "minimum_password_length": return false;
+            case "header_logo_src":
+                return false;
 
-            case "no_route": return false;
+            case "id":
+                return false;
 
-            case "product_fixed_product_tax_display_setting": return false;
+            case "list_mode":
+                return false;
 
-            case "product_url_suffix": return false;
+            case "list_per_page":
+                return false;
 
-            case "required_character_classes_number": return false;
+            case "list_per_page_values":
+                return false;
 
-            case "root_category_id": return false;
+            case "locale":
+                return false;
 
-            case "sales_fixed_product_tax_display_setting": return false;
+            case "logo_alt":
+                return false;
 
-            case "secure_base_link_url": return false;
+            case "logo_height":
+                return false;
 
-            case "secure_base_media_url": return false;
+            case "logo_width":
+                return false;
 
-            case "secure_base_static_url": return false;
+            case "magento_reward_general_is_enabled":
+                return false;
 
-            case "secure_base_url": return false;
+            case "magento_reward_general_is_enabled_on_front":
+                return false;
 
-            case "send_friend": return true;
+            case "magento_reward_general_min_points_balance":
+                return false;
 
-            case "show_cms_breadcrumbs": return false;
+            case "magento_reward_general_publish_history":
+                return false;
 
-            case "store_name": return false;
+            case "magento_reward_points_invitation_customer":
+                return false;
 
-            case "timezone": return false;
+            case "magento_reward_points_invitation_customer_limit":
+                return false;
 
-            case "title_prefix": return false;
+            case "magento_reward_points_invitation_order":
+                return false;
 
-            case "title_separator": return false;
+            case "magento_reward_points_invitation_order_limit":
+                return false;
 
-            case "title_suffix": return false;
+            case "magento_reward_points_newsletter":
+                return false;
 
-            case "website_id": return false;
+            case "magento_reward_points_order":
+                return false;
 
-            case "weight_unit": return false;
+            case "magento_reward_points_register":
+                return false;
 
-            case "welcome": return false;
+            case "magento_reward_points_review":
+                return false;
 
-            default: return false;
+            case "magento_reward_points_review_limit":
+                return false;
+
+            case "magento_wishlist_general_is_enabled":
+                return false;
+
+            case "minimum_password_length":
+                return false;
+
+            case "no_route":
+                return false;
+
+            case "payment_payflowpro_cc_vault_active":
+                return false;
+
+            case "printed_card_price":
+                return false;
+
+            case "product_fixed_product_tax_display_setting":
+                return false;
+
+            case "product_reviews_enabled":
+                return false;
+
+            case "product_url_suffix":
+                return false;
+
+            case "required_character_classes_number":
+                return false;
+
+            case "root_category_id":
+                return false;
+
+            case "sales_fixed_product_tax_display_setting":
+                return false;
+
+            case "sales_gift_wrapping":
+                return false;
+
+            case "sales_printed_card":
+                return false;
+
+            case "secure_base_link_url":
+                return false;
+
+            case "secure_base_media_url":
+                return false;
+
+            case "secure_base_static_url":
+                return false;
+
+            case "secure_base_url":
+                return false;
+
+            case "send_friend":
+                return true;
+
+            case "show_cms_breadcrumbs":
+                return false;
+
+            case "store_name":
+                return false;
+
+            case "timezone":
+                return false;
+
+            case "title_prefix":
+                return false;
+
+            case "title_separator":
+                return false;
+
+            case "title_suffix":
+                return false;
+
+            case "website_id":
+                return false;
+
+            case "weight_unit":
+                return false;
+
+            case "welcome":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

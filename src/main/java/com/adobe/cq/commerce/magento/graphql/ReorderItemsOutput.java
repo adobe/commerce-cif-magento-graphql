@@ -24,8 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ReorderItemsOutput extends AbstractResponse<ReorderItemsOutput> {
-    public ReorderItemsOutput() {
-    }
+    public ReorderItemsOutput() {}
 
     public ReorderItemsOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -96,12 +95,14 @@ public class ReorderItemsOutput extends AbstractResponse<ReorderItemsOutput> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart": return true;
+            case "cart":
+                return true;
 
-            case "userInputErrors": return true;
+            case "userInputErrors":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

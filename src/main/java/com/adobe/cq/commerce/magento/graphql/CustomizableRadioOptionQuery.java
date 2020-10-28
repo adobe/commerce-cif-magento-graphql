@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableRadioOption contains information about a set of radio buttons that are defined as part

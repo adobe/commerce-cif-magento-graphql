@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * EntityUrl is an output object containing the `id`, `relative_url`, and `type` attributes
@@ -55,7 +56,7 @@ public class EntityUrlQuery extends AbstractQuery<EntityUrlQuery> {
     }
 
     /**
-     * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
+     * The internal relative URL. If the specified url is a redirect, the query returns the redirected
      * URL, not the original.
      */
     public EntityUrlQuery relativeUrl() {

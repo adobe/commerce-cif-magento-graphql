@@ -16,11 +16,13 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 public class AggregationOptionInterfaceQuery extends AbstractQuery<AggregationOptionInterfaceQuery> {
     AggregationOptionInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     AggregationOptionInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

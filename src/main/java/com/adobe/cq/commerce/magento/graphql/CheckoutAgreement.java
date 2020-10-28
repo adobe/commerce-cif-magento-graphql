@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Defines all Checkout Agreement information
  */
 public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
-    public CheckoutAgreement() {
-    }
+    public CheckoutAgreement() {}
 
     public CheckoutAgreement(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -179,22 +178,29 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "agreement_id": return false;
+            case "agreement_id":
+                return false;
 
-            case "checkbox_text": return false;
+            case "checkbox_text":
+                return false;
 
-            case "content": return false;
+            case "content":
+                return false;
 
-            case "content_height": return false;
+            case "content_height":
+                return false;
 
-            case "is_html": return false;
+            case "is_html":
+                return false;
 
-            case "mode": return false;
+            case "mode":
+                return false;
 
-            case "name": return false;
+            case "name":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

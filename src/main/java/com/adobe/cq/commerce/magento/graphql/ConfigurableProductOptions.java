@@ -21,14 +21,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * ConfigurableProductOptions defines configurable attributes for the specified product
  */
 public class ConfigurableProductOptions extends AbstractResponse<ConfigurableProductOptions> {
-    public ConfigurableProductOptions() {
-    }
+    public ConfigurableProductOptions() {}
 
     public ConfigurableProductOptions(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -273,26 +273,35 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "attribute_code": return false;
+            case "attribute_code":
+                return false;
 
-            case "attribute_id": return false;
+            case "attribute_id":
+                return false;
 
-            case "attribute_id_v2": return false;
+            case "attribute_id_v2":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "position": return false;
+            case "position":
+                return false;
 
-            case "product_id": return false;
+            case "product_id":
+                return false;
 
-            case "use_default": return false;
+            case "use_default":
+                return false;
 
-            case "values": return true;
+            case "values":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

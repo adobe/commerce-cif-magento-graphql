@@ -21,6 +21,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -28,8 +29,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * custom attributes).
  */
 public class Aggregation extends AbstractResponse<Aggregation> {
-    public Aggregation() {
-    }
+    public Aggregation() {}
 
     public Aggregation(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -151,16 +151,20 @@ public class Aggregation extends AbstractResponse<Aggregation> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "attribute_code": return false;
+            case "attribute_code":
+                return false;
 
-            case "count": return false;
+            case "count":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "options": return true;
+            case "options":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

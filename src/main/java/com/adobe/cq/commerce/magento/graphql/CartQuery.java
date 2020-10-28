@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 public class CartQuery extends AbstractQuery<CartQuery> {
     CartQuery(StringBuilder _queryBuilder) {
@@ -25,7 +26,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     /**
      * An array of coupons that have been applied to the cart
      *
-     * @deprecated Use applied_coupons instead 
+     * @deprecated Use applied_coupons instead
      */
     @Deprecated
     public CartQuery appliedCoupon(AppliedCouponQueryDefinition queryDef) {
@@ -47,6 +48,58 @@ public class CartQuery extends AbstractQuery<CartQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new AppliedCouponQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Contains the code attribute, which specifies the applied gift card codes
+     */
+    public CartQuery appliedGiftCards(AppliedGiftCardQueryDefinition queryDef) {
+        startField("applied_gift_cards");
+
+        _queryBuilder.append('{');
+        queryDef.define(new AppliedGiftCardQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The amount of reward points applied to the cart
+     */
+    public CartQuery appliedRewardPoints(RewardPointsAmountQueryDefinition queryDef) {
+        startField("applied_reward_points");
+
+        _queryBuilder.append('{');
+        queryDef.define(new RewardPointsAmountQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Contains store credit information applied on the cart
+     */
+    public CartQuery appliedStoreCredit(AppliedStoreCreditQueryDefinition queryDef) {
+        startField("applied_store_credit");
+
+        _queryBuilder.append('{');
+        queryDef.define(new AppliedStoreCreditQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The list of available gift wrapping options for the cart
+     */
+    public CartQuery availableGiftWrappings(GiftWrappingQueryDefinition queryDef) {
+        startField("available_gift_wrappings");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftWrappingQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -82,6 +135,41 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
+     * The entered gift message for the cart
+     */
+    public CartQuery giftMessage(GiftMessageQueryDefinition queryDef) {
+        startField("gift_message");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftMessageQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Wether customer requested gift receipt for the cart
+     */
+    public CartQuery giftReceiptIncluded() {
+        startField("gift_receipt_included");
+
+        return this;
+    }
+
+    /**
+     * The selected gift wrapping for the cart
+     */
+    public CartQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
+        startField("gift_wrapping");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftWrappingQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The ID of the cart.
      */
     public CartQuery id() {
@@ -112,6 +200,15 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         _queryBuilder.append('{');
         queryDef.define(new CartPricesQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Wether customer requested printed card for the cart
+     */
+    public CartQuery printedCardIncluded() {
+        startField("printed_card_included");
 
         return this;
     }

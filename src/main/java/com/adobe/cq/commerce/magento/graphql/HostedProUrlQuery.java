@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains secure URL used for Payments Pro Hosted Solution payment method.
+ */
 public class HostedProUrlQuery extends AbstractQuery<HostedProUrlQuery> {
     HostedProUrlQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);

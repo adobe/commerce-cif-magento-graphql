@@ -21,14 +21,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * BundleProduct defines basic features of a bundle product and contains multiple BundleItems.
  */
 public class BundleProduct extends AbstractResponse<BundleProduct> implements CustomizableProductInterface, PhysicalProductInterface, ProductInterface {
-    public BundleProduct() {
-    }
+    public BundleProduct() {}
 
     public BundleProduct(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -202,6 +202,17 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     ProductImage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new ProductImage(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "is_returnable": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -462,6 +473,12 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     break;
                 }
 
+                case "rating_summary": {
+                    responseData.put(key, jsonAsDouble(field.getValue(), key));
+
+                    break;
+                }
+
                 case "related_products": {
                     List<ProductInterface> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -479,6 +496,18 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "review_count": {
+                    responseData.put(key, jsonAsInteger(field.getValue(), key));
+
+                    break;
+                }
+
+                case "reviews": {
+                    responseData.put(key, new ProductReviews(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
@@ -937,6 +966,18 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
+     * Indicates whether the product can be returned
+     */
+    public String getIsReturnable() {
+        return (String) get("is_returnable");
+    }
+
+    public BundleProduct setIsReturnable(String arg) {
+        optimisticData.put(getKey("is_returnable"), arg);
+        return this;
+    }
+
+    /**
      * An array containing information about individual bundle items.
      */
     public List<BundleItem> getItems() {
@@ -1160,6 +1201,18 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
+     * The average of all the ratings given to the product.
+     */
+    public Double getRatingSummary() {
+        return (Double) get("rating_summary");
+    }
+
+    public BundleProduct setRatingSummary(Double arg) {
+        optimisticData.put(getKey("rating_summary"), arg);
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public List<ProductInterface> getRelatedProducts() {
@@ -1168,6 +1221,30 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public BundleProduct setRelatedProducts(List<ProductInterface> arg) {
         optimisticData.put(getKey("related_products"), arg);
+        return this;
+    }
+
+    /**
+     * The total count of all the reviews given to the product.
+     */
+    public Integer getReviewCount() {
+        return (Integer) get("review_count");
+    }
+
+    public BundleProduct setReviewCount(Integer arg) {
+        optimisticData.put(getKey("review_count"), arg);
+        return this;
+    }
+
+    /**
+     * The list of products reviews.
+     */
+    public ProductReviews getReviews() {
+        return (ProductReviews) get("reviews");
+    }
+
+    public BundleProduct setReviews(ProductReviews arg) {
+        optimisticData.put(getKey("reviews"), arg);
         return this;
     }
 
@@ -1438,116 +1515,182 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "attribute_set_id": return false;
+            case "attribute_set_id":
+                return false;
 
-            case "canonical_url": return false;
+            case "canonical_url":
+                return false;
 
-            case "categories": return false;
+            case "categories":
+                return false;
 
-            case "color": return false;
+            case "color":
+                return false;
 
-            case "country_of_manufacture": return false;
+            case "country_of_manufacture":
+                return false;
 
-            case "created_at": return false;
+            case "created_at":
+                return false;
 
-            case "crosssell_products": return false;
+            case "crosssell_products":
+                return false;
 
-            case "description": return true;
+            case "description":
+                return true;
 
-            case "dynamic_price": return false;
+            case "dynamic_price":
+                return false;
 
-            case "dynamic_sku": return false;
+            case "dynamic_sku":
+                return false;
 
-            case "dynamic_weight": return false;
+            case "dynamic_weight":
+                return false;
 
-            case "gift_message_available": return false;
+            case "gift_message_available":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "image": return true;
+            case "image":
+                return true;
 
-            case "items": return true;
+            case "is_returnable":
+                return false;
 
-            case "manufacturer": return false;
+            case "items":
+                return true;
 
-            case "media_gallery": return false;
+            case "manufacturer":
+                return false;
 
-            case "media_gallery_entries": return true;
+            case "media_gallery":
+                return false;
 
-            case "meta_description": return false;
+            case "media_gallery_entries":
+                return true;
 
-            case "meta_keyword": return false;
+            case "meta_description":
+                return false;
 
-            case "meta_title": return false;
+            case "meta_keyword":
+                return false;
 
-            case "name": return false;
+            case "meta_title":
+                return false;
 
-            case "new_from_date": return false;
+            case "name":
+                return false;
 
-            case "new_to_date": return false;
+            case "new_from_date":
+                return false;
 
-            case "only_x_left_in_stock": return false;
+            case "new_to_date":
+                return false;
 
-            case "options": return false;
+            case "only_x_left_in_stock":
+                return false;
 
-            case "options_container": return false;
+            case "options":
+                return false;
 
-            case "price": return true;
+            case "options_container":
+                return false;
 
-            case "price_range": return true;
+            case "price":
+                return true;
 
-            case "price_tiers": return true;
+            case "price_range":
+                return true;
 
-            case "price_view": return false;
+            case "price_tiers":
+                return true;
 
-            case "product_links": return false;
+            case "price_view":
+                return false;
 
-            case "related_products": return false;
+            case "product_links":
+                return false;
 
-            case "ship_bundle_items": return false;
+            case "rating_summary":
+                return false;
 
-            case "short_description": return true;
+            case "related_products":
+                return false;
 
-            case "sku": return false;
+            case "review_count":
+                return false;
 
-            case "small_image": return true;
+            case "reviews":
+                return true;
 
-            case "special_from_date": return false;
+            case "ship_bundle_items":
+                return false;
 
-            case "special_price": return false;
+            case "short_description":
+                return true;
 
-            case "special_to_date": return false;
+            case "sku":
+                return false;
 
-            case "stock_status": return false;
+            case "small_image":
+                return true;
 
-            case "swatch_image": return false;
+            case "special_from_date":
+                return false;
 
-            case "thumbnail": return true;
+            case "special_price":
+                return false;
 
-            case "tier_price": return false;
+            case "special_to_date":
+                return false;
 
-            case "tier_prices": return true;
+            case "stock_status":
+                return false;
 
-            case "type_id": return false;
+            case "swatch_image":
+                return false;
 
-            case "updated_at": return false;
+            case "thumbnail":
+                return true;
 
-            case "upsell_products": return false;
+            case "tier_price":
+                return false;
 
-            case "url_key": return false;
+            case "tier_prices":
+                return true;
 
-            case "url_path": return false;
+            case "type_id":
+                return false;
 
-            case "url_rewrites": return true;
+            case "updated_at":
+                return false;
 
-            case "url_suffix": return false;
+            case "upsell_products":
+                return false;
 
-            case "websites": return true;
+            case "url_key":
+                return false;
 
-            case "weight": return false;
+            case "url_path":
+                return false;
 
-            default: return false;
+            case "url_rewrites":
+                return true;
+
+            case "url_suffix":
+                return false;
+
+            case "websites":
+                return true;
+
+            case "weight":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

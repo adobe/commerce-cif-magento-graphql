@@ -24,6 +24,7 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
     CustomizableProductInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CustomizableProductInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
@@ -61,6 +62,13 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
     public CustomizableProductInterfaceQuery onDownloadableProduct(DownloadableProductQueryDefinition queryDef) {
         startInlineFragment("DownloadableProduct");
         queryDef.define(new DownloadableProductQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public CustomizableProductInterfaceQuery onGiftCardProduct(GiftCardProductQueryDefinition queryDef) {
+        startInlineFragment("GiftCardProduct");
+        queryDef.define(new GiftCardProductQuery(_queryBuilder));
         _queryBuilder.append('}');
         return this;
     }

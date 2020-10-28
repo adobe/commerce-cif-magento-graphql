@@ -388,11 +388,11 @@ public class QueryBuilderTest {
             .discount(d -> d
                 .amountOff()
                 .percentOff()));
-        
+
         Fragment<ProductInterfaceQuery> minPriceFragment = ProductInterfaceQuery.createFragment("minPrice", q -> q
             .priceRange(r -> r
                 .minimumPrice(p -> p.addFragmentReference(priceFragment))));
-        
+
         Fragment<ProductInterfaceQuery> maxPriceFragment = ProductInterfaceQuery.createFragment("maxPrice", q -> q
             .priceRange(r -> r
                 .maximumPrice(p -> p.addFragmentReference(priceFragment))));
@@ -403,7 +403,7 @@ public class QueryBuilderTest {
                 .url()
                 .label()
                 .position()));
-        
+
         // Main query
         ProductsQueryDefinition queryArgs = q -> q
             .items(p -> p

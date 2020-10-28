@@ -49,4 +49,3 @@ public interface ProductLinksInterface extends CustomFieldInterface {
      */
     String getSku();
 }
-

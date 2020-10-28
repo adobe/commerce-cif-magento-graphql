@@ -25,11 +25,50 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
         super(_queryBuilder);
     }
 
+    /**
+     * The list of available gift wrapping options for the cart item
+     */
+    public SimpleCartItemQuery availableGiftWrapping(GiftWrappingQueryDefinition queryDef) {
+        startField("available_gift_wrapping");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftWrappingQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public SimpleCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
 
         _queryBuilder.append('{');
         queryDef.define(new SelectedCustomizableOptionQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The entered gift message for the cart item
+     */
+    public SimpleCartItemQuery giftMessage(GiftMessageQueryDefinition queryDef) {
+        startField("gift_message");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftMessageQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The selected gift wrapping for the cart item
+     */
+    public SimpleCartItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
+        startField("gift_wrapping");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftWrappingQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

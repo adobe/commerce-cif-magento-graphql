@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownloadableProduct> {
-    public CustomerDownloadableProduct() {
-    }
+    public CustomerDownloadableProduct() {}
 
     public CustomerDownloadableProduct(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -148,18 +147,23 @@ public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownlo
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "date": return false;
+            case "date":
+                return false;
 
-            case "download_url": return false;
+            case "download_url":
+                return false;
 
-            case "order_increment_id": return false;
+            case "order_increment_id":
+                return false;
 
-            case "remaining_downloads": return false;
+            case "remaining_downloads":
+                return false;
 
-            case "status": return false;
+            case "status":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

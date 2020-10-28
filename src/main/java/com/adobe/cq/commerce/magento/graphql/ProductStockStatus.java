@@ -43,6 +43,7 @@ public enum ProductStockStatus {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case IN_STOCK: {
@@ -59,4 +60,3 @@ public enum ProductStockStatus {
         }
     }
 }
-

@@ -24,14 +24,34 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Query extends AbstractResponse<Query> {
-    public Query() {
-    }
+    public Query() {}
 
     public Query(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "availableStores": {
+                    List<StoreConfig> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<StoreConfig> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            StoreConfig optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new StoreConfig(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "cart": {
                     Cart optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -255,6 +275,17 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "giftCardAccount": {
+                    GiftCardAccount optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftCardAccount(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "isEmailAvailable": {
                     IsEmailAvailableOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -273,6 +304,12 @@ public class Query extends AbstractResponse<Query> {
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "productReviewRatingsMetadata": {
+                    responseData.put(key, new ProductReviewRatingsMetadata(jsonAsObject(field.getValue(), key)));
 
                     break;
                 }
@@ -357,6 +394,18 @@ public class Query extends AbstractResponse<Query> {
 
     public String getGraphQlTypeName() {
         return "Query";
+    }
+
+    /**
+     * Get a list of available store views and their config information.
+     */
+    public List<StoreConfig> getAvailableStores() {
+        return (List<StoreConfig>) get("availableStores");
+    }
+
+    public Query setAvailableStores(List<StoreConfig> arg) {
+        optimisticData.put(getKey("availableStores"), arg);
+        return this;
     }
 
     /**
@@ -530,8 +579,9 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * List of customer orders
+     * @deprecated Use orders from customer instead
      */
+    @Deprecated
     public CustomerOrders getCustomerOrders() {
         return (CustomerOrders) get("customerOrders");
     }
@@ -578,6 +628,18 @@ public class Query extends AbstractResponse<Query> {
         return this;
     }
 
+    /**
+     * Get information for gift card account by code
+     */
+    public GiftCardAccount getGiftCardAccount() {
+        return (GiftCardAccount) get("giftCardAccount");
+    }
+
+    public Query setGiftCardAccount(GiftCardAccount arg) {
+        optimisticData.put(getKey("giftCardAccount"), arg);
+        return this;
+    }
+
     public IsEmailAvailableOutput getIsEmailAvailable() {
         return (IsEmailAvailableOutput) get("isEmailAvailable");
     }
@@ -596,6 +658,18 @@ public class Query extends AbstractResponse<Query> {
 
     public Query setPickupLocations(PickupLocations arg) {
         optimisticData.put(getKey("pickupLocations"), arg);
+        return this;
+    }
+
+    /**
+     * Retrieves metadata required by clients to render the Reviews section.
+     */
+    public ProductReviewRatingsMetadata getProductReviewRatingsMetadata() {
+        return (ProductReviewRatingsMetadata) get("productReviewRatingsMetadata");
+    }
+
+    public Query setProductReviewRatingsMetadata(ProductReviewRatingsMetadata arg) {
+        optimisticData.put(getKey("productReviewRatingsMetadata"), arg);
         return this;
     }
 
@@ -668,56 +742,89 @@ public class Query extends AbstractResponse<Query> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "cart": return true;
+            case "availableStores":
+                return true;
 
-            case "categories": return true;
+            case "cart":
+                return true;
 
-            case "category": return true;
+            case "categories":
+                return true;
 
-            case "categoryList": return true;
+            case "category":
+                return true;
 
-            case "checkoutAgreements": return true;
+            case "categoryList":
+                return true;
 
-            case "cmsBlocks": return true;
+            case "checkoutAgreements":
+                return true;
 
-            case "cmsPage": return true;
+            case "cmsBlocks":
+                return true;
 
-            case "countries": return true;
+            case "cmsPage":
+                return true;
 
-            case "country": return true;
+            case "countries":
+                return true;
 
-            case "currency": return true;
+            case "country":
+                return true;
 
-            case "customAttributeMetadata": return true;
+            case "currency":
+                return true;
 
-            case "customer": return true;
+            case "customAttributeMetadata":
+                return true;
 
-            case "customerCart": return true;
+            case "customer":
+                return true;
 
-            case "customerDownloadableProducts": return true;
+            case "customerCart":
+                return true;
 
-            case "customerOrders": return true;
+            case "customerDownloadableProducts":
+                return true;
 
-            case "customerPaymentTokens": return true;
+            case "customerOrders":
+                return true;
 
-            case "getHostedProUrl": return true;
+            case "customerPaymentTokens":
+                return true;
 
-            case "getPayflowLinkToken": return true;
+            case "getHostedProUrl":
+                return true;
 
-            case "isEmailAvailable": return true;
+            case "getPayflowLinkToken":
+                return true;
 
-            case "pickupLocations": return true;
+            case "giftCardAccount":
+                return true;
 
-            case "products": return true;
+            case "isEmailAvailable":
+                return true;
 
-            case "storeConfig": return true;
+            case "pickupLocations":
+                return true;
 
-            case "urlResolver": return true;
+            case "productReviewRatingsMetadata":
+                return true;
 
-            case "wishlist": return true;
+            case "products":
+                return true;
 
-            default: return false;
+            case "storeConfig":
+                return true;
+
+            case "urlResolver":
+                return true;
+
+            case "wishlist":
+                return true;
+
+            default:
+                return false;
         }
     }
 }
-
