@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * GroupedProductItem contains information about an individual grouped product item
  */
 public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
-    public GroupedProductItem() {
-    }
+    public GroupedProductItem() {}
 
     public GroupedProductItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -120,14 +119,17 @@ public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "position": return false;
+            case "position":
+                return false;
 
-            case "product": return false;
+            case "product":
+                return false;
 
-            case "qty": return false;
+            case "qty":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

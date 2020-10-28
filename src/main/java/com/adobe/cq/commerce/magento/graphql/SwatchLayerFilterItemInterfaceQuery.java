@@ -21,6 +21,7 @@ public class SwatchLayerFilterItemInterfaceQuery extends AbstractQuery<SwatchLay
     SwatchLayerFilterItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     SwatchLayerFilterItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
@@ -56,7 +57,8 @@ public class SwatchLayerFilterItemInterfaceQuery extends AbstractQuery<SwatchLay
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SwatchLayerFilterItemInterfaceQuery> createFragment(String name, SwatchLayerFilterItemInterfaceQueryDefinition queryDef) {
+    public static Fragment<SwatchLayerFilterItemInterfaceQuery> createFragment(String name,
+        SwatchLayerFilterItemInterfaceQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SwatchLayerFilterItemInterfaceQuery(sb, false));
         return new Fragment<>(name, "SwatchLayerFilterItemInterface", sb.toString());

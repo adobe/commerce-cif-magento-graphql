@@ -40,7 +40,8 @@ public class SetShippingMethodsOnCartOutputQuery extends AbstractQuery<SetShippi
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SetShippingMethodsOnCartOutputQuery> createFragment(String name, SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
+    public static Fragment<SetShippingMethodsOnCartOutputQuery> createFragment(String name,
+        SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SetShippingMethodsOnCartOutputQuery(sb));
         return new Fragment<>(name, "SetShippingMethodsOnCartOutput", sb.toString());

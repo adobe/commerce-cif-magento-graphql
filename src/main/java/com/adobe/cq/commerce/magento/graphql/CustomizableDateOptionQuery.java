@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableDateOption contains information about a date picker that is defined as part of a
@@ -118,7 +119,8 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
      * 
      * @param fragment The fragment to reference.
      */
-    public CustomizableDateOptionQuery addCustomizableOptionInterfaceFragmentReference(Fragment<CustomizableOptionInterfaceQuery> fragment) {
+    public CustomizableDateOptionQuery addCustomizableOptionInterfaceFragmentReference(
+        Fragment<CustomizableOptionInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

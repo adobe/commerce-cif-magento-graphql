@@ -16,11 +16,15 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.io.Serializable;
 
+import com.shopify.graphql.support.Input;
+
 /**
  * Required input for Payflow Pro and Payments Pro payment methods.
  */
 public class PayflowProInput implements Serializable {
     private CreditCardDetailsInput ccDetails;
+
+    private Input<Boolean> isActivePaymentTokenEnabler = Input.undefined();
 
     public PayflowProInput(CreditCardDetailsInput ccDetails) {
         this.ccDetails = ccDetails;
@@ -41,6 +45,43 @@ public class PayflowProInput implements Serializable {
         return this;
     }
 
+    /**
+     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     */
+    public Boolean getIsActivePaymentTokenEnabler() {
+        return isActivePaymentTokenEnabler.getValue();
+    }
+
+    /**
+     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     */
+    public Input<Boolean> getIsActivePaymentTokenEnablerInput() {
+        return isActivePaymentTokenEnabler;
+    }
+
+    /**
+     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     */
+    public PayflowProInput setIsActivePaymentTokenEnabler(Boolean isActivePaymentTokenEnabler) {
+        this.isActivePaymentTokenEnabler = Input.optional(isActivePaymentTokenEnabler);
+        return this;
+    }
+
+    /**
+     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     */
+    public PayflowProInput setIsActivePaymentTokenEnablerInput(Input<Boolean> isActivePaymentTokenEnabler) {
+        if (isActivePaymentTokenEnabler == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.isActivePaymentTokenEnabler = isActivePaymentTokenEnabler;
+        return this;
+    }
+
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
@@ -49,6 +90,17 @@ public class PayflowProInput implements Serializable {
         separator = ",";
         _queryBuilder.append("cc_details:");
         ccDetails.appendTo(_queryBuilder);
+
+        if (this.isActivePaymentTokenEnabler.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("is_active_payment_token_enabler:");
+            if (isActivePaymentTokenEnabler.getValue() != null) {
+                _queryBuilder.append(isActivePaymentTokenEnabler.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         _queryBuilder.append('}');
     }

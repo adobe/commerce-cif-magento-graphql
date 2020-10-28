@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * A single FPT that can be applied to a product price.
  */
 public class FixedProductTax extends AbstractResponse<FixedProductTax> {
-    public FixedProductTax() {
-    }
+    public FixedProductTax() {}
 
     public FixedProductTax(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -97,12 +96,14 @@ public class FixedProductTax extends AbstractResponse<FixedProductTax> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "amount": return true;
+            case "amount":
+                return true;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

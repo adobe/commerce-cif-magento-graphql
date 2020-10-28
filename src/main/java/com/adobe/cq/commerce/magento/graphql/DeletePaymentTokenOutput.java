@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class DeletePaymentTokenOutput extends AbstractResponse<DeletePaymentTokenOutput> {
-    public DeletePaymentTokenOutput() {
-    }
+    public DeletePaymentTokenOutput() {}
 
     public DeletePaymentTokenOutput(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -83,12 +82,14 @@ public class DeletePaymentTokenOutput extends AbstractResponse<DeletePaymentToke
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "customerPaymentTokens": return true;
+            case "customerPaymentTokens":
+                return true;
 
-            case "result": return false;
+            case "result":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

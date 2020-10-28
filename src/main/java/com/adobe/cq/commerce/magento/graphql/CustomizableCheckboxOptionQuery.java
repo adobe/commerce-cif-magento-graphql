@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableCheckbbixOption contains information about a set of checkbox values that are defined as
@@ -83,7 +84,8 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomizableCheckboxOptionQuery> createFragment(String name, CustomizableCheckboxOptionQueryDefinition queryDef) {
+    public static Fragment<CustomizableCheckboxOptionQuery> createFragment(String name,
+        CustomizableCheckboxOptionQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomizableCheckboxOptionQuery(sb));
         return new Fragment<>(name, "CustomizableCheckboxOption", sb.toString());
@@ -109,7 +111,8 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
      * 
      * @param fragment The fragment to reference.
      */
-    public CustomizableCheckboxOptionQuery addCustomizableOptionInterfaceFragmentReference(Fragment<CustomizableOptionInterfaceQuery> fragment) {
+    public CustomizableCheckboxOptionQuery addCustomizableOptionInterfaceFragmentReference(
+        Fragment<CustomizableOptionInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

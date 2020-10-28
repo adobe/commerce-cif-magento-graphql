@@ -21,6 +21,7 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
     CartItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CartItemInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
@@ -77,6 +78,13 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
     public CartItemInterfaceQuery onDownloadableCartItem(DownloadableCartItemQueryDefinition queryDef) {
         startInlineFragment("DownloadableCartItem");
         queryDef.define(new DownloadableCartItemQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public CartItemInterfaceQuery onGiftCardCartItem(GiftCardCartItemQueryDefinition queryDef) {
+        startInlineFragment("GiftCardCartItem");
+        queryDef.define(new GiftCardCartItemQuery(_queryBuilder));
         _queryBuilder.append('}');
         return this;
     }

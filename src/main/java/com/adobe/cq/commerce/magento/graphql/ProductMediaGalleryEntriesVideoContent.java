@@ -26,8 +26,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * the video.
  */
 public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<ProductMediaGalleryEntriesVideoContent> {
-    public ProductMediaGalleryEntriesVideoContent() {
-    }
+    public ProductMediaGalleryEntriesVideoContent() {}
 
     public ProductMediaGalleryEntriesVideoContent(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -190,20 +189,26 @@ public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<Pro
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "media_type": return false;
+            case "media_type":
+                return false;
 
-            case "video_description": return false;
+            case "video_description":
+                return false;
 
-            case "video_metadata": return false;
+            case "video_metadata":
+                return false;
 
-            case "video_provider": return false;
+            case "video_provider":
+                return false;
 
-            case "video_title": return false;
+            case "video_title":
+                return false;
 
-            case "video_url": return false;
+            case "video_url":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

@@ -39,4 +39,3 @@ public interface CartAddressInterface extends CustomFieldInterface {
 
     String getTelephone();
 }
-

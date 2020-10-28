@@ -19,14 +19,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * BundleItemOption defines characteristics and options for a specific bundle item.
  */
 public class BundleItemOption extends AbstractResponse<BundleItemOption> {
-    public BundleItemOption() {
-    }
+    public BundleItemOption() {}
 
     public BundleItemOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -139,6 +139,12 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -283,30 +289,55 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
         return this;
     }
 
+    /**
+     * A string that encodes option details.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public BundleItemOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "can_change_quantity": return false;
+            case "can_change_quantity":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "is_default": return false;
+            case "is_default":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "position": return false;
+            case "position":
+                return false;
 
-            case "price": return false;
+            case "price":
+                return false;
 
-            case "price_type": return false;
+            case "price_type":
+                return false;
 
-            case "product": return false;
+            case "product":
+                return false;
 
-            case "qty": return false;
+            case "qty":
+                return false;
 
-            case "quantity": return false;
+            case "quantity":
+                return false;
 
-            default: return false;
+            case "uid":
+                return false;
+
+            default:
+                return false;
         }
     }
 }
-

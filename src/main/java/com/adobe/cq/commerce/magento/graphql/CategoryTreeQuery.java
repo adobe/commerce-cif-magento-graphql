@@ -17,6 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * Category Tree implementation.
@@ -24,6 +25,12 @@ import com.shopify.graphql.support.Fragment;
 public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     CategoryTreeQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
+    }
+
+    public CategoryTreeQuery automaticSorting() {
+        startField("automatic_sorting");
+
+        return this;
     }
 
     public CategoryTreeQuery availableSortBy() {

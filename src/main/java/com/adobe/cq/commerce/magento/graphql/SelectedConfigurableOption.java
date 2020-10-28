@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigurableOption> {
-    public SelectedConfigurableOption() {
-    }
+    public SelectedConfigurableOption() {}
 
     public SelectedConfigurableOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -108,16 +107,20 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "option_label": return false;
+            case "option_label":
+                return false;
 
-            case "value_id": return false;
+            case "value_id":
+                return false;
 
-            case "value_label": return false;
+            case "value_label":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

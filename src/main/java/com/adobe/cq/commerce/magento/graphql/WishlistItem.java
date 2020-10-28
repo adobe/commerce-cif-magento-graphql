@@ -19,11 +19,11 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class WishlistItem extends AbstractResponse<WishlistItem> {
-    public WishlistItem() {
-    }
+    public WishlistItem() {}
 
     public WishlistItem(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -160,18 +160,23 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "added_at": return false;
+            case "added_at":
+                return false;
 
-            case "description": return false;
+            case "description":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "product": return false;
+            case "product":
+                return false;
 
-            case "qty": return false;
+            case "qty":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

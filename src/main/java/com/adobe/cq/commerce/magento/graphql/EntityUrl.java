@@ -19,14 +19,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * EntityUrl is an output object containing the `id`, `relative_url`, and `type` attributes
  */
 public class EntityUrl extends AbstractResponse<EntityUrl> {
-    public EntityUrl() {
-    }
+    public EntityUrl() {}
 
     public EntityUrl(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -143,7 +143,7 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
-     * The internal relative URL. If the specified  url is a redirect, the query returns the redirected
+     * The internal relative URL. If the specified url is a redirect, the query returns the redirected
      * URL, not the original.
      */
     public String getRelativeUrl() {
@@ -169,18 +169,23 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "canonical_url": return false;
+            case "canonical_url":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "redirectCode": return false;
+            case "redirectCode":
+                return false;
 
-            case "relative_url": return false;
+            case "relative_url":
+                return false;
 
-            case "type": return false;
+            case "type":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

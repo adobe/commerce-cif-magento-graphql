@@ -15,7 +15,9 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.Input;
 
 /**
  * Arguments provided to Fields or Directives and the input fields of an InputObject are represented as

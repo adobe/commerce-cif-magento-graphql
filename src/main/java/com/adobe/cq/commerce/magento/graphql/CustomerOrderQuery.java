@@ -18,25 +18,119 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Order mapping fields
+ * Contains details about each of the customer&#39;s orders
  */
 public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     CustomerOrderQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The billing address for the order
+     */
+    public CustomerOrderQuery billingAddress(OrderAddressQueryDefinition queryDef) {
+        startField("billing_address");
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderAddressQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The shipping carrier for the order delivery
+     */
+    public CustomerOrderQuery carrier() {
+        startField("carrier");
+
+        return this;
+    }
+
+    /**
+     * Comments about the order
+     */
+    public CustomerOrderQuery comments(SalesCommentItemQueryDefinition queryDef) {
+        startField("comments");
+
+        _queryBuilder.append('{');
+        queryDef.define(new SalesCommentItemQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * @deprecated Use the order_date attribute instead
+     */
+    @Deprecated
     public CustomerOrderQuery createdAt() {
         startField("created_at");
 
         return this;
     }
 
+    /**
+     * A list of credit memos
+     */
+    public CustomerOrderQuery creditMemos(CreditMemoQueryDefinition queryDef) {
+        startField("credit_memos");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CreditMemoQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The entered gift message for the order
+     */
+    public CustomerOrderQuery giftMessage(GiftMessageQueryDefinition queryDef) {
+        startField("gift_message");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftMessageQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Whether customer requested gift receipt for the order
+     */
+    public CustomerOrderQuery giftReceiptIncluded() {
+        startField("gift_receipt_included");
+
+        return this;
+    }
+
+    /**
+     * The selected gift wrapping for the order
+     */
+    public CustomerOrderQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
+        startField("gift_wrapping");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftWrappingQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * @deprecated Use the totals.grand_total attribute instead
+     */
+    @Deprecated
     public CustomerOrderQuery grandTotal() {
         startField("grand_total");
 
         return this;
     }
 
+    /**
+     * Unique identifier for the order
+     */
     public CustomerOrderQuery id() {
         startField("id");
 
@@ -44,7 +138,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * @deprecated Use the order_number instead.
+     * @deprecated Use the id attribute instead
      */
     @Deprecated
     public CustomerOrderQuery incrementId() {
@@ -54,16 +148,134 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
+     * A list of invoices for the order
+     */
+    public CustomerOrderQuery invoices(InvoiceQueryDefinition queryDef) {
+        startField("invoices");
+
+        _queryBuilder.append('{');
+        queryDef.define(new InvoiceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array containing the items purchased in this order
+     */
+    public CustomerOrderQuery items(OrderItemInterfaceQueryDefinition queryDef) {
+        startField("items");
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderItemInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The order number
      */
+    public CustomerOrderQuery number() {
+        startField("number");
+
+        return this;
+    }
+
+    /**
+     * The date the order was placed
+     */
+    public CustomerOrderQuery orderDate() {
+        startField("order_date");
+
+        return this;
+    }
+
+    /**
+     * @deprecated Use the number attribute instead
+     */
+    @Deprecated
     public CustomerOrderQuery orderNumber() {
         startField("order_number");
 
         return this;
     }
 
+    /**
+     * Payment details for the order
+     */
+    public CustomerOrderQuery paymentMethods(OrderPaymentMethodQueryDefinition queryDef) {
+        startField("payment_methods");
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderPaymentMethodQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Whether customer requested printed card for the order
+     */
+    public CustomerOrderQuery printedCardIncluded() {
+        startField("printed_card_included");
+
+        return this;
+    }
+
+    /**
+     * A list of shipments for the order
+     */
+    public CustomerOrderQuery shipments(OrderShipmentQueryDefinition queryDef) {
+        startField("shipments");
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderShipmentQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The shipping address for the order
+     */
+    public CustomerOrderQuery shippingAddress(OrderAddressQueryDefinition queryDef) {
+        startField("shipping_address");
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderAddressQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The delivery method for the order
+     */
+    public CustomerOrderQuery shippingMethod() {
+        startField("shipping_method");
+
+        return this;
+    }
+
+    /**
+     * The current status of the order
+     */
     public CustomerOrderQuery status() {
         startField("status");
+
+        return this;
+    }
+
+    /**
+     * Contains details about the calculated totals for this order
+     */
+    public CustomerOrderQuery total(OrderTotalQueryDefinition queryDef) {
+        startField("total");
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderTotalQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

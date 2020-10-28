@@ -117,7 +117,8 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
      * 
      * @param fragment The fragment to reference.
      */
-    public SwatchLayerFilterItemQuery addSwatchLayerFilterItemInterfaceFragmentReference(Fragment<SwatchLayerFilterItemInterfaceQuery> fragment) {
+    public SwatchLayerFilterItemQuery addSwatchLayerFilterItemInterfaceFragmentReference(
+        Fragment<SwatchLayerFilterItemInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

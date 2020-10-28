@@ -24,8 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class BillingCartAddress extends AbstractResponse<BillingCartAddress> implements CartAddressInterface {
-    public BillingCartAddress() {
-    }
+    public BillingCartAddress() {}
 
     public BillingCartAddress(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -234,28 +233,38 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "city": return false;
+            case "city":
+                return false;
 
-            case "company": return false;
+            case "company":
+                return false;
 
-            case "country": return true;
+            case "country":
+                return true;
 
-            case "customer_notes": return false;
+            case "customer_notes":
+                return false;
 
-            case "firstname": return false;
+            case "firstname":
+                return false;
 
-            case "lastname": return false;
+            case "lastname":
+                return false;
 
-            case "postcode": return false;
+            case "postcode":
+                return false;
 
-            case "region": return true;
+            case "region":
+                return true;
 
-            case "street": return false;
+            case "street":
+                return false;
 
-            case "telephone": return false;
+            case "telephone":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

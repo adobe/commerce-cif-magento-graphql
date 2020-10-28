@@ -91,7 +91,8 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ConfigurableProductOptionsValuesQuery> createFragment(String name, ConfigurableProductOptionsValuesQueryDefinition queryDef) {
+    public static Fragment<ConfigurableProductOptionsValuesQuery> createFragment(String name,
+        ConfigurableProductOptionsValuesQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ConfigurableProductOptionsValuesQuery(sb));
         return new Fragment<>(name, "ConfigurableProductOptionsValues", sb.toString());

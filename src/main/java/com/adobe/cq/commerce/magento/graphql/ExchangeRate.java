@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ExchangeRate extends AbstractResponse<ExchangeRate> {
-    public ExchangeRate() {
-    }
+    public ExchangeRate() {}
 
     public ExchangeRate(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -88,12 +87,14 @@ public class ExchangeRate extends AbstractResponse<ExchangeRate> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "currency_to": return false;
+            case "currency_to":
+                return false;
 
-            case "rate": return false;
+            case "rate":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

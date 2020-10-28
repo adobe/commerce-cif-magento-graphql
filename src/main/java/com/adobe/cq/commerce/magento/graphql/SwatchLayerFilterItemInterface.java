@@ -24,4 +24,3 @@ public interface SwatchLayerFilterItemInterface extends CustomFieldInterface {
      */
     SwatchData getSwatchData();
 }
-

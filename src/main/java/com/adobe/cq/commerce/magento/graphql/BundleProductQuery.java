@@ -15,7 +15,9 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * BundleProduct defines basic features of a bundle product and contains multiple BundleItems.
@@ -161,6 +163,15 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
         _queryBuilder.append('{');
         queryDef.define(new ProductImageQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public BundleProductQuery isReturnable() {
+        startField("is_returnable");
 
         return this;
     }
@@ -367,6 +378,15 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
+     * The average of all the ratings given to the product.
+     */
+    public BundleProductQuery ratingSummary() {
+        startField("rating_summary");
+
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public BundleProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
@@ -374,6 +394,71 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The total count of all the reviews given to the product.
+     */
+    public BundleProductQuery reviewCount() {
+        startField("review_count");
+
+        return this;
+    }
+
+    public class ReviewsArguments extends Arguments {
+        ReviewsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once.
+         */
+        public ReviewsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return.
+         */
+        public ReviewsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface ReviewsArgumentsDefinition {
+        void define(ReviewsArguments args);
+    }
+
+    /**
+     * The list of products reviews.
+     */
+    public BundleProductQuery reviews(ProductReviewsQueryDefinition queryDef) {
+        return reviews(args -> {}, queryDef);
+    }
+
+    /**
+     * The list of products reviews.
+     */
+    public BundleProductQuery reviews(ReviewsArgumentsDefinition argsDef, ProductReviewsQueryDefinition queryDef) {
+        startField("reviews");
+
+        ReviewsArguments args = new ReviewsArguments(_queryBuilder);
+        argsDef.define(args);
+        ReviewsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductReviewsQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

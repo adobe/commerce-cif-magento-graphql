@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.CustomFieldInterface;
+import com.shopify.graphql.support.ID;
 
 /**
  * The CustomizableOptionInterface contains basic information about a customizable option. It can be
@@ -44,4 +45,3 @@ public interface CustomizableOptionInterface extends CustomFieldInterface {
      */
     String getTitle();
 }
-

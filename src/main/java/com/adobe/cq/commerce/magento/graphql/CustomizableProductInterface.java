@@ -30,4 +30,3 @@ public interface CustomizableProductInterface extends CustomFieldInterface {
      */
     List<CustomizableOptionInterface> getOptions();
 }
-

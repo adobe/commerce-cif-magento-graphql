@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Order extends AbstractResponse<Order> {
-    public Order() {
-    }
+    public Order() {}
 
     public Order(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -87,12 +86,14 @@ public class Order extends AbstractResponse<Order> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "order_id": return false;
+            case "order_id":
+                return false;
 
-            case "order_number": return false;
+            case "order_number":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

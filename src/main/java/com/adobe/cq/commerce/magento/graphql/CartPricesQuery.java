@@ -33,7 +33,7 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
     }
 
     /**
-     * @deprecated Use discounts instead 
+     * @deprecated Use discounts instead
      */
     @Deprecated
     public CartPricesQuery discount(CartDiscountQueryDefinition queryDef) {
@@ -54,6 +54,19 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new DiscountQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The list of prices for the selected gift options
+     */
+    public CartPricesQuery giftOptions(GiftOptionsPricesQueryDefinition queryDef) {
+        startField("gift_options");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftOptionsPricesQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

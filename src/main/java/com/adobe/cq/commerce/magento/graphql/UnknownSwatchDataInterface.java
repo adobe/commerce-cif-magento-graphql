@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class UnknownSwatchDataInterface extends AbstractResponse<UnknownSwatchDataInterface> implements SwatchDataInterface {
-    public UnknownSwatchDataInterface() {
-    }
+    public UnknownSwatchDataInterface() {}
 
     public UnknownSwatchDataInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -92,10 +91,11 @@ public class UnknownSwatchDataInterface extends AbstractResponse<UnknownSwatchDa
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "value": return false;
+            case "value":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

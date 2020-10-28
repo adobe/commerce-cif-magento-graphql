@@ -54,6 +54,15 @@ public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateVa
     }
 
     /**
+     * A string that encodes option details.
+     */
+    public CustomizableDateValueQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
      * Creates a GraphQL "named" fragment with the specified query type definition.
      * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
      * 

@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class ImageSwatchData extends AbstractResponse<ImageSwatchData> implements SwatchDataInterface {
-    public ImageSwatchData() {
-    }
+    public ImageSwatchData() {}
 
     public ImageSwatchData(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -94,12 +93,14 @@ public class ImageSwatchData extends AbstractResponse<ImageSwatchData> implement
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "thumbnail": return false;
+            case "thumbnail":
+                return false;
 
-            case "value": return false;
+            case "value":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

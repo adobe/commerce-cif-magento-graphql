@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class AvailablePaymentMethod extends AbstractResponse<AvailablePaymentMethod> {
-    public AvailablePaymentMethod() {
-    }
+    public AvailablePaymentMethod() {}
 
     public AvailablePaymentMethod(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -84,12 +83,14 @@ public class AvailablePaymentMethod extends AbstractResponse<AvailablePaymentMet
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "code": return false;
+            case "code":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

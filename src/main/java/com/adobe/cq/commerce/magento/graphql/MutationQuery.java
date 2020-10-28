@@ -15,11 +15,13 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 public class MutationQuery extends AbstractQuery<MutationQuery> {
     MutationQuery(StringBuilder _queryBuilder) {
@@ -48,7 +50,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addBundleProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addBundleProductsToCart(AddBundleProductsToCartArgumentsDefinition argsDef, AddBundleProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addBundleProductsToCart(AddBundleProductsToCartArgumentsDefinition argsDef,
+        AddBundleProductsToCartOutputQueryDefinition queryDef) {
         startField("addBundleProductsToCart");
 
         AddBundleProductsToCartArguments args = new AddBundleProductsToCartArguments(_queryBuilder);
@@ -84,7 +87,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addConfigurableProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addConfigurableProductsToCart(AddConfigurableProductsToCartArgumentsDefinition argsDef, AddConfigurableProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addConfigurableProductsToCart(AddConfigurableProductsToCartArgumentsDefinition argsDef,
+        AddConfigurableProductsToCartOutputQueryDefinition queryDef) {
         startField("addConfigurableProductsToCart");
 
         AddConfigurableProductsToCartArguments args = new AddConfigurableProductsToCartArguments(_queryBuilder);
@@ -120,7 +124,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addDownloadableProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addDownloadableProductsToCart(AddDownloadableProductsToCartArgumentsDefinition argsDef, AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addDownloadableProductsToCart(AddDownloadableProductsToCartArgumentsDefinition argsDef,
+        AddDownloadableProductsToCartOutputQueryDefinition queryDef) {
         startField("addDownloadableProductsToCart");
 
         AddDownloadableProductsToCartArguments args = new AddDownloadableProductsToCartArguments(_queryBuilder);
@@ -129,6 +134,67 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new AddDownloadableProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Add any type of product to the cart
+     */
+    public MutationQuery addProductsToCart(String cartId, List<CartItemInput> cartItems, AddProductsToCartOutputQueryDefinition queryDef) {
+        startField("addProductsToCart");
+
+        _queryBuilder.append("(cartId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, cartId.toString());
+
+        _queryBuilder.append(",cartItems:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (CartItemInput item1 : cartItems) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Adds one or more products to the specified wish list. This mutation supports all product types
+     */
+    public MutationQuery addProductsToWishlist(ID wishlistId, List<WishlistItemInput> wishlistItems,
+        AddProductsToWishlistOutputQueryDefinition queryDef) {
+        startField("addProductsToWishlist");
+
+        _queryBuilder.append("(wishlistId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, wishlistId.toString());
+
+        _queryBuilder.append(",wishlistItems:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (WishlistItemInput item1 : wishlistItems) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddProductsToWishlistOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -156,7 +222,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addSimpleProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addSimpleProductsToCart(AddSimpleProductsToCartArgumentsDefinition argsDef, AddSimpleProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addSimpleProductsToCart(AddSimpleProductsToCartArgumentsDefinition argsDef,
+        AddSimpleProductsToCartOutputQueryDefinition queryDef) {
         startField("addSimpleProductsToCart");
 
         AddSimpleProductsToCartArguments args = new AddSimpleProductsToCartArguments(_queryBuilder);
@@ -192,7 +259,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return addVirtualProductsToCart(args -> {}, queryDef);
     }
 
-    public MutationQuery addVirtualProductsToCart(AddVirtualProductsToCartArgumentsDefinition argsDef, AddVirtualProductsToCartOutputQueryDefinition queryDef) {
+    public MutationQuery addVirtualProductsToCart(AddVirtualProductsToCartArgumentsDefinition argsDef,
+        AddVirtualProductsToCartOutputQueryDefinition queryDef) {
         startField("addVirtualProductsToCart");
 
         AddVirtualProductsToCartArguments args = new AddVirtualProductsToCartArguments(_queryBuilder);
@@ -237,6 +305,85 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new ApplyCouponToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class ApplyGiftCardToCartArguments extends Arguments {
+        ApplyGiftCardToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public ApplyGiftCardToCartArguments input(ApplyGiftCardToCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface ApplyGiftCardToCartArgumentsDefinition {
+        void define(ApplyGiftCardToCartArguments args);
+    }
+
+    /**
+     * Apply a pre-defined gift card code to the specified cart.
+     */
+    public MutationQuery applyGiftCardToCart(ApplyGiftCardToCartOutputQueryDefinition queryDef) {
+        return applyGiftCardToCart(args -> {}, queryDef);
+    }
+
+    /**
+     * Apply a pre-defined gift card code to the specified cart.
+     */
+    public MutationQuery applyGiftCardToCart(ApplyGiftCardToCartArgumentsDefinition argsDef,
+        ApplyGiftCardToCartOutputQueryDefinition queryDef) {
+        startField("applyGiftCardToCart");
+
+        ApplyGiftCardToCartArguments args = new ApplyGiftCardToCartArguments(_queryBuilder);
+        argsDef.define(args);
+        ApplyGiftCardToCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ApplyGiftCardToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Apply all available points, up to the cart total. Partial redemption is not available
+     */
+    public MutationQuery applyRewardPointsToCart(ID cartId, ApplyRewardPointsToCartOutputQueryDefinition queryDef) {
+        startField("applyRewardPointsToCart");
+
+        _queryBuilder.append("(cartId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, cartId.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new ApplyRewardPointsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Apply store credit to the specified cart.
+     */
+    public MutationQuery applyStoreCreditToCart(ApplyStoreCreditToCartInput input, ApplyStoreCreditToCartOutputQueryDefinition queryDef) {
+        startField("applyStoreCreditToCart");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new ApplyStoreCreditToCartOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -308,6 +455,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    /**
+     * Create customer account
+     */
+    public MutationQuery createCustomerV2(CustomerCreateInput input, CustomerOutputQueryDefinition queryDef) {
+        startField("createCustomerV2");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class CreateEmptyCartArguments extends Arguments {
         CreateEmptyCartArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
@@ -346,6 +511,49 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    public class CreateKlarnaPaymentsSessionArguments extends Arguments {
+        CreateKlarnaPaymentsSessionArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public CreateKlarnaPaymentsSessionArguments input(createKlarnaPaymentsSessionInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface CreateKlarnaPaymentsSessionArgumentsDefinition {
+        void define(CreateKlarnaPaymentsSessionArguments args);
+    }
+
+    /**
+     * Creates a Klarna Payments Session.
+     */
+    public MutationQuery createKlarnaPaymentsSession(createKlarnaPaymentsSessionOutputQueryDefinition queryDef) {
+        return createKlarnaPaymentsSession(args -> {}, queryDef);
+    }
+
+    /**
+     * Creates a Klarna Payments Session.
+     */
+    public MutationQuery createKlarnaPaymentsSession(CreateKlarnaPaymentsSessionArgumentsDefinition argsDef,
+        createKlarnaPaymentsSessionOutputQueryDefinition queryDef) {
+        startField("createKlarnaPaymentsSession");
+
+        CreateKlarnaPaymentsSessionArguments args = new CreateKlarnaPaymentsSessionArguments(_queryBuilder);
+        argsDef.define(args);
+        CreateKlarnaPaymentsSessionArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new createKlarnaPaymentsSessionOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     /**
      * Initiates a transaction and receives a token. Use this mutation for Payflow Pro and Payments Pro
      * payment methods
@@ -379,6 +587,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new PaypalExpressTokenOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Creates a product review for the specified SKU
+     */
+    public MutationQuery createProductReview(CreateProductReviewInput input, CreateProductReviewOutputQueryDefinition queryDef) {
+        startField("createProductReview");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CreateProductReviewOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -513,6 +739,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    /**
+     * Redeem gift card for store credit.
+     */
+    public MutationQuery redeemGiftCardBalanceAsStoreCredit(GiftCardAccountInput input, GiftCardAccountQueryDefinition queryDef) {
+        startField("redeemGiftCardBalanceAsStoreCredit");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftCardAccountQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class RemoveCouponFromCartArguments extends Arguments {
         RemoveCouponFromCartArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
@@ -535,7 +779,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return removeCouponFromCart(args -> {}, queryDef);
     }
 
-    public MutationQuery removeCouponFromCart(RemoveCouponFromCartArgumentsDefinition argsDef, RemoveCouponFromCartOutputQueryDefinition queryDef) {
+    public MutationQuery removeCouponFromCart(RemoveCouponFromCartArgumentsDefinition argsDef,
+        RemoveCouponFromCartOutputQueryDefinition queryDef) {
         startField("removeCouponFromCart");
 
         RemoveCouponFromCartArguments args = new RemoveCouponFromCartArguments(_queryBuilder);
@@ -544,6 +789,43 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new RemoveCouponFromCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class RemoveGiftCardFromCartArguments extends Arguments {
+        RemoveGiftCardFromCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public RemoveGiftCardFromCartArguments input(RemoveGiftCardFromCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface RemoveGiftCardFromCartArgumentsDefinition {
+        void define(RemoveGiftCardFromCartArguments args);
+    }
+
+    public MutationQuery removeGiftCardFromCart(RemoveGiftCardFromCartOutputQueryDefinition queryDef) {
+        return removeGiftCardFromCart(args -> {}, queryDef);
+    }
+
+    public MutationQuery removeGiftCardFromCart(RemoveGiftCardFromCartArgumentsDefinition argsDef,
+        RemoveGiftCardFromCartOutputQueryDefinition queryDef) {
+        startField("removeGiftCardFromCart");
+
+        RemoveGiftCardFromCartArguments args = new RemoveGiftCardFromCartArguments(_queryBuilder);
+        argsDef.define(args);
+        RemoveGiftCardFromCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveGiftCardFromCartOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -571,7 +853,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return removeItemFromCart(args -> {}, queryDef);
     }
 
-    public MutationQuery removeItemFromCart(RemoveItemFromCartArgumentsDefinition argsDef, RemoveItemFromCartOutputQueryDefinition queryDef) {
+    public MutationQuery removeItemFromCart(RemoveItemFromCartArgumentsDefinition argsDef,
+        RemoveItemFromCartOutputQueryDefinition queryDef) {
         startField("removeItemFromCart");
 
         RemoveItemFromCartArguments args = new RemoveItemFromCartArguments(_queryBuilder);
@@ -580,6 +863,74 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new RemoveItemFromCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Removes one or more products from the specified wish list
+     */
+    public MutationQuery removeProductsFromWishlist(ID wishlistId, List<ID> wishlistItemsIds,
+        RemoveProductsFromWishlistOutputQueryDefinition queryDef) {
+        startField("removeProductsFromWishlist");
+
+        _queryBuilder.append("(wishlistId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, wishlistId.toString());
+
+        _queryBuilder.append(",wishlistItemsIds:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (ID item1 : wishlistItemsIds) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                AbstractQuery.appendQuotedString(_queryBuilder, item1.toString());
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveProductsFromWishlistOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Cancel the application of reward points to the cart
+     */
+    public MutationQuery removeRewardPointsFromCart(ID cartId, RemoveRewardPointsFromCartOutputQueryDefinition queryDef) {
+        startField("removeRewardPointsFromCart");
+
+        _queryBuilder.append("(cartId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, cartId.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveRewardPointsFromCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Remove applied store credit from the specified cart.
+     */
+    public MutationQuery removeStoreCreditFromCart(RemoveStoreCreditFromCartInput input,
+        RemoveStoreCreditFromCartOutputQueryDefinition queryDef) {
+        startField("removeStoreCreditFromCart");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveStoreCreditFromCartOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -716,7 +1067,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setBillingAddressOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setBillingAddressOnCart(SetBillingAddressOnCartArgumentsDefinition argsDef, SetBillingAddressOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setBillingAddressOnCart(SetBillingAddressOnCartArgumentsDefinition argsDef,
+        SetBillingAddressOnCartOutputQueryDefinition queryDef) {
         startField("setBillingAddressOnCart");
 
         SetBillingAddressOnCartArguments args = new SetBillingAddressOnCartArguments(_queryBuilder);
@@ -725,6 +1077,49 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new SetBillingAddressOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class SetGiftOptionsOnCartArguments extends Arguments {
+        SetGiftOptionsOnCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public SetGiftOptionsOnCartArguments input(SetGiftOptionsOnCartInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface SetGiftOptionsOnCartArgumentsDefinition {
+        void define(SetGiftOptionsOnCartArguments args);
+    }
+
+    /**
+     * Set gift options like gift wrapping or gift message for the entire cart
+     */
+    public MutationQuery setGiftOptionsOnCart(SetGiftOptionsOnCartOutputQueryDefinition queryDef) {
+        return setGiftOptionsOnCart(args -> {}, queryDef);
+    }
+
+    /**
+     * Set gift options like gift wrapping or gift message for the entire cart
+     */
+    public MutationQuery setGiftOptionsOnCart(SetGiftOptionsOnCartArgumentsDefinition argsDef,
+        SetGiftOptionsOnCartOutputQueryDefinition queryDef) {
+        startField("setGiftOptionsOnCart");
+
+        SetGiftOptionsOnCartArguments args = new SetGiftOptionsOnCartArguments(_queryBuilder);
+        argsDef.define(args);
+        SetGiftOptionsOnCartArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new SetGiftOptionsOnCartOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -752,7 +1147,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setGuestEmailOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setGuestEmailOnCart(SetGuestEmailOnCartArgumentsDefinition argsDef, SetGuestEmailOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setGuestEmailOnCart(SetGuestEmailOnCartArgumentsDefinition argsDef,
+        SetGuestEmailOnCartOutputQueryDefinition queryDef) {
         startField("setGuestEmailOnCart");
 
         SetGuestEmailOnCartArguments args = new SetGuestEmailOnCartArguments(_queryBuilder);
@@ -795,7 +1191,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
      * @deprecated Should use setPaymentMethodOnCart and placeOrder mutations in single request.
      */
     @Deprecated
-    public MutationQuery setPaymentMethodAndPlaceOrder(SetPaymentMethodAndPlaceOrderArgumentsDefinition argsDef, PlaceOrderOutputQueryDefinition queryDef) {
+    public MutationQuery setPaymentMethodAndPlaceOrder(SetPaymentMethodAndPlaceOrderArgumentsDefinition argsDef,
+        PlaceOrderOutputQueryDefinition queryDef) {
         startField("setPaymentMethodAndPlaceOrder");
 
         SetPaymentMethodAndPlaceOrderArguments args = new SetPaymentMethodAndPlaceOrderArguments(_queryBuilder);
@@ -831,7 +1228,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setPaymentMethodOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setPaymentMethodOnCart(SetPaymentMethodOnCartArgumentsDefinition argsDef, SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setPaymentMethodOnCart(SetPaymentMethodOnCartArgumentsDefinition argsDef,
+        SetPaymentMethodOnCartOutputQueryDefinition queryDef) {
         startField("setPaymentMethodOnCart");
 
         SetPaymentMethodOnCartArguments args = new SetPaymentMethodOnCartArguments(_queryBuilder);
@@ -867,7 +1265,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setShippingAddressesOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setShippingAddressesOnCart(SetShippingAddressesOnCartArgumentsDefinition argsDef, SetShippingAddressesOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setShippingAddressesOnCart(SetShippingAddressesOnCartArgumentsDefinition argsDef,
+        SetShippingAddressesOnCartOutputQueryDefinition queryDef) {
         startField("setShippingAddressesOnCart");
 
         SetShippingAddressesOnCartArguments args = new SetShippingAddressesOnCartArguments(_queryBuilder);
@@ -903,7 +1302,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return setShippingMethodsOnCart(args -> {}, queryDef);
     }
 
-    public MutationQuery setShippingMethodsOnCart(SetShippingMethodsOnCartArgumentsDefinition argsDef, SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
+    public MutationQuery setShippingMethodsOnCart(SetShippingMethodsOnCartArgumentsDefinition argsDef,
+        SetShippingMethodsOnCartOutputQueryDefinition queryDef) {
         startField("setShippingMethodsOnCart");
 
         SetShippingMethodsOnCartArguments args = new SetShippingMethodsOnCartArguments(_queryBuilder);
@@ -912,6 +1312,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new SetShippingMethodsOnCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Subscribes the specified email to a newsletter
+     */
+    public MutationQuery subscribeEmailToNewsletter(String email, SubscribeEmailToNewsletterOutputQueryDefinition queryDef) {
+        startField("subscribeEmailToNewsletter");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new SubscribeEmailToNewsletterOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -954,7 +1372,7 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
-     * Update the customer&#39;s personal information
+     * Deprecated. Use UpdateCustomerV2 instead.
      */
     public MutationQuery updateCustomer(CustomerInput input, CustomerOutputQueryDefinition queryDef) {
         startField("updateCustomer");
@@ -999,7 +1417,8 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     /**
      * Update customer address
      */
-    public MutationQuery updateCustomerAddress(int id, UpdateCustomerAddressArgumentsDefinition argsDef, CustomerAddressQueryDefinition queryDef) {
+    public MutationQuery updateCustomerAddress(int id, UpdateCustomerAddressArgumentsDefinition argsDef,
+        CustomerAddressQueryDefinition queryDef) {
         startField("updateCustomerAddress");
 
         _queryBuilder.append("(id:");
@@ -1011,6 +1430,73 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CustomerAddressQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public MutationQuery updateCustomerEmail(String email, String password, CustomerOutputQueryDefinition queryDef) {
+        startField("updateCustomerEmail");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(",password:");
+        AbstractQuery.appendQuotedString(_queryBuilder, password.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Update the customer&#39;s personal information
+     */
+    public MutationQuery updateCustomerV2(CustomerUpdateInput input, CustomerOutputQueryDefinition queryDef) {
+        startField("updateCustomerV2");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Updates one or more products in the specified wish list
+     */
+    public MutationQuery updateProductsInWishlist(ID wishlistId, List<WishlistItemUpdateInput> wishlistItems,
+        UpdateProductsInWishlistOutputQueryDefinition queryDef) {
+        startField("updateProductsInWishlist");
+
+        _queryBuilder.append("(wishlistId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, wishlistId.toString());
+
+        _queryBuilder.append(",wishlistItems:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (WishlistItemUpdateInput item1 : wishlistItems) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new UpdateProductsInWishlistOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

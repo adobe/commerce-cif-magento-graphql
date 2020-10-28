@@ -92,7 +92,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
         }
         return converter.apply((JsonElement) responseData.get(key), key);
     }
-    
+
     /**
      * Tries to deserialise and return the given JSON field as a String. The field itself is expected
      * to be stored in the object data as a {@link JsonElement}, which is the case for custom simple fields.
@@ -105,7 +105,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
         BiFunction<JsonElement, String, String> converter = converterWrapper(this::jsonAsString);
         return getAs(field, converter);
     }
-    
+
     /**
      * Tries to deserialise and return the given JSON field as an Integer. The field itself is expected
      * to be stored in the object data as a {@link JsonElement}, which is the case for custom simple fields.

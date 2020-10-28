@@ -15,7 +15,9 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * Customer defines the customer name and address and other details
@@ -126,7 +128,8 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     /**
      * The ID assigned to the customer
      *
-     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for authentication. There is no need to know customer ID on the client side.
+     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for
+     *             authentication. There is no need to know customer ID on the client side.
      */
     @Deprecated
     public CustomerQuery id() {
@@ -162,11 +165,154 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         return this;
     }
 
+    public class OrdersArguments extends Arguments {
+        OrdersArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Defines the filter to use for searching customer orders
+         */
+        public OrdersArguments filter(CustomerOrdersFilterInput value) {
+            if (value != null) {
+                startArgument("filter");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return. The default value is 1
+         */
+        public OrdersArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once. The default value is 20
+         */
+        public OrdersArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface OrdersArgumentsDefinition {
+        void define(OrdersArguments args);
+    }
+
+    public CustomerQuery orders(CustomerOrdersQueryDefinition queryDef) {
+        return orders(args -> {}, queryDef);
+    }
+
+    public CustomerQuery orders(OrdersArgumentsDefinition argsDef, CustomerOrdersQueryDefinition queryDef) {
+        startField("orders");
+
+        OrdersArguments args = new OrdersArguments(_queryBuilder);
+        argsDef.define(args);
+        OrdersArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerOrdersQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     /**
      * An honorific, such as Dr., Mr., or Mrs.
      */
     public CustomerQuery prefix() {
         startField("prefix");
+
+        return this;
+    }
+
+    public class ReviewsArguments extends Arguments {
+        ReviewsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once.
+         */
+        public ReviewsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return.
+         */
+        public ReviewsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface ReviewsArgumentsDefinition {
+        void define(ReviewsArguments args);
+    }
+
+    /**
+     * Contains the customer&#39;s product reviews
+     */
+    public CustomerQuery reviews(ProductReviewsQueryDefinition queryDef) {
+        return reviews(args -> {}, queryDef);
+    }
+
+    /**
+     * Contains the customer&#39;s product reviews
+     */
+    public CustomerQuery reviews(ReviewsArgumentsDefinition argsDef, ProductReviewsQueryDefinition queryDef) {
+        startField("reviews");
+
+        ReviewsArguments args = new ReviewsArguments(_queryBuilder);
+        argsDef.define(args);
+        ReviewsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductReviewsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Customer reward points details
+     */
+    public CustomerQuery rewardPoints(RewardPointsQueryDefinition queryDef) {
+        startField("reward_points");
+
+        _queryBuilder.append('{');
+        queryDef.define(new RewardPointsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Contains the store credit information applied for the logged in customer
+     */
+    public CustomerQuery storeCredit(CustomerStoreCreditQueryDefinition queryDef) {
+        startField("store_credit");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomerStoreCreditQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -190,7 +336,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The wishlist query returns the contents of a customer&#39;s wish lists
+     * Contains the contents of a customer&#39;s wish lists
      */
     public CustomerQuery wishlist(WishlistQueryDefinition queryDef) {
         startField("wishlist");

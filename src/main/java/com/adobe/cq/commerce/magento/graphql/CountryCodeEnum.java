@@ -14,6 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import com.shopify.graphql.support.ID;
+
 /**
  * The list of countries codes
  */
@@ -2236,6 +2238,7 @@ public enum CountryCodeEnum {
             }
         }
     }
+
     public String toString() {
         switch (this) {
             case AD: {
@@ -3224,4 +3227,3 @@ public enum CountryCodeEnum {
         }
     }
 }
-

@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -26,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * customizable option.
  */
 public class CustomizableDateOption extends AbstractResponse<CustomizableDateOption> implements CustomizableOptionInterface {
-    public CustomizableDateOption() {
-    }
+    public CustomizableDateOption() {}
 
     public CustomizableDateOption(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -190,20 +190,26 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "option_id": return false;
+            case "option_id":
+                return false;
 
-            case "product_sku": return false;
+            case "product_sku":
+                return false;
 
-            case "required": return false;
+            case "required":
+                return false;
 
-            case "sort_order": return false;
+            case "sort_order":
+                return false;
 
-            case "title": return false;
+            case "title":
+                return false;
 
-            case "value": return true;
+            case "value":
+                return true;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

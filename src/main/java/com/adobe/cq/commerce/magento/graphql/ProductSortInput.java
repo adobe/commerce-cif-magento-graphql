@@ -42,6 +42,8 @@ public class ProductSortInput implements Serializable {
 
     private Input<SortEnum> imageLabel = Input.undefined();
 
+    private Input<SortEnum> isReturnable = Input.undefined();
+
     private Input<SortEnum> manufacturer = Input.undefined();
 
     private Input<SortEnum> metaDescription = Input.undefined();
@@ -386,6 +388,39 @@ public class ProductSortInput implements Serializable {
             throw new IllegalArgumentException("Input can not be null");
         }
         this.imageLabel = imageLabel;
+        return this;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public SortEnum getIsReturnable() {
+        return isReturnable.getValue();
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public Input<SortEnum> getIsReturnableInput() {
+        return isReturnable;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public ProductSortInput setIsReturnable(SortEnum isReturnable) {
+        this.isReturnable = Input.optional(isReturnable);
+        return this;
+    }
+
+    /**
+     * Indicates whether the product can be returned
+     */
+    public ProductSortInput setIsReturnableInput(Input<SortEnum> isReturnable) {
+        if (isReturnable == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.isReturnable = isReturnable;
         return this;
     }
 
@@ -1304,6 +1339,17 @@ public class ProductSortInput implements Serializable {
             _queryBuilder.append("image_label:");
             if (imageLabel.getValue() != null) {
                 _queryBuilder.append(imageLabel.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.isReturnable.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("is_returnable:");
+            if (isReturnable.getValue() != null) {
+                _queryBuilder.append(isReturnable.getValue().toString());
             } else {
                 _queryBuilder.append("null");
             }

@@ -34,7 +34,6 @@ public class Error implements Serializable {
     private final int line;
     private final int column;
 
-
     public Error(String message) {
         this.message = message;
         line = 0;

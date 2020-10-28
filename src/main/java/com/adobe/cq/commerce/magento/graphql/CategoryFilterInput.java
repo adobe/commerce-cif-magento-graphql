@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.io.Serializable;
 
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 /**

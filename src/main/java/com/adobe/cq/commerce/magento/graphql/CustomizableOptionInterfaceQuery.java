@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * The CustomizableOptionInterface contains basic information about a customizable option. It can be
@@ -25,6 +26,7 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
     CustomizableOptionInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CustomizableOptionInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
@@ -132,7 +134,8 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomizableOptionInterfaceQuery> createFragment(String name, CustomizableOptionInterfaceQueryDefinition queryDef) {
+    public static Fragment<CustomizableOptionInterfaceQuery> createFragment(String name,
+        CustomizableOptionInterfaceQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomizableOptionInterfaceQuery(sb, false));
         return new Fragment<>(name, "CustomizableOptionInterface", sb.toString());

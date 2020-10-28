@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableMultipleOption contains information about a multiselect that is defined as part of a
@@ -83,7 +84,8 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomizableMultipleOptionQuery> createFragment(String name, CustomizableMultipleOptionQueryDefinition queryDef) {
+    public static Fragment<CustomizableMultipleOptionQuery> createFragment(String name,
+        CustomizableMultipleOptionQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomizableMultipleOptionQuery(sb));
         return new Fragment<>(name, "CustomizableMultipleOption", sb.toString());
@@ -109,7 +111,8 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
      * 
      * @param fragment The fragment to reference.
      */
-    public CustomizableMultipleOptionQuery addCustomizableOptionInterfaceFragmentReference(Fragment<CustomizableOptionInterfaceQuery> fragment) {
+    public CustomizableMultipleOptionQuery addCustomizableOptionInterfaceFragmentReference(
+        Fragment<CustomizableOptionInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

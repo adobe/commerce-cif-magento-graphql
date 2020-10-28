@@ -17,12 +17,18 @@ package com.adobe.cq.commerce.magento.graphql;
 import java.io.Serializable;
 import java.util.List;
 
+import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 public class CartItemUpdateInput implements Serializable {
     private int cartItemId;
 
     private Input<List<CustomizableOptionInput>> customizableOptions = Input.undefined();
+
+    private Input<GiftMessageInput> giftMessage = Input.undefined();
+
+    private Input<ID> giftWrappingId = Input.undefined();
 
     private Input<Double> quantity = Input.undefined();
 
@@ -57,6 +63,72 @@ public class CartItemUpdateInput implements Serializable {
             throw new IllegalArgumentException("Input can not be null");
         }
         this.customizableOptions = customizableOptions;
+        return this;
+    }
+
+    /**
+     * Gift message details for the cart item
+     */
+    public GiftMessageInput getGiftMessage() {
+        return giftMessage.getValue();
+    }
+
+    /**
+     * Gift message details for the cart item
+     */
+    public Input<GiftMessageInput> getGiftMessageInput() {
+        return giftMessage;
+    }
+
+    /**
+     * Gift message details for the cart item
+     */
+    public CartItemUpdateInput setGiftMessage(GiftMessageInput giftMessage) {
+        this.giftMessage = Input.optional(giftMessage);
+        return this;
+    }
+
+    /**
+     * Gift message details for the cart item
+     */
+    public CartItemUpdateInput setGiftMessageInput(Input<GiftMessageInput> giftMessage) {
+        if (giftMessage == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.giftMessage = giftMessage;
+        return this;
+    }
+
+    /**
+     * The unique identifier of the gift wrapping to be used for the cart item
+     */
+    public ID getGiftWrappingId() {
+        return giftWrappingId.getValue();
+    }
+
+    /**
+     * The unique identifier of the gift wrapping to be used for the cart item
+     */
+    public Input<ID> getGiftWrappingIdInput() {
+        return giftWrappingId;
+    }
+
+    /**
+     * The unique identifier of the gift wrapping to be used for the cart item
+     */
+    public CartItemUpdateInput setGiftWrappingId(ID giftWrappingId) {
+        this.giftWrappingId = Input.optional(giftWrappingId);
+        return this;
+    }
+
+    /**
+     * The unique identifier of the gift wrapping to be used for the cart item
+     */
+    public CartItemUpdateInput setGiftWrappingIdInput(Input<ID> giftWrappingId) {
+        if (giftWrappingId == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.giftWrappingId = giftWrappingId;
         return this;
     }
 
@@ -105,6 +177,28 @@ public class CartItemUpdateInput implements Serializable {
                     }
                 }
                 _queryBuilder.append(']');
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.giftMessage.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("gift_message:");
+            if (giftMessage.getValue() != null) {
+                giftMessage.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.giftWrappingId.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("gift_wrapping_id:");
+            if (giftWrappingId.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, giftWrappingId.getValue().toString());
             } else {
                 _queryBuilder.append("null");
             }

@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * PhysicalProductInterface contains attributes specific to tangible products.
  */
 public class UnknownPhysicalProductInterface extends AbstractResponse<UnknownPhysicalProductInterface> implements PhysicalProductInterface {
-    public UnknownPhysicalProductInterface() {
-    }
+    public UnknownPhysicalProductInterface() {}
 
     public UnknownPhysicalProductInterface(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -67,6 +66,10 @@ public class UnknownPhysicalProductInterface extends AbstractResponse<UnknownPhy
                 return new ConfigurableProduct(fields);
             }
 
+            case "GiftCardProduct": {
+                return new GiftCardProduct(fields);
+            }
+
             case "GroupedProduct": {
                 return new GroupedProduct(fields);
             }
@@ -99,10 +102,11 @@ public class UnknownPhysicalProductInterface extends AbstractResponse<UnknownPhy
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "weight": return false;
+            case "weight":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

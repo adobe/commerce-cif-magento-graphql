@@ -54,7 +54,8 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SelectedConfigurableOptionQuery> createFragment(String name, SelectedConfigurableOptionQueryDefinition queryDef) {
+    public static Fragment<SelectedConfigurableOptionQuery> createFragment(String name,
+        SelectedConfigurableOptionQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SelectedConfigurableOptionQuery(sb));
         return new Fragment<>(name, "SelectedConfigurableOption", sb.toString());

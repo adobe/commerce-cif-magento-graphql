@@ -63,6 +63,15 @@ public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaVa
     }
 
     /**
+     * A string that encodes option details.
+     */
+    public CustomizableAreaValueQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
      * Creates a GraphQL "named" fragment with the specified query type definition.
      * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
      * 

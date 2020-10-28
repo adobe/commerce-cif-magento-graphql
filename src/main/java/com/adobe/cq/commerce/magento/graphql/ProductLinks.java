@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * ProductLinks is an implementation of ProductLinksInterface.
  */
 public class ProductLinks extends AbstractResponse<ProductLinks> implements ProductLinksInterface {
-    public ProductLinks() {
-    }
+    public ProductLinks() {}
 
     public ProductLinks(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -166,18 +165,23 @@ public class ProductLinks extends AbstractResponse<ProductLinks> implements Prod
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "link_type": return false;
+            case "link_type":
+                return false;
 
-            case "linked_product_sku": return false;
+            case "linked_product_sku":
+                return false;
 
-            case "linked_product_type": return false;
+            case "linked_product_type":
+                return false;
 
-            case "position": return false;
+            case "position":
+                return false;
 
-            case "sku": return false;
+            case "sku":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

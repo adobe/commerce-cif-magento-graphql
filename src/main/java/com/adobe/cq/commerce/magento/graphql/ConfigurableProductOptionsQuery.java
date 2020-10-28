@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * ConfigurableProductOptions defines configurable attributes for the specified product
@@ -121,7 +122,8 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<ConfigurableProductOptionsQuery> createFragment(String name, ConfigurableProductOptionsQueryDefinition queryDef) {
+    public static Fragment<ConfigurableProductOptionsQuery> createFragment(String name,
+        ConfigurableProductOptionsQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new ConfigurableProductOptionsQuery(sb));
         return new Fragment<>(name, "ConfigurableProductOptions", sb.toString());

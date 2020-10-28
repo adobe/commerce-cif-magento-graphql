@@ -40,7 +40,8 @@ public class RemoveCouponFromCartOutputQuery extends AbstractQuery<RemoveCouponF
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<RemoveCouponFromCartOutputQuery> createFragment(String name, RemoveCouponFromCartOutputQueryDefinition queryDef) {
+    public static Fragment<RemoveCouponFromCartOutputQuery> createFragment(String name,
+        RemoveCouponFromCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new RemoveCouponFromCartOutputQuery(sb));
         return new Fragment<>(name, "RemoveCouponFromCartOutput", sb.toString());

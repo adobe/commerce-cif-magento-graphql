@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -26,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Payments Advanced payment methods.
  */
 public class PayflowLinkToken extends AbstractResponse<PayflowLinkToken> {
-    public PayflowLinkToken() {
-    }
+    public PayflowLinkToken() {}
 
     public PayflowLinkToken(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -144,16 +144,20 @@ public class PayflowLinkToken extends AbstractResponse<PayflowLinkToken> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "mode": return false;
+            case "mode":
+                return false;
 
-            case "paypal_url": return false;
+            case "paypal_url":
+                return false;
 
-            case "secure_token": return false;
+            case "secure_token":
+                return false;
 
-            case "secure_token_id": return false;
+            case "secure_token_id":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

@@ -24,6 +24,7 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
     CustomizableProductInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     CustomizableProductInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
@@ -65,6 +66,13 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
         return this;
     }
 
+    public CustomizableProductInterfaceQuery onGiftCardProduct(GiftCardProductQueryDefinition queryDef) {
+        startInlineFragment("GiftCardProduct");
+        queryDef.define(new GiftCardProductQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
     public CustomizableProductInterfaceQuery onSimpleProduct(SimpleProductQueryDefinition queryDef) {
         startInlineFragment("SimpleProduct");
         queryDef.define(new SimpleProductQuery(_queryBuilder));
@@ -87,7 +95,8 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<CustomizableProductInterfaceQuery> createFragment(String name, CustomizableProductInterfaceQueryDefinition queryDef) {
+    public static Fragment<CustomizableProductInterfaceQuery> createFragment(String name,
+        CustomizableProductInterfaceQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new CustomizableProductInterfaceQuery(sb, false));
         return new Fragment<>(name, "CustomizableProductInterface", sb.toString());

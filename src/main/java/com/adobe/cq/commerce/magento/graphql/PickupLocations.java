@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Top level object returned in a pickup locations search.
  */
 public class PickupLocations extends AbstractResponse<PickupLocations> {
-    public PickupLocations() {
-    }
+    public PickupLocations() {}
 
     public PickupLocations(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -132,14 +131,17 @@ public class PickupLocations extends AbstractResponse<PickupLocations> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items": return true;
+            case "items":
+                return true;
 
-            case "page_info": return true;
+            case "page_info":
+                return true;
 
-            case "total_count": return false;
+            case "total_count":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

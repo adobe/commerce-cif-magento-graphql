@@ -27,8 +27,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * A collection of CategoryTree objects and pagination information.
  */
 public class CategoryResult extends AbstractResponse<CategoryResult> {
-    public CategoryResult() {
-    }
+    public CategoryResult() {}
 
     public CategoryResult(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -132,14 +131,17 @@ public class CategoryResult extends AbstractResponse<CategoryResult> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items": return true;
+            case "items":
+                return true;
 
-            case "page_info": return true;
+            case "page_info":
+                return true;
 
-            case "total_count": return false;
+            case "total_count":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

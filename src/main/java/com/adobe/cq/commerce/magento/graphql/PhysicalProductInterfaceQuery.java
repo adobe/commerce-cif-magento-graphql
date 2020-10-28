@@ -24,6 +24,7 @@ public class PhysicalProductInterfaceQuery extends AbstractQuery<PhysicalProduct
     PhysicalProductInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     PhysicalProductInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {
@@ -50,6 +51,13 @@ public class PhysicalProductInterfaceQuery extends AbstractQuery<PhysicalProduct
     public PhysicalProductInterfaceQuery onConfigurableProduct(ConfigurableProductQueryDefinition queryDef) {
         startInlineFragment("ConfigurableProduct");
         queryDef.define(new ConfigurableProductQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public PhysicalProductInterfaceQuery onGiftCardProduct(GiftCardProductQueryDefinition queryDef) {
+        startInlineFragment("GiftCardProduct");
+        queryDef.define(new GiftCardProductQuery(_queryBuilder));
         _queryBuilder.append('}');
         return this;
     }

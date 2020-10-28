@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Deprecated: use type `PaypalExpressTokenOutput` instead
  */
 public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
-    public PaypalExpressToken() {
-    }
+    public PaypalExpressToken() {}
 
     public PaypalExpressToken(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -103,12 +102,14 @@ public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "paypal_urls": return true;
+            case "paypal_urls":
+                return true;
 
-            case "token": return false;
+            case "token":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

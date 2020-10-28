@@ -21,6 +21,7 @@ public class SwatchDataInterfaceQuery extends AbstractQuery<SwatchDataInterfaceQ
     SwatchDataInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     SwatchDataInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

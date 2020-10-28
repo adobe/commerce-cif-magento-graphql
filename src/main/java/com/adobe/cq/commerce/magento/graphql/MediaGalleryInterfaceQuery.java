@@ -24,6 +24,7 @@ public class MediaGalleryInterfaceQuery extends AbstractQuery<MediaGalleryInterf
     MediaGalleryInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
     }
+
     MediaGalleryInterfaceQuery(StringBuilder _queryBuilder, boolean addTypename) {
         super(_queryBuilder);
         if (addTypename) {

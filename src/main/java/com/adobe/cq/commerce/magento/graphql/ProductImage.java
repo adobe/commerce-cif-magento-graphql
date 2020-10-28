@@ -25,8 +25,7 @@ import com.shopify.graphql.support.SchemaViolationError;
  * Product image information. Contains the image URL and label.
  */
 public class ProductImage extends AbstractResponse<ProductImage> implements MediaGalleryInterface {
-    public ProductImage() {
-    }
+    public ProductImage() {}
 
     public ProductImage(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -143,16 +142,20 @@ public class ProductImage extends AbstractResponse<ProductImage> implements Medi
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "disabled": return false;
+            case "disabled":
+                return false;
 
-            case "label": return false;
+            case "label":
+                return false;
 
-            case "position": return false;
+            case "position":
+                return false;
 
-            case "url": return false;
+            case "url":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

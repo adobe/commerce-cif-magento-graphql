@@ -28,4 +28,3 @@ public interface PhysicalProductInterface extends CustomFieldInterface {
      */
     Double getWeight();
 }
-

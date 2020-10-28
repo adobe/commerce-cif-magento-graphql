@@ -40,7 +40,8 @@ public class AddVirtualProductsToCartOutputQuery extends AbstractQuery<AddVirtua
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<AddVirtualProductsToCartOutputQuery> createFragment(String name, AddVirtualProductsToCartOutputQueryDefinition queryDef) {
+    public static Fragment<AddVirtualProductsToCartOutputQuery> createFragment(String name,
+        AddVirtualProductsToCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new AddVirtualProductsToCartOutputQuery(sb));
         return new Fragment<>(name, "AddVirtualProductsToCartOutput", sb.toString());

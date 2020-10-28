@@ -21,14 +21,14 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
  * Customer defines the customer name and address and other details
  */
 public class Customer extends AbstractResponse<Customer> {
-    public Customer() {
-    }
+    public Customer() {}
 
     public Customer(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -199,10 +199,49 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "orders": {
+                    CustomerOrders optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CustomerOrders(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "prefix": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "reviews": {
+                    responseData.put(key, new ProductReviews(jsonAsObject(field.getValue(), key)));
+
+                    break;
+                }
+
+                case "reward_points": {
+                    RewardPoints optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RewardPoints(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "store_credit": {
+                    CustomerStoreCredit optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CustomerStoreCredit(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -381,7 +420,8 @@ public class Customer extends AbstractResponse<Customer> {
     /**
      * The ID assigned to the customer
      *
-     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for authentication. There is no need to know customer ID on the client side.
+     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for
+     *             authentication. There is no need to know customer ID on the client side.
      */
     @Deprecated
     public Integer getId() {
@@ -429,6 +469,15 @@ public class Customer extends AbstractResponse<Customer> {
         return this;
     }
 
+    public CustomerOrders getOrders() {
+        return (CustomerOrders) get("orders");
+    }
+
+    public Customer setOrders(CustomerOrders arg) {
+        optimisticData.put(getKey("orders"), arg);
+        return this;
+    }
+
     /**
      * An honorific, such as Dr., Mr., or Mrs.
      */
@@ -438,6 +487,42 @@ public class Customer extends AbstractResponse<Customer> {
 
     public Customer setPrefix(String arg) {
         optimisticData.put(getKey("prefix"), arg);
+        return this;
+    }
+
+    /**
+     * Contains the customer&#39;s product reviews
+     */
+    public ProductReviews getReviews() {
+        return (ProductReviews) get("reviews");
+    }
+
+    public Customer setReviews(ProductReviews arg) {
+        optimisticData.put(getKey("reviews"), arg);
+        return this;
+    }
+
+    /**
+     * Customer reward points details
+     */
+    public RewardPoints getRewardPoints() {
+        return (RewardPoints) get("reward_points");
+    }
+
+    public Customer setRewardPoints(RewardPoints arg) {
+        optimisticData.put(getKey("reward_points"), arg);
+        return this;
+    }
+
+    /**
+     * Contains the store credit information applied for the logged in customer
+     */
+    public CustomerStoreCredit getStoreCredit() {
+        return (CustomerStoreCredit) get("store_credit");
+    }
+
+    public Customer setStoreCredit(CustomerStoreCredit arg) {
+        optimisticData.put(getKey("store_credit"), arg);
         return this;
     }
 
@@ -466,7 +551,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The wishlist query returns the contents of a customer&#39;s wish lists
+     * Contains the contents of a customer&#39;s wish lists
      */
     public Wishlist getWishlist() {
         return (Wishlist) get("wishlist");
@@ -479,44 +564,74 @@ public class Customer extends AbstractResponse<Customer> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "addresses": return true;
+            case "addresses":
+                return true;
 
-            case "created_at": return false;
+            case "created_at":
+                return false;
 
-            case "date_of_birth": return false;
+            case "date_of_birth":
+                return false;
 
-            case "default_billing": return false;
+            case "default_billing":
+                return false;
 
-            case "default_shipping": return false;
+            case "default_shipping":
+                return false;
 
-            case "dob": return false;
+            case "dob":
+                return false;
 
-            case "email": return false;
+            case "email":
+                return false;
 
-            case "firstname": return false;
+            case "firstname":
+                return false;
 
-            case "gender": return false;
+            case "gender":
+                return false;
 
-            case "group_id": return false;
+            case "group_id":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "is_subscribed": return false;
+            case "is_subscribed":
+                return false;
 
-            case "lastname": return false;
+            case "lastname":
+                return false;
 
-            case "middlename": return false;
+            case "middlename":
+                return false;
 
-            case "prefix": return false;
+            case "orders":
+                return true;
 
-            case "suffix": return false;
+            case "prefix":
+                return false;
 
-            case "taxvat": return false;
+            case "reviews":
+                return true;
 
-            case "wishlist": return true;
+            case "reward_points":
+                return true;
 
-            default: return false;
+            case "store_credit":
+                return true;
+
+            case "suffix":
+                return false;
+
+            case "taxvat":
+                return false;
+
+            case "wishlist":
+                return true;
+
+            default:
+                return false;
         }
     }
 }
-

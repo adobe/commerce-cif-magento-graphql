@@ -17,6 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.ID;
 
 /**
  * Required input for Payflow Express Checkout payments

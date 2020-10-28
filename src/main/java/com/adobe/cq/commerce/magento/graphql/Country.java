@@ -24,8 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Country extends AbstractResponse<Country> {
-    public Country() {
-    }
+    public Country() {}
 
     public Country(JsonObject fields) throws SchemaViolationError {
         for (Map.Entry<String, JsonElement> field : fields.entrySet()) {
@@ -180,20 +179,26 @@ public class Country extends AbstractResponse<Country> {
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "available_regions": return true;
+            case "available_regions":
+                return true;
 
-            case "full_name_english": return false;
+            case "full_name_english":
+                return false;
 
-            case "full_name_locale": return false;
+            case "full_name_locale":
+                return false;
 
-            case "id": return false;
+            case "id":
+                return false;
 
-            case "three_letter_abbreviation": return false;
+            case "three_letter_abbreviation":
+                return false;
 
-            case "two_letter_abbreviation": return false;
+            case "two_letter_abbreviation":
+                return false;
 
-            default: return false;
+            default:
+                return false;
         }
     }
 }
-

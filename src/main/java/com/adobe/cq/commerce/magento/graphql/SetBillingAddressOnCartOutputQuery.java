@@ -40,7 +40,8 @@ public class SetBillingAddressOnCartOutputQuery extends AbstractQuery<SetBilling
      * @param queryDef The fragment definition.
      * @return The fragment of a given generics type.
      */
-    public static Fragment<SetBillingAddressOnCartOutputQuery> createFragment(String name, SetBillingAddressOnCartOutputQueryDefinition queryDef) {
+    public static Fragment<SetBillingAddressOnCartOutputQuery> createFragment(String name,
+        SetBillingAddressOnCartOutputQueryDefinition queryDef) {
         StringBuilder sb = new StringBuilder();
         queryDef.define(new SetBillingAddressOnCartOutputQuery(sb));
         return new Fragment<>(name, "SetBillingAddressOnCartOutput", sb.toString());
