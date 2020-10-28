@@ -47,7 +47,7 @@ To use this library in your project, just add the following maven dependency to 
 You can check some examples to create GraphQL queries and parse the JSON responses in the [unit tests](src/test/java/com/adobe/cq/commerce/magento/graphql/), including a test/example showing how to use GraphQL aliases. In addition, you can use our generic [GraphQL client bundle for AEM](https://github.com/adobe/commerce-cif-graphql-client) to send the queries.
 
 ## Remove un-used imports
-To sort an remove un-used imports that were automatically genered, please run the `format-code` profile.
+To format the code, sort and remove un-used imports that were automatically generated, please run the `format-code` profile.
 
 ```java
 mvn clean install -Pformat-code
