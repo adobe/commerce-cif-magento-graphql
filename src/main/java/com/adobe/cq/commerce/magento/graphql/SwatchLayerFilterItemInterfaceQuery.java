@@ -49,6 +49,13 @@ public class SwatchLayerFilterItemInterfaceQuery extends AbstractQuery<SwatchLay
         return this;
     }
 
+    public SwatchLayerFilterItemInterfaceQuery onLayerFilterItemInterface(LayerFilterItemInterfaceQueryDefinition queryDef) {
+        startInlineFragment("LayerFilterItemInterface");
+        queryDef.define(new LayerFilterItemInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
     /**
      * Creates a GraphQL "named" fragment with the specified query type definition.
      * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
