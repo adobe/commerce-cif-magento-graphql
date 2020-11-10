@@ -87,6 +87,20 @@ public class CustomizableProductInterfaceQuery extends AbstractQuery<Customizabl
         return this;
     }
 
+    public CustomizableProductInterfaceQuery onPhysicalProductInterface(PhysicalProductInterfaceQueryDefinition queryDef) {
+        startInlineFragment("PhysicalProductInterface");
+        queryDef.define(new PhysicalProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
+    public CustomizableProductInterfaceQuery onProductInterface(ProductInterfaceQueryDefinition queryDef) {
+        startInlineFragment("ProductInterface");
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+        return this;
+    }
+
     /**
      * Creates a GraphQL "named" fragment with the specified query type definition.
      * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
