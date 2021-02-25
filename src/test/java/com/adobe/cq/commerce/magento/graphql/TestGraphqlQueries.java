@@ -47,6 +47,7 @@ public class TestGraphqlQueries {
      */
     public static final ProductInterfaceQueryDefinition CONFIGURABLE_PRODUCT_QUERY = q -> q
         .id()
+        .uid()
         .sku()
         .name()
         .description(d -> d.html())

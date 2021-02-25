@@ -59,6 +59,7 @@ public class QueryBuilderTest {
         Query query = QueryDeserializer.getGson().fromJson(jsonResponse, Query.class);
         ProductInterface product = query.getProducts().getItems().get(0);
 
+        Assert.assertEquals("uid1", product.getUid().toString());
         Assert.assertEquals("testSimpleProduct", product.getSku());
         Assert.assertEquals("Test Simple Product", product.getName());
         Assert.assertEquals("test-category", product.getCategories().get(0).getUrlPath());

@@ -4,6 +4,7 @@
       {
         "__typename": "SimpleProduct",
         "id": 1,
+        "uid": "uid1",
         "sku": "testSimpleProduct",
         "name": "Test Simple Product",
         "description": {
