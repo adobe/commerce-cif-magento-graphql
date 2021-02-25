@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
@@ -129,7 +130,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * Unique identifier for the order
+     * The unique ID for a `CustomerOrder` object
      */
     public CustomerOrderQuery id() {
         startField("id");
@@ -165,6 +166,19 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
      */
     public CustomerOrderQuery items(OrderItemInterfaceQueryDefinition queryDef) {
         startField("items");
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderItemInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * A list of order items eligible to be in a return request
+     */
+    public CustomerOrderQuery itemsEligibleForReturn(OrderItemInterfaceQueryDefinition queryDef) {
+        startField("items_eligible_for_return");
 
         _queryBuilder.append('{');
         queryDef.define(new OrderItemInterfaceQuery(_queryBuilder));
@@ -219,6 +233,62 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
      */
     public CustomerOrderQuery printedCardIncluded() {
         startField("printed_card_included");
+
+        return this;
+    }
+
+    public class ReturnsArguments extends Arguments {
+        ReturnsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once. The default value is 20
+         */
+        public ReturnsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return. The default value is 1
+         */
+        public ReturnsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface ReturnsArgumentsDefinition {
+        void define(ReturnsArguments args);
+    }
+
+    /**
+     * Return requests associated with this order.
+     */
+    public CustomerOrderQuery returns(ReturnsQueryDefinition queryDef) {
+        return returns(args -> {}, queryDef);
+    }
+
+    /**
+     * Return requests associated with this order.
+     */
+    public CustomerOrderQuery returns(ReturnsArgumentsDefinition argsDef, ReturnsQueryDefinition queryDef) {
+        startField("returns");
+
+        ReturnsArguments args = new ReturnsArguments(_queryBuilder);
+        argsDef.define(args);
+        ReturnsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ReturnsQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }

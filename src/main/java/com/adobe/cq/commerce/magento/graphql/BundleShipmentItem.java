@@ -128,7 +128,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * Shipment item unique identifier
+     * The unique ID for a `ShipmentItemInterface` object
      */
     public ID getId() {
         return (ID) get("id");

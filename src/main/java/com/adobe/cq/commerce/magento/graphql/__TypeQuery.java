@@ -14,8 +14,6 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import java.util.List;
-
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;

@@ -25,7 +25,7 @@ public interface ShipmentItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Shipment item unique identifier
+     * The unique ID for a `ShipmentItemInterface` object
      */
     ID getId();
 

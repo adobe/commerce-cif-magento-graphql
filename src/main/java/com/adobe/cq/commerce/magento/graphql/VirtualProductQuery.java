@@ -17,7 +17,6 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * A virtual product is non-tangible product that does not require shipping and is not kept in
@@ -30,7 +29,10 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public VirtualProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -77,7 +79,10 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public VirtualProductQuery createdAt() {
         startField("created_at");
 
@@ -121,7 +126,10 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     public VirtualProductQuery id() {
         startField("id");
 
@@ -227,7 +235,10 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public VirtualProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -236,7 +247,10 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public VirtualProductQuery newToDate() {
         startField("new_to_date");
 
@@ -453,7 +467,10 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public VirtualProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -474,6 +491,12 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
      */
     public VirtualProductQuery specialToDate() {
         startField("special_to_date");
+
+        return this;
+    }
+
+    public VirtualProductQuery staged() {
+        startField("staged");
 
         return this;
     }
@@ -550,8 +573,20 @@ public class VirtualProductQuery extends AbstractQuery<VirtualProductQuery> {
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    public VirtualProductQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public VirtualProductQuery updatedAt() {
         startField("updated_at");
 

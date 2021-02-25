@@ -17,33 +17,62 @@ package com.adobe.cq.commerce.magento.graphql;
 import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Input;
 
 public class CustomizableOptionInput implements Serializable {
-    private int id;
-
     private String valueString;
 
-    public CustomizableOptionInput(int id, String valueString) {
-        this.id = id;
+    private Input<Integer> id = Input.undefined();
 
+    public CustomizableOptionInput(String valueString) {
         this.valueString = valueString;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public CustomizableOptionInput setId(int id) {
-        this.id = id;
-        return this;
-    }
-
+    /**
+     * The string value of the option
+     */
     public String getValueString() {
         return valueString;
     }
 
+    /**
+     * The string value of the option
+     */
     public CustomizableOptionInput setValueString(String valueString) {
         this.valueString = valueString;
+        return this;
+    }
+
+    /**
+     * The customizable option id of the product
+     */
+    public Integer getId() {
+        return id.getValue();
+    }
+
+    /**
+     * The customizable option id of the product
+     */
+    public Input<Integer> getIdInput() {
+        return id;
+    }
+
+    /**
+     * The customizable option id of the product
+     */
+    public CustomizableOptionInput setId(Integer id) {
+        this.id = Input.optional(id);
+        return this;
+    }
+
+    /**
+     * The customizable option id of the product
+     */
+    public CustomizableOptionInput setIdInput(Input<Integer> id) {
+        if (id == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.id = id;
         return this;
     }
 
@@ -53,13 +82,19 @@ public class CustomizableOptionInput implements Serializable {
 
         _queryBuilder.append(separator);
         separator = ",";
-        _queryBuilder.append("id:");
-        _queryBuilder.append(id);
-
-        _queryBuilder.append(separator);
-        separator = ",";
         _queryBuilder.append("value_string:");
         AbstractQuery.appendQuotedString(_queryBuilder, valueString.toString());
+
+        if (this.id.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("id:");
+            if (id.getValue() != null) {
+                _queryBuilder.append(id.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         _queryBuilder.append('}');
     }

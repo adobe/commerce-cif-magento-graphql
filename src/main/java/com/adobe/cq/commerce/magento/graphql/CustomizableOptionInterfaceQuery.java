@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * The CustomizableOptionInterface contains basic information about a customizable option. It can be
@@ -36,7 +35,10 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableOptionInterfaceQuery optionId() {
         startField("option_id");
 
@@ -66,6 +68,15 @@ public class CustomizableOptionInterfaceQuery extends AbstractQuery<Customizable
      */
     public CustomizableOptionInterfaceQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableOptionInterfaceQuery uid() {
+        startField("uid");
 
         return this;
     }

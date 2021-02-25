@@ -89,6 +89,12 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "value": {
                     CustomizableDateValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -118,7 +124,10 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -177,6 +186,18 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
     }
 
     /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public CustomizableDateOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * An object that defines a date field in a customizable option.
      */
     public CustomizableDateValue getValue() {
@@ -203,6 +224,9 @@ public class CustomizableDateOption extends AbstractResponse<CustomizableDateOpt
                 return false;
 
             case "title":
+                return false;
+
+            case "uid":
                 return false;
 
             case "value":

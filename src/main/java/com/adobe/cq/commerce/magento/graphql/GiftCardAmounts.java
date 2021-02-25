@@ -124,7 +124,7 @@ public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `GiftCardAmounts` object
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -149,7 +149,10 @@ public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
 
     /**
      * An ID that is assigned to each unique gift card amount.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getValueId() {
         return (Integer) get("value_id");
     }

@@ -179,7 +179,10 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
 
     /**
      * The ID assigned to the bundled item option.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -290,7 +293,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `BundleItemOption` object.
      */
     public ID getUid() {
         return (ID) get("uid");

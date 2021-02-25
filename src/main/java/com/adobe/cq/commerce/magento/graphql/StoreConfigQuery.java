@@ -14,11 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import java.util.List;
-
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * The type contains information about a store config
@@ -155,6 +152,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * Braintree cc vault status.
+     */
+    public StoreConfigQuery braintreeCcVaultActive() {
+        startField("braintree_cc_vault_active");
+
+        return this;
+    }
+
+    /**
      * Display Gift Wrapping Prices
      */
     public StoreConfigQuery cartGiftWrapping() {
@@ -229,9 +235,22 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
 
     /**
      * A code assigned to the store to identify it
+     *
+     * @deprecated Use `store_code` instead.
      */
+    @Deprecated
     public StoreConfigQuery code() {
         startField("code");
+
+        return this;
+    }
+
+    /**
+     * The configuration setting determines which thumbnail should be used in the cart for configurable
+     * products.
+     */
+    public StoreConfigQuery configurableThumbnailSource() {
+        startField("configurable_thumbnail_source");
 
         return this;
     }
@@ -286,6 +305,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
      */
     public StoreConfigQuery demonotice() {
         startField("demonotice");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether customers can have multiple wish lists. Possible values: 1 (Yes) and 0 (No)
+     */
+    public StoreConfigQuery enableMultipleWishlists() {
+        startField("enable_multiple_wishlists");
 
         return this;
     }
@@ -346,9 +374,30 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
 
     /**
      * The ID number assigned to the store
+     *
+     * @deprecated Use `store_code` instead.
      */
+    @Deprecated
     public StoreConfigQuery id() {
         startField("id");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the store view has been designated as the default within the store group
+     */
+    public StoreConfigQuery isDefaultStore() {
+        startField("is_default_store");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the store group has been designated as the default within the website
+     */
+    public StoreConfigQuery isDefaultStoreGroup() {
+        startField("is_default_store_group");
 
         return this;
     }
@@ -545,6 +594,15 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
+     * If multiple wish lists are enabled, the maximum number of wish lists the customer can have
+     */
+    public StoreConfigQuery maximumNumberOfWishlists() {
+        startField("maximum_number_of_wishlists");
+
+        return this;
+    }
+
+    /**
      * The minimum number of characters required for a valid password.
      */
     public StoreConfigQuery minimumPasswordLength() {
@@ -619,10 +677,31 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The ID of the root category
+     * Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled
      */
+    public StoreConfigQuery returnsEnabled() {
+        startField("returns_enabled");
+
+        return this;
+    }
+
+    /**
+     * The ID of the root category
+     *
+     * @deprecated Use `root_category_uid` instead
+     */
+    @Deprecated
     public StoreConfigQuery rootCategoryId() {
         startField("root_category_id");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CategoryInterface` object.
+     */
+    public StoreConfigQuery rootCategoryUid() {
+        startField("root_category_uid");
 
         return this;
     }
@@ -714,10 +793,47 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Name of the store
+     * The unique ID of the store view. In the Admin, this is called the Store View Code. When making a
+     * GraphQL call, assign this value to the `Store` header to provide the scope
+     */
+    public StoreConfigQuery storeCode() {
+        startField("store_code");
+
+        return this;
+    }
+
+    /**
+     * The unique ID assigned to the store group. In the Admin, this is called the Store Name
+     */
+    public StoreConfigQuery storeGroupCode() {
+        startField("store_group_code");
+
+        return this;
+    }
+
+    /**
+     * The label assigned to the store group
+     */
+    public StoreConfigQuery storeGroupName() {
+        startField("store_group_name");
+
+        return this;
+    }
+
+    /**
+     * The label assigned to the store view
      */
     public StoreConfigQuery storeName() {
         startField("store_name");
+
+        return this;
+    }
+
+    /**
+     * The store view sort order
+     */
+    public StoreConfigQuery storeSortOrder() {
+        startField("store_sort_order");
 
         return this;
     }
@@ -759,10 +875,40 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The ID number assigned to the website store belongs
+     * The configuration determines if the store code should be used in the URL
      */
+    public StoreConfigQuery useStoreInUrl() {
+        startField("use_store_in_url");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for the website
+     */
+    public StoreConfigQuery websiteCode() {
+        startField("website_code");
+
+        return this;
+    }
+
+    /**
+     * The ID number assigned to the website store
+     *
+     * @deprecated The field should not be used on the storefront
+     */
+    @Deprecated
     public StoreConfigQuery websiteId() {
         startField("website_id");
+
+        return this;
+    }
+
+    /**
+     * The label assigned to the website
+     */
+    public StoreConfigQuery websiteName() {
+        startField("website_name");
 
         return this;
     }

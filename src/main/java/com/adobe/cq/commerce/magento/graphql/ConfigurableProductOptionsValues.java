@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -69,6 +70,17 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
                     SwatchDataInterface optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = UnknownSwatchDataInterface.create(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    ID optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ID(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -163,6 +175,18 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
+     * The unique ID for a `ConfigurableProductOptionsValues` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public ConfigurableProductOptionsValues setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * Indicates whether to use the default_label
      */
     public Boolean getUseDefaultValue() {
@@ -176,7 +200,10 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
 
     /**
      * A unique index number assigned to the configurable product option
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getValueIndex() {
         return (Integer) get("value_index");
     }
@@ -198,6 +225,9 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
                 return false;
 
             case "swatch_data":
+                return false;
+
+            case "uid":
                 return false;
 
             case "use_default_value":

@@ -22,7 +22,9 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 public class CartItemUpdateInput implements Serializable {
-    private int cartItemId;
+    private Input<Integer> cartItemId = Input.undefined();
+
+    private Input<ID> cartItemUid = Input.undefined();
 
     private Input<List<CustomizableOptionInput>> customizableOptions = Input.undefined();
 
@@ -32,16 +34,69 @@ public class CartItemUpdateInput implements Serializable {
 
     private Input<Double> quantity = Input.undefined();
 
-    public CartItemUpdateInput(int cartItemId) {
-        this.cartItemId = cartItemId;
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public Integer getCartItemId() {
+        return cartItemId.getValue();
     }
 
-    public int getCartItemId() {
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public Input<Integer> getCartItemIdInput() {
         return cartItemId;
     }
 
-    public CartItemUpdateInput setCartItemId(int cartItemId) {
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public CartItemUpdateInput setCartItemId(Integer cartItemId) {
+        this.cartItemId = Input.optional(cartItemId);
+        return this;
+    }
+
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public CartItemUpdateInput setCartItemIdInput(Input<Integer> cartItemId) {
+        if (cartItemId == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
         this.cartItemId = cartItemId;
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public ID getCartItemUid() {
+        return cartItemUid.getValue();
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public Input<ID> getCartItemUidInput() {
+        return cartItemUid;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public CartItemUpdateInput setCartItemUid(ID cartItemUid) {
+        this.cartItemUid = Input.optional(cartItemUid);
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public CartItemUpdateInput setCartItemUidInput(Input<ID> cartItemUid) {
+        if (cartItemUid == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.cartItemUid = cartItemUid;
         return this;
     }
 
@@ -100,21 +155,21 @@ public class CartItemUpdateInput implements Serializable {
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item
      */
     public ID getGiftWrappingId() {
         return giftWrappingId.getValue();
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item
      */
     public Input<ID> getGiftWrappingIdInput() {
         return giftWrappingId;
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item
      */
     public CartItemUpdateInput setGiftWrappingId(ID giftWrappingId) {
         this.giftWrappingId = Input.optional(giftWrappingId);
@@ -122,7 +177,7 @@ public class CartItemUpdateInput implements Serializable {
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item
      */
     public CartItemUpdateInput setGiftWrappingIdInput(Input<ID> giftWrappingId) {
         if (giftWrappingId == null) {
@@ -157,10 +212,27 @@ public class CartItemUpdateInput implements Serializable {
         String separator = "";
         _queryBuilder.append('{');
 
-        _queryBuilder.append(separator);
-        separator = ",";
-        _queryBuilder.append("cart_item_id:");
-        _queryBuilder.append(cartItemId);
+        if (this.cartItemId.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("cart_item_id:");
+            if (cartItemId.getValue() != null) {
+                _queryBuilder.append(cartItemId.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.cartItemUid.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("cart_item_uid:");
+            if (cartItemUid.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, cartItemUid.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         if (this.customizableOptions.isDefined()) {
             _queryBuilder.append(separator);

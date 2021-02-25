@@ -21,6 +21,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -35,22 +36,17 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
             String fieldName = getFieldName(key);
             switch (fieldName) {
                 case "customizable_options": {
-                    List<SelectedCustomizableOption> optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        List<SelectedCustomizableOption> list1 = new ArrayList<>();
-                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
-                            SelectedCustomizableOption optional2 = null;
-                            if (!element1.isJsonNull()) {
-                                optional2 = new SelectedCustomizableOption(jsonAsObject(element1, key));
-                            }
-
-                            list1.add(optional2);
+                    List<SelectedCustomizableOption> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        SelectedCustomizableOption optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = new SelectedCustomizableOption(jsonAsObject(element1, key));
                         }
 
-                        optional1 = list1;
+                        list1.add(optional2);
                     }
 
-                    responseData.put(key, optional1);
+                    responseData.put(key, list1);
 
                     break;
                 }
@@ -84,6 +80,12 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -109,6 +111,10 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
         return this;
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public String getId() {
         return (String) get("id");
     }
@@ -145,6 +151,18 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
         return this;
     }
 
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public VirtualCartItem setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "customizable_options":
@@ -160,6 +178,9 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
                 return false;
 
             case "quantity":
+                return false;
+
+            case "uid":
                 return false;
 
             default:

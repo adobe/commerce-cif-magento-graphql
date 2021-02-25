@@ -50,7 +50,10 @@ public interface CategoryInterface extends CustomFieldInterface {
 
     /**
      * Timestamp indicating when the category was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     String getCreatedAt();
 
     String getCustomLayoutUpdateFile();
@@ -71,7 +74,10 @@ public interface CategoryInterface extends CustomFieldInterface {
 
     /**
      * An ID that uniquely identifies the category.
+     *
+     * @deprecated Use the `uid` argument instead.
      */
+    @Deprecated
     Integer getId();
 
     String getImage();
@@ -124,9 +130,19 @@ public interface CategoryInterface extends CustomFieldInterface {
      */
     CategoryProducts getProducts();
 
+    Boolean getStaged();
+
+    /**
+     * The unique ID for a `CategoryInterface` object.
+     */
+    ID getUid();
+
     /**
      * Timestamp indicating when the category was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     String getUpdatedAt();
 
     /**

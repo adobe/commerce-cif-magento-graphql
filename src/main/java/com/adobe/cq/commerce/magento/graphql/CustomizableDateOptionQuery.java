@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableDateOption contains information about a date picker that is defined as part of a
@@ -29,7 +28,10 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableDateOptionQuery optionId() {
         startField("option_id");
 
@@ -68,6 +70,15 @@ public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateO
      */
     public CustomizableDateOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableDateOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

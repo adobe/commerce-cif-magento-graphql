@@ -26,8 +26,11 @@ public class ItemSelectedBundleOptionQuery extends AbstractQuery<ItemSelectedBun
     }
 
     /**
-     * The unique identifier of the option
+     * The unique ID for a `ItemSelectedBundleOption` object
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public ItemSelectedBundleOptionQuery id() {
         startField("id");
 
@@ -39,6 +42,15 @@ public class ItemSelectedBundleOptionQuery extends AbstractQuery<ItemSelectedBun
      */
     public ItemSelectedBundleOptionQuery label() {
         startField("label");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `ItemSelectedBundleOption` object
+     */
+    public ItemSelectedBundleOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

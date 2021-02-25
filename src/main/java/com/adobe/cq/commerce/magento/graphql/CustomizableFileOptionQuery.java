@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableFileOption contains information about a file picker that is defined as part of a
@@ -29,7 +28,10 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableFileOptionQuery optionId() {
         startField("option_id");
 
@@ -68,6 +70,15 @@ public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileO
      */
     public CustomizableFileOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableFileOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

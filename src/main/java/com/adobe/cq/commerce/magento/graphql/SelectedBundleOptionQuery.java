@@ -22,6 +22,10 @@ public class SelectedBundleOptionQuery extends AbstractQuery<SelectedBundleOptio
         super(_queryBuilder);
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public SelectedBundleOptionQuery id() {
         startField("id");
 
@@ -36,6 +40,15 @@ public class SelectedBundleOptionQuery extends AbstractQuery<SelectedBundleOptio
 
     public SelectedBundleOptionQuery type() {
         startField("type");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `SelectedBundleOption` object
+     */
+    public SelectedBundleOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

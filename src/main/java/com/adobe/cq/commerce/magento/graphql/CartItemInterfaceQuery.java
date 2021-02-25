@@ -29,6 +29,10 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
         }
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public CartItemInterfaceQuery id() {
         startField("id");
 
@@ -57,6 +61,15 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
 
     public CartItemInterfaceQuery quantity() {
         startField("quantity");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public CartItemInterfaceQuery uid() {
+        startField("uid");
 
         return this;
     }

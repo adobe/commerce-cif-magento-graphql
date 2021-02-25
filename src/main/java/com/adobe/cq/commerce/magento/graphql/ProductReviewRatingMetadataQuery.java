@@ -14,11 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import java.util.List;
-
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 public class ProductReviewRatingMetadataQuery extends AbstractQuery<ProductReviewRatingMetadataQuery> {
     ProductReviewRatingMetadataQuery(StringBuilder _queryBuilder) {

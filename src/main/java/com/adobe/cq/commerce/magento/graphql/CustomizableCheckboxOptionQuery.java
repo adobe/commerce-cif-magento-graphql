@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableCheckbbixOption contains information about a set of checkbox values that are defined as
@@ -29,7 +28,10 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableCheckboxOptionQuery optionId() {
         startField("option_id");
 
@@ -59,6 +61,15 @@ public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableC
      */
     public CustomizableCheckboxOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableCheckboxOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

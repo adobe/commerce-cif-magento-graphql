@@ -35,6 +35,10 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
         return this;
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public DownloadableCartItemQuery id() {
         startField("id");
 
@@ -89,6 +93,15 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
         _queryBuilder.append('{');
         queryDef.define(new DownloadableProductSamplesQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public DownloadableCartItemQuery uid() {
+        startField("uid");
 
         return this;
     }

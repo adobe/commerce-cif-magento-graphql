@@ -49,6 +49,15 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
+     * Indicates whether the order item is eligible is eligible to be in a return request
+     */
+    public DownloadableOrderItemQuery eligibleForReturn() {
+        startField("eligible_for_return");
+
+        return this;
+    }
+
+    /**
      * The entered option for the base product, such as a logo or image
      */
     public DownloadableOrderItemQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
@@ -75,7 +84,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The unique identifier of the order item
+     * The unique ID for a `OrderItemInterface` object
      */
     public DownloadableOrderItemQuery id() {
         startField("id");

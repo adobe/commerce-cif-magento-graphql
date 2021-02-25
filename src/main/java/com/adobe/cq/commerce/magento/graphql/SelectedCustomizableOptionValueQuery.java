@@ -22,6 +22,20 @@ public class SelectedCustomizableOptionValueQuery extends AbstractQuery<Selected
         super(_queryBuilder);
     }
 
+    /**
+     * The unique ID for a `CustomizableMultipleValue`, `CustomizableRadioValue`,
+     * `CustomizableCheckboxValue`, `CustomizableDropDownValue`, etc. objects
+     */
+    public SelectedCustomizableOptionValueQuery customizableOptionValueUid() {
+        startField("customizable_option_value_uid");
+
+        return this;
+    }
+
+    /**
+     * @deprecated Use SelectedCustomizableOptionValue.customizable_option_value_uid instead
+     */
+    @Deprecated
     public SelectedCustomizableOptionValueQuery id() {
         startField("id");
 

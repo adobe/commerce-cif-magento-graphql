@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 public class WishlistItemQuery extends AbstractQuery<WishlistItemQuery> {
     WishlistItemQuery(StringBuilder _queryBuilder) {
@@ -42,7 +41,7 @@ public class WishlistItemQuery extends AbstractQuery<WishlistItemQuery> {
     }
 
     /**
-     * The wish list item ID
+     * The unique ID for a `WishlistItem` object
      */
     public WishlistItemQuery id() {
         startField("id");

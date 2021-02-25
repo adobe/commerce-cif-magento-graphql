@@ -149,7 +149,7 @@ public class CustomizableAreaValue extends AbstractResponse<CustomizableAreaValu
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableAreaValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

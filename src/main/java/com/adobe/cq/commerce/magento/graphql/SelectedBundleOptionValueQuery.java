@@ -22,6 +22,9 @@ public class SelectedBundleOptionValueQuery extends AbstractQuery<SelectedBundle
         super(_queryBuilder);
     }
 
+    /**
+     * Use `uid` instead
+     */
     public SelectedBundleOptionValueQuery id() {
         startField("id");
 
@@ -42,6 +45,15 @@ public class SelectedBundleOptionValueQuery extends AbstractQuery<SelectedBundle
 
     public SelectedBundleOptionValueQuery quantity() {
         startField("quantity");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `SelectedBundleOptionValue` object
+     */
+    public SelectedBundleOptionValueQuery uid() {
+        startField("uid");
 
         return this;
     }

@@ -17,7 +17,6 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * GiftCardProduct defines properties of a gift card, including the minimum and maximum values and an
@@ -48,7 +47,10 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public GiftCardProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -95,7 +97,10 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public GiftCardProductQuery createdAt() {
         startField("created_at");
 
@@ -174,7 +179,10 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     public GiftCardProductQuery id() {
         startField("id");
 
@@ -307,7 +315,10 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public GiftCardProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -316,7 +327,10 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public GiftCardProductQuery newToDate() {
         startField("new_to_date");
 
@@ -551,7 +565,10 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public GiftCardProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -572,6 +589,12 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
      */
     public GiftCardProductQuery specialToDate() {
         startField("special_to_date");
+
+        return this;
+    }
+
+    public GiftCardProductQuery staged() {
+        startField("staged");
 
         return this;
     }
@@ -648,8 +671,20 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    public GiftCardProductQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public GiftCardProductQuery updatedAt() {
         startField("updated_at");
 

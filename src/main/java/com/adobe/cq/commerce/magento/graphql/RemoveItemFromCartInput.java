@@ -17,16 +17,18 @@ package com.adobe.cq.commerce.magento.graphql;
 import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.ID;
+import com.shopify.graphql.support.Input;
 
 public class RemoveItemFromCartInput implements Serializable {
     private String cartId;
 
-    private int cartItemId;
+    private Input<Integer> cartItemId = Input.undefined();
 
-    public RemoveItemFromCartInput(String cartId, int cartItemId) {
+    private Input<ID> cartItemUid = Input.undefined();
+
+    public RemoveItemFromCartInput(String cartId) {
         this.cartId = cartId;
-
-        this.cartItemId = cartItemId;
     }
 
     public String getCartId() {
@@ -38,12 +40,69 @@ public class RemoveItemFromCartInput implements Serializable {
         return this;
     }
 
-    public int getCartItemId() {
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public Integer getCartItemId() {
+        return cartItemId.getValue();
+    }
+
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public Input<Integer> getCartItemIdInput() {
         return cartItemId;
     }
 
-    public RemoveItemFromCartInput setCartItemId(int cartItemId) {
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public RemoveItemFromCartInput setCartItemId(Integer cartItemId) {
+        this.cartItemId = Input.optional(cartItemId);
+        return this;
+    }
+
+    /**
+     * Deprecated. Use `cart_item_uid` instead.
+     */
+    public RemoveItemFromCartInput setCartItemIdInput(Input<Integer> cartItemId) {
+        if (cartItemId == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
         this.cartItemId = cartItemId;
+        return this;
+    }
+
+    /**
+     * Required field. The unique ID for a `CartItemInterface` object
+     */
+    public ID getCartItemUid() {
+        return cartItemUid.getValue();
+    }
+
+    /**
+     * Required field. The unique ID for a `CartItemInterface` object
+     */
+    public Input<ID> getCartItemUidInput() {
+        return cartItemUid;
+    }
+
+    /**
+     * Required field. The unique ID for a `CartItemInterface` object
+     */
+    public RemoveItemFromCartInput setCartItemUid(ID cartItemUid) {
+        this.cartItemUid = Input.optional(cartItemUid);
+        return this;
+    }
+
+    /**
+     * Required field. The unique ID for a `CartItemInterface` object
+     */
+    public RemoveItemFromCartInput setCartItemUidInput(Input<ID> cartItemUid) {
+        if (cartItemUid == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.cartItemUid = cartItemUid;
         return this;
     }
 
@@ -56,10 +115,27 @@ public class RemoveItemFromCartInput implements Serializable {
         _queryBuilder.append("cart_id:");
         AbstractQuery.appendQuotedString(_queryBuilder, cartId.toString());
 
-        _queryBuilder.append(separator);
-        separator = ",";
-        _queryBuilder.append("cart_item_id:");
-        _queryBuilder.append(cartItemId);
+        if (this.cartItemId.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("cart_item_id:");
+            if (cartItemId.getValue() != null) {
+                _queryBuilder.append(cartItemId.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.cartItemUid.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("cart_item_uid:");
+            if (cartItemUid.getValue() != null) {
+                AbstractQuery.appendQuotedString(_queryBuilder, cartItemUid.getValue().toString());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         _queryBuilder.append('}');
     }

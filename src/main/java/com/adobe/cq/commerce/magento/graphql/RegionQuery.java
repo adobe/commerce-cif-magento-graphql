@@ -28,6 +28,9 @@ public class RegionQuery extends AbstractQuery<RegionQuery> {
         return this;
     }
 
+    /**
+     * The unique ID for a `Region` object.
+     */
     public RegionQuery id() {
         startField("id");
 

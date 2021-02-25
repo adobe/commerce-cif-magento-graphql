@@ -17,7 +17,6 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CategoryInterface contains the full set of attributes that can be returned in a category search.
@@ -90,7 +89,10 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
 
     /**
      * Timestamp indicating when the category was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public CategoryInterfaceQuery createdAt() {
         startField("created_at");
 
@@ -135,7 +137,10 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
 
     /**
      * An ID that uniquely identifies the category.
+     *
+     * @deprecated Use the `uid` argument instead.
      */
+    @Deprecated
     public CategoryInterfaceQuery id() {
         startField("id");
 
@@ -307,9 +312,27 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         return this;
     }
 
+    public CategoryInterfaceQuery staged() {
+        startField("staged");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CategoryInterface` object.
+     */
+    public CategoryInterfaceQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
     /**
      * Timestamp indicating when the category was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public CategoryInterfaceQuery updatedAt() {
         startField("updated_at");
 

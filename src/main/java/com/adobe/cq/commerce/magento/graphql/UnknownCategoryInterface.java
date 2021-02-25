@@ -352,6 +352,18 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
                     break;
                 }
 
+                case "staged": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "updated_at": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -491,7 +503,10 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
 
     /**
      * Timestamp indicating when the category was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getCreatedAt() {
         return (String) get("created_at");
     }
@@ -554,7 +569,10 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
 
     /**
      * An ID that uniquely identifies the category.
+     *
+     * @deprecated Use the `uid` argument instead.
      */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -712,9 +730,33 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
         return this;
     }
 
+    public Boolean getStaged() {
+        return (Boolean) get("staged");
+    }
+
+    public UnknownCategoryInterface setStaged(Boolean arg) {
+        optimisticData.put(getKey("staged"), arg);
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CategoryInterface` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public UnknownCategoryInterface setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     /**
      * Timestamp indicating when the category was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getUpdatedAt() {
         return (String) get("updated_at");
     }
@@ -842,6 +884,12 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
 
             case "products":
                 return true;
+
+            case "staged":
+                return false;
+
+            case "uid":
+                return false;
 
             case "updated_at":
                 return false;

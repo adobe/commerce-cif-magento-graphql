@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableRadioValue defines the price and sku of a product whose page contains a customized set
@@ -82,7 +81,7 @@ public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadio
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableRadioValue` object.
      */
     public CustomizableRadioValueQuery uid() {
         startField("uid");

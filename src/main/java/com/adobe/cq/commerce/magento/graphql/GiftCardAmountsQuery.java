@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * GiftCardAmounts contains the value of a gift card, the website that generated the card, and related
@@ -37,7 +36,7 @@ public class GiftCardAmountsQuery extends AbstractQuery<GiftCardAmountsQuery> {
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `GiftCardAmounts` object
      */
     public GiftCardAmountsQuery uid() {
         startField("uid");
@@ -56,7 +55,10 @@ public class GiftCardAmountsQuery extends AbstractQuery<GiftCardAmountsQuery> {
 
     /**
      * An ID that is assigned to each unique gift card amount.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public GiftCardAmountsQuery valueId() {
         startField("value_id");
 

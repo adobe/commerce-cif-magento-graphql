@@ -292,7 +292,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `DownloadableProductLinks` object.
      */
     public ID getUid() {
         return (ID) get("uid");

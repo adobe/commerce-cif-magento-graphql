@@ -169,6 +169,49 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    public class AddProductsToCompareListArguments extends Arguments {
+        AddProductsToCompareListArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public AddProductsToCompareListArguments input(AddProductsToCompareListInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface AddProductsToCompareListArgumentsDefinition {
+        void define(AddProductsToCompareListArguments args);
+    }
+
+    /**
+     * Add products to the specified compare list
+     */
+    public MutationQuery addProductsToCompareList(CompareListQueryDefinition queryDef) {
+        return addProductsToCompareList(args -> {}, queryDef);
+    }
+
+    /**
+     * Add products to the specified compare list
+     */
+    public MutationQuery addProductsToCompareList(AddProductsToCompareListArgumentsDefinition argsDef,
+        CompareListQueryDefinition queryDef) {
+        startField("addProductsToCompareList");
+
+        AddProductsToCompareListArguments args = new AddProductsToCompareListArguments(_queryBuilder);
+        argsDef.define(args);
+        AddProductsToCompareListArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompareListQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     /**
      * Adds one or more products to the specified wish list. This mutation supports all product types
      */
@@ -195,6 +238,42 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new AddProductsToWishlistOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Add a comment to an existing return
+     */
+    public MutationQuery addReturnComment(AddReturnCommentInput input, AddReturnCommentOutputQueryDefinition queryDef) {
+        startField("addReturnComment");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddReturnCommentOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Add tracking information to the return
+     */
+    public MutationQuery addReturnTracking(AddReturnTrackingInput input, AddReturnTrackingOutputQueryDefinition queryDef) {
+        startField("addReturnTracking");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddReturnTrackingOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -390,6 +469,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Assign the specified compare list to the logged in customer
+     */
+    public MutationQuery assignCompareListToCustomer(ID uid, AssignCompareListToCustomerOutputQueryDefinition queryDef) {
+        startField("assignCompareListToCustomer");
+
+        _queryBuilder.append("(uid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, uid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new AssignCompareListToCustomerOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Changes the password for the logged-in customer
      */
     public MutationQuery changeCustomerPassword(String currentPassword, String newPassword, CustomerQueryDefinition queryDef) {
@@ -411,10 +508,86 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Copy products from one wish list to another
+     */
+    public MutationQuery copyProductsBetweenWishlists(ID sourceWishlistUid, ID destinationWishlistUid,
+        List<WishlistItemCopyInput> wishlistItems, CopyProductsBetweenWishlistsOutputQueryDefinition queryDef) {
+        startField("copyProductsBetweenWishlists");
+
+        _queryBuilder.append("(sourceWishlistUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, sourceWishlistUid.toString());
+
+        _queryBuilder.append(",destinationWishlistUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, destinationWishlistUid.toString());
+
+        _queryBuilder.append(",wishlistItems:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (WishlistItemCopyInput item1 : wishlistItems) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CopyProductsBetweenWishlistsOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Creates Client Token for Braintree Javascript SDK initialization.
      */
     public MutationQuery createBraintreeClientToken() {
         startField("createBraintreeClientToken");
+
+        return this;
+    }
+
+    public class CreateCompareListArguments extends Arguments {
+        CreateCompareListArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public CreateCompareListArguments input(CreateCompareListInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface CreateCompareListArgumentsDefinition {
+        void define(CreateCompareListArguments args);
+    }
+
+    /**
+     * Creates a new compare list. The compare list is saved for logged in customers
+     */
+    public MutationQuery createCompareList(CompareListQueryDefinition queryDef) {
+        return createCompareList(args -> {}, queryDef);
+    }
+
+    /**
+     * Creates a new compare list. The compare list is saved for logged in customers
+     */
+    public MutationQuery createCompareList(CreateCompareListArgumentsDefinition argsDef, CompareListQueryDefinition queryDef) {
+        startField("createCompareList");
+
+        CreateCompareListArguments args = new CreateCompareListArguments(_queryBuilder);
+        argsDef.define(args);
+        CreateCompareListArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompareListQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -611,6 +784,42 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Create a new wish list
+     */
+    public MutationQuery createWishlist(CreateWishlistInput input, CreateWishlistOutputQueryDefinition queryDef) {
+        startField("createWishlist");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CreateWishlistOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Delete the specified compare list
+     */
+    public MutationQuery deleteCompareList(ID uid, DeleteCompareListOutputQueryDefinition queryDef) {
+        startField("deleteCompareList");
+
+        _queryBuilder.append("(uid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, uid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new DeleteCompareListOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Delete customer address
      */
     public MutationQuery deleteCustomerAddress(int id) {
@@ -643,6 +852,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Delete the specified wish list filtered by the unique ID for a `Wishlist` object
+     */
+    public MutationQuery deleteWishlist(ID wishlistId, DeleteWishlistOutputQueryDefinition queryDef) {
+        startField("deleteWishlist");
+
+        _queryBuilder.append("(wishlistId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, wishlistId.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new DeleteWishlistOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Retrieve the customer token
      */
     public MutationQuery generateCustomerToken(String email, String password, CustomerTokenQueryDefinition queryDef) {
@@ -658,6 +885,25 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new CustomerTokenQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Request a customer token so that an administrator can perform remote shopping assistance
+     */
+    public MutationQuery generateCustomerTokenAsAdmin(GenerateCustomerTokenAsAdminInput input,
+        GenerateCustomerTokenAsAdminOutputQueryDefinition queryDef) {
+        startField("generateCustomerTokenAsAdmin");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GenerateCustomerTokenAsAdminOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -682,22 +928,80 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    public class MergeCartsArguments extends Arguments {
+        MergeCartsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, false);
+        }
+
+        public MergeCartsArguments destinationCartId(String value) {
+            if (value != null) {
+                startArgument("destination_cart_id");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
+            }
+            return this;
+        }
+    }
+
+    public interface MergeCartsArgumentsDefinition {
+        void define(MergeCartsArguments args);
+    }
+
     /**
      * Merges the source cart into the destination cart
      */
-    public MutationQuery mergeCarts(String sourceCartId, String destinationCartId, CartQueryDefinition queryDef) {
+    public MutationQuery mergeCarts(String sourceCartId, CartQueryDefinition queryDef) {
+        return mergeCarts(sourceCartId, args -> {}, queryDef);
+    }
+
+    /**
+     * Merges the source cart into the destination cart
+     */
+    public MutationQuery mergeCarts(String sourceCartId, MergeCartsArgumentsDefinition argsDef, CartQueryDefinition queryDef) {
         startField("mergeCarts");
 
         _queryBuilder.append("(source_cart_id:");
         AbstractQuery.appendQuotedString(_queryBuilder, sourceCartId.toString());
 
-        _queryBuilder.append(",destination_cart_id:");
-        AbstractQuery.appendQuotedString(_queryBuilder, destinationCartId.toString());
+        argsDef.define(new MergeCartsArguments(_queryBuilder));
 
         _queryBuilder.append(')');
 
         _queryBuilder.append('{');
         queryDef.define(new CartQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Move products from one wish list to another
+     */
+    public MutationQuery moveProductsBetweenWishlists(ID sourceWishlistUid, ID destinationWishlistUid,
+        List<WishlistItemMoveInput> wishlistItems, MoveProductsBetweenWishlistsOutputQueryDefinition queryDef) {
+        startField("moveProductsBetweenWishlists");
+
+        _queryBuilder.append("(sourceWishlistUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, sourceWishlistUid.toString());
+
+        _queryBuilder.append(",destinationWishlistUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, destinationWishlistUid.toString());
+
+        _queryBuilder.append(",wishlistItems:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (WishlistItemMoveInput item1 : wishlistItems) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new MoveProductsBetweenWishlistsOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -868,6 +1172,49 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    public class RemoveProductsFromCompareListArguments extends Arguments {
+        RemoveProductsFromCompareListArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public RemoveProductsFromCompareListArguments input(RemoveProductsFromCompareListInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface RemoveProductsFromCompareListArgumentsDefinition {
+        void define(RemoveProductsFromCompareListArguments args);
+    }
+
+    /**
+     * Remove products from the specified compare list
+     */
+    public MutationQuery removeProductsFromCompareList(CompareListQueryDefinition queryDef) {
+        return removeProductsFromCompareList(args -> {}, queryDef);
+    }
+
+    /**
+     * Remove products from the specified compare list
+     */
+    public MutationQuery removeProductsFromCompareList(RemoveProductsFromCompareListArgumentsDefinition argsDef,
+        CompareListQueryDefinition queryDef) {
+        startField("removeProductsFromCompareList");
+
+        RemoveProductsFromCompareListArguments args = new RemoveProductsFromCompareListArguments(_queryBuilder);
+        argsDef.define(args);
+        RemoveProductsFromCompareListArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompareListQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     /**
      * Removes one or more products from the specified wish list
      */
@@ -894,6 +1241,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new RemoveProductsFromWishlistOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Remove a tracked shipment from a return
+     */
+    public MutationQuery removeReturnTracking(RemoveReturnTrackingInput input, RemoveReturnTrackingOutputQueryDefinition queryDef) {
+        startField("removeReturnTracking");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveReturnTrackingOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -965,6 +1330,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
 
         _queryBuilder.append(')');
+
+        return this;
+    }
+
+    /**
+     * Initiates a buyer&#39;s request to return an item for replacement or refund
+     */
+    public MutationQuery requestReturn(RequestReturnInput input, RequestReturnOutputQueryDefinition queryDef) {
+        startField("requestReturn");
+
+        _queryBuilder.append("(input:");
+        input.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RequestReturnOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
 
         return this;
     }
@@ -1497,6 +1880,60 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new UpdateProductsInWishlistOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class UpdateWishlistArguments extends Arguments {
+        UpdateWishlistArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, false);
+        }
+
+        public UpdateWishlistArguments name(String value) {
+            if (value != null) {
+                startArgument("name");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
+            }
+            return this;
+        }
+
+        public UpdateWishlistArguments visibility(WishlistVisibilityEnum value) {
+            if (value != null) {
+                startArgument("visibility");
+                _queryBuilder.append(value.toString());
+            }
+            return this;
+        }
+    }
+
+    public interface UpdateWishlistArgumentsDefinition {
+        void define(UpdateWishlistArguments args);
+    }
+
+    /**
+     * Change the name and visibility of the specified wish list
+     */
+    public MutationQuery updateWishlist(ID wishlistId, UpdateWishlistOutputQueryDefinition queryDef) {
+        return updateWishlist(wishlistId, args -> {}, queryDef);
+    }
+
+    /**
+     * Change the name and visibility of the specified wish list
+     */
+    public MutationQuery updateWishlist(ID wishlistId, UpdateWishlistArgumentsDefinition argsDef,
+        UpdateWishlistOutputQueryDefinition queryDef) {
+        startField("updateWishlist");
+
+        _queryBuilder.append("(wishlistId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, wishlistId.toString());
+
+        argsDef.define(new UpdateWishlistArguments(_queryBuilder));
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new UpdateWishlistOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

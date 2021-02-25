@@ -54,7 +54,7 @@ public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateVa
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableDateValue` object.
      */
     public CustomizableDateValueQuery uid() {
         startField("uid");

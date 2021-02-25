@@ -122,7 +122,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `DownloadableProductLinks` object.
      */
     public DownloadableProductLinksQuery uid() {
         startField("uid");

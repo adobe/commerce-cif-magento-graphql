@@ -80,6 +80,12 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "value": {
                     List<CustomizableRadioValue> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -119,7 +125,10 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -166,6 +175,18 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
     }
 
     /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public CustomizableRadioOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * An array that defines a set of radio buttons.
      */
     public List<CustomizableRadioValue> getValue() {
@@ -189,6 +210,9 @@ public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioO
                 return false;
 
             case "title":
+                return false;
+
+            case "uid":
                 return false;
 
             case "value":

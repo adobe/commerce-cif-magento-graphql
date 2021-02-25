@@ -14,8 +14,6 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import com.shopify.graphql.support.ID;
-
 /**
  * The list of countries codes
  */

@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableRadioOption contains information about a set of radio buttons that are defined as part
@@ -29,7 +28,10 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableRadioOptionQuery optionId() {
         startField("option_id");
 
@@ -59,6 +61,15 @@ public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadi
      */
     public CustomizableRadioOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableRadioOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

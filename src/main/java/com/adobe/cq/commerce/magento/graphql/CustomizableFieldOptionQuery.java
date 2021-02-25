@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableFieldOption contains information about a text field that is defined as part of a
@@ -29,7 +28,10 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableFieldOptionQuery optionId() {
         startField("option_id");
 
@@ -68,6 +70,15 @@ public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFiel
      */
     public CustomizableFieldOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableFieldOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

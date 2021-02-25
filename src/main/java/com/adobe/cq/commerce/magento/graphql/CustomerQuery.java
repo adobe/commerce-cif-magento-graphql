@@ -41,6 +41,28 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
+     * Indicates whether the customer has enabled remote shopping assistance
+     */
+    public CustomerQuery allowRemoteShoppingAssistance() {
+        startField("allow_remote_shopping_assistance");
+
+        return this;
+    }
+
+    /**
+     * The contents of the customer&#39;s compare list
+     */
+    public CustomerQuery compareList(CompareListQueryDefinition queryDef) {
+        startField("compare_list");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompareListQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Timestamp indicating when the account was created
      */
     public CustomerQuery createdAt() {
@@ -235,6 +257,80 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         return this;
     }
 
+    /**
+     * Retrieves details about the specified return request from the unique ID for a `Return` object
+     */
+    public CustomerQuery returnValue(ID uid, ReturnQueryDefinition queryDef) {
+        startField("return");
+
+        _queryBuilder.append("(uid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, uid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new ReturnQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class ReturnsArguments extends Arguments {
+        ReturnsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once. The default value is 20
+         */
+        public ReturnsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return. The default value is 1
+         */
+        public ReturnsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface ReturnsArgumentsDefinition {
+        void define(ReturnsArguments args);
+    }
+
+    /**
+     * Information about the customer&#39;s return requests.
+     */
+    public CustomerQuery returns(ReturnsQueryDefinition queryDef) {
+        return returns(args -> {}, queryDef);
+    }
+
+    /**
+     * Information about the customer&#39;s return requests.
+     */
+    public CustomerQuery returns(ReturnsArgumentsDefinition argsDef, ReturnsQueryDefinition queryDef) {
+        startField("returns");
+
+        ReturnsArguments args = new ReturnsArguments(_queryBuilder);
+        argsDef.define(args);
+        ReturnsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ReturnsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class ReviewsArguments extends Arguments {
         ReviewsArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
@@ -336,10 +432,89 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Contains the contents of a customer&#39;s wish lists
+     * Contains a customer&#39;s wish lists
+     *
+     * @deprecated Use `Customer.wishlists` or `Customer.wishlist_v2`
      */
+    @Deprecated
     public CustomerQuery wishlist(WishlistQueryDefinition queryDef) {
         startField("wishlist");
+
+        _queryBuilder.append('{');
+        queryDef.define(new WishlistQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Retrieve the specified wish list identified by the unique ID for a `Wishlist` object
+     */
+    public CustomerQuery wishlistV2(ID id, WishlistQueryDefinition queryDef) {
+        startField("wishlist_v2");
+
+        _queryBuilder.append("(id:");
+        AbstractQuery.appendQuotedString(_queryBuilder, id.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new WishlistQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class WishlistsArguments extends Arguments {
+        WishlistsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once. This attribute is optional.
+         */
+        public WishlistsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return. The default value is 1.
+         */
+        public WishlistsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface WishlistsArgumentsDefinition {
+        void define(WishlistsArguments args);
+    }
+
+    /**
+     * An array of wishlists. In Magento Open Source, customers are limited to one wish list. The number of
+     * wish lists is configurable for Magento Commerce
+     */
+    public CustomerQuery wishlists(WishlistQueryDefinition queryDef) {
+        return wishlists(args -> {}, queryDef);
+    }
+
+    /**
+     * An array of wishlists. In Magento Open Source, customers are limited to one wish list. The number of
+     * wish lists is configurable for Magento Commerce
+     */
+    public CustomerQuery wishlists(WishlistsArgumentsDefinition argsDef, WishlistQueryDefinition queryDef) {
+        startField("wishlists");
+
+        WishlistsArguments args = new WishlistsArguments(_queryBuilder);
+        argsDef.define(args);
+        WishlistsArguments.end(args);
 
         _queryBuilder.append('{');
         queryDef.define(new WishlistQuery(_queryBuilder));

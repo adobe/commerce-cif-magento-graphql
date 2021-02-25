@@ -195,7 +195,7 @@ public class CustomizableCheckboxValue extends AbstractResponse<CustomizableChec
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableCheckboxValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

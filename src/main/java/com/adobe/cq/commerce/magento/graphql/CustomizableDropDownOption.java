@@ -80,6 +80,12 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "value": {
                     List<CustomizableDropDownValue> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -119,7 +125,10 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -166,6 +175,18 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
     }
 
     /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public CustomizableDropDownOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * An array that defines the set of options for a drop down menu.
      */
     public List<CustomizableDropDownValue> getValue() {
@@ -189,6 +210,9 @@ public class CustomizableDropDownOption extends AbstractResponse<CustomizableDro
                 return false;
 
             case "title":
+                return false;
+
+            case "uid":
                 return false;
 
             case "value":

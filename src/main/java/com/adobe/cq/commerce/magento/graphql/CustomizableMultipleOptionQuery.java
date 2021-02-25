@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableMultipleOption contains information about a multiselect that is defined as part of a
@@ -29,7 +28,10 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableMultipleOptionQuery optionId() {
         startField("option_id");
 
@@ -59,6 +61,15 @@ public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableM
      */
     public CustomizableMultipleOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableMultipleOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

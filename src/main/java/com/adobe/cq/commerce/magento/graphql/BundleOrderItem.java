@@ -74,6 +74,17 @@ public class BundleOrderItem extends AbstractResponse<BundleOrderItem> implement
                     break;
                 }
 
+                case "eligible_for_return": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "entered_options": {
                     List<OrderItemOption> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -296,6 +307,18 @@ public class BundleOrderItem extends AbstractResponse<BundleOrderItem> implement
     }
 
     /**
+     * Indicates whether the order item is eligible is eligible to be in a return request
+     */
+    public Boolean getEligibleForReturn() {
+        return (Boolean) get("eligible_for_return");
+    }
+
+    public BundleOrderItem setEligibleForReturn(Boolean arg) {
+        optimisticData.put(getKey("eligible_for_return"), arg);
+        return this;
+    }
+
+    /**
      * The entered option for the base product, such as a logo or image
      */
     public List<OrderItemOption> getEnteredOptions() {
@@ -320,7 +343,7 @@ public class BundleOrderItem extends AbstractResponse<BundleOrderItem> implement
     }
 
     /**
-     * The unique identifier of the order item
+     * The unique ID for a `OrderItemInterface` object
      */
     public ID getId() {
         return (ID) get("id");
@@ -494,6 +517,9 @@ public class BundleOrderItem extends AbstractResponse<BundleOrderItem> implement
 
             case "discounts":
                 return true;
+
+            case "eligible_for_return":
+                return false;
 
             case "entered_options":
                 return true;

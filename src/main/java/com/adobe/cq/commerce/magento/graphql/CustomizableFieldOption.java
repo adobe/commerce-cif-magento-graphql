@@ -89,6 +89,12 @@ public class CustomizableFieldOption extends AbstractResponse<CustomizableFieldO
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "value": {
                     CustomizableFieldValue optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -118,7 +124,10 @@ public class CustomizableFieldOption extends AbstractResponse<CustomizableFieldO
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -177,6 +186,18 @@ public class CustomizableFieldOption extends AbstractResponse<CustomizableFieldO
     }
 
     /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public CustomizableFieldOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * An object that defines a text field.
      */
     public CustomizableFieldValue getValue() {
@@ -203,6 +224,9 @@ public class CustomizableFieldOption extends AbstractResponse<CustomizableFieldO
                 return false;
 
             case "title":
+                return false;
+
+            case "uid":
                 return false;
 
             case "value":

@@ -16,10 +16,9 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
- * A bucket that contains information for each filterable option (such as price, category ID, and
+ * A bucket that contains information for each filterable option (such as price, category `UID`, and
  * custom attributes).
  */
 public class AggregationQuery extends AbstractQuery<AggregationQuery> {

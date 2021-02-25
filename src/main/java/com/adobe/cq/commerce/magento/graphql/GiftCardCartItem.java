@@ -21,6 +21,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -41,22 +42,17 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
                 }
 
                 case "customizable_options": {
-                    List<SelectedCustomizableOption> optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        List<SelectedCustomizableOption> list1 = new ArrayList<>();
-                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
-                            SelectedCustomizableOption optional2 = null;
-                            if (!element1.isJsonNull()) {
-                                optional2 = new SelectedCustomizableOption(jsonAsObject(element1, key));
-                            }
-
-                            list1.add(optional2);
+                    List<SelectedCustomizableOption> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        SelectedCustomizableOption optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = new SelectedCustomizableOption(jsonAsObject(element1, key));
                         }
 
-                        optional1 = list1;
+                        list1.add(optional2);
                     }
 
-                    responseData.put(key, optional1);
+                    responseData.put(key, list1);
 
                     break;
                 }
@@ -135,6 +131,12 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -175,6 +177,10 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
         return this;
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public String getId() {
         return (String) get("id");
     }
@@ -271,6 +277,18 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
         return this;
     }
 
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public GiftCardCartItem setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "amount":
@@ -304,6 +322,9 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
                 return false;
 
             case "sender_name":
+                return false;
+
+            case "uid":
                 return false;
 
             default:

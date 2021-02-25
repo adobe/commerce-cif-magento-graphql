@@ -14,6 +14,8 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+import java.util.List;
+
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
@@ -29,7 +31,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public ConfigurableProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -78,6 +83,58 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
         return this;
     }
 
+    public class ConfigurableProductOptionsSelectionArguments extends Arguments {
+        ConfigurableProductOptionsSelectionArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public ConfigurableProductOptionsSelectionArguments configurableOptionValueUids(List<ID> value) {
+            if (value != null) {
+                startArgument("configurableOptionValueUids");
+                _queryBuilder.append('[');
+                {
+                    String listSeperator1 = "";
+                    for (ID item1 : value) {
+                        _queryBuilder.append(listSeperator1);
+                        listSeperator1 = ",";
+                        AbstractQuery.appendQuotedString(_queryBuilder, item1.toString());
+                    }
+                }
+                _queryBuilder.append(']');
+            }
+            return this;
+        }
+    }
+
+    public interface ConfigurableProductOptionsSelectionArgumentsDefinition {
+        void define(ConfigurableProductOptionsSelectionArguments args);
+    }
+
+    /**
+     * Metadata for the specified configurable options selection
+     */
+    public ConfigurableProductQuery configurableProductOptionsSelection(ConfigurableProductOptionsSelectionQueryDefinition queryDef) {
+        return configurableProductOptionsSelection(args -> {}, queryDef);
+    }
+
+    /**
+     * Metadata for the specified configurable options selection
+     */
+    public ConfigurableProductQuery configurableProductOptionsSelection(ConfigurableProductOptionsSelectionArgumentsDefinition argsDef,
+        ConfigurableProductOptionsSelectionQueryDefinition queryDef) {
+        startField("configurable_product_options_selection");
+
+        ConfigurableProductOptionsSelectionArguments args = new ConfigurableProductOptionsSelectionArguments(_queryBuilder);
+        argsDef.define(args);
+        ConfigurableProductOptionsSelectionArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new ConfigurableProductOptionsSelectionQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     /**
      * The product&#39;s country of origin.
      */
@@ -89,7 +146,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public ConfigurableProductQuery createdAt() {
         startField("created_at");
 
@@ -133,7 +193,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     public ConfigurableProductQuery id() {
         startField("id");
 
@@ -239,7 +302,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public ConfigurableProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -248,7 +314,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public ConfigurableProductQuery newToDate() {
         startField("new_to_date");
 
@@ -465,7 +534,10 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public ConfigurableProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -486,6 +558,12 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
      */
     public ConfigurableProductQuery specialToDate() {
         startField("special_to_date");
+
+        return this;
+    }
+
+    public ConfigurableProductQuery staged() {
+        startField("staged");
 
         return this;
     }
@@ -562,8 +640,20 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    public ConfigurableProductQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public ConfigurableProductQuery updatedAt() {
         startField("updated_at");
 

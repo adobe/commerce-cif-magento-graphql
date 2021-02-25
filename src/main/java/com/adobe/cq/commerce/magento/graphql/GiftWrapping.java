@@ -59,6 +59,12 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -88,8 +94,11 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
     }
 
     /**
-     * Gift wrapping unique identifier
+     * The unique ID for a `GiftWrapping` object
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public ID getId() {
         return (ID) get("id");
     }
@@ -123,6 +132,18 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
         return this;
     }
 
+    /**
+     * The unique ID for a `GiftWrapping` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public GiftWrapping setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "design":
@@ -136,6 +157,9 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
 
             case "price":
                 return true;
+
+            case "uid":
+                return false;
 
             default:
                 return false;

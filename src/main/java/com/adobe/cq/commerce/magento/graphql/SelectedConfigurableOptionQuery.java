@@ -22,6 +22,28 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
         super(_queryBuilder);
     }
 
+    /**
+     * The unique ID for a `ConfigurableProductOptions` object
+     */
+    public SelectedConfigurableOptionQuery configurableProductOptionUid() {
+        startField("configurable_product_option_uid");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `ConfigurableProductOptionsValues` object
+     */
+    public SelectedConfigurableOptionQuery configurableProductOptionValueUid() {
+        startField("configurable_product_option_value_uid");
+
+        return this;
+    }
+
+    /**
+     * @deprecated Use SelectedConfigurableOption.configurable_product_option_uid instead
+     */
+    @Deprecated
     public SelectedConfigurableOptionQuery id() {
         startField("id");
 
@@ -34,6 +56,10 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
         return this;
     }
 
+    /**
+     * @deprecated Use SelectedConfigurableOption.configurable_product_option_value_uid instead
+     */
+    @Deprecated
     public SelectedConfigurableOptionQuery valueId() {
         startField("value_id");
 

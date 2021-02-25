@@ -81,6 +81,10 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
         return this;
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public BundleCartItemQuery id() {
         startField("id");
 
@@ -109,6 +113,15 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
 
     public BundleCartItemQuery quantity() {
         startField("quantity");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public BundleCartItemQuery uid() {
+        startField("uid");
 
         return this;
     }

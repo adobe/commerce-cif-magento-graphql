@@ -17,7 +17,6 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * Category Tree implementation.
@@ -96,7 +95,10 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
 
     /**
      * Timestamp indicating when the category was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public CategoryTreeQuery createdAt() {
         startField("created_at");
 
@@ -141,7 +143,10 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
 
     /**
      * An ID that uniquely identifies the category.
+     *
+     * @deprecated Use the `uid` argument instead.
      */
+    @Deprecated
     public CategoryTreeQuery id() {
         startField("id");
 
@@ -313,9 +318,27 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
         return this;
     }
 
+    public CategoryTreeQuery staged() {
+        startField("staged");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CategoryInterface` object.
+     */
+    public CategoryTreeQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
     /**
      * Timestamp indicating when the category was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public CategoryTreeQuery updatedAt() {
         startField("updated_at");
 

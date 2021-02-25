@@ -118,21 +118,21 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart
      */
     public ID getGiftWrappingId() {
         return giftWrappingId.getValue();
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart
      */
     public Input<ID> getGiftWrappingIdInput() {
         return giftWrappingId;
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart
      */
     public SetGiftOptionsOnCartInput setGiftWrappingId(ID giftWrappingId) {
         this.giftWrappingId = Input.optional(giftWrappingId);
@@ -140,7 +140,7 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * The unique identifier of the gift wrapping to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart
      */
     public SetGiftOptionsOnCartInput setGiftWrappingIdInput(Input<ID> giftWrappingId) {
         if (giftWrappingId == null) {

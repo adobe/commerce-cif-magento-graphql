@@ -27,7 +27,10 @@ public interface CustomizableOptionInterface extends CustomFieldInterface {
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     Integer getOptionId();
 
     /**
@@ -44,4 +47,9 @@ public interface CustomizableOptionInterface extends CustomFieldInterface {
      * The display name for this option.
      */
     String getTitle();
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    ID getUid();
 }

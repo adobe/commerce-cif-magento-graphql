@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * Breadcrumb item.
@@ -28,7 +27,10 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
 
     /**
      * Category ID.
+     *
+     * @deprecated Use the `category_uid` argument instead.
      */
+    @Deprecated
     public BreadcrumbQuery categoryId() {
         startField("category_id");
 
@@ -49,6 +51,15 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
      */
     public BreadcrumbQuery categoryName() {
         startField("category_name");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `Breadcrumb` object.
+     */
+    public BreadcrumbQuery categoryUid() {
+        startField("category_uid");
 
         return this;
     }

@@ -47,6 +47,12 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "values": {
                     List<ItemSelectedBundleOptionValue> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -85,8 +91,11 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
     }
 
     /**
-     * The unique identifier of the option
+     * The unique ID for a `ItemSelectedBundleOption` object
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public ID getId() {
         return (ID) get("id");
     }
@@ -109,6 +118,18 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
     }
 
     /**
+     * The unique ID for a `ItemSelectedBundleOption` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public ItemSelectedBundleOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * A list of products that represent the values of the parent option
      */
     public List<ItemSelectedBundleOptionValue> getValues() {
@@ -126,6 +147,9 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
                 return false;
 
             case "label":
+                return false;
+
+            case "uid":
                 return false;
 
             case "values":

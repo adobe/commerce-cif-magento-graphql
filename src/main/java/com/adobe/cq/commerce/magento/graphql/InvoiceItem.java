@@ -134,7 +134,7 @@ public class InvoiceItem extends AbstractResponse<InvoiceItem> implements Invoic
     }
 
     /**
-     * The unique ID of the invoice item
+     * The unique ID for a `InvoiceItemInterface` object
      */
     public ID getId() {
         return (ID) get("id");

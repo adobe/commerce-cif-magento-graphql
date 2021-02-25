@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * Invoice item details
@@ -48,7 +47,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * The unique ID of the invoice item
+     * The unique ID for a `InvoiceItemInterface` object
      */
     public InvoiceItemInterfaceQuery id() {
         startField("id");

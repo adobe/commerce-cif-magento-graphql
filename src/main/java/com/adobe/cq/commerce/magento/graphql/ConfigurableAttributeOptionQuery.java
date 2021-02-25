@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * ConfigurableAttributeOption contains the value_index (and other related information) assigned to a
@@ -46,7 +45,7 @@ public class ConfigurableAttributeOptionQuery extends AbstractQuery<Configurable
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `ConfigurableAttributeOption` object
      */
     public ConfigurableAttributeOptionQuery uid() {
         startField("uid");

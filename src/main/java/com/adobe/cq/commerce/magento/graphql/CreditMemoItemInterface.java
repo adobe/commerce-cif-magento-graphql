@@ -33,7 +33,7 @@ public interface CreditMemoItemInterface extends CustomFieldInterface {
     List<Discount> getDiscounts();
 
     /**
-     * The unique ID of the credit memo item, used for API purposes
+     * The unique ID for a `CreditMemoItemInterface` object
      */
     ID getId();
 

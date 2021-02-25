@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * BundleItem defines an individual item in a bundle product.
@@ -28,7 +27,10 @@ public class BundleItemQuery extends AbstractQuery<BundleItemQuery> {
 
     /**
      * An ID assigned to each type of item in a bundle product.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public BundleItemQuery optionId() {
         startField("option_id");
 
@@ -90,6 +92,15 @@ public class BundleItemQuery extends AbstractQuery<BundleItemQuery> {
      */
     public BundleItemQuery type() {
         startField("type");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `BundleItem` object.
+     */
+    public BundleItemQuery uid() {
+        startField("uid");
 
         return this;
     }

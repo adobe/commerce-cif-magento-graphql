@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigurableOption> {
@@ -29,6 +30,18 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "configurable_product_option_uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
+                case "configurable_product_option_value_uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "id": {
                     responseData.put(key, jsonAsInteger(field.getValue(), key));
 
@@ -69,6 +82,34 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
         return "SelectedConfigurableOption";
     }
 
+    /**
+     * The unique ID for a `ConfigurableProductOptions` object
+     */
+    public ID getConfigurableProductOptionUid() {
+        return (ID) get("configurable_product_option_uid");
+    }
+
+    public SelectedConfigurableOption setConfigurableProductOptionUid(ID arg) {
+        optimisticData.put(getKey("configurable_product_option_uid"), arg);
+        return this;
+    }
+
+    /**
+     * The unique ID for a `ConfigurableProductOptionsValues` object
+     */
+    public ID getConfigurableProductOptionValueUid() {
+        return (ID) get("configurable_product_option_value_uid");
+    }
+
+    public SelectedConfigurableOption setConfigurableProductOptionValueUid(ID arg) {
+        optimisticData.put(getKey("configurable_product_option_value_uid"), arg);
+        return this;
+    }
+
+    /**
+     * @deprecated Use SelectedConfigurableOption.configurable_product_option_uid instead
+     */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -87,6 +128,10 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
         return this;
     }
 
+    /**
+     * @deprecated Use SelectedConfigurableOption.configurable_product_option_value_uid instead
+     */
+    @Deprecated
     public Integer getValueId() {
         return (Integer) get("value_id");
     }
@@ -107,6 +152,12 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "configurable_product_option_uid":
+                return false;
+
+            case "configurable_product_option_value_uid":
+                return false;
+
             case "id":
                 return false;
 

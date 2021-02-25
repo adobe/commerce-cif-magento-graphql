@@ -25,6 +25,8 @@ import com.shopify.graphql.support.Input;
 public class ProductAttributeFilterInput implements Serializable {
     private Input<FilterEqualTypeInput> categoryId = Input.undefined();
 
+    private Input<FilterEqualTypeInput> categoryUid = Input.undefined();
+
     private Input<FilterMatchTypeInput> description = Input.undefined();
 
     private Input<FilterMatchTypeInput> name = Input.undefined();
@@ -38,21 +40,21 @@ public class ProductAttributeFilterInput implements Serializable {
     private Input<FilterEqualTypeInput> urlKey = Input.undefined();
 
     /**
-     * Filter product by category id
+     * Deprecated: use `category_uid` to filter product by category id.
      */
     public FilterEqualTypeInput getCategoryId() {
         return categoryId.getValue();
     }
 
     /**
-     * Filter product by category id
+     * Deprecated: use `category_uid` to filter product by category id.
      */
     public Input<FilterEqualTypeInput> getCategoryIdInput() {
         return categoryId;
     }
 
     /**
-     * Filter product by category id
+     * Deprecated: use `category_uid` to filter product by category id.
      */
     public ProductAttributeFilterInput setCategoryId(FilterEqualTypeInput categoryId) {
         this.categoryId = Input.optional(categoryId);
@@ -60,13 +62,46 @@ public class ProductAttributeFilterInput implements Serializable {
     }
 
     /**
-     * Filter product by category id
+     * Deprecated: use `category_uid` to filter product by category id.
      */
     public ProductAttributeFilterInput setCategoryIdInput(Input<FilterEqualTypeInput> categoryId) {
         if (categoryId == null) {
             throw new IllegalArgumentException("Input can not be null");
         }
         this.categoryId = categoryId;
+        return this;
+    }
+
+    /**
+     * Filter product by the unique ID for a `CategoryInterface` object.
+     */
+    public FilterEqualTypeInput getCategoryUid() {
+        return categoryUid.getValue();
+    }
+
+    /**
+     * Filter product by the unique ID for a `CategoryInterface` object.
+     */
+    public Input<FilterEqualTypeInput> getCategoryUidInput() {
+        return categoryUid;
+    }
+
+    /**
+     * Filter product by the unique ID for a `CategoryInterface` object.
+     */
+    public ProductAttributeFilterInput setCategoryUid(FilterEqualTypeInput categoryUid) {
+        this.categoryUid = Input.optional(categoryUid);
+        return this;
+    }
+
+    /**
+     * Filter product by the unique ID for a `CategoryInterface` object.
+     */
+    public ProductAttributeFilterInput setCategoryUidInput(Input<FilterEqualTypeInput> categoryUid) {
+        if (categoryUid == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.categoryUid = categoryUid;
         return this;
     }
 
@@ -278,6 +313,17 @@ public class ProductAttributeFilterInput implements Serializable {
             _queryBuilder.append("category_id:");
             if (categoryId.getValue() != null) {
                 categoryId.getValue().appendTo(_queryBuilder);
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
+
+        if (this.categoryUid.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("category_uid:");
+            if (categoryUid.getValue() != null) {
+                categoryUid.getValue().appendTo(_queryBuilder);
             } else {
                 _queryBuilder.append("null");
             }

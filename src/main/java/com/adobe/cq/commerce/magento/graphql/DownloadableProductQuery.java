@@ -17,7 +17,6 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * DownloadableProduct defines a product that the customer downloads
@@ -29,7 +28,10 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public DownloadableProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -76,7 +78,10 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public DownloadableProductQuery createdAt() {
         startField("created_at");
 
@@ -146,7 +151,10 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     public DownloadableProductQuery id() {
         startField("id");
 
@@ -270,7 +278,10 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public DownloadableProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -279,7 +290,10 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public DownloadableProductQuery newToDate() {
         startField("new_to_date");
 
@@ -496,7 +510,10 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public DownloadableProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -517,6 +534,12 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
      */
     public DownloadableProductQuery specialToDate() {
         startField("special_to_date");
+
+        return this;
+    }
+
+    public DownloadableProductQuery staged() {
+        startField("staged");
 
         return this;
     }
@@ -593,8 +616,20 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    public DownloadableProductQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public DownloadableProductQuery updatedAt() {
         startField("updated_at");
 

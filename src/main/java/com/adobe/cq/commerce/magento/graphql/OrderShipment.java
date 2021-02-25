@@ -139,7 +139,7 @@ public class OrderShipment extends AbstractResponse<OrderShipment> {
     }
 
     /**
-     * The unique ID of the shipment
+     * The unique ID for a `OrderShipment` object
      */
     public ID getId() {
         return (ID) get("id");

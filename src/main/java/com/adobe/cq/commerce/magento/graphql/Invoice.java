@@ -129,7 +129,7 @@ public class Invoice extends AbstractResponse<Invoice> {
     }
 
     /**
-     * The ID of the invoice, used for API purposes
+     * The unique ID for a `Invoice` object
      */
     public ID getId() {
         return (ID) get("id");
