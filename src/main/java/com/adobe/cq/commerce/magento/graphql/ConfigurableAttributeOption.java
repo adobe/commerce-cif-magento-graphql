@@ -114,7 +114,7 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `ConfigurableAttributeOption` object
      */
     public ID getUid() {
         return (ID) get("uid");

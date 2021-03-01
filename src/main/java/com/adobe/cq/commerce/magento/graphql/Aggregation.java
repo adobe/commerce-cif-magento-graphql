@@ -21,11 +21,10 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
-import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A bucket that contains information for each filterable option (such as price, category ID, and
+ * A bucket that contains information for each filterable option (such as price, category `UID`, and
  * custom attributes).
  */
 public class Aggregation extends AbstractResponse<Aggregation> {

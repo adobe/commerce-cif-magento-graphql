@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * BundleItemOption defines characteristics and options for a specific bundle item.
@@ -37,7 +36,10 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
 
     /**
      * The ID assigned to the bundled item option.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public BundleItemOptionQuery id() {
         startField("id");
 
@@ -125,7 +127,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `BundleItemOption` object.
      */
     public BundleItemOptionQuery uid() {
         startField("uid");

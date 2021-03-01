@@ -44,6 +44,17 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
                     break;
                 }
 
+                case "entity_uid": {
+                    ID optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ID(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -118,9 +129,25 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
+     * The unique ID for a `ProductInterface`, `CategoryInterface`, `CmsPage`, etc. object associated with
+     * the specified url. This could be a product UID, category UID, or cms page UID.
+     */
+    public ID getEntityUid() {
+        return (ID) get("entity_uid");
+    }
+
+    public EntityUrl setEntityUid(ID arg) {
+        optimisticData.put(getKey("entity_uid"), arg);
+        return this;
+    }
+
+    /**
      * The ID assigned to the object associated with the specified url. This could be a product ID,
      * category ID, or page ID.
+     *
+     * @deprecated Use `entity_uid` instead.
      */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -170,6 +197,9 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "canonical_url":
+                return false;
+
+            case "entity_uid":
                 return false;
 
             case "id":

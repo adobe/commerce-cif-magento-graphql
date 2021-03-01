@@ -33,7 +33,7 @@ public interface InvoiceItemInterface extends CustomFieldInterface {
     List<Discount> getDiscounts();
 
     /**
-     * The unique ID of the invoice item
+     * The unique ID for a `InvoiceItemInterface` object
      */
     ID getId();
 

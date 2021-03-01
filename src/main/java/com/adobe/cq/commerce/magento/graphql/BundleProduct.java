@@ -590,6 +590,12 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     break;
                 }
 
+                case "staged": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
+
+                    break;
+                }
+
                 case "stock_status": {
                     ProductStockStatus optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -662,6 +668,12 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -802,7 +814,10 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public Integer getAttributeSetId() {
         return (Integer) get("attribute_set_id");
     }
@@ -860,7 +875,10 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getCreatedAt() {
         return (String) get("created_at");
     }
@@ -944,7 +962,10 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -1080,7 +1101,10 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getNewFromDate() {
         return (String) get("new_from_date");
     }
@@ -1092,7 +1116,10 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getNewToDate() {
         return (String) get("new_to_date");
     }
@@ -1299,7 +1326,10 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getSpecialFromDate() {
         return (String) get("special_from_date");
     }
@@ -1330,6 +1360,15 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public BundleProduct setSpecialToDate(String arg) {
         optimisticData.put(getKey("special_to_date"), arg);
+        return this;
+    }
+
+    public Boolean getStaged() {
+        return (Boolean) get("staged");
+    }
+
+    public BundleProduct setStaged(Boolean arg) {
+        optimisticData.put(getKey("staged"), arg);
         return this;
     }
 
@@ -1415,8 +1454,23 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public BundleProduct setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public String getUpdatedAt() {
         return (String) get("updated_at");
     }
@@ -1648,6 +1702,9 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
             case "special_to_date":
                 return false;
 
+            case "staged":
+                return false;
+
             case "stock_status":
                 return false;
 
@@ -1664,6 +1721,9 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                 return true;
 
             case "type_id":
+                return false;
+
+            case "uid":
                 return false;
 
             case "updated_at":

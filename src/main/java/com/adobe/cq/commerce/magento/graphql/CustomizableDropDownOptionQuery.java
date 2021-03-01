@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableDropDownOption contains information about a drop down menu that is defined as part of a
@@ -29,7 +28,10 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableDropDownOptionQuery optionId() {
         startField("option_id");
 
@@ -59,6 +61,15 @@ public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableD
      */
     public CustomizableDropDownOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableDropDownOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

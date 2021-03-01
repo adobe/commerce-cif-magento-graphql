@@ -167,7 +167,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * The unique ID of the credit memo item, used for API purposes
+     * The unique ID for a `CreditMemoItemInterface` object
      */
     public ID getId() {
         return (ID) get("id");

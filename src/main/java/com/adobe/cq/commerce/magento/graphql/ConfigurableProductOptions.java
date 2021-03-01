@@ -68,6 +68,12 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
                     break;
                 }
 
+                case "attribute_uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -108,6 +114,12 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -175,7 +187,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     /**
      * The ID assigned to the attribute
      *
-     * @deprecated Use attribute_id_v2 instead
+     * @deprecated Use attribute_uid instead
      */
     @Deprecated
     public String getAttributeId() {
@@ -189,7 +201,10 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
 
     /**
      * The ID assigned to the attribute
+     *
+     * @deprecated Use attribute_uid instead
      */
+    @Deprecated
     public Integer getAttributeIdV2() {
         return (Integer) get("attribute_id_v2");
     }
@@ -200,8 +215,23 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * The configurable option ID number assigned by the system
+     * The unique ID for a `Attribute` object
      */
+    public ID getAttributeUid() {
+        return (ID) get("attribute_uid");
+    }
+
+    public ConfigurableProductOptions setAttributeUid(ID arg) {
+        optimisticData.put(getKey("attribute_uid"), arg);
+        return this;
+    }
+
+    /**
+     * The configurable option ID number assigned by the system
+     *
+     * @deprecated Use uid instead
+     */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -237,13 +267,28 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
 
     /**
      * This is the same as a product&#39;s id field
+     *
+     * @deprecated `product_id` is not needed and can be obtained from it&#39;s parent
      */
+    @Deprecated
     public Integer getProductId() {
         return (Integer) get("product_id");
     }
 
     public ConfigurableProductOptions setProductId(Integer arg) {
         optimisticData.put(getKey("product_id"), arg);
+        return this;
+    }
+
+    /**
+     * The unique ID for a `ConfigurableProductOptions` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public ConfigurableProductOptions setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
         return this;
     }
 
@@ -282,6 +327,9 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
             case "attribute_id_v2":
                 return false;
 
+            case "attribute_uid":
+                return false;
+
             case "id":
                 return false;
 
@@ -292,6 +340,9 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
                 return false;
 
             case "product_id":
+                return false;
+
+            case "uid":
                 return false;
 
             case "use_default":

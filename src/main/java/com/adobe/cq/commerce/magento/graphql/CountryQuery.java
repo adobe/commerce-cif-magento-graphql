@@ -44,6 +44,9 @@ public class CountryQuery extends AbstractQuery<CountryQuery> {
         return this;
     }
 
+    /**
+     * The unique ID for a `Country` object.
+     */
     public CountryQuery id() {
         startField("id");
 

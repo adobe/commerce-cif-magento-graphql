@@ -81,7 +81,7 @@ public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileVa
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableFileValue` object.
      */
     public CustomizableFileValueQuery uid() {
         startField("uid");

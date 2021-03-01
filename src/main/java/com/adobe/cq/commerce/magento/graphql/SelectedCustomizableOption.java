@@ -21,6 +21,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomizableOption> {
@@ -31,6 +32,12 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "customizable_option_uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "id": {
                     responseData.put(key, jsonAsInteger(field.getValue(), key));
 
@@ -51,6 +58,12 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
 
                 case "sort_order": {
                     responseData.put(key, jsonAsInteger(field.getValue(), key));
+
+                    break;
+                }
+
+                case "type": {
+                    responseData.put(key, jsonAsString(field.getValue(), key));
 
                     break;
                 }
@@ -87,6 +100,23 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
         return "SelectedCustomizableOption";
     }
 
+    /**
+     * The unique ID for a `CustomizableRadioOption`, `CustomizableDropDownOption`,
+     * `CustomizableMultipleOption`, etc. of `CustomizableOptionInterface` objects
+     */
+    public ID getCustomizableOptionUid() {
+        return (ID) get("customizable_option_uid");
+    }
+
+    public SelectedCustomizableOption setCustomizableOptionUid(ID arg) {
+        optimisticData.put(getKey("customizable_option_uid"), arg);
+        return this;
+    }
+
+    /**
+     * @deprecated Use SelectedCustomizableOption.customizable_option_uid instead
+     */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -123,6 +153,15 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
         return this;
     }
 
+    public String getType() {
+        return (String) get("type");
+    }
+
+    public SelectedCustomizableOption setType(String arg) {
+        optimisticData.put(getKey("type"), arg);
+        return this;
+    }
+
     public List<SelectedCustomizableOptionValue> getValues() {
         return (List<SelectedCustomizableOptionValue>) get("values");
     }
@@ -134,6 +173,9 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "customizable_option_uid":
+                return false;
+
             case "id":
                 return false;
 
@@ -144,6 +186,9 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
                 return false;
 
             case "sort_order":
+                return false;
+
+            case "type":
                 return false;
 
             case "values":

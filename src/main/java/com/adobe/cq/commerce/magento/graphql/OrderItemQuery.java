@@ -36,6 +36,15 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
+     * Indicates whether the order item is eligible is eligible to be in a return request
+     */
+    public OrderItemQuery eligibleForReturn() {
+        startField("eligible_for_return");
+
+        return this;
+    }
+
+    /**
      * The entered option for the base product, such as a logo or image
      */
     public OrderItemQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
@@ -62,7 +71,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The unique identifier of the order item
+     * The unique ID for a `OrderItemInterface` object
      */
     public OrderItemQuery id() {
         startField("id");

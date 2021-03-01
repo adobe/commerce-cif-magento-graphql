@@ -22,6 +22,20 @@ public class SelectedCustomizableOptionQuery extends AbstractQuery<SelectedCusto
         super(_queryBuilder);
     }
 
+    /**
+     * The unique ID for a `CustomizableRadioOption`, `CustomizableDropDownOption`,
+     * `CustomizableMultipleOption`, etc. of `CustomizableOptionInterface` objects
+     */
+    public SelectedCustomizableOptionQuery customizableOptionUid() {
+        startField("customizable_option_uid");
+
+        return this;
+    }
+
+    /**
+     * @deprecated Use SelectedCustomizableOption.customizable_option_uid instead
+     */
+    @Deprecated
     public SelectedCustomizableOptionQuery id() {
         startField("id");
 
@@ -42,6 +56,12 @@ public class SelectedCustomizableOptionQuery extends AbstractQuery<SelectedCusto
 
     public SelectedCustomizableOptionQuery sortOrder() {
         startField("sort_order");
+
+        return this;
+    }
+
+    public SelectedCustomizableOptionQuery type() {
+        startField("type");
 
         return this;
     }

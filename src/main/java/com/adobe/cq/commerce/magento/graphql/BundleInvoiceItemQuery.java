@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery> {
     BundleInvoiceItemQuery(StringBuilder _queryBuilder) {
@@ -51,7 +50,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * The unique ID of the invoice item
+     * The unique ID for a `InvoiceItemInterface` object
      */
     public BundleInvoiceItemQuery id() {
         startField("id");

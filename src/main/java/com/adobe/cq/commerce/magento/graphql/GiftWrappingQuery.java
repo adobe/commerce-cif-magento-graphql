@@ -32,8 +32,11 @@ public class GiftWrappingQuery extends AbstractQuery<GiftWrappingQuery> {
     }
 
     /**
-     * Gift wrapping unique identifier
+     * The unique ID for a `GiftWrapping` object
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public GiftWrappingQuery id() {
         startField("id");
 
@@ -62,6 +65,15 @@ public class GiftWrappingQuery extends AbstractQuery<GiftWrappingQuery> {
         _queryBuilder.append('{');
         queryDef.define(new MoneyQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `GiftWrapping` object
+     */
+    public GiftWrappingQuery uid() {
+        startField("uid");
 
         return this;
     }

@@ -126,7 +126,7 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableDateValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

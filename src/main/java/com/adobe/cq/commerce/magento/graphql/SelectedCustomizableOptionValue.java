@@ -19,6 +19,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCustomizableOptionValue> {
@@ -29,6 +30,12 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "customizable_option_value_uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "id": {
                     responseData.put(key, jsonAsInteger(field.getValue(), key));
 
@@ -69,6 +76,23 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
         return "SelectedCustomizableOptionValue";
     }
 
+    /**
+     * The unique ID for a `CustomizableMultipleValue`, `CustomizableRadioValue`,
+     * `CustomizableCheckboxValue`, `CustomizableDropDownValue`, etc. objects
+     */
+    public ID getCustomizableOptionValueUid() {
+        return (ID) get("customizable_option_value_uid");
+    }
+
+    public SelectedCustomizableOptionValue setCustomizableOptionValueUid(ID arg) {
+        optimisticData.put(getKey("customizable_option_value_uid"), arg);
+        return this;
+    }
+
+    /**
+     * @deprecated Use SelectedCustomizableOptionValue.customizable_option_value_uid instead
+     */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -107,6 +131,9 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "customizable_option_value_uid":
+                return false;
+
             case "id":
                 return false;
 

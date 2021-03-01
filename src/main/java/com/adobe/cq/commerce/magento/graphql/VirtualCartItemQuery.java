@@ -35,6 +35,10 @@ public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
         return this;
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public VirtualCartItemQuery id() {
         startField("id");
 
@@ -63,6 +67,15 @@ public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
 
     public VirtualCartItemQuery quantity() {
         startField("quantity");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public VirtualCartItemQuery uid() {
+        startField("uid");
 
         return this;
     }

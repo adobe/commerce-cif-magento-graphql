@@ -19,7 +19,6 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
-import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class WishlistItem extends AbstractResponse<WishlistItem> {
@@ -126,7 +125,7 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     }
 
     /**
-     * The wish list item ID
+     * The unique ID for a `WishlistItem` object
      */
     public Integer getId() {
         return (Integer) get("id");

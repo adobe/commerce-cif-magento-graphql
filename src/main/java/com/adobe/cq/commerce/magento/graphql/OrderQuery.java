@@ -32,6 +32,9 @@ public class OrderQuery extends AbstractQuery<OrderQuery> {
         return this;
     }
 
+    /**
+     * The unique ID for a `Order` object.
+     */
     public OrderQuery orderNumber() {
         startField("order_number");
 

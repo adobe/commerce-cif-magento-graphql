@@ -96,19 +96,31 @@ public class ConfigurableProductCartItemInput implements Serializable {
         return this;
     }
 
+    /**
+     * Deprecated. Use CartItemInput.sku instead.
+     */
     public String getVariantSku() {
         return variantSku.getValue();
     }
 
+    /**
+     * Deprecated. Use CartItemInput.sku instead.
+     */
     public Input<String> getVariantSkuInput() {
         return variantSku;
     }
 
+    /**
+     * Deprecated. Use CartItemInput.sku instead.
+     */
     public ConfigurableProductCartItemInput setVariantSku(String variantSku) {
         this.variantSku = Input.optional(variantSku);
         return this;
     }
 
+    /**
+     * Deprecated. Use CartItemInput.sku instead.
+     */
     public ConfigurableProductCartItemInput setVariantSkuInput(Input<String> variantSku) {
         if (variantSku == null) {
             throw new IllegalArgumentException("Input can not be null");

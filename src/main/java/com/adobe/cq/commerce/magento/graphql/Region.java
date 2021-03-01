@@ -87,6 +87,9 @@ public class Region extends AbstractResponse<Region> {
         return this;
     }
 
+    /**
+     * The unique ID for a `Region` object.
+     */
     public Integer getId() {
         return (Integer) get("id");
     }

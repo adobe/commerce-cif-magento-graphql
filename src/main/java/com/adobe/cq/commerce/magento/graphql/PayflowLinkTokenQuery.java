@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * Contains information used to generate PayPal iframe for transaction. Applies to Payflow Link and

@@ -75,6 +75,28 @@ public class Wishlist extends AbstractResponse<Wishlist> {
                     break;
                 }
 
+                case "items_v2": {
+                    WishlistItems optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new WishlistItems(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "name": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "sharing_code": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -97,6 +119,12 @@ public class Wishlist extends AbstractResponse<Wishlist> {
                     break;
                 }
 
+                case "visibility": {
+                    responseData.put(key, WishlistVisibilityEnum.fromGraphQl(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -114,7 +142,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * Wishlist unique identifier
+     * The unique ID for a `Wishlist` object
      */
     public ID getId() {
         return (ID) get("id");
@@ -126,8 +154,9 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * An array of items in the customer&#39;s wish list
+     * @deprecated Use field `items_v2` from type `Wishlist` instead
      */
+    @Deprecated
     public List<WishlistItem> getItems() {
         return (List<WishlistItem>) get("items");
     }
@@ -146,6 +175,30 @@ public class Wishlist extends AbstractResponse<Wishlist> {
 
     public Wishlist setItemsCount(Integer arg) {
         optimisticData.put(getKey("items_count"), arg);
+        return this;
+    }
+
+    /**
+     * An array of items in the customer&#39;s wish list
+     */
+    public WishlistItems getItemsV2() {
+        return (WishlistItems) get("items_v2");
+    }
+
+    public Wishlist setItemsV2(WishlistItems arg) {
+        optimisticData.put(getKey("items_v2"), arg);
+        return this;
+    }
+
+    /**
+     * The wish list name
+     */
+    public String getName() {
+        return (String) get("name");
+    }
+
+    public Wishlist setName(String arg) {
+        optimisticData.put(getKey("name"), arg);
         return this;
     }
 
@@ -173,6 +226,18 @@ public class Wishlist extends AbstractResponse<Wishlist> {
         return this;
     }
 
+    /**
+     * Indicates whether the wish list is public or private
+     */
+    public WishlistVisibilityEnum getVisibility() {
+        return (WishlistVisibilityEnum) get("visibility");
+    }
+
+    public Wishlist setVisibility(WishlistVisibilityEnum arg) {
+        optimisticData.put(getKey("visibility"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "id":
@@ -184,10 +249,19 @@ public class Wishlist extends AbstractResponse<Wishlist> {
             case "items_count":
                 return false;
 
+            case "items_v2":
+                return true;
+
+            case "name":
+                return false;
+
             case "sharing_code":
                 return false;
 
             case "updated_at":
+                return false;
+
+            case "visibility":
                 return false;
 
             default:

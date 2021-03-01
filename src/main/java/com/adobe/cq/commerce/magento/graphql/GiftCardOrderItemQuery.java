@@ -36,6 +36,15 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
+     * Indicates whether the order item is eligible is eligible to be in a return request
+     */
+    public GiftCardOrderItemQuery eligibleForReturn() {
+        startField("eligible_for_return");
+
+        return this;
+    }
+
+    /**
      * The entered option for the base product, such as a logo or image
      */
     public GiftCardOrderItemQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
@@ -75,7 +84,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The unique identifier of the order item
+     * The unique ID for a `OrderItemInterface` object
      */
     public GiftCardOrderItemQuery id() {
         startField("id");

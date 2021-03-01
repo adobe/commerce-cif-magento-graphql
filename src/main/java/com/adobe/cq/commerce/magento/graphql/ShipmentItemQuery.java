@@ -23,7 +23,7 @@ public class ShipmentItemQuery extends AbstractQuery<ShipmentItemQuery> {
     }
 
     /**
-     * Shipment item unique identifier
+     * The unique ID for a `ShipmentItemInterface` object
      */
     public ShipmentItemQuery id() {
         startField("id");

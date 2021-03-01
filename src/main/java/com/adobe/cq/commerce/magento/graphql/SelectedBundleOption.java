@@ -21,6 +21,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption> {
@@ -45,6 +46,12 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
 
                 case "type": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -81,6 +88,10 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
         return "SelectedBundleOption";
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -108,6 +119,18 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
         return this;
     }
 
+    /**
+     * The unique ID for a `SelectedBundleOption` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public SelectedBundleOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public List<SelectedBundleOptionValue> getValues() {
         return (List<SelectedBundleOptionValue>) get("values");
     }
@@ -126,6 +149,9 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
                 return false;
 
             case "type":
+                return false;
+
+            case "uid":
                 return false;
 
             case "values":

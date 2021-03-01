@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableAreaOption contains information about a text area that is defined as part of a
@@ -29,7 +28,10 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public CustomizableAreaOptionQuery optionId() {
         startField("option_id");
 
@@ -68,6 +70,15 @@ public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaO
      */
     public CustomizableAreaOptionQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public CustomizableAreaOptionQuery uid() {
+        startField("uid");
 
         return this;
     }

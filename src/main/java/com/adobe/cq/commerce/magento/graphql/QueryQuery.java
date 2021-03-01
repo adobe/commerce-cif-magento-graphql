@@ -21,17 +21,50 @@ import java.util.Map;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 public class QueryQuery extends AbstractQuery<QueryQuery> {
     QueryQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    public class AvailableStoresArguments extends Arguments {
+        AvailableStoresArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * Filter store views by current store group
+         */
+        public AvailableStoresArguments useCurrentGroup(Boolean value) {
+            if (value != null) {
+                startArgument("useCurrentGroup");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface AvailableStoresArgumentsDefinition {
+        void define(AvailableStoresArguments args);
+    }
+
     /**
      * Get a list of available store views and their config information.
      */
     public QueryQuery availableStores(StoreConfigQueryDefinition queryDef) {
+        return availableStores(args -> {}, queryDef);
+    }
+
+    /**
+     * Get a list of available store views and their config information.
+     */
+    public QueryQuery availableStores(AvailableStoresArgumentsDefinition argsDef, StoreConfigQueryDefinition queryDef) {
         startField("availableStores");
+
+        AvailableStoresArguments args = new AvailableStoresArguments(_queryBuilder);
+        argsDef.define(args);
+        AvailableStoresArguments.end(args);
 
         _queryBuilder.append('{');
         queryDef.define(new StoreConfigQuery(_queryBuilder));
@@ -340,6 +373,24 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
+     * Return products that have been added to the specified compare list
+     */
+    public QueryQuery compareList(ID uid, CompareListQueryDefinition queryDef) {
+        startField("compareList");
+
+        _queryBuilder.append("(uid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, uid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompareListQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The countries query provides information for all countries.
      */
     public QueryQuery countries(CountryQueryDefinition queryDef) {
@@ -628,6 +679,26 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
             if (value != null) {
                 startArgument("currentPage");
                 _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Information about products which should be delivered.
+         */
+        public PickupLocationsArguments productsInfo(List<ProductInfoInput> value) {
+            if (value != null) {
+                startArgument("productsInfo");
+                _queryBuilder.append('[');
+                {
+                    String listSeperator1 = "";
+                    for (ProductInfoInput item1 : value) {
+                        _queryBuilder.append(listSeperator1);
+                        listSeperator1 = ",";
+                        item1.appendTo(_queryBuilder);
+                    }
+                }
+                _queryBuilder.append(']');
             }
             return this;
         }

@@ -21,6 +21,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -133,6 +134,12 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "video_content": {
                     ProductMediaGalleryEntriesVideoContent optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -198,7 +205,10 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
 
     /**
      * The identifier assigned to the object.
+     *
+     * @deprecated Use `uid` instead.
      */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -257,6 +267,18 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
+     * The unique ID for a `MediaGalleryEntry` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public MediaGalleryEntry setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * Contains a ProductMediaGalleryEntriesVideoContent object.
      */
     public ProductMediaGalleryEntriesVideoContent getVideoContent() {
@@ -292,6 +314,9 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
                 return false;
 
             case "types":
+                return false;
+
+            case "uid":
                 return false;
 
             case "video_content":

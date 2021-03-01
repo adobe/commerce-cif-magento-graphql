@@ -93,7 +93,7 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
     }
 
     /**
-     * Shipment item unique identifier
+     * The unique ID for a `ShipmentItemInterface` object
      */
     public ID getId() {
         return (ID) get("id");

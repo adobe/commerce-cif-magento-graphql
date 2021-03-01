@@ -80,6 +80,12 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "value": {
                     List<CustomizableCheckboxValue> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -119,7 +125,10 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
 
     /**
      * Option ID.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -166,6 +175,18 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
     }
 
     /**
+     * The unique ID for a `CustomizableOptionInterface` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public CustomizableCheckboxOption setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
      * An array that defines a set of checkbox values.
      */
     public List<CustomizableCheckboxValue> getValue() {
@@ -189,6 +210,9 @@ public class CustomizableCheckboxOption extends AbstractResponse<CustomizableChe
                 return false;
 
             case "title":
+                return false;
+
+            case "uid":
                 return false;
 
             case "value":

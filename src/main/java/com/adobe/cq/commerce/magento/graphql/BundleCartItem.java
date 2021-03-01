@@ -21,6 +21,7 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
+import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class BundleCartItem extends AbstractResponse<BundleCartItem> implements CartItemInterface {
@@ -130,6 +131,12 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -200,6 +207,10 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
         return this;
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public String getId() {
         return (String) get("id");
     }
@@ -236,6 +247,18 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
         return this;
     }
 
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public BundleCartItem setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "available_gift_wrapping":
@@ -263,6 +286,9 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
                 return false;
 
             case "quantity":
+                return false;
+
+            case "uid":
                 return false;
 
             default:

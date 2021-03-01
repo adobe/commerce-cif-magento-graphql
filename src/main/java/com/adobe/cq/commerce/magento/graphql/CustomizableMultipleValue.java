@@ -195,7 +195,7 @@ public class CustomizableMultipleValue extends AbstractResponse<CustomizableMult
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableMultipleValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

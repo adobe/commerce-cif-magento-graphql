@@ -59,7 +59,10 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
 
     /**
      * The identifier assigned to the object.
+     *
+     * @deprecated Use `uid` instead.
      */
+    @Deprecated
     public MediaGalleryEntryQuery id() {
         startField("id");
 
@@ -98,6 +101,15 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
      */
     public MediaGalleryEntryQuery types() {
         startField("types");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `MediaGalleryEntry` object.
+     */
+    public MediaGalleryEntryQuery uid() {
+        startField("uid");
 
         return this;
     }

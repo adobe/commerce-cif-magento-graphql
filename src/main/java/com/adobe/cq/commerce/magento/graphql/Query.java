@@ -149,6 +149,17 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "compareList": {
+                    CompareList optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CompareList(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "countries": {
                     List<Country> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -494,6 +505,18 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * Return products that have been added to the specified compare list
+     */
+    public CompareList getCompareList() {
+        return (CompareList) get("compareList");
+    }
+
+    public Query setCompareList(CompareList arg) {
+        optimisticData.put(getKey("compareList"), arg);
+        return this;
+    }
+
+    /**
      * The countries query provides information for all countries.
      */
     public List<Country> getCountries() {
@@ -764,6 +787,9 @@ public class Query extends AbstractResponse<Query> {
                 return true;
 
             case "cmsPage":
+                return true;
+
+            case "compareList":
                 return true;
 
             case "countries":

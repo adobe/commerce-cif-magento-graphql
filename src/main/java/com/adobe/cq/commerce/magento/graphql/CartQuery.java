@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 public class CartQuery extends AbstractQuery<CartQuery> {
     CartQuery(StringBuilder _queryBuilder) {
@@ -170,7 +169,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * The ID of the cart.
+     * The unique ID for a `Cart` object
      */
     public CartQuery id() {
         startField("id");

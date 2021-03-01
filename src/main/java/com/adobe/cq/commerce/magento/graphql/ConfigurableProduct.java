@@ -111,6 +111,17 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
                     break;
                 }
 
+                case "configurable_product_options_selection": {
+                    ConfigurableProductOptionsSelection optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ConfigurableProductOptionsSelection(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "country_of_manufacture": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -535,6 +546,12 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
                     break;
                 }
 
+                case "staged": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
+
+                    break;
+                }
+
                 case "stock_status": {
                     ProductStockStatus optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -607,6 +624,12 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
                     }
 
                     responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
                     break;
                 }
@@ -768,7 +791,10 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public Integer getAttributeSetId() {
         return (Integer) get("attribute_set_id");
     }
@@ -825,6 +851,18 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
+     * Metadata for the specified configurable options selection
+     */
+    public ConfigurableProductOptionsSelection getConfigurableProductOptionsSelection() {
+        return (ConfigurableProductOptionsSelection) get("configurable_product_options_selection");
+    }
+
+    public ConfigurableProduct setConfigurableProductOptionsSelection(ConfigurableProductOptionsSelection arg) {
+        optimisticData.put(getKey("configurable_product_options_selection"), arg);
+        return this;
+    }
+
+    /**
      * The product&#39;s country of origin.
      */
     public String getCountryOfManufacture() {
@@ -838,7 +876,10 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getCreatedAt() {
         return (String) get("created_at");
     }
@@ -886,7 +927,10 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
@@ -1010,7 +1054,10 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getNewFromDate() {
         return (String) get("new_from_date");
     }
@@ -1022,7 +1069,10 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getNewToDate() {
         return (String) get("new_to_date");
     }
@@ -1205,7 +1255,10 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public String getSpecialFromDate() {
         return (String) get("special_from_date");
     }
@@ -1236,6 +1289,15 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
 
     public ConfigurableProduct setSpecialToDate(String arg) {
         optimisticData.put(getKey("special_to_date"), arg);
+        return this;
+    }
+
+    public Boolean getStaged() {
+        return (Boolean) get("staged");
+    }
+
+    public ConfigurableProduct setStaged(Boolean arg) {
+        optimisticData.put(getKey("staged"), arg);
         return this;
     }
 
@@ -1321,8 +1383,23 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public ConfigurableProduct setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public String getUpdatedAt() {
         return (String) get("updated_at");
     }
@@ -1449,6 +1526,9 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
             case "configurable_options":
                 return true;
 
+            case "configurable_product_options_selection":
+                return true;
+
             case "country_of_manufacture":
                 return false;
 
@@ -1551,6 +1631,9 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
             case "special_to_date":
                 return false;
 
+            case "staged":
+                return false;
+
             case "stock_status":
                 return false;
 
@@ -1567,6 +1650,9 @@ public class ConfigurableProduct extends AbstractResponse<ConfigurableProduct> i
                 return true;
 
             case "type_id":
+                return false;
+
+            case "uid":
                 return false;
 
             case "updated_at":

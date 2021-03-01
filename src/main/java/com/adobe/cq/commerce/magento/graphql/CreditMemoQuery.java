@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * Credit memo details
@@ -40,7 +39,7 @@ public class CreditMemoQuery extends AbstractQuery<CreditMemoQuery> {
     }
 
     /**
-     * The unique ID of the credit memo, used for API purposes
+     * The unique ID for a `CreditMemo` object
      */
     public CreditMemoQuery id() {
         startField("id");

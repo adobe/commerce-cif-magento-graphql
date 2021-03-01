@@ -17,7 +17,6 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * A simple product is tangible and are usually sold as single units or in fixed quantities.
@@ -29,7 +28,10 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public SimpleProductQuery attributeSetId() {
         startField("attribute_set_id");
 
@@ -76,7 +78,10 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public SimpleProductQuery createdAt() {
         startField("created_at");
 
@@ -120,7 +125,10 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     public SimpleProductQuery id() {
         startField("id");
 
@@ -226,7 +234,10 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public SimpleProductQuery newFromDate() {
         startField("new_from_date");
 
@@ -235,7 +246,10 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public SimpleProductQuery newToDate() {
         startField("new_to_date");
 
@@ -452,7 +466,10 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     public SimpleProductQuery specialFromDate() {
         startField("special_from_date");
 
@@ -473,6 +490,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
      */
     public SimpleProductQuery specialToDate() {
         startField("special_to_date");
+
+        return this;
+    }
+
+    public SimpleProductQuery staged() {
+        startField("staged");
 
         return this;
     }
@@ -549,8 +572,20 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    public SimpleProductQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     public SimpleProductQuery updatedAt() {
         startField("updated_at");
 

@@ -436,7 +436,7 @@ public class Cart extends AbstractResponse<Cart> {
     }
 
     /**
-     * The ID of the cart.
+     * The unique ID for a `Cart` object
      */
     public ID getId() {
         return (ID) get("id");

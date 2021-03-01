@@ -21,7 +21,6 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
-import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
@@ -49,6 +48,23 @@ public class Customer extends AbstractResponse<Customer> {
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "allow_remote_shopping_assistance": {
+                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
+
+                    break;
+                }
+
+                case "compare_list": {
+                    CompareList optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CompareList(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -221,6 +237,28 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "return": {
+                    Return optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Return(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "returns": {
+                    Returns optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Returns(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "reviews": {
                     responseData.put(key, new ProductReviews(jsonAsObject(field.getValue(), key)));
 
@@ -277,6 +315,33 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "wishlist_v2": {
+                    Wishlist optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Wishlist(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "wishlists": {
+                    List<Wishlist> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        Wishlist optional2 = null;
+                        if (!element1.isJsonNull()) {
+                            optional2 = new Wishlist(jsonAsObject(element1, key));
+                        }
+
+                        list1.add(optional2);
+                    }
+
+                    responseData.put(key, list1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -302,6 +367,30 @@ public class Customer extends AbstractResponse<Customer> {
 
     public Customer setAddresses(List<CustomerAddress> arg) {
         optimisticData.put(getKey("addresses"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether the customer has enabled remote shopping assistance
+     */
+    public Boolean getAllowRemoteShoppingAssistance() {
+        return (Boolean) get("allow_remote_shopping_assistance");
+    }
+
+    public Customer setAllowRemoteShoppingAssistance(Boolean arg) {
+        optimisticData.put(getKey("allow_remote_shopping_assistance"), arg);
+        return this;
+    }
+
+    /**
+     * The contents of the customer&#39;s compare list
+     */
+    public CompareList getCompareList() {
+        return (CompareList) get("compare_list");
+    }
+
+    public Customer setCompareList(CompareList arg) {
+        optimisticData.put(getKey("compare_list"), arg);
         return this;
     }
 
@@ -491,6 +580,30 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
+     * Retrieves details about the specified return request from the unique ID for a `Return` object
+     */
+    public Return getReturn() {
+        return (Return) get("return");
+    }
+
+    public Customer setReturn(Return arg) {
+        optimisticData.put(getKey("return"), arg);
+        return this;
+    }
+
+    /**
+     * Information about the customer&#39;s return requests.
+     */
+    public Returns getReturns() {
+        return (Returns) get("returns");
+    }
+
+    public Customer setReturns(Returns arg) {
+        optimisticData.put(getKey("returns"), arg);
+        return this;
+    }
+
+    /**
      * Contains the customer&#39;s product reviews
      */
     public ProductReviews getReviews() {
@@ -551,8 +664,11 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Contains the contents of a customer&#39;s wish lists
+     * Contains a customer&#39;s wish lists
+     *
+     * @deprecated Use `Customer.wishlists` or `Customer.wishlist_v2`
      */
+    @Deprecated
     public Wishlist getWishlist() {
         return (Wishlist) get("wishlist");
     }
@@ -562,9 +678,40 @@ public class Customer extends AbstractResponse<Customer> {
         return this;
     }
 
+    /**
+     * Retrieve the specified wish list identified by the unique ID for a `Wishlist` object
+     */
+    public Wishlist getWishlistV2() {
+        return (Wishlist) get("wishlist_v2");
+    }
+
+    public Customer setWishlistV2(Wishlist arg) {
+        optimisticData.put(getKey("wishlist_v2"), arg);
+        return this;
+    }
+
+    /**
+     * An array of wishlists. In Magento Open Source, customers are limited to one wish list. The number of
+     * wish lists is configurable for Magento Commerce
+     */
+    public List<Wishlist> getWishlists() {
+        return (List<Wishlist>) get("wishlists");
+    }
+
+    public Customer setWishlists(List<Wishlist> arg) {
+        optimisticData.put(getKey("wishlists"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "addresses":
+                return true;
+
+            case "allow_remote_shopping_assistance":
+                return false;
+
+            case "compare_list":
                 return true;
 
             case "created_at":
@@ -612,6 +759,12 @@ public class Customer extends AbstractResponse<Customer> {
             case "prefix":
                 return false;
 
+            case "return":
+                return true;
+
+            case "returns":
+                return true;
+
             case "reviews":
                 return true;
 
@@ -628,6 +781,12 @@ public class Customer extends AbstractResponse<Customer> {
                 return false;
 
             case "wishlist":
+                return true;
+
+            case "wishlist_v2":
+                return true;
+
+            case "wishlists":
                 return true;
 
             default:

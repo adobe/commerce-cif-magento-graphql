@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableCheckboxValue defines the price and sku of a product whose page contains a customized
@@ -82,7 +81,7 @@ public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCh
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableCheckboxValue` object.
      */
     public CustomizableCheckboxValueQuery uid() {
         startField("uid");

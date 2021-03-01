@@ -63,7 +63,7 @@ public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaVa
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableAreaValue` object.
      */
     public CustomizableAreaValueQuery uid() {
         startField("uid");

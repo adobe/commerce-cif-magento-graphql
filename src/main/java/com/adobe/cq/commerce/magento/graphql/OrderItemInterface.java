@@ -32,6 +32,11 @@ public interface OrderItemInterface extends CustomFieldInterface {
     List<Discount> getDiscounts();
 
     /**
+     * Indicates whether the order item is eligible is eligible to be in a return request
+     */
+    Boolean getEligibleForReturn();
+
+    /**
      * The entered option for the base product, such as a logo or image
      */
     List<OrderItemOption> getEnteredOptions();
@@ -42,7 +47,7 @@ public interface OrderItemInterface extends CustomFieldInterface {
     GiftWrapping getGiftWrapping();
 
     /**
-     * The unique identifier of the order item
+     * The unique ID for a `OrderItemInterface` object
      */
     ID getId();
 

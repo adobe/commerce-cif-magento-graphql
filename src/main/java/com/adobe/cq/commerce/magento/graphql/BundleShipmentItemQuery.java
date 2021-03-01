@@ -36,7 +36,7 @@ public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQue
     }
 
     /**
-     * Shipment item unique identifier
+     * The unique ID for a `ShipmentItemInterface` object
      */
     public BundleShipmentItemQuery id() {
         startField("id");

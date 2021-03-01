@@ -15,10 +15,15 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.CustomFieldInterface;
+import com.shopify.graphql.support.ID;
 
 public interface CartItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     String getId();
 
     CartItemPrices getPrices();
@@ -26,4 +31,9 @@ public interface CartItemInterface extends CustomFieldInterface {
     ProductInterface getProduct();
 
     Double getQuantity();
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    ID getUid();
 }

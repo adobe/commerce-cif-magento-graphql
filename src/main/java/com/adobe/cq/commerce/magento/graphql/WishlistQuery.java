@@ -15,6 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 public class WishlistQuery extends AbstractQuery<WishlistQuery> {
@@ -23,7 +24,7 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * Wishlist unique identifier
+     * The unique ID for a `Wishlist` object
      */
     public WishlistQuery id() {
         startField("id");
@@ -32,8 +33,9 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * An array of items in the customer&#39;s wish list
+     * @deprecated Use field `items_v2` from type `Wishlist` instead
      */
+    @Deprecated
     public WishlistQuery items(WishlistItemQueryDefinition queryDef) {
         startField("items");
 
@@ -53,6 +55,65 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
         return this;
     }
 
+    public class ItemsV2Arguments extends Arguments {
+        ItemsV2Arguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public ItemsV2Arguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        public ItemsV2Arguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface ItemsV2ArgumentsDefinition {
+        void define(ItemsV2Arguments args);
+    }
+
+    /**
+     * An array of items in the customer&#39;s wish list
+     */
+    public WishlistQuery itemsV2(WishlistItemsQueryDefinition queryDef) {
+        return itemsV2(args -> {}, queryDef);
+    }
+
+    /**
+     * An array of items in the customer&#39;s wish list
+     */
+    public WishlistQuery itemsV2(ItemsV2ArgumentsDefinition argsDef, WishlistItemsQueryDefinition queryDef) {
+        startField("items_v2");
+
+        ItemsV2Arguments args = new ItemsV2Arguments(_queryBuilder);
+        argsDef.define(args);
+        ItemsV2Arguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new WishlistItemsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The wish list name
+     */
+    public WishlistQuery name() {
+        startField("name");
+
+        return this;
+    }
+
     /**
      * An encrypted code that Magento uses to link to the wish list
      */
@@ -67,6 +128,15 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
      */
     public WishlistQuery updatedAt() {
         startField("updated_at");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the wish list is public or private
+     */
+    public WishlistQuery visibility() {
+        startField("visibility");
 
         return this;
     }

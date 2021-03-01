@@ -66,6 +66,12 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
                     break;
                 }
 
+                case "category_uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "category_url_key": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -106,7 +112,10 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
 
     /**
      * Category ID.
+     *
+     * @deprecated Use the `category_uid` argument instead.
      */
+    @Deprecated
     public Integer getCategoryId() {
         return (Integer) get("category_id");
     }
@@ -137,6 +146,18 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
 
     public Breadcrumb setCategoryName(String arg) {
         optimisticData.put(getKey("category_name"), arg);
+        return this;
+    }
+
+    /**
+     * The unique ID for a `Breadcrumb` object.
+     */
+    public ID getCategoryUid() {
+        return (ID) get("category_uid");
+    }
+
+    public Breadcrumb setCategoryUid(ID arg) {
+        optimisticData.put(getKey("category_uid"), arg);
         return this;
     }
 
@@ -173,6 +194,9 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
                 return false;
 
             case "category_name":
+                return false;
+
+            case "category_uid":
                 return false;
 
             case "category_url_key":

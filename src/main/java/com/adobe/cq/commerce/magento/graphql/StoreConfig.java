@@ -14,7 +14,6 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import java.util.List;
 import java.util.Map;
 
 import com.google.gson.JsonElement;
@@ -188,6 +187,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "braintree_cc_vault_active": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "cart_gift_wrapping": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -287,6 +297,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "configurable_thumbnail_source": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "copyright": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -346,6 +367,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "enable_multiple_wishlists": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -423,6 +455,28 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "is_default_store": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "is_default_store_group": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -661,6 +715,17 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "maximum_number_of_wishlists": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "minimum_password_length": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -749,10 +814,27 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "returns_enabled": {
+                    responseData.put(key, jsonAsString(field.getValue(), key));
+
+                    break;
+                }
+
                 case "root_category_id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "root_category_uid": {
+                    ID optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ID(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -859,10 +941,54 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "store_code": {
+                    ID optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ID(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "store_group_code": {
+                    ID optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ID(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "store_group_name": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "store_name": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "store_sort_order": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -914,10 +1040,43 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                     break;
                 }
 
+                case "use_store_in_url": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "website_code": {
+                    ID optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ID(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "website_id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "website_name": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -1132,6 +1291,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * Braintree cc vault status.
+     */
+    public String getBraintreeCcVaultActive() {
+        return (String) get("braintree_cc_vault_active");
+    }
+
+    public StoreConfig setBraintreeCcVaultActive(String arg) {
+        optimisticData.put(getKey("braintree_cc_vault_active"), arg);
+        return this;
+    }
+
+    /**
      * Display Gift Wrapping Prices
      */
     public String getCartGiftWrapping() {
@@ -1230,13 +1401,29 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     /**
      * A code assigned to the store to identify it
+     *
+     * @deprecated Use `store_code` instead.
      */
+    @Deprecated
     public String getCode() {
         return (String) get("code");
     }
 
     public StoreConfig setCode(String arg) {
         optimisticData.put(getKey("code"), arg);
+        return this;
+    }
+
+    /**
+     * The configuration setting determines which thumbnail should be used in the cart for configurable
+     * products.
+     */
+    public String getConfigurableThumbnailSource() {
+        return (String) get("configurable_thumbnail_source");
+    }
+
+    public StoreConfig setConfigurableThumbnailSource(String arg) {
+        optimisticData.put(getKey("configurable_thumbnail_source"), arg);
         return this;
     }
 
@@ -1309,6 +1496,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setDemonotice(Integer arg) {
         optimisticData.put(getKey("demonotice"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether customers can have multiple wish lists. Possible values: 1 (Yes) and 0 (No)
+     */
+    public String getEnableMultipleWishlists() {
+        return (String) get("enable_multiple_wishlists");
+    }
+
+    public StoreConfig setEnableMultipleWishlists(String arg) {
+        optimisticData.put(getKey("enable_multiple_wishlists"), arg);
         return this;
     }
 
@@ -1386,13 +1585,40 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     /**
      * The ID number assigned to the store
+     *
+     * @deprecated Use `store_code` instead.
      */
+    @Deprecated
     public Integer getId() {
         return (Integer) get("id");
     }
 
     public StoreConfig setId(Integer arg) {
         optimisticData.put(getKey("id"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether the store view has been designated as the default within the store group
+     */
+    public Boolean getIsDefaultStore() {
+        return (Boolean) get("is_default_store");
+    }
+
+    public StoreConfig setIsDefaultStore(Boolean arg) {
+        optimisticData.put(getKey("is_default_store"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether the store group has been designated as the default within the website
+     */
+    public Boolean getIsDefaultStoreGroup() {
+        return (Boolean) get("is_default_store_group");
+    }
+
+    public StoreConfig setIsDefaultStoreGroup(Boolean arg) {
+        optimisticData.put(getKey("is_default_store_group"), arg);
         return this;
     }
 
@@ -1651,6 +1877,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
+     * If multiple wish lists are enabled, the maximum number of wish lists the customer can have
+     */
+    public String getMaximumNumberOfWishlists() {
+        return (String) get("maximum_number_of_wishlists");
+    }
+
+    public StoreConfig setMaximumNumberOfWishlists(String arg) {
+        optimisticData.put(getKey("maximum_number_of_wishlists"), arg);
+        return this;
+    }
+
+    /**
      * The minimum number of characters required for a valid password.
      */
     public String getMinimumPasswordLength() {
@@ -1749,14 +1987,41 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-     * The ID of the root category
+     * Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled
      */
+    public String getReturnsEnabled() {
+        return (String) get("returns_enabled");
+    }
+
+    public StoreConfig setReturnsEnabled(String arg) {
+        optimisticData.put(getKey("returns_enabled"), arg);
+        return this;
+    }
+
+    /**
+     * The ID of the root category
+     *
+     * @deprecated Use `root_category_uid` instead
+     */
+    @Deprecated
     public Integer getRootCategoryId() {
         return (Integer) get("root_category_id");
     }
 
     public StoreConfig setRootCategoryId(Integer arg) {
         optimisticData.put(getKey("root_category_id"), arg);
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CategoryInterface` object.
+     */
+    public ID getRootCategoryUid() {
+        return (ID) get("root_category_uid");
+    }
+
+    public StoreConfig setRootCategoryUid(ID arg) {
+        optimisticData.put(getKey("root_category_uid"), arg);
         return this;
     }
 
@@ -1870,7 +2135,44 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-     * Name of the store
+     * The unique ID of the store view. In the Admin, this is called the Store View Code. When making a
+     * GraphQL call, assign this value to the `Store` header to provide the scope
+     */
+    public ID getStoreCode() {
+        return (ID) get("store_code");
+    }
+
+    public StoreConfig setStoreCode(ID arg) {
+        optimisticData.put(getKey("store_code"), arg);
+        return this;
+    }
+
+    /**
+     * The unique ID assigned to the store group. In the Admin, this is called the Store Name
+     */
+    public ID getStoreGroupCode() {
+        return (ID) get("store_group_code");
+    }
+
+    public StoreConfig setStoreGroupCode(ID arg) {
+        optimisticData.put(getKey("store_group_code"), arg);
+        return this;
+    }
+
+    /**
+     * The label assigned to the store group
+     */
+    public String getStoreGroupName() {
+        return (String) get("store_group_name");
+    }
+
+    public StoreConfig setStoreGroupName(String arg) {
+        optimisticData.put(getKey("store_group_name"), arg);
+        return this;
+    }
+
+    /**
+     * The label assigned to the store view
      */
     public String getStoreName() {
         return (String) get("store_name");
@@ -1878,6 +2180,18 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
 
     public StoreConfig setStoreName(String arg) {
         optimisticData.put(getKey("store_name"), arg);
+        return this;
+    }
+
+    /**
+     * The store view sort order
+     */
+    public Integer getStoreSortOrder() {
+        return (Integer) get("store_sort_order");
+    }
+
+    public StoreConfig setStoreSortOrder(Integer arg) {
+        optimisticData.put(getKey("store_sort_order"), arg);
         return this;
     }
 
@@ -1930,14 +2244,53 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
     }
 
     /**
-     * The ID number assigned to the website store belongs
+     * The configuration determines if the store code should be used in the URL
      */
+    public Boolean getUseStoreInUrl() {
+        return (Boolean) get("use_store_in_url");
+    }
+
+    public StoreConfig setUseStoreInUrl(Boolean arg) {
+        optimisticData.put(getKey("use_store_in_url"), arg);
+        return this;
+    }
+
+    /**
+     * The unique ID for the website
+     */
+    public ID getWebsiteCode() {
+        return (ID) get("website_code");
+    }
+
+    public StoreConfig setWebsiteCode(ID arg) {
+        optimisticData.put(getKey("website_code"), arg);
+        return this;
+    }
+
+    /**
+     * The ID number assigned to the website store
+     *
+     * @deprecated The field should not be used on the storefront
+     */
+    @Deprecated
     public Integer getWebsiteId() {
         return (Integer) get("website_id");
     }
 
     public StoreConfig setWebsiteId(Integer arg) {
         optimisticData.put(getKey("website_id"), arg);
+        return this;
+    }
+
+    /**
+     * The label assigned to the website
+     */
+    public String getWebsiteName() {
+        return (String) get("website_name");
+    }
+
+    public StoreConfig setWebsiteName(String arg) {
+        optimisticData.put(getKey("website_name"), arg);
         return this;
     }
 
@@ -2009,6 +2362,9 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "base_url":
                 return false;
 
+            case "braintree_cc_vault_active":
+                return false;
+
             case "cart_gift_wrapping":
                 return false;
 
@@ -2036,6 +2392,9 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "code":
                 return false;
 
+            case "configurable_thumbnail_source":
+                return false;
+
             case "copyright":
                 return false;
 
@@ -2052,6 +2411,9 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                 return false;
 
             case "demonotice":
+                return false;
+
+            case "enable_multiple_wishlists":
                 return false;
 
             case "front":
@@ -2073,6 +2435,12 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
                 return false;
 
             case "id":
+                return false;
+
+            case "is_default_store":
+                return false;
+
+            case "is_default_store_group":
                 return false;
 
             case "list_mode":
@@ -2138,6 +2506,9 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "magento_wishlist_general_is_enabled":
                 return false;
 
+            case "maximum_number_of_wishlists":
+                return false;
+
             case "minimum_password_length":
                 return false;
 
@@ -2162,7 +2533,13 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "required_character_classes_number":
                 return false;
 
+            case "returns_enabled":
+                return false;
+
             case "root_category_id":
+                return false;
+
+            case "root_category_uid":
                 return false;
 
             case "sales_fixed_product_tax_display_setting":
@@ -2192,7 +2569,19 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "show_cms_breadcrumbs":
                 return false;
 
+            case "store_code":
+                return false;
+
+            case "store_group_code":
+                return false;
+
+            case "store_group_name":
+                return false;
+
             case "store_name":
+                return false;
+
+            case "store_sort_order":
                 return false;
 
             case "timezone":
@@ -2207,7 +2596,16 @@ public class StoreConfig extends AbstractResponse<StoreConfig> {
             case "title_suffix":
                 return false;
 
+            case "use_store_in_url":
+                return false;
+
+            case "website_code":
+                return false;
+
             case "website_id":
+                return false;
+
+            case "website_name":
                 return false;
 
             case "weight_unit":

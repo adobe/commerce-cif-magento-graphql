@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * EntityUrl is an output object containing the `id`, `relative_url`, and `type` attributes
@@ -37,9 +36,22 @@ public class EntityUrlQuery extends AbstractQuery<EntityUrlQuery> {
     }
 
     /**
+     * The unique ID for a `ProductInterface`, `CategoryInterface`, `CmsPage`, etc. object associated with
+     * the specified url. This could be a product UID, category UID, or cms page UID.
+     */
+    public EntityUrlQuery entityUid() {
+        startField("entity_uid");
+
+        return this;
+    }
+
+    /**
      * The ID assigned to the object associated with the specified url. This could be a product ID,
      * category ID, or page ID.
+     *
+     * @deprecated Use `entity_uid` instead.
      */
+    @Deprecated
     public EntityUrlQuery id() {
         startField("id");
 

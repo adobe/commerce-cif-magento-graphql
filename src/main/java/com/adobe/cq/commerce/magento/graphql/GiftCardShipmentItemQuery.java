@@ -36,7 +36,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * Shipment item unique identifier
+     * The unique ID for a `ShipmentItemInterface` object
      */
     public GiftCardShipmentItemQuery id() {
         startField("id");

@@ -73,10 +73,43 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "addProductsToCompareList": {
+                    CompareList optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CompareList(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "addProductsToWishlist": {
                     AddProductsToWishlistOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new AddProductsToWishlistOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "addReturnComment": {
+                    AddReturnCommentOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AddReturnCommentOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "addReturnTracking": {
+                    AddReturnTrackingOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AddReturnTrackingOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -150,6 +183,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "assignCompareListToCustomer": {
+                    AssignCompareListToCustomerOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AssignCompareListToCustomerOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "changeCustomerPassword": {
                     Customer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -161,8 +205,30 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "copyProductsBetweenWishlists": {
+                    CopyProductsBetweenWishlistsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CopyProductsBetweenWishlistsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "createBraintreeClientToken": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
+
+                    break;
+                }
+
+                case "createCompareList": {
+                    CompareList optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CompareList(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -250,6 +316,28 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "createWishlist": {
+                    CreateWishlistOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CreateWishlistOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "deleteCompareList": {
+                    DeleteCompareListOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new DeleteCompareListOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "deleteCustomerAddress": {
                     Boolean optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -272,10 +360,32 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "deleteWishlist": {
+                    DeleteWishlistOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new DeleteWishlistOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "generateCustomerToken": {
                     CustomerToken optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new CustomerToken(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "generateCustomerTokenAsAdmin": {
+                    GenerateCustomerTokenAsAdminOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GenerateCustomerTokenAsAdminOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -296,6 +406,17 @@ public class Mutation extends AbstractResponse<Mutation> {
 
                 case "mergeCarts": {
                     responseData.put(key, new Cart(jsonAsObject(field.getValue(), key)));
+
+                    break;
+                }
+
+                case "moveProductsBetweenWishlists": {
+                    MoveProductsBetweenWishlistsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new MoveProductsBetweenWishlistsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -355,10 +476,32 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "removeProductsFromCompareList": {
+                    CompareList optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CompareList(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "removeProductsFromWishlist": {
                     RemoveProductsFromWishlistOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new RemoveProductsFromWishlistOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "removeReturnTracking": {
+                    RemoveReturnTrackingOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RemoveReturnTrackingOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -403,6 +546,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     Boolean optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsBoolean(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "requestReturn": {
+                    RequestReturnOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RequestReturnOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -597,6 +751,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "updateWishlist": {
+                    UpdateWishlistOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new UpdateWishlistOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -653,6 +818,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Add products to the specified compare list
+     */
+    public CompareList getAddProductsToCompareList() {
+        return (CompareList) get("addProductsToCompareList");
+    }
+
+    public Mutation setAddProductsToCompareList(CompareList arg) {
+        optimisticData.put(getKey("addProductsToCompareList"), arg);
+        return this;
+    }
+
+    /**
      * Adds one or more products to the specified wish list. This mutation supports all product types
      */
     public AddProductsToWishlistOutput getAddProductsToWishlist() {
@@ -661,6 +838,30 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setAddProductsToWishlist(AddProductsToWishlistOutput arg) {
         optimisticData.put(getKey("addProductsToWishlist"), arg);
+        return this;
+    }
+
+    /**
+     * Add a comment to an existing return
+     */
+    public AddReturnCommentOutput getAddReturnComment() {
+        return (AddReturnCommentOutput) get("addReturnComment");
+    }
+
+    public Mutation setAddReturnComment(AddReturnCommentOutput arg) {
+        optimisticData.put(getKey("addReturnComment"), arg);
+        return this;
+    }
+
+    /**
+     * Add tracking information to the return
+     */
+    public AddReturnTrackingOutput getAddReturnTracking() {
+        return (AddReturnTrackingOutput) get("addReturnTracking");
+    }
+
+    public Mutation setAddReturnTracking(AddReturnTrackingOutput arg) {
+        optimisticData.put(getKey("addReturnTracking"), arg);
         return this;
     }
 
@@ -728,6 +929,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Assign the specified compare list to the logged in customer
+     */
+    public AssignCompareListToCustomerOutput getAssignCompareListToCustomer() {
+        return (AssignCompareListToCustomerOutput) get("assignCompareListToCustomer");
+    }
+
+    public Mutation setAssignCompareListToCustomer(AssignCompareListToCustomerOutput arg) {
+        optimisticData.put(getKey("assignCompareListToCustomer"), arg);
+        return this;
+    }
+
+    /**
      * Changes the password for the logged-in customer
      */
     public Customer getChangeCustomerPassword() {
@@ -740,6 +953,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Copy products from one wish list to another
+     */
+    public CopyProductsBetweenWishlistsOutput getCopyProductsBetweenWishlists() {
+        return (CopyProductsBetweenWishlistsOutput) get("copyProductsBetweenWishlists");
+    }
+
+    public Mutation setCopyProductsBetweenWishlists(CopyProductsBetweenWishlistsOutput arg) {
+        optimisticData.put(getKey("copyProductsBetweenWishlists"), arg);
+        return this;
+    }
+
+    /**
      * Creates Client Token for Braintree Javascript SDK initialization.
      */
     public String getCreateBraintreeClientToken() {
@@ -748,6 +973,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setCreateBraintreeClientToken(String arg) {
         optimisticData.put(getKey("createBraintreeClientToken"), arg);
+        return this;
+    }
+
+    /**
+     * Creates a new compare list. The compare list is saved for logged in customers
+     */
+    public CompareList getCreateCompareList() {
+        return (CompareList) get("createCompareList");
+    }
+
+    public Mutation setCreateCompareList(CompareList arg) {
+        optimisticData.put(getKey("createCompareList"), arg);
         return this;
     }
 
@@ -850,6 +1087,30 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Create a new wish list
+     */
+    public CreateWishlistOutput getCreateWishlist() {
+        return (CreateWishlistOutput) get("createWishlist");
+    }
+
+    public Mutation setCreateWishlist(CreateWishlistOutput arg) {
+        optimisticData.put(getKey("createWishlist"), arg);
+        return this;
+    }
+
+    /**
+     * Delete the specified compare list
+     */
+    public DeleteCompareListOutput getDeleteCompareList() {
+        return (DeleteCompareListOutput) get("deleteCompareList");
+    }
+
+    public Mutation setDeleteCompareList(DeleteCompareListOutput arg) {
+        optimisticData.put(getKey("deleteCompareList"), arg);
+        return this;
+    }
+
+    /**
      * Delete customer address
      */
     public Boolean getDeleteCustomerAddress() {
@@ -874,6 +1135,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Delete the specified wish list filtered by the unique ID for a `Wishlist` object
+     */
+    public DeleteWishlistOutput getDeleteWishlist() {
+        return (DeleteWishlistOutput) get("deleteWishlist");
+    }
+
+    public Mutation setDeleteWishlist(DeleteWishlistOutput arg) {
+        optimisticData.put(getKey("deleteWishlist"), arg);
+        return this;
+    }
+
+    /**
      * Retrieve the customer token
      */
     public CustomerToken getGenerateCustomerToken() {
@@ -882,6 +1155,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setGenerateCustomerToken(CustomerToken arg) {
         optimisticData.put(getKey("generateCustomerToken"), arg);
+        return this;
+    }
+
+    /**
+     * Request a customer token so that an administrator can perform remote shopping assistance
+     */
+    public GenerateCustomerTokenAsAdminOutput getGenerateCustomerTokenAsAdmin() {
+        return (GenerateCustomerTokenAsAdminOutput) get("generateCustomerTokenAsAdmin");
+    }
+
+    public Mutation setGenerateCustomerTokenAsAdmin(GenerateCustomerTokenAsAdminOutput arg) {
+        optimisticData.put(getKey("generateCustomerTokenAsAdmin"), arg);
         return this;
     }
 
@@ -907,6 +1192,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setMergeCarts(Cart arg) {
         optimisticData.put(getKey("mergeCarts"), arg);
+        return this;
+    }
+
+    /**
+     * Move products from one wish list to another
+     */
+    public MoveProductsBetweenWishlistsOutput getMoveProductsBetweenWishlists() {
+        return (MoveProductsBetweenWishlistsOutput) get("moveProductsBetweenWishlists");
+    }
+
+    public Mutation setMoveProductsBetweenWishlists(MoveProductsBetweenWishlistsOutput arg) {
+        optimisticData.put(getKey("moveProductsBetweenWishlists"), arg);
         return this;
     }
 
@@ -959,6 +1256,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Remove products from the specified compare list
+     */
+    public CompareList getRemoveProductsFromCompareList() {
+        return (CompareList) get("removeProductsFromCompareList");
+    }
+
+    public Mutation setRemoveProductsFromCompareList(CompareList arg) {
+        optimisticData.put(getKey("removeProductsFromCompareList"), arg);
+        return this;
+    }
+
+    /**
      * Removes one or more products from the specified wish list
      */
     public RemoveProductsFromWishlistOutput getRemoveProductsFromWishlist() {
@@ -967,6 +1276,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setRemoveProductsFromWishlist(RemoveProductsFromWishlistOutput arg) {
         optimisticData.put(getKey("removeProductsFromWishlist"), arg);
+        return this;
+    }
+
+    /**
+     * Remove a tracked shipment from a return
+     */
+    public RemoveReturnTrackingOutput getRemoveReturnTracking() {
+        return (RemoveReturnTrackingOutput) get("removeReturnTracking");
+    }
+
+    public Mutation setRemoveReturnTracking(RemoveReturnTrackingOutput arg) {
+        optimisticData.put(getKey("removeReturnTracking"), arg);
         return this;
     }
 
@@ -1016,6 +1337,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setRequestPasswordResetEmail(Boolean arg) {
         optimisticData.put(getKey("requestPasswordResetEmail"), arg);
+        return this;
+    }
+
+    /**
+     * Initiates a buyer&#39;s request to return an item for replacement or refund
+     */
+    public RequestReturnOutput getRequestReturn() {
+        return (RequestReturnOutput) get("requestReturn");
+    }
+
+    public Mutation setRequestReturn(RequestReturnOutput arg) {
+        optimisticData.put(getKey("requestReturn"), arg);
         return this;
     }
 
@@ -1204,6 +1537,18 @@ public class Mutation extends AbstractResponse<Mutation> {
         return this;
     }
 
+    /**
+     * Change the name and visibility of the specified wish list
+     */
+    public UpdateWishlistOutput getUpdateWishlist() {
+        return (UpdateWishlistOutput) get("updateWishlist");
+    }
+
+    public Mutation setUpdateWishlist(UpdateWishlistOutput arg) {
+        optimisticData.put(getKey("updateWishlist"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "addBundleProductsToCart":
@@ -1218,7 +1563,16 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "addProductsToCart":
                 return true;
 
+            case "addProductsToCompareList":
+                return true;
+
             case "addProductsToWishlist":
+                return true;
+
+            case "addReturnComment":
+                return true;
+
+            case "addReturnTracking":
                 return true;
 
             case "addSimpleProductsToCart":
@@ -1239,11 +1593,20 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "applyStoreCreditToCart":
                 return true;
 
+            case "assignCompareListToCustomer":
+                return true;
+
             case "changeCustomerPassword":
+                return true;
+
+            case "copyProductsBetweenWishlists":
                 return true;
 
             case "createBraintreeClientToken":
                 return false;
+
+            case "createCompareList":
+                return true;
 
             case "createCustomer":
                 return true;
@@ -1269,19 +1632,34 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "createProductReview":
                 return true;
 
+            case "createWishlist":
+                return true;
+
+            case "deleteCompareList":
+                return true;
+
             case "deleteCustomerAddress":
                 return false;
 
             case "deletePaymentToken":
                 return true;
 
+            case "deleteWishlist":
+                return true;
+
             case "generateCustomerToken":
+                return true;
+
+            case "generateCustomerTokenAsAdmin":
                 return true;
 
             case "handlePayflowProResponse":
                 return true;
 
             case "mergeCarts":
+                return true;
+
+            case "moveProductsBetweenWishlists":
                 return true;
 
             case "placeOrder":
@@ -1299,7 +1677,13 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "removeItemFromCart":
                 return true;
 
+            case "removeProductsFromCompareList":
+                return true;
+
             case "removeProductsFromWishlist":
+                return true;
+
+            case "removeReturnTracking":
                 return true;
 
             case "removeRewardPointsFromCart":
@@ -1313,6 +1697,9 @@ public class Mutation extends AbstractResponse<Mutation> {
 
             case "requestPasswordResetEmail":
                 return false;
+
+            case "requestReturn":
+                return true;
 
             case "resetPassword":
                 return false;
@@ -1363,6 +1750,9 @@ public class Mutation extends AbstractResponse<Mutation> {
                 return true;
 
             case "updateProductsInWishlist":
+                return true;
+
+            case "updateWishlist":
                 return true;
 
             default:

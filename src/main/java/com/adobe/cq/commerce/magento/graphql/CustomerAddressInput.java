@@ -18,7 +18,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
-import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 public class CustomerAddressInput implements Serializable {

@@ -40,14 +40,14 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * The ID of the wishlist item to update
+     * The unique ID for a `WishlistItemInterface` object
      */
     public ID getWishlistItemId() {
         return wishlistItemId;
     }
 
     /**
-     * The ID of the wishlist item to update
+     * The unique ID for a `WishlistItemInterface` object
      */
     public WishlistItemUpdateInput setWishlistItemId(ID wishlistItemId) {
         this.wishlistItemId = wishlistItemId;

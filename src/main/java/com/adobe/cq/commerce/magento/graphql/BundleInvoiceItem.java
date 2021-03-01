@@ -167,7 +167,7 @@ public class BundleInvoiceItem extends AbstractResponse<BundleInvoiceItem> imple
     }
 
     /**
-     * The unique ID of the invoice item
+     * The unique ID for a `InvoiceItemInterface` object
      */
     public ID getId() {
         return (ID) get("id");

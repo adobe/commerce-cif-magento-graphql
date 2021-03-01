@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * Order shipment details
@@ -40,7 +39,7 @@ public class OrderShipmentQuery extends AbstractQuery<OrderShipmentQuery> {
     }
 
     /**
-     * The unique ID of the shipment
+     * The unique ID for a `OrderShipment` object
      */
     public OrderShipmentQuery id() {
         startField("id");

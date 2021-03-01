@@ -195,7 +195,7 @@ public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioVa
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableRadioValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

@@ -63,7 +63,7 @@ public class CustomizableFieldValueQuery extends AbstractQuery<CustomizableField
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableFieldValue` object.
      */
     public CustomizableFieldValueQuery uid() {
         startField("uid");

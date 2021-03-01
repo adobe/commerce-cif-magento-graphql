@@ -75,6 +75,9 @@ public class Order extends AbstractResponse<Order> {
         return this;
     }
 
+    /**
+     * The unique ID for a `Order` object.
+     */
     public String getOrderNumber() {
         return (String) get("order_number");
     }

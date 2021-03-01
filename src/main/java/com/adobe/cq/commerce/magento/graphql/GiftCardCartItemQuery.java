@@ -51,6 +51,10 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
         return this;
     }
 
+    /**
+     * @deprecated Use `uid` instead
+     */
+    @Deprecated
     public GiftCardCartItemQuery id() {
         startField("id");
 
@@ -124,6 +128,15 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
      */
     public GiftCardCartItemQuery senderName() {
         startField("sender_name");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `CartItemInterface` object
+     */
+    public GiftCardCartItemQuery uid() {
+        startField("uid");
 
         return this;
     }

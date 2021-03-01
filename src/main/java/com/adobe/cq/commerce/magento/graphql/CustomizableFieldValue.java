@@ -149,7 +149,7 @@ public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldVa
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableFieldValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

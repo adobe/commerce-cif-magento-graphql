@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * CustomizableMultipleValue defines the price and sku of a product whose page contains a customized
@@ -82,7 +81,7 @@ public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMu
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableMultipleValue` object.
      */
     public CustomizableMultipleValueQuery uid() {
         startField("uid");

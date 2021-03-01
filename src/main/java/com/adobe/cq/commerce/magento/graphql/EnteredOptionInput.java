@@ -34,14 +34,16 @@ public class EnteredOptionInput implements Serializable {
     }
 
     /**
-     * An encoded ID
+     * The unique ID for a `CustomizableFieldOption`, `CustomizableFileOption`, `CustomizableAreaOption`,
+     * etc. of `CustomizableOptionInterface` objects
      */
     public ID getUid() {
         return uid;
     }
 
     /**
-     * An encoded ID
+     * The unique ID for a `CustomizableFieldOption`, `CustomizableFileOption`, `CustomizableAreaOption`,
+     * etc. of `CustomizableOptionInterface` objects
      */
     public EnteredOptionInput setUid(ID uid) {
         this.uid = uid;

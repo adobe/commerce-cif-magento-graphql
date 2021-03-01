@@ -123,21 +123,27 @@ public class CartItemInput implements Serializable {
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size with unique ID for a
+     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
+     * objects
      */
     public List<ID> getSelectedOptions() {
         return selectedOptions.getValue();
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size with unique ID for a
+     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
+     * objects
      */
     public Input<List<ID>> getSelectedOptionsInput() {
         return selectedOptions;
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size with unique ID for a
+     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
+     * objects
      */
     public CartItemInput setSelectedOptions(List<ID> selectedOptions) {
         this.selectedOptions = Input.optional(selectedOptions);
@@ -145,7 +151,9 @@ public class CartItemInput implements Serializable {
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size with unique ID for a
+     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
+     * objects
      */
     public CartItemInput setSelectedOptionsInput(Input<List<ID>> selectedOptions) {
         if (selectedOptions == null) {

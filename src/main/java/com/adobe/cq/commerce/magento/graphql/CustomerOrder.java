@@ -203,6 +203,27 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
                     break;
                 }
 
+                case "items_eligible_for_return": {
+                    List<OrderItemInterface> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<OrderItemInterface> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            OrderItemInterface optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = UnknownOrderItemInterface.create(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "number": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
 
@@ -244,6 +265,17 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
 
                 case "printed_card_included": {
                     responseData.put(key, jsonAsBoolean(field.getValue(), key));
+
+                    break;
+                }
+
+                case "returns": {
+                    Returns optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Returns(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -435,7 +467,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * Unique identifier for the order
+     * The unique ID for a `CustomerOrder` object
      */
     public ID getId() {
         return (ID) get("id");
@@ -480,6 +512,18 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
 
     public CustomerOrder setItems(List<OrderItemInterface> arg) {
         optimisticData.put(getKey("items"), arg);
+        return this;
+    }
+
+    /**
+     * A list of order items eligible to be in a return request
+     */
+    public List<OrderItemInterface> getItemsEligibleForReturn() {
+        return (List<OrderItemInterface>) get("items_eligible_for_return");
+    }
+
+    public CustomerOrder setItemsEligibleForReturn(List<OrderItemInterface> arg) {
+        optimisticData.put(getKey("items_eligible_for_return"), arg);
         return this;
     }
 
@@ -541,6 +585,18 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
 
     public CustomerOrder setPrintedCardIncluded(Boolean arg) {
         optimisticData.put(getKey("printed_card_included"), arg);
+        return this;
+    }
+
+    /**
+     * Return requests associated with this order.
+     */
+    public Returns getReturns() {
+        return (Returns) get("returns");
+    }
+
+    public CustomerOrder setReturns(Returns arg) {
+        optimisticData.put(getKey("returns"), arg);
         return this;
     }
 
@@ -645,6 +701,9 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
             case "items":
                 return false;
 
+            case "items_eligible_for_return":
+                return false;
+
             case "number":
                 return false;
 
@@ -659,6 +718,9 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
 
             case "printed_card_included":
                 return false;
+
+            case "returns":
+                return true;
 
             case "shipments":
                 return true;

@@ -322,7 +322,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a `Region` object of a pre-defined region
      */
     public ID getRegionId() {
         return (ID) get("region_id");

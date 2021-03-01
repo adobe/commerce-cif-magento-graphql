@@ -20,6 +20,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
 public class CustomerUpdateInput implements Serializable {
+    private Input<Boolean> allowRemoteShoppingAssistance = Input.undefined();
+
     private Input<String> dateOfBirth = Input.undefined();
 
     private Input<String> dob = Input.undefined();
@@ -39,6 +41,39 @@ public class CustomerUpdateInput implements Serializable {
     private Input<String> suffix = Input.undefined();
 
     private Input<String> taxvat = Input.undefined();
+
+    /**
+     * Indicates whether the customer has enabled remote shopping assistance
+     */
+    public Boolean getAllowRemoteShoppingAssistance() {
+        return allowRemoteShoppingAssistance.getValue();
+    }
+
+    /**
+     * Indicates whether the customer has enabled remote shopping assistance
+     */
+    public Input<Boolean> getAllowRemoteShoppingAssistanceInput() {
+        return allowRemoteShoppingAssistance;
+    }
+
+    /**
+     * Indicates whether the customer has enabled remote shopping assistance
+     */
+    public CustomerUpdateInput setAllowRemoteShoppingAssistance(Boolean allowRemoteShoppingAssistance) {
+        this.allowRemoteShoppingAssistance = Input.optional(allowRemoteShoppingAssistance);
+        return this;
+    }
+
+    /**
+     * Indicates whether the customer has enabled remote shopping assistance
+     */
+    public CustomerUpdateInput setAllowRemoteShoppingAssistanceInput(Input<Boolean> allowRemoteShoppingAssistance) {
+        if (allowRemoteShoppingAssistance == null) {
+            throw new IllegalArgumentException("Input can not be null");
+        }
+        this.allowRemoteShoppingAssistance = allowRemoteShoppingAssistance;
+        return this;
+    }
 
     /**
      * The customer&#39;s date of birth
@@ -373,6 +408,17 @@ public class CustomerUpdateInput implements Serializable {
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
+
+        if (this.allowRemoteShoppingAssistance.isDefined()) {
+            _queryBuilder.append(separator);
+            separator = ",";
+            _queryBuilder.append("allow_remote_shopping_assistance:");
+            if (allowRemoteShoppingAssistance.getValue() != null) {
+                _queryBuilder.append(allowRemoteShoppingAssistance.getValue());
+            } else {
+                _queryBuilder.append("null");
+            }
+        }
 
         if (this.dateOfBirth.isDefined()) {
             _queryBuilder.append(separator);

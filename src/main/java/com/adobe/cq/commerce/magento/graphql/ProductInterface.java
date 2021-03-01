@@ -29,7 +29,10 @@ public interface ProductInterface extends CustomFieldInterface {
 
     /**
      * The attribute set assigned to the product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     Integer getAttributeSetId();
 
     /**
@@ -52,7 +55,10 @@ public interface ProductInterface extends CustomFieldInterface {
 
     /**
      * Timestamp indicating when the product was created.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     String getCreatedAt();
 
     /**
@@ -72,7 +78,10 @@ public interface ProductInterface extends CustomFieldInterface {
 
     /**
      * The ID number assigned to the product.
+     *
+     * @deprecated Use the `uid` field instead.
      */
+    @Deprecated
     Integer getId();
 
     /**
@@ -126,12 +135,18 @@ public interface ProductInterface extends CustomFieldInterface {
     /**
      * The beginning date for new product listings, and determines if the product is featured as a new
      * product.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     String getNewFromDate();
 
     /**
      * The end date for new product listings.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     String getNewToDate();
 
     /**
@@ -204,7 +219,10 @@ public interface ProductInterface extends CustomFieldInterface {
 
     /**
      * The beginning date that a product has a special price.
+     *
+     * @deprecated The field should not be used on the storefront.
      */
+    @Deprecated
     String getSpecialFromDate();
 
     /**
@@ -216,6 +234,8 @@ public interface ProductInterface extends CustomFieldInterface {
      * The end date that a product has a special price.
      */
     String getSpecialToDate();
+
+    Boolean getStaged();
 
     /**
      * Stock status of the product
@@ -257,8 +277,16 @@ public interface ProductInterface extends CustomFieldInterface {
     String getTypeId();
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The unique ID for a `ProductInterface` object.
      */
+    ID getUid();
+
+    /**
+     * Timestamp indicating when the product was updated.
+     *
+     * @deprecated The field should not be used on the storefront.
+     */
+    @Deprecated
     String getUpdatedAt();
 
     /**

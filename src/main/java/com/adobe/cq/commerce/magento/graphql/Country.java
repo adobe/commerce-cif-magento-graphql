@@ -150,6 +150,9 @@ public class Country extends AbstractResponse<Country> {
         return this;
     }
 
+    /**
+     * The unique ID for a `Country` object.
+     */
     public String getId() {
         return (String) get("id");
     }

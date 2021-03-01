@@ -63,6 +63,12 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
                     break;
                 }
 
+                case "uid": {
+                    responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -80,8 +86,11 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
     }
 
     /**
-     * The unique identifier of the value
+     * The unique ID for a `ItemSelectedBundleOptionValue` object
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public ID getId() {
         return (ID) get("id");
     }
@@ -139,6 +148,18 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
         return this;
     }
 
+    /**
+     * The unique ID for a `ItemSelectedBundleOptionValue` object
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public ItemSelectedBundleOptionValue setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "id":
@@ -154,6 +175,9 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
                 return false;
 
             case "quantity":
+                return false;
+
+            case "uid":
                 return false;
 
             default:

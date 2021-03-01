@@ -122,6 +122,17 @@ public class BundleItem extends AbstractResponse<BundleItem> {
                     break;
                 }
 
+                case "uid": {
+                    ID optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ID(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -140,7 +151,10 @@ public class BundleItem extends AbstractResponse<BundleItem> {
 
     /**
      * An ID assigned to each type of item in a bundle product.
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public Integer getOptionId() {
         return (Integer) get("option_id");
     }
@@ -223,6 +237,18 @@ public class BundleItem extends AbstractResponse<BundleItem> {
         return this;
     }
 
+    /**
+     * The unique ID for a `BundleItem` object.
+     */
+    public ID getUid() {
+        return (ID) get("uid");
+    }
+
+    public BundleItem setUid(ID arg) {
+        optimisticData.put(getKey("uid"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "option_id":
@@ -244,6 +270,9 @@ public class BundleItem extends AbstractResponse<BundleItem> {
                 return false;
 
             case "type":
+                return false;
+
+            case "uid":
                 return false;
 
             default:

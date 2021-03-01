@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * ConfigurableProductOptions defines configurable attributes for the specified product
@@ -38,7 +37,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     /**
      * The ID assigned to the attribute
      *
-     * @deprecated Use attribute_id_v2 instead
+     * @deprecated Use attribute_uid instead
      */
     @Deprecated
     public ConfigurableProductOptionsQuery attributeId() {
@@ -49,7 +48,10 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
 
     /**
      * The ID assigned to the attribute
+     *
+     * @deprecated Use attribute_uid instead
      */
+    @Deprecated
     public ConfigurableProductOptionsQuery attributeIdV2() {
         startField("attribute_id_v2");
 
@@ -57,8 +59,20 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * The configurable option ID number assigned by the system
+     * The unique ID for a `Attribute` object
      */
+    public ConfigurableProductOptionsQuery attributeUid() {
+        startField("attribute_uid");
+
+        return this;
+    }
+
+    /**
+     * The configurable option ID number assigned by the system
+     *
+     * @deprecated Use uid instead
+     */
+    @Deprecated
     public ConfigurableProductOptionsQuery id() {
         startField("id");
 
@@ -85,9 +99,21 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
 
     /**
      * This is the same as a product&#39;s id field
+     *
+     * @deprecated `product_id` is not needed and can be obtained from it&#39;s parent
      */
+    @Deprecated
     public ConfigurableProductOptionsQuery productId() {
         startField("product_id");
+
+        return this;
+    }
+
+    /**
+     * The unique ID for a `ConfigurableProductOptions` object
+     */
+    public ConfigurableProductOptionsQuery uid() {
+        startField("uid");
 
         return this;
     }

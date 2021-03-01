@@ -195,7 +195,7 @@ public class CustomizableDropDownValue extends AbstractResponse<CustomizableDrop
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableDropDownValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

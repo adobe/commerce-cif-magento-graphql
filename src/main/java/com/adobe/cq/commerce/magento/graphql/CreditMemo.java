@@ -129,7 +129,7 @@ public class CreditMemo extends AbstractResponse<CreditMemo> {
     }
 
     /**
-     * The unique ID of the credit memo, used for API purposes
+     * The unique ID for a `CreditMemo` object
      */
     public ID getId() {
         return (ID) get("id");

@@ -66,6 +66,15 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
+     * The unique ID for a `ConfigurableProductOptionsValues` object
+     */
+    public ConfigurableProductOptionsValuesQuery uid() {
+        startField("uid");
+
+        return this;
+    }
+
+    /**
      * Indicates whether to use the default_label
      */
     public ConfigurableProductOptionsValuesQuery useDefaultValue() {
@@ -76,7 +85,10 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
 
     /**
      * A unique index number assigned to the configurable product option
+     *
+     * @deprecated Use `uid` instead
      */
+    @Deprecated
     public ConfigurableProductOptionsValuesQuery valueIndex() {
         startField("value_index");
 

@@ -44,7 +44,7 @@ public class DownloadableItemsLinksQuery extends AbstractQuery<DownloadableItems
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `DownloadableItemsLinks` object.
      */
     public DownloadableItemsLinksQuery uid() {
         startField("uid");

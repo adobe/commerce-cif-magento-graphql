@@ -195,7 +195,7 @@ public class CustomizableFileValue extends AbstractResponse<CustomizableFileValu
     }
 
     /**
-     * A string that encodes option details.
+     * The unique ID for a `CustomizableFileValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

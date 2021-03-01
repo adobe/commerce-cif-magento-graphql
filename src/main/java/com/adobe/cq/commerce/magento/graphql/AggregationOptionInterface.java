@@ -15,7 +15,6 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.CustomFieldInterface;
-import com.shopify.graphql.support.ID;
 
 public interface AggregationOptionInterface extends CustomFieldInterface {
     String getGraphQlTypeName();

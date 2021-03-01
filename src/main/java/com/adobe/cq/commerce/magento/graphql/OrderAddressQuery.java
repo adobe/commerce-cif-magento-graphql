@@ -16,7 +16,6 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
  * OrderAddress contains detailed information about an order&#39;s billing and shipping addresses
@@ -117,7 +116,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a `Region` object of a pre-defined region
      */
     public OrderAddressQuery regionId() {
         startField("region_id");
