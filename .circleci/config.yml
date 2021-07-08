@@ -51,6 +51,8 @@ workflows:
             tags:
               only: /.*/
       - release:
+          context:
+            - CIF Maven Central
           requires:
             - build
           filters:
