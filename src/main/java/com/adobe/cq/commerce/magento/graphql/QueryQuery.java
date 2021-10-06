@@ -250,6 +250,19 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
+     * Retrieves an array of configuration data for the chat widget.
+     */
+    public QueryQuery chatData(ChatDataQueryDefinition queryDef) {
+        startField("chatData");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ChatDataQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The Checkout Agreements information
      */
     public QueryQuery checkoutAgreements(CheckoutAgreementQueryDefinition queryDef) {
@@ -552,6 +565,96 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         return this;
     }
 
+    public class DynamicBlocksArguments extends Arguments {
+        DynamicBlocksArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public DynamicBlocksArguments input(DynamicBlocksFilterInput value) {
+            if (value != null) {
+                startArgument("input");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies the maximum number of results to return at once. The default is 20
+         */
+        public DynamicBlocksArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * Specifies which page of results to return. The default value is 1
+         */
+        public DynamicBlocksArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+    }
+
+    public interface DynamicBlocksArgumentsDefinition {
+        void define(DynamicBlocksArguments args);
+    }
+
+    /**
+     * Return a list of dynamic blocks filtered by type, location, or UIDs
+     */
+    public QueryQuery dynamicBlocks(DynamicBlocksQueryDefinition queryDef) {
+        return dynamicBlocks(args -> {}, queryDef);
+    }
+
+    /**
+     * Return a list of dynamic blocks filtered by type, location, or UIDs
+     */
+    public QueryQuery dynamicBlocks(DynamicBlocksArgumentsDefinition argsDef, DynamicBlocksQueryDefinition queryDef) {
+        startField("dynamicBlocks");
+
+        DynamicBlocksArguments args = new DynamicBlocksArguments(_queryBuilder);
+        argsDef.define(args);
+        DynamicBlocksArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new DynamicBlocksQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Returns status of Easy Email Capture for Checkout.
+     */
+    public QueryQuery emailCaptureCheckout(IsConfigSettingEnabledOutputQueryDefinition queryDef) {
+        startField("emailCaptureCheckout");
+
+        _queryBuilder.append('{');
+        queryDef.define(new IsConfigSettingEnabledOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Returns status of Easy Email Capture for Newsletter.
+     */
+    public QueryQuery emailCaptureNewsletter(IsConfigSettingEnabledOutputQueryDefinition queryDef) {
+        startField("emailCaptureNewsletter");
+
+        _queryBuilder.append('{');
+        queryDef.define(new IsConfigSettingEnabledOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     /**
      * Retrieve secure PayPal url for Payments Pro Hosted Solution transaction.
      */
@@ -607,6 +710,125 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         return this;
     }
 
+    /**
+     * Return the specified gift registry. Some details will not be available to guests.
+     */
+    public QueryQuery giftRegistry(ID giftRegistryUid, GiftRegistryQueryDefinition queryDef) {
+        startField("giftRegistry");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftRegistryQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Search for gift registries by specifying a registrant email address
+     */
+    public QueryQuery giftRegistryEmailSearch(String email, GiftRegistrySearchResultQueryDefinition queryDef) {
+        startField("giftRegistryEmailSearch");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftRegistrySearchResultQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Search for gift registries by specifying a registry URL key
+     */
+    public QueryQuery giftRegistryIdSearch(ID giftRegistryUid, GiftRegistrySearchResultQueryDefinition queryDef) {
+        startField("giftRegistryIdSearch");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftRegistrySearchResultQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class GiftRegistryTypeSearchArguments extends Arguments {
+        GiftRegistryTypeSearchArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, false);
+        }
+
+        /**
+         * The type UID of the registry
+         */
+        public GiftRegistryTypeSearchArguments giftRegistryTypeUid(ID value) {
+            if (value != null) {
+                startArgument("giftRegistryTypeUid");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
+            }
+            return this;
+        }
+    }
+
+    public interface GiftRegistryTypeSearchArgumentsDefinition {
+        void define(GiftRegistryTypeSearchArguments args);
+    }
+
+    /**
+     * Search for gift registries by specifying the registrant name and registry type ID
+     */
+    public QueryQuery giftRegistryTypeSearch(String firstName, String lastName, GiftRegistrySearchResultQueryDefinition queryDef) {
+        return giftRegistryTypeSearch(firstName, lastName, args -> {}, queryDef);
+    }
+
+    /**
+     * Search for gift registries by specifying the registrant name and registry type ID
+     */
+    public QueryQuery giftRegistryTypeSearch(String firstName, String lastName, GiftRegistryTypeSearchArgumentsDefinition argsDef,
+        GiftRegistrySearchResultQueryDefinition queryDef) {
+        startField("giftRegistryTypeSearch");
+
+        _queryBuilder.append("(firstName:");
+        AbstractQuery.appendQuotedString(_queryBuilder, firstName.toString());
+
+        _queryBuilder.append(",lastName:");
+        AbstractQuery.appendQuotedString(_queryBuilder, lastName.toString());
+
+        argsDef.define(new GiftRegistryTypeSearchArguments(_queryBuilder));
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftRegistrySearchResultQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Get a list of available gift registry types
+     */
+    public QueryQuery giftRegistryTypes(GiftRegistryTypeQueryDefinition queryDef) {
+        startField("giftRegistryTypes");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftRegistryTypeQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public QueryQuery isEmailAvailable(String email, IsEmailAvailableOutputQueryDefinition queryDef) {
         startField("isEmailAvailable");
 
@@ -617,6 +839,24 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new IsEmailAvailableOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Retrieves information about an order by order id.
+     */
+    public QueryQuery orderData(String orderId, OrderQueryDefinition queryDef) {
+        startField("orderData");
+
+        _queryBuilder.append("(orderId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, orderId.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new OrderQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -838,6 +1078,25 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
+     * Return the full details for a specified product, category, or CMS page given the specified url_key,
+     * appended by the url_suffix, if one exists
+     */
+    public QueryQuery route(String url, RoutableInterfaceQueryDefinition queryDef) {
+        startField("route");
+
+        _queryBuilder.append("(url:");
+        AbstractQuery.appendQuotedString(_queryBuilder, url.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RoutableInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The store config query
      */
     public QueryQuery storeConfig(StoreConfigQueryDefinition queryDef) {
@@ -851,9 +1110,25 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
+     * Retrieves an array of configuration data for different types of tracking.
+     */
+    public QueryQuery trackingData(TrackingDataQueryDefinition queryDef) {
+        startField("trackingData");
+
+        _queryBuilder.append('{');
+        queryDef.define(new TrackingDataQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The urlResolver query returns the relative URL for a specified product, category or CMS page, using
      * as input a url_key appended by the url_suffix, if one exists
+     *
+     * @deprecated Use the &#39;route&#39; query instead
      */
+    @Deprecated
     public QueryQuery urlResolver(String url, EntityUrlQueryDefinition queryDef) {
         startField("urlResolver");
 

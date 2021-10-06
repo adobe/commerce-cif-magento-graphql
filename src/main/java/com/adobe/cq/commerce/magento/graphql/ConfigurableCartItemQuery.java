@@ -45,6 +45,19 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
         return this;
     }
 
+    /**
+     * Product details of the cart item
+     */
+    public ConfigurableCartItemQuery configuredVariant(ProductInterfaceQueryDefinition queryDef) {
+        startField("configured_variant");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ProductInterfaceQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public ConfigurableCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
 

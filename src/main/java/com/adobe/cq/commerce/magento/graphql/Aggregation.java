@@ -84,6 +84,17 @@ public class Aggregation extends AbstractResponse<Aggregation> {
                     break;
                 }
 
+                case "position": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -148,6 +159,18 @@ public class Aggregation extends AbstractResponse<Aggregation> {
         return this;
     }
 
+    /**
+     * The relative position of the attribute in a layered navigation block
+     */
+    public Integer getPosition() {
+        return (Integer) get("position");
+    }
+
+    public Aggregation setPosition(Integer arg) {
+        optimisticData.put(getKey("position"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "attribute_code":
@@ -161,6 +184,9 @@ public class Aggregation extends AbstractResponse<Aggregation> {
 
             case "options":
                 return true;
+
+            case "position":
+                return false;
 
             default:
                 return false;

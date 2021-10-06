@@ -140,6 +140,37 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Add registrants to the specified gift registry
+     */
+    public MutationQuery addGiftRegistryRegistrants(ID giftRegistryUid, List<AddGiftRegistryRegistrantInput> registrants,
+        AddGiftRegistryRegistrantsOutputQueryDefinition queryDef) {
+        startField("addGiftRegistryRegistrants");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(",registrants:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (AddGiftRegistryRegistrantInput item1 : registrants) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddGiftRegistryRegistrantsOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Add any type of product to the cart
      */
     public MutationQuery addProductsToCart(String cartId, List<CartItemInput> cartItems, AddProductsToCartOutputQueryDefinition queryDef) {
@@ -348,6 +379,65 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new AddVirtualProductsToCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class AddWishlistItemsToCartArguments extends Arguments {
+        AddWishlistItemsToCartArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, false);
+        }
+
+        /**
+         * An array of IDs representing products to be added to the cart. If no IDs are specified, all items in
+         * the wishlist will be added to the cart
+         */
+        public AddWishlistItemsToCartArguments wishlistItemIds(List<ID> value) {
+            if (value != null) {
+                startArgument("wishlistItemIds");
+                _queryBuilder.append('[');
+                {
+                    String listSeperator1 = "";
+                    for (ID item1 : value) {
+                        _queryBuilder.append(listSeperator1);
+                        listSeperator1 = ",";
+                        AbstractQuery.appendQuotedString(_queryBuilder, item1.toString());
+                    }
+                }
+                _queryBuilder.append(']');
+            }
+            return this;
+        }
+    }
+
+    public interface AddWishlistItemsToCartArgumentsDefinition {
+        void define(AddWishlistItemsToCartArguments args);
+    }
+
+    /**
+     * Add items in the specified wishlist to the customer&#39;s cart
+     */
+    public MutationQuery addWishlistItemsToCart(ID wishlistId, AddWishlistItemsToCartOutputQueryDefinition queryDef) {
+        return addWishlistItemsToCart(wishlistId, args -> {}, queryDef);
+    }
+
+    /**
+     * Add items in the specified wishlist to the customer&#39;s cart
+     */
+    public MutationQuery addWishlistItemsToCart(ID wishlistId, AddWishlistItemsToCartArgumentsDefinition argsDef,
+        AddWishlistItemsToCartOutputQueryDefinition queryDef) {
+        startField("addWishlistItemsToCart");
+
+        _queryBuilder.append("(wishlistId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, wishlistId.toString());
+
+        argsDef.define(new AddWishlistItemsToCartArguments(_queryBuilder));
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new AddWishlistItemsToCartOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -684,6 +774,24 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         return this;
     }
 
+    /**
+     * Create a gift registry on behalf of the customer
+     */
+    public MutationQuery createGiftRegistry(CreateGiftRegistryInput giftRegistry, CreateGiftRegistryOutputQueryDefinition queryDef) {
+        startField("createGiftRegistry");
+
+        _queryBuilder.append("(giftRegistry:");
+        giftRegistry.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new CreateGiftRegistryOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public class CreateKlarnaPaymentsSessionArguments extends Arguments {
         CreateKlarnaPaymentsSessionArguments(StringBuilder _queryBuilder) {
             super(_queryBuilder, true);
@@ -974,6 +1082,28 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Moves all items from the cart to a gift registry
+     */
+    public MutationQuery moveCartItemsToGiftRegistry(ID cartUid, ID giftRegistryUid,
+        MoveCartItemsToGiftRegistryOutputQueryDefinition queryDef) {
+        startField("moveCartItemsToGiftRegistry");
+
+        _queryBuilder.append("(cartUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, cartUid.toString());
+
+        _queryBuilder.append(",giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new MoveCartItemsToGiftRegistryOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Move products from one wish list to another
      */
     public MutationQuery moveProductsBetweenWishlists(ID sourceWishlistUid, ID destinationWishlistUid,
@@ -1130,6 +1260,86 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new RemoveGiftCardFromCartOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Delete the specified gift registry
+     */
+    public MutationQuery removeGiftRegistry(ID giftRegistryUid, RemoveGiftRegistryOutputQueryDefinition queryDef) {
+        startField("removeGiftRegistry");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveGiftRegistryOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Delete the specified items from a gift registry
+     */
+    public MutationQuery removeGiftRegistryItems(ID giftRegistryUid, List<ID> itemsUid,
+        RemoveGiftRegistryItemsOutputQueryDefinition queryDef) {
+        startField("removeGiftRegistryItems");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(",itemsUid:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (ID item1 : itemsUid) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                AbstractQuery.appendQuotedString(_queryBuilder, item1.toString());
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveGiftRegistryItemsOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Removes registrants from a gift registry
+     */
+    public MutationQuery removeGiftRegistryRegistrants(ID giftRegistryUid, List<ID> registrantsUid,
+        RemoveGiftRegistryRegistrantsOutputQueryDefinition queryDef) {
+        startField("removeGiftRegistryRegistrants");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(",registrantsUid:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (ID item1 : registrantsUid) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                AbstractQuery.appendQuotedString(_queryBuilder, item1.toString());
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new RemoveGiftRegistryRegistrantsOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -1701,6 +1911,40 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Send an email about the gift registry to a list of invitees
+     */
+    public MutationQuery shareGiftRegistry(ID giftRegistryUid, ShareGiftRegistrySenderInput sender,
+        List<ShareGiftRegistryInviteeInput> invitees, ShareGiftRegistryOutputQueryDefinition queryDef) {
+        startField("shareGiftRegistry");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(",sender:");
+        sender.appendTo(_queryBuilder);
+
+        _queryBuilder.append(",invitees:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (ShareGiftRegistryInviteeInput item1 : invitees) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new ShareGiftRegistryOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Subscribes the specified email to a newsletter
      */
     public MutationQuery subscribeEmailToNewsletter(String email, SubscribeEmailToNewsletterOutputQueryDefinition queryDef) {
@@ -1750,6 +1994,63 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         _queryBuilder.append('{');
         queryDef.define(new UpdateCartItemsOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class UpdateChatProfileArguments extends Arguments {
+        UpdateChatProfileArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, false);
+        }
+
+        public UpdateChatProfileArguments email(String value) {
+            if (value != null) {
+                startArgument("email");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
+            }
+            return this;
+        }
+
+        public UpdateChatProfileArguments firstname(String value) {
+            if (value != null) {
+                startArgument("firstname");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
+            }
+            return this;
+        }
+
+        public UpdateChatProfileArguments lastname(String value) {
+            if (value != null) {
+                startArgument("lastname");
+                AbstractQuery.appendQuotedString(_queryBuilder, value.toString());
+            }
+            return this;
+        }
+    }
+
+    public interface UpdateChatProfileArgumentsDefinition {
+        void define(UpdateChatProfileArguments args);
+    }
+
+    /**
+     * Sends chat profile data to Engagement Cloud.
+     */
+    public MutationQuery updateChatProfile(String profileId) {
+        return updateChatProfile(profileId, args -> {});
+    }
+
+    /**
+     * Sends chat profile data to Engagement Cloud.
+     */
+    public MutationQuery updateChatProfile(String profileId, UpdateChatProfileArgumentsDefinition argsDef) {
+        startField("updateChatProfile");
+
+        _queryBuilder.append("(profileId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, profileId.toString());
+
+        argsDef.define(new UpdateChatProfileArguments(_queryBuilder));
+
+        _queryBuilder.append(')');
 
         return this;
     }
@@ -1855,6 +2156,90 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
     }
 
     /**
+     * Update the specified gift registry
+     */
+    public MutationQuery updateGiftRegistry(ID giftRegistryUid, UpdateGiftRegistryInput giftRegistry,
+        UpdateGiftRegistryOutputQueryDefinition queryDef) {
+        startField("updateGiftRegistry");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(",giftRegistry:");
+        giftRegistry.appendTo(_queryBuilder);
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new UpdateGiftRegistryOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Update the specified items in the gift registry
+     */
+    public MutationQuery updateGiftRegistryItems(ID giftRegistryUid, List<UpdateGiftRegistryItemInput> items,
+        UpdateGiftRegistryItemsOutputQueryDefinition queryDef) {
+        startField("updateGiftRegistryItems");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(",items:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (UpdateGiftRegistryItemInput item1 : items) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new UpdateGiftRegistryItemsOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Modify the properties of one or more gift registry registrants
+     */
+    public MutationQuery updateGiftRegistryRegistrants(ID giftRegistryUid, List<UpdateGiftRegistryRegistrantInput> registrants,
+        UpdateGiftRegistryRegistrantsOutputQueryDefinition queryDef) {
+        startField("updateGiftRegistryRegistrants");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(",registrants:");
+        _queryBuilder.append('[');
+        {
+            String listSeperator1 = "";
+            for (UpdateGiftRegistryRegistrantInput item1 : registrants) {
+                _queryBuilder.append(listSeperator1);
+                listSeperator1 = ",";
+                item1.appendTo(_queryBuilder);
+            }
+        }
+        _queryBuilder.append(']');
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new UpdateGiftRegistryRegistrantsOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Updates one or more products in the specified wish list
      */
     public MutationQuery updateProductsInWishlist(ID wishlistId, List<WishlistItemUpdateInput> wishlistItems,
@@ -1881,6 +2266,23 @@ public class MutationQuery extends AbstractQuery<MutationQuery> {
         _queryBuilder.append('{');
         queryDef.define(new UpdateProductsInWishlistOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Updates the email address of a quote.
+     */
+    public MutationQuery updateQuoteEmail(String email, String cartId) {
+        startField("updateQuoteEmail");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(",cartId:");
+        AbstractQuery.appendQuotedString(_queryBuilder, cartId.toString());
+
+        _queryBuilder.append(')');
 
         return this;
     }

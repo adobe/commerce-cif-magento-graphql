@@ -25,9 +25,10 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * GroupedProduct defines a grouped product
+ * A grouped product consists of simple standalone products that are presented as a group
  */
-public class GroupedProduct extends AbstractResponse<GroupedProduct> implements PhysicalProductInterface, ProductInterface {
+public class GroupedProduct extends AbstractResponse<GroupedProduct> implements PhysicalProductInterface, ProductInterface,
+    RoutableInterface {
     public GroupedProduct() {}
 
     public GroupedProduct(JsonObject fields) throws SchemaViolationError {
@@ -414,6 +415,12 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
                     break;
                 }
 
+                case "redirect_code": {
+                    responseData.put(key, jsonAsInteger(field.getValue(), key));
+
+                    break;
+                }
+
                 case "related_products": {
                     List<ProductInterface> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -428,6 +435,17 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "relative_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -577,6 +595,17 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "type": {
+                    UrlRewriteEntityTypeEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = UrlRewriteEntityTypeEnum.fromGraphQl(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -1104,6 +1133,19 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public Integer getRedirectCode() {
+        return (Integer) get("redirect_code");
+    }
+
+    public GroupedProduct setRedirectCode(Integer arg) {
+        optimisticData.put(getKey("redirect_code"), arg);
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public List<ProductInterface> getRelatedProducts() {
@@ -1112,6 +1154,19 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
 
     public GroupedProduct setRelatedProducts(List<ProductInterface> arg) {
         optimisticData.put(getKey("related_products"), arg);
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public String getRelativeUrl() {
+        return (String) get("relative_url");
+    }
+
+    public GroupedProduct setRelativeUrl(String arg) {
+        optimisticData.put(getKey("relative_url"), arg);
         return this;
     }
 
@@ -1286,6 +1341,18 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
 
     public GroupedProduct setTierPrices(List<ProductTierPrices> arg) {
         optimisticData.put(getKey("tier_prices"), arg);
+        return this;
+    }
+
+    /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public UrlRewriteEntityTypeEnum getType() {
+        return (UrlRewriteEntityTypeEnum) get("type");
+    }
+
+    public GroupedProduct setType(UrlRewriteEntityTypeEnum arg) {
+        optimisticData.put(getKey("type"), arg);
         return this;
     }
 
@@ -1508,7 +1575,13 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
             case "rating_summary":
                 return false;
 
+            case "redirect_code":
+                return false;
+
             case "related_products":
+                return false;
+
+            case "relative_url":
                 return false;
 
             case "review_count":
@@ -1552,6 +1625,9 @@ public class GroupedProduct extends AbstractResponse<GroupedProduct> implements 
 
             case "tier_prices":
                 return true;
+
+            case "type":
+                return false;
 
             case "type_id":
                 return false;

@@ -62,6 +62,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "addGiftRegistryRegistrants": {
+                    AddGiftRegistryRegistrantsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AddGiftRegistryRegistrantsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "addProductsToCart": {
                     AddProductsToCartOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -132,6 +143,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     AddVirtualProductsToCartOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new AddVirtualProductsToCartOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "addWishlistItemsToCart": {
+                    AddWishlistItemsToCartOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new AddWishlistItemsToCartOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -277,6 +299,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "createGiftRegistry": {
+                    CreateGiftRegistryOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CreateGiftRegistryOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "createKlarnaPaymentsSession": {
                     createKlarnaPaymentsSessionOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -410,6 +443,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "moveCartItemsToGiftRegistry": {
+                    MoveCartItemsToGiftRegistryOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new MoveCartItemsToGiftRegistryOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "moveProductsBetweenWishlists": {
                     MoveProductsBetweenWishlistsOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -458,6 +502,39 @@ public class Mutation extends AbstractResponse<Mutation> {
                     RemoveGiftCardFromCartOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new RemoveGiftCardFromCartOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "removeGiftRegistry": {
+                    RemoveGiftRegistryOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RemoveGiftRegistryOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "removeGiftRegistryItems": {
+                    RemoveGiftRegistryItemsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RemoveGiftRegistryItemsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "removeGiftRegistryRegistrants": {
+                    RemoveGiftRegistryRegistrantsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RemoveGiftRegistryRegistrantsOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -674,6 +751,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "shareGiftRegistry": {
+                    ShareGiftRegistryOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ShareGiftRegistryOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "subscribeEmailToNewsletter": {
                     SubscribeEmailToNewsletterOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -689,6 +777,17 @@ public class Mutation extends AbstractResponse<Mutation> {
                     UpdateCartItemsOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new UpdateCartItemsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "updateChatProfile": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -740,10 +839,54 @@ public class Mutation extends AbstractResponse<Mutation> {
                     break;
                 }
 
+                case "updateGiftRegistry": {
+                    UpdateGiftRegistryOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new UpdateGiftRegistryOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "updateGiftRegistryItems": {
+                    UpdateGiftRegistryItemsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new UpdateGiftRegistryItemsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "updateGiftRegistryRegistrants": {
+                    UpdateGiftRegistryRegistrantsOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new UpdateGiftRegistryRegistrantsOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "updateProductsInWishlist": {
                     UpdateProductsInWishlistOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new UpdateProductsInWishlistOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "updateQuoteEmail": {
+                    Boolean optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsBoolean(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -802,6 +945,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setAddDownloadableProductsToCart(AddDownloadableProductsToCartOutput arg) {
         optimisticData.put(getKey("addDownloadableProductsToCart"), arg);
+        return this;
+    }
+
+    /**
+     * Add registrants to the specified gift registry
+     */
+    public AddGiftRegistryRegistrantsOutput getAddGiftRegistryRegistrants() {
+        return (AddGiftRegistryRegistrantsOutput) get("addGiftRegistryRegistrants");
+    }
+
+    public Mutation setAddGiftRegistryRegistrants(AddGiftRegistryRegistrantsOutput arg) {
+        optimisticData.put(getKey("addGiftRegistryRegistrants"), arg);
         return this;
     }
 
@@ -880,6 +1035,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setAddVirtualProductsToCart(AddVirtualProductsToCartOutput arg) {
         optimisticData.put(getKey("addVirtualProductsToCart"), arg);
+        return this;
+    }
+
+    /**
+     * Add items in the specified wishlist to the customer&#39;s cart
+     */
+    public AddWishlistItemsToCartOutput getAddWishlistItemsToCart() {
+        return (AddWishlistItemsToCartOutput) get("addWishlistItemsToCart");
+    }
+
+    public Mutation setAddWishlistItemsToCart(AddWishlistItemsToCartOutput arg) {
+        optimisticData.put(getKey("addWishlistItemsToCart"), arg);
         return this;
     }
 
@@ -1033,6 +1200,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setCreateEmptyCart(String arg) {
         optimisticData.put(getKey("createEmptyCart"), arg);
+        return this;
+    }
+
+    /**
+     * Create a gift registry on behalf of the customer
+     */
+    public CreateGiftRegistryOutput getCreateGiftRegistry() {
+        return (CreateGiftRegistryOutput) get("createGiftRegistry");
+    }
+
+    public Mutation setCreateGiftRegistry(CreateGiftRegistryOutput arg) {
+        optimisticData.put(getKey("createGiftRegistry"), arg);
         return this;
     }
 
@@ -1196,6 +1375,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Moves all items from the cart to a gift registry
+     */
+    public MoveCartItemsToGiftRegistryOutput getMoveCartItemsToGiftRegistry() {
+        return (MoveCartItemsToGiftRegistryOutput) get("moveCartItemsToGiftRegistry");
+    }
+
+    public Mutation setMoveCartItemsToGiftRegistry(MoveCartItemsToGiftRegistryOutput arg) {
+        optimisticData.put(getKey("moveCartItemsToGiftRegistry"), arg);
+        return this;
+    }
+
+    /**
      * Move products from one wish list to another
      */
     public MoveProductsBetweenWishlistsOutput getMoveProductsBetweenWishlists() {
@@ -1243,6 +1434,42 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setRemoveGiftCardFromCart(RemoveGiftCardFromCartOutput arg) {
         optimisticData.put(getKey("removeGiftCardFromCart"), arg);
+        return this;
+    }
+
+    /**
+     * Delete the specified gift registry
+     */
+    public RemoveGiftRegistryOutput getRemoveGiftRegistry() {
+        return (RemoveGiftRegistryOutput) get("removeGiftRegistry");
+    }
+
+    public Mutation setRemoveGiftRegistry(RemoveGiftRegistryOutput arg) {
+        optimisticData.put(getKey("removeGiftRegistry"), arg);
+        return this;
+    }
+
+    /**
+     * Delete the specified items from a gift registry
+     */
+    public RemoveGiftRegistryItemsOutput getRemoveGiftRegistryItems() {
+        return (RemoveGiftRegistryItemsOutput) get("removeGiftRegistryItems");
+    }
+
+    public Mutation setRemoveGiftRegistryItems(RemoveGiftRegistryItemsOutput arg) {
+        optimisticData.put(getKey("removeGiftRegistryItems"), arg);
+        return this;
+    }
+
+    /**
+     * Removes registrants from a gift registry
+     */
+    public RemoveGiftRegistryRegistrantsOutput getRemoveGiftRegistryRegistrants() {
+        return (RemoveGiftRegistryRegistrantsOutput) get("removeGiftRegistryRegistrants");
+    }
+
+    public Mutation setRemoveGiftRegistryRegistrants(RemoveGiftRegistryRegistrantsOutput arg) {
+        optimisticData.put(getKey("removeGiftRegistryRegistrants"), arg);
         return this;
     }
 
@@ -1460,6 +1687,18 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Send an email about the gift registry to a list of invitees
+     */
+    public ShareGiftRegistryOutput getShareGiftRegistry() {
+        return (ShareGiftRegistryOutput) get("shareGiftRegistry");
+    }
+
+    public Mutation setShareGiftRegistry(ShareGiftRegistryOutput arg) {
+        optimisticData.put(getKey("shareGiftRegistry"), arg);
+        return this;
+    }
+
+    /**
      * Subscribes the specified email to a newsletter
      */
     public SubscribeEmailToNewsletterOutput getSubscribeEmailToNewsletter() {
@@ -1477,6 +1716,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setUpdateCartItems(UpdateCartItemsOutput arg) {
         optimisticData.put(getKey("updateCartItems"), arg);
+        return this;
+    }
+
+    /**
+     * Sends chat profile data to Engagement Cloud.
+     */
+    public Boolean getUpdateChatProfile() {
+        return (Boolean) get("updateChatProfile");
+    }
+
+    public Mutation setUpdateChatProfile(Boolean arg) {
+        optimisticData.put(getKey("updateChatProfile"), arg);
         return this;
     }
 
@@ -1526,6 +1777,42 @@ public class Mutation extends AbstractResponse<Mutation> {
     }
 
     /**
+     * Update the specified gift registry
+     */
+    public UpdateGiftRegistryOutput getUpdateGiftRegistry() {
+        return (UpdateGiftRegistryOutput) get("updateGiftRegistry");
+    }
+
+    public Mutation setUpdateGiftRegistry(UpdateGiftRegistryOutput arg) {
+        optimisticData.put(getKey("updateGiftRegistry"), arg);
+        return this;
+    }
+
+    /**
+     * Update the specified items in the gift registry
+     */
+    public UpdateGiftRegistryItemsOutput getUpdateGiftRegistryItems() {
+        return (UpdateGiftRegistryItemsOutput) get("updateGiftRegistryItems");
+    }
+
+    public Mutation setUpdateGiftRegistryItems(UpdateGiftRegistryItemsOutput arg) {
+        optimisticData.put(getKey("updateGiftRegistryItems"), arg);
+        return this;
+    }
+
+    /**
+     * Modify the properties of one or more gift registry registrants
+     */
+    public UpdateGiftRegistryRegistrantsOutput getUpdateGiftRegistryRegistrants() {
+        return (UpdateGiftRegistryRegistrantsOutput) get("updateGiftRegistryRegistrants");
+    }
+
+    public Mutation setUpdateGiftRegistryRegistrants(UpdateGiftRegistryRegistrantsOutput arg) {
+        optimisticData.put(getKey("updateGiftRegistryRegistrants"), arg);
+        return this;
+    }
+
+    /**
      * Updates one or more products in the specified wish list
      */
     public UpdateProductsInWishlistOutput getUpdateProductsInWishlist() {
@@ -1534,6 +1821,18 @@ public class Mutation extends AbstractResponse<Mutation> {
 
     public Mutation setUpdateProductsInWishlist(UpdateProductsInWishlistOutput arg) {
         optimisticData.put(getKey("updateProductsInWishlist"), arg);
+        return this;
+    }
+
+    /**
+     * Updates the email address of a quote.
+     */
+    public Boolean getUpdateQuoteEmail() {
+        return (Boolean) get("updateQuoteEmail");
+    }
+
+    public Mutation setUpdateQuoteEmail(Boolean arg) {
+        optimisticData.put(getKey("updateQuoteEmail"), arg);
         return this;
     }
 
@@ -1560,6 +1859,9 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "addDownloadableProductsToCart":
                 return true;
 
+            case "addGiftRegistryRegistrants":
+                return true;
+
             case "addProductsToCart":
                 return true;
 
@@ -1579,6 +1881,9 @@ public class Mutation extends AbstractResponse<Mutation> {
                 return true;
 
             case "addVirtualProductsToCart":
+                return true;
+
+            case "addWishlistItemsToCart":
                 return true;
 
             case "applyCouponToCart":
@@ -1620,6 +1925,9 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "createEmptyCart":
                 return false;
 
+            case "createGiftRegistry":
+                return true;
+
             case "createKlarnaPaymentsSession":
                 return true;
 
@@ -1659,6 +1967,9 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "mergeCarts":
                 return true;
 
+            case "moveCartItemsToGiftRegistry":
+                return true;
+
             case "moveProductsBetweenWishlists":
                 return true;
 
@@ -1672,6 +1983,15 @@ public class Mutation extends AbstractResponse<Mutation> {
                 return true;
 
             case "removeGiftCardFromCart":
+                return true;
+
+            case "removeGiftRegistry":
+                return true;
+
+            case "removeGiftRegistryItems":
+                return true;
+
+            case "removeGiftRegistryRegistrants":
                 return true;
 
             case "removeItemFromCart":
@@ -1731,11 +2051,17 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "setShippingMethodsOnCart":
                 return true;
 
+            case "shareGiftRegistry":
+                return true;
+
             case "subscribeEmailToNewsletter":
                 return true;
 
             case "updateCartItems":
                 return true;
+
+            case "updateChatProfile":
+                return false;
 
             case "updateCustomer":
                 return true;
@@ -1749,8 +2075,20 @@ public class Mutation extends AbstractResponse<Mutation> {
             case "updateCustomerV2":
                 return true;
 
+            case "updateGiftRegistry":
+                return true;
+
+            case "updateGiftRegistryItems":
+                return true;
+
+            case "updateGiftRegistryRegistrants":
+                return true;
+
             case "updateProductsInWishlist":
                 return true;
+
+            case "updateQuoteEmail":
+                return false;
 
             case "updateWishlist":
                 return true;

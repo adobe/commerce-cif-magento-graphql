@@ -105,6 +105,17 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
                     break;
                 }
 
+                case "total_giftcard": {
+                    Money optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Money(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "total_shipping": {
                     responseData.put(key, new Money(jsonAsObject(field.getValue(), key)));
 
@@ -206,6 +217,18 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
+     * The gift card balance applied to the order
+     */
+    public Money getTotalGiftcard() {
+        return (Money) get("total_giftcard");
+    }
+
+    public OrderTotal setTotalGiftcard(Money arg) {
+        optimisticData.put(getKey("total_giftcard"), arg);
+        return this;
+    }
+
+    /**
      * The shipping amount for the order
      */
     public Money getTotalShipping() {
@@ -247,6 +270,9 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
                 return true;
 
             case "taxes":
+                return true;
+
+            case "total_giftcard":
                 return true;
 
             case "total_shipping":

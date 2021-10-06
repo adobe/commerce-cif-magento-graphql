@@ -34,6 +34,27 @@ public class ConfigurableProductOptionsSelection extends AbstractResponse<Config
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
+                case "configurable_options": {
+                    List<ConfigurableProductOption> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<ConfigurableProductOption> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            ConfigurableProductOption optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new ConfigurableProductOption(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "media_gallery": {
                     List<MediaGalleryInterface> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -104,6 +125,18 @@ public class ConfigurableProductOptionsSelection extends AbstractResponse<Config
     }
 
     /**
+     * Configurable options available for further selection based on current selection.
+     */
+    public List<ConfigurableProductOption> getConfigurableOptions() {
+        return (List<ConfigurableProductOption>) get("configurable_options");
+    }
+
+    public ConfigurableProductOptionsSelection setConfigurableOptions(List<ConfigurableProductOption> arg) {
+        optimisticData.put(getKey("configurable_options"), arg);
+        return this;
+    }
+
+    /**
      * Product images and videos corresponding to the specified configurable options selection.
      */
     public List<MediaGalleryInterface> getMediaGallery() {
@@ -142,6 +175,9 @@ public class ConfigurableProductOptionsSelection extends AbstractResponse<Config
 
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
+            case "configurable_options":
+                return true;
+
             case "media_gallery":
                 return false;
 

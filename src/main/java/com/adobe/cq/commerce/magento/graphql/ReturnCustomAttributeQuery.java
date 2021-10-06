@@ -16,6 +16,7 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 public class ReturnCustomAttributeQuery extends AbstractQuery<ReturnCustomAttributeQuery> {
     ReturnCustomAttributeQuery(StringBuilder _queryBuilder) {

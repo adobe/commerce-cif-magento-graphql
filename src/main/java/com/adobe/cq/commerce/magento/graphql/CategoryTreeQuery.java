@@ -19,7 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Category Tree implementation.
+ * Category tree implementation
  */
 public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
     CategoryTreeQuery(StringBuilder _queryBuilder) {
@@ -318,8 +318,37 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
         return this;
     }
 
+    /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public CategoryTreeQuery redirectCode() {
+        startField("redirect_code");
+
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public CategoryTreeQuery relativeUrl() {
+        startField("relative_url");
+
+        return this;
+    }
+
     public CategoryTreeQuery staged() {
         startField("staged");
+
+        return this;
+    }
+
+    /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public CategoryTreeQuery type() {
+        startField("type");
 
         return this;
     }
@@ -407,6 +436,18 @@ public class CategoryTreeQuery extends AbstractQuery<CategoryTreeQuery> {
      * @param fragment The fragment to reference.
      */
     public CategoryTreeQuery addCategoryInterfaceFragmentReference(Fragment<CategoryInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>RoutableInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public CategoryTreeQuery addRoutableInterfaceFragmentReference(Fragment<RoutableInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

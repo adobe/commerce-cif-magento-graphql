@@ -17,9 +17,21 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the requested order
+ */
 public class OrderQuery extends AbstractQuery<OrderQuery> {
     OrderQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
+    }
+
+    /**
+     * An array containing the items purchased in this order
+     */
+    public OrderQuery items() {
+        startField("items");
+
+        return this;
     }
 
     /**
@@ -37,6 +49,15 @@ public class OrderQuery extends AbstractQuery<OrderQuery> {
      */
     public OrderQuery orderNumber() {
         startField("order_number");
+
+        return this;
+    }
+
+    /**
+     * Contains the calculated total for this order
+     */
+    public OrderQuery total() {
+        startField("total");
 
         return this;
     }

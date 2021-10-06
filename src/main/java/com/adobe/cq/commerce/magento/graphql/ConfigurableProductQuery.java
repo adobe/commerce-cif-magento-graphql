@@ -111,14 +111,14 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
-     * Metadata for the specified configurable options selection
+     * Specified configurable product options selection
      */
     public ConfigurableProductQuery configurableProductOptionsSelection(ConfigurableProductOptionsSelectionQueryDefinition queryDef) {
         return configurableProductOptionsSelection(args -> {}, queryDef);
     }
 
     /**
-     * Metadata for the specified configurable options selection
+     * Specified configurable product options selection
      */
     public ConfigurableProductQuery configurableProductOptionsSelection(ConfigurableProductOptionsSelectionArgumentsDefinition argsDef,
         ConfigurableProductOptionsSelectionQueryDefinition queryDef) {
@@ -420,6 +420,16 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public ConfigurableProductQuery redirectCode() {
+        startField("redirect_code");
+
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public ConfigurableProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
@@ -428,6 +438,16 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
         _queryBuilder.append('{');
         queryDef.define(new ProductInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public ConfigurableProductQuery relativeUrl() {
+        startField("relative_url");
 
         return this;
     }
@@ -628,6 +648,15 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
     }
 
     /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public ConfigurableProductQuery type() {
+        startField("type");
+
+        return this;
+    }
+
+    /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
      * @deprecated Use __typename instead.
@@ -811,6 +840,18 @@ public class ConfigurableProductQuery extends AbstractQuery<ConfigurableProductQ
      * @param fragment The fragment to reference.
      */
     public ConfigurableProductQuery addProductInterfaceFragmentReference(Fragment<ProductInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>RoutableInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public ConfigurableProductQuery addRoutableInterfaceFragmentReference(Fragment<RoutableInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

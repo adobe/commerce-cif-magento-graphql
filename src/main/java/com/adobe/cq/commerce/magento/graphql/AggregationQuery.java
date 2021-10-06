@@ -67,6 +67,15 @@ public class AggregationQuery extends AbstractQuery<AggregationQuery> {
     }
 
     /**
+     * The relative position of the attribute in a layered navigation block
+     */
+    public AggregationQuery position() {
+        startField("position");
+
+        return this;
+    }
+
+    /**
      * Creates a GraphQL "named" fragment with the specified query type definition.
      * The generics nature of fragments ensures that a fragment can only be used at the right place in the GraphQL request.
      * 

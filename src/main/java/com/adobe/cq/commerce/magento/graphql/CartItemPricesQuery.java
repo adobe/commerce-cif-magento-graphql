@@ -35,6 +35,19 @@ public class CartItemPricesQuery extends AbstractQuery<CartItemPricesQuery> {
         return this;
     }
 
+    /**
+     * Applied FPT to the cart item.
+     */
+    public CartItemPricesQuery fixedProductTaxes(FixedProductTaxQueryDefinition queryDef) {
+        startField("fixed_product_taxes");
+
+        _queryBuilder.append('{');
+        queryDef.define(new FixedProductTaxQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
     public CartItemPricesQuery price(MoneyQueryDefinition queryDef) {
         startField("price");
 

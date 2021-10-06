@@ -89,10 +89,39 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public CmsPageQuery redirectCode() {
+        startField("redirect_code");
+
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public CmsPageQuery relativeUrl() {
+        startField("relative_url");
+
+        return this;
+    }
+
+    /**
      * CMS page title
      */
     public CmsPageQuery title() {
         startField("title");
+
+        return this;
+    }
+
+    /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public CmsPageQuery type() {
+        startField("type");
 
         return this;
     }
@@ -129,6 +158,18 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
      * @param fragment The fragment to reference.
      */
     public CmsPageQuery addFragmentReference(Fragment<CmsPageQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>RoutableInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public CmsPageQuery addRoutableInterfaceFragmentReference(Fragment<RoutableInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

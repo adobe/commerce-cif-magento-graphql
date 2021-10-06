@@ -17,6 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.ID;
 
 /**
  * GiftCardProduct defines properties of a gift card, including the minimum and maximum values and an
@@ -451,6 +452,16 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public GiftCardProductQuery redirectCode() {
+        startField("redirect_code");
+
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public GiftCardProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
@@ -459,6 +470,16 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
         _queryBuilder.append('{');
         queryDef.define(new ProductInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public GiftCardProductQuery relativeUrl() {
+        startField("relative_url");
 
         return this;
     }
@@ -659,6 +680,15 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public GiftCardProductQuery type() {
+        startField("type");
+
+        return this;
+    }
+
+    /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
      * @deprecated Use __typename instead.
@@ -829,6 +859,18 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
      * @param fragment The fragment to reference.
      */
     public GiftCardProductQuery addProductInterfaceFragmentReference(Fragment<ProductInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>RoutableInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public GiftCardProductQuery addRoutableInterfaceFragmentReference(Fragment<RoutableInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }
