@@ -19,7 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * BundleProduct defines basic features of a bundle product and contains multiple BundleItems.
+ * Defines basic features of a bundle product and contains multiple BundleItems
  */
 public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     BundleProductQuery(StringBuilder _queryBuilder) {
@@ -401,6 +401,16 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public BundleProductQuery redirectCode() {
+        startField("redirect_code");
+
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public BundleProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
@@ -409,6 +419,16 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
         _queryBuilder.append('{');
         queryDef.define(new ProductInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public BundleProductQuery relativeUrl() {
+        startField("relative_url");
 
         return this;
     }
@@ -618,6 +638,15 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public BundleProductQuery type() {
+        startField("type");
+
+        return this;
+    }
+
+    /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
      * @deprecated Use __typename instead.
@@ -788,6 +817,18 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
      * @param fragment The fragment to reference.
      */
     public BundleProductQuery addProductInterfaceFragmentReference(Fragment<ProductInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>RoutableInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public BundleProductQuery addRoutableInterfaceFragmentReference(Fragment<RoutableInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

@@ -25,9 +25,10 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * DownloadableProduct defines a product that the customer downloads
+ * DownloadableProduct defines a product that the shopper downloads
  */
-public class DownloadableProduct extends AbstractResponse<DownloadableProduct> implements CustomizableProductInterface, ProductInterface {
+public class DownloadableProduct extends AbstractResponse<DownloadableProduct> implements CustomizableProductInterface, ProductInterface,
+    RoutableInterface {
     public DownloadableProduct() {}
 
     public DownloadableProduct(JsonObject fields) throws SchemaViolationError {
@@ -478,6 +479,12 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                     break;
                 }
 
+                case "redirect_code": {
+                    responseData.put(key, jsonAsInteger(field.getValue(), key));
+
+                    break;
+                }
+
                 case "related_products": {
                     List<ProductInterface> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -492,6 +499,17 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "relative_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -641,6 +659,17 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "type": {
+                    UrlRewriteEntityTypeEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = UrlRewriteEntityTypeEnum.fromGraphQl(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -1205,6 +1234,19 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public Integer getRedirectCode() {
+        return (Integer) get("redirect_code");
+    }
+
+    public DownloadableProduct setRedirectCode(Integer arg) {
+        optimisticData.put(getKey("redirect_code"), arg);
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public List<ProductInterface> getRelatedProducts() {
@@ -1213,6 +1255,19 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     public DownloadableProduct setRelatedProducts(List<ProductInterface> arg) {
         optimisticData.put(getKey("related_products"), arg);
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public String getRelativeUrl() {
+        return (String) get("relative_url");
+    }
+
+    public DownloadableProduct setRelativeUrl(String arg) {
+        optimisticData.put(getKey("relative_url"), arg);
         return this;
     }
 
@@ -1387,6 +1442,18 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
     public DownloadableProduct setTierPrices(List<ProductTierPrices> arg) {
         optimisticData.put(getKey("tier_prices"), arg);
+        return this;
+    }
+
+    /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public UrlRewriteEntityTypeEnum getType() {
+        return (UrlRewriteEntityTypeEnum) get("type");
+    }
+
+    public DownloadableProduct setType(UrlRewriteEntityTypeEnum arg) {
+        optimisticData.put(getKey("type"), arg);
         return this;
     }
 
@@ -1609,7 +1676,13 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
             case "rating_summary":
                 return false;
 
+            case "redirect_code":
+                return false;
+
             case "related_products":
+                return false;
+
+            case "relative_url":
                 return false;
 
             case "review_count":
@@ -1653,6 +1726,9 @@ public class DownloadableProduct extends AbstractResponse<DownloadableProduct> i
 
             case "tier_prices":
                 return true;
+
+            case "type":
+                return false;
 
             case "type_id":
                 return false;

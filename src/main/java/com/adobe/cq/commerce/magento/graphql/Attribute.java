@@ -99,6 +99,17 @@ public class Attribute extends AbstractResponse<Attribute> {
                     break;
                 }
 
+                case "storefront_properties": {
+                    StorefrontProperties optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new StorefrontProperties(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "__typename": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
                     break;
@@ -176,6 +187,18 @@ public class Attribute extends AbstractResponse<Attribute> {
         return this;
     }
 
+    /**
+     * Contains details about the storefront properties configured for the attribute
+     */
+    public StorefrontProperties getStorefrontProperties() {
+        return (StorefrontProperties) get("storefront_properties");
+    }
+
+    public Attribute setStorefrontProperties(StorefrontProperties arg) {
+        optimisticData.put(getKey("storefront_properties"), arg);
+        return this;
+    }
+
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "attribute_code":
@@ -192,6 +215,9 @@ public class Attribute extends AbstractResponse<Attribute> {
 
             case "input_type":
                 return false;
+
+            case "storefront_properties":
+                return true;
 
             default:
                 return false;

@@ -25,9 +25,9 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Category Tree implementation.
+ * Category tree implementation
  */
-public class CategoryTree extends AbstractResponse<CategoryTree> implements CategoryInterface {
+public class CategoryTree extends AbstractResponse<CategoryTree> implements CategoryInterface, RoutableInterface {
     public CategoryTree() {}
 
     public CategoryTree(JsonObject fields) throws SchemaViolationError {
@@ -373,8 +373,36 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
                     break;
                 }
 
+                case "redirect_code": {
+                    responseData.put(key, jsonAsInteger(field.getValue(), key));
+
+                    break;
+                }
+
+                case "relative_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "staged": {
                     responseData.put(key, jsonAsBoolean(field.getValue(), key));
+
+                    break;
+                }
+
+                case "type": {
+                    UrlRewriteEntityTypeEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = UrlRewriteEntityTypeEnum.fromGraphQl(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -750,12 +778,50 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
         return this;
     }
 
+    /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public Integer getRedirectCode() {
+        return (Integer) get("redirect_code");
+    }
+
+    public CategoryTree setRedirectCode(Integer arg) {
+        optimisticData.put(getKey("redirect_code"), arg);
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public String getRelativeUrl() {
+        return (String) get("relative_url");
+    }
+
+    public CategoryTree setRelativeUrl(String arg) {
+        optimisticData.put(getKey("relative_url"), arg);
+        return this;
+    }
+
     public Boolean getStaged() {
         return (Boolean) get("staged");
     }
 
     public CategoryTree setStaged(Boolean arg) {
         optimisticData.put(getKey("staged"), arg);
+        return this;
+    }
+
+    /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public UrlRewriteEntityTypeEnum getType() {
+        return (UrlRewriteEntityTypeEnum) get("type");
+    }
+
+    public CategoryTree setType(UrlRewriteEntityTypeEnum arg) {
+        optimisticData.put(getKey("type"), arg);
         return this;
     }
 
@@ -908,7 +974,16 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
             case "products":
                 return true;
 
+            case "redirect_code":
+                return false;
+
+            case "relative_url":
+                return false;
+
             case "staged":
+                return false;
+
+            case "type":
                 return false;
 
             case "uid":

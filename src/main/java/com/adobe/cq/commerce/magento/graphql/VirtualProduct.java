@@ -25,10 +25,11 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A virtual product is non-tangible product that does not require shipping and is not kept in
- * inventory.
+ * A virtual product is a non-tangible product that does not require shipping and is not kept in
+ * inventory
  */
-public class VirtualProduct extends AbstractResponse<VirtualProduct> implements CustomizableProductInterface, ProductInterface {
+public class VirtualProduct extends AbstractResponse<VirtualProduct> implements CustomizableProductInterface, ProductInterface,
+    RoutableInterface {
     public VirtualProduct() {}
 
     public VirtualProduct(JsonObject fields) throws SchemaViolationError {
@@ -415,6 +416,12 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                     break;
                 }
 
+                case "redirect_code": {
+                    responseData.put(key, jsonAsInteger(field.getValue(), key));
+
+                    break;
+                }
+
                 case "related_products": {
                     List<ProductInterface> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -429,6 +436,17 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "relative_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -578,6 +596,17 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "type": {
+                    UrlRewriteEntityTypeEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = UrlRewriteEntityTypeEnum.fromGraphQl(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -1094,6 +1123,19 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public Integer getRedirectCode() {
+        return (Integer) get("redirect_code");
+    }
+
+    public VirtualProduct setRedirectCode(Integer arg) {
+        optimisticData.put(getKey("redirect_code"), arg);
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public List<ProductInterface> getRelatedProducts() {
@@ -1102,6 +1144,19 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
     public VirtualProduct setRelatedProducts(List<ProductInterface> arg) {
         optimisticData.put(getKey("related_products"), arg);
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public String getRelativeUrl() {
+        return (String) get("relative_url");
+    }
+
+    public VirtualProduct setRelativeUrl(String arg) {
+        optimisticData.put(getKey("relative_url"), arg);
         return this;
     }
 
@@ -1276,6 +1331,18 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
     public VirtualProduct setTierPrices(List<ProductTierPrices> arg) {
         optimisticData.put(getKey("tier_prices"), arg);
+        return this;
+    }
+
+    /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public UrlRewriteEntityTypeEnum getType() {
+        return (UrlRewriteEntityTypeEnum) get("type");
+    }
+
+    public VirtualProduct setType(UrlRewriteEntityTypeEnum arg) {
+        optimisticData.put(getKey("type"), arg);
         return this;
     }
 
@@ -1486,7 +1553,13 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
             case "rating_summary":
                 return false;
 
+            case "redirect_code":
+                return false;
+
             case "related_products":
+                return false;
+
+            case "relative_url":
                 return false;
 
             case "review_count":
@@ -1530,6 +1603,9 @@ public class VirtualProduct extends AbstractResponse<VirtualProduct> implements 
 
             case "tier_prices":
                 return true;
+
+            case "type":
+                return false;
 
             case "type_id":
                 return false;

@@ -64,6 +64,12 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
                     break;
                 }
 
+                case "configured_variant": {
+                    responseData.put(key, UnknownProductInterface.create(jsonAsObject(field.getValue(), key)));
+
+                    break;
+                }
+
                 case "customizable_options": {
                     List<SelectedCustomizableOption> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -179,6 +185,18 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
         return this;
     }
 
+    /**
+     * Product details of the cart item
+     */
+    public ProductInterface getConfiguredVariant() {
+        return (ProductInterface) get("configured_variant");
+    }
+
+    public ConfigurableCartItem setConfiguredVariant(ProductInterface arg) {
+        optimisticData.put(getKey("configured_variant"), arg);
+        return this;
+    }
+
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
     }
@@ -271,6 +289,9 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
 
             case "configurable_options":
                 return true;
+
+            case "configured_variant":
+                return false;
 
             case "customizable_options":
                 return true;

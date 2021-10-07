@@ -104,6 +104,19 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
+     * The gift card balance applied to the order
+     */
+    public OrderTotalQuery totalGiftcard(MoneyQueryDefinition queryDef) {
+        startField("total_giftcard");
+
+        _queryBuilder.append('{');
+        queryDef.define(new MoneyQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * The shipping amount for the order
      */
     public OrderTotalQuery totalShipping(MoneyQueryDefinition queryDef) {

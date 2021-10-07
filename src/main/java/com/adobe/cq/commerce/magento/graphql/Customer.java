@@ -160,6 +160,38 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "gift_registries": {
+                    List<GiftRegistry> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<GiftRegistry> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            GiftRegistry optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new GiftRegistry(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "gift_registry": {
+                    GiftRegistry optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftRegistry(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "group_id": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -494,6 +526,30 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
+     * Details about all of the customer&#39;s gift registries
+     */
+    public List<GiftRegistry> getGiftRegistries() {
+        return (List<GiftRegistry>) get("gift_registries");
+    }
+
+    public Customer setGiftRegistries(List<GiftRegistry> arg) {
+        optimisticData.put(getKey("gift_registries"), arg);
+        return this;
+    }
+
+    /**
+     * Details about a specific gift registry
+     */
+    public GiftRegistry getGiftRegistry() {
+        return (GiftRegistry) get("gift_registry");
+    }
+
+    public Customer setGiftRegistry(GiftRegistry arg) {
+        optimisticData.put(getKey("gift_registry"), arg);
+        return this;
+    }
+
+    /**
      * @deprecated Customer group should not be exposed in the storefront scenarios
      */
     @Deprecated
@@ -737,6 +793,12 @@ public class Customer extends AbstractResponse<Customer> {
 
             case "gender":
                 return false;
+
+            case "gift_registries":
+                return true;
+
+            case "gift_registry":
+                return true;
 
             case "group_id":
                 return false;

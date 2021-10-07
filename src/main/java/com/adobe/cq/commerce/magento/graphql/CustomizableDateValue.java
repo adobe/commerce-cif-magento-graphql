@@ -67,6 +67,17 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
                     break;
                 }
 
+                case "type": {
+                    CustomizableDateTypeEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = CustomizableDateTypeEnum.fromGraphQl(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "uid": {
                     responseData.put(key, new ID(jsonAsString(field.getValue(), key)));
 
@@ -126,6 +137,18 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
     }
 
     /**
+     * DATE, DATE_TIME or TIME
+     */
+    public CustomizableDateTypeEnum getType() {
+        return (CustomizableDateTypeEnum) get("type");
+    }
+
+    public CustomizableDateValue setType(CustomizableDateTypeEnum arg) {
+        optimisticData.put(getKey("type"), arg);
+        return this;
+    }
+
+    /**
      * The unique ID for a `CustomizableDateValue` object.
      */
     public ID getUid() {
@@ -146,6 +169,9 @@ public class CustomizableDateValue extends AbstractResponse<CustomizableDateValu
                 return false;
 
             case "sku":
+                return false;
+
+            case "type":
                 return false;
 
             case "uid":

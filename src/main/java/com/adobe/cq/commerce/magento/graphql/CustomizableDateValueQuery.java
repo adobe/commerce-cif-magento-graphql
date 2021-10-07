@@ -54,6 +54,15 @@ public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateVa
     }
 
     /**
+     * DATE, DATE_TIME or TIME
+     */
+    public CustomizableDateValueQuery type() {
+        startField("type");
+
+        return this;
+    }
+
+    /**
      * The unique ID for a `CustomizableDateValue` object.
      */
     public CustomizableDateValueQuery uid() {

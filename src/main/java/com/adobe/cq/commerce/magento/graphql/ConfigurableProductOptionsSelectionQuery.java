@@ -26,6 +26,19 @@ public class ConfigurableProductOptionsSelectionQuery extends AbstractQuery<Conf
     }
 
     /**
+     * Configurable options available for further selection based on current selection.
+     */
+    public ConfigurableProductOptionsSelectionQuery configurableOptions(ConfigurableProductOptionQueryDefinition queryDef) {
+        startField("configurable_options");
+
+        _queryBuilder.append('{');
+        queryDef.define(new ConfigurableProductOptionQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * Product images and videos corresponding to the specified configurable options selection.
      */
     public ConfigurableProductOptionsSelectionQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {

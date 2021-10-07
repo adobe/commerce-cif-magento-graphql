@@ -106,6 +106,17 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "chatData": {
+                    ChatData optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new ChatData(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "checkoutAgreements": {
                     List<CheckoutAgreement> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -264,6 +275,34 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "dynamicBlocks": {
+                    responseData.put(key, new DynamicBlocks(jsonAsObject(field.getValue(), key)));
+
+                    break;
+                }
+
+                case "emailCaptureCheckout": {
+                    IsConfigSettingEnabledOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new IsConfigSettingEnabledOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "emailCaptureNewsletter": {
+                    IsConfigSettingEnabledOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new IsConfigSettingEnabledOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "getHostedProUrl": {
                     HostedProUrl optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -297,10 +336,116 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "giftRegistry": {
+                    GiftRegistry optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new GiftRegistry(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "giftRegistryEmailSearch": {
+                    List<GiftRegistrySearchResult> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<GiftRegistrySearchResult> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            GiftRegistrySearchResult optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new GiftRegistrySearchResult(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "giftRegistryIdSearch": {
+                    List<GiftRegistrySearchResult> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<GiftRegistrySearchResult> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            GiftRegistrySearchResult optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new GiftRegistrySearchResult(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "giftRegistryTypeSearch": {
+                    List<GiftRegistrySearchResult> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<GiftRegistrySearchResult> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            GiftRegistrySearchResult optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new GiftRegistrySearchResult(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "giftRegistryTypes": {
+                    List<GiftRegistryType> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<GiftRegistryType> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            GiftRegistryType optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new GiftRegistryType(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "isEmailAvailable": {
                     IsEmailAvailableOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new IsEmailAvailableOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "orderData": {
+                    Order optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Order(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -336,10 +481,32 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "route": {
+                    RoutableInterface optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = UnknownRoutableInterface.create(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "storeConfig": {
                     StoreConfig optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new StoreConfig(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "trackingData": {
+                    TrackingData optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new TrackingData(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -465,6 +632,18 @@ public class Query extends AbstractResponse<Query> {
 
     public Query setCategoryList(List<CategoryTree> arg) {
         optimisticData.put(getKey("categoryList"), arg);
+        return this;
+    }
+
+    /**
+     * Retrieves an array of configuration data for the chat widget.
+     */
+    public ChatData getChatData() {
+        return (ChatData) get("chatData");
+    }
+
+    public Query setChatData(ChatData arg) {
+        optimisticData.put(getKey("chatData"), arg);
         return this;
     }
 
@@ -627,6 +806,42 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * Return a list of dynamic blocks filtered by type, location, or UIDs
+     */
+    public DynamicBlocks getDynamicBlocks() {
+        return (DynamicBlocks) get("dynamicBlocks");
+    }
+
+    public Query setDynamicBlocks(DynamicBlocks arg) {
+        optimisticData.put(getKey("dynamicBlocks"), arg);
+        return this;
+    }
+
+    /**
+     * Returns status of Easy Email Capture for Checkout.
+     */
+    public IsConfigSettingEnabledOutput getEmailCaptureCheckout() {
+        return (IsConfigSettingEnabledOutput) get("emailCaptureCheckout");
+    }
+
+    public Query setEmailCaptureCheckout(IsConfigSettingEnabledOutput arg) {
+        optimisticData.put(getKey("emailCaptureCheckout"), arg);
+        return this;
+    }
+
+    /**
+     * Returns status of Easy Email Capture for Newsletter.
+     */
+    public IsConfigSettingEnabledOutput getEmailCaptureNewsletter() {
+        return (IsConfigSettingEnabledOutput) get("emailCaptureNewsletter");
+    }
+
+    public Query setEmailCaptureNewsletter(IsConfigSettingEnabledOutput arg) {
+        optimisticData.put(getKey("emailCaptureNewsletter"), arg);
+        return this;
+    }
+
+    /**
      * Retrieve secure PayPal url for Payments Pro Hosted Solution transaction.
      */
     public HostedProUrl getGetHostedProUrl() {
@@ -663,12 +878,84 @@ public class Query extends AbstractResponse<Query> {
         return this;
     }
 
+    /**
+     * Return the specified gift registry. Some details will not be available to guests.
+     */
+    public GiftRegistry getGiftRegistry() {
+        return (GiftRegistry) get("giftRegistry");
+    }
+
+    public Query setGiftRegistry(GiftRegistry arg) {
+        optimisticData.put(getKey("giftRegistry"), arg);
+        return this;
+    }
+
+    /**
+     * Search for gift registries by specifying a registrant email address
+     */
+    public List<GiftRegistrySearchResult> getGiftRegistryEmailSearch() {
+        return (List<GiftRegistrySearchResult>) get("giftRegistryEmailSearch");
+    }
+
+    public Query setGiftRegistryEmailSearch(List<GiftRegistrySearchResult> arg) {
+        optimisticData.put(getKey("giftRegistryEmailSearch"), arg);
+        return this;
+    }
+
+    /**
+     * Search for gift registries by specifying a registry URL key
+     */
+    public List<GiftRegistrySearchResult> getGiftRegistryIdSearch() {
+        return (List<GiftRegistrySearchResult>) get("giftRegistryIdSearch");
+    }
+
+    public Query setGiftRegistryIdSearch(List<GiftRegistrySearchResult> arg) {
+        optimisticData.put(getKey("giftRegistryIdSearch"), arg);
+        return this;
+    }
+
+    /**
+     * Search for gift registries by specifying the registrant name and registry type ID
+     */
+    public List<GiftRegistrySearchResult> getGiftRegistryTypeSearch() {
+        return (List<GiftRegistrySearchResult>) get("giftRegistryTypeSearch");
+    }
+
+    public Query setGiftRegistryTypeSearch(List<GiftRegistrySearchResult> arg) {
+        optimisticData.put(getKey("giftRegistryTypeSearch"), arg);
+        return this;
+    }
+
+    /**
+     * Get a list of available gift registry types
+     */
+    public List<GiftRegistryType> getGiftRegistryTypes() {
+        return (List<GiftRegistryType>) get("giftRegistryTypes");
+    }
+
+    public Query setGiftRegistryTypes(List<GiftRegistryType> arg) {
+        optimisticData.put(getKey("giftRegistryTypes"), arg);
+        return this;
+    }
+
     public IsEmailAvailableOutput getIsEmailAvailable() {
         return (IsEmailAvailableOutput) get("isEmailAvailable");
     }
 
     public Query setIsEmailAvailable(IsEmailAvailableOutput arg) {
         optimisticData.put(getKey("isEmailAvailable"), arg);
+        return this;
+    }
+
+    /**
+     * Retrieves information about an order by order id.
+     */
+    public Order getOrderData() {
+        return (Order) get("orderData");
+    }
+
+    public Query setOrderData(Order arg) {
+        optimisticData.put(getKey("orderData"), arg);
         return this;
     }
 
@@ -710,6 +997,19 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * Return the full details for a specified product, category, or CMS page given the specified url_key,
+     * appended by the url_suffix, if one exists
+     */
+    public RoutableInterface getRoute() {
+        return (RoutableInterface) get("route");
+    }
+
+    public Query setRoute(RoutableInterface arg) {
+        optimisticData.put(getKey("route"), arg);
+        return this;
+    }
+
+    /**
      * The store config query
      */
     public StoreConfig getStoreConfig() {
@@ -722,9 +1022,24 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
+     * Retrieves an array of configuration data for different types of tracking.
+     */
+    public TrackingData getTrackingData() {
+        return (TrackingData) get("trackingData");
+    }
+
+    public Query setTrackingData(TrackingData arg) {
+        optimisticData.put(getKey("trackingData"), arg);
+        return this;
+    }
+
+    /**
      * The urlResolver query returns the relative URL for a specified product, category or CMS page, using
      * as input a url_key appended by the url_suffix, if one exists
+     *
+     * @deprecated Use the &#39;route&#39; query instead
      */
+    @Deprecated
     public EntityUrl getUrlResolver() {
         return (EntityUrl) get("urlResolver");
     }
@@ -780,6 +1095,9 @@ public class Query extends AbstractResponse<Query> {
             case "categoryList":
                 return true;
 
+            case "chatData":
+                return true;
+
             case "checkoutAgreements":
                 return true;
 
@@ -819,6 +1137,15 @@ public class Query extends AbstractResponse<Query> {
             case "customerPaymentTokens":
                 return true;
 
+            case "dynamicBlocks":
+                return true;
+
+            case "emailCaptureCheckout":
+                return true;
+
+            case "emailCaptureNewsletter":
+                return true;
+
             case "getHostedProUrl":
                 return true;
 
@@ -828,7 +1155,25 @@ public class Query extends AbstractResponse<Query> {
             case "giftCardAccount":
                 return true;
 
+            case "giftRegistry":
+                return true;
+
+            case "giftRegistryEmailSearch":
+                return true;
+
+            case "giftRegistryIdSearch":
+                return true;
+
+            case "giftRegistryTypeSearch":
+                return true;
+
+            case "giftRegistryTypes":
+                return true;
+
             case "isEmailAvailable":
+                return true;
+
+            case "orderData":
                 return true;
 
             case "pickupLocations":
@@ -840,7 +1185,13 @@ public class Query extends AbstractResponse<Query> {
             case "products":
                 return true;
 
+            case "route":
+                return false;
+
             case "storeConfig":
+                return true;
+
+            case "trackingData":
                 return true;
 
             case "urlResolver":

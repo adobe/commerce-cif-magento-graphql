@@ -24,7 +24,7 @@ import com.shopify.graphql.support.SchemaViolationError;
 /**
  * CMS page defines all CMS page information
  */
-public class CmsPage extends AbstractResponse<CmsPage> {
+public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterface {
     public CmsPage() {}
 
     public CmsPage(JsonObject fields) throws SchemaViolationError {
@@ -109,10 +109,38 @@ public class CmsPage extends AbstractResponse<CmsPage> {
                     break;
                 }
 
+                case "redirect_code": {
+                    responseData.put(key, jsonAsInteger(field.getValue(), key));
+
+                    break;
+                }
+
+                case "relative_url": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "title": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "type": {
+                    UrlRewriteEntityTypeEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = UrlRewriteEntityTypeEnum.fromGraphQl(jsonAsString(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -232,6 +260,32 @@ public class CmsPage extends AbstractResponse<CmsPage> {
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public Integer getRedirectCode() {
+        return (Integer) get("redirect_code");
+    }
+
+    public CmsPage setRedirectCode(Integer arg) {
+        optimisticData.put(getKey("redirect_code"), arg);
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public String getRelativeUrl() {
+        return (String) get("relative_url");
+    }
+
+    public CmsPage setRelativeUrl(String arg) {
+        optimisticData.put(getKey("relative_url"), arg);
+        return this;
+    }
+
+    /**
      * CMS page title
      */
     public String getTitle() {
@@ -240,6 +294,18 @@ public class CmsPage extends AbstractResponse<CmsPage> {
 
     public CmsPage setTitle(String arg) {
         optimisticData.put(getKey("title"), arg);
+        return this;
+    }
+
+    /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public UrlRewriteEntityTypeEnum getType() {
+        return (UrlRewriteEntityTypeEnum) get("type");
+    }
+
+    public CmsPage setType(UrlRewriteEntityTypeEnum arg) {
+        optimisticData.put(getKey("type"), arg);
         return this;
     }
 
@@ -278,7 +344,16 @@ public class CmsPage extends AbstractResponse<CmsPage> {
             case "page_layout":
                 return false;
 
+            case "redirect_code":
+                return false;
+
+            case "relative_url":
+                return false;
+
             case "title":
+                return false;
+
+            case "type":
                 return false;
 
             case "url_key":

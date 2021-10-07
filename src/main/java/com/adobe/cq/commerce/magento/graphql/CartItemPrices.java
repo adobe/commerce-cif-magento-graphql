@@ -52,6 +52,27 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
                     break;
                 }
 
+                case "fixed_product_taxes": {
+                    List<FixedProductTax> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<FixedProductTax> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            FixedProductTax optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new FixedProductTax(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "price": {
                     responseData.put(key, new Money(jsonAsObject(field.getValue(), key)));
 
@@ -109,6 +130,18 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
         return this;
     }
 
+    /**
+     * Applied FPT to the cart item.
+     */
+    public List<FixedProductTax> getFixedProductTaxes() {
+        return (List<FixedProductTax>) get("fixed_product_taxes");
+    }
+
+    public CartItemPrices setFixedProductTaxes(List<FixedProductTax> arg) {
+        optimisticData.put(getKey("fixed_product_taxes"), arg);
+        return this;
+    }
+
     public Money getPrice() {
         return (Money) get("price");
     }
@@ -151,6 +184,9 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
             case "discounts":
+                return true;
+
+            case "fixed_product_taxes":
                 return true;
 
             case "price":

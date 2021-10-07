@@ -19,7 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * DownloadableProduct defines a product that the customer downloads
+ * DownloadableProduct defines a product that the shopper downloads
  */
 public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQuery> {
     DownloadableProductQuery(StringBuilder _queryBuilder) {
@@ -396,6 +396,16 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     */
+    public DownloadableProductQuery redirectCode() {
+        startField("redirect_code");
+
+        return this;
+    }
+
+    /**
      * Related Products
      */
     public DownloadableProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
@@ -404,6 +414,16 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
         _queryBuilder.append('{');
         queryDef.define(new ProductInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original
+     */
+    public DownloadableProductQuery relativeUrl() {
+        startField("relative_url");
 
         return this;
     }
@@ -604,6 +624,15 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
     }
 
     /**
+     * One of PRODUCT, CATEGORY, or CMS_PAGE.
+     */
+    public DownloadableProductQuery type() {
+        startField("type");
+
+        return this;
+    }
+
+    /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
      * @deprecated Use __typename instead.
@@ -753,6 +782,18 @@ public class DownloadableProductQuery extends AbstractQuery<DownloadableProductQ
      * @param fragment The fragment to reference.
      */
     public DownloadableProductQuery addProductInterfaceFragmentReference(Fragment<ProductInterfaceQuery> fragment) {
+        startField("..." + fragment.getName());
+        return this;
+    }
+
+    /**
+     * Adds a <code>RoutableInterfaceQuery</code> fragment reference at the current position of the query.
+     * For example for a fragment named <code>test</code>, calling this method will add the
+     * reference <code>...test</code> in the query.
+     * 
+     * @param fragment The fragment to reference.
+     */
+    public DownloadableProductQuery addRoutableInterfaceFragmentReference(Fragment<RoutableInterfaceQuery> fragment) {
         startField("..." + fragment.getName());
         return this;
     }

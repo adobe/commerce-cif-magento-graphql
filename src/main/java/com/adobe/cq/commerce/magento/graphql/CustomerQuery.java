@@ -138,6 +138,37 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
+     * Details about all of the customer&#39;s gift registries
+     */
+    public CustomerQuery giftRegistries(GiftRegistryQueryDefinition queryDef) {
+        startField("gift_registries");
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftRegistryQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Details about a specific gift registry
+     */
+    public CustomerQuery giftRegistry(ID giftRegistryUid, GiftRegistryQueryDefinition queryDef) {
+        startField("gift_registry");
+
+        _queryBuilder.append("(giftRegistryUid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, giftRegistryUid.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new GiftRegistryQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
      * @deprecated Customer group should not be exposed in the storefront scenarios
      */
     @Deprecated
