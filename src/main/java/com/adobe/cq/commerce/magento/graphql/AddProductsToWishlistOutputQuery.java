@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains the customer&#39;s wish list and any errors encountered
+ * Contains the customer&#39;s wish list and any errors encountered.
  */
 public class AddProductsToWishlistOutputQuery extends AbstractQuery<AddProductsToWishlistOutputQuery> {
     AddProductsToWishlistOutputQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class AddProductsToWishlistOutputQuery extends AbstractQuery<AddProductsT
     }
 
     /**
-     * An array of errors encountered while adding products to a wish list
+     * An array of errors encountered while adding products to a wish list.
      */
     public AddProductsToWishlistOutputQuery userErrors(WishListUserInputErrorQueryDefinition queryDef) {
         startField("user_errors");
@@ -39,7 +39,7 @@ public class AddProductsToWishlistOutputQuery extends AbstractQuery<AddProductsT
     }
 
     /**
-     * Contains the wish list with all items that were successfully added
+     * Contains the wish list with all items that were successfully added.
      */
     public AddProductsToWishlistOutputQuery wishlist(WishlistQueryDefinition queryDef) {
         startField("wishlist");

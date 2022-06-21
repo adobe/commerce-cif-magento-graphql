@@ -43,14 +43,14 @@ public class PaypalExpressTokenInput implements Serializable {
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public String getCartId() {
         return cartId;
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public PaypalExpressTokenInput setCartId(String cartId) {
         this.cartId = cartId;
@@ -58,14 +58,14 @@ public class PaypalExpressTokenInput implements Serializable {
     }
 
     /**
-     * Payment method code
+     * The payment method code.
      */
     public String getCode() {
         return code;
     }
 
     /**
-     * Payment method code
+     * The payment method code.
      */
     public PaypalExpressTokenInput setCode(String code) {
         this.code = code;
@@ -74,7 +74,7 @@ public class PaypalExpressTokenInput implements Serializable {
 
     /**
      * A set of relative URLs that PayPal uses in response to various actions during the authorization
-     * process
+     * process.
      */
     public PaypalExpressUrlsInput getUrls() {
         return urls;
@@ -82,7 +82,7 @@ public class PaypalExpressTokenInput implements Serializable {
 
     /**
      * A set of relative URLs that PayPal uses in response to various actions during the authorization
-     * process
+     * process.
      */
     public PaypalExpressTokenInput setUrls(PaypalExpressUrlsInput urls) {
         this.urls = urls;
@@ -90,21 +90,21 @@ public class PaypalExpressTokenInput implements Serializable {
     }
 
     /**
-     * Indicates whether the buyer selected the quick checkout button. The default value is false
+     * Indicates whether the buyer selected the quick checkout button. The default value is false.
      */
     public Boolean getExpressButton() {
         return expressButton.getValue();
     }
 
     /**
-     * Indicates whether the buyer selected the quick checkout button. The default value is false
+     * Indicates whether the buyer selected the quick checkout button. The default value is false.
      */
     public Input<Boolean> getExpressButtonInput() {
         return expressButton;
     }
 
     /**
-     * Indicates whether the buyer selected the quick checkout button. The default value is false
+     * Indicates whether the buyer selected the quick checkout button. The default value is false.
      */
     public PaypalExpressTokenInput setExpressButton(Boolean expressButton) {
         this.expressButton = Input.optional(expressButton);
@@ -112,7 +112,7 @@ public class PaypalExpressTokenInput implements Serializable {
     }
 
     /**
-     * Indicates whether the buyer selected the quick checkout button. The default value is false
+     * Indicates whether the buyer selected the quick checkout button. The default value is false.
      */
     public PaypalExpressTokenInput setExpressButtonInput(Input<Boolean> expressButton) {
         if (expressButton == null) {
@@ -123,21 +123,21 @@ public class PaypalExpressTokenInput implements Serializable {
     }
 
     /**
-     * Indicates whether the buyer clicked the PayPal credit button. The default value is false
+     * Indicates whether the buyer clicked the PayPal credit button. The default value is false.
      */
     public Boolean getUsePaypalCredit() {
         return usePaypalCredit.getValue();
     }
 
     /**
-     * Indicates whether the buyer clicked the PayPal credit button. The default value is false
+     * Indicates whether the buyer clicked the PayPal credit button. The default value is false.
      */
     public Input<Boolean> getUsePaypalCreditInput() {
         return usePaypalCredit;
     }
 
     /**
-     * Indicates whether the buyer clicked the PayPal credit button. The default value is false
+     * Indicates whether the buyer clicked the PayPal credit button. The default value is false.
      */
     public PaypalExpressTokenInput setUsePaypalCredit(Boolean usePaypalCredit) {
         this.usePaypalCredit = Input.optional(usePaypalCredit);
@@ -145,7 +145,7 @@ public class PaypalExpressTokenInput implements Serializable {
     }
 
     /**
-     * Indicates whether the buyer clicked the PayPal credit button. The default value is false
+     * Indicates whether the buyer clicked the PayPal credit button. The default value is false.
      */
     public PaypalExpressTokenInput setUsePaypalCreditInput(Input<Boolean> usePaypalCredit) {
         if (usePaypalCredit == null) {

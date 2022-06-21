@@ -24,6 +24,10 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains iterable information such as the array of items, the count, and attributes that represent
+ * the compare list.
+ */
 public class CompareList extends AbstractResponse<CompareList> {
     public CompareList() {}
 
@@ -103,7 +107,7 @@ public class CompareList extends AbstractResponse<CompareList> {
     }
 
     /**
-     * An array of attributes that can be used for comparing products
+     * An array of attributes that can be used for comparing products.
      */
     public List<ComparableAttribute> getAttributes() {
         return (List<ComparableAttribute>) get("attributes");
@@ -115,7 +119,7 @@ public class CompareList extends AbstractResponse<CompareList> {
     }
 
     /**
-     * The number of items in the compare list
+     * The number of items in the compare list.
      */
     public Integer getItemCount() {
         return (Integer) get("item_count");
@@ -127,7 +131,7 @@ public class CompareList extends AbstractResponse<CompareList> {
     }
 
     /**
-     * An array of products to compare
+     * An array of products to compare.
      */
     public List<ComparableItem> getItems() {
         return (List<ComparableItem>) get("items");
@@ -139,7 +143,7 @@ public class CompareList extends AbstractResponse<CompareList> {
     }
 
     /**
-     * The unique ID assigned to the compare list
+     * The unique ID assigned to the compare list.
      */
     public ID getUid() {
         return (ID) get("uid");

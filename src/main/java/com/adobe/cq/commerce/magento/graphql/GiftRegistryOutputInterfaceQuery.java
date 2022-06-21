@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains the customer&#39;s gift registry
+ * Contains the customer&#39;s gift registry.
  */
 public class GiftRegistryOutputInterfaceQuery extends AbstractQuery<GiftRegistryOutputInterfaceQuery> {
     GiftRegistryOutputInterfaceQuery(StringBuilder _queryBuilder) {
@@ -33,7 +33,7 @@ public class GiftRegistryOutputInterfaceQuery extends AbstractQuery<GiftRegistry
     }
 
     /**
-     * The gift registry
+     * The gift registry.
      */
     public GiftRegistryOutputInterfaceQuery giftRegistry(GiftRegistryQueryDefinition queryDef) {
         startField("gift_registry");

@@ -93,7 +93,7 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -105,7 +105,7 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -117,7 +117,7 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -129,7 +129,7 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -141,7 +141,7 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -153,7 +153,7 @@ public class ShipmentItem extends AbstractResponse<ShipmentItem> implements Ship
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public Double getQuantityShipped() {
         return (Double) get("quantity_shipped");

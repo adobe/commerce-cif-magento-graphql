@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Attribute option.
+ * Defines an attribute option.
  */
 public class AttributeOption extends AbstractResponse<AttributeOption> {
     public AttributeOption() {}
@@ -71,7 +71,7 @@ public class AttributeOption extends AbstractResponse<AttributeOption> {
     }
 
     /**
-     * Attribute option label.
+     * The label assigned to the attribute option.
      */
     public String getLabel() {
         return (String) get("label");
@@ -83,7 +83,7 @@ public class AttributeOption extends AbstractResponse<AttributeOption> {
     }
 
     /**
-     * Attribute option value.
+     * The attribute option value.
      */
     public String getValue() {
         return (String) get("value");

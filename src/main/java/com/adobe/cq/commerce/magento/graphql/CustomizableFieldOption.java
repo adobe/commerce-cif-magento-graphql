@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableFieldOption contains information about a text field that is defined as part of a
- * customizable option.
+ * Contains information about a text field that is defined as part of a customizable option.
  */
 public class CustomizableFieldOption extends AbstractResponse<CustomizableFieldOption> implements CustomizableOptionInterface {
     public CustomizableFieldOption() {}

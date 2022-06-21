@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains a customer wish list.
+ */
 public class Wishlist extends AbstractResponse<Wishlist> {
     public Wishlist() {}
 
@@ -142,7 +145,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * The unique ID for a `Wishlist` object
+     * The unique ID for a `Wishlist` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -154,7 +157,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * @deprecated Use field `items_v2` from type `Wishlist` instead
+     * @deprecated Use the `items_v2` field instead.
      */
     @Deprecated
     public List<WishlistItem> getItems() {
@@ -167,7 +170,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * The number of items in the wish list
+     * The number of items in the wish list.
      */
     public Integer getItemsCount() {
         return (Integer) get("items_count");
@@ -179,7 +182,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * An array of items in the customer&#39;s wish list
+     * An array of items in the customer&#39;s wish list.
      */
     public WishlistItems getItemsV2() {
         return (WishlistItems) get("items_v2");
@@ -191,7 +194,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * The wish list name
+     * The name of the wish list.
      */
     public String getName() {
         return (String) get("name");
@@ -203,7 +206,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * An encrypted code that Magento uses to link to the wish list
+     * An encrypted code that Magento uses to link to the wish list.
      */
     public String getSharingCode() {
         return (String) get("sharing_code");
@@ -215,7 +218,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * The time of the last modification to the wish list
+     * The time of the last modification to the wish list.
      */
     public String getUpdatedAt() {
         return (String) get("updated_at");
@@ -227,7 +230,7 @@ public class Wishlist extends AbstractResponse<Wishlist> {
     }
 
     /**
-     * Indicates whether the wish list is public or private
+     * Indicates whether the wish list is public or private.
      */
     public WishlistVisibilityEnum getVisibility() {
         return (WishlistVisibilityEnum) get("visibility");

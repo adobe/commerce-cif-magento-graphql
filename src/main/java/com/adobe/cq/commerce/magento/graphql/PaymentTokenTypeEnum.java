@@ -15,11 +15,17 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * The list of available payment token types
+ * The list of available payment token types.
  */
 public enum PaymentTokenTypeEnum {
+    /**
+     * phpcs:ignore Magento2.GraphQL.ValidArgumentName
+     */
     ACCOUNT,
 
+    /**
+     * phpcs:ignore Magento2.GraphQL.ValidArgumentName
+     */
     CARD,
 
     UNKNOWN_VALUE;

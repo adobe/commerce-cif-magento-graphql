@@ -17,14 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Identifies the value of the selected customized option.
+ */
 public class SelectedCustomizableOptionValueQuery extends AbstractQuery<SelectedCustomizableOptionValueQuery> {
     SelectedCustomizableOptionValueQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The unique ID for a `CustomizableMultipleValue`, `CustomizableRadioValue`,
-     * `CustomizableCheckboxValue`, `CustomizableDropDownValue`, etc. objects
+     * The unique ID for a value object that corresponds to the object represented by the
+     * `customizable_option_uid` attribute.
      */
     public SelectedCustomizableOptionValueQuery customizableOptionValueUid() {
         startField("customizable_option_value_uid");
@@ -33,7 +36,7 @@ public class SelectedCustomizableOptionValueQuery extends AbstractQuery<Selected
     }
 
     /**
-     * @deprecated Use SelectedCustomizableOptionValue.customizable_option_value_uid instead
+     * @deprecated Use `SelectedCustomizableOptionValue.customizable_option_value_uid` instead.
      */
     @Deprecated
     public SelectedCustomizableOptionValueQuery id() {
@@ -42,12 +45,18 @@ public class SelectedCustomizableOptionValueQuery extends AbstractQuery<Selected
         return this;
     }
 
+    /**
+     * The display name of the selected value.
+     */
     public SelectedCustomizableOptionValueQuery label() {
         startField("label");
 
         return this;
     }
 
+    /**
+     * The price of the selected customizable value.
+     */
     public SelectedCustomizableOptionValueQuery price(CartItemSelectedOptionValuePriceQueryDefinition queryDef) {
         startField("price");
 
@@ -58,6 +67,9 @@ public class SelectedCustomizableOptionValueQuery extends AbstractQuery<Selected
         return this;
     }
 
+    /**
+     * The text identifying the selected value.
+     */
     public SelectedCustomizableOptionValueQuery value() {
         startField("value");
 

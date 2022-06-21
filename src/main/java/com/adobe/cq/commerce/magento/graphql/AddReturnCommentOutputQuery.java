@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the return request.
+ */
 public class AddReturnCommentOutputQuery extends AbstractQuery<AddReturnCommentOutputQuery> {
     AddReturnCommentOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains details about the modified return
+     * The modified return.
      */
     public AddReturnCommentOutputQuery returnValue(ReturnQueryDefinition queryDef) {
         startField("return");

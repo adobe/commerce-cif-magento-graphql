@@ -17,11 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
- * GiftCardProduct defines properties of a gift card, including the minimum and maximum values and an
- * array that contains the current and past values on the specific gift card
+ * Defines properties of a gift card.
  */
 public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     GiftCardProductQuery(StringBuilder _queryBuilder) {
@@ -38,7 +36,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Indicates whether customers have the ability to set the value of the gift card.
+     * Indicates whether shoppers have the ability to set the value of the gift card.
      */
     public GiftCardProductQuery allowOpenAmount() {
         startField("allow_open_amount");
@@ -59,8 +57,8 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Products&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Products&#39; is enabled.
      */
     public GiftCardProductQuery canonicalUrl() {
         startField("canonical_url");
@@ -109,7 +107,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Crosssell Products
+     * An array of cross-sell products.
      */
     public GiftCardProductQuery crosssellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("crosssell_products");
@@ -134,8 +132,38 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
         return this;
     }
 
+    public GiftCardProductQuery fashionColor() {
+        startField("fashion_color");
+
+        return this;
+    }
+
+    public GiftCardProductQuery fashionMaterial() {
+        startField("fashion_material");
+
+        return this;
+    }
+
+    public GiftCardProductQuery fashionSize() {
+        startField("fashion_size");
+
+        return this;
+    }
+
+    public GiftCardProductQuery fashionStyle() {
+        startField("fashion_style");
+
+        return this;
+    }
+
+    public GiftCardProductQuery format() {
+        startField("format");
+
+        return this;
+    }
+
     /**
-     * An array of giftcard options.
+     * An array of customizable gift card options.
      */
     public GiftCardProductQuery giftCardOptions(CustomizableOptionInterfaceQueryDefinition queryDef) {
         startField("gift_card_options");
@@ -170,10 +198,16 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Either VIRTUAL, PHYSICAL, or COMBINED.
+     * An enumeration that specifies the type of gift card.
      */
     public GiftCardProductQuery giftcardType() {
         startField("giftcard_type");
+
+        return this;
+    }
+
+    public GiftCardProductQuery hasVideo() {
+        startField("has_video");
 
         return this;
     }
@@ -213,7 +247,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public GiftCardProductQuery isReturnable() {
         startField("is_returnable");
@@ -240,7 +274,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * An array of Media Gallery objects.
+     * An array of media gallery objects.
      */
     public GiftCardProductQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {
         startField("media_gallery");
@@ -255,7 +289,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     /**
      * An array of MediaGalleryEntry objects.
      *
-     * @deprecated Use product&#39;s `media_gallery` instead
+     * @deprecated Use `media_gallery` instead.
      */
     @Deprecated
     public GiftCardProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
@@ -269,7 +303,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Indicates whether the customer can provide a message to accompany the gift card.
+     * The maximum number of characters the gift message can contain.
      */
     public GiftCardProductQuery messageMaxLength() {
         startField("message_max_length");
@@ -348,7 +382,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * The minimum acceptable value of an open amount gift card.
+     * The maximum acceptable value of an open amount gift card.
      */
     public GiftCardProductQuery openAmountMax() {
         startField("open_amount_max");
@@ -388,9 +422,9 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item.
+     * Indicates the price of an item.
      *
-     * @deprecated Use price_range for product price information.
+     * @deprecated Use `price_range` for product price information.
      */
     @Deprecated
     public GiftCardProductQuery price(ProductPricesQueryDefinition queryDef) {
@@ -404,7 +438,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * A PriceRange object, indicating the range of prices for the product
+     * The range of prices for the product
      */
     public GiftCardProductQuery priceRange(PriceRangeQueryDefinition queryDef) {
         startField("price_range");
@@ -417,7 +451,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * An array of TierPrice objects.
+     * An array of `TierPrice` objects.
      */
     public GiftCardProductQuery priceTiers(TierPriceQueryDefinition queryDef) {
         startField("price_tiers");
@@ -430,7 +464,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * An array of ProductLinks objects.
+     * An array of `ProductLinks` objects.
      */
     public GiftCardProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
@@ -438,6 +472,12 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
         _queryBuilder.append('{');
         queryDef.define(new ProductLinksInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public GiftCardProductQuery purpose() {
+        startField("purpose");
 
         return this;
     }
@@ -453,7 +493,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public GiftCardProductQuery redirectCode() {
         startField("redirect_code");
@@ -462,7 +502,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Related Products
+     * An array of related products.
      */
     public GiftCardProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("related_products");
@@ -476,7 +516,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public GiftCardProductQuery relativeUrl() {
         startField("relative_url");
@@ -499,7 +539,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once.
+         * The maximum number of results to return at once. The default is 20.
          */
         public ReviewsArguments pageSize(Integer value) {
             if (value != null) {
@@ -510,7 +550,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
         }
 
         /**
-         * Specifies which page of results to return.
+         * The page of results to return. The default is 1.
          */
         public ReviewsArguments currentPage(Integer value) {
             if (value != null) {
@@ -606,7 +646,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * The end date that a product has a special price.
+     * The end date for a product with a special price.
      */
     public GiftCardProductQuery specialToDate() {
         startField("special_to_date");
@@ -614,6 +654,9 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
         return this;
     }
 
+    /**
+     * Indicates whether the product is staged for a future campaign.
+     */
     public GiftCardProductQuery staged() {
         startField("staged");
 
@@ -630,7 +673,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public GiftCardProductQuery swatchImage() {
         startField("swatch_image");
@@ -654,7 +697,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public GiftCardProductQuery tierPrice() {
@@ -666,7 +709,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     /**
      * An array of ProductTierPrices objects.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public GiftCardProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
@@ -691,7 +734,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
-     * @deprecated Use __typename instead.
+     * @deprecated Use `__typename` instead.
      */
     @Deprecated
     public GiftCardProductQuery typeId() {
@@ -722,7 +765,7 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
     }
 
     /**
-     * Upsell Products
+     * An array of up-sell products.
      */
     public GiftCardProductQuery upsellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("upsell_products");
@@ -771,6 +814,12 @@ public class GiftCardProductQuery extends AbstractQuery<GiftCardProductQuery> {
      */
     public GiftCardProductQuery urlSuffix() {
         startField("url_suffix");
+
+        return this;
+    }
+
+    public GiftCardProductQuery videoFile() {
+        startField("video_file");
 
         return this;
     }

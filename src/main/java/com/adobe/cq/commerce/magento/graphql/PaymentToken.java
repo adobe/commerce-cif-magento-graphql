@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The stored payment method available to the customer
+ * The stored payment method available to the customer.
  */
 public class PaymentToken extends AbstractResponse<PaymentToken> {
     public PaymentToken() {}
@@ -78,7 +78,7 @@ public class PaymentToken extends AbstractResponse<PaymentToken> {
     }
 
     /**
-     * Stored account details
+     * A description of the stored account details.
      */
     public String getDetails() {
         return (String) get("details");
@@ -90,7 +90,7 @@ public class PaymentToken extends AbstractResponse<PaymentToken> {
     }
 
     /**
-     * The payment method code associated with the token
+     * The payment method code associated with the token.
      */
     public String getPaymentMethodCode() {
         return (String) get("payment_method_code");
@@ -102,7 +102,7 @@ public class PaymentToken extends AbstractResponse<PaymentToken> {
     }
 
     /**
-     * The public hash of the token
+     * The public hash of the token.
      */
     public String getPublicHash() {
         return (String) get("public_hash");
@@ -113,6 +113,9 @@ public class PaymentToken extends AbstractResponse<PaymentToken> {
         return this;
     }
 
+    /**
+     * Specifies the payment token type.
+     */
     public PaymentTokenTypeEnum getType() {
         return (PaymentTokenTypeEnum) get("type");
     }

@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Downloadable Cart Item
+ * An implementation for downloadable product cart items.
  */
 public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem> implements CartItemInterface {
     public DownloadableCartItem() {}
@@ -144,6 +144,9 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
         return "DownloadableCartItem";
     }
 
+    /**
+     * An array containing the customizable options the shopper selected.
+     */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
     }
@@ -154,7 +157,7 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public String getId() {
@@ -167,7 +170,7 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
     }
 
     /**
-     * An array containing information about the links for the added to cart downloadable product
+     * An array containing information about the links for the downloadable product added to the cart.
      */
     public List<DownloadableProductLinks> getLinks() {
         return (List<DownloadableProductLinks>) get("links");
@@ -178,6 +181,9 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public CartItemPrices getPrices() {
         return (CartItemPrices) get("prices");
     }
@@ -187,6 +193,9 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -196,6 +205,9 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public Double getQuantity() {
         return (Double) get("quantity");
     }
@@ -206,7 +218,7 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
     }
 
     /**
-     * DownloadableProductSamples defines characteristics of a downloadable product
+     * An array containing information about samples of the selected downloadable product.
      */
     public List<DownloadableProductSamples> getSamples() {
         return (List<DownloadableProductSamples>) get("samples");
@@ -218,7 +230,7 @@ public class DownloadableCartItem extends AbstractResponse<DownloadableCartItem>
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ID getUid() {
         return (ID) get("uid");

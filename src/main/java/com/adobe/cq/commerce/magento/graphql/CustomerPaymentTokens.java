@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains payment tokens stored in the customer&#39;s vault.
+ */
 public class CustomerPaymentTokens extends AbstractResponse<CustomerPaymentTokens> {
     public CustomerPaymentTokens() {}
 
@@ -64,7 +67,7 @@ public class CustomerPaymentTokens extends AbstractResponse<CustomerPaymentToken
     }
 
     /**
-     * An array of payment tokens
+     * An array of payment tokens.
      */
     public List<PaymentToken> getItems() {
         return (List<PaymentToken>) get("items");

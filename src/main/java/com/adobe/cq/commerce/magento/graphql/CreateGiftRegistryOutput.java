@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of a request to create a gift registry.
+ */
 public class CreateGiftRegistryOutput extends AbstractResponse<CreateGiftRegistryOutput> {
     public CreateGiftRegistryOutput() {}
 
@@ -57,7 +60,7 @@ public class CreateGiftRegistryOutput extends AbstractResponse<CreateGiftRegistr
     }
 
     /**
-     * The newly-created gift registry
+     * The newly-created gift registry.
      */
     public GiftRegistry getGiftRegistry() {
         return (GiftRegistry) get("gift_registry");

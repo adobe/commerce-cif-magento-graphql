@@ -14,6 +14,9 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Defines the privacy setting of the gift registry.
+ */
 public enum GiftRegistryPrivacySettings {
     PRIVATE,
 

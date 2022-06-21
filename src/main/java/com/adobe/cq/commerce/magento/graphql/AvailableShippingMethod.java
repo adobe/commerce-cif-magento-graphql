@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the possible shipping methods and carriers.
+ */
 public class AvailableShippingMethod extends AbstractResponse<AvailableShippingMethod> {
     public AvailableShippingMethod() {}
 
@@ -125,6 +128,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
         return "AvailableShippingMethod";
     }
 
+    /**
+     * The cost of shipping using this shipping method.
+     */
     public Money getAmount() {
         return (Money) get("amount");
     }
@@ -134,6 +140,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
         return this;
     }
 
+    /**
+     * Indicates whether this shipping method can be applied to the cart.
+     */
     public Boolean getAvailable() {
         return (Boolean) get("available");
     }
@@ -144,7 +153,7 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
     }
 
     /**
-     * @deprecated The field should not be used on the storefront
+     * @deprecated The field should not be used on the storefront.
      */
     @Deprecated
     public Money getBaseAmount() {
@@ -156,6 +165,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
         return this;
     }
 
+    /**
+     * A string that identifies a commercial carrier or an offline shipping method.
+     */
     public String getCarrierCode() {
         return (String) get("carrier_code");
     }
@@ -165,6 +177,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
         return this;
     }
 
+    /**
+     * The label for the carrier code.
+     */
     public String getCarrierTitle() {
         return (String) get("carrier_title");
     }
@@ -174,6 +189,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
         return this;
     }
 
+    /**
+     * Describes an error condition.
+     */
     public String getErrorMessage() {
         return (String) get("error_message");
     }
@@ -184,7 +202,7 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
     }
 
     /**
-     * Could be null if method is not available
+     * A shipping method code associated with a carrier. The value could be null if no method is available.
      */
     public String getMethodCode() {
         return (String) get("method_code");
@@ -196,7 +214,7 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
     }
 
     /**
-     * Could be null if method is not available
+     * The label for the shipping method code. The value could be null if no method is available.
      */
     public String getMethodTitle() {
         return (String) get("method_title");
@@ -207,6 +225,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
         return this;
     }
 
+    /**
+     * The cost of shipping using this shipping method, excluding tax.
+     */
     public Money getPriceExclTax() {
         return (Money) get("price_excl_tax");
     }
@@ -216,6 +237,9 @@ public class AvailableShippingMethod extends AbstractResponse<AvailableShippingM
         return this;
     }
 
+    /**
+     * The cost of shipping using this shipping method, including tax.
+     */
     public Money getPriceInclTax() {
         return (Money) get("price_incl_tax");
     }

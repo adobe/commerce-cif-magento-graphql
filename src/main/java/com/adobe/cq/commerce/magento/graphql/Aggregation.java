@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A bucket that contains information for each filterable option (such as price, category `UID`, and
- * custom attributes).
+ * Contains information for each filterable option (such as price, category `UID`, and custom
+ * attributes).
  */
 public class Aggregation extends AbstractResponse<Aggregation> {
     public Aggregation() {}
@@ -160,7 +160,7 @@ public class Aggregation extends AbstractResponse<Aggregation> {
     }
 
     /**
-     * The relative position of the attribute in a layered navigation block
+     * The relative position of the attribute in a layered navigation block.
      */
     public Integer getPosition() {
         return (Integer) get("position");

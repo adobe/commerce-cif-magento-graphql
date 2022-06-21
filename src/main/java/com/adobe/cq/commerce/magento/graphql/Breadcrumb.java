@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Breadcrumb item.
+ * Contains details about an individual category that comprises a breadcrumb.
  */
 public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     public Breadcrumb() {}
@@ -111,9 +111,9 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category ID.
+     * The ID of the category.
      *
-     * @deprecated Use the `category_uid` argument instead.
+     * @deprecated Use `category_uid` instead.
      */
     @Deprecated
     public Integer getCategoryId() {
@@ -126,7 +126,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category level.
+     * The category level.
      */
     public Integer getCategoryLevel() {
         return (Integer) get("category_level");
@@ -138,7 +138,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category name.
+     * The display name of the category.
      */
     public String getCategoryName() {
         return (String) get("category_name");
@@ -162,7 +162,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category URL key.
+     * The URL key of the category.
      */
     public String getCategoryUrlKey() {
         return (String) get("category_url_key");
@@ -174,7 +174,7 @@ public class Breadcrumb extends AbstractResponse<Breadcrumb> {
     }
 
     /**
-     * Category URL path.
+     * The URL path of the category.
      */
     public String getCategoryUrlPath() {
         return (String) get("category_url_path");

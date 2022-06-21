@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableAreaValue defines the price and sku of a product whose page contains a customized text
- * area.
+ * Defines the price and sku of a product whose page contains a customized text area.
  */
 public class CustomizableAreaValueQuery extends AbstractQuery<CustomizableAreaValueQuery> {
     CustomizableAreaValueQuery(StringBuilder _queryBuilder) {

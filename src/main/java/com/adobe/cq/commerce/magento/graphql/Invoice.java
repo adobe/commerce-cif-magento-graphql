@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Invoice details
+ * Contains invoice details.
  */
 public class Invoice extends AbstractResponse<Invoice> {
     public Invoice() {}
@@ -117,7 +117,7 @@ public class Invoice extends AbstractResponse<Invoice> {
     }
 
     /**
-     * Comments on the invoice
+     * Comments on the invoice.
      */
     public List<SalesCommentItem> getComments() {
         return (List<SalesCommentItem>) get("comments");
@@ -129,7 +129,7 @@ public class Invoice extends AbstractResponse<Invoice> {
     }
 
     /**
-     * The unique ID for a `Invoice` object
+     * The unique ID for a `Invoice` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -141,7 +141,7 @@ public class Invoice extends AbstractResponse<Invoice> {
     }
 
     /**
-     * Invoiced product details
+     * Invoiced product details.
      */
     public List<InvoiceItemInterface> getItems() {
         return (List<InvoiceItemInterface>) get("items");
@@ -153,7 +153,7 @@ public class Invoice extends AbstractResponse<Invoice> {
     }
 
     /**
-     * Sequential invoice number
+     * Sequential invoice number.
      */
     public String getNumber() {
         return (String) get("number");
@@ -165,7 +165,7 @@ public class Invoice extends AbstractResponse<Invoice> {
     }
 
     /**
-     * Invoice total amount details
+     * Invoice total amount details.
      */
     public InvoiceTotal getTotal() {
         return (InvoiceTotal) get("total");

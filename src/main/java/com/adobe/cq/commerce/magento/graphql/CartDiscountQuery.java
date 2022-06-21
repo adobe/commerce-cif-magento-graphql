@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains information about discounts applied to the cart.
+ */
 public class CartDiscountQuery extends AbstractQuery<CartDiscountQuery> {
     CartDiscountQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The amount of the discount applied to the item.
+     */
     public CartDiscountQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
 
@@ -32,6 +38,9 @@ public class CartDiscountQuery extends AbstractQuery<CartDiscountQuery> {
         return this;
     }
 
+    /**
+     * The description of the discount.
+     */
     public CartDiscountQuery label() {
         startField("label");
 

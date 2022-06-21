@@ -71,7 +71,7 @@ public class FixedProductTax extends AbstractResponse<FixedProductTax> {
     }
 
     /**
-     * Amount of the FPT as a money object.
+     * The amount of the Fixed Product Tax.
      */
     public Money getAmount() {
         return (Money) get("amount");
@@ -83,7 +83,7 @@ public class FixedProductTax extends AbstractResponse<FixedProductTax> {
     }
 
     /**
-     * The label assigned to the FPT to be displayed on the frontend.
+     * The display label assigned to the Fixed Product Tax.
      */
     public String getLabel() {
         return (String) get("label");

@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains a customer authorization token.
+ */
 public class CustomerTokenQuery extends AbstractQuery<CustomerTokenQuery> {
     CustomerTokenQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The customer token
+     * The customer authorization token.
      */
     public CustomerTokenQuery token() {
         startField("token");

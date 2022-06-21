@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a gift registry.
+ */
 public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     GiftRegistryQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The date on which the gift registry was created. Only the registry owner can access this attribute
+     * The date on which the gift registry was created. Only the registry owner can access this attribute.
      */
     public GiftRegistryQuery createdAt() {
         startField("created_at");
@@ -33,7 +36,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
 
     /**
      * An array of attributes that define elements of the gift registry. Each attribute is specified as a
-     * code-value pair
+     * code-value pair.
      */
     public GiftRegistryQuery dynamicAttributes(GiftRegistryDynamicAttributeQueryDefinition queryDef) {
         startField("dynamic_attributes");
@@ -46,7 +49,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * The name of the event
+     * The name of the event.
      */
     public GiftRegistryQuery eventName() {
         startField("event_name");
@@ -55,7 +58,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * An array of products added to the gift registry
+     * An array of products added to the gift registry.
      */
     public GiftRegistryQuery items(GiftRegistryItemInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -68,7 +71,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * The message text the customer entered to describe the event
+     * The message text the customer entered to describe the event.
      */
     public GiftRegistryQuery message() {
         startField("message");
@@ -77,7 +80,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * The customer who created the gift registry
+     * The customer who created the gift registry.
      */
     public GiftRegistryQuery ownerName() {
         startField("owner_name");
@@ -87,7 +90,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
 
     /**
      * An enum that states whether the gift registry is PRIVATE or PUBLIC. Only the registry owner can
-     * access this attribute
+     * access this attribute.
      */
     public GiftRegistryQuery privacySettings() {
         startField("privacy_settings");
@@ -96,7 +99,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * Contains details about each registrant for the event
+     * Contains details about each registrant for the event.
      */
     public GiftRegistryQuery registrants(GiftRegistryRegistrantQueryDefinition queryDef) {
         startField("registrants");
@@ -109,7 +112,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * Contains the customer&#39;s shipping address. Only the registry owner can access this attribute
+     * Contains the customer&#39;s shipping address. Only the registry owner can access this attribute.
      */
     public GiftRegistryQuery shippingAddress(CustomerAddressQueryDefinition queryDef) {
         startField("shipping_address");
@@ -123,7 +126,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
 
     /**
      * An enum that states whether the gift registry is ACTIVE or INACTIVE. Only the registry owner can
-     * access this attribute
+     * access this attribute.
      */
     public GiftRegistryQuery status() {
         startField("status");
@@ -132,7 +135,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * Contains details about the type of gift registry
+     * The type of gift registry.
      */
     public GiftRegistryQuery type(GiftRegistryTypeQueryDefinition queryDef) {
         startField("type");
@@ -145,7 +148,7 @@ public class GiftRegistryQuery extends AbstractQuery<GiftRegistryQuery> {
     }
 
     /**
-     * The unique ID assigned to the gift registry
+     * The unique ID assigned to the gift registry.
      */
     public GiftRegistryQuery uid() {
         startField("uid");

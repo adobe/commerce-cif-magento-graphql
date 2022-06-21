@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A grouped product wish list item
+ * A grouped product wish list item.
  */
 public class GroupedProductWishlistItemQuery extends AbstractQuery<GroupedProductWishlistItemQuery> {
     GroupedProductWishlistItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class GroupedProductWishlistItemQuery extends AbstractQuery<GroupedProduc
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public GroupedProductWishlistItemQuery addedAt() {
         startField("added_at");
@@ -35,7 +35,7 @@ public class GroupedProductWishlistItemQuery extends AbstractQuery<GroupedProduc
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public GroupedProductWishlistItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -48,7 +48,7 @@ public class GroupedProductWishlistItemQuery extends AbstractQuery<GroupedProduc
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public GroupedProductWishlistItemQuery description() {
         startField("description");
@@ -57,7 +57,7 @@ public class GroupedProductWishlistItemQuery extends AbstractQuery<GroupedProduc
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public GroupedProductWishlistItemQuery id() {
         startField("id");
@@ -66,7 +66,7 @@ public class GroupedProductWishlistItemQuery extends AbstractQuery<GroupedProduc
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public GroupedProductWishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -79,7 +79,7 @@ public class GroupedProductWishlistItemQuery extends AbstractQuery<GroupedProduc
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public GroupedProductWishlistItemQuery quantity() {
         startField("quantity");

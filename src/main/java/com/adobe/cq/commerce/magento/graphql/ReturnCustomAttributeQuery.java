@@ -16,15 +16,17 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
+/**
+ * Contains details about a `ReturnCustomerAttribute` object.
+ */
 public class ReturnCustomAttributeQuery extends AbstractQuery<ReturnCustomAttributeQuery> {
     ReturnCustomAttributeQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A description of the attribute
+     * A description of the attribute.
      */
     public ReturnCustomAttributeQuery label() {
         startField("label");
@@ -33,7 +35,7 @@ public class ReturnCustomAttributeQuery extends AbstractQuery<ReturnCustomAttrib
     }
 
     /**
-     * The unique ID for a `ReturnCustomAttribute` object
+     * The unique ID for a `ReturnCustomAttribute` object.
      */
     public ReturnCustomAttributeQuery uid() {
         startField("uid");
@@ -42,7 +44,7 @@ public class ReturnCustomAttributeQuery extends AbstractQuery<ReturnCustomAttrib
     }
 
     /**
-     * A JSON-encoded value of the attribute
+     * A JSON-encoded value of the attribute.
      */
     public ReturnCustomAttributeQuery value() {
         startField("value");

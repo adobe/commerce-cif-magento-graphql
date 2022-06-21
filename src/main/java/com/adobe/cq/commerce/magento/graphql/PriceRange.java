@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Price range for a product. If the product has a single price, the minimum and maximum price will be
- * the same.
+ * Contains the price range for a product. If the product has a single price, the minimum and maximum
+ * price will be the same.
  */
 public class PriceRange extends AbstractResponse<PriceRange> {
     public PriceRange() {}

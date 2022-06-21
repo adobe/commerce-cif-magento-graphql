@@ -19,36 +19,40 @@ import java.util.List;
 import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
+/**
+ * The interface for wish list items.
+ */
+
 public interface WishlistItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     String getAddedAt();
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     List<SelectedCustomizableOption> getCustomizableOptions();
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     String getDescription();
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     ID getId();
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     ProductInterface getProduct();
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     Double getQuantity();
 }

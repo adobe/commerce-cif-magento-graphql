@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Contains details about a custom text attribute that the buyer entered.
+ */
 public class EnteredCustomAttributeInput implements Serializable {
     private String attributeCode;
 
@@ -30,14 +33,14 @@ public class EnteredCustomAttributeInput implements Serializable {
     }
 
     /**
-     * A string that identifies the entered custom attribute
+     * A string that identifies the entered custom attribute.
      */
     public String getAttributeCode() {
         return attributeCode;
     }
 
     /**
-     * A string that identifies the entered custom attribute
+     * A string that identifies the entered custom attribute.
      */
     public EnteredCustomAttributeInput setAttributeCode(String attributeCode) {
         this.attributeCode = attributeCode;
@@ -45,14 +48,14 @@ public class EnteredCustomAttributeInput implements Serializable {
     }
 
     /**
-     * The text or other entered value
+     * The text or other entered value.
      */
     public String getValue() {
         return value;
     }
 
     /**
-     * The text or other entered value
+     * The text or other entered value.
      */
     public EnteredCustomAttributeInput setValue(String value) {
         this.value = value;

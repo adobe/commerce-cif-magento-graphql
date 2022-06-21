@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a selected configurable option.
+ */
 public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfigurableOptionQuery> {
     SelectedConfigurableOptionQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptions` object
+     * The unique ID for a `ConfigurableProductOptions` object.
      */
     public SelectedConfigurableOptionQuery configurableProductOptionUid() {
         startField("configurable_product_option_uid");
@@ -32,7 +35,7 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptionsValues` object
+     * The unique ID for a `ConfigurableProductOptionsValues` object.
      */
     public SelectedConfigurableOptionQuery configurableProductOptionValueUid() {
         startField("configurable_product_option_value_uid");
@@ -41,7 +44,7 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
     }
 
     /**
-     * @deprecated Use SelectedConfigurableOption.configurable_product_option_uid instead
+     * @deprecated Use `SelectedConfigurableOption.configurable_product_option_uid` instead.
      */
     @Deprecated
     public SelectedConfigurableOptionQuery id() {
@@ -50,6 +53,9 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
         return this;
     }
 
+    /**
+     * The display text for the option.
+     */
     public SelectedConfigurableOptionQuery optionLabel() {
         startField("option_label");
 
@@ -57,7 +63,7 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
     }
 
     /**
-     * @deprecated Use SelectedConfigurableOption.configurable_product_option_value_uid instead
+     * @deprecated Use `SelectedConfigurableOption.configurable_product_option_value_uid` instead.
      */
     @Deprecated
     public SelectedConfigurableOptionQuery valueId() {
@@ -66,6 +72,9 @@ public class SelectedConfigurableOptionQuery extends AbstractQuery<SelectedConfi
         return this;
     }
 
+    /**
+     * The display name of the selected configurable option.
+     */
     public SelectedConfigurableOptionQuery valueLabel() {
         startField("value_label");
 

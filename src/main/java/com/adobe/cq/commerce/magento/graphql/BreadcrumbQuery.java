@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Breadcrumb item.
+ * Contains details about an individual category that comprises a breadcrumb.
  */
 public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     BreadcrumbQuery(StringBuilder _queryBuilder) {
@@ -26,9 +26,9 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category ID.
+     * The ID of the category.
      *
-     * @deprecated Use the `category_uid` argument instead.
+     * @deprecated Use `category_uid` instead.
      */
     @Deprecated
     public BreadcrumbQuery categoryId() {
@@ -38,7 +38,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category level.
+     * The category level.
      */
     public BreadcrumbQuery categoryLevel() {
         startField("category_level");
@@ -47,7 +47,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category name.
+     * The display name of the category.
      */
     public BreadcrumbQuery categoryName() {
         startField("category_name");
@@ -65,7 +65,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category URL key.
+     * The URL key of the category.
      */
     public BreadcrumbQuery categoryUrlKey() {
         startField("category_url_key");
@@ -74,7 +74,7 @@ public class BreadcrumbQuery extends AbstractQuery<BreadcrumbQuery> {
     }
 
     /**
-     * Category URL path.
+     * The URL path of the category.
      */
     public BreadcrumbQuery categoryUrlPath() {
         startField("category_url_path");

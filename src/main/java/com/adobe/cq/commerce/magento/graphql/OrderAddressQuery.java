@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * OrderAddress contains detailed information about an order&#39;s billing and shipping addresses
+ * Contains detailed information about an order&#39;s billing and shipping addresses.
  */
 public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     OrderAddressQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The city or town
+     * The city or town.
      */
     public OrderAddressQuery city() {
         startField("city");
@@ -35,7 +35,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The customer&#39;s company
+     * The customer&#39;s company.
      */
     public OrderAddressQuery company() {
         startField("company");
@@ -44,7 +44,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The customer&#39;s country
+     * The customer&#39;s country.
      */
     public OrderAddressQuery countryCode() {
         startField("country_code");
@@ -53,7 +53,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The fax number
+     * The fax number.
      */
     public OrderAddressQuery fax() {
         startField("fax");
@@ -62,7 +62,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The first name of the person associated with the shipping/billing address
+     * The first name of the person associated with the shipping/billing address.
      */
     public OrderAddressQuery firstname() {
         startField("firstname");
@@ -71,7 +71,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The family name of the person associated with the shipping/billing address
+     * The family name of the person associated with the shipping/billing address.
      */
     public OrderAddressQuery lastname() {
         startField("lastname");
@@ -80,7 +80,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The middle name of the person associated with the shipping/billing address
+     * The middle name of the person associated with the shipping/billing address.
      */
     public OrderAddressQuery middlename() {
         startField("middlename");
@@ -89,7 +89,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The customer&#39;s order ZIP or postal code
+     * The customer&#39;s ZIP or postal code.
      */
     public OrderAddressQuery postcode() {
         startField("postcode");
@@ -107,7 +107,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The state or province name
+     * The state or province name.
      */
     public OrderAddressQuery region() {
         startField("region");
@@ -116,7 +116,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The unique ID for a `Region` object of a pre-defined region
+     * The unique ID for a `Region` object of a pre-defined region.
      */
     public OrderAddressQuery regionId() {
         startField("region_id");
@@ -125,7 +125,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * An array of strings that define the street number and name
+     * An array of strings that define the street number and name.
      */
     public OrderAddressQuery street() {
         startField("street");
@@ -134,7 +134,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public OrderAddressQuery suffix() {
         startField("suffix");
@@ -143,7 +143,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The telephone number
+     * The telephone number.
      */
     public OrderAddressQuery telephone() {
         startField("telephone");
@@ -152,7 +152,7 @@ public class OrderAddressQuery extends AbstractQuery<OrderAddressQuery> {
     }
 
     /**
-     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers).
      */
     public OrderAddressQuery vatId() {
         startField("vat_id");

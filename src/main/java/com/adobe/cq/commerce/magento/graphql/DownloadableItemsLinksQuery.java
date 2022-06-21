@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * DownloadableProductLinks defines characteristics of a downloadable product
+ * Defines characteristics of the links for downloadable product.
  */
 public class DownloadableItemsLinksQuery extends AbstractQuery<DownloadableItemsLinksQuery> {
     DownloadableItemsLinksQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class DownloadableItemsLinksQuery extends AbstractQuery<DownloadableItems
     }
 
     /**
-     * A number indicating the sort order
+     * A number indicating the sort order.
      */
     public DownloadableItemsLinksQuery sortOrder() {
         startField("sort_order");
@@ -35,7 +35,7 @@ public class DownloadableItemsLinksQuery extends AbstractQuery<DownloadableItems
     }
 
     /**
-     * The display name of the link
+     * The display name of the link.
      */
     public DownloadableItemsLinksQuery title() {
         startField("title");

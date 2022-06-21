@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration the price type.
+ * Defines the price type.
  */
 public enum PriceTypeEnum {
     DYNAMIC,

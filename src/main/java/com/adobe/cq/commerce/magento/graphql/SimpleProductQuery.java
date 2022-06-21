@@ -19,7 +19,8 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A simple product is tangible and is usually sold in single units or in fixed quantities
+ * Defines a simple product, which is tangible and is usually sold in single units or in fixed
+ * quantities.
  */
 public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     SimpleProductQuery(StringBuilder _queryBuilder) {
@@ -39,8 +40,8 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Products&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Products&#39; is enabled.
      */
     public SimpleProductQuery canonicalUrl() {
         startField("canonical_url");
@@ -89,7 +90,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * Crosssell Products
+     * An array of cross-sell products.
      */
     public SimpleProductQuery crosssellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("crosssell_products");
@@ -114,11 +115,47 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
         return this;
     }
 
+    public SimpleProductQuery fashionColor() {
+        startField("fashion_color");
+
+        return this;
+    }
+
+    public SimpleProductQuery fashionMaterial() {
+        startField("fashion_material");
+
+        return this;
+    }
+
+    public SimpleProductQuery fashionSize() {
+        startField("fashion_size");
+
+        return this;
+    }
+
+    public SimpleProductQuery fashionStyle() {
+        startField("fashion_style");
+
+        return this;
+    }
+
+    public SimpleProductQuery format() {
+        startField("format");
+
+        return this;
+    }
+
     /**
      * Indicates whether a gift message is available.
      */
     public SimpleProductQuery giftMessageAvailable() {
         startField("gift_message_available");
+
+        return this;
+    }
+
+    public SimpleProductQuery hasVideo() {
+        startField("has_video");
 
         return this;
     }
@@ -149,7 +186,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public SimpleProductQuery isReturnable() {
         startField("is_returnable");
@@ -167,7 +204,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * An array of Media Gallery objects.
+     * An array of media gallery objects.
      */
     public SimpleProductQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {
         startField("media_gallery");
@@ -182,7 +219,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * An array of MediaGalleryEntry objects.
      *
-     * @deprecated Use product&#39;s `media_gallery` instead
+     * @deprecated Use `media_gallery` instead.
      */
     @Deprecated
     public SimpleProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
@@ -288,9 +325,9 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item.
+     * Indicates the price of an item.
      *
-     * @deprecated Use price_range for product price information.
+     * @deprecated Use `price_range` for product price information.
      */
     @Deprecated
     public SimpleProductQuery price(ProductPricesQueryDefinition queryDef) {
@@ -304,7 +341,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * A PriceRange object, indicating the range of prices for the product
+     * The range of prices for the product
      */
     public SimpleProductQuery priceRange(PriceRangeQueryDefinition queryDef) {
         startField("price_range");
@@ -317,7 +354,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * An array of TierPrice objects.
+     * An array of `TierPrice` objects.
      */
     public SimpleProductQuery priceTiers(TierPriceQueryDefinition queryDef) {
         startField("price_tiers");
@@ -330,7 +367,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * An array of ProductLinks objects.
+     * An array of `ProductLinks` objects.
      */
     public SimpleProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
@@ -338,6 +375,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
         _queryBuilder.append('{');
         queryDef.define(new ProductLinksInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public SimpleProductQuery purpose() {
+        startField("purpose");
 
         return this;
     }
@@ -353,7 +396,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public SimpleProductQuery redirectCode() {
         startField("redirect_code");
@@ -362,7 +405,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * Related Products
+     * An array of related products.
      */
     public SimpleProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("related_products");
@@ -376,7 +419,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public SimpleProductQuery relativeUrl() {
         startField("relative_url");
@@ -399,7 +442,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once.
+         * The maximum number of results to return at once. The default is 20.
          */
         public ReviewsArguments pageSize(Integer value) {
             if (value != null) {
@@ -410,7 +453,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
         }
 
         /**
-         * Specifies which page of results to return.
+         * The page of results to return. The default is 1.
          */
         public ReviewsArguments currentPage(Integer value) {
             if (value != null) {
@@ -506,7 +549,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * The end date that a product has a special price.
+     * The end date for a product with a special price.
      */
     public SimpleProductQuery specialToDate() {
         startField("special_to_date");
@@ -514,6 +557,9 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
         return this;
     }
 
+    /**
+     * Indicates whether the product is staged for a future campaign.
+     */
     public SimpleProductQuery staged() {
         startField("staged");
 
@@ -530,7 +576,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public SimpleProductQuery swatchImage() {
         startField("swatch_image");
@@ -554,7 +600,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public SimpleProductQuery tierPrice() {
@@ -566,7 +612,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * An array of ProductTierPrices objects.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public SimpleProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
@@ -591,7 +637,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
-     * @deprecated Use __typename instead.
+     * @deprecated Use `__typename` instead.
      */
     @Deprecated
     public SimpleProductQuery typeId() {
@@ -622,7 +668,7 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
     }
 
     /**
-     * Upsell Products
+     * An array of up-sell products.
      */
     public SimpleProductQuery upsellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("upsell_products");
@@ -671,6 +717,12 @@ public class SimpleProductQuery extends AbstractQuery<SimpleProductQuery> {
      */
     public SimpleProductQuery urlSuffix() {
         startField("url_suffix");
+
+        return this;
+    }
+
+    public SimpleProductQuery videoFile() {
+        startField("video_file");
 
         return this;
     }

@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CMS blocks information
+ * Contains an array CMS block items.
  */
 public class CmsBlocks extends AbstractResponse<CmsBlocks> {
     public CmsBlocks() {}
@@ -72,7 +72,7 @@ public class CmsBlocks extends AbstractResponse<CmsBlocks> {
     }
 
     /**
-     * An array of CMS blocks
+     * An array of CMS blocks.
      */
     public List<CmsBlock> getItems() {
         return (List<CmsBlock>) get("items");

@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after setting the shipping addresses.
+ */
 public class SetShippingAddressesOnCartOutputQuery extends AbstractQuery<SetShippingAddressesOnCartOutputQuery> {
     SetShippingAddressesOnCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after setting the shipping addresses.
+     */
     public SetShippingAddressesOnCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A discount applied to a product price.
+ * Contains the discount applied to a product price.
  */
 public class ProductDiscount extends AbstractResponse<ProductDiscount> {
     public ProductDiscount() {}

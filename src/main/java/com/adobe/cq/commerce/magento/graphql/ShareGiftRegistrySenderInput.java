@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the sender of an invitation to view a gift registry.
+ */
 public class ShareGiftRegistrySenderInput implements Serializable {
     private String message;
 
@@ -30,14 +33,14 @@ public class ShareGiftRegistrySenderInput implements Serializable {
     }
 
     /**
-     * A brief message from the sender
+     * A brief message from the sender.
      */
     public String getMessage() {
         return message;
     }
 
     /**
-     * A brief message from the sender
+     * A brief message from the sender.
      */
     public ShareGiftRegistrySenderInput setMessage(String message) {
         this.message = message;
@@ -45,14 +48,14 @@ public class ShareGiftRegistrySenderInput implements Serializable {
     }
 
     /**
-     * The sender of the gift registry invitation
+     * The sender of the gift registry invitation.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * The sender of the gift registry invitation
+     * The sender of the gift registry invitation.
      */
     public ShareGiftRegistrySenderInput setName(String name) {
         this.name = name;

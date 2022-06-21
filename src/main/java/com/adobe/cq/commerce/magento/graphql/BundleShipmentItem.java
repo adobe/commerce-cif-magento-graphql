@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines bundle product options for `ShipmentItemInterface`.
+ */
 public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> implements ShipmentItemInterface {
     public BundleShipmentItem() {}
 
@@ -116,7 +119,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * A list of bundle options that are assigned to the bundle product
+     * A list of bundle options that are assigned to a shipped product.
      */
     public List<ItemSelectedBundleOption> getBundleOptions() {
         return (List<ItemSelectedBundleOption>) get("bundle_options");
@@ -128,7 +131,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -140,7 +143,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -152,7 +155,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -164,7 +167,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -176,7 +179,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -188,7 +191,7 @@ public class BundleShipmentItem extends AbstractResponse<BundleShipmentItem> imp
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public Double getQuantityShipped() {
         return (Double) get("quantity_shipped");

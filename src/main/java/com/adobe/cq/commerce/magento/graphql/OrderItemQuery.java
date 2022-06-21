@@ -23,7 +23,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The final discount information for the product
+     * The final discount information for the product.
      */
     public OrderItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -36,7 +36,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * Indicates whether the order item is eligible is eligible to be in a return request
+     * Indicates whether the order item is eligible to be in a return request.
      */
     public OrderItemQuery eligibleForReturn() {
         startField("eligible_for_return");
@@ -45,7 +45,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The entered option for the base product, such as a logo or image
+     * The entered option for the base product, such as a logo or image.
      */
     public OrderItemQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("entered_options");
@@ -58,7 +58,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The selected gift wrapping for the order item
+     * The selected gift wrapping for the order item.
      */
     public OrderItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -71,7 +71,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for an `OrderItemInterface` object.
      */
     public OrderItemQuery id() {
         startField("id");
@@ -80,7 +80,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public OrderItemQuery productName() {
         startField("product_name");
@@ -89,7 +89,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The sale price of the base product, including selected options
+     * The sale price of the base product, including selected options.
      */
     public OrderItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -102,7 +102,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public OrderItemQuery productSku() {
         startField("product_sku");
@@ -120,7 +120,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * URL key of the base product
+     * URL key of the base product.
      */
     public OrderItemQuery productUrlKey() {
         startField("product_url_key");
@@ -129,7 +129,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The number of canceled items
+     * The number of canceled items.
      */
     public OrderItemQuery quantityCanceled() {
         startField("quantity_canceled");
@@ -138,7 +138,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public OrderItemQuery quantityInvoiced() {
         startField("quantity_invoiced");
@@ -147,7 +147,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The number of units ordered for this item
+     * The number of units ordered for this item.
      */
     public OrderItemQuery quantityOrdered() {
         startField("quantity_ordered");
@@ -156,7 +156,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public OrderItemQuery quantityRefunded() {
         startField("quantity_refunded");
@@ -165,7 +165,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The number of returned items
+     * The number of returned items.
      */
     public OrderItemQuery quantityReturned() {
         startField("quantity_returned");
@@ -174,7 +174,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The number of shipped items
+     * The number of shipped items.
      */
     public OrderItemQuery quantityShipped() {
         startField("quantity_shipped");
@@ -183,7 +183,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size.
      */
     public OrderItemQuery selectedOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("selected_options");
@@ -196,7 +196,7 @@ public class OrderItemQuery extends AbstractQuery<OrderItemQuery> {
     }
 
     /**
-     * The status of the order item
+     * The status of the order item.
      */
     public OrderItemQuery status() {
         startField("status");

@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a return comment.
+ */
 public class ReturnComment extends AbstractResponse<ReturnComment> {
     public ReturnComment() {}
 
@@ -71,7 +74,7 @@ public class ReturnComment extends AbstractResponse<ReturnComment> {
     }
 
     /**
-     * The name or author who posted the comment
+     * The name or author who posted the comment.
      */
     public String getAuthorName() {
         return (String) get("author_name");
@@ -83,7 +86,7 @@ public class ReturnComment extends AbstractResponse<ReturnComment> {
     }
 
     /**
-     * The date and time the comment was posted
+     * The date and time the comment was posted.
      */
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -95,7 +98,7 @@ public class ReturnComment extends AbstractResponse<ReturnComment> {
     }
 
     /**
-     * The contents of the comment
+     * The contents of the comment.
      */
     public String getText() {
         return (String) get("text");
@@ -107,7 +110,7 @@ public class ReturnComment extends AbstractResponse<ReturnComment> {
     }
 
     /**
-     * The unique ID for a `ReturnComment` object
+     * The unique ID for a `ReturnComment` object.
      */
     public ID getUid() {
         return (ID) get("uid");

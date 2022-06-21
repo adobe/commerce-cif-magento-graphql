@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A simple product wish list Item
+ * Contains a simple product wish list item.
  */
 public class SimpleWishlistItem extends AbstractResponse<SimpleWishlistItem> implements WishlistItemInterface {
     public SimpleWishlistItem() {}
@@ -108,7 +108,7 @@ public class SimpleWishlistItem extends AbstractResponse<SimpleWishlistItem> imp
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public String getAddedAt() {
         return (String) get("added_at");
@@ -120,7 +120,7 @@ public class SimpleWishlistItem extends AbstractResponse<SimpleWishlistItem> imp
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
@@ -132,7 +132,7 @@ public class SimpleWishlistItem extends AbstractResponse<SimpleWishlistItem> imp
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public String getDescription() {
         return (String) get("description");
@@ -144,7 +144,7 @@ public class SimpleWishlistItem extends AbstractResponse<SimpleWishlistItem> imp
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -156,7 +156,7 @@ public class SimpleWishlistItem extends AbstractResponse<SimpleWishlistItem> imp
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -168,7 +168,7 @@ public class SimpleWishlistItem extends AbstractResponse<SimpleWishlistItem> imp
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public Double getQuantity() {
         return (Double) get("quantity");

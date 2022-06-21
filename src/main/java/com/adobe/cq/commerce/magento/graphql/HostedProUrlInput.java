@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * The required input to request the secure URL for Payments Pro Hosted Solution payment.
+ * Contains the required input to request the secure URL for Payments Pro Hosted Solution payment.
  */
 public class HostedProUrlInput implements Serializable {
     private String cartId;
@@ -29,14 +29,14 @@ public class HostedProUrlInput implements Serializable {
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the shopper&#39;s cart.
      */
     public String getCartId() {
         return cartId;
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the shopper&#39;s cart.
      */
     public HostedProUrlInput setCartId(String cartId) {
         this.cartId = cartId;

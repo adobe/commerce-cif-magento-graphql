@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains an array of product reviews.
+ */
 public class ProductReviews extends AbstractResponse<ProductReviews> {
     public ProductReviews() {}
 

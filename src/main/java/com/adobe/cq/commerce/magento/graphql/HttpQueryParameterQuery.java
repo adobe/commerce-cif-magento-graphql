@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The object details of target path parameters
+ * Contains target path parameters.
  */
 public class HttpQueryParameterQuery extends AbstractQuery<HttpQueryParameterQuery> {
     HttpQueryParameterQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class HttpQueryParameterQuery extends AbstractQuery<HttpQueryParameterQue
     }
 
     /**
-     * Parameter name
+     * A parameter name.
      */
     public HttpQueryParameterQuery name() {
         startField("name");
@@ -35,7 +35,7 @@ public class HttpQueryParameterQuery extends AbstractQuery<HttpQueryParameterQue
     }
 
     /**
-     * Parameter value
+     * A parameter value.
      */
     public HttpQueryParameterQuery value() {
         startField("value");

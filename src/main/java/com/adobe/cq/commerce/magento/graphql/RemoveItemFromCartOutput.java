@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after removing an item.
+ */
 public class RemoveItemFromCartOutput extends AbstractResponse<RemoveItemFromCartOutput> {
     public RemoveItemFromCartOutput() {}
 
@@ -51,6 +54,9 @@ public class RemoveItemFromCartOutput extends AbstractResponse<RemoveItemFromCar
         return "RemoveItemFromCartOutput";
     }
 
+    /**
+     * The cart after removing an item.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

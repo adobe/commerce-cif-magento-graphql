@@ -61,7 +61,7 @@ public class CartUserInputError extends AbstractResponse<CartUserInputError> {
     }
 
     /**
-     * Cart-specific error code
+     * A cart-specific error code.
      */
     public CartUserInputErrorType getCode() {
         return (CartUserInputErrorType) get("code");
@@ -73,7 +73,7 @@ public class CartUserInputError extends AbstractResponse<CartUserInputError> {
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public String getMessage() {
         return (String) get("message");

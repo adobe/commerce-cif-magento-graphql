@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the sender, recipient, and amount of a gift card.
+ */
 public class GiftCardOptionsQuery extends AbstractQuery<GiftCardOptionsQuery> {
     GiftCardOptionsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The amount and currency of the gift card
+     * The amount and currency of the gift card.
      */
     public GiftCardOptionsQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
@@ -36,7 +39,7 @@ public class GiftCardOptionsQuery extends AbstractQuery<GiftCardOptionsQuery> {
     }
 
     /**
-     * The custom amount and currency of the gift card
+     * The custom amount and currency of the gift card.
      */
     public GiftCardOptionsQuery customGiftcardAmount(MoneyQueryDefinition queryDef) {
         startField("custom_giftcard_amount");
@@ -49,7 +52,7 @@ public class GiftCardOptionsQuery extends AbstractQuery<GiftCardOptionsQuery> {
     }
 
     /**
-     * A message to the recipient
+     * A message to the recipient.
      */
     public GiftCardOptionsQuery message() {
         startField("message");
@@ -58,7 +61,7 @@ public class GiftCardOptionsQuery extends AbstractQuery<GiftCardOptionsQuery> {
     }
 
     /**
-     * The email of the person receiving the gift card
+     * The email address of the person receiving the gift card.
      */
     public GiftCardOptionsQuery recipientEmail() {
         startField("recipient_email");
@@ -67,7 +70,7 @@ public class GiftCardOptionsQuery extends AbstractQuery<GiftCardOptionsQuery> {
     }
 
     /**
-     * The name of the person receiving the gift card
+     * The name of the person receiving the gift card.
      */
     public GiftCardOptionsQuery recipientName() {
         startField("recipient_name");
@@ -76,7 +79,7 @@ public class GiftCardOptionsQuery extends AbstractQuery<GiftCardOptionsQuery> {
     }
 
     /**
-     * The email of the sender
+     * The email address of the person sending the gift card.
      */
     public GiftCardOptionsQuery senderEmail() {
         startField("sender_email");
@@ -85,7 +88,7 @@ public class GiftCardOptionsQuery extends AbstractQuery<GiftCardOptionsQuery> {
     }
 
     /**
-     * The name of the sender
+     * The name of the person sending the gift card.
      */
     public GiftCardOptionsQuery senderName() {
         startField("sender_name");

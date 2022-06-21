@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Product image information. Contains the image URL and label.
+ * Contains product image information, including the image URL and label.
  */
 public class ProductImage extends AbstractResponse<ProductImage> implements MediaGalleryInterface {
     public ProductImage() {}
@@ -93,7 +93,7 @@ public class ProductImage extends AbstractResponse<ProductImage> implements Medi
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public Boolean getDisabled() {
         return (Boolean) get("disabled");

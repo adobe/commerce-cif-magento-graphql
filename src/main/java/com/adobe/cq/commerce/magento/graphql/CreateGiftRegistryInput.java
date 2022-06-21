@@ -21,6 +21,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines a new gift registry.
+ */
 public class CreateGiftRegistryInput implements Serializable {
     private String eventName;
 
@@ -54,14 +57,14 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The name of the event
+     * The name of the event.
      */
     public String getEventName() {
         return eventName;
     }
 
     /**
-     * The name of the event
+     * The name of the event.
      */
     public CreateGiftRegistryInput setEventName(String eventName) {
         this.eventName = eventName;
@@ -69,14 +72,14 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The ID of the selected event type
+     * The ID of the selected event type.
      */
     public ID getGiftRegistryTypeUid() {
         return giftRegistryTypeUid;
     }
 
     /**
-     * The ID of the selected event type
+     * The ID of the selected event type.
      */
     public CreateGiftRegistryInput setGiftRegistryTypeUid(ID giftRegistryTypeUid) {
         this.giftRegistryTypeUid = giftRegistryTypeUid;
@@ -84,14 +87,14 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * A message describing the event
+     * A message describing the event.
      */
     public String getMessage() {
         return message;
     }
 
     /**
-     * A message describing the event
+     * A message describing the event.
      */
     public CreateGiftRegistryInput setMessage(String message) {
         this.message = message;
@@ -99,14 +102,14 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Indicates whether the registry is PRIVATE or PUBLIC
+     * Indicates whether the registry is PRIVATE or PUBLIC.
      */
     public GiftRegistryPrivacySettings getPrivacySettings() {
         return privacySettings;
     }
 
     /**
-     * Indicates whether the registry is PRIVATE or PUBLIC
+     * Indicates whether the registry is PRIVATE or PUBLIC.
      */
     public CreateGiftRegistryInput setPrivacySettings(GiftRegistryPrivacySettings privacySettings) {
         this.privacySettings = privacySettings;
@@ -114,14 +117,14 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The list of people who receive notifications about the registry
+     * The list of people who receive notifications about the registry.
      */
     public List<AddGiftRegistryRegistrantInput> getRegistrants() {
         return registrants;
     }
 
     /**
-     * The list of people who receive notifications about the registry
+     * The list of people who receive notifications about the registry.
      */
     public CreateGiftRegistryInput setRegistrants(List<AddGiftRegistryRegistrantInput> registrants) {
         this.registrants = registrants;
@@ -129,14 +132,14 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Indicates whether the registry is ACTIVE or INACTIVE
+     * Indicates whether the registry is ACTIVE or INACTIVE.
      */
     public GiftRegistryStatus getStatus() {
         return status;
     }
 
     /**
-     * Indicates whether the registry is ACTIVE or INACTIVE
+     * Indicates whether the registry is ACTIVE or INACTIVE.
      */
     public CreateGiftRegistryInput setStatus(GiftRegistryStatus status) {
         this.status = status;
@@ -144,21 +147,21 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Additional attributes specified as a code-value pair
+     * Additional attributes specified as a code-value pair.
      */
     public List<GiftRegistryDynamicAttributeInput> getDynamicAttributes() {
         return dynamicAttributes.getValue();
     }
 
     /**
-     * Additional attributes specified as a code-value pair
+     * Additional attributes specified as a code-value pair.
      */
     public Input<List<GiftRegistryDynamicAttributeInput>> getDynamicAttributesInput() {
         return dynamicAttributes;
     }
 
     /**
-     * Additional attributes specified as a code-value pair
+     * Additional attributes specified as a code-value pair.
      */
     public CreateGiftRegistryInput setDynamicAttributes(List<GiftRegistryDynamicAttributeInput> dynamicAttributes) {
         this.dynamicAttributes = Input.optional(dynamicAttributes);
@@ -166,7 +169,7 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Additional attributes specified as a code-value pair
+     * Additional attributes specified as a code-value pair.
      */
     public CreateGiftRegistryInput setDynamicAttributesInput(Input<List<GiftRegistryDynamicAttributeInput>> dynamicAttributes) {
         if (dynamicAttributes == null) {
@@ -177,21 +180,21 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The shipping address for all gift registry items
+     * The shipping address for all gift registry items.
      */
     public GiftRegistryShippingAddressInput getShippingAddress() {
         return shippingAddress.getValue();
     }
 
     /**
-     * The shipping address for all gift registry items
+     * The shipping address for all gift registry items.
      */
     public Input<GiftRegistryShippingAddressInput> getShippingAddressInput() {
         return shippingAddress;
     }
 
     /**
-     * The shipping address for all gift registry items
+     * The shipping address for all gift registry items.
      */
     public CreateGiftRegistryInput setShippingAddress(GiftRegistryShippingAddressInput shippingAddress) {
         this.shippingAddress = Input.optional(shippingAddress);
@@ -199,7 +202,7 @@ public class CreateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The shipping address for all gift registry items
+     * The shipping address for all gift registry items.
      */
     public CreateGiftRegistryInput setShippingAddressInput(Input<GiftRegistryShippingAddressInput> shippingAddress) {
         if (shippingAddress == null) {

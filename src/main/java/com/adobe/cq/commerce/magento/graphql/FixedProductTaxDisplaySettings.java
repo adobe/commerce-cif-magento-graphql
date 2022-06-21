@@ -15,37 +15,37 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration display settings for the fixed product tax
+ * Lists display settings for the Fixed Product Tax.
  */
 public enum FixedProductTaxDisplaySettings {
     /**
-     * The displayed price does not include the FPT amount. The values of ProductPrice.fixed_product_taxes
-     * and the price including the FPT are displayed separately. This value corresponds to &#39;Excluding FPT,
-     * Including FPT description and final price&#39;
+     * The displayed price does not include the FPT amount. The values of
+     * `ProductPrice.fixed_product_taxes` and the price including the FPT are displayed separately. This
+     * value corresponds to &#39;Excluding FPT, Including FPT description and final price.&#39;
      */
     EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS,
 
     /**
      * The displayed price does not include the FPT amount. The values from
-     * ProductPrice.fixed_product_taxes are not displayed. This value corresponds to &#39;Excluding FPT&#39;
+     * `ProductPrice.fixed_product_taxes` are not displayed. This value corresponds to &#39;Excluding FPT&#39;.
      */
     EXCLUDE_FPT_WITHOUT_DETAILS,
 
     /**
-     * The FPT feature is not enabled. You can omit ProductPrice.fixed_product_taxes from your query
+     * The FPT feature is not enabled. You can omit `ProductPrice.fixed_product_taxes` from your query.
      */
     FPT_DISABLED,
 
     /**
-     * The displayed price includes the FPT amount without displaying the ProductPrice.fixed_product_taxes
-     * values. This value corresponds to &#39;Including FPT only&#39;
+     * The displayed price includes the FPT amount without displaying the
+     * `ProductPrice.fixed_product_taxes` values. This value corresponds to &#39;Including FPT only&#39;.
      */
     INCLUDE_FPT_WITHOUT_DETAILS,
 
     /**
      * The displayed price includes the FPT amount while displaying the values of
-     * ProductPrice.fixed_product_taxes separately. This value corresponds to &#39;Including FPT and FPT
-     * description&#39;
+     * `ProductPrice.fixed_product_taxes` separately. This value corresponds to &#39;Including FPT and FPT
+     * description&#39;.
      */
     INCLUDE_FPT_WITH_DETAILS,
 

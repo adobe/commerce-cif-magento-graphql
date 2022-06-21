@@ -18,8 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Price is deprecated, replaced by ProductPrice. The Price object defines the price of a product as
- * well as any tax-related adjustments.
+ * Deprecated. Use `ProductPrice` instead. Defines the price of a product as well as any tax-related
+ * adjustments.
  */
 public class PriceQuery extends AbstractQuery<PriceQuery> {
     PriceQuery(StringBuilder _queryBuilder) {
@@ -29,7 +29,7 @@ public class PriceQuery extends AbstractQuery<PriceQuery> {
     /**
      * An array that provides information about tax, weee, or weee_tax adjustments.
      *
-     * @deprecated Price is deprecated, use ProductPrice.
+     * @deprecated Use `ProductPrice` instead.
      */
     @Deprecated
     public PriceQuery adjustments(PriceAdjustmentQueryDefinition queryDef) {
@@ -45,7 +45,7 @@ public class PriceQuery extends AbstractQuery<PriceQuery> {
     /**
      * The price of a product plus a three-letter currency code.
      *
-     * @deprecated Price is deprecated, use ProductPrice.
+     * @deprecated Use `ProductPrice` instead.
      */
     @Deprecated
     public PriceQuery amount(MoneyQueryDefinition queryDef) {

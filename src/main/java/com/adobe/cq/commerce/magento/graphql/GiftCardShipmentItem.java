@@ -104,7 +104,7 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
     }
 
     /**
-     * Selected gift card properties for an shipment item
+     * Selected gift card properties for a shipment item.
      */
     public GiftCardItem getGiftCard() {
         return (GiftCardItem) get("gift_card");
@@ -116,7 +116,7 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -128,7 +128,7 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -140,7 +140,7 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -152,7 +152,7 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -164,7 +164,7 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -176,7 +176,7 @@ public class GiftCardShipmentItem extends AbstractResponse<GiftCardShipmentItem>
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public Double getQuantityShipped() {
         return (Double) get("quantity_shipped");

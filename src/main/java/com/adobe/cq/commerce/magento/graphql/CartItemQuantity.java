@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Deprecated: `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of
- * `CartItemQuantity`
+ * Deprecated: The `ShippingCartAddress.cart_items` field now returns `CartItemInterface`.
  */
 public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
     public CartItemQuantity() {}
@@ -62,7 +61,7 @@ public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
     }
 
     /**
-     * @deprecated `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of `CartItemQuantity`
+     * @deprecated The `ShippingCartAddress.cart_items` field now returns `CartItemInterface`.
      */
     @Deprecated
     public Integer getCartItemId() {
@@ -75,7 +74,7 @@ public class CartItemQuantity extends AbstractResponse<CartItemQuantity> {
     }
 
     /**
-     * @deprecated `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of `CartItemQuantity`
+     * @deprecated The `ShippingCartAddress.cart_items` field now returns `CartItemInterface`.
      */
     @Deprecated
     public Double getQuantity() {

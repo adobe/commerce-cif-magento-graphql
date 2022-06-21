@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The Customer information for the return.
+ * The customer information for the return.
  */
 public class ReturnCustomerQuery extends AbstractQuery<ReturnCustomerQuery> {
     ReturnCustomerQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ReturnCustomerQuery extends AbstractQuery<ReturnCustomerQuery> {
     }
 
     /**
-     * Customer email address.
+     * The email address of the customer.
      */
     public ReturnCustomerQuery email() {
         startField("email");
@@ -35,7 +35,7 @@ public class ReturnCustomerQuery extends AbstractQuery<ReturnCustomerQuery> {
     }
 
     /**
-     * Customer first name.
+     * The first name of the customer.
      */
     public ReturnCustomerQuery firstname() {
         startField("firstname");
@@ -44,7 +44,7 @@ public class ReturnCustomerQuery extends AbstractQuery<ReturnCustomerQuery> {
     }
 
     /**
-     * Customer last name.
+     * The last name of the customer.
      */
     public ReturnCustomerQuery lastname() {
         startField("lastname");

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains data about a single aspect of a product review.
+ */
 public class ProductReviewRating extends AbstractResponse<ProductReviewRating> {
     public ProductReviewRating() {}
 
@@ -58,7 +61,7 @@ public class ProductReviewRating extends AbstractResponse<ProductReviewRating> {
     }
 
     /**
-     * The label assigned to an aspect of a product that is being rated, such as quality or price
+     * The label assigned to an aspect of a product that is being rated, such as quality or price.
      */
     public String getName() {
         return (String) get("name");

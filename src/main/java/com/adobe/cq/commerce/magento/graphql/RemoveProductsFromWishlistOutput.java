@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains the customer&#39;s wish list and any errors encountered
+ * Contains the customer&#39;s wish list and any errors encountered.
  */
 public class RemoveProductsFromWishlistOutput extends AbstractResponse<RemoveProductsFromWishlistOutput> {
     public RemoveProductsFromWishlistOutput() {}
@@ -73,7 +73,7 @@ public class RemoveProductsFromWishlistOutput extends AbstractResponse<RemovePro
     }
 
     /**
-     * An array of errors encountered while deleting products from a wish list
+     * An array of errors encountered while deleting products from a wish list.
      */
     public List<WishListUserInputError> getUserErrors() {
         return (List<WishListUserInputError>) get("user_errors");
@@ -85,7 +85,7 @@ public class RemoveProductsFromWishlistOutput extends AbstractResponse<RemovePro
     }
 
     /**
-     * Contains the wish list with after items were successfully deleted
+     * Contains the wish list with after items were successfully deleted.
      */
     public Wishlist getWishlist() {
         return (Wishlist) get("wishlist");

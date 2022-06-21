@@ -30,7 +30,7 @@ public class GiftRegistryDynamicAttributeMetadataInterfaceQuery extends Abstract
     }
 
     /**
-     * Indicates which group the dynamic attribute a member of
+     * Indicates which group the dynamic attribute a member of.
      */
     public GiftRegistryDynamicAttributeMetadataInterfaceQuery attributeGroup() {
         startField("attribute_group");
@@ -39,7 +39,7 @@ public class GiftRegistryDynamicAttributeMetadataInterfaceQuery extends Abstract
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeMetadataInterfaceQuery code() {
         startField("code");
@@ -49,7 +49,7 @@ public class GiftRegistryDynamicAttributeMetadataInterfaceQuery extends Abstract
 
     /**
      * The selected input type for this dynamic attribute. The value can be one of several static or custom
-     * types
+     * types.
      */
     public GiftRegistryDynamicAttributeMetadataInterfaceQuery inputType() {
         startField("input_type");
@@ -58,7 +58,7 @@ public class GiftRegistryDynamicAttributeMetadataInterfaceQuery extends Abstract
     }
 
     /**
-     * Indicates whether the dynamic attribute is required
+     * Indicates whether the dynamic attribute is required.
      */
     public GiftRegistryDynamicAttributeMetadataInterfaceQuery isRequired() {
         startField("is_required");
@@ -67,7 +67,7 @@ public class GiftRegistryDynamicAttributeMetadataInterfaceQuery extends Abstract
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeMetadataInterfaceQuery label() {
         startField("label");
@@ -76,7 +76,7 @@ public class GiftRegistryDynamicAttributeMetadataInterfaceQuery extends Abstract
     }
 
     /**
-     * The order in which to display the dynamic attribute
+     * The order in which to display the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeMetadataInterfaceQuery sortOrder() {
         startField("sort_order");

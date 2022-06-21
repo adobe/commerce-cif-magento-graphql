@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines the payment method.
+ */
 public class PaymentMethodInput implements Serializable {
     private String code;
 
@@ -27,8 +30,6 @@ public class PaymentMethodInput implements Serializable {
     private Input<BraintreeCcVaultInput> braintreeCcVault = Input.undefined();
 
     private Input<HostedProInput> hostedPro = Input.undefined();
-
-    private Input<KlarnaInput> klarna = Input.undefined();
 
     private Input<PayflowExpressInput> payflowExpress = Input.undefined();
 
@@ -47,14 +48,14 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Payment method code
+     * The internal name for the payment method.
      */
     public String getCode() {
         return code;
     }
 
     /**
-     * Payment method code
+     * The internal name for the payment method.
      */
     public PaymentMethodInput setCode(String code) {
         this.code = code;
@@ -104,21 +105,21 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input for PayPal Hosted pro payments
+     * Required input for PayPal Hosted pro payments.
      */
     public HostedProInput getHostedPro() {
         return hostedPro.getValue();
     }
 
     /**
-     * Required input for PayPal Hosted pro payments
+     * Required input for PayPal Hosted pro payments.
      */
     public Input<HostedProInput> getHostedProInput() {
         return hostedPro;
     }
 
     /**
-     * Required input for PayPal Hosted pro payments
+     * Required input for PayPal Hosted pro payments.
      */
     public PaymentMethodInput setHostedPro(HostedProInput hostedPro) {
         this.hostedPro = Input.optional(hostedPro);
@@ -126,7 +127,7 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input for PayPal Hosted pro payments
+     * Required input for PayPal Hosted pro payments.
      */
     public PaymentMethodInput setHostedProInput(Input<HostedProInput> hostedPro) {
         if (hostedPro == null) {
@@ -136,43 +137,22 @@ public class PaymentMethodInput implements Serializable {
         return this;
     }
 
-    public KlarnaInput getKlarna() {
-        return klarna.getValue();
-    }
-
-    public Input<KlarnaInput> getKlarnaInput() {
-        return klarna;
-    }
-
-    public PaymentMethodInput setKlarna(KlarnaInput klarna) {
-        this.klarna = Input.optional(klarna);
-        return this;
-    }
-
-    public PaymentMethodInput setKlarnaInput(Input<KlarnaInput> klarna) {
-        if (klarna == null) {
-            throw new IllegalArgumentException("Input can not be null");
-        }
-        this.klarna = klarna;
-        return this;
-    }
-
     /**
-     * Required input for Payflow Express Checkout payments
+     * Required input for Payflow Express Checkout payments.
      */
     public PayflowExpressInput getPayflowExpress() {
         return payflowExpress.getValue();
     }
 
     /**
-     * Required input for Payflow Express Checkout payments
+     * Required input for Payflow Express Checkout payments.
      */
     public Input<PayflowExpressInput> getPayflowExpressInput() {
         return payflowExpress;
     }
 
     /**
-     * Required input for Payflow Express Checkout payments
+     * Required input for Payflow Express Checkout payments.
      */
     public PaymentMethodInput setPayflowExpress(PayflowExpressInput payflowExpress) {
         this.payflowExpress = Input.optional(payflowExpress);
@@ -180,7 +160,7 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input for Payflow Express Checkout payments
+     * Required input for Payflow Express Checkout payments.
      */
     public PaymentMethodInput setPayflowExpressInput(Input<PayflowExpressInput> payflowExpress) {
         if (payflowExpress == null) {
@@ -191,21 +171,21 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input for PayPal Payflow Link and Payments Advanced payments
+     * Required input for PayPal Payflow Link and Payments Advanced payments.
      */
     public PayflowLinkInput getPayflowLink() {
         return payflowLink.getValue();
     }
 
     /**
-     * Required input for PayPal Payflow Link and Payments Advanced payments
+     * Required input for PayPal Payflow Link and Payments Advanced payments.
      */
     public Input<PayflowLinkInput> getPayflowLinkInput() {
         return payflowLink;
     }
 
     /**
-     * Required input for PayPal Payflow Link and Payments Advanced payments
+     * Required input for PayPal Payflow Link and Payments Advanced payments.
      */
     public PaymentMethodInput setPayflowLink(PayflowLinkInput payflowLink) {
         this.payflowLink = Input.optional(payflowLink);
@@ -213,7 +193,7 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input for PayPal Payflow Link and Payments Advanced payments
+     * Required input for PayPal Payflow Link and Payments Advanced payments.
      */
     public PaymentMethodInput setPayflowLinkInput(Input<PayflowLinkInput> payflowLink) {
         if (payflowLink == null) {
@@ -224,21 +204,21 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     * Required input for PayPal Payflow Pro and Payment Pro payments.
      */
     public PayflowProInput getPayflowpro() {
         return payflowpro.getValue();
     }
 
     /**
-     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     * Required input for PayPal Payflow Pro and Payment Pro payments.
      */
     public Input<PayflowProInput> getPayflowproInput() {
         return payflowpro;
     }
 
     /**
-     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     * Required input for PayPal Payflow Pro and Payment Pro payments.
      */
     public PaymentMethodInput setPayflowpro(PayflowProInput payflowpro) {
         this.payflowpro = Input.optional(payflowpro);
@@ -246,7 +226,7 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input type for PayPal Payflow Pro and Payment Pro payments
+     * Required input for PayPal Payflow Pro and Payment Pro payments.
      */
     public PaymentMethodInput setPayflowproInput(Input<PayflowProInput> payflowpro) {
         if (payflowpro == null) {
@@ -257,21 +237,21 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input type for PayPal Payflow Pro vault payments
+     * Required input for PayPal Payflow Pro vault payments.
      */
     public VaultTokenInput getPayflowproCcVault() {
         return payflowproCcVault.getValue();
     }
 
     /**
-     * Required input type for PayPal Payflow Pro vault payments
+     * Required input for PayPal Payflow Pro vault payments.
      */
     public Input<VaultTokenInput> getPayflowproCcVaultInput() {
         return payflowproCcVault;
     }
 
     /**
-     * Required input type for PayPal Payflow Pro vault payments
+     * Required input for PayPal Payflow Pro vault payments.
      */
     public PaymentMethodInput setPayflowproCcVault(VaultTokenInput payflowproCcVault) {
         this.payflowproCcVault = Input.optional(payflowproCcVault);
@@ -279,7 +259,7 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input type for PayPal Payflow Pro vault payments
+     * Required input for PayPal Payflow Pro vault payments.
      */
     public PaymentMethodInput setPayflowproCcVaultInput(Input<VaultTokenInput> payflowproCcVault) {
         if (payflowproCcVault == null) {
@@ -290,21 +270,21 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input for Express Checkout and Payments Standard payments
+     * Required input for Express Checkout and Payments Standard payments.
      */
     public PaypalExpressInput getPaypalExpress() {
         return paypalExpress.getValue();
     }
 
     /**
-     * Required input for Express Checkout and Payments Standard payments
+     * Required input for Express Checkout and Payments Standard payments.
      */
     public Input<PaypalExpressInput> getPaypalExpressInput() {
         return paypalExpress;
     }
 
     /**
-     * Required input for Express Checkout and Payments Standard payments
+     * Required input for Express Checkout and Payments Standard payments.
      */
     public PaymentMethodInput setPaypalExpress(PaypalExpressInput paypalExpress) {
         this.paypalExpress = Input.optional(paypalExpress);
@@ -312,7 +292,7 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Required input for Express Checkout and Payments Standard payments
+     * Required input for Express Checkout and Payments Standard payments.
      */
     public PaymentMethodInput setPaypalExpressInput(Input<PaypalExpressInput> paypalExpress) {
         if (paypalExpress == null) {
@@ -323,21 +303,21 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Purchase order number
+     * The purchase order number. Optional for most payment methods.
      */
     public String getPurchaseOrderNumber() {
         return purchaseOrderNumber.getValue();
     }
 
     /**
-     * Purchase order number
+     * The purchase order number. Optional for most payment methods.
      */
     public Input<String> getPurchaseOrderNumberInput() {
         return purchaseOrderNumber;
     }
 
     /**
-     * Purchase order number
+     * The purchase order number. Optional for most payment methods.
      */
     public PaymentMethodInput setPurchaseOrderNumber(String purchaseOrderNumber) {
         this.purchaseOrderNumber = Input.optional(purchaseOrderNumber);
@@ -345,7 +325,7 @@ public class PaymentMethodInput implements Serializable {
     }
 
     /**
-     * Purchase order number
+     * The purchase order number. Optional for most payment methods.
      */
     public PaymentMethodInput setPurchaseOrderNumberInput(Input<String> purchaseOrderNumber) {
         if (purchaseOrderNumber == null) {
@@ -392,17 +372,6 @@ public class PaymentMethodInput implements Serializable {
             _queryBuilder.append("hosted_pro:");
             if (hostedPro.getValue() != null) {
                 hostedPro.getValue().appendTo(_queryBuilder);
-            } else {
-                _queryBuilder.append("null");
-            }
-        }
-
-        if (this.klarna.isDefined()) {
-            _queryBuilder.append(separator);
-            separator = ",";
-            _queryBuilder.append("klarna:");
-            if (klarna.getValue() != null) {
-                klarna.getValue().appendTo(_queryBuilder);
             } else {
                 _queryBuilder.append("null");
             }

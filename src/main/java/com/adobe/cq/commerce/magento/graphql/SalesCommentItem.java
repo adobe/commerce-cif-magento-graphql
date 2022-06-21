@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Comment item details
+ * Contains details about a comment.
  */
 public class SalesCommentItem extends AbstractResponse<SalesCommentItem> {
     public SalesCommentItem() {}
@@ -61,7 +61,7 @@ public class SalesCommentItem extends AbstractResponse<SalesCommentItem> {
     }
 
     /**
-     * The text of the message
+     * The text of the message.
      */
     public String getMessage() {
         return (String) get("message");
@@ -73,7 +73,7 @@ public class SalesCommentItem extends AbstractResponse<SalesCommentItem> {
     }
 
     /**
-     * The timestamp of the comment
+     * The timestamp of the comment.
      */
     public String getTimestamp() {
         return (String) get("timestamp");

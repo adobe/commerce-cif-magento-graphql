@@ -17,17 +17,26 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * An output object that contains information about the recipient.
+ */
 public class SendEmailToFriendRecipientQuery extends AbstractQuery<SendEmailToFriendRecipientQuery> {
     SendEmailToFriendRecipientQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The email address of the recipient.
+     */
     public SendEmailToFriendRecipientQuery email() {
         startField("email");
 
         return this;
     }
 
+    /**
+     * The name of the recipient.
+     */
     public SendEmailToFriendRecipientQuery name() {
         startField("name");
 

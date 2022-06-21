@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * An implementation for configurable product cart items.
+ */
 public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartItemQuery> {
     ConfigurableCartItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The list of available gift wrapping options for the cart item
+     * The list of available gift wrapping options for the cart item.
      */
     public ConfigurableCartItemQuery availableGiftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("available_gift_wrapping");
@@ -35,6 +38,9 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
         return this;
     }
 
+    /**
+     * An array containing the configuranle options the shopper selected.
+     */
     public ConfigurableCartItemQuery configurableOptions(SelectedConfigurableOptionQueryDefinition queryDef) {
         startField("configurable_options");
 
@@ -46,7 +52,7 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
     }
 
     /**
-     * Product details of the cart item
+     * Product details of the cart item.
      */
     public ConfigurableCartItemQuery configuredVariant(ProductInterfaceQueryDefinition queryDef) {
         startField("configured_variant");
@@ -58,6 +64,9 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
         return this;
     }
 
+    /**
+     * An array containing the customizable options the shopper selected.
+     */
     public ConfigurableCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
 
@@ -82,7 +91,7 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
     }
 
     /**
-     * The selected gift wrapping for the cart item
+     * The selected gift wrapping for the cart item.
      */
     public ConfigurableCartItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -95,7 +104,7 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public ConfigurableCartItemQuery id() {
@@ -104,6 +113,9 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public ConfigurableCartItemQuery prices(CartItemPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -114,6 +126,9 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public ConfigurableCartItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -124,6 +139,9 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public ConfigurableCartItemQuery quantity() {
         startField("quantity");
 
@@ -131,7 +149,7 @@ public class ConfigurableCartItemQuery extends AbstractQuery<ConfigurableCartIte
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ConfigurableCartItemQuery uid() {
         startField("uid");

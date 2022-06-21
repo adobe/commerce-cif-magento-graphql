@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains payment tokens stored in the customer&#39;s vault.
+ */
 public class CustomerPaymentTokensQuery extends AbstractQuery<CustomerPaymentTokensQuery> {
     CustomerPaymentTokensQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of payment tokens
+     * An array of payment tokens.
      */
     public CustomerPaymentTokensQuery items(PaymentTokenQueryDefinition queryDef) {
         startField("items");

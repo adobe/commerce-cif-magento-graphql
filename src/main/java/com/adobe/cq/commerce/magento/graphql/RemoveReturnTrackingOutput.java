@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the response after deleting tracking information.
+ */
 public class RemoveReturnTrackingOutput extends AbstractResponse<RemoveReturnTrackingOutput> {
     public RemoveReturnTrackingOutput() {}
 
@@ -57,7 +60,7 @@ public class RemoveReturnTrackingOutput extends AbstractResponse<RemoveReturnTra
     }
 
     /**
-     * Contains details about the modified return
+     * Contains details about the modified return.
      */
     public Return getReturn() {
         return (Return) get("return");

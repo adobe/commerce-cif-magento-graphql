@@ -72,7 +72,7 @@ public class PaypalExpressTokenOutput extends AbstractResponse<PaypalExpressToke
     }
 
     /**
-     * A set of URLs that allow the buyer to authorize payment and adjust checkout details
+     * A set of URLs that allow the buyer to authorize payment and adjust checkout details.
      */
     public PaypalExpressUrlList getPaypalUrls() {
         return (PaypalExpressUrlList) get("paypal_urls");
@@ -84,7 +84,7 @@ public class PaypalExpressTokenOutput extends AbstractResponse<PaypalExpressToke
     }
 
     /**
-     * The token returned by PayPal
+     * The token returned by PayPal.
      */
     public String getToken() {
         return (String) get("token");

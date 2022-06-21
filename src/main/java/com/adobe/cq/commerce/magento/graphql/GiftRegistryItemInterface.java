@@ -21,29 +21,32 @@ public interface GiftRegistryItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * The date the product was added to the gift registry
+     * The date the product was added to the gift registry.
      */
     String getCreatedAt();
 
     /**
-     * A brief message about the gift registry item
+     * A brief message about the gift registry item.
      */
     String getNote();
 
+    /**
+     * Details about the gift registry item.
+     */
     ProductInterface getProduct();
 
     /**
-     * The requested quantity of the product
+     * The requested quantity of the product.
      */
     Double getQuantity();
 
     /**
-     * The fulfilled quantity of the product
+     * The fulfilled quantity of the product.
      */
     Double getQuantityFulfilled();
 
     /**
-     * The unique ID of a gift registry item
+     * The unique ID of a gift registry item.
      */
     ID getUid();
 }

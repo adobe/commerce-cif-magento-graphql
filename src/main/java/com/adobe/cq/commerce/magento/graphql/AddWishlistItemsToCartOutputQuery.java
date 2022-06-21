@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the resultant wish list and any error information.
+ */
 public class AddWishlistItemsToCartOutputQuery extends AbstractQuery<AddWishlistItemsToCartOutputQuery> {
     AddWishlistItemsToCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of errors encountered while adding products to the customer&#39;s cart
+     * An array of errors encountered while adding products to the customer&#39;s cart.
      */
     public AddWishlistItemsToCartOutputQuery addWishlistItemsToCartUserErrors(WishlistCartUserInputErrorQueryDefinition queryDef) {
         startField("add_wishlist_items_to_cart_user_errors");
@@ -36,7 +39,7 @@ public class AddWishlistItemsToCartOutputQuery extends AbstractQuery<AddWishlist
     }
 
     /**
-     * Indicates whether the attempt to add items to the customer&#39;s cart was successful
+     * Indicates whether the attempt to add items to the customer&#39;s cart was successful.
      */
     public AddWishlistItemsToCartOutputQuery status() {
         startField("status");
@@ -45,7 +48,7 @@ public class AddWishlistItemsToCartOutputQuery extends AbstractQuery<AddWishlist
     }
 
     /**
-     * Contains the wish list with all items that were successfully added
+     * Contains the wish list with all items that were successfully added.
      */
     public AddWishlistItemsToCartOutputQuery wishlist(WishlistQueryDefinition queryDef) {
         startField("wishlist");

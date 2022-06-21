@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after setting the email of a guest.
+ */
 public class SetGuestEmailOnCartOutput extends AbstractResponse<SetGuestEmailOnCartOutput> {
     public SetGuestEmailOnCartOutput() {}
 
@@ -51,6 +54,9 @@ public class SetGuestEmailOnCartOutput extends AbstractResponse<SetGuestEmailOnC
         return "SetGuestEmailOnCartOutput";
     }
 
+    /**
+     * The cart after setting the guest email.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

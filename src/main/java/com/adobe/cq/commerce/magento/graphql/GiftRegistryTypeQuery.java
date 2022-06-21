@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a gift registry type.
+ */
 public class GiftRegistryTypeQuery extends AbstractQuery<GiftRegistryTypeQuery> {
     GiftRegistryTypeQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -24,7 +27,7 @@ public class GiftRegistryTypeQuery extends AbstractQuery<GiftRegistryTypeQuery> 
 
     /**
      * An array of attributes that define elements of the gift registry. Each attribute is specified as a
-     * code-value pair
+     * code-value pair.
      */
     public GiftRegistryTypeQuery dynamicAttributesMetadata(GiftRegistryDynamicAttributeMetadataInterfaceQueryDefinition queryDef) {
         startField("dynamic_attributes_metadata");
@@ -37,7 +40,7 @@ public class GiftRegistryTypeQuery extends AbstractQuery<GiftRegistryTypeQuery> 
     }
 
     /**
-     * The label assigned to the gift registry type on the Admin
+     * The label assigned to the gift registry type on the Admin.
      */
     public GiftRegistryTypeQuery label() {
         startField("label");
@@ -46,7 +49,7 @@ public class GiftRegistryTypeQuery extends AbstractQuery<GiftRegistryTypeQuery> 
     }
 
     /**
-     * The unique ID assigned to the gift registry type
+     * The unique ID assigned to the gift registry type.
      */
     public GiftRegistryTypeQuery uid() {
         startField("uid");

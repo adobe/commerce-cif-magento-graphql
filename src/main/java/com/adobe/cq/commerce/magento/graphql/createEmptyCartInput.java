@@ -19,22 +19,37 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Assigns a specific `cart_id` to the empty cart.
+ */
 public class createEmptyCartInput implements Serializable {
     private Input<String> cartId = Input.undefined();
 
+    /**
+     * The ID to assign to the cart.
+     */
     public String getCartId() {
         return cartId.getValue();
     }
 
+    /**
+     * The ID to assign to the cart.
+     */
     public Input<String> getCartIdInput() {
         return cartId;
     }
 
+    /**
+     * The ID to assign to the cart.
+     */
     public createEmptyCartInput setCartId(String cartId) {
         this.cartId = Input.optional(cartId);
         return this;
     }
 
+    /**
+     * The ID to assign to the cart.
+     */
     public createEmptyCartInput setCartIdInput(Input<String> cartId) {
         if (cartId == null) {
             throw new IllegalArgumentException("Input can not be null");

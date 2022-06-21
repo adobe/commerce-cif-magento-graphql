@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a single value in a product review.
+ */
 public class ProductReviewRatingValueMetadataQuery extends AbstractQuery<ProductReviewRatingValueMetadataQuery> {
     ProductReviewRatingValueMetadataQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A ratings scale, such as the number of stars awarded
+     * A ratings scale, such as the number of stars awarded.
      */
     public ProductReviewRatingValueMetadataQuery value() {
         startField("value");
@@ -32,7 +35,7 @@ public class ProductReviewRatingValueMetadataQuery extends AbstractQuery<Product
     }
 
     /**
-     * An encoded rating value id.
+     * An encoded rating value ID.
      */
     public ProductReviewRatingValueMetadataQuery valueId() {
         startField("value_id");

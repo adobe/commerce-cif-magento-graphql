@@ -25,8 +25,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableCheckbbixOption contains information about a set of checkbox values that are defined as
- * part of a customizable option.
+ * Contains information about a set of checkbox values that are defined as part of a customizable
+ * option.
  */
 public class CustomizableCheckboxOption extends AbstractResponse<CustomizableCheckboxOption> implements CustomizableOptionInterface {
     public CustomizableCheckboxOption() {}

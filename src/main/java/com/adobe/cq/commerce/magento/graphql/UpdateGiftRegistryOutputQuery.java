@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of a request to update a gift registry.
+ */
 public class UpdateGiftRegistryOutputQuery extends AbstractQuery<UpdateGiftRegistryOutputQuery> {
     UpdateGiftRegistryOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The updated gift registry
+     * The updated gift registry.
      */
     public UpdateGiftRegistryOutputQuery giftRegistry(GiftRegistryQueryDefinition queryDef) {
         startField("gift_registry");

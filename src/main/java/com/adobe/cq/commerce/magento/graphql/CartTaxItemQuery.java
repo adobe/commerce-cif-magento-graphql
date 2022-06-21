@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains tax information about an item in the cart.
+ */
 public class CartTaxItemQuery extends AbstractQuery<CartTaxItemQuery> {
     CartTaxItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The amount of tax applied to the item.
+     */
     public CartTaxItemQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
 
@@ -32,6 +38,9 @@ public class CartTaxItemQuery extends AbstractQuery<CartTaxItemQuery> {
         return this;
     }
 
+    /**
+     * The description of the tax.
+     */
     public CartTaxItemQuery label() {
         startField("label");
 

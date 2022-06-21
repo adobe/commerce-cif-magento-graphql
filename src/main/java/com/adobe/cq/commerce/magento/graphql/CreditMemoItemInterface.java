@@ -20,45 +20,44 @@ import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
 /**
- * Credit memo item details
+ * Credit memo item details.
  */
 
 public interface CreditMemoItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Details about the final discount amount for the base product, including discounts on options.
      */
     List<Discount> getDiscounts();
 
     /**
-     * The unique ID for a `CreditMemoItemInterface` object
+     * The unique ID for a `CreditMemoItemInterface` object.
      */
     ID getId();
 
     /**
-     * The order item the credit memo is applied to
+     * The order item the credit memo is applied to.
      */
     OrderItemInterface getOrderItem();
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     String getProductName();
 
     /**
-     * The sale price for the base product, including selected options
+     * The sale price for the base product, including selected options.
      */
     Money getProductSalePrice();
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     String getProductSku();
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     Double getQuantityRefunded();
 }

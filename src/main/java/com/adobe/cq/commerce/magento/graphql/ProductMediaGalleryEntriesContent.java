@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ProductMediaGalleryEntriesContent contains an image in base64 format and basic information about the
- * image.
+ * Contains an image in base64 format and basic information about the image.
  */
 public class ProductMediaGalleryEntriesContent extends AbstractResponse<ProductMediaGalleryEntriesContent> {
     public ProductMediaGalleryEntriesContent() {}

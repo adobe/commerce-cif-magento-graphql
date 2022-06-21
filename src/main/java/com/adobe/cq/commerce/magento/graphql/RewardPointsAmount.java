@@ -58,7 +58,7 @@ public class RewardPointsAmount extends AbstractResponse<RewardPointsAmount> {
     }
 
     /**
-     * Reward points amount in store currency
+     * The reward points amount in store currency.
      */
     public Money getMoney() {
         return (Money) get("money");
@@ -70,7 +70,7 @@ public class RewardPointsAmount extends AbstractResponse<RewardPointsAmount> {
     }
 
     /**
-     * Reward points amount in points
+     * The reward points amount in points.
      */
     public Double getPoints() {
         return (Double) get("points");

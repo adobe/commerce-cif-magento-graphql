@@ -16,10 +16,9 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
- * CustomerAddressRegion defines the customer&#39;s state or province
+ * Defines the customer&#39;s state or province.
  */
 public class CustomerAddressRegionQuery extends AbstractQuery<CustomerAddressRegionQuery> {
     CustomerAddressRegionQuery(StringBuilder _queryBuilder) {
@@ -27,7 +26,7 @@ public class CustomerAddressRegionQuery extends AbstractQuery<CustomerAddressReg
     }
 
     /**
-     * The state or province name
+     * The state or province name.
      */
     public CustomerAddressRegionQuery region() {
         startField("region");
@@ -36,7 +35,7 @@ public class CustomerAddressRegionQuery extends AbstractQuery<CustomerAddressReg
     }
 
     /**
-     * The address region code
+     * The address region code.
      */
     public CustomerAddressRegionQuery regionCode() {
         startField("region_code");
@@ -45,7 +44,7 @@ public class CustomerAddressRegionQuery extends AbstractQuery<CustomerAddressReg
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a pre-defined region.
      */
     public CustomerAddressRegionQuery regionId() {
         startField("region_id");

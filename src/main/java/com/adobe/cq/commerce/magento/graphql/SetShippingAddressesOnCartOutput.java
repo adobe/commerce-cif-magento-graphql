@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after setting the shipping addresses.
+ */
 public class SetShippingAddressesOnCartOutput extends AbstractResponse<SetShippingAddressesOnCartOutput> {
     public SetShippingAddressesOnCartOutput() {}
 
@@ -51,6 +54,9 @@ public class SetShippingAddressesOnCartOutput extends AbstractResponse<SetShippi
         return "SetShippingAddressesOnCartOutput";
     }
 
+    /**
+     * The cart after setting the shipping addresses.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

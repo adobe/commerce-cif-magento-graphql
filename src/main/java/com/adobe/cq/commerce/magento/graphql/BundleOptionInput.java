@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the input for a bundle option.
+ */
 public class BundleOptionInput implements Serializable {
     private int id;
 
@@ -34,28 +37,46 @@ public class BundleOptionInput implements Serializable {
         this.value = value;
     }
 
+    /**
+     * The ID of the option.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * The ID of the option.
+     */
     public BundleOptionInput setId(int id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * The number of the selected item to add to the cart.
+     */
     public double getQuantity() {
         return quantity;
     }
 
+    /**
+     * The number of the selected item to add to the cart.
+     */
     public BundleOptionInput setQuantity(double quantity) {
         this.quantity = quantity;
         return this;
     }
 
+    /**
+     * An array with the chosen value of the option.
+     */
     public List<String> getValue() {
         return value;
     }
 
+    /**
+     * An array with the chosen value of the option.
+     */
     public BundleOptionInput setValue(List<String> value) {
         this.value = value;
         return this;

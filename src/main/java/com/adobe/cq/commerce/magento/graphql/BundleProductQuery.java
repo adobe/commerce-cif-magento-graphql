@@ -19,7 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Defines basic features of a bundle product and contains multiple BundleItems
+ * Defines basic features of a bundle product and contains multiple BundleItems.
  */
 public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     BundleProductQuery(StringBuilder _queryBuilder) {
@@ -39,8 +39,8 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Products&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Products&#39; is enabled.
      */
     public BundleProductQuery canonicalUrl() {
         startField("canonical_url");
@@ -89,7 +89,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * Crosssell Products
+     * An array of cross-sell products.
      */
     public BundleProductQuery crosssellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("crosssell_products");
@@ -124,7 +124,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * Indicates whether the bundle product has a dynamic SK.
+     * Indicates whether the bundle product has a dynamic SKU.
      */
     public BundleProductQuery dynamicSku() {
         startField("dynamic_sku");
@@ -141,11 +141,47 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
         return this;
     }
 
+    public BundleProductQuery fashionColor() {
+        startField("fashion_color");
+
+        return this;
+    }
+
+    public BundleProductQuery fashionMaterial() {
+        startField("fashion_material");
+
+        return this;
+    }
+
+    public BundleProductQuery fashionSize() {
+        startField("fashion_size");
+
+        return this;
+    }
+
+    public BundleProductQuery fashionStyle() {
+        startField("fashion_style");
+
+        return this;
+    }
+
+    public BundleProductQuery format() {
+        startField("format");
+
+        return this;
+    }
+
     /**
      * Indicates whether a gift message is available.
      */
     public BundleProductQuery giftMessageAvailable() {
         startField("gift_message_available");
+
+        return this;
+    }
+
+    public BundleProductQuery hasVideo() {
+        startField("has_video");
 
         return this;
     }
@@ -176,7 +212,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public BundleProductQuery isReturnable() {
         startField("is_returnable");
@@ -207,7 +243,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * An array of Media Gallery objects.
+     * An array of media gallery objects.
      */
     public BundleProductQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {
         startField("media_gallery");
@@ -222,7 +258,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     /**
      * An array of MediaGalleryEntry objects.
      *
-     * @deprecated Use product&#39;s `media_gallery` instead
+     * @deprecated Use `media_gallery` instead.
      */
     @Deprecated
     public BundleProductQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
@@ -328,9 +364,9 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item.
+     * Indicates the price of an item.
      *
-     * @deprecated Use price_range for product price information.
+     * @deprecated Use `price_range` for product price information.
      */
     @Deprecated
     public BundleProductQuery price(ProductPricesQueryDefinition queryDef) {
@@ -344,7 +380,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * A PriceRange object, indicating the range of prices for the product
+     * The range of prices for the product
      */
     public BundleProductQuery priceRange(PriceRangeQueryDefinition queryDef) {
         startField("price_range");
@@ -357,7 +393,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * An array of TierPrice objects.
+     * An array of `TierPrice` objects.
      */
     public BundleProductQuery priceTiers(TierPriceQueryDefinition queryDef) {
         startField("price_tiers");
@@ -379,7 +415,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * An array of ProductLinks objects.
+     * An array of `ProductLinks` objects.
      */
     public BundleProductQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
@@ -387,6 +423,12 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
         _queryBuilder.append('{');
         queryDef.define(new ProductLinksInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public BundleProductQuery purpose() {
+        startField("purpose");
 
         return this;
     }
@@ -402,7 +444,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public BundleProductQuery redirectCode() {
         startField("redirect_code");
@@ -411,7 +453,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * Related Products
+     * An array of related products.
      */
     public BundleProductQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("related_products");
@@ -425,7 +467,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public BundleProductQuery relativeUrl() {
         startField("relative_url");
@@ -448,7 +490,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once.
+         * The maximum number of results to return at once. The default is 20.
          */
         public ReviewsArguments pageSize(Integer value) {
             if (value != null) {
@@ -459,7 +501,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
         }
 
         /**
-         * Specifies which page of results to return.
+         * The page of results to return. The default is 1.
          */
         public ReviewsArguments currentPage(Integer value) {
             if (value != null) {
@@ -564,7 +606,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * The end date that a product has a special price.
+     * The end date for a product with a special price.
      */
     public BundleProductQuery specialToDate() {
         startField("special_to_date");
@@ -572,6 +614,9 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
         return this;
     }
 
+    /**
+     * Indicates whether the product is staged for a future campaign.
+     */
     public BundleProductQuery staged() {
         startField("staged");
 
@@ -588,7 +633,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public BundleProductQuery swatchImage() {
         startField("swatch_image");
@@ -612,7 +657,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public BundleProductQuery tierPrice() {
@@ -624,7 +669,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     /**
      * An array of ProductTierPrices objects.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public BundleProductQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
@@ -649,7 +694,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
-     * @deprecated Use __typename instead.
+     * @deprecated Use `__typename` instead.
      */
     @Deprecated
     public BundleProductQuery typeId() {
@@ -680,7 +725,7 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
     }
 
     /**
-     * Upsell Products
+     * An array of up-sell products.
      */
     public BundleProductQuery upsellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("upsell_products");
@@ -729,6 +774,12 @@ public class BundleProductQuery extends AbstractQuery<BundleProductQuery> {
      */
     public BundleProductQuery urlSuffix() {
         startField("url_suffix");
+
+        return this;
+    }
+
+    public BundleProductQuery videoFile() {
+        startField("video_file");
 
         return this;
     }

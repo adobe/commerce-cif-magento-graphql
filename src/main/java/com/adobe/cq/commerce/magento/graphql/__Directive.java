@@ -55,17 +55,6 @@ public class __Directive extends AbstractResponse<__Directive> {
                     break;
                 }
 
-                case "locations": {
-                    List<__DirectiveLocation> list1 = new ArrayList<>();
-                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
-                        list1.add(__DirectiveLocation.fromGraphQl(jsonAsString(element1, key)));
-                    }
-
-                    responseData.put(key, list1);
-
-                    break;
-                }
-
                 case "args": {
                     List<__InputValue> list1 = new ArrayList<>();
                     for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
@@ -77,20 +66,19 @@ public class __Directive extends AbstractResponse<__Directive> {
                     break;
                 }
 
-                case "onOperation": {
+                case "isRepeatable": {
                     responseData.put(key, jsonAsBoolean(field.getValue(), key));
 
                     break;
                 }
 
-                case "onFragment": {
-                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
+                case "locations": {
+                    List<__DirectiveLocation> list1 = new ArrayList<>();
+                    for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                        list1.add(__DirectiveLocation.fromGraphQl(jsonAsString(element1, key)));
+                    }
 
-                    break;
-                }
-
-                case "onField": {
-                    responseData.put(key, jsonAsBoolean(field.getValue(), key));
+                    responseData.put(key, list1);
 
                     break;
                 }
@@ -129,15 +117,6 @@ public class __Directive extends AbstractResponse<__Directive> {
         return this;
     }
 
-    public List<__DirectiveLocation> getLocations() {
-        return (List<__DirectiveLocation>) get("locations");
-    }
-
-    public __Directive setLocations(List<__DirectiveLocation> arg) {
-        optimisticData.put(getKey("locations"), arg);
-        return this;
-    }
-
     public List<__InputValue> getArgs() {
         return (List<__InputValue>) get("args");
     }
@@ -147,42 +126,21 @@ public class __Directive extends AbstractResponse<__Directive> {
         return this;
     }
 
-    /**
-     * @deprecated Use `locations`.
-     */
-    @Deprecated
-    public Boolean getOnOperation() {
-        return (Boolean) get("onOperation");
+    public Boolean getIsRepeatable() {
+        return (Boolean) get("isRepeatable");
     }
 
-    public __Directive setOnOperation(Boolean arg) {
-        optimisticData.put(getKey("onOperation"), arg);
+    public __Directive setIsRepeatable(Boolean arg) {
+        optimisticData.put(getKey("isRepeatable"), arg);
         return this;
     }
 
-    /**
-     * @deprecated Use `locations`.
-     */
-    @Deprecated
-    public Boolean getOnFragment() {
-        return (Boolean) get("onFragment");
+    public List<__DirectiveLocation> getLocations() {
+        return (List<__DirectiveLocation>) get("locations");
     }
 
-    public __Directive setOnFragment(Boolean arg) {
-        optimisticData.put(getKey("onFragment"), arg);
-        return this;
-    }
-
-    /**
-     * @deprecated Use `locations`.
-     */
-    @Deprecated
-    public Boolean getOnField() {
-        return (Boolean) get("onField");
-    }
-
-    public __Directive setOnField(Boolean arg) {
-        optimisticData.put(getKey("onField"), arg);
+    public __Directive setLocations(List<__DirectiveLocation> arg) {
+        optimisticData.put(getKey("locations"), arg);
         return this;
     }
 
@@ -194,19 +152,13 @@ public class __Directive extends AbstractResponse<__Directive> {
             case "description":
                 return false;
 
-            case "locations":
-                return false;
-
             case "args":
                 return true;
 
-            case "onOperation":
+            case "isRepeatable":
                 return false;
 
-            case "onFragment":
-                return false;
-
-            case "onField":
+            case "locations":
                 return false;
 
             default:

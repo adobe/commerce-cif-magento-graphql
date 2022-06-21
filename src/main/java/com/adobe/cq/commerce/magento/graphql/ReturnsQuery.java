@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains a list of customer return requests.
+ */
 public class ReturnsQuery extends AbstractQuery<ReturnsQuery> {
     ReturnsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A list of return requests
+     * A list of return requests.
      */
     public ReturnsQuery items(ReturnQueryDefinition queryDef) {
         startField("items");
@@ -36,7 +39,7 @@ public class ReturnsQuery extends AbstractQuery<ReturnsQuery> {
     }
 
     /**
-     * Pagination metadata
+     * Pagination metadata.
      */
     public ReturnsQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");
@@ -49,7 +52,7 @@ public class ReturnsQuery extends AbstractQuery<ReturnsQuery> {
     }
 
     /**
-     * The total number of return requests
+     * The total number of return requests.
      */
     public ReturnsQuery totalCount() {
         startField("total_count");

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of a request to delete a gift registry.
+ */
 public class RemoveGiftRegistryOutput extends AbstractResponse<RemoveGiftRegistryOutput> {
     public RemoveGiftRegistryOutput() {}
 
@@ -52,7 +55,7 @@ public class RemoveGiftRegistryOutput extends AbstractResponse<RemoveGiftRegistr
     }
 
     /**
-     * Indicates whether the gift registry was successfully deleted
+     * Indicates whether the gift registry was successfully deleted.
      */
     public Boolean getSuccess() {
         return (Boolean) get("success");

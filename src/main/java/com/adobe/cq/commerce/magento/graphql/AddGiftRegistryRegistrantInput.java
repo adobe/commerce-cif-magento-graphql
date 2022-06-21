@@ -20,6 +20,9 @@ import java.util.List;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines a new registrant.
+ */
 public class AddGiftRegistryRegistrantInput implements Serializable {
     private String email;
 
@@ -38,14 +41,14 @@ public class AddGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The email address of the registrant
+     * The email address of the registrant.
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * The email address of the registrant
+     * The email address of the registrant.
      */
     public AddGiftRegistryRegistrantInput setEmail(String email) {
         this.email = email;
@@ -53,14 +56,14 @@ public class AddGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The first name of the registrant
+     * The first name of the registrant.
      */
     public String getFirstname() {
         return firstname;
     }
 
     /**
-     * The first name of the registrant
+     * The first name of the registrant.
      */
     public AddGiftRegistryRegistrantInput setFirstname(String firstname) {
         this.firstname = firstname;
@@ -68,14 +71,14 @@ public class AddGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The last name of the registrant
+     * The last name of the registrant.
      */
     public String getLastname() {
         return lastname;
     }
 
     /**
-     * The last name of the registrant
+     * The last name of the registrant.
      */
     public AddGiftRegistryRegistrantInput setLastname(String lastname) {
         this.lastname = lastname;

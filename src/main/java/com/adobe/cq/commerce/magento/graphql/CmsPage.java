@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CMS page defines all CMS page information
+ * Contains details about a CMS page.
  */
 public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterface {
     public CmsPage() {}
@@ -176,7 +176,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * CMS page content
+     * The content of the CMS page in raw HTML.
      */
     public String getContent() {
         return (String) get("content");
@@ -188,7 +188,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * CMS page content heading
+     * The heading that displays at the top of the CMS page.
      */
     public String getContentHeading() {
         return (String) get("content_heading");
@@ -200,7 +200,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * Identifier of the CMS page
+     * The ID of a CMS page.
      */
     public String getIdentifier() {
         return (String) get("identifier");
@@ -212,7 +212,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * CMS page meta description
+     * A brief description of the page for search results listings.
      */
     public String getMetaDescription() {
         return (String) get("meta_description");
@@ -224,7 +224,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * CMS page meta keywords
+     * A brief description of the page for search results listings.
      */
     public String getMetaKeywords() {
         return (String) get("meta_keywords");
@@ -236,7 +236,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * CMS page meta title
+     * A page title that is indexed by search engines and appears in search results listings.
      */
     public String getMetaTitle() {
         return (String) get("meta_title");
@@ -248,7 +248,8 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * CMS page content heading
+     * The design layout of the page, indicating the number of columns and navigation features used on the
+     * page.
      */
     public String getPageLayout() {
         return (String) get("page_layout");
@@ -261,7 +262,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public Integer getRedirectCode() {
         return (Integer) get("redirect_code");
@@ -274,7 +275,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public String getRelativeUrl() {
         return (String) get("relative_url");
@@ -286,7 +287,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * CMS page title
+     * The name that appears in the breadcrumb trail navigation and in the browser title bar and tab.
      */
     public String getTitle() {
         return (String) get("title");
@@ -310,7 +311,7 @@ public class CmsPage extends AbstractResponse<CmsPage> implements RoutableInterf
     }
 
     /**
-     * URL key of CMS page
+     * The URL key of the CMS page, which is often based on the `content_heading`.
      */
     public String getUrlKey() {
         return (String) get("url_key");

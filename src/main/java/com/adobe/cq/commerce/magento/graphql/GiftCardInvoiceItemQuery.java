@@ -23,8 +23,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     public GiftCardInvoiceItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -37,7 +36,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * Selected gift card properties for an invoice item
+     * Selected gift card properties for an invoice item.
      */
     public GiftCardInvoiceItemQuery giftCard(GiftCardItemQueryDefinition queryDef) {
         startField("gift_card");
@@ -50,7 +49,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     public GiftCardInvoiceItemQuery id() {
         startField("id");
@@ -59,7 +58,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     public GiftCardInvoiceItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -72,7 +71,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public GiftCardInvoiceItemQuery productName() {
         startField("product_name");
@@ -81,7 +80,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     public GiftCardInvoiceItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -94,7 +93,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public GiftCardInvoiceItemQuery productSku() {
         startField("product_sku");
@@ -103,7 +102,7 @@ public class GiftCardInvoiceItemQuery extends AbstractQuery<GiftCardInvoiceItemQ
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public GiftCardInvoiceItemQuery quantityInvoiced() {
         startField("quantity_invoiced");

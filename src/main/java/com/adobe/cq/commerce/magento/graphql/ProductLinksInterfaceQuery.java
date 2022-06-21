@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ProductLinks contains information about linked products, including the link type and product type of
- * each item.
+ * Contains information about linked products, including the link type and product type of each item.
  */
 public class ProductLinksInterfaceQuery extends AbstractQuery<ProductLinksInterfaceQuery> {
     ProductLinksInterfaceQuery(StringBuilder _queryBuilder) {

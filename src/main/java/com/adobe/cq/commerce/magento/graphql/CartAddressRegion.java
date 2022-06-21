@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the region in a billing or shipping address.
+ */
 public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
     public CartAddressRegion() {}
 
@@ -78,6 +81,9 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
         return "CartAddressRegion";
     }
 
+    /**
+     * The state or province code.
+     */
     public String getCode() {
         return (String) get("code");
     }
@@ -87,6 +93,9 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
         return this;
     }
 
+    /**
+     * The display label for the region.
+     */
     public String getLabel() {
         return (String) get("label");
     }
@@ -96,6 +105,9 @@ public class CartAddressRegion extends AbstractResponse<CartAddressRegion> {
         return this;
     }
 
+    /**
+     * The unique ID for a pre-defined region.
+     */
     public Integer getRegionId() {
         return (Integer) get("region_id");
     }

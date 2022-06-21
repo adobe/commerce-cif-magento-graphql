@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the result of the `subscribeEmailToNewsletter` operation.
+ */
 public class SubscribeEmailToNewsletterOutputQuery extends AbstractQuery<SubscribeEmailToNewsletterOutputQuery> {
     SubscribeEmailToNewsletterOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Returns the status of the subscription request
+     * The status of the subscription request.
      */
     public SubscribeEmailToNewsletterOutputQuery status() {
         startField("status");

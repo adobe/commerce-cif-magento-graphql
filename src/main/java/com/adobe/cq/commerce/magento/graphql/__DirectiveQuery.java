@@ -45,6 +45,12 @@ public class __DirectiveQuery extends AbstractQuery<__DirectiveQuery> {
         return this;
     }
 
+    public __DirectiveQuery isRepeatable() {
+        startField("isRepeatable");
+
+        return this;
+    }
+
     public __DirectiveQuery locations() {
         startField("locations");
 
@@ -53,36 +59,6 @@ public class __DirectiveQuery extends AbstractQuery<__DirectiveQuery> {
 
     public __DirectiveQuery name() {
         startField("name");
-
-        return this;
-    }
-
-    /**
-     * @deprecated Use `locations`.
-     */
-    @Deprecated
-    public __DirectiveQuery onField() {
-        startField("onField");
-
-        return this;
-    }
-
-    /**
-     * @deprecated Use `locations`.
-     */
-    @Deprecated
-    public __DirectiveQuery onFragment() {
-        startField("onFragment");
-
-        return this;
-    }
-
-    /**
-     * @deprecated Use `locations`.
-     */
-    @Deprecated
-    public __DirectiveQuery onOperation() {
-        startField("onOperation");
 
         return this;
     }

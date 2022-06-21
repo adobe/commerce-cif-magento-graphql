@@ -23,7 +23,7 @@ public class ShipmentItemQuery extends AbstractQuery<ShipmentItemQuery> {
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public ShipmentItemQuery id() {
         startField("id");
@@ -32,7 +32,7 @@ public class ShipmentItemQuery extends AbstractQuery<ShipmentItemQuery> {
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public ShipmentItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -45,7 +45,7 @@ public class ShipmentItemQuery extends AbstractQuery<ShipmentItemQuery> {
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public ShipmentItemQuery productName() {
         startField("product_name");
@@ -54,7 +54,7 @@ public class ShipmentItemQuery extends AbstractQuery<ShipmentItemQuery> {
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public ShipmentItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -67,7 +67,7 @@ public class ShipmentItemQuery extends AbstractQuery<ShipmentItemQuery> {
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public ShipmentItemQuery productSku() {
         startField("product_sku");
@@ -76,7 +76,7 @@ public class ShipmentItemQuery extends AbstractQuery<ShipmentItemQuery> {
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public ShipmentItemQuery quantityShipped() {
         startField("quantity_shipped");

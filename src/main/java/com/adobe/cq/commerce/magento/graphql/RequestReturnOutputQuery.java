@@ -18,13 +18,16 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the response to a return request.
+ */
 public class RequestReturnOutputQuery extends AbstractQuery<RequestReturnOutputQuery> {
     RequestReturnOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains details about a single return request
+     * Details about a single return request.
      */
     public RequestReturnOutputQuery returnValue(ReturnQueryDefinition queryDef) {
         startField("return");
@@ -42,7 +45,7 @@ public class RequestReturnOutputQuery extends AbstractQuery<RequestReturnOutputQ
         }
 
         /**
-         * Specifies the maximum number of results to return at once. The default is 20
+         * Specifies the maximum number of results to return at once. The default is 20.
          */
         public ReturnsArguments pageSize(Integer value) {
             if (value != null) {
@@ -53,7 +56,7 @@ public class RequestReturnOutputQuery extends AbstractQuery<RequestReturnOutputQ
         }
 
         /**
-         * Specifies which page of results to return. The default value is 1
+         * Specifies which page of results to return. The default is 1.
          */
         public ReturnsArguments currentPage(Integer value) {
             if (value != null) {
@@ -69,14 +72,14 @@ public class RequestReturnOutputQuery extends AbstractQuery<RequestReturnOutputQ
     }
 
     /**
-     * Contains an array of return requests
+     * An array of return requests.
      */
     public RequestReturnOutputQuery returns(ReturnsQueryDefinition queryDef) {
         return returns(args -> {}, queryDef);
     }
 
     /**
-     * Contains an array of return requests
+     * An array of return requests.
      */
     public RequestReturnOutputQuery returns(ReturnsArgumentsDefinition argsDef, ReturnsQueryDefinition queryDef) {
         startField("returns");

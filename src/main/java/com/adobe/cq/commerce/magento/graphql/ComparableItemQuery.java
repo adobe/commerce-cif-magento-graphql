@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines an object used to iterate through items for product comparisons.
+ */
 public class ComparableItemQuery extends AbstractQuery<ComparableItemQuery> {
     ComparableItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of product attributes that can be used to compare products
+     * An array of product attributes that can be used to compare products.
      */
     public ComparableItemQuery attributes(ProductAttributeQueryDefinition queryDef) {
         startField("attributes");
@@ -36,7 +39,7 @@ public class ComparableItemQuery extends AbstractQuery<ComparableItemQuery> {
     }
 
     /**
-     * Contains details about a product in a compare list
+     * Details about a product in a compare list.
      */
     public ComparableItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -49,7 +52,7 @@ public class ComparableItemQuery extends AbstractQuery<ComparableItemQuery> {
     }
 
     /**
-     * The unique ID of an item in a compare list
+     * The unique ID of an item in a compare list.
      */
     public ComparableItemQuery uid() {
         startField("uid");

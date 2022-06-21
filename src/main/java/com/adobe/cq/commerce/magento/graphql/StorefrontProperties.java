@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Indicates where an attribute can be displayed.
+ */
 public class StorefrontProperties extends AbstractResponse<StorefrontProperties> {
     public StorefrontProperties() {}
 
@@ -101,7 +104,7 @@ public class StorefrontProperties extends AbstractResponse<StorefrontProperties>
     }
 
     /**
-     * The relative position of the attribute in the layered navigation block
+     * The relative position of the attribute in the layered navigation block.
      */
     public Integer getPosition() {
         return (Integer) get("position");
@@ -113,7 +116,7 @@ public class StorefrontProperties extends AbstractResponse<StorefrontProperties>
     }
 
     /**
-     * Indicates whether the attribute is filterable with results, without results, or not at all
+     * Indicates whether the attribute is filterable with results, without results, or not at all.
      */
     public UseInLayeredNavigationOptions getUseInLayeredNavigation() {
         return (UseInLayeredNavigationOptions) get("use_in_layered_navigation");
@@ -125,7 +128,7 @@ public class StorefrontProperties extends AbstractResponse<StorefrontProperties>
     }
 
     /**
-     * Indicates whether the attribute is displayed in product listings
+     * Indicates whether the attribute is displayed in product listings.
      */
     public Boolean getUseInProductListing() {
         return (Boolean) get("use_in_product_listing");
@@ -137,7 +140,7 @@ public class StorefrontProperties extends AbstractResponse<StorefrontProperties>
     }
 
     /**
-     * Indicates whether the attribute can be used in layered navigation on search results pages
+     * Indicates whether the attribute can be used in layered navigation on search results pages.
      */
     public Boolean getUseInSearchResultsLayeredNavigation() {
         return (Boolean) get("use_in_search_results_layered_navigation");
@@ -149,7 +152,7 @@ public class StorefrontProperties extends AbstractResponse<StorefrontProperties>
     }
 
     /**
-     * Indicates whether the attribute is displayed on product pages
+     * Indicates whether the attribute is displayed on product pages.
      */
     public Boolean getVisibleOnCatalogPages() {
         return (Boolean) get("visible_on_catalog_pages");

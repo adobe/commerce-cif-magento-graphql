@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of the request to place an order.
+ */
 public class PlaceOrderOutputQuery extends AbstractQuery<PlaceOrderOutputQuery> {
     PlaceOrderOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The ID of the order.
+     */
     public PlaceOrderOutputQuery order(OrderQueryDefinition queryDef) {
         startField("order");
 

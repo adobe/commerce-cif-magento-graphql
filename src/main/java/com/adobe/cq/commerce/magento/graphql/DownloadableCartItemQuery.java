@@ -16,16 +16,18 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.ID;
 
 /**
- * Downloadable Cart Item
+ * An implementation for downloadable product cart items.
  */
 public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartItemQuery> {
     DownloadableCartItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An array containing the customizable options the shopper selected.
+     */
     public DownloadableCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
 
@@ -37,7 +39,7 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public DownloadableCartItemQuery id() {
@@ -47,7 +49,7 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
     }
 
     /**
-     * An array containing information about the links for the added to cart downloadable product
+     * An array containing information about the links for the downloadable product added to the cart.
      */
     public DownloadableCartItemQuery links(DownloadableProductLinksQueryDefinition queryDef) {
         startField("links");
@@ -59,6 +61,9 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public DownloadableCartItemQuery prices(CartItemPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -69,6 +74,9 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public DownloadableCartItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -79,6 +87,9 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public DownloadableCartItemQuery quantity() {
         startField("quantity");
 
@@ -86,7 +97,7 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
     }
 
     /**
-     * DownloadableProductSamples defines characteristics of a downloadable product
+     * An array containing information about samples of the selected downloadable product.
      */
     public DownloadableCartItemQuery samples(DownloadableProductSamplesQueryDefinition queryDef) {
         startField("samples");
@@ -99,7 +110,7 @@ public class DownloadableCartItemQuery extends AbstractQuery<DownloadableCartIte
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public DownloadableCartItemQuery uid() {
         startField("uid");

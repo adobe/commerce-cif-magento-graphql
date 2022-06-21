@@ -23,8 +23,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The CustomizableOptionInterface contains basic information about a customizable option. It can be
- * implemented by several types of configurable options.
+ * Contains basic information about a customizable option. It can be implemented by several types of
+ * configurable options.
  */
 public class UnknownCustomizableOptionInterface extends AbstractResponse<UnknownCustomizableOptionInterface> implements
     CustomizableOptionInterface {

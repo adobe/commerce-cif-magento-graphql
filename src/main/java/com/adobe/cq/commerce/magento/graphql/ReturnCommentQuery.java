@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a return comment.
+ */
 public class ReturnCommentQuery extends AbstractQuery<ReturnCommentQuery> {
     ReturnCommentQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The name or author who posted the comment
+     * The name or author who posted the comment.
      */
     public ReturnCommentQuery authorName() {
         startField("author_name");
@@ -32,7 +35,7 @@ public class ReturnCommentQuery extends AbstractQuery<ReturnCommentQuery> {
     }
 
     /**
-     * The date and time the comment was posted
+     * The date and time the comment was posted.
      */
     public ReturnCommentQuery createdAt() {
         startField("created_at");
@@ -41,7 +44,7 @@ public class ReturnCommentQuery extends AbstractQuery<ReturnCommentQuery> {
     }
 
     /**
-     * The contents of the comment
+     * The contents of the comment.
      */
     public ReturnCommentQuery text() {
         startField("text");
@@ -50,7 +53,7 @@ public class ReturnCommentQuery extends AbstractQuery<ReturnCommentQuery> {
     }
 
     /**
-     * The unique ID for a `ReturnComment` object
+     * The unique ID for a `ReturnComment` object.
      */
     public ReturnCommentQuery uid() {
         startField("uid");

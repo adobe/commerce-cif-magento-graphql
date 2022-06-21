@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * BundleItem defines an individual item in a bundle product.
+ * Defines an individual item within a bundle product.
  */
 public class BundleItem extends AbstractResponse<BundleItem> {
     public BundleItem() {}
@@ -177,7 +177,7 @@ public class BundleItem extends AbstractResponse<BundleItem> {
     }
 
     /**
-     * he relative position of this item compared to the other bundle items.
+     * A number indicating the sequence order of this item compared to the other bundle items.
      */
     public Integer getPosition() {
         return (Integer) get("position");

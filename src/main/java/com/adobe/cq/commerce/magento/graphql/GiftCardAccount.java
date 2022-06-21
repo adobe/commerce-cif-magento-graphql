@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains details about the gift card account
+ * Contains details about the gift card account.
  */
 public class GiftCardAccount extends AbstractResponse<GiftCardAccount> {
     public GiftCardAccount() {}
@@ -82,7 +82,7 @@ public class GiftCardAccount extends AbstractResponse<GiftCardAccount> {
     }
 
     /**
-     * Balance remaining on gift card
+     * The balance remaining on the gift card.
      */
     public Money getBalance() {
         return (Money) get("balance");
@@ -94,7 +94,7 @@ public class GiftCardAccount extends AbstractResponse<GiftCardAccount> {
     }
 
     /**
-     * Gift card account code
+     * The gift card account code.
      */
     public String getCode() {
         return (String) get("code");
@@ -106,7 +106,7 @@ public class GiftCardAccount extends AbstractResponse<GiftCardAccount> {
     }
 
     /**
-     * Gift card expiration date
+     * The expiration date of the gift card.
      */
     public String getExpirationDate() {
         return (String) get("expiration_date");

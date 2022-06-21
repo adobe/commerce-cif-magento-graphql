@@ -20,7 +20,7 @@ import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
 /**
- * CategoryInterface contains the full set of attributes that can be returned in a category search.
+ * Contains the full set of attributes that can be returned in a category search.
  */
 
 public interface CategoryInterface extends CustomFieldInterface {
@@ -31,25 +31,25 @@ public interface CategoryInterface extends CustomFieldInterface {
     List<String> getAvailableSortBy();
 
     /**
-     * Breadcrumbs, parent categories info.
+     * An array of breadcrumb items.
      */
     List<Breadcrumb> getBreadcrumbs();
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Categories&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Categories&#39; is enabled.
      */
     String getCanonicalUrl();
 
     String getChildrenCount();
 
     /**
-     * Category CMS Block.
+     * Contains a category CMS block.
      */
     CmsBlock getCmsBlock();
 
     /**
-     * Timestamp indicating when the category was created.
+     * The timestamp indicating when the category was created.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -75,7 +75,7 @@ public interface CategoryInterface extends CustomFieldInterface {
     /**
      * An ID that uniquely identifies the category.
      *
-     * @deprecated Use the `uid` argument instead.
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     Integer getId();
@@ -89,7 +89,7 @@ public interface CategoryInterface extends CustomFieldInterface {
     Integer getLandingPage();
 
     /**
-     * Indicates the depth of the category within the tree.
+     * The depth of the category within the tree.
      */
     Integer getLevel();
 
@@ -105,12 +105,12 @@ public interface CategoryInterface extends CustomFieldInterface {
     String getName();
 
     /**
-     * Category Path.
+     * The full category path.
      */
     String getPath();
 
     /**
-     * Category path in store.
+     * The category path within the store.
      */
     String getPathInStore();
 
@@ -130,6 +130,9 @@ public interface CategoryInterface extends CustomFieldInterface {
      */
     CategoryProducts getProducts();
 
+    /**
+     * Indicates whether the category is staged for a future campaign.
+     */
     Boolean getStaged();
 
     /**
@@ -138,7 +141,7 @@ public interface CategoryInterface extends CustomFieldInterface {
     ID getUid();
 
     /**
-     * Timestamp indicating when the category was updated.
+     * The timestamp indicating when the category was updated.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -146,12 +149,12 @@ public interface CategoryInterface extends CustomFieldInterface {
     String getUpdatedAt();
 
     /**
-     * The url key assigned to the category.
+     * The URL key assigned to the category.
      */
     String getUrlKey();
 
     /**
-     * The url path assigned to the category.
+     * The URL path assigned to the category.
      */
     String getUrlPath();
 

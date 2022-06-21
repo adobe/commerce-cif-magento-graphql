@@ -18,13 +18,16 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains a customer wish list.
+ */
 public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     WishlistQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The unique ID for a `Wishlist` object
+     * The unique ID for a `Wishlist` object.
      */
     public WishlistQuery id() {
         startField("id");
@@ -33,7 +36,7 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * @deprecated Use field `items_v2` from type `Wishlist` instead
+     * @deprecated Use the `items_v2` field instead.
      */
     @Deprecated
     public WishlistQuery items(WishlistItemQueryDefinition queryDef) {
@@ -47,7 +50,7 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * The number of items in the wish list
+     * The number of items in the wish list.
      */
     public WishlistQuery itemsCount() {
         startField("items_count");
@@ -82,14 +85,14 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * An array of items in the customer&#39;s wish list
+     * An array of items in the customer&#39;s wish list.
      */
     public WishlistQuery itemsV2(WishlistItemsQueryDefinition queryDef) {
         return itemsV2(args -> {}, queryDef);
     }
 
     /**
-     * An array of items in the customer&#39;s wish list
+     * An array of items in the customer&#39;s wish list.
      */
     public WishlistQuery itemsV2(ItemsV2ArgumentsDefinition argsDef, WishlistItemsQueryDefinition queryDef) {
         startField("items_v2");
@@ -106,7 +109,7 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * The wish list name
+     * The name of the wish list.
      */
     public WishlistQuery name() {
         startField("name");
@@ -115,7 +118,7 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * An encrypted code that Magento uses to link to the wish list
+     * An encrypted code that Magento uses to link to the wish list.
      */
     public WishlistQuery sharingCode() {
         startField("sharing_code");
@@ -124,7 +127,7 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * The time of the last modification to the wish list
+     * The time of the last modification to the wish list.
      */
     public WishlistQuery updatedAt() {
         startField("updated_at");
@@ -133,7 +136,7 @@ public class WishlistQuery extends AbstractQuery<WishlistQuery> {
     }
 
     /**
-     * Indicates whether the wish list is public or private
+     * Indicates whether the wish list is public or private.
      */
     public WishlistQuery visibility() {
         startField("visibility");

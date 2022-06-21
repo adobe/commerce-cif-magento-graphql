@@ -27,7 +27,7 @@ public class PaypalExpressTokenOutputQuery extends AbstractQuery<PaypalExpressTo
     }
 
     /**
-     * A set of URLs that allow the buyer to authorize payment and adjust checkout details
+     * A set of URLs that allow the buyer to authorize payment and adjust checkout details.
      */
     public PaypalExpressTokenOutputQuery paypalUrls(PaypalExpressUrlListQueryDefinition queryDef) {
         startField("paypal_urls");
@@ -40,7 +40,7 @@ public class PaypalExpressTokenOutputQuery extends AbstractQuery<PaypalExpressTo
     }
 
     /**
-     * The token returned by PayPal
+     * The token returned by PayPal.
      */
     public PaypalExpressTokenOutputQuery token() {
         startField("token");

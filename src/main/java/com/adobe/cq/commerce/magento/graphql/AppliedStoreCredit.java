@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Applied and current balance
+ * Contains the applied and current balances.
  */
 public class AppliedStoreCredit extends AbstractResponse<AppliedStoreCredit> {
     public AppliedStoreCredit() {}
@@ -82,7 +82,7 @@ public class AppliedStoreCredit extends AbstractResponse<AppliedStoreCredit> {
     }
 
     /**
-     * Applied store credit balance to the current cart
+     * The applied store credit balance to the current cart.
      */
     public Money getAppliedBalance() {
         return (Money) get("applied_balance");
@@ -94,7 +94,7 @@ public class AppliedStoreCredit extends AbstractResponse<AppliedStoreCredit> {
     }
 
     /**
-     * Current balance remaining on store credit
+     * The current balance remaining on store credit.
      */
     public Money getCurrentBalance() {
         return (Money) get("current_balance");
@@ -107,7 +107,7 @@ public class AppliedStoreCredit extends AbstractResponse<AppliedStoreCredit> {
 
     /**
      * Indicates whether store credits are enabled. If the feature is disabled, then the current balance
-     * will not be returned
+     * will not be returned.
      */
     public Boolean getEnabled() {
         return (Boolean) get("enabled");

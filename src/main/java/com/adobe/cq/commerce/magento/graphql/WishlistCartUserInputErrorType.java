@@ -14,6 +14,9 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * A list of possible error types.
+ */
 public enum WishlistCartUserInputErrorType {
     INSUFFICIENT_STOCK,
 

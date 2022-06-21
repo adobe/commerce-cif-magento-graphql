@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the shipping address used for receiving returned items.
+ */
 public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddress> {
     public ReturnShippingAddress() {}
 
@@ -110,7 +113,7 @@ public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddres
     }
 
     /**
-     * The city for product returns
+     * The city for product returns.
      */
     public String getCity() {
         return (String) get("city");
@@ -122,7 +125,7 @@ public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddres
     }
 
     /**
-     * The merchant&#39;s contact person
+     * The merchant&#39;s contact person.
      */
     public String getContactName() {
         return (String) get("contact_name");
@@ -134,7 +137,7 @@ public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddres
     }
 
     /**
-     * An object that defines the country for product returns
+     * An object that defines the country for product returns.
      */
     public Country getCountry() {
         return (Country) get("country");
@@ -146,7 +149,7 @@ public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddres
     }
 
     /**
-     * The postal code for product returns
+     * The postal code for product returns.
      */
     public String getPostcode() {
         return (String) get("postcode");
@@ -158,7 +161,7 @@ public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddres
     }
 
     /**
-     * An object that defines the state or province for product returns
+     * An object that defines the state or province for product returns.
      */
     public Region getRegion() {
         return (Region) get("region");
@@ -170,7 +173,7 @@ public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddres
     }
 
     /**
-     * The street address for product returns
+     * The street address for product returns.
      */
     public List<String> getStreet() {
         return (List<String>) get("street");
@@ -182,7 +185,7 @@ public class ReturnShippingAddress extends AbstractResponse<ReturnShippingAddres
     }
 
     /**
-     * The telephone number for product returns
+     * The telephone number for product returns.
      */
     public String getTelephone() {
         return (String) get("telephone");

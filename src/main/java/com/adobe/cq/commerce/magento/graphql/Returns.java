@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains a list of customer return requests.
+ */
 public class Returns extends AbstractResponse<Returns> {
     public Returns() {}
 
@@ -91,7 +94,7 @@ public class Returns extends AbstractResponse<Returns> {
     }
 
     /**
-     * A list of return requests
+     * A list of return requests.
      */
     public List<Return> getItems() {
         return (List<Return>) get("items");
@@ -103,7 +106,7 @@ public class Returns extends AbstractResponse<Returns> {
     }
 
     /**
-     * Pagination metadata
+     * Pagination metadata.
      */
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");
@@ -115,7 +118,7 @@ public class Returns extends AbstractResponse<Returns> {
     }
 
     /**
-     * The total number of return requests
+     * The total number of return requests.
      */
     public Integer getTotalCount() {
         return (Integer) get("total_count");

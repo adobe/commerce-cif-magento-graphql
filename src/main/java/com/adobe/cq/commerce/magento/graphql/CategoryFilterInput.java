@@ -19,8 +19,8 @@ import java.io.Serializable;
 import com.shopify.graphql.support.Input;
 
 /**
- * CategoryFilterInput defines the filters to be used in the search. A filter contains at least one
- * attribute, a comparison operator, and the value that is being searched for.
+ * Defines the filters to be used in the search. A filter contains at least one attribute, a comparison
+ * operator, and the value that is being searched for.
  */
 public class CategoryFilterInput implements Serializable {
     private Input<FilterEqualTypeInput> categoryUid = Input.undefined();

@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the billing address.
+ */
 public class BillingCartAddress extends AbstractResponse<BillingCartAddress> implements CartAddressInterface {
     public BillingCartAddress() {}
 
@@ -116,7 +119,12 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
                 }
 
                 case "telephone": {
-                    responseData.put(key, jsonAsString(field.getValue(), key));
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -137,6 +145,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return "BillingCartAddress";
     }
 
+    /**
+     * The city specified for the billing or shipping address.
+     */
     public String getCity() {
         return (String) get("city");
     }
@@ -146,6 +157,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * The company specified for the billing or shipping address.
+     */
     public String getCompany() {
         return (String) get("company");
     }
@@ -155,6 +169,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * An object containing the country label and code.
+     */
     public CartAddressCountry getCountry() {
         return (CartAddressCountry) get("country");
     }
@@ -165,7 +182,7 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
     }
 
     /**
-     * @deprecated The field is used only in shipping address
+     * @deprecated The field is used only in shipping address.
      */
     @Deprecated
     public String getCustomerNotes() {
@@ -177,6 +194,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * The first name of the customer or guest.
+     */
     public String getFirstname() {
         return (String) get("firstname");
     }
@@ -186,6 +206,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * The last name of the customer or guest.
+     */
     public String getLastname() {
         return (String) get("lastname");
     }
@@ -195,6 +218,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * The ZIP or postal code of the billing or shipping address.
+     */
     public String getPostcode() {
         return (String) get("postcode");
     }
@@ -204,6 +230,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * An object containing the region label and code.
+     */
     public CartAddressRegion getRegion() {
         return (CartAddressRegion) get("region");
     }
@@ -213,6 +242,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * An array containing the street for the billing or shipping address.
+     */
     public List<String> getStreet() {
         return (List<String>) get("street");
     }
@@ -222,6 +254,9 @@ public class BillingCartAddress extends AbstractResponse<BillingCartAddress> imp
         return this;
     }
 
+    /**
+     * The telephone number for the billing or shipping address.
+     */
     public String getTelephone() {
         return (String) get("telephone");
     }

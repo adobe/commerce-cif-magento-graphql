@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Credit memo details
+ * Contains credit memo details.
  */
 public class CreditMemoQuery extends AbstractQuery<CreditMemoQuery> {
     CreditMemoQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CreditMemoQuery extends AbstractQuery<CreditMemoQuery> {
     }
 
     /**
-     * Comments on the credit memo
+     * Comments on the credit memo.
      */
     public CreditMemoQuery comments(SalesCommentItemQueryDefinition queryDef) {
         startField("comments");
@@ -39,7 +39,7 @@ public class CreditMemoQuery extends AbstractQuery<CreditMemoQuery> {
     }
 
     /**
-     * The unique ID for a `CreditMemo` object
+     * The unique ID for a `CreditMemo` object.
      */
     public CreditMemoQuery id() {
         startField("id");
@@ -48,7 +48,7 @@ public class CreditMemoQuery extends AbstractQuery<CreditMemoQuery> {
     }
 
     /**
-     * An array containing details about refunded items
+     * An array containing details about refunded items.
      */
     public CreditMemoQuery items(CreditMemoItemInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -61,7 +61,7 @@ public class CreditMemoQuery extends AbstractQuery<CreditMemoQuery> {
     }
 
     /**
-     * The sequential credit memo number
+     * The sequential credit memo number.
      */
     public CreditMemoQuery number() {
         startField("number");
@@ -70,7 +70,7 @@ public class CreditMemoQuery extends AbstractQuery<CreditMemoQuery> {
     }
 
     /**
-     * Contains details about the total refunded amount
+     * Details about the total refunded amount.
      */
     public CreditMemoQuery total(CreditMemoTotalQueryDefinition queryDef) {
         startField("total");

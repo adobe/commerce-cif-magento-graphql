@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Details of a product review
+ * Contains details of a product review.
  */
 public class ProductReviewQuery extends AbstractQuery<ProductReviewQuery> {
     ProductReviewQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ProductReviewQuery extends AbstractQuery<ProductReviewQuery> {
     }
 
     /**
-     * The average rating for product review.
+     * The average of all ratings for this product.
      */
     public ProductReviewQuery averageRating() {
         startField("average_rating");
@@ -35,7 +35,7 @@ public class ProductReviewQuery extends AbstractQuery<ProductReviewQuery> {
     }
 
     /**
-     * Date indicating when the review was created.
+     * The date the review was created.
      */
     public ProductReviewQuery createdAt() {
         startField("created_at");
@@ -44,7 +44,7 @@ public class ProductReviewQuery extends AbstractQuery<ProductReviewQuery> {
     }
 
     /**
-     * The customer&#39;s nickname. Defaults to the customer name, if logged in
+     * The customer&#39;s nickname. Defaults to the customer name, if logged in.
      */
     public ProductReviewQuery nickname() {
         startField("nickname");
@@ -53,7 +53,7 @@ public class ProductReviewQuery extends AbstractQuery<ProductReviewQuery> {
     }
 
     /**
-     * Contains details about the reviewed product
+     * The reviewed product.
      */
     public ProductReviewQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -66,7 +66,7 @@ public class ProductReviewQuery extends AbstractQuery<ProductReviewQuery> {
     }
 
     /**
-     * An array of ratings by rating category, such as quality, price, and value
+     * An array of ratings by rating category, such as quality, price, and value.
      */
     public ProductReviewQuery ratingsBreakdown(ProductReviewRatingQueryDefinition queryDef) {
         startField("ratings_breakdown");
@@ -79,7 +79,7 @@ public class ProductReviewQuery extends AbstractQuery<ProductReviewQuery> {
     }
 
     /**
-     * The summary (title) of the review
+     * The summary (title) of the review.
      */
     public ProductReviewQuery summary() {
         startField("summary");

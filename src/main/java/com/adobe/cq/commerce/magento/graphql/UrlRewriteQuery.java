@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The object contains URL rewrite details
+ * Contains URL rewrite details.
  */
 public class UrlRewriteQuery extends AbstractQuery<UrlRewriteQuery> {
     UrlRewriteQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class UrlRewriteQuery extends AbstractQuery<UrlRewriteQuery> {
     }
 
     /**
-     * Request parameters
+     * An array of request parameters.
      */
     public UrlRewriteQuery parameters(HttpQueryParameterQueryDefinition queryDef) {
         startField("parameters");
@@ -39,7 +39,7 @@ public class UrlRewriteQuery extends AbstractQuery<UrlRewriteQuery> {
     }
 
     /**
-     * Request URL
+     * The request URL.
      */
     public UrlRewriteQuery url() {
         startField("url");

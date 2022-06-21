@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the selected shipping method and carrier.
+ */
 public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMethod> {
     public SelectedShippingMethod() {}
 
@@ -86,6 +89,9 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
         return "SelectedShippingMethod";
     }
 
+    /**
+     * The cost of shipping using this shipping method.
+     */
     public Money getAmount() {
         return (Money) get("amount");
     }
@@ -96,7 +102,7 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
     }
 
     /**
-     * @deprecated The field should not be used on the storefront
+     * @deprecated The field should not be used on the storefront.
      */
     @Deprecated
     public Money getBaseAmount() {
@@ -108,6 +114,9 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
         return this;
     }
 
+    /**
+     * A string that identifies a commercial carrier or an offline shipping method.
+     */
     public String getCarrierCode() {
         return (String) get("carrier_code");
     }
@@ -117,6 +126,9 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
         return this;
     }
 
+    /**
+     * The label for the carrier code.
+     */
     public String getCarrierTitle() {
         return (String) get("carrier_title");
     }
@@ -126,6 +138,9 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
         return this;
     }
 
+    /**
+     * A shipping method code associated with a carrier.
+     */
     public String getMethodCode() {
         return (String) get("method_code");
     }
@@ -135,6 +150,9 @@ public class SelectedShippingMethod extends AbstractResponse<SelectedShippingMet
         return this;
     }
 
+    /**
+     * The label for the method code.
+     */
     public String getMethodTitle() {
         return (String) get("method_title");
     }

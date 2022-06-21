@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.Input;
 
 /**
- * Required input for Payflow Pro and Payments Pro payment methods.
+ * Contains input for the Payflow Pro and Payments Pro payment methods.
  */
 public class PayflowProInput implements Serializable {
     private CreditCardDetailsInput ccDetails;
@@ -31,14 +31,14 @@ public class PayflowProInput implements Serializable {
     }
 
     /**
-     * Required input for credit card related information
+     * Required input for credit card related information.
      */
     public CreditCardDetailsInput getCcDetails() {
         return ccDetails;
     }
 
     /**
-     * Required input for credit card related information
+     * Required input for credit card related information.
      */
     public PayflowProInput setCcDetails(CreditCardDetailsInput ccDetails) {
         this.ccDetails = ccDetails;
@@ -46,24 +46,24 @@ public class PayflowProInput implements Serializable {
     }
 
     /**
-     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
-     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     * Indicates whether details about the shopper&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for the PayPal Payflow Pro payment integration.
      */
     public Boolean getIsActivePaymentTokenEnabler() {
         return isActivePaymentTokenEnabler.getValue();
     }
 
     /**
-     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
-     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     * Indicates whether details about the shopper&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for the PayPal Payflow Pro payment integration.
      */
     public Input<Boolean> getIsActivePaymentTokenEnablerInput() {
         return isActivePaymentTokenEnabler;
     }
 
     /**
-     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
-     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     * Indicates whether details about the shopper&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for the PayPal Payflow Pro payment integration.
      */
     public PayflowProInput setIsActivePaymentTokenEnabler(Boolean isActivePaymentTokenEnabler) {
         this.isActivePaymentTokenEnabler = Input.optional(isActivePaymentTokenEnabler);
@@ -71,8 +71,8 @@ public class PayflowProInput implements Serializable {
     }
 
     /**
-     * States whether details about the customer&#39;s credit/debit card should be tokenized for later usage.
-     * Required only if Vault is enabled for PayPal Payflow Pro payment integration.
+     * Indicates whether details about the shopper&#39;s credit/debit card should be tokenized for later usage.
+     * Required only if Vault is enabled for the PayPal Payflow Pro payment integration.
      */
     public PayflowProInput setIsActivePaymentTokenEnablerInput(Input<Boolean> isActivePaymentTokenEnabler) {
         if (isActivePaymentTokenEnabler == null) {

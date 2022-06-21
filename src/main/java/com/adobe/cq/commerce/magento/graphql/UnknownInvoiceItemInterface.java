@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Invoice item details
+ * Contains detailes about invoiced items.
  */
 public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoiceItemInterface> implements InvoiceItemInterface {
     public UnknownInvoiceItemInterface() {}
@@ -149,8 +149,7 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -162,7 +161,7 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
     }
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -174,7 +173,7 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
     }
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -186,7 +185,7 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -198,7 +197,7 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
     }
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -210,7 +209,7 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -222,7 +221,7 @@ public class UnknownInvoiceItemInterface extends AbstractResponse<UnknownInvoice
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public Double getQuantityInvoiced() {
         return (Double) get("quantity_invoiced");

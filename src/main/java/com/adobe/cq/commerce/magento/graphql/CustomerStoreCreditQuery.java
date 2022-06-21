@@ -19,7 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains store credit information with balance and history
+ * Contains store credit information with balance and history.
  */
 public class CustomerStoreCreditQuery extends AbstractQuery<CustomerStoreCreditQuery> {
     CustomerStoreCreditQuery(StringBuilder _queryBuilder) {
@@ -32,8 +32,7 @@ public class CustomerStoreCreditQuery extends AbstractQuery<CustomerStoreCreditQ
         }
 
         /**
-         * Specifies the maximum number of results to return at once. This value is optional. The default value
-         * is 20
+         * The maximum number of results to return at once. The default is 20.
          */
         public BalanceHistoryArguments pageSize(Integer value) {
             if (value != null) {
@@ -44,7 +43,7 @@ public class CustomerStoreCreditQuery extends AbstractQuery<CustomerStoreCreditQ
         }
 
         /**
-         * Specifies which page of results to return. This value is optional. The default value is 1.
+         * The page of results to return. This value is optional. The default is 1.
          */
         public BalanceHistoryArguments currentPage(Integer value) {
             if (value != null) {
@@ -60,16 +59,16 @@ public class CustomerStoreCreditQuery extends AbstractQuery<CustomerStoreCreditQ
     }
 
     /**
-     * Customer Store credit balance history. If the history or store credit feature is disabled, then a
-     * null value will be returned.
+     * Contains the customer&#39;s store credit balance history. If the history or store credit feature is
+     * disabled, then a null value will be returned.
      */
     public CustomerStoreCreditQuery balanceHistory(CustomerStoreCreditHistoryQueryDefinition queryDef) {
         return balanceHistory(args -> {}, queryDef);
     }
 
     /**
-     * Customer Store credit balance history. If the history or store credit feature is disabled, then a
-     * null value will be returned.
+     * Contains the customer&#39;s store credit balance history. If the history or store credit feature is
+     * disabled, then a null value will be returned.
      */
     public CustomerStoreCreditQuery balanceHistory(BalanceHistoryArgumentsDefinition argsDef,
         CustomerStoreCreditHistoryQueryDefinition queryDef) {
@@ -87,7 +86,7 @@ public class CustomerStoreCreditQuery extends AbstractQuery<CustomerStoreCreditQ
     }
 
     /**
-     * Current balance on store credit
+     * The current balance of store credit.
      */
     public CustomerStoreCreditQuery currentBalance(MoneyQueryDefinition queryDef) {
         startField("current_balance");
@@ -101,7 +100,7 @@ public class CustomerStoreCreditQuery extends AbstractQuery<CustomerStoreCreditQ
 
     /**
      * Indicates whether store credits are enabled. If the feature is disabled, then the balance will not
-     * be returned
+     * be returned.
      */
     public CustomerStoreCreditQuery enabled() {
         startField("enabled");

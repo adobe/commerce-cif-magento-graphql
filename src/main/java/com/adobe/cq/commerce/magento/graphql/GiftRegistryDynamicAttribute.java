@@ -72,7 +72,7 @@ public class GiftRegistryDynamicAttribute extends AbstractResponse<GiftRegistryD
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public ID getCode() {
         return (ID) get("code");
@@ -84,7 +84,7 @@ public class GiftRegistryDynamicAttribute extends AbstractResponse<GiftRegistryD
     }
 
     /**
-     * Indicates which group the dynamic attribute is a member of
+     * Indicates which group the dynamic attribute is a member of.
      */
     public GiftRegistryDynamicAttributeGroup getGroup() {
         return (GiftRegistryDynamicAttributeGroup) get("group");
@@ -96,7 +96,7 @@ public class GiftRegistryDynamicAttribute extends AbstractResponse<GiftRegistryD
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public String getLabel() {
         return (String) get("label");
@@ -108,7 +108,7 @@ public class GiftRegistryDynamicAttribute extends AbstractResponse<GiftRegistryD
     }
 
     /**
-     * A corresponding value for the code
+     * A corresponding value for the code.
      */
     public String getValue() {
         return (String) get("value");

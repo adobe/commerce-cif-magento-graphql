@@ -14,6 +14,9 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Defines the group type of a gift registry dynamic attribute.
+ */
 public enum GiftRegistryDynamicAttributeGroup {
     DETAILED_INFORMATION,
 

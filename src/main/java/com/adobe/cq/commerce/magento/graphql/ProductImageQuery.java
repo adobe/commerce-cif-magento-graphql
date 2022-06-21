@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Product image information. Contains the image URL and label.
+ * Contains product image information, including the image URL and label.
  */
 public class ProductImageQuery extends AbstractQuery<ProductImageQuery> {
     ProductImageQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ProductImageQuery extends AbstractQuery<ProductImageQuery> {
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public ProductImageQuery disabled() {
         startField("disabled");

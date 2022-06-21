@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * DownloadableProductLinks defines characteristics of a downloadable product
+ * Defines characteristics of a downloadable product.
  */
 public class DownloadableProductLinks extends AbstractResponse<DownloadableProductLinks> {
     public DownloadableProductLinks() {}
@@ -166,7 +166,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public Integer getId() {
@@ -179,7 +179,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public Boolean getIsShareable() {
@@ -205,7 +205,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public Integer getNumberOfDownloads() {
@@ -218,7 +218,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * The price of the downloadable product
+     * The price of the downloadable product.
      */
     public Double getPrice() {
         return (Double) get("price");
@@ -256,7 +256,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * URL to the downloadable sample
+     * The full URL to the downloadable sample.
      */
     public String getSampleUrl() {
         return (String) get("sample_url");
@@ -268,7 +268,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * A number indicating the sort order
+     * A number indicating the sort order.
      */
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
@@ -280,7 +280,7 @@ public class DownloadableProductLinks extends AbstractResponse<DownloadableProdu
     }
 
     /**
-     * The display name of the link
+     * The display name of the link.
      */
     public String getTitle() {
         return (String) get("title");

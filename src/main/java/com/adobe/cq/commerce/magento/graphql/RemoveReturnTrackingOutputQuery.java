@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the response after deleting tracking information.
+ */
 public class RemoveReturnTrackingOutputQuery extends AbstractQuery<RemoveReturnTrackingOutputQuery> {
     RemoveReturnTrackingOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains details about the modified return
+     * Contains details about the modified return.
      */
     public RemoveReturnTrackingOutputQuery returnValue(ReturnQueryDefinition queryDef) {
         startField("return");

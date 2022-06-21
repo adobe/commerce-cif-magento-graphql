@@ -24,7 +24,7 @@ public interface MediaGalleryInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     Boolean getDisabled();
 

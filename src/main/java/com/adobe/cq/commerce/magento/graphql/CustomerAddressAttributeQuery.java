@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Specifies the attribute code and value of a customer address attribute.
+ */
 public class CustomerAddressAttributeQuery extends AbstractQuery<CustomerAddressAttributeQuery> {
     CustomerAddressAttributeQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Attribute code
+     * The name assigned to the customer address attribute.
      */
     public CustomerAddressAttributeQuery attributeCode() {
         startField("attribute_code");
@@ -32,7 +35,7 @@ public class CustomerAddressAttributeQuery extends AbstractQuery<CustomerAddress
     }
 
     /**
-     * Attribute value
+     * The valuue assigned to the customer address attribute.
      */
     public CustomerAddressAttributeQuery value() {
         startField("value");

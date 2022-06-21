@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains prices for gift wrapping options.
+ */
 public class GiftOptionsPrices extends AbstractResponse<GiftOptionsPrices> {
     public GiftOptionsPrices() {}
 
@@ -79,7 +82,7 @@ public class GiftOptionsPrices extends AbstractResponse<GiftOptionsPrices> {
     }
 
     /**
-     * Price of the gift wrapping for all individual order items
+     * Price of the gift wrapping for all individual order items.
      */
     public Money getGiftWrappingForItems() {
         return (Money) get("gift_wrapping_for_items");
@@ -91,7 +94,7 @@ public class GiftOptionsPrices extends AbstractResponse<GiftOptionsPrices> {
     }
 
     /**
-     * Price of the gift wrapping for the whole order
+     * Price of the gift wrapping for the whole order.
      */
     public Money getGiftWrappingForOrder() {
         return (Money) get("gift_wrapping_for_order");
@@ -103,7 +106,7 @@ public class GiftOptionsPrices extends AbstractResponse<GiftOptionsPrices> {
     }
 
     /**
-     * Price for the printed card
+     * Price for the printed card.
      */
     public Money getPrintedCard() {
         return (Money) get("printed_card");

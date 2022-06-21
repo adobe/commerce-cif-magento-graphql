@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines a single downloadable product.
+ */
 public class DownloadableProductCartItemInput implements Serializable {
     private CartItemInput data;
 
@@ -30,28 +33,46 @@ public class DownloadableProductCartItemInput implements Serializable {
         this.data = data;
     }
 
+    /**
+     * The quantity and SKU of the downloadable product.
+     */
     public CartItemInput getData() {
         return data;
     }
 
+    /**
+     * The quantity and SKU of the downloadable product.
+     */
     public DownloadableProductCartItemInput setData(CartItemInput data) {
         this.data = data;
         return this;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public List<CustomizableOptionInput> getCustomizableOptions() {
         return customizableOptions.getValue();
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public Input<List<CustomizableOptionInput>> getCustomizableOptionsInput() {
         return customizableOptions;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public DownloadableProductCartItemInput setCustomizableOptions(List<CustomizableOptionInput> customizableOptions) {
         this.customizableOptions = Input.optional(customizableOptions);
         return this;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public DownloadableProductCartItemInput setCustomizableOptionsInput(Input<List<CustomizableOptionInput>> customizableOptions) {
         if (customizableOptions == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -60,19 +81,31 @@ public class DownloadableProductCartItemInput implements Serializable {
         return this;
     }
 
+    /**
+     * An array of objects containing the link_id of the downloadable product link.
+     */
     public List<DownloadableProductLinksInput> getDownloadableProductLinks() {
         return downloadableProductLinks.getValue();
     }
 
+    /**
+     * An array of objects containing the link_id of the downloadable product link.
+     */
     public Input<List<DownloadableProductLinksInput>> getDownloadableProductLinksInput() {
         return downloadableProductLinks;
     }
 
+    /**
+     * An array of objects containing the link_id of the downloadable product link.
+     */
     public DownloadableProductCartItemInput setDownloadableProductLinks(List<DownloadableProductLinksInput> downloadableProductLinks) {
         this.downloadableProductLinks = Input.optional(downloadableProductLinks);
         return this;
     }
 
+    /**
+     * An array of objects containing the link_id of the downloadable product link.
+     */
     public DownloadableProductCartItemInput setDownloadableProductLinksInput(
         Input<List<DownloadableProductLinksInput>> downloadableProductLinks) {
         if (downloadableProductLinks == null) {

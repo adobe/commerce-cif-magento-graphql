@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines a customizable option.
+ */
 public class CustomizableOptionInput implements Serializable {
     private String valueString;
 
@@ -29,14 +32,14 @@ public class CustomizableOptionInput implements Serializable {
     }
 
     /**
-     * The string value of the option
+     * The string value of the option.
      */
     public String getValueString() {
         return valueString;
     }
 
     /**
-     * The string value of the option
+     * The string value of the option.
      */
     public CustomizableOptionInput setValueString(String valueString) {
         this.valueString = valueString;
@@ -44,21 +47,21 @@ public class CustomizableOptionInput implements Serializable {
     }
 
     /**
-     * The customizable option id of the product
+     * The customizable option ID of the product.
      */
     public Integer getId() {
         return id.getValue();
     }
 
     /**
-     * The customizable option id of the product
+     * The customizable option ID of the product.
      */
     public Input<Integer> getIdInput() {
         return id;
     }
 
     /**
-     * The customizable option id of the product
+     * The customizable option ID of the product.
      */
     public CustomizableOptionInput setId(Integer id) {
         this.id = Input.optional(id);
@@ -66,7 +69,7 @@ public class CustomizableOptionInput implements Serializable {
     }
 
     /**
-     * The customizable option id of the product
+     * The customizable option ID of the product.
      */
     public CustomizableOptionInput setIdInput(Input<Integer> id) {
         if (id == null) {

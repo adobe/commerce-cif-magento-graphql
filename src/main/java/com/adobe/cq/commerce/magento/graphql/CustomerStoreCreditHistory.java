@@ -106,7 +106,7 @@ public class CustomerStoreCreditHistory extends AbstractResponse<CustomerStoreCr
     }
 
     /**
-     * An object that includes the current_page page_info and page_size values specified in the query.
+     * Metadata for pagination rendering.
      */
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");

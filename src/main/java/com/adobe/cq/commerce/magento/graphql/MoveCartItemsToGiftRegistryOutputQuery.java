@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains the customer&#39;s gift registry and any errors encountered
+ * Contains the customer&#39;s gift registry and any errors encountered.
  */
 public class MoveCartItemsToGiftRegistryOutputQuery extends AbstractQuery<MoveCartItemsToGiftRegistryOutputQuery> {
     MoveCartItemsToGiftRegistryOutputQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class MoveCartItemsToGiftRegistryOutputQuery extends AbstractQuery<MoveCa
     }
 
     /**
-     * The gift registry
+     * The gift registry.
      */
     public MoveCartItemsToGiftRegistryOutputQuery giftRegistry(GiftRegistryQueryDefinition queryDef) {
         startField("gift_registry");
@@ -39,7 +39,7 @@ public class MoveCartItemsToGiftRegistryOutputQuery extends AbstractQuery<MoveCa
     }
 
     /**
-     * Indicates whether the attempt to move the cart items to the gift registry was successful
+     * Indicates whether the attempt to move the cart items to the gift registry was successful.
      */
     public MoveCartItemsToGiftRegistryOutputQuery status() {
         startField("status");
@@ -48,7 +48,7 @@ public class MoveCartItemsToGiftRegistryOutputQuery extends AbstractQuery<MoveCa
     }
 
     /**
-     * An array of errors encountered while moving items from the cart to the gift registry
+     * An array of errors encountered while moving items from the cart to the gift registry.
      */
     public MoveCartItemsToGiftRegistryOutputQuery userErrors(GiftRegistryItemsUserErrorQueryDefinition queryDef) {
         startField("user_errors");

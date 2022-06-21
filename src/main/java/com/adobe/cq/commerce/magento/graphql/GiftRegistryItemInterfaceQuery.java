@@ -30,7 +30,7 @@ public class GiftRegistryItemInterfaceQuery extends AbstractQuery<GiftRegistryIt
     }
 
     /**
-     * The date the product was added to the gift registry
+     * The date the product was added to the gift registry.
      */
     public GiftRegistryItemInterfaceQuery createdAt() {
         startField("created_at");
@@ -39,7 +39,7 @@ public class GiftRegistryItemInterfaceQuery extends AbstractQuery<GiftRegistryIt
     }
 
     /**
-     * A brief message about the gift registry item
+     * A brief message about the gift registry item.
      */
     public GiftRegistryItemInterfaceQuery note() {
         startField("note");
@@ -47,6 +47,9 @@ public class GiftRegistryItemInterfaceQuery extends AbstractQuery<GiftRegistryIt
         return this;
     }
 
+    /**
+     * Details about the gift registry item.
+     */
     public GiftRegistryItemInterfaceQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -58,7 +61,7 @@ public class GiftRegistryItemInterfaceQuery extends AbstractQuery<GiftRegistryIt
     }
 
     /**
-     * The requested quantity of the product
+     * The requested quantity of the product.
      */
     public GiftRegistryItemInterfaceQuery quantity() {
         startField("quantity");
@@ -67,7 +70,7 @@ public class GiftRegistryItemInterfaceQuery extends AbstractQuery<GiftRegistryIt
     }
 
     /**
-     * The fulfilled quantity of the product
+     * The fulfilled quantity of the product.
      */
     public GiftRegistryItemInterfaceQuery quantityFulfilled() {
         startField("quantity_fulfilled");
@@ -76,7 +79,7 @@ public class GiftRegistryItemInterfaceQuery extends AbstractQuery<GiftRegistryIt
     }
 
     /**
-     * The unique ID of a gift registry item
+     * The unique ID of a gift registry item.
      */
     public GiftRegistryItemInterfaceQuery uid() {
         startField("uid");

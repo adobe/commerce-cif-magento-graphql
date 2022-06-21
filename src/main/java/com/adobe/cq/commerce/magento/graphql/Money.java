@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A Money object defines a monetary value, including a numeric value and a currency code.
+ * Defines a monetary value, including a numeric value and a currency code.
  */
 public class Money extends AbstractResponse<Money> {
     public Money() {}
@@ -71,7 +71,7 @@ public class Money extends AbstractResponse<Money> {
     }
 
     /**
-     * A three-letter currency code, such as USD or EUR
+     * A three-letter currency code, such as USD or EUR.
      */
     public CurrencyEnum getCurrency() {
         return (CurrencyEnum) get("currency");
@@ -83,7 +83,7 @@ public class Money extends AbstractResponse<Money> {
     }
 
     /**
-     * A number expressing a monetary value
+     * A number expressing a monetary value.
      */
     public Double getValue() {
         return (Double) get("value");

@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains details about each of the customer&#39;s orders
+ * Contains details about each of the customer&#39;s orders.
  */
 public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     public CustomerOrder() {}
@@ -357,7 +357,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The billing address for the order
+     * The billing address for the order.
      */
     public OrderAddress getBillingAddress() {
         return (OrderAddress) get("billing_address");
@@ -369,7 +369,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The shipping carrier for the order delivery
+     * The shipping carrier for the order delivery.
      */
     public String getCarrier() {
         return (String) get("carrier");
@@ -381,7 +381,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * Comments about the order
+     * Comments about the order.
      */
     public List<SalesCommentItem> getComments() {
         return (List<SalesCommentItem>) get("comments");
@@ -393,7 +393,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * @deprecated Use the order_date attribute instead
+     * @deprecated Use the `order_date` field instead.
      */
     @Deprecated
     public String getCreatedAt() {
@@ -406,7 +406,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * A list of credit memos
+     * A list of credit memos.
      */
     public List<CreditMemo> getCreditMemos() {
         return (List<CreditMemo>) get("credit_memos");
@@ -430,7 +430,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * Whether customer requested gift receipt for the order
+     * Indicates whether the customer requested a gift receipt for the order.
      */
     public Boolean getGiftReceiptIncluded() {
         return (Boolean) get("gift_receipt_included");
@@ -442,7 +442,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The selected gift wrapping for the order
+     * The selected gift wrapping for the order.
      */
     public GiftWrapping getGiftWrapping() {
         return (GiftWrapping) get("gift_wrapping");
@@ -454,7 +454,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * @deprecated Use the totals.grand_total attribute instead
+     * @deprecated Use the `totals.grand_total` field instead.
      */
     @Deprecated
     public Double getGrandTotal() {
@@ -467,7 +467,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The unique ID for a `CustomerOrder` object
+     * The unique ID for a `CustomerOrder` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -479,7 +479,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * @deprecated Use the id attribute instead
+     * @deprecated Use the `id` field instead.
      */
     @Deprecated
     public String getIncrementId() {
@@ -492,7 +492,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * A list of invoices for the order
+     * A list of invoices for the order.
      */
     public List<Invoice> getInvoices() {
         return (List<Invoice>) get("invoices");
@@ -504,7 +504,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * An array containing the items purchased in this order
+     * An array containing the items purchased in this order.
      */
     public List<OrderItemInterface> getItems() {
         return (List<OrderItemInterface>) get("items");
@@ -516,7 +516,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * A list of order items eligible to be in a return request
+     * A list of order items eligible to be in a return request.
      */
     public List<OrderItemInterface> getItemsEligibleForReturn() {
         return (List<OrderItemInterface>) get("items_eligible_for_return");
@@ -528,7 +528,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The order number
+     * The order number.
      */
     public String getNumber() {
         return (String) get("number");
@@ -540,7 +540,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The date the order was placed
+     * The date the order was placed.
      */
     public String getOrderDate() {
         return (String) get("order_date");
@@ -552,7 +552,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * @deprecated Use the number attribute instead
+     * @deprecated Use the `number` field instead.
      */
     @Deprecated
     public String getOrderNumber() {
@@ -565,7 +565,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * Payment details for the order
+     * Payment details for the order.
      */
     public List<OrderPaymentMethod> getPaymentMethods() {
         return (List<OrderPaymentMethod>) get("payment_methods");
@@ -577,7 +577,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * Whether customer requested printed card for the order
+     * Indicates whether the customer requested a printed card for the order.
      */
     public Boolean getPrintedCardIncluded() {
         return (Boolean) get("printed_card_included");
@@ -601,7 +601,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * A list of shipments for the order
+     * A list of shipments for the order.
      */
     public List<OrderShipment> getShipments() {
         return (List<OrderShipment>) get("shipments");
@@ -613,7 +613,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The shipping address for the order
+     * The shipping address for the order.
      */
     public OrderAddress getShippingAddress() {
         return (OrderAddress) get("shipping_address");
@@ -625,7 +625,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The delivery method for the order
+     * The delivery method for the order.
      */
     public String getShippingMethod() {
         return (String) get("shipping_method");
@@ -637,7 +637,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * The current status of the order
+     * The current status of the order.
      */
     public String getStatus() {
         return (String) get("status");
@@ -649,7 +649,7 @@ public class CustomerOrder extends AbstractResponse<CustomerOrder> {
     }
 
     /**
-     * Contains details about the calculated totals for this order
+     * Details about the calculated totals for this order.
      */
     public OrderTotal getTotal() {
         return (OrderTotal) get("total");

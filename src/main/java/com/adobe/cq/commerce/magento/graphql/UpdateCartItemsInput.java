@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Modifies the specified items in the cart.
+ */
 public class UpdateCartItemsInput implements Serializable {
     private String cartId;
 
@@ -30,19 +33,31 @@ public class UpdateCartItemsInput implements Serializable {
         this.cartItems = cartItems;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public UpdateCartItemsInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of items to be updated.
+     */
     public List<CartItemUpdateInput> getCartItems() {
         return cartItems;
     }
 
+    /**
+     * An array of items to be updated.
+     */
     public UpdateCartItemsInput setCartItems(List<CartItemUpdateInput> cartItems) {
         this.cartItems = cartItems;
         return this;

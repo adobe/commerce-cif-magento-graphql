@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the final price of items in the cart, including discount and tax information.
+ */
 public class CartPrices extends AbstractResponse<CartPrices> {
     public CartPrices() {}
 
@@ -155,6 +158,9 @@ public class CartPrices extends AbstractResponse<CartPrices> {
         return "CartPrices";
     }
 
+    /**
+     * An array containing the names and amounts of taxes applied to each item in the cart.
+     */
     public List<CartTaxItem> getAppliedTaxes() {
         return (List<CartTaxItem>) get("applied_taxes");
     }
@@ -165,7 +171,7 @@ public class CartPrices extends AbstractResponse<CartPrices> {
     }
 
     /**
-     * @deprecated Use discounts instead
+     * @deprecated Use discounts instead.
      */
     @Deprecated
     public CartDiscount getDiscount() {
@@ -178,7 +184,7 @@ public class CartPrices extends AbstractResponse<CartPrices> {
     }
 
     /**
-     * An array of applied discounts
+     * An array containing all discounts applied to the cart.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -190,7 +196,7 @@ public class CartPrices extends AbstractResponse<CartPrices> {
     }
 
     /**
-     * The list of prices for the selected gift options
+     * The list of prices for the selected gift options.
      */
     public GiftOptionsPrices getGiftOptions() {
         return (GiftOptionsPrices) get("gift_options");
@@ -201,6 +207,9 @@ public class CartPrices extends AbstractResponse<CartPrices> {
         return this;
     }
 
+    /**
+     * The total, including discounts, taxes, shipping, and other fees.
+     */
     public Money getGrandTotal() {
         return (Money) get("grand_total");
     }
@@ -210,6 +219,9 @@ public class CartPrices extends AbstractResponse<CartPrices> {
         return this;
     }
 
+    /**
+     * The subtotal without any applied taxes.
+     */
     public Money getSubtotalExcludingTax() {
         return (Money) get("subtotal_excluding_tax");
     }
@@ -219,6 +231,9 @@ public class CartPrices extends AbstractResponse<CartPrices> {
         return this;
     }
 
+    /**
+     * The subtotal including any applied taxes.
+     */
     public Money getSubtotalIncludingTax() {
         return (Money) get("subtotal_including_tax");
     }
@@ -228,6 +243,9 @@ public class CartPrices extends AbstractResponse<CartPrices> {
         return this;
     }
 
+    /**
+     * The subtotal with any discounts applied, but not taxes.
+     */
     public Money getSubtotalWithDiscountExcludingTax() {
         return (Money) get("subtotal_with_discount_excluding_tax");
     }

@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the guest email and cart.
+ */
 public class SetGuestEmailOnCartInput implements Serializable {
     private String cartId;
 
@@ -29,19 +32,31 @@ public class SetGuestEmailOnCartInput implements Serializable {
         this.email = email;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public SetGuestEmailOnCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * The email address of the guest.
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * The email address of the guest.
+     */
     public SetGuestEmailOnCartInput setEmail(String email) {
         this.email = email;
         return this;

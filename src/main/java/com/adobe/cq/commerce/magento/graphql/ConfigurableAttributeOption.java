@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ConfigurableAttributeOption contains the value_index (and other related information) assigned to a
- * configurable product option
+ * Contains details about a configurable product attribute option.
  */
 public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAttributeOption> {
     public ConfigurableAttributeOption() {}
@@ -90,7 +89,7 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     }
 
     /**
-     * The ID assigned to the attribute
+     * The ID assigned to the attribute.
      */
     public String getCode() {
         return (String) get("code");
@@ -102,7 +101,7 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     }
 
     /**
-     * A string that describes the configurable attribute option
+     * A string that describes the configurable attribute option.
      */
     public String getLabel() {
         return (String) get("label");
@@ -114,7 +113,7 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     }
 
     /**
-     * The unique ID for a `ConfigurableAttributeOption` object
+     * The unique ID for a `ConfigurableAttributeOption` object.
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -126,7 +125,7 @@ public class ConfigurableAttributeOption extends AbstractResponse<ConfigurableAt
     }
 
     /**
-     * A unique index number assigned to the configurable product option
+     * A unique index number assigned to the configurable product option.
      */
     public Integer getValueIndex() {
         return (Integer) get("value_index");

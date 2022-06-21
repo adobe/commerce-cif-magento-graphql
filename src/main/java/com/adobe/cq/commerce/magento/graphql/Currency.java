@@ -155,6 +155,9 @@ public class Currency extends AbstractResponse<Currency> {
         return "Currency";
     }
 
+    /**
+     * An array of three-letter currency codes accepted by the store, such as USD and EUR.
+     */
     public List<String> getAvailableCurrencyCodes() {
         return (List<String>) get("available_currency_codes");
     }
@@ -164,6 +167,9 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    /**
+     * The base currency set for the store, such as USD.
+     */
     public String getBaseCurrencyCode() {
         return (String) get("base_currency_code");
     }
@@ -173,6 +179,9 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    /**
+     * The symbol for the specified base currency, such as $.
+     */
     public String getBaseCurrencySymbol() {
         return (String) get("base_currency_symbol");
     }
@@ -196,7 +205,7 @@ public class Currency extends AbstractResponse<Currency> {
     }
 
     /**
-     * @deprecated Symbol was missed. Use `default_display_currency_symbol`.
+     * @deprecated Symbol was missed. Use `default_display_currency_code`.
      */
     @Deprecated
     public String getDefaultDisplayCurrecySymbol() {
@@ -208,6 +217,9 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    /**
+     * The currency that is displayed by default, such as USD.
+     */
     public String getDefaultDisplayCurrencyCode() {
         return (String) get("default_display_currency_code");
     }
@@ -217,6 +229,9 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    /**
+     * The currency symbol that is displayed by default, such as $.
+     */
     public String getDefaultDisplayCurrencySymbol() {
         return (String) get("default_display_currency_symbol");
     }
@@ -226,6 +241,9 @@ public class Currency extends AbstractResponse<Currency> {
         return this;
     }
 
+    /**
+     * An array of exchange rates for currencies defined in the store.
+     */
     public List<ExchangeRate> getExchangeRates() {
         return (List<ExchangeRate>) get("exchange_rates");
     }

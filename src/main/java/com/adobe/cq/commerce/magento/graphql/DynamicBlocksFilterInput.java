@@ -21,6 +21,10 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines the dynamic block filter. The filter can identify the block type, location and IDs to
+ * return.
+ */
 public class DynamicBlocksFilterInput implements Serializable {
     private DynamicBlockTypeEnum type;
 
@@ -33,14 +37,14 @@ public class DynamicBlocksFilterInput implements Serializable {
     }
 
     /**
-     * A value indicating the type of dynamic block to filter on
+     * A value indicating the type of dynamic block to filter on.
      */
     public DynamicBlockTypeEnum getType() {
         return type;
     }
 
     /**
-     * A value indicating the type of dynamic block to filter on
+     * A value indicating the type of dynamic block to filter on.
      */
     public DynamicBlocksFilterInput setType(DynamicBlockTypeEnum type) {
         this.type = type;
@@ -48,21 +52,21 @@ public class DynamicBlocksFilterInput implements Serializable {
     }
 
     /**
-     * An array of dynamic block UIDs to filter on
+     * An array of dynamic block UIDs to filter on.
      */
     public List<ID> getDynamicBlockUids() {
         return dynamicBlockUids.getValue();
     }
 
     /**
-     * An array of dynamic block UIDs to filter on
+     * An array of dynamic block UIDs to filter on.
      */
     public Input<List<ID>> getDynamicBlockUidsInput() {
         return dynamicBlockUids;
     }
 
     /**
-     * An array of dynamic block UIDs to filter on
+     * An array of dynamic block UIDs to filter on.
      */
     public DynamicBlocksFilterInput setDynamicBlockUids(List<ID> dynamicBlockUids) {
         this.dynamicBlockUids = Input.optional(dynamicBlockUids);
@@ -70,7 +74,7 @@ public class DynamicBlocksFilterInput implements Serializable {
     }
 
     /**
-     * An array of dynamic block UIDs to filter on
+     * An array of dynamic block UIDs to filter on.
      */
     public DynamicBlocksFilterInput setDynamicBlockUidsInput(Input<List<ID>> dynamicBlockUids) {
         if (dynamicBlockUids == null) {
@@ -81,21 +85,21 @@ public class DynamicBlocksFilterInput implements Serializable {
     }
 
     /**
-     * An array indicating the locations the dynamic block can be placed
+     * An array indicating the locations the dynamic block can be placed.
      */
     public List<DynamicBlockLocationEnum> getLocations() {
         return locations.getValue();
     }
 
     /**
-     * An array indicating the locations the dynamic block can be placed
+     * An array indicating the locations the dynamic block can be placed.
      */
     public Input<List<DynamicBlockLocationEnum>> getLocationsInput() {
         return locations;
     }
 
     /**
-     * An array indicating the locations the dynamic block can be placed
+     * An array indicating the locations the dynamic block can be placed.
      */
     public DynamicBlocksFilterInput setLocations(List<DynamicBlockLocationEnum> locations) {
         this.locations = Input.optional(locations);
@@ -103,7 +107,7 @@ public class DynamicBlocksFilterInput implements Serializable {
     }
 
     /**
-     * An array indicating the locations the dynamic block can be placed
+     * An array indicating the locations the dynamic block can be placed.
      */
     public DynamicBlocksFilterInput setLocationsInput(Input<List<DynamicBlockLocationEnum>> locations) {
         if (locations == null) {

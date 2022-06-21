@@ -109,6 +109,11 @@ public enum __DirectiveLocation {
      */
     UNION,
 
+    /**
+     * Location adjacent to a variable definition.
+     */
+    VARIABLE_DEFINITION,
+
     UNKNOWN_VALUE;
 
     public static __DirectiveLocation fromGraphQl(String value) {
@@ -189,6 +194,10 @@ public enum __DirectiveLocation {
                 return UNION;
             }
 
+            case "VARIABLE_DEFINITION": {
+                return VARIABLE_DEFINITION;
+            }
+
             default: {
                 return UNKNOWN_VALUE;
             }
@@ -267,6 +276,10 @@ public enum __DirectiveLocation {
 
             case UNION: {
                 return "UNION";
+            }
+
+            case VARIABLE_DEFINITION: {
+                return "VARIABLE_DEFINITION";
             }
 
             default: {

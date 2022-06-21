@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Points to an image associated with a gift wrapping option.
+ */
 public class GiftWrappingImage extends AbstractResponse<GiftWrappingImage> {
     public GiftWrappingImage() {}
 
@@ -58,7 +61,7 @@ public class GiftWrappingImage extends AbstractResponse<GiftWrappingImage> {
     }
 
     /**
-     * Gift wrapping preview image label
+     * The gift wrapping preview image label.
      */
     public String getLabel() {
         return (String) get("label");
@@ -70,7 +73,7 @@ public class GiftWrappingImage extends AbstractResponse<GiftWrappingImage> {
     }
 
     /**
-     * Gift wrapping preview image URL
+     * The gift wrapping preview image URL.
      */
     public String getUrl() {
         return (String) get("url");

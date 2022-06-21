@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Defines all Checkout Agreement information
+ * Defines details about an individual checkout agreement.
  */
 public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery> {
     CheckoutAgreementQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery
     }
 
     /**
-     * Checkout Agreement identifier
+     * The ID for a checkout agreement.
      */
     public CheckoutAgreementQuery agreementId() {
         startField("agreement_id");
@@ -35,7 +35,7 @@ public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery
     }
 
     /**
-     * Checkout Agreement checkbox text
+     * The checkbox text for the checkout agreement.
      */
     public CheckoutAgreementQuery checkboxText() {
         startField("checkbox_text");
@@ -44,7 +44,7 @@ public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery
     }
 
     /**
-     * Checkout Agreement content
+     * Required. The text of the agreement.
      */
     public CheckoutAgreementQuery content() {
         startField("content");
@@ -53,7 +53,7 @@ public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery
     }
 
     /**
-     * Checkout Agreement content height
+     * The height of the text box where the Terms and Conditions statement appears during checkout.
      */
     public CheckoutAgreementQuery contentHeight() {
         startField("content_height");
@@ -62,7 +62,7 @@ public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery
     }
 
     /**
-     * Is Checkout Agreement content in HTML format
+     * Indicates whether the `content` text is in HTML format.
      */
     public CheckoutAgreementQuery isHtml() {
         startField("is_html");
@@ -70,6 +70,9 @@ public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery
         return this;
     }
 
+    /**
+     * Indicates whether agreements are accepted automatically or manually.
+     */
     public CheckoutAgreementQuery mode() {
         startField("mode");
 
@@ -77,7 +80,7 @@ public class CheckoutAgreementQuery extends AbstractQuery<CheckoutAgreementQuery
     }
 
     /**
-     * Checkout Agreement name
+     * The name given to the condition.
      */
     public CheckoutAgreementQuery name() {
         startField("name");

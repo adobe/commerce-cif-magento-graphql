@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The tax item details
+ * Contains tax item details.
  */
 public class TaxItemQuery extends AbstractQuery<TaxItemQuery> {
     TaxItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class TaxItemQuery extends AbstractQuery<TaxItemQuery> {
     }
 
     /**
-     * The amount of tax applied to the item
+     * The amount of tax applied to the item.
      */
     public TaxItemQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
@@ -39,7 +39,7 @@ public class TaxItemQuery extends AbstractQuery<TaxItemQuery> {
     }
 
     /**
-     * The rate used to calculate the tax
+     * The rate used to calculate the tax.
      */
     public TaxItemQuery rate() {
         startField("rate");
@@ -48,7 +48,7 @@ public class TaxItemQuery extends AbstractQuery<TaxItemQuery> {
     }
 
     /**
-     * A title that describes the tax
+     * A title that describes the tax.
      */
     public TaxItemQuery title() {
         startField("title");

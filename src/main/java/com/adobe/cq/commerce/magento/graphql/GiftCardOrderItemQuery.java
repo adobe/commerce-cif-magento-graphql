@@ -23,7 +23,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The final discount information for the product
+     * The final discount information for the product.
      */
     public GiftCardOrderItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -36,7 +36,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * Indicates whether the order item is eligible is eligible to be in a return request
+     * Indicates whether the order item is eligible to be in a return request.
      */
     public GiftCardOrderItemQuery eligibleForReturn() {
         startField("eligible_for_return");
@@ -45,7 +45,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The entered option for the base product, such as a logo or image
+     * The entered option for the base product, such as a logo or image.
      */
     public GiftCardOrderItemQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("entered_options");
@@ -58,7 +58,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * Selected gift card properties for an order item
+     * Selected gift card properties for an order item.
      */
     public GiftCardOrderItemQuery giftCard(GiftCardItemQueryDefinition queryDef) {
         startField("gift_card");
@@ -71,7 +71,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The selected gift wrapping for the order item
+     * The selected gift wrapping for the order item.
      */
     public GiftCardOrderItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -84,7 +84,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for an `OrderItemInterface` object.
      */
     public GiftCardOrderItemQuery id() {
         startField("id");
@@ -93,7 +93,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public GiftCardOrderItemQuery productName() {
         startField("product_name");
@@ -102,7 +102,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The sale price of the base product, including selected options
+     * The sale price of the base product, including selected options.
      */
     public GiftCardOrderItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -115,7 +115,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public GiftCardOrderItemQuery productSku() {
         startField("product_sku");
@@ -133,7 +133,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * URL key of the base product
+     * URL key of the base product.
      */
     public GiftCardOrderItemQuery productUrlKey() {
         startField("product_url_key");
@@ -142,7 +142,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The number of canceled items
+     * The number of canceled items.
      */
     public GiftCardOrderItemQuery quantityCanceled() {
         startField("quantity_canceled");
@@ -151,7 +151,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public GiftCardOrderItemQuery quantityInvoiced() {
         startField("quantity_invoiced");
@@ -160,7 +160,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The number of units ordered for this item
+     * The number of units ordered for this item.
      */
     public GiftCardOrderItemQuery quantityOrdered() {
         startField("quantity_ordered");
@@ -169,7 +169,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public GiftCardOrderItemQuery quantityRefunded() {
         startField("quantity_refunded");
@@ -178,7 +178,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The number of returned items
+     * The number of returned items.
      */
     public GiftCardOrderItemQuery quantityReturned() {
         startField("quantity_returned");
@@ -187,7 +187,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The number of shipped items
+     * The number of shipped items.
      */
     public GiftCardOrderItemQuery quantityShipped() {
         startField("quantity_shipped");
@@ -196,7 +196,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size.
      */
     public GiftCardOrderItemQuery selectedOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("selected_options");
@@ -209,7 +209,7 @@ public class GiftCardOrderItemQuery extends AbstractQuery<GiftCardOrderItemQuery
     }
 
     /**
-     * The status of the order item
+     * The status of the order item.
      */
     public GiftCardOrderItemQuery status() {
         startField("status");

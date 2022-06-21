@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a customer&#39;s reward points.
+ */
 public class RewardPoints extends AbstractResponse<RewardPoints> {
     public RewardPoints() {}
 
@@ -102,7 +105,7 @@ public class RewardPoints extends AbstractResponse<RewardPoints> {
     }
 
     /**
-     * The current balance of reward points
+     * The current balance of reward points.
      */
     public RewardPointsAmount getBalance() {
         return (RewardPointsAmount) get("balance");
@@ -115,7 +118,7 @@ public class RewardPoints extends AbstractResponse<RewardPoints> {
 
     /**
      * The balance history of reward points. If the ability for customers to view the balance history has
-     * been disabled in the Admin, this field will be set to null
+     * been disabled in the Admin, this field will be set to null.
      */
     public List<RewardPointsBalanceHistoryItem> getBalanceHistory() {
         return (List<RewardPointsBalanceHistoryItem>) get("balance_history");
@@ -127,7 +130,7 @@ public class RewardPoints extends AbstractResponse<RewardPoints> {
     }
 
     /**
-     * The current exchange rates for reward points
+     * The current exchange rates for reward points.
      */
     public RewardPointsExchangeRates getExchangeRates() {
         return (RewardPointsExchangeRates) get("exchange_rates");
@@ -139,7 +142,7 @@ public class RewardPoints extends AbstractResponse<RewardPoints> {
     }
 
     /**
-     * The subscription status of emails related to reward points
+     * The subscription status of emails related to reward points.
      */
     public RewardPointsSubscriptionStatus getSubscriptionStatus() {
         return (RewardPointsSubscriptionStatus) get("subscription_status");

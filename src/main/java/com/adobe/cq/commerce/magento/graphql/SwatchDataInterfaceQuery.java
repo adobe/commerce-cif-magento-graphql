@@ -30,7 +30,7 @@ public class SwatchDataInterfaceQuery extends AbstractQuery<SwatchDataInterfaceQ
     }
 
     /**
-     * Value of swatch item (HEX color code, image link or textual value)
+     * The value can be represented as color (HEX code), image link, or text.
      */
     public SwatchDataInterfaceQuery value() {
         startField("value");

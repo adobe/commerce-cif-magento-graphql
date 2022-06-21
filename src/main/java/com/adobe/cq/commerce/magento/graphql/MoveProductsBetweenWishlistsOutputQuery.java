@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the source and target wish lists after moving products.
+ */
 public class MoveProductsBetweenWishlistsOutputQuery extends AbstractQuery<MoveProductsBetweenWishlistsOutputQuery> {
     MoveProductsBetweenWishlistsOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The destination wish list after receiving products move from the source wish list
+     * The destination wish list after receiving products moved from the source wish list.
      */
     public MoveProductsBetweenWishlistsOutputQuery destinationWishlist(WishlistQueryDefinition queryDef) {
         startField("destination_wishlist");
@@ -36,7 +39,7 @@ public class MoveProductsBetweenWishlistsOutputQuery extends AbstractQuery<MoveP
     }
 
     /**
-     * The source wish list after moving products from it
+     * The source wish list after moving products from it.
      */
     public MoveProductsBetweenWishlistsOutputQuery sourceWishlist(WishlistQueryDefinition queryDef) {
         startField("source_wishlist");
@@ -49,7 +52,7 @@ public class MoveProductsBetweenWishlistsOutputQuery extends AbstractQuery<MoveP
     }
 
     /**
-     * An array of errors encountered while moving products in a wish list
+     * An array of errors encountered while moving products to a wish list.
      */
     public MoveProductsBetweenWishlistsOutputQuery userErrors(WishListUserInputErrorQueryDefinition queryDef) {
         startField("user_errors");

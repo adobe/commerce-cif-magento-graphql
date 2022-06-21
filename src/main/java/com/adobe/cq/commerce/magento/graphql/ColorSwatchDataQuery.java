@@ -23,7 +23,7 @@ public class ColorSwatchDataQuery extends AbstractQuery<ColorSwatchDataQuery> {
     }
 
     /**
-     * Value of swatch item (HEX color code, image link or textual value)
+     * The value can be represented as color (HEX code), image link, or text.
      */
     public ColorSwatchDataQuery value() {
         startField("value");

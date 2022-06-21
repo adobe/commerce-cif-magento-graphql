@@ -29,21 +29,24 @@ public class FilterEqualTypeInput implements Serializable {
     private Input<List<String>> in = Input.undefined();
 
     /**
-     * A string to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific
+     * category ID, specify a value such as `5`.
      */
     public String getEq() {
         return eq.getValue();
     }
 
     /**
-     * A string to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific
+     * category ID, specify a value such as `5`.
      */
     public Input<String> getEqInput() {
         return eq;
     }
 
     /**
-     * A string to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific
+     * category ID, specify a value such as `5`.
      */
     public FilterEqualTypeInput setEq(String eq) {
         this.eq = Input.optional(eq);
@@ -51,7 +54,8 @@ public class FilterEqualTypeInput implements Serializable {
     }
 
     /**
-     * A string to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific
+     * category ID, specify a value such as `5`.
      */
     public FilterEqualTypeInput setEqInput(Input<String> eq) {
         if (eq == null) {
@@ -62,21 +66,24 @@ public class FilterEqualTypeInput implements Serializable {
     }
 
     /**
-     * An array of values to filter on
+     * Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and
+     * 6, specify a value of `[&quot;4&quot;, &quot;5&quot;, &quot;6&quot;]`.
      */
     public List<String> getIn() {
         return in.getValue();
     }
 
     /**
-     * An array of values to filter on
+     * Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and
+     * 6, specify a value of `[&quot;4&quot;, &quot;5&quot;, &quot;6&quot;]`.
      */
     public Input<List<String>> getInInput() {
         return in;
     }
 
     /**
-     * An array of values to filter on
+     * Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and
+     * 6, specify a value of `[&quot;4&quot;, &quot;5&quot;, &quot;6&quot;]`.
      */
     public FilterEqualTypeInput setIn(List<String> in) {
         this.in = Input.optional(in);
@@ -84,7 +91,8 @@ public class FilterEqualTypeInput implements Serializable {
     }
 
     /**
-     * An array of values to filter on
+     * Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and
+     * 6, specify a value of `[&quot;4&quot;, &quot;5&quot;, &quot;6&quot;]`.
      */
     public FilterEqualTypeInput setInInput(Input<List<String>> in) {
         if (in == null) {

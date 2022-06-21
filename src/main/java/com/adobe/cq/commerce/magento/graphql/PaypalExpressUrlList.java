@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A set of URLs that allow the buyer to authorize payment and adjust checkout details for Express
- * Checkout and Payments Standard transactions.
+ * Contains a set of URLs that allow the buyer to authorize payment and adjust checkout details for
+ * Express Checkout and Payments Standard transactions.
  */
 public class PaypalExpressUrlList extends AbstractResponse<PaypalExpressUrlList> {
     public PaypalExpressUrlList() {}
@@ -72,7 +72,7 @@ public class PaypalExpressUrlList extends AbstractResponse<PaypalExpressUrlList>
     }
 
     /**
-     * The PayPal URL that allows the buyer to edit their checkout details
+     * The PayPal URL that allows the buyer to edit their checkout details.
      */
     public String getEdit() {
         return (String) get("edit");
@@ -84,7 +84,7 @@ public class PaypalExpressUrlList extends AbstractResponse<PaypalExpressUrlList>
     }
 
     /**
-     * The URL to the PayPal login page
+     * The URL to the PayPal login page.
      */
     public String getStart() {
         return (String) get("start");

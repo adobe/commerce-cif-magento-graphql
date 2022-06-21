@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableRadioOption contains information about a set of radio buttons that are defined as part
- * of a customizable option.
+ * Contains information about a set of radio buttons that are defined as part of a customizable option.
  */
 public class CustomizableRadioOptionQuery extends AbstractQuery<CustomizableRadioOptionQuery> {
     CustomizableRadioOptionQuery(StringBuilder _queryBuilder) {

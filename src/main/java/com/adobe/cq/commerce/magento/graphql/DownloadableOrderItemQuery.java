@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines downloadable product options for `OrderItemInterface`.
+ */
 public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderItemQuery> {
     DownloadableOrderItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The final discount information for the product
+     * The final discount information for the product.
      */
     public DownloadableOrderItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -36,7 +39,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * A list of downloadable links that are ordered from the downloadable product
+     * A list of downloadable links that are ordered from the downloadable product.
      */
     public DownloadableOrderItemQuery downloadableLinks(DownloadableItemsLinksQueryDefinition queryDef) {
         startField("downloadable_links");
@@ -49,7 +52,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * Indicates whether the order item is eligible is eligible to be in a return request
+     * Indicates whether the order item is eligible to be in a return request.
      */
     public DownloadableOrderItemQuery eligibleForReturn() {
         startField("eligible_for_return");
@@ -58,7 +61,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The entered option for the base product, such as a logo or image
+     * The entered option for the base product, such as a logo or image.
      */
     public DownloadableOrderItemQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("entered_options");
@@ -71,7 +74,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The selected gift wrapping for the order item
+     * The selected gift wrapping for the order item.
      */
     public DownloadableOrderItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -84,7 +87,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for an `OrderItemInterface` object.
      */
     public DownloadableOrderItemQuery id() {
         startField("id");
@@ -93,7 +96,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public DownloadableOrderItemQuery productName() {
         startField("product_name");
@@ -102,7 +105,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The sale price of the base product, including selected options
+     * The sale price of the base product, including selected options.
      */
     public DownloadableOrderItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -115,7 +118,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public DownloadableOrderItemQuery productSku() {
         startField("product_sku");
@@ -133,7 +136,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * URL key of the base product
+     * URL key of the base product.
      */
     public DownloadableOrderItemQuery productUrlKey() {
         startField("product_url_key");
@@ -142,7 +145,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The number of canceled items
+     * The number of canceled items.
      */
     public DownloadableOrderItemQuery quantityCanceled() {
         startField("quantity_canceled");
@@ -151,7 +154,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public DownloadableOrderItemQuery quantityInvoiced() {
         startField("quantity_invoiced");
@@ -160,7 +163,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The number of units ordered for this item
+     * The number of units ordered for this item.
      */
     public DownloadableOrderItemQuery quantityOrdered() {
         startField("quantity_ordered");
@@ -169,7 +172,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public DownloadableOrderItemQuery quantityRefunded() {
         startField("quantity_refunded");
@@ -178,7 +181,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The number of returned items
+     * The number of returned items.
      */
     public DownloadableOrderItemQuery quantityReturned() {
         startField("quantity_returned");
@@ -187,7 +190,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The number of shipped items
+     * The number of shipped items.
      */
     public DownloadableOrderItemQuery quantityShipped() {
         startField("quantity_shipped");
@@ -196,7 +199,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size.
      */
     public DownloadableOrderItemQuery selectedOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("selected_options");
@@ -209,7 +212,7 @@ public class DownloadableOrderItemQuery extends AbstractQuery<DownloadableOrderI
     }
 
     /**
-     * The status of the order item
+     * The status of the order item.
      */
     public DownloadableOrderItemQuery status() {
         startField("status");

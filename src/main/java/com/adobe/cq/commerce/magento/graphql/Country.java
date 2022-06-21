@@ -123,6 +123,9 @@ public class Country extends AbstractResponse<Country> {
         return "Country";
     }
 
+    /**
+     * An array of regions within a particular country.
+     */
     public List<Region> getAvailableRegions() {
         return (List<Region>) get("available_regions");
     }
@@ -132,6 +135,9 @@ public class Country extends AbstractResponse<Country> {
         return this;
     }
 
+    /**
+     * The name of the country in English.
+     */
     public String getFullNameEnglish() {
         return (String) get("full_name_english");
     }
@@ -141,6 +147,9 @@ public class Country extends AbstractResponse<Country> {
         return this;
     }
 
+    /**
+     * The name of the country in the current locale.
+     */
     public String getFullNameLocale() {
         return (String) get("full_name_locale");
     }
@@ -162,6 +171,9 @@ public class Country extends AbstractResponse<Country> {
         return this;
     }
 
+    /**
+     * The three-letter abbreviation of the country, such as USA.
+     */
     public String getThreeLetterAbbreviation() {
         return (String) get("three_letter_abbreviation");
     }
@@ -171,6 +183,9 @@ public class Country extends AbstractResponse<Country> {
         return this;
     }
 
+    /**
+     * The two-letter abbreviation of the country, such as US.
+     */
     public String getTwoLetterAbbreviation() {
         return (String) get("two_letter_abbreviation");
     }

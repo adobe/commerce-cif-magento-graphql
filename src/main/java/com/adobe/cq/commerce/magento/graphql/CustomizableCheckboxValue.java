@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableCheckboxValue defines the price and sku of a product whose page contains a customized
- * set of checkbox values.
+ * Defines the price and sku of a product whose page contains a customized set of checkbox values.
  */
 public class CustomizableCheckboxValue extends AbstractResponse<CustomizableCheckboxValue> {
     public CustomizableCheckboxValue() {}

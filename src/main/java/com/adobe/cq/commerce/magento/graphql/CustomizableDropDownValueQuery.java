@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableDropDownValue defines the price and sku of a product whose page contains a customized
- * drop down menu.
+ * Defines the price and sku of a product whose page contains a customized drop down menu.
  */
 public class CustomizableDropDownValueQuery extends AbstractQuery<CustomizableDropDownValueQuery> {
     CustomizableDropDownValueQuery(StringBuilder _queryBuilder) {

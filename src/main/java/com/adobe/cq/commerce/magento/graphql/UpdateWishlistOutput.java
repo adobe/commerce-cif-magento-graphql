@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the name and visibility of an updated wish list.
+ */
 public class UpdateWishlistOutput extends AbstractResponse<UpdateWishlistOutput> {
     public UpdateWishlistOutput() {}
 
@@ -65,7 +68,7 @@ public class UpdateWishlistOutput extends AbstractResponse<UpdateWishlistOutput>
     }
 
     /**
-     * The wish list name
+     * The wish list name.
      */
     public String getName() {
         return (String) get("name");
@@ -77,7 +80,7 @@ public class UpdateWishlistOutput extends AbstractResponse<UpdateWishlistOutput>
     }
 
     /**
-     * The unique ID for a `Wishlist` object
+     * The unique ID of a `Wishlist` object.
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -89,7 +92,7 @@ public class UpdateWishlistOutput extends AbstractResponse<UpdateWishlistOutput>
     }
 
     /**
-     * Indicates whether the wish list is public or private
+     * Indicates whether the wish list is public or private.
      */
     public WishlistVisibilityEnum getVisibility() {
         return (WishlistVisibilityEnum) get("visibility");

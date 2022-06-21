@@ -23,8 +23,7 @@ public class InvoiceItemQuery extends AbstractQuery<InvoiceItemQuery> {
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     public InvoiceItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -37,7 +36,7 @@ public class InvoiceItemQuery extends AbstractQuery<InvoiceItemQuery> {
     }
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     public InvoiceItemQuery id() {
         startField("id");
@@ -46,7 +45,7 @@ public class InvoiceItemQuery extends AbstractQuery<InvoiceItemQuery> {
     }
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     public InvoiceItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -59,7 +58,7 @@ public class InvoiceItemQuery extends AbstractQuery<InvoiceItemQuery> {
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public InvoiceItemQuery productName() {
         startField("product_name");
@@ -68,7 +67,7 @@ public class InvoiceItemQuery extends AbstractQuery<InvoiceItemQuery> {
     }
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     public InvoiceItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -81,7 +80,7 @@ public class InvoiceItemQuery extends AbstractQuery<InvoiceItemQuery> {
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public InvoiceItemQuery productSku() {
         startField("product_sku");
@@ -90,7 +89,7 @@ public class InvoiceItemQuery extends AbstractQuery<InvoiceItemQuery> {
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public InvoiceItemQuery quantityInvoiced() {
         startField("quantity_invoiced");

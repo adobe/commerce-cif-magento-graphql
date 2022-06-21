@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines bundle product options for `CreditMemoItemInterface`.
+ */
 public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem> implements CreditMemoItemInterface {
     public BundleCreditMemoItem() {}
 
@@ -142,7 +145,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * A list of bundle options that are assigned to the bundle product
+     * A list of bundle options that are assigned to a bundle product that is part of a credit memo.
      */
     public List<ItemSelectedBundleOption> getBundleOptions() {
         return (List<ItemSelectedBundleOption>) get("bundle_options");
@@ -154,8 +157,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Details about the final discount amount for the base product, including discounts on options.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -167,7 +169,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * The unique ID for a `CreditMemoItemInterface` object
+     * The unique ID for a `CreditMemoItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -179,7 +181,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * The order item the credit memo is applied to
+     * The order item the credit memo is applied to.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -191,7 +193,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -203,7 +205,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * The sale price for the base product, including selected options
+     * The sale price for the base product, including selected options.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -215,7 +217,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -227,7 +229,7 @@ public class BundleCreditMemoItem extends AbstractResponse<BundleCreditMemoItem>
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public Double getQuantityRefunded() {
         return (Double) get("quantity_refunded");

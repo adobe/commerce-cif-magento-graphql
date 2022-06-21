@@ -71,7 +71,7 @@ public class UnknownSwatchLayerFilterItemInterface extends AbstractResponse<Unkn
     }
 
     /**
-     * Data required to render swatch filter item
+     * Data required to render a swatch filter item.
      */
     public SwatchData getSwatchData() {
         return (SwatchData) get("swatch_data");

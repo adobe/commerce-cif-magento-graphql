@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines a possible sort field.
+ */
 public class SortField extends AbstractResponse<SortField> {
     public SortField() {}
 
@@ -68,7 +71,7 @@ public class SortField extends AbstractResponse<SortField> {
     }
 
     /**
-     * Label of sort field.
+     * The label of the sort field.
      */
     public String getLabel() {
         return (String) get("label");
@@ -80,7 +83,7 @@ public class SortField extends AbstractResponse<SortField> {
     }
 
     /**
-     * Attribute code of sort field.
+     * The attribute code of the sort field.
      */
     public String getValue() {
         return (String) get("value");

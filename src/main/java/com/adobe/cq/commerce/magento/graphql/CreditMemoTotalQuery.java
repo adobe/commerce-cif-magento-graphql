@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Credit memo price details
+ * Contains credit memo price details.
  */
 public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     CreditMemoTotalQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * An adjustment manually applied to the order
+     * An adjustment manually applied to the order.
      */
     public CreditMemoTotalQuery adjustment(MoneyQueryDefinition queryDef) {
         startField("adjustment");
@@ -39,7 +39,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * The final base grand total amount in the base currency
+     * The final base grand total amount in the base currency.
      */
     public CreditMemoTotalQuery baseGrandTotal(MoneyQueryDefinition queryDef) {
         startField("base_grand_total");
@@ -52,7 +52,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * The applied discounts to the credit memo
+     * The applied discounts to the credit memo.
      */
     public CreditMemoTotalQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -65,7 +65,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * The final total amount, including shipping, discounts, and taxes
+     * The final total amount, including shipping, discounts, and taxes.
      */
     public CreditMemoTotalQuery grandTotal(MoneyQueryDefinition queryDef) {
         startField("grand_total");
@@ -78,7 +78,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * Contains details about the shipping and handling costs for the credit memo
+     * Details about the shipping and handling costs for the credit memo.
      */
     public CreditMemoTotalQuery shippingHandling(ShippingHandlingQueryDefinition queryDef) {
         startField("shipping_handling");
@@ -91,7 +91,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * The subtotal of the invoice, excluding shipping, discounts, and taxes
+     * The subtotal of the invoice, excluding shipping, discounts, and taxes.
      */
     public CreditMemoTotalQuery subtotal(MoneyQueryDefinition queryDef) {
         startField("subtotal");
@@ -104,7 +104,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * The credit memo tax details
+     * The credit memo tax details.
      */
     public CreditMemoTotalQuery taxes(TaxItemQueryDefinition queryDef) {
         startField("taxes");
@@ -117,7 +117,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * The shipping amount for the credit memo
+     * The shipping amount for the credit memo.
      */
     public CreditMemoTotalQuery totalShipping(MoneyQueryDefinition queryDef) {
         startField("total_shipping");
@@ -130,7 +130,7 @@ public class CreditMemoTotalQuery extends AbstractQuery<CreditMemoTotalQuery> {
     }
 
     /**
-     * The amount of tax applied to the credit memo
+     * The amount of tax applied to the credit memo.
      */
     public CreditMemoTotalQuery totalTax(MoneyQueryDefinition queryDef) {
         startField("total_tax");

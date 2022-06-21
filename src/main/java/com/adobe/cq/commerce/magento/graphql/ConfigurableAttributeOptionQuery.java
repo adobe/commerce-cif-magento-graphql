@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ConfigurableAttributeOption contains the value_index (and other related information) assigned to a
- * configurable product option
+ * Contains details about a configurable product attribute option.
  */
 public class ConfigurableAttributeOptionQuery extends AbstractQuery<ConfigurableAttributeOptionQuery> {
     ConfigurableAttributeOptionQuery(StringBuilder _queryBuilder) {
@@ -27,7 +26,7 @@ public class ConfigurableAttributeOptionQuery extends AbstractQuery<Configurable
     }
 
     /**
-     * The ID assigned to the attribute
+     * The ID assigned to the attribute.
      */
     public ConfigurableAttributeOptionQuery code() {
         startField("code");
@@ -36,7 +35,7 @@ public class ConfigurableAttributeOptionQuery extends AbstractQuery<Configurable
     }
 
     /**
-     * A string that describes the configurable attribute option
+     * A string that describes the configurable attribute option.
      */
     public ConfigurableAttributeOptionQuery label() {
         startField("label");
@@ -45,7 +44,7 @@ public class ConfigurableAttributeOptionQuery extends AbstractQuery<Configurable
     }
 
     /**
-     * The unique ID for a `ConfigurableAttributeOption` object
+     * The unique ID for a `ConfigurableAttributeOption` object.
      */
     public ConfigurableAttributeOptionQuery uid() {
         startField("uid");
@@ -54,7 +53,7 @@ public class ConfigurableAttributeOptionQuery extends AbstractQuery<Configurable
     }
 
     /**
-     * A unique index number assigned to the configurable product option
+     * A unique index number assigned to the configurable product option.
      */
     public ConfigurableAttributeOptionQuery valueIndex() {
         startField("value_index");

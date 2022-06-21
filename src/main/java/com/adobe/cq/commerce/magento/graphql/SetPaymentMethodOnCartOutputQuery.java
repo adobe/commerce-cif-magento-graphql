@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after setting the payment method.
+ */
 public class SetPaymentMethodOnCartOutputQuery extends AbstractQuery<SetPaymentMethodOnCartOutputQuery> {
     SetPaymentMethodOnCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after setting the payment method.
+     */
     public SetPaymentMethodOnCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

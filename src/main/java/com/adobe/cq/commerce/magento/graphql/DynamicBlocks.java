@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains an array of dynamic blocks.
+ */
 public class DynamicBlocks extends AbstractResponse<DynamicBlocks> {
     public DynamicBlocks() {}
 
@@ -81,7 +84,7 @@ public class DynamicBlocks extends AbstractResponse<DynamicBlocks> {
     }
 
     /**
-     * An array containing individual dynamic blocks
+     * An array containing individual dynamic blocks.
      */
     public List<DynamicBlock> getItems() {
         return (List<DynamicBlock>) get("items");
@@ -93,7 +96,7 @@ public class DynamicBlocks extends AbstractResponse<DynamicBlocks> {
     }
 
     /**
-     * Metadata for pagination rendering
+     * Metadata for pagination rendering.
      */
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");
@@ -105,7 +108,7 @@ public class DynamicBlocks extends AbstractResponse<DynamicBlocks> {
     }
 
     /**
-     * The number of returned dynamic blocks
+     * The number of returned dynamic blocks.
      */
     public Integer getTotalCount() {
         return (Integer) get("total_count");

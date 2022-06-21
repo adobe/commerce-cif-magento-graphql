@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Contains the text of a gift message, its sender, and recipient
+ * Defines a gift message.
  */
 public class GiftMessageInput implements Serializable {
     private String from;
@@ -37,14 +37,14 @@ public class GiftMessageInput implements Serializable {
     }
 
     /**
-     * Sender name
+     * The name of the sender.
      */
     public String getFrom() {
         return from;
     }
 
     /**
-     * Sender name
+     * The name of the sender.
      */
     public GiftMessageInput setFrom(String from) {
         this.from = from;
@@ -52,14 +52,14 @@ public class GiftMessageInput implements Serializable {
     }
 
     /**
-     * Gift message text
+     * The text of the gift message.
      */
     public String getMessage() {
         return message;
     }
 
     /**
-     * Gift message text
+     * The text of the gift message.
      */
     public GiftMessageInput setMessage(String message) {
         this.message = message;
@@ -67,14 +67,14 @@ public class GiftMessageInput implements Serializable {
     }
 
     /**
-     * Recepient name
+     * The name of the recepient.
      */
     public String getTo() {
         return to;
     }
 
     /**
-     * Recepient name
+     * The name of the recepient.
      */
     public GiftMessageInput setTo(String to) {
         this.to = to;

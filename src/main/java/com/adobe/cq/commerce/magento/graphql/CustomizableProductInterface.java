@@ -19,7 +19,7 @@ import java.util.List;
 import com.shopify.graphql.support.CustomFieldInterface;
 
 /**
- * CustomizableProductInterface contains information about customizable product options.
+ * Contains information about customizable product options.
  */
 
 public interface CustomizableProductInterface extends CustomFieldInterface {

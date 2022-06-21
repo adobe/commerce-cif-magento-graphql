@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the possible shipping methods and carriers.
+ */
 public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippingMethodQuery> {
     AvailableShippingMethodQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cost of shipping using this shipping method.
+     */
     public AvailableShippingMethodQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
 
@@ -32,6 +38,9 @@ public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippin
         return this;
     }
 
+    /**
+     * Indicates whether this shipping method can be applied to the cart.
+     */
     public AvailableShippingMethodQuery available() {
         startField("available");
 
@@ -39,7 +48,7 @@ public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippin
     }
 
     /**
-     * @deprecated The field should not be used on the storefront
+     * @deprecated The field should not be used on the storefront.
      */
     @Deprecated
     public AvailableShippingMethodQuery baseAmount(MoneyQueryDefinition queryDef) {
@@ -52,18 +61,27 @@ public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippin
         return this;
     }
 
+    /**
+     * A string that identifies a commercial carrier or an offline shipping method.
+     */
     public AvailableShippingMethodQuery carrierCode() {
         startField("carrier_code");
 
         return this;
     }
 
+    /**
+     * The label for the carrier code.
+     */
     public AvailableShippingMethodQuery carrierTitle() {
         startField("carrier_title");
 
         return this;
     }
 
+    /**
+     * Describes an error condition.
+     */
     public AvailableShippingMethodQuery errorMessage() {
         startField("error_message");
 
@@ -71,7 +89,7 @@ public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippin
     }
 
     /**
-     * Could be null if method is not available
+     * A shipping method code associated with a carrier. The value could be null if no method is available.
      */
     public AvailableShippingMethodQuery methodCode() {
         startField("method_code");
@@ -80,7 +98,7 @@ public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippin
     }
 
     /**
-     * Could be null if method is not available
+     * The label for the shipping method code. The value could be null if no method is available.
      */
     public AvailableShippingMethodQuery methodTitle() {
         startField("method_title");
@@ -88,6 +106,9 @@ public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippin
         return this;
     }
 
+    /**
+     * The cost of shipping using this shipping method, excluding tax.
+     */
     public AvailableShippingMethodQuery priceExclTax(MoneyQueryDefinition queryDef) {
         startField("price_excl_tax");
 
@@ -98,6 +119,9 @@ public class AvailableShippingMethodQuery extends AbstractQuery<AvailableShippin
         return this;
     }
 
+    /**
+     * The cost of shipping using this shipping method, including tax.
+     */
     public AvailableShippingMethodQuery priceInclTax(MoneyQueryDefinition queryDef) {
         startField("price_incl_tax");
 

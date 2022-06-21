@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Describes the payment method the shopper selected.
+ */
 public class SelectedPaymentMethodQuery extends AbstractQuery<SelectedPaymentMethodQuery> {
     SelectedPaymentMethodQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The payment method code
+     * The payment method code.
      */
     public SelectedPaymentMethodQuery code() {
         startField("code");

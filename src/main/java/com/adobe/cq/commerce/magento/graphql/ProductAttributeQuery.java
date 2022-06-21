@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains a product attribute code and value.
+ */
 public class ProductAttributeQuery extends AbstractQuery<ProductAttributeQuery> {
     ProductAttributeQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -32,7 +35,7 @@ public class ProductAttributeQuery extends AbstractQuery<ProductAttributeQuery> 
     }
 
     /**
-     * The display value of the attribute
+     * The display value of the attribute.
      */
     public ProductAttributeQuery value() {
         startField("value");

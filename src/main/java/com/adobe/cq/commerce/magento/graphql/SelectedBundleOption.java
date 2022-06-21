@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a selected bundle option.
+ */
 public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption> {
     public SelectedBundleOption() {}
 
@@ -101,6 +104,9 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
         return this;
     }
 
+    /**
+     * The display name of the selected bundle product option.
+     */
     public String getLabel() {
         return (String) get("label");
     }
@@ -110,6 +116,9 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
         return this;
     }
 
+    /**
+     * The type of selected bundle product option.
+     */
     public String getType() {
         return (String) get("type");
     }
@@ -131,6 +140,9 @@ public class SelectedBundleOption extends AbstractResponse<SelectedBundleOption>
         return this;
     }
 
+    /**
+     * An array of selected bundle option values.
+     */
     public List<SelectedBundleOptionValue> getValues() {
         return (List<SelectedBundleOptionValue>) get("values");
     }

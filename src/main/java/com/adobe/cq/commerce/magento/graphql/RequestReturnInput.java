@@ -21,6 +21,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Contains information needed to start a return request.
+ */
 public class RequestReturnInput implements Serializable {
     private List<RequestReturnItemInput> items;
 
@@ -37,14 +40,14 @@ public class RequestReturnInput implements Serializable {
     }
 
     /**
-     * An array of items to be returned
+     * An array of items to be returned.
      */
     public List<RequestReturnItemInput> getItems() {
         return items;
     }
 
     /**
-     * An array of items to be returned
+     * An array of items to be returned.
      */
     public RequestReturnInput setItems(List<RequestReturnItemInput> items) {
         this.items = items;
@@ -52,14 +55,14 @@ public class RequestReturnInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `Order` object
+     * The unique ID for a `Order` object.
      */
     public ID getOrderUid() {
         return orderUid;
     }
 
     /**
-     * The unique ID for a `Order` object
+     * The unique ID for a `Order` object.
      */
     public RequestReturnInput setOrderUid(ID orderUid) {
         this.orderUid = orderUid;
@@ -67,21 +70,21 @@ public class RequestReturnInput implements Serializable {
     }
 
     /**
-     * Text the buyer entered that describes the reason for the refund request
+     * Text the buyer entered that describes the reason for the refund request.
      */
     public String getCommentText() {
         return commentText.getValue();
     }
 
     /**
-     * Text the buyer entered that describes the reason for the refund request
+     * Text the buyer entered that describes the reason for the refund request.
      */
     public Input<String> getCommentTextInput() {
         return commentText;
     }
 
     /**
-     * Text the buyer entered that describes the reason for the refund request
+     * Text the buyer entered that describes the reason for the refund request.
      */
     public RequestReturnInput setCommentText(String commentText) {
         this.commentText = Input.optional(commentText);
@@ -89,7 +92,7 @@ public class RequestReturnInput implements Serializable {
     }
 
     /**
-     * Text the buyer entered that describes the reason for the refund request
+     * Text the buyer entered that describes the reason for the refund request.
      */
     public RequestReturnInput setCommentTextInput(Input<String> commentText) {
         if (commentText == null) {
@@ -100,21 +103,21 @@ public class RequestReturnInput implements Serializable {
     }
 
     /**
-     * An email address the buyer enters to receive notifications about the status of the return
+     * The email address the buyer enters to receive notifications about the status of the return.
      */
     public String getContactEmail() {
         return contactEmail.getValue();
     }
 
     /**
-     * An email address the buyer enters to receive notifications about the status of the return
+     * The email address the buyer enters to receive notifications about the status of the return.
      */
     public Input<String> getContactEmailInput() {
         return contactEmail;
     }
 
     /**
-     * An email address the buyer enters to receive notifications about the status of the return
+     * The email address the buyer enters to receive notifications about the status of the return.
      */
     public RequestReturnInput setContactEmail(String contactEmail) {
         this.contactEmail = Input.optional(contactEmail);
@@ -122,7 +125,7 @@ public class RequestReturnInput implements Serializable {
     }
 
     /**
-     * An email address the buyer enters to receive notifications about the status of the return
+     * The email address the buyer enters to receive notifications about the status of the return.
      */
     public RequestReturnInput setContactEmailInput(Input<String> contactEmail) {
         if (contactEmail == null) {

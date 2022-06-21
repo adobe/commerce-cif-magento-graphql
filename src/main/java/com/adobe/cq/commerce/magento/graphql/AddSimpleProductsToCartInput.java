@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the simple and group products to add to the cart.
+ */
 public class AddSimpleProductsToCartInput implements Serializable {
     private String cartId;
 
@@ -30,19 +33,31 @@ public class AddSimpleProductsToCartInput implements Serializable {
         this.cartItems = cartItems;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public AddSimpleProductsToCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of simple and group items to add.
+     */
     public List<SimpleProductCartItemInput> getCartItems() {
         return cartItems;
     }
 
+    /**
+     * An array of simple and group items to add.
+     */
     public AddSimpleProductsToCartInput setCartItems(List<SimpleProductCartItemInput> cartItems) {
         this.cartItems = cartItems;
         return this;

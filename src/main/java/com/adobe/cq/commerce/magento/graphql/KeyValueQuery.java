@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The key-value type
+ * Contains a key-value pair.
  */
 public class KeyValueQuery extends AbstractQuery<KeyValueQuery> {
     KeyValueQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class KeyValueQuery extends AbstractQuery<KeyValueQuery> {
     }
 
     /**
-     * The name part of the name/value pair
+     * The name part of the key/value pair.
      */
     public KeyValueQuery name() {
         startField("name");
@@ -35,7 +35,7 @@ public class KeyValueQuery extends AbstractQuery<KeyValueQuery> {
     }
 
     /**
-     * The value part of the name/value pair
+     * The value part of the key/value pair.
      */
     public KeyValueQuery value() {
         startField("value");

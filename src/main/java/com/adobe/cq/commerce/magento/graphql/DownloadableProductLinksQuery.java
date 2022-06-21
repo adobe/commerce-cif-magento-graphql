@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * DownloadableProductLinks defines characteristics of a downloadable product
+ * Defines characteristics of a downloadable product.
  */
 public class DownloadableProductLinksQuery extends AbstractQuery<DownloadableProductLinksQuery> {
     DownloadableProductLinksQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public DownloadableProductLinksQuery id() {
@@ -36,7 +36,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public DownloadableProductLinksQuery isShareable() {
@@ -56,7 +56,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public DownloadableProductLinksQuery numberOfDownloads() {
@@ -66,7 +66,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * The price of the downloadable product
+     * The price of the downloadable product.
      */
     public DownloadableProductLinksQuery price() {
         startField("price");
@@ -95,7 +95,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * URL to the downloadable sample
+     * The full URL to the downloadable sample.
      */
     public DownloadableProductLinksQuery sampleUrl() {
         startField("sample_url");
@@ -104,7 +104,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * A number indicating the sort order
+     * A number indicating the sort order.
      */
     public DownloadableProductLinksQuery sortOrder() {
         startField("sort_order");
@@ -113,7 +113,7 @@ public class DownloadableProductLinksQuery extends AbstractQuery<DownloadablePro
     }
 
     /**
-     * The display name of the link
+     * The display name of the link.
      */
     public DownloadableProductLinksQuery title() {
         startField("title");

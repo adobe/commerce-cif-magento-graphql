@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains details about a gift card
+ * Contains details about a gift card that has been added to a cart.
  */
 public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> implements CartItemInterface {
     public GiftCardCartItem() {}
@@ -154,7 +154,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * The amount and currency of the gift card
+     * The amount and currency of the gift card.
      */
     public Money getAmount() {
         return (Money) get("amount");
@@ -166,7 +166,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * An array of customizations made to the gift card
+     * An array of customizations applied to the gift card.
      */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
@@ -178,7 +178,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public String getId() {
@@ -191,7 +191,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * A message to the recipient
+     * The message from the sender to the recipient.
      */
     public String getMessage() {
         return (String) get("message");
@@ -202,6 +202,9 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public CartItemPrices getPrices() {
         return (CartItemPrices) get("prices");
     }
@@ -211,6 +214,9 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -220,6 +226,9 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public Double getQuantity() {
         return (Double) get("quantity");
     }
@@ -230,7 +239,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * The email of the person receiving the gift card
+     * The email address of the person receiving the gift card.
      */
     public String getRecipientEmail() {
         return (String) get("recipient_email");
@@ -242,7 +251,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * The name of the person receiving the gift card
+     * The name of the person receiving the gift card.
      */
     public String getRecipientName() {
         return (String) get("recipient_name");
@@ -254,7 +263,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * The email of the sender
+     * The email address of the sender.
      */
     public String getSenderEmail() {
         return (String) get("sender_email");
@@ -266,7 +275,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * The name of the sender
+     * The name of the sender.
      */
     public String getSenderName() {
         return (String) get("sender_name");
@@ -278,7 +287,7 @@ public class GiftCardCartItem extends AbstractResponse<GiftCardCartItem> impleme
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ID getUid() {
         return (ID) get("uid");

@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines a single bundle product.
+ */
 public class BundleProductCartItemInput implements Serializable {
     private List<BundleOptionInput> bundleOptions;
 
@@ -32,37 +35,63 @@ public class BundleProductCartItemInput implements Serializable {
         this.data = data;
     }
 
+    /**
+     * A mandatory array of options for the bundle product, including each chosen option and specified
+     * quantity.
+     */
     public List<BundleOptionInput> getBundleOptions() {
         return bundleOptions;
     }
 
+    /**
+     * A mandatory array of options for the bundle product, including each chosen option and specified
+     * quantity.
+     */
     public BundleProductCartItemInput setBundleOptions(List<BundleOptionInput> bundleOptions) {
         this.bundleOptions = bundleOptions;
         return this;
     }
 
+    /**
+     * The quantity and SKU of the bundle product.
+     */
     public CartItemInput getData() {
         return data;
     }
 
+    /**
+     * The quantity and SKU of the bundle product.
+     */
     public BundleProductCartItemInput setData(CartItemInput data) {
         this.data = data;
         return this;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public List<CustomizableOptionInput> getCustomizableOptions() {
         return customizableOptions.getValue();
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public Input<List<CustomizableOptionInput>> getCustomizableOptionsInput() {
         return customizableOptions;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public BundleProductCartItemInput setCustomizableOptions(List<CustomizableOptionInput> customizableOptions) {
         this.customizableOptions = Input.optional(customizableOptions);
         return this;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public BundleProductCartItemInput setCustomizableOptionsInput(Input<List<CustomizableOptionInput>> customizableOptions) {
         if (customizableOptions == null) {
             throw new IllegalArgumentException("Input can not be null");

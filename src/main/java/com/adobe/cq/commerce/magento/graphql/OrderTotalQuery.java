@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains details about the sales total amounts used to calculate the final price
+ * Contains details about the sales total amounts used to calculate the final price.
  */
 public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     OrderTotalQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The final base grand total amount in the base currency
+     * The final base grand total amount in the base currency.
      */
     public OrderTotalQuery baseGrandTotal(MoneyQueryDefinition queryDef) {
         startField("base_grand_total");
@@ -39,7 +39,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The applied discounts to the order
+     * The applied discounts to the order.
      */
     public OrderTotalQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -52,7 +52,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The final total amount, including shipping, discounts, and taxes
+     * The final total amount, including shipping, discounts, and taxes.
      */
     public OrderTotalQuery grandTotal(MoneyQueryDefinition queryDef) {
         startField("grand_total");
@@ -65,7 +65,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * Contains details about the shipping and handling costs for the order
+     * Details about the shipping and handling costs for the order.
      */
     public OrderTotalQuery shippingHandling(ShippingHandlingQueryDefinition queryDef) {
         startField("shipping_handling");
@@ -78,7 +78,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The subtotal of the order, excluding shipping, discounts, and taxes
+     * The subtotal of the order, excluding shipping, discounts, and taxes.
      */
     public OrderTotalQuery subtotal(MoneyQueryDefinition queryDef) {
         startField("subtotal");
@@ -91,7 +91,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The order tax details
+     * The order tax details.
      */
     public OrderTotalQuery taxes(TaxItemQueryDefinition queryDef) {
         startField("taxes");
@@ -104,7 +104,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The gift card balance applied to the order
+     * The gift card balance applied to the order.
      */
     public OrderTotalQuery totalGiftcard(MoneyQueryDefinition queryDef) {
         startField("total_giftcard");
@@ -117,7 +117,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The shipping amount for the order
+     * The shipping amount for the order.
      */
     public OrderTotalQuery totalShipping(MoneyQueryDefinition queryDef) {
         startField("total_shipping");
@@ -130,7 +130,7 @@ public class OrderTotalQuery extends AbstractQuery<OrderTotalQuery> {
     }
 
     /**
-     * The amount of tax applied to the order
+     * The amount of tax applied to the order.
      */
     public OrderTotalQuery totalTax(MoneyQueryDefinition queryDef) {
         startField("total_tax");

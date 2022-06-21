@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Defines store credit history information
+ * Contains store credit history information.
  */
 public class CustomerStoreCreditHistoryItemQuery extends AbstractQuery<CustomerStoreCreditHistoryItemQuery> {
     CustomerStoreCreditHistoryItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomerStoreCreditHistoryItemQuery extends AbstractQuery<CustomerS
     }
 
     /**
-     * Action that was made on the store credit
+     * The action that was made on the store credit.
      */
     public CustomerStoreCreditHistoryItemQuery action() {
         startField("action");
@@ -61,7 +61,7 @@ public class CustomerStoreCreditHistoryItemQuery extends AbstractQuery<CustomerS
     }
 
     /**
-     * Date and time when the store credit change was made
+     * The date and time when the store credit change was made.
      */
     public CustomerStoreCreditHistoryItemQuery dateTimeChanged() {
         startField("date_time_changed");

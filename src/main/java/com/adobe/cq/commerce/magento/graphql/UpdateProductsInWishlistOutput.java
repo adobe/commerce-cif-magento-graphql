@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains the customer&#39;s wish list and any errors encountered
+ * Contains the customer&#39;s wish list and any errors encountered.
  */
 public class UpdateProductsInWishlistOutput extends AbstractResponse<UpdateProductsInWishlistOutput> {
     public UpdateProductsInWishlistOutput() {}
@@ -73,7 +73,7 @@ public class UpdateProductsInWishlistOutput extends AbstractResponse<UpdateProdu
     }
 
     /**
-     * An array of errors encountered while updating products in a wish list
+     * An array of errors encountered while updating products in a wish list.
      */
     public List<WishListUserInputError> getUserErrors() {
         return (List<WishListUserInputError>) get("user_errors");
@@ -85,7 +85,7 @@ public class UpdateProductsInWishlistOutput extends AbstractResponse<UpdateProdu
     }
 
     /**
-     * Contains the wish list with all items that were successfully updated
+     * Contains the wish list with all items that were successfully updated.
      */
     public Wishlist getWishlist() {
         return (Wishlist) get("wishlist");

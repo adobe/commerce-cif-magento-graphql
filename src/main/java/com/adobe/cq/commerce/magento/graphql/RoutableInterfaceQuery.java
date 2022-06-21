@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Routable entities serve as the model for a rendered page
+ * Routable entities serve as the model for a rendered page.
  */
 public class RoutableInterfaceQuery extends AbstractQuery<RoutableInterfaceQuery> {
     RoutableInterfaceQuery(StringBuilder _queryBuilder) {
@@ -34,7 +34,7 @@ public class RoutableInterfaceQuery extends AbstractQuery<RoutableInterfaceQuery
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public RoutableInterfaceQuery redirectCode() {
         startField("redirect_code");
@@ -44,7 +44,7 @@ public class RoutableInterfaceQuery extends AbstractQuery<RoutableInterfaceQuery
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public RoutableInterfaceQuery relativeUrl() {
         startField("relative_url");

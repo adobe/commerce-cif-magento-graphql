@@ -17,7 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.CustomFieldInterface;
 
 /**
- * PhysicalProductInterface contains attributes specific to tangible products.
+ * Contains attributes specific to tangible products.
  */
 
 public interface PhysicalProductInterface extends CustomFieldInterface {

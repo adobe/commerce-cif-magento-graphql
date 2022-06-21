@@ -22,9 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ProductPrices is deprecated, replaced by PriceRange. The ProductPrices object contains the regular
- * price of an item, as well as its minimum and maximum prices. Only composite products, which include
- * bundle, configurable, and grouped products, can contain a minimum and maximum price.
+ * Deprecated. Use `PriceRange` instead. Contains the regular price of an item, as well as its minimum
+ * and maximum prices. Only composite products, which include bundle, configurable, and grouped
+ * products, can contain a minimum and maximum price.
  */
 public class ProductPrices extends AbstractResponse<ProductPrices> {
     public ProductPrices() {}
@@ -85,9 +85,9 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
 
     /**
      * The highest possible final price for all the options defined within a composite product. If you are
-     * specifying a price range, this would be the to value.
+     * specifying a price range, this would be the `to` value.
      *
-     * @deprecated Use PriceRange.maximum_price.
+     * @deprecated Use `PriceRange.maximum_price` instead.
      */
     @Deprecated
     public Price getMaximalPrice() {
@@ -101,9 +101,9 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
 
     /**
      * The lowest possible final price for all the options defined within a composite product. If you are
-     * specifying a price range, this would be the from value.
+     * specifying a price range, this would be the `from` value.
      *
-     * @deprecated Use PriceRange.minimum_price.
+     * @deprecated Use `PriceRange.minimum_price` instead.
      */
     @Deprecated
     public Price getMinimalPrice() {
@@ -118,7 +118,7 @@ public class ProductPrices extends AbstractResponse<ProductPrices> {
     /**
      * The base price of a product.
      *
-     * @deprecated Use regular_price from PriceRange.minimum_price or PriceRange.maximum_price.
+     * @deprecated Use `regular_price` from `PriceRange.minimum_price` or `PriceRange.maximum_price` instead.
      */
     @Deprecated
     public Price getRegularPrice() {

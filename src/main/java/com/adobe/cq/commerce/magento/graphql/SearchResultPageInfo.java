@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * SearchResultPageInfo provides navigation for the query response
+ * Provides navigation for the query response.
  */
 public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo> {
     public SearchResultPageInfo() {}
@@ -82,7 +82,7 @@ public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo>
     }
 
     /**
-     * Specifies which page of results to return
+     * The specific page to return.
      */
     public Integer getCurrentPage() {
         return (Integer) get("current_page");
@@ -94,7 +94,7 @@ public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo>
     }
 
     /**
-     * Specifies the maximum number of items to return
+     * The maximum number of items to return per page of results.
      */
     public Integer getPageSize() {
         return (Integer) get("page_size");
@@ -106,7 +106,7 @@ public class SearchResultPageInfo extends AbstractResponse<SearchResultPageInfo>
     }
 
     /**
-     * Total pages
+     * The total number of pages in the response.
      */
     public Integer getTotalPages() {
         return (Integer) get("total_pages");

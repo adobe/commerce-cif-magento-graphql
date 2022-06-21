@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Defines store credit history information
+ * Contains store credit history information.
  */
 public class CustomerStoreCreditHistoryItem extends AbstractResponse<CustomerStoreCreditHistoryItem> {
     public CustomerStoreCreditHistoryItem() {}
@@ -93,7 +93,7 @@ public class CustomerStoreCreditHistoryItem extends AbstractResponse<CustomerSto
     }
 
     /**
-     * Action that was made on the store credit
+     * The action that was made on the store credit.
      */
     public String getAction() {
         return (String) get("action");
@@ -129,7 +129,7 @@ public class CustomerStoreCreditHistoryItem extends AbstractResponse<CustomerSto
     }
 
     /**
-     * Date and time when the store credit change was made
+     * The date and time when the store credit change was made.
      */
     public String getDateTimeChanged() {
         return (String) get("date_time_changed");

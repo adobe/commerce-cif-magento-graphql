@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the applied coupon code.
+ */
 public class AppliedCoupon extends AbstractResponse<AppliedCoupon> {
     public AppliedCoupon() {}
 
@@ -51,6 +54,9 @@ public class AppliedCoupon extends AbstractResponse<AppliedCoupon> {
         return "AppliedCoupon";
     }
 
+    /**
+     * The coupon code the shopper applied to the card.
+     */
     public String getCode() {
         return (String) get("code");
     }

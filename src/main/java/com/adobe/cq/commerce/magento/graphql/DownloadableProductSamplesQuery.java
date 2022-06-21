@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * DownloadableProductSamples defines characteristics of a downloadable product
+ * Defines characteristics of a downloadable product.
  */
 public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableProductSamplesQuery> {
     DownloadableProductSamplesQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public DownloadableProductSamplesQuery id() {
@@ -56,7 +56,7 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-     * URL to the downloadable sample
+     * The full URL to the downloadable sample.
      */
     public DownloadableProductSamplesQuery sampleUrl() {
         startField("sample_url");
@@ -65,7 +65,7 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-     * A number indicating the sort order
+     * A number indicating the sort order.
      */
     public DownloadableProductSamplesQuery sortOrder() {
         startField("sort_order");
@@ -74,7 +74,7 @@ public class DownloadableProductSamplesQuery extends AbstractQuery<DownloadableP
     }
 
     /**
-     * The display name of the sample
+     * The display name of the sample.
      */
     public DownloadableProductSamplesQuery title() {
         startField("title");

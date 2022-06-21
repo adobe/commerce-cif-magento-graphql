@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after adding downloadable products.
+ */
 public class AddDownloadableProductsToCartOutput extends AbstractResponse<AddDownloadableProductsToCartOutput> {
     public AddDownloadableProductsToCartOutput() {}
 
@@ -51,6 +54,9 @@ public class AddDownloadableProductsToCartOutput extends AbstractResponse<AddDow
         return "AddDownloadableProductsToCartOutput";
     }
 
+    /**
+     * The cart after adding products.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

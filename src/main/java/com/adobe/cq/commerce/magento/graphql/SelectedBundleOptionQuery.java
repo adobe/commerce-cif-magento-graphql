@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a selected bundle option.
+ */
 public class SelectedBundleOptionQuery extends AbstractQuery<SelectedBundleOptionQuery> {
     SelectedBundleOptionQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -32,12 +35,18 @@ public class SelectedBundleOptionQuery extends AbstractQuery<SelectedBundleOptio
         return this;
     }
 
+    /**
+     * The display name of the selected bundle product option.
+     */
     public SelectedBundleOptionQuery label() {
         startField("label");
 
         return this;
     }
 
+    /**
+     * The type of selected bundle product option.
+     */
     public SelectedBundleOptionQuery type() {
         startField("type");
 
@@ -53,6 +62,9 @@ public class SelectedBundleOptionQuery extends AbstractQuery<SelectedBundleOptio
         return this;
     }
 
+    /**
+     * An array of selected bundle option values.
+     */
     public SelectedBundleOptionQuery values(SelectedBundleOptionValueQueryDefinition queryDef) {
         startField("values");
 

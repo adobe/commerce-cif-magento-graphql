@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains shipping and tracking details.
+ */
 public class ReturnShippingTrackingQuery extends AbstractQuery<ReturnShippingTrackingQuery> {
     ReturnShippingTrackingQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains details of a shipping carrier
+     * Contains details of a shipping carrier.
      */
     public ReturnShippingTrackingQuery carrier(ReturnShippingCarrierQueryDefinition queryDef) {
         startField("carrier");
@@ -36,7 +39,7 @@ public class ReturnShippingTrackingQuery extends AbstractQuery<ReturnShippingTra
     }
 
     /**
-     * Contains details about the status of a shipment
+     * Details about the status of a shipment.
      */
     public ReturnShippingTrackingQuery status(ReturnShippingTrackingStatusQueryDefinition queryDef) {
         startField("status");
@@ -49,7 +52,7 @@ public class ReturnShippingTrackingQuery extends AbstractQuery<ReturnShippingTra
     }
 
     /**
-     * A tracking number assigned by the carrier
+     * A tracking number assigned by the carrier.
      */
     public ReturnShippingTrackingQuery trackingNumber() {
         startField("tracking_number");
@@ -58,7 +61,7 @@ public class ReturnShippingTrackingQuery extends AbstractQuery<ReturnShippingTra
     }
 
     /**
-     * The unique ID for a `ReturnShippingTracking` object assigned to the tracking item
+     * The unique ID for a `ReturnShippingTracking` object assigned to the tracking item.
      */
     public ReturnShippingTrackingQuery uid() {
         startField("uid");

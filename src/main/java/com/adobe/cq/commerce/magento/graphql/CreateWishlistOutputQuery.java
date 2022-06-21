@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the wish list.
+ */
 public class CreateWishlistOutputQuery extends AbstractQuery<CreateWishlistOutputQuery> {
     CreateWishlistOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);

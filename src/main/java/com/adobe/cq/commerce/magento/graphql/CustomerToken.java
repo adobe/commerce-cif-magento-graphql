@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains a customer authorization token.
+ */
 public class CustomerToken extends AbstractResponse<CustomerToken> {
     public CustomerToken() {}
 
@@ -57,7 +60,7 @@ public class CustomerToken extends AbstractResponse<CustomerToken> {
     }
 
     /**
-     * The customer token
+     * The customer authorization token.
      */
     public String getToken() {
         return (String) get("token");

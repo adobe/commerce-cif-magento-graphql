@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains details about the requested order
+ * Contains the order ID.
  */
 public class OrderQuery extends AbstractQuery<OrderQuery> {
     OrderQuery(StringBuilder _queryBuilder) {
@@ -26,16 +26,7 @@ public class OrderQuery extends AbstractQuery<OrderQuery> {
     }
 
     /**
-     * An array containing the items purchased in this order
-     */
-    public OrderQuery items() {
-        startField("items");
-
-        return this;
-    }
-
-    /**
-     * @deprecated The order_id field is deprecated, use order_number instead.
+     * @deprecated Use `order_number` instead.
      */
     @Deprecated
     public OrderQuery orderId() {
@@ -45,19 +36,10 @@ public class OrderQuery extends AbstractQuery<OrderQuery> {
     }
 
     /**
-     * The unique ID for a `Order` object.
+     * The unique ID for an `Order` object.
      */
     public OrderQuery orderNumber() {
         startField("order_number");
-
-        return this;
-    }
-
-    /**
-     * Contains the calculated total for this order
-     */
-    public OrderQuery total() {
-        startField("total");
 
         return this;
     }

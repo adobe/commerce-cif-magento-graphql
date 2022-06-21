@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains the customer&#39;s wish list and any errors encountered
+ * Contains the customer&#39;s wish list and any errors encountered.
  */
 public class RemoveProductsFromWishlistOutputQuery extends AbstractQuery<RemoveProductsFromWishlistOutputQuery> {
     RemoveProductsFromWishlistOutputQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class RemoveProductsFromWishlistOutputQuery extends AbstractQuery<RemoveP
     }
 
     /**
-     * An array of errors encountered while deleting products from a wish list
+     * An array of errors encountered while deleting products from a wish list.
      */
     public RemoveProductsFromWishlistOutputQuery userErrors(WishListUserInputErrorQueryDefinition queryDef) {
         startField("user_errors");
@@ -39,7 +39,7 @@ public class RemoveProductsFromWishlistOutputQuery extends AbstractQuery<RemoveP
     }
 
     /**
-     * Contains the wish list with after items were successfully deleted
+     * Contains the wish list with after items were successfully deleted.
      */
     public RemoveProductsFromWishlistOutputQuery wishlist(WishlistQueryDefinition queryDef) {
         startField("wishlist");

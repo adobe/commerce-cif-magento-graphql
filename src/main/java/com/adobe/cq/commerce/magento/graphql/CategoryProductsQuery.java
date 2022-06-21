@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The category products object returned in the Category query.
+ * Contains details about the products assigned to a category.
  */
 public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> {
     CategoryProductsQuery(StringBuilder _queryBuilder) {
@@ -39,7 +39,7 @@ public class CategoryProductsQuery extends AbstractQuery<CategoryProductsQuery> 
     }
 
     /**
-     * An object that includes the page_info and currentPage values specified in the query.
+     * Pagination metadata.
      */
     public CategoryProductsQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");

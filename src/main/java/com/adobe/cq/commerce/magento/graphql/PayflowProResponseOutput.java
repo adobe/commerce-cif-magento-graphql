@@ -51,6 +51,9 @@ public class PayflowProResponseOutput extends AbstractResponse<PayflowProRespons
         return "PayflowProResponseOutput";
     }
 
+    /**
+     * The cart with the updated selected payment method.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

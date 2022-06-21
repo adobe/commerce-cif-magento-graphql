@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the cart after gift options have been applied.
+ */
 public class SetGiftOptionsOnCartOutputQuery extends AbstractQuery<SetGiftOptionsOnCartOutputQuery> {
     SetGiftOptionsOnCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The modified cart object
+     * The modified cart object.
      */
     public SetGiftOptionsOnCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");

@@ -16,6 +16,9 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import java.io.Serializable;
 
+/**
+ * Contains the link ID for the downloadable product.
+ */
 public class DownloadableProductLinksInput implements Serializable {
     private int linkId;
 
@@ -23,10 +26,16 @@ public class DownloadableProductLinksInput implements Serializable {
         this.linkId = linkId;
     }
 
+    /**
+     * The unique ID of the downloadable product link.
+     */
     public int getLinkId() {
         return linkId;
     }
 
+    /**
+     * The unique ID of the downloadable product link.
+     */
     public DownloadableProductLinksInput setLinkId(int linkId) {
         this.linkId = linkId;
         return this;

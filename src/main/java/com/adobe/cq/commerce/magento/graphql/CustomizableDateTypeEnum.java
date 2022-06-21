@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration customizable date type.
+ * Defines the customizable date type.
  */
 public enum CustomizableDateTypeEnum {
     DATE,

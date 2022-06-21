@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains details about the sales total amounts used to calculate the final price
+ * Contains details about the sales total amounts used to calculate the final price.
  */
 public class OrderTotal extends AbstractResponse<OrderTotal> {
     public OrderTotal() {}
@@ -145,7 +145,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The final base grand total amount in the base currency
+     * The final base grand total amount in the base currency.
      */
     public Money getBaseGrandTotal() {
         return (Money) get("base_grand_total");
@@ -157,7 +157,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The applied discounts to the order
+     * The applied discounts to the order.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -169,7 +169,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The final total amount, including shipping, discounts, and taxes
+     * The final total amount, including shipping, discounts, and taxes.
      */
     public Money getGrandTotal() {
         return (Money) get("grand_total");
@@ -181,7 +181,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * Contains details about the shipping and handling costs for the order
+     * Details about the shipping and handling costs for the order.
      */
     public ShippingHandling getShippingHandling() {
         return (ShippingHandling) get("shipping_handling");
@@ -193,7 +193,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The subtotal of the order, excluding shipping, discounts, and taxes
+     * The subtotal of the order, excluding shipping, discounts, and taxes.
      */
     public Money getSubtotal() {
         return (Money) get("subtotal");
@@ -205,7 +205,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The order tax details
+     * The order tax details.
      */
     public List<TaxItem> getTaxes() {
         return (List<TaxItem>) get("taxes");
@@ -217,7 +217,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The gift card balance applied to the order
+     * The gift card balance applied to the order.
      */
     public Money getTotalGiftcard() {
         return (Money) get("total_giftcard");
@@ -229,7 +229,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The shipping amount for the order
+     * The shipping amount for the order.
      */
     public Money getTotalShipping() {
         return (Money) get("total_shipping");
@@ -241,7 +241,7 @@ public class OrderTotal extends AbstractResponse<OrderTotal> {
     }
 
     /**
-     * The amount of tax applied to the order
+     * The amount of tax applied to the order.
      */
     public Money getTotalTax() {
         return (Money) get("total_tax");

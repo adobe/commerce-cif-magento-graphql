@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Required fields for Payflow Pro and Payments Pro credit card payments
+ * Required fields for Payflow Pro and Payments Pro credit card payments.
  */
 public class CreditCardDetailsInput implements Serializable {
     private int ccExpMonth;
@@ -41,14 +41,14 @@ public class CreditCardDetailsInput implements Serializable {
     }
 
     /**
-     * Credit card expiration month
+     * The credit card expiration month.
      */
     public int getCcExpMonth() {
         return ccExpMonth;
     }
 
     /**
-     * Credit card expiration month
+     * The credit card expiration month.
      */
     public CreditCardDetailsInput setCcExpMonth(int ccExpMonth) {
         this.ccExpMonth = ccExpMonth;
@@ -56,14 +56,14 @@ public class CreditCardDetailsInput implements Serializable {
     }
 
     /**
-     * Credit card expiration year
+     * The credit card expiration year.
      */
     public int getCcExpYear() {
         return ccExpYear;
     }
 
     /**
-     * Credit card expiration year
+     * The credit card expiration year.
      */
     public CreditCardDetailsInput setCcExpYear(int ccExpYear) {
         this.ccExpYear = ccExpYear;
@@ -71,14 +71,14 @@ public class CreditCardDetailsInput implements Serializable {
     }
 
     /**
-     * Last 4 digits of the credit card
+     * The last 4 digits of the credit card.
      */
     public int getCcLast4() {
         return ccLast4;
     }
 
     /**
-     * Last 4 digits of the credit card
+     * The last 4 digits of the credit card.
      */
     public CreditCardDetailsInput setCcLast4(int ccLast4) {
         this.ccLast4 = ccLast4;
@@ -86,14 +86,14 @@ public class CreditCardDetailsInput implements Serializable {
     }
 
     /**
-     * Credit card type
+     * The credit card type.
      */
     public String getCcType() {
         return ccType;
     }
 
     /**
-     * Credit card type
+     * The credit card type.
      */
     public CreditCardDetailsInput setCcType(String ccType) {
         this.ccType = ccType;

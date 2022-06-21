@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains an array of items in a wish list.
+ */
 public class WishlistItems extends AbstractResponse<WishlistItems> {
     public WishlistItems() {}
 
@@ -75,7 +78,7 @@ public class WishlistItems extends AbstractResponse<WishlistItems> {
     }
 
     /**
-     * A list of items in the wish list
+     * A list of items in the wish list.
      */
     public List<WishlistItemInterface> getItems() {
         return (List<WishlistItemInterface>) get("items");
@@ -87,7 +90,7 @@ public class WishlistItems extends AbstractResponse<WishlistItems> {
     }
 
     /**
-     * Contains pagination metadata
+     * Contains pagination metadata.
      */
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");

@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * EntityUrl is an output object containing the `id`, `relative_url`, and `type` attributes
+ * Contains the `uid`, `relative_url`, and `type` attributes.
  */
 public class EntityUrl extends AbstractResponse<EntityUrl> {
     public EntityUrl() {}
@@ -116,7 +116,7 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
-     * @deprecated The canonical_url field is deprecated, use relative_url instead.
+     * @deprecated Use `relative_url` instead.
      */
     @Deprecated
     public String getCanonicalUrl() {
@@ -129,8 +129,8 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
-     * The unique ID for a `ProductInterface`, `CategoryInterface`, `CmsPage`, etc. object associated with
-     * the specified url. This could be a product UID, category UID, or cms page UID.
+     * The unique ID for a `ProductInterface`, `CategoryInterface`, `CmsPage`, or similar object associated
+     * with the specified URL. This could be a product, category, or CMS page UID.
      */
     public ID getEntityUid() {
         return (ID) get("entity_uid");
@@ -158,7 +158,8 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
-     * 301 or 302 HTTP code for url permanent or temporary redirect or 0 for the 200 no redirect
+     * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public Integer getRedirectCode() {
         return (Integer) get("redirectCode");
@@ -170,8 +171,8 @@ public class EntityUrl extends AbstractResponse<EntityUrl> {
     }
 
     /**
-     * The internal relative URL. If the specified url is a redirect, the query returns the redirected
-     * URL, not the original.
+     * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
+     * not the original.
      */
     public String getRelativeUrl() {
         return (String) get("relative_url");

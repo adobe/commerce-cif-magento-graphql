@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * PhysicalProductInterface contains attributes specific to tangible products.
+ * Contains attributes specific to tangible products.
  */
 public class PhysicalProductInterfaceQuery extends AbstractQuery<PhysicalProductInterfaceQuery> {
     PhysicalProductInterfaceQuery(StringBuilder _queryBuilder) {

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Invoice details
+ * Contains invoice details.
  */
 public class InvoiceQuery extends AbstractQuery<InvoiceQuery> {
     InvoiceQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class InvoiceQuery extends AbstractQuery<InvoiceQuery> {
     }
 
     /**
-     * Comments on the invoice
+     * Comments on the invoice.
      */
     public InvoiceQuery comments(SalesCommentItemQueryDefinition queryDef) {
         startField("comments");
@@ -39,7 +39,7 @@ public class InvoiceQuery extends AbstractQuery<InvoiceQuery> {
     }
 
     /**
-     * The unique ID for a `Invoice` object
+     * The unique ID for a `Invoice` object.
      */
     public InvoiceQuery id() {
         startField("id");
@@ -48,7 +48,7 @@ public class InvoiceQuery extends AbstractQuery<InvoiceQuery> {
     }
 
     /**
-     * Invoiced product details
+     * Invoiced product details.
      */
     public InvoiceQuery items(InvoiceItemInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -61,7 +61,7 @@ public class InvoiceQuery extends AbstractQuery<InvoiceQuery> {
     }
 
     /**
-     * Sequential invoice number
+     * Sequential invoice number.
      */
     public InvoiceQuery number() {
         startField("number");
@@ -70,7 +70,7 @@ public class InvoiceQuery extends AbstractQuery<InvoiceQuery> {
     }
 
     /**
-     * Invoice total amount details
+     * Invoice total amount details.
      */
     public InvoiceQuery total(InvoiceTotalQueryDefinition queryDef) {
         startField("total");

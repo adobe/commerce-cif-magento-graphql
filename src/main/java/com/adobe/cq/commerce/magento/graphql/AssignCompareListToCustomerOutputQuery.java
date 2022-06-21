@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of the request to assign a compare list.
+ */
 public class AssignCompareListToCustomerOutputQuery extends AbstractQuery<AssignCompareListToCustomerOutputQuery> {
     AssignCompareListToCustomerOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The contents of the customer&#39;s compare list
+     * The contents of the customer&#39;s compare list.
      */
     public AssignCompareListToCustomerOutputQuery compareList(CompareListQueryDefinition queryDef) {
         startField("compare_list");
@@ -35,6 +38,9 @@ public class AssignCompareListToCustomerOutputQuery extends AbstractQuery<Assign
         return this;
     }
 
+    /**
+     * Indicates whether the compare list was successfully assigned to the customer.
+     */
     public AssignCompareListToCustomerOutputQuery result() {
         startField("result");
 

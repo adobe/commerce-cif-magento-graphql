@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Deprecated: `Wishlist` type should be used instead
+ * Deprecated: Use the `Wishlist` type instead.
  */
 public class WishlistOutputQuery extends AbstractQuery<WishlistOutputQuery> {
     WishlistOutputQuery(StringBuilder _queryBuilder) {
@@ -28,7 +28,7 @@ public class WishlistOutputQuery extends AbstractQuery<WishlistOutputQuery> {
     /**
      * An array of items in the customer&#39;s wish list
      *
-     * @deprecated Use field `items` from type `Wishlist` instead
+     * @deprecated Use the `Wishlist.items` field instead.
      */
     @Deprecated
     public WishlistOutputQuery items(WishlistItemQueryDefinition queryDef) {
@@ -42,9 +42,9 @@ public class WishlistOutputQuery extends AbstractQuery<WishlistOutputQuery> {
     }
 
     /**
-     * The number of items in the wish list
+     * The number of items in the wish list.
      *
-     * @deprecated Use field `items_count` from type `Wishlist` instead
+     * @deprecated Use the `Wishlist.items_count` field instead.
      */
     @Deprecated
     public WishlistOutputQuery itemsCount() {
@@ -54,9 +54,9 @@ public class WishlistOutputQuery extends AbstractQuery<WishlistOutputQuery> {
     }
 
     /**
-     * When multiple wish lists are enabled, the name the customer assigns to the wishlist
+     * When multiple wish lists are enabled, the name the customer assigns to the wishlist.
      *
-     * @deprecated This field is related to Commerce functionality and is always `null` in Open Source edition
+     * @deprecated This field is related to Commerce functionality and is always `null` in Open Source.
      */
     @Deprecated
     public WishlistOutputQuery name() {
@@ -66,9 +66,9 @@ public class WishlistOutputQuery extends AbstractQuery<WishlistOutputQuery> {
     }
 
     /**
-     * An encrypted code that Magento uses to link to the wish list
+     * An encrypted code that links to the wish list.
      *
-     * @deprecated Use field `sharing_code` from type `Wishlist` instead
+     * @deprecated Use the `Wishlist.sharing_code` field instead.
      */
     @Deprecated
     public WishlistOutputQuery sharingCode() {
@@ -78,9 +78,9 @@ public class WishlistOutputQuery extends AbstractQuery<WishlistOutputQuery> {
     }
 
     /**
-     * The time of the last modification to the wish list
+     * The time of the last modification to the wish list.
      *
-     * @deprecated Use field `updated_at` from type `Wishlist` instead
+     * @deprecated Use the `Wishlist.updated_at` field instead.
      */
     @Deprecated
     public WishlistOutputQuery updatedAt() {

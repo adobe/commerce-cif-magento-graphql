@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableAreaValue defines the price and sku of a product whose page contains a customized text
- * area.
+ * Defines the price and sku of a product whose page contains a customized text area.
  */
 public class CustomizableAreaValue extends AbstractResponse<CustomizableAreaValue> {
     public CustomizableAreaValue() {}

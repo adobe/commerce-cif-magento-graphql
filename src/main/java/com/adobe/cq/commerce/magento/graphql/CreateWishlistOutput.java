@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the wish list.
+ */
 public class CreateWishlistOutput extends AbstractResponse<CreateWishlistOutput> {
     public CreateWishlistOutput() {}
 

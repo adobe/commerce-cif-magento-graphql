@@ -20,6 +20,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines updates to an item in a gift registry.
+ */
 public class UpdateGiftRegistryItemInput implements Serializable {
     private ID giftRegistryItemUid;
 
@@ -34,14 +37,14 @@ public class UpdateGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * The unique ID of a `giftRegistryItem` object
+     * The unique ID of a `giftRegistryItem` object.
      */
     public ID getGiftRegistryItemUid() {
         return giftRegistryItemUid;
     }
 
     /**
-     * The unique ID of a `giftRegistryItem` object
+     * The unique ID of a `giftRegistryItem` object.
      */
     public UpdateGiftRegistryItemInput setGiftRegistryItemUid(ID giftRegistryItemUid) {
         this.giftRegistryItemUid = giftRegistryItemUid;
@@ -49,14 +52,14 @@ public class UpdateGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * The updated quantity of the gift registry item
+     * The updated quantity of the gift registry item.
      */
     public double getQuantity() {
         return quantity;
     }
 
     /**
-     * The updated quantity of the gift registry item
+     * The updated quantity of the gift registry item.
      */
     public UpdateGiftRegistryItemInput setQuantity(double quantity) {
         this.quantity = quantity;
@@ -64,21 +67,21 @@ public class UpdateGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * The updated description of the item
+     * The updated description of the item.
      */
     public String getNote() {
         return note.getValue();
     }
 
     /**
-     * The updated description of the item
+     * The updated description of the item.
      */
     public Input<String> getNoteInput() {
         return note;
     }
 
     /**
-     * The updated description of the item
+     * The updated description of the item.
      */
     public UpdateGiftRegistryItemInput setNote(String note) {
         this.note = Input.optional(note);
@@ -86,7 +89,7 @@ public class UpdateGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * The updated description of the item
+     * The updated description of the item.
      */
     public UpdateGiftRegistryItemInput setNoteInput(Input<String> note) {
         if (note == null) {

@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a gift registry type.
+ */
 public class GiftRegistryType extends AbstractResponse<GiftRegistryType> {
     public GiftRegistryType() {}
 
@@ -83,7 +86,7 @@ public class GiftRegistryType extends AbstractResponse<GiftRegistryType> {
 
     /**
      * An array of attributes that define elements of the gift registry. Each attribute is specified as a
-     * code-value pair
+     * code-value pair.
      */
     public List<GiftRegistryDynamicAttributeMetadataInterface> getDynamicAttributesMetadata() {
         return (List<GiftRegistryDynamicAttributeMetadataInterface>) get("dynamic_attributes_metadata");
@@ -95,7 +98,7 @@ public class GiftRegistryType extends AbstractResponse<GiftRegistryType> {
     }
 
     /**
-     * The label assigned to the gift registry type on the Admin
+     * The label assigned to the gift registry type on the Admin.
      */
     public String getLabel() {
         return (String) get("label");
@@ -107,7 +110,7 @@ public class GiftRegistryType extends AbstractResponse<GiftRegistryType> {
     }
 
     /**
-     * The unique ID assigned to the gift registry type
+     * The unique ID assigned to the gift registry type.
      */
     public ID getUid() {
         return (ID) get("uid");

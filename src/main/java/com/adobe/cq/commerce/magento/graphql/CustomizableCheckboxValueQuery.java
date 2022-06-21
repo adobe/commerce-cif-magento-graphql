@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableCheckboxValue defines the price and sku of a product whose page contains a customized
- * set of checkbox values.
+ * Defines the price and sku of a product whose page contains a customized set of checkbox values.
  */
 public class CustomizableCheckboxValueQuery extends AbstractQuery<CustomizableCheckboxValueQuery> {
     CustomizableCheckboxValueQuery(StringBuilder _queryBuilder) {

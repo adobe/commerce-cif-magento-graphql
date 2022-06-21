@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a single aspect of a product review.
+ */
 public class ProductReviewRatingMetadataQuery extends AbstractQuery<ProductReviewRatingMetadataQuery> {
     ProductReviewRatingMetadataQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
@@ -32,7 +35,7 @@ public class ProductReviewRatingMetadataQuery extends AbstractQuery<ProductRevie
     }
 
     /**
-     * The label assigned to an aspect of a product that is being rated, such as quality or price
+     * The label assigned to an aspect of a product that is being rated, such as quality or price.
      */
     public ProductReviewRatingMetadataQuery name() {
         startField("name");

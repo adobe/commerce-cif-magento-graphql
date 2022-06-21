@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the selected or available gift wrapping options.
+ */
 public class GiftWrappingQuery extends AbstractQuery<GiftWrappingQuery> {
     GiftWrappingQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Gift wrapping design name
+     * The name of the gift wrapping design.
      */
     public GiftWrappingQuery design() {
         startField("design");
@@ -32,7 +35,7 @@ public class GiftWrappingQuery extends AbstractQuery<GiftWrappingQuery> {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object
+     * The unique ID for a `GiftWrapping` object.
      *
      * @deprecated Use `uid` instead
      */
@@ -44,7 +47,7 @@ public class GiftWrappingQuery extends AbstractQuery<GiftWrappingQuery> {
     }
 
     /**
-     * Gift wrapping preview image
+     * The preview image for a gift wrapping option.
      */
     public GiftWrappingQuery image(GiftWrappingImageQueryDefinition queryDef) {
         startField("image");
@@ -57,7 +60,7 @@ public class GiftWrappingQuery extends AbstractQuery<GiftWrappingQuery> {
     }
 
     /**
-     * Gift wrapping price
+     * The gift wrapping price.
      */
     public GiftWrappingQuery price(MoneyQueryDefinition queryDef) {
         startField("price");
@@ -70,7 +73,7 @@ public class GiftWrappingQuery extends AbstractQuery<GiftWrappingQuery> {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object
+     * The unique ID for a `GiftWrapping` object.
      */
     public GiftWrappingQuery uid() {
         startField("uid");

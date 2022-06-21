@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Order shipment details
+ * Contains order shipment details.
  */
 public class OrderShipmentQuery extends AbstractQuery<OrderShipmentQuery> {
     OrderShipmentQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class OrderShipmentQuery extends AbstractQuery<OrderShipmentQuery> {
     }
 
     /**
-     * Comments added to the shipment
+     * Comments added to the shipment.
      */
     public OrderShipmentQuery comments(SalesCommentItemQueryDefinition queryDef) {
         startField("comments");
@@ -39,7 +39,7 @@ public class OrderShipmentQuery extends AbstractQuery<OrderShipmentQuery> {
     }
 
     /**
-     * The unique ID for a `OrderShipment` object
+     * The unique ID for a `OrderShipment` object.
      */
     public OrderShipmentQuery id() {
         startField("id");
@@ -48,7 +48,7 @@ public class OrderShipmentQuery extends AbstractQuery<OrderShipmentQuery> {
     }
 
     /**
-     * Contains items included in the shipment
+     * An array of items included in the shipment.
      */
     public OrderShipmentQuery items(ShipmentItemInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -61,7 +61,7 @@ public class OrderShipmentQuery extends AbstractQuery<OrderShipmentQuery> {
     }
 
     /**
-     * The sequential credit shipment number
+     * The sequential credit shipment number.
      */
     public OrderShipmentQuery number() {
         startField("number");
@@ -70,7 +70,7 @@ public class OrderShipmentQuery extends AbstractQuery<OrderShipmentQuery> {
     }
 
     /**
-     * Contains shipment tracking details
+     * An array of shipment tracking details.
      */
     public OrderShipmentQuery tracking(ShipmentTrackingQueryDefinition queryDef) {
         startField("tracking");

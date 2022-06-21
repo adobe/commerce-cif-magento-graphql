@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Virtual Cart Item
+ * An implementation for virtual product cart items.
  */
 public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implements CartItemInterface {
     public VirtualCartItem() {}
@@ -102,6 +102,9 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
         return "VirtualCartItem";
     }
 
+    /**
+     * An array containing customizable options the shopper selected.
+     */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
     }
@@ -112,7 +115,7 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public String getId() {
@@ -124,6 +127,9 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public CartItemPrices getPrices() {
         return (CartItemPrices) get("prices");
     }
@@ -133,6 +139,9 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -142,6 +151,9 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public Double getQuantity() {
         return (Double) get("quantity");
     }
@@ -152,7 +164,7 @@ public class VirtualCartItem extends AbstractResponse<VirtualCartItem> implement
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ID getUid() {
         return (ID) get("uid");

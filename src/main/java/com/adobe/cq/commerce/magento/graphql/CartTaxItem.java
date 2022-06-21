@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains tax information about an item in the cart.
+ */
 public class CartTaxItem extends AbstractResponse<CartTaxItem> {
     public CartTaxItem() {}
 
@@ -57,6 +60,9 @@ public class CartTaxItem extends AbstractResponse<CartTaxItem> {
         return "CartTaxItem";
     }
 
+    /**
+     * The amount of tax applied to the item.
+     */
     public Money getAmount() {
         return (Money) get("amount");
     }
@@ -66,6 +72,9 @@ public class CartTaxItem extends AbstractResponse<CartTaxItem> {
         return this;
     }
 
+    /**
+     * The description of the tax.
+     */
     public String getLabel() {
         return (String) get("label");
     }

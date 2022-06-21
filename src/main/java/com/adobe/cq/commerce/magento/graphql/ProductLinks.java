@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ProductLinks is an implementation of ProductLinksInterface.
+ * An implementation of `ProductLinksInterface`.
  */
 public class ProductLinks extends AbstractResponse<ProductLinks> implements ProductLinksInterface {
     public ProductLinks() {}

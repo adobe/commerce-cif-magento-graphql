@@ -19,19 +19,19 @@ import java.util.List;
 import com.shopify.graphql.support.CustomFieldInterface;
 
 /**
- * Contains the status and any errors that encountered with the customer&#39;s gift register item
+ * Contains the status and any errors that encountered with the customer&#39;s gift register item.
  */
 
 public interface GiftRegistryItemUserErrorInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Indicates whether the attempt to move the cart items to the gift registry was successful
+     * Indicates whether the attempt to move the cart items to the gift registry was successful.
      */
     Boolean getStatus();
 
     /**
-     * An array of errors encountered while moving items from the cart to the gift registry
+     * An array of errors encountered while moving items from the cart to the gift registry.
      */
     List<GiftRegistryItemsUserError> getUserErrors();
 }

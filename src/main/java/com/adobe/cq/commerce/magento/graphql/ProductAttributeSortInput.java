@@ -19,9 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.Input;
 
 /**
- * ProductAttributeSortInput specifies the attribute to use for sorting search results and indicates
- * whether the results are sorted in ascending or descending order. It&#39;s possible to sort products
- * using searchable attributes with enabled &#39;Use in Filter Options&#39; option
+ * Specifies the attribute to use for sorting search results and indicates whether the results are
+ * sorted in ascending or descending order. It&#39;s possible to sort products using searchable attributes
+ * with enabled &#39;Use in Filter Options&#39; option
  */
 public class ProductAttributeSortInput implements Serializable {
     private Input<SortEnum> name = Input.undefined();

@@ -61,7 +61,7 @@ public class Discount extends AbstractResponse<Discount> {
     }
 
     /**
-     * The amount of the discount
+     * The amount of the discount.
      */
     public Money getAmount() {
         return (Money) get("amount");
@@ -73,7 +73,7 @@ public class Discount extends AbstractResponse<Discount> {
     }
 
     /**
-     * A description of the discount
+     * A description of the discount.
      */
     public String getLabel() {
         return (String) get("label");

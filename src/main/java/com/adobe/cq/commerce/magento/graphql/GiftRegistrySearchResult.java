@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of a gift registry search.
+ */
 public class GiftRegistrySearchResult extends AbstractResponse<GiftRegistrySearchResult> {
     public GiftRegistrySearchResult() {}
 
@@ -98,7 +101,7 @@ public class GiftRegistrySearchResult extends AbstractResponse<GiftRegistrySearc
     }
 
     /**
-     * The date of the event
+     * The date of the event.
      */
     public String getEventDate() {
         return (String) get("event_date");
@@ -110,7 +113,7 @@ public class GiftRegistrySearchResult extends AbstractResponse<GiftRegistrySearc
     }
 
     /**
-     * The title given to the event
+     * The title given to the event.
      */
     public String getEventTitle() {
         return (String) get("event_title");
@@ -122,7 +125,7 @@ public class GiftRegistrySearchResult extends AbstractResponse<GiftRegistrySearc
     }
 
     /**
-     * The URL key of the gift registry
+     * The URL key of the gift registry.
      */
     public ID getGiftRegistryUid() {
         return (ID) get("gift_registry_uid");
@@ -134,7 +137,7 @@ public class GiftRegistrySearchResult extends AbstractResponse<GiftRegistrySearc
     }
 
     /**
-     * The location of the event
+     * The location of the event.
      */
     public String getLocation() {
         return (String) get("location");
@@ -146,7 +149,7 @@ public class GiftRegistrySearchResult extends AbstractResponse<GiftRegistrySearc
     }
 
     /**
-     * The name of the gift registry owner
+     * The name of the gift registry owner.
      */
     public String getName() {
         return (String) get("name");
@@ -158,7 +161,7 @@ public class GiftRegistrySearchResult extends AbstractResponse<GiftRegistrySearc
     }
 
     /**
-     * The type of event being held
+     * The type of event being held.
      */
     public String getType() {
         return (String) get("type");

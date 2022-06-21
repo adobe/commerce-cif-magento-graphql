@@ -14,6 +14,9 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Indicates the status of the request.
+ */
 public enum SubscriptionStatusesEnum {
     NOT_ACTIVE,
 

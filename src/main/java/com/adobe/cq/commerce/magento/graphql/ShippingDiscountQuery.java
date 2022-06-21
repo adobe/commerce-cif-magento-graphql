@@ -26,7 +26,7 @@ public class ShippingDiscountQuery extends AbstractQuery<ShippingDiscountQuery> 
     }
 
     /**
-     * The amount of the discount
+     * The amount of the discount.
      */
     public ShippingDiscountQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");

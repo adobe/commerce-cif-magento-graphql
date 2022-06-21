@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after applying a coupon.
+ */
 public class ApplyCouponToCartOutput extends AbstractResponse<ApplyCouponToCartOutput> {
     public ApplyCouponToCartOutput() {}
 
@@ -51,6 +54,9 @@ public class ApplyCouponToCartOutput extends AbstractResponse<ApplyCouponToCartO
         return "ApplyCouponToCartOutput";
     }
 
+    /**
+     * The cart after applying a coupon.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

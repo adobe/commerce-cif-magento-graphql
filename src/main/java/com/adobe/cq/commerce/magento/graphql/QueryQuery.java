@@ -34,7 +34,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Filter store views by current store group
+         * Filter store views by the current store group.
          */
         public AvailableStoresArguments useCurrentGroup(Boolean value) {
             if (value != null) {
@@ -74,7 +74,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Returns information about shopping cart
+     * Return information about the specified shopping cart.
      */
     public QueryQuery cart(String cartId, CartQueryDefinition queryDef) {
         startField("cart");
@@ -108,7 +108,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once. This attribute is optional.
+         * Specifies the maximum number of results to return at once. The default value is 20.
          */
         public CategoriesArguments pageSize(Integer value) {
             if (value != null) {
@@ -134,10 +134,16 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         void define(CategoriesArguments args);
     }
 
+    /**
+     * Return a list of categories that match the specified filter.
+     */
     public QueryQuery categories(CategoryResultQueryDefinition queryDef) {
         return categories(args -> {}, queryDef);
     }
 
+    /**
+     * Return a list of categories that match the specified filter.
+     */
     public QueryQuery categories(CategoriesArgumentsDefinition argsDef, CategoryResultQueryDefinition queryDef) {
         startField("categories");
 
@@ -158,7 +164,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Id of the category.
+         * The category ID to use as the root of the search.
          */
         public CategoryArguments id(Integer value) {
             if (value != null) {
@@ -174,20 +180,18 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The category query searches for categories that match the criteria specified in the search and
-     * filter attributes.
+     * Search for categories that match the criteria specified in the `search` and `filter` attributes.
      *
-     * @deprecated Use &#39;categoryList&#39; query instead of &#39;category&#39; query
+     * @deprecated Use `categoryList` instead.
      */
     public QueryQuery category(CategoryTreeQueryDefinition queryDef) {
         return category(args -> {}, queryDef);
     }
 
     /**
-     * The category query searches for categories that match the criteria specified in the search and
-     * filter attributes.
+     * Search for categories that match the criteria specified in the `search` and `filter` attributes.
      *
-     * @deprecated Use &#39;categoryList&#39; query instead of &#39;category&#39; query
+     * @deprecated Use `categoryList` instead.
      */
     @Deprecated
     public QueryQuery category(CategoryArgumentsDefinition argsDef, CategoryTreeQueryDefinition queryDef) {
@@ -226,14 +230,14 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Returns an array of categories based on the specified filters.
+     * Return an array of categories based on the specified filters.
      */
     public QueryQuery categoryList(CategoryTreeQueryDefinition queryDef) {
         return categoryList(args -> {}, queryDef);
     }
 
     /**
-     * Returns an array of categories based on the specified filters.
+     * Return an array of categories based on the specified filters.
      */
     public QueryQuery categoryList(CategoryListArgumentsDefinition argsDef, CategoryTreeQueryDefinition queryDef) {
         startField("categoryList");
@@ -250,20 +254,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Retrieves an array of configuration data for the chat widget.
-     */
-    public QueryQuery chatData(ChatDataQueryDefinition queryDef) {
-        startField("chatData");
-
-        _queryBuilder.append('{');
-        queryDef.define(new ChatDataQuery(_queryBuilder));
-        _queryBuilder.append('}');
-
-        return this;
-    }
-
-    /**
-     * The Checkout Agreements information
+     * Return Terms and Conditions configuration information.
      */
     public QueryQuery checkoutAgreements(CheckoutAgreementQueryDefinition queryDef) {
         startField("checkoutAgreements");
@@ -281,7 +272,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Identifiers of the CMS blocks
+         * An array of CMS block IDs.
          */
         public CmsBlocksArguments identifiers(List<String> value) {
             if (value != null) {
@@ -306,14 +297,14 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The CMS block query returns information about CMS blocks
+     * Return information about CMS blocks.
      */
     public QueryQuery cmsBlocks(CmsBlocksQueryDefinition queryDef) {
         return cmsBlocks(args -> {}, queryDef);
     }
 
     /**
-     * The CMS block query returns information about CMS blocks
+     * Return information about CMS blocks.
      */
     public QueryQuery cmsBlocks(CmsBlocksArgumentsDefinition argsDef, CmsBlocksQueryDefinition queryDef) {
         startField("cmsBlocks");
@@ -335,7 +326,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Id of the CMS page
+         * The ID of the CMS page.
          */
         public CmsPageArguments id(Integer value) {
             if (value != null) {
@@ -346,7 +337,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Identifier of the CMS page
+         * The identifier of the CMS page.
          */
         public CmsPageArguments identifier(String value) {
             if (value != null) {
@@ -362,14 +353,14 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The CMS page query returns information about a CMS page
+     * Return details about a CMS page.
      */
     public QueryQuery cmsPage(CmsPageQueryDefinition queryDef) {
         return cmsPage(args -> {}, queryDef);
     }
 
     /**
-     * The CMS page query returns information about a CMS page
+     * Return details about a CMS page.
      */
     public QueryQuery cmsPage(CmsPageArgumentsDefinition argsDef, CmsPageQueryDefinition queryDef) {
         startField("cmsPage");
@@ -386,7 +377,20 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Return products that have been added to the specified compare list
+     * Return detailed information about the authenticated customer&#39;s company.
+     */
+    public QueryQuery company(CompanyQueryDefinition queryDef) {
+        startField("company");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompanyQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Return products that have been added to the specified compare list.
      */
     public QueryQuery compareList(ID uid, CompareListQueryDefinition queryDef) {
         startField("compareList");
@@ -459,7 +463,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The currency query returns information about store currency.
+     * Return information about the store&#39;s currency.
      */
     public QueryQuery currency(CurrencyQueryDefinition queryDef) {
         startField("currency");
@@ -472,8 +476,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
-     * type
+     * Return the attribute type, given an attribute code and entity type.
      */
     public QueryQuery customAttributeMetadata(List<AttributeInput> attributes, CustomAttributeMetadataQueryDefinition queryDef) {
         startField("customAttributeMetadata");
@@ -500,7 +503,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The customer query returns information about a customer account
+     * Return detailed information about a customer account.
      */
     public QueryQuery customer(CustomerQueryDefinition queryDef) {
         startField("customer");
@@ -513,7 +516,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Returns information about the customer shopping cart
+     * Return information about the customer&#39;s shopping cart.
      */
     public QueryQuery customerCart(CartQueryDefinition queryDef) {
         startField("customerCart");
@@ -526,7 +529,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The query returns the contents of a customer&#39;s downloadable products
+     * Return a list of downloadable products the customer has purchased.
      */
     public QueryQuery customerDownloadableProducts(CustomerDownloadableProductsQueryDefinition queryDef) {
         startField("customerDownloadableProducts");
@@ -539,7 +542,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * @deprecated Use orders from customer instead
+     * @deprecated Use the `customer` query instead.
      */
     @Deprecated
     public QueryQuery customerOrders(CustomerOrdersQueryDefinition queryDef) {
@@ -553,7 +556,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Return a list of customer payment tokens
+     * Return a list of customer payment tokens stored in the vault.
      */
     public QueryQuery customerPaymentTokens(CustomerPaymentTokensQueryDefinition queryDef) {
         startField("customerPaymentTokens");
@@ -570,6 +573,9 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
             super(_queryBuilder, true);
         }
 
+        /**
+         * Defines the filter for returning matching dynamic blocks.
+         */
         public DynamicBlocksArguments input(DynamicBlocksFilterInput value) {
             if (value != null) {
                 startArgument("input");
@@ -579,7 +585,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once. The default is 20
+         * The maximum number of results to return at once. The default is 20.
          */
         public DynamicBlocksArguments pageSize(Integer value) {
             if (value != null) {
@@ -590,7 +596,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Specifies which page of results to return. The default value is 1
+         * The page of results to return. The default is 1.
          */
         public DynamicBlocksArguments currentPage(Integer value) {
             if (value != null) {
@@ -606,14 +612,14 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Return a list of dynamic blocks filtered by type, location, or UIDs
+     * Return a list of dynamic blocks filtered by type, location, or UIDs.
      */
     public QueryQuery dynamicBlocks(DynamicBlocksQueryDefinition queryDef) {
         return dynamicBlocks(args -> {}, queryDef);
     }
 
     /**
-     * Return a list of dynamic blocks filtered by type, location, or UIDs
+     * Return a list of dynamic blocks filtered by type, location, or UIDs.
      */
     public QueryQuery dynamicBlocks(DynamicBlocksArgumentsDefinition argsDef, DynamicBlocksQueryDefinition queryDef) {
         startField("dynamicBlocks");
@@ -630,33 +636,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Returns status of Easy Email Capture for Checkout.
-     */
-    public QueryQuery emailCaptureCheckout(IsConfigSettingEnabledOutputQueryDefinition queryDef) {
-        startField("emailCaptureCheckout");
-
-        _queryBuilder.append('{');
-        queryDef.define(new IsConfigSettingEnabledOutputQuery(_queryBuilder));
-        _queryBuilder.append('}');
-
-        return this;
-    }
-
-    /**
-     * Returns status of Easy Email Capture for Newsletter.
-     */
-    public QueryQuery emailCaptureNewsletter(IsConfigSettingEnabledOutputQueryDefinition queryDef) {
-        startField("emailCaptureNewsletter");
-
-        _queryBuilder.append('{');
-        queryDef.define(new IsConfigSettingEnabledOutputQuery(_queryBuilder));
-        _queryBuilder.append('}');
-
-        return this;
-    }
-
-    /**
-     * Retrieve secure PayPal url for Payments Pro Hosted Solution transaction.
+     * Retrieve the secure PayPal URL for a Payments Pro Hosted Solution transaction.
      */
     public QueryQuery getHostedProUrl(HostedProUrlInput input, HostedProUrlQueryDefinition queryDef) {
         startField("getHostedProUrl");
@@ -674,8 +654,8 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Retrieve payment credentials for transaction. Use this query for Payflow Link and Payments Advanced
-     * payment methods.
+     * Retrieve payment credentials for a transaction. Use this query for Payflow Link and Payments
+     * Advanced payment methods.
      */
     public QueryQuery getPayflowLinkToken(PayflowLinkTokenInput input, PayflowLinkTokenQueryDefinition queryDef) {
         startField("getPayflowLinkToken");
@@ -693,7 +673,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Get information for gift card account by code
+     * Return details about a specific gift card.
      */
     public QueryQuery giftCardAccount(GiftCardAccountInput input, GiftCardAccountQueryDefinition queryDef) {
         startField("giftCardAccount");
@@ -729,7 +709,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Search for gift registries by specifying a registrant email address
+     * Search for gift registries by specifying a registrant email address.
      */
     public QueryQuery giftRegistryEmailSearch(String email, GiftRegistrySearchResultQueryDefinition queryDef) {
         startField("giftRegistryEmailSearch");
@@ -747,7 +727,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Search for gift registries by specifying a registry URL key
+     * Search for gift registries by specifying a registry URL key.
      */
     public QueryQuery giftRegistryIdSearch(ID giftRegistryUid, GiftRegistrySearchResultQueryDefinition queryDef) {
         startField("giftRegistryIdSearch");
@@ -770,7 +750,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * The type UID of the registry
+         * The type UID of the registry.
          */
         public GiftRegistryTypeSearchArguments giftRegistryTypeUid(ID value) {
             if (value != null) {
@@ -786,14 +766,14 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Search for gift registries by specifying the registrant name and registry type ID
+     * Search for gift registries by specifying the registrant name and registry type ID.
      */
     public QueryQuery giftRegistryTypeSearch(String firstName, String lastName, GiftRegistrySearchResultQueryDefinition queryDef) {
         return giftRegistryTypeSearch(firstName, lastName, args -> {}, queryDef);
     }
 
     /**
-     * Search for gift registries by specifying the registrant name and registry type ID
+     * Search for gift registries by specifying the registrant name and registry type ID.
      */
     public QueryQuery giftRegistryTypeSearch(String firstName, String lastName, GiftRegistryTypeSearchArgumentsDefinition argsDef,
         GiftRegistrySearchResultQueryDefinition queryDef) {
@@ -817,7 +797,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Get a list of available gift registry types
+     * Get a list of available gift registry types.
      */
     public QueryQuery giftRegistryTypes(GiftRegistryTypeQueryDefinition queryDef) {
         startField("giftRegistryTypes");
@@ -829,6 +809,81 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         return this;
     }
 
+    /**
+     * Check whether the specified email can be used to register a company admin.
+     */
+    public QueryQuery isCompanyAdminEmailAvailable(String email, IsCompanyAdminEmailAvailableOutputQueryDefinition queryDef) {
+        startField("isCompanyAdminEmailAvailable");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new IsCompanyAdminEmailAvailableOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Check whether the specified email can be used to register a new company.
+     */
+    public QueryQuery isCompanyEmailAvailable(String email, IsCompanyEmailAvailableOutputQueryDefinition queryDef) {
+        startField("isCompanyEmailAvailable");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new IsCompanyEmailAvailableOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Check whether the specified role name is valid for the company.
+     */
+    public QueryQuery isCompanyRoleNameAvailable(String name, IsCompanyRoleNameAvailableOutputQueryDefinition queryDef) {
+        startField("isCompanyRoleNameAvailable");
+
+        _queryBuilder.append("(name:");
+        AbstractQuery.appendQuotedString(_queryBuilder, name.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new IsCompanyRoleNameAvailableOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Check whether the specified email can be used to register a company user.
+     */
+    public QueryQuery isCompanyUserEmailAvailable(String email, IsCompanyUserEmailAvailableOutputQueryDefinition queryDef) {
+        startField("isCompanyUserEmailAvailable");
+
+        _queryBuilder.append("(email:");
+        AbstractQuery.appendQuotedString(_queryBuilder, email.toString());
+
+        _queryBuilder.append(')');
+
+        _queryBuilder.append('{');
+        queryDef.define(new IsCompanyUserEmailAvailableOutputQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Check whether the specified email has already been used to create a customer account.
+     */
     public QueryQuery isEmailAvailable(String email, IsEmailAvailableOutputQueryDefinition queryDef) {
         startField("isEmailAvailable");
 
@@ -845,18 +900,96 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Retrieves information about an order by order id.
+     * Retrieve the specified negotiable quote.
      */
-    public QueryQuery orderData(String orderId, OrderQueryDefinition queryDef) {
-        startField("orderData");
+    public QueryQuery negotiableQuote(ID uid, NegotiableQuoteQueryDefinition queryDef) {
+        startField("negotiableQuote");
 
-        _queryBuilder.append("(orderId:");
-        AbstractQuery.appendQuotedString(_queryBuilder, orderId.toString());
+        _queryBuilder.append("(uid:");
+        AbstractQuery.appendQuotedString(_queryBuilder, uid.toString());
 
         _queryBuilder.append(')');
 
         _queryBuilder.append('{');
-        queryDef.define(new OrderQuery(_queryBuilder));
+        queryDef.define(new NegotiableQuoteQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public class NegotiableQuotesArguments extends Arguments {
+        NegotiableQuotesArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * The filter to use to determine which negotiable quotes to return.
+         */
+        public NegotiableQuotesArguments filter(NegotiableQuoteFilterInput value) {
+            if (value != null) {
+                startArgument("filter");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+
+        /**
+         * The maximum number of results to return at once. The default value is 20.
+         */
+        public NegotiableQuotesArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * The page of results to return. The default value is 1.
+         */
+        public NegotiableQuotesArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * The field to use for sorting results.
+         */
+        public NegotiableQuotesArguments sort(NegotiableQuoteSortInput value) {
+            if (value != null) {
+                startArgument("sort");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface NegotiableQuotesArgumentsDefinition {
+        void define(NegotiableQuotesArguments args);
+    }
+
+    /**
+     * Return a list of negotiable quotes that can be viewed by the logged-in customer.
+     */
+    public QueryQuery negotiableQuotes(NegotiableQuotesOutputQueryDefinition queryDef) {
+        return negotiableQuotes(args -> {}, queryDef);
+    }
+
+    /**
+     * Return a list of negotiable quotes that can be viewed by the logged-in customer.
+     */
+    public QueryQuery negotiableQuotes(NegotiableQuotesArgumentsDefinition argsDef, NegotiableQuotesOutputQueryDefinition queryDef) {
+        startField("negotiableQuotes");
+
+        NegotiableQuotesArguments args = new NegotiableQuotesArguments(_queryBuilder);
+        argsDef.define(args);
+        NegotiableQuotesArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new NegotiableQuotesOutputQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;
@@ -973,7 +1106,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Retrieves metadata required by clients to render the Reviews section.
+     * Return the active ratings attributes and the values each rating can have.
      */
     public QueryQuery productReviewRatingsMetadata(ProductReviewRatingsMetadataQueryDefinition queryDef) {
         startField("productReviewRatingsMetadata");
@@ -991,7 +1124,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Performs a full-text search using the specified key words.
+         * One or more keywords to use in a full-text search.
          */
         public ProductsArguments search(String value) {
             if (value != null) {
@@ -1002,7 +1135,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Identifies which product attributes to search for and return.
+         * The product attributes to search for and return.
          */
         public ProductsArguments filter(ProductAttributeFilterInput value) {
             if (value != null) {
@@ -1013,7 +1146,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once. This attribute is optional.
+         * The maximum number of results to return at once. The default value is 20.
          */
         public ProductsArguments pageSize(Integer value) {
             if (value != null) {
@@ -1024,7 +1157,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
         }
 
         /**
-         * Specifies which page of results to return. The default value is 1.
+         * The page of results to return. The default value is 1.
          */
         public ProductsArguments currentPage(Integer value) {
             if (value != null) {
@@ -1052,16 +1185,14 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The products query searches for products that match the criteria specified in the search and filter
-     * attributes.
+     * Search for products that match the criteria specified in the `search` and `filter` attributes.
      */
     public QueryQuery products(ProductsQueryDefinition queryDef) {
         return products(args -> {}, queryDef);
     }
 
     /**
-     * The products query searches for products that match the criteria specified in the search and filter
-     * attributes.
+     * Search for products that match the criteria specified in the `search` and `filter` attributes.
      */
     public QueryQuery products(ProductsArgumentsDefinition argsDef, ProductsQueryDefinition queryDef) {
         startField("products");
@@ -1078,8 +1209,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Return the full details for a specified product, category, or CMS page given the specified url_key,
-     * appended by the url_suffix, if one exists
+     * Return the full details for a specified product, category, or CMS page.
      */
     public QueryQuery route(String url, RoutableInterfaceQueryDefinition queryDef) {
         startField("route");
@@ -1097,7 +1227,7 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The store config query
+     * Return details about the store&#39;s configuration.
      */
     public QueryQuery storeConfig(StoreConfigQueryDefinition queryDef) {
         startField("storeConfig");
@@ -1110,23 +1240,9 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * Retrieves an array of configuration data for different types of tracking.
-     */
-    public QueryQuery trackingData(TrackingDataQueryDefinition queryDef) {
-        startField("trackingData");
-
-        _queryBuilder.append('{');
-        queryDef.define(new TrackingDataQuery(_queryBuilder));
-        _queryBuilder.append('}');
-
-        return this;
-    }
-
-    /**
-     * The urlResolver query returns the relative URL for a specified product, category or CMS page, using
-     * as input a url_key appended by the url_suffix, if one exists
+     * Return the relative URL for a specified product, category or CMS page.
      *
-     * @deprecated Use the &#39;route&#39; query instead
+     * @deprecated Use the `route` query instead.
      */
     @Deprecated
     public QueryQuery urlResolver(String url, EntityUrlQueryDefinition queryDef) {
@@ -1145,9 +1261,9 @@ public class QueryQuery extends AbstractQuery<QueryQuery> {
     }
 
     /**
-     * The wishlist query returns the contents of a customer&#39;s wish list
+     * Return the contents of a customer&#39;s wish list.
      *
-     * @deprecated Moved under `Customer` `wishlist`
+     * @deprecated Moved under `Customer.wishlist`.
      */
     @Deprecated
     public QueryQuery wishlist(WishlistOutputQueryDefinition queryDef) {

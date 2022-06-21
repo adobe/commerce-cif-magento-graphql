@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after adding virtual products.
+ */
 public class AddVirtualProductsToCartOutput extends AbstractResponse<AddVirtualProductsToCartOutput> {
     public AddVirtualProductsToCartOutput() {}
 
@@ -51,6 +54,9 @@ public class AddVirtualProductsToCartOutput extends AbstractResponse<AddVirtualP
         return "AddVirtualProductsToCartOutput";
     }
 
+    /**
+     * The cart after adding products.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

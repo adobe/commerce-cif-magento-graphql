@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains shipping and tracking details.
+ */
 public class ReturnShippingTracking extends AbstractResponse<ReturnShippingTracking> {
     public ReturnShippingTracking() {}
 
@@ -76,7 +79,7 @@ public class ReturnShippingTracking extends AbstractResponse<ReturnShippingTrack
     }
 
     /**
-     * Contains details of a shipping carrier
+     * Contains details of a shipping carrier.
      */
     public ReturnShippingCarrier getCarrier() {
         return (ReturnShippingCarrier) get("carrier");
@@ -88,7 +91,7 @@ public class ReturnShippingTracking extends AbstractResponse<ReturnShippingTrack
     }
 
     /**
-     * Contains details about the status of a shipment
+     * Details about the status of a shipment.
      */
     public ReturnShippingTrackingStatus getStatus() {
         return (ReturnShippingTrackingStatus) get("status");
@@ -100,7 +103,7 @@ public class ReturnShippingTracking extends AbstractResponse<ReturnShippingTrack
     }
 
     /**
-     * A tracking number assigned by the carrier
+     * A tracking number assigned by the carrier.
      */
     public String getTrackingNumber() {
         return (String) get("tracking_number");
@@ -112,7 +115,7 @@ public class ReturnShippingTracking extends AbstractResponse<ReturnShippingTrack
     }
 
     /**
-     * The unique ID for a `ReturnShippingTracking` object assigned to the tracking item
+     * The unique ID for a `ReturnShippingTracking` object assigned to the tracking item.
      */
     public ID getUid() {
         return (ID) get("uid");

@@ -20,7 +20,7 @@ public interface SwatchLayerFilterItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Data required to render swatch filter item
+     * Data required to render a swatch filter item.
      */
     SwatchData getSwatchData();
 }

@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines downloadable product options for `CreditMemoItemInterface`.
+ */
 public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCreditMemoItem> implements CreditMemoItemInterface {
     public DownloadableCreditMemoItem() {}
 
@@ -142,8 +145,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Details about the final discount amount for the base product, including discounts on options.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -155,7 +157,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * A list of downloadable links that are refunded from the downloadable product
+     * A list of downloadable links that are refunded from the downloadable product.
      */
     public List<DownloadableItemsLinks> getDownloadableLinks() {
         return (List<DownloadableItemsLinks>) get("downloadable_links");
@@ -167,7 +169,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * The unique ID for a `CreditMemoItemInterface` object
+     * The unique ID for a `CreditMemoItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -179,7 +181,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * The order item the credit memo is applied to
+     * The order item the credit memo is applied to.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -191,7 +193,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -203,7 +205,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * The sale price for the base product, including selected options
+     * The sale price for the base product, including selected options.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -215,7 +217,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -227,7 +229,7 @@ public class DownloadableCreditMemoItem extends AbstractResponse<DownloadableCre
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public Double getQuantityRefunded() {
         return (Double) get("quantity_refunded");

@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Defines the referenced product and the email sender and recipients.
+ */
 public class SendEmailToFriendInput implements Serializable {
     private int productId;
 
@@ -32,28 +35,46 @@ public class SendEmailToFriendInput implements Serializable {
         this.sender = sender;
     }
 
+    /**
+     * The ID of the product that the sender is referencing.
+     */
     public int getProductId() {
         return productId;
     }
 
+    /**
+     * The ID of the product that the sender is referencing.
+     */
     public SendEmailToFriendInput setProductId(int productId) {
         this.productId = productId;
         return this;
     }
 
+    /**
+     * An array containing information about each recipient.
+     */
     public List<SendEmailToFriendRecipientInput> getRecipients() {
         return recipients;
     }
 
+    /**
+     * An array containing information about each recipient.
+     */
     public SendEmailToFriendInput setRecipients(List<SendEmailToFriendRecipientInput> recipients) {
         this.recipients = recipients;
         return this;
     }
 
+    /**
+     * Information about the customer and the content of the message.
+     */
     public SendEmailToFriendSenderInput getSender() {
         return sender;
     }
 
+    /**
+     * Information about the customer and the content of the message.
+     */
     public SendEmailToFriendInput setSender(SendEmailToFriendSenderInput sender) {
         this.sender = sender;
         return this;

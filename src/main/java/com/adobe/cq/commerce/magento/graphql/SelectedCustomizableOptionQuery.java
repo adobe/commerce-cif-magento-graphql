@@ -17,14 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Identifies a customized product that has been placed in a cart.
+ */
 public class SelectedCustomizableOptionQuery extends AbstractQuery<SelectedCustomizableOptionQuery> {
     SelectedCustomizableOptionQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The unique ID for a `CustomizableRadioOption`, `CustomizableDropDownOption`,
-     * `CustomizableMultipleOption`, etc. of `CustomizableOptionInterface` objects
+     * The unique ID for a specific `CustomizableOptionInterface` object, such as a
+     * `CustomizableFieldOption`, `CustomizableFileOption`, or `CustomizableAreaOption` object.
      */
     public SelectedCustomizableOptionQuery customizableOptionUid() {
         startField("customizable_option_uid");
@@ -33,7 +36,7 @@ public class SelectedCustomizableOptionQuery extends AbstractQuery<SelectedCusto
     }
 
     /**
-     * @deprecated Use SelectedCustomizableOption.customizable_option_uid instead
+     * @deprecated Use `SelectedCustomizableOption.customizable_option_uid` instead.
      */
     @Deprecated
     public SelectedCustomizableOptionQuery id() {
@@ -42,30 +45,45 @@ public class SelectedCustomizableOptionQuery extends AbstractQuery<SelectedCusto
         return this;
     }
 
+    /**
+     * Indicates whether the customizable option is required.
+     */
     public SelectedCustomizableOptionQuery isRequired() {
         startField("is_required");
 
         return this;
     }
 
+    /**
+     * The display name of the selected customizable option.
+     */
     public SelectedCustomizableOptionQuery label() {
         startField("label");
 
         return this;
     }
 
+    /**
+     * A value indicating the order to display this option.
+     */
     public SelectedCustomizableOptionQuery sortOrder() {
         startField("sort_order");
 
         return this;
     }
 
+    /**
+     * The type of `CustomizableOptionInterface` object.
+     */
     public SelectedCustomizableOptionQuery type() {
         startField("type");
 
         return this;
     }
 
+    /**
+     * An array of selectable values.
+     */
     public SelectedCustomizableOptionQuery values(SelectedCustomizableOptionValueQueryDefinition queryDef) {
         startField("values");
 

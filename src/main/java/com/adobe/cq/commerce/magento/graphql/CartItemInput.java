@@ -21,6 +21,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines an item to be added to the cart.
+ */
 public class CartItemInput implements Serializable {
     private double quantity;
 
@@ -38,40 +41,52 @@ public class CartItemInput implements Serializable {
         this.sku = sku;
     }
 
+    /**
+     * The amount or number of an item to add.
+     */
     public double getQuantity() {
         return quantity;
     }
 
+    /**
+     * The amount or number of an item to add.
+     */
     public CartItemInput setQuantity(double quantity) {
         this.quantity = quantity;
         return this;
     }
 
+    /**
+     * The SKU of the product.
+     */
     public String getSku() {
         return sku;
     }
 
+    /**
+     * The SKU of the product.
+     */
     public CartItemInput setSku(String sku) {
         this.sku = sku;
         return this;
     }
 
     /**
-     * An array of entered options for the base product, such as personalization text
+     * An array of entered options for the base product, such as personalization text.
      */
     public List<EnteredOptionInput> getEnteredOptions() {
         return enteredOptions.getValue();
     }
 
     /**
-     * An array of entered options for the base product, such as personalization text
+     * An array of entered options for the base product, such as personalization text.
      */
     public Input<List<EnteredOptionInput>> getEnteredOptionsInput() {
         return enteredOptions;
     }
 
     /**
-     * An array of entered options for the base product, such as personalization text
+     * An array of entered options for the base product, such as personalization text.
      */
     public CartItemInput setEnteredOptions(List<EnteredOptionInput> enteredOptions) {
         this.enteredOptions = Input.optional(enteredOptions);
@@ -79,7 +94,7 @@ public class CartItemInput implements Serializable {
     }
 
     /**
-     * An array of entered options for the base product, such as personalization text
+     * An array of entered options for the base product, such as personalization text.
      */
     public CartItemInput setEnteredOptionsInput(Input<List<EnteredOptionInput>> enteredOptions) {
         if (enteredOptions == null) {
@@ -90,21 +105,21 @@ public class CartItemInput implements Serializable {
     }
 
     /**
-     * For child products, the SKU of its parent product
+     * For a child product, the SKU of its parent product.
      */
     public String getParentSku() {
         return parentSku.getValue();
     }
 
     /**
-     * For child products, the SKU of its parent product
+     * For a child product, the SKU of its parent product.
      */
     public Input<String> getParentSkuInput() {
         return parentSku;
     }
 
     /**
-     * For child products, the SKU of its parent product
+     * For a child product, the SKU of its parent product.
      */
     public CartItemInput setParentSku(String parentSku) {
         this.parentSku = Input.optional(parentSku);
@@ -112,7 +127,7 @@ public class CartItemInput implements Serializable {
     }
 
     /**
-     * For child products, the SKU of its parent product
+     * For a child product, the SKU of its parent product.
      */
     public CartItemInput setParentSkuInput(Input<String> parentSku) {
         if (parentSku == null) {
@@ -123,27 +138,27 @@ public class CartItemInput implements Serializable {
     }
 
     /**
-     * The selected options for the base product, such as color or size with unique ID for a
-     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
-     * objects
+     * The selected options for the base product, such as color or size, using the unique ID for an object
+     * such as `CustomizableRadioOption`, `CustomizableDropDownOption`, or
+     * `ConfigurableProductOptionsValues`.
      */
     public List<ID> getSelectedOptions() {
         return selectedOptions.getValue();
     }
 
     /**
-     * The selected options for the base product, such as color or size with unique ID for a
-     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
-     * objects
+     * The selected options for the base product, such as color or size, using the unique ID for an object
+     * such as `CustomizableRadioOption`, `CustomizableDropDownOption`, or
+     * `ConfigurableProductOptionsValues`.
      */
     public Input<List<ID>> getSelectedOptionsInput() {
         return selectedOptions;
     }
 
     /**
-     * The selected options for the base product, such as color or size with unique ID for a
-     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
-     * objects
+     * The selected options for the base product, such as color or size, using the unique ID for an object
+     * such as `CustomizableRadioOption`, `CustomizableDropDownOption`, or
+     * `ConfigurableProductOptionsValues`.
      */
     public CartItemInput setSelectedOptions(List<ID> selectedOptions) {
         this.selectedOptions = Input.optional(selectedOptions);
@@ -151,9 +166,9 @@ public class CartItemInput implements Serializable {
     }
 
     /**
-     * The selected options for the base product, such as color or size with unique ID for a
-     * `CustomizableRadioOption`, `CustomizableDropDownOption`, `ConfigurableProductOptionsValues`, etc.
-     * objects
+     * The selected options for the base product, such as color or size, using the unique ID for an object
+     * such as `CustomizableRadioOption`, `CustomizableDropDownOption`, or
+     * `ConfigurableProductOptionsValues`.
      */
     public CartItemInput setSelectedOptionsInput(Input<List<ID>> selectedOptions) {
         if (selectedOptions == null) {

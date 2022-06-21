@@ -19,10 +19,10 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * A set of relative URLs that PayPal will use in response to various actions during the authorization
- * process. Magento prepends the base URL to this value to create a full URL. For example, if the full
- * URL is https://www.example.com/path/to/page.html, the relative URL is path/to/page.html. Use this
- * input for Payflow Pro and Payment Pro payment methods.
+ * Contains a set of relative URLs that PayPal uses in response to various actions during the
+ * authorization process. Magento prepends the base URL to this value to create a full URL. For
+ * example, if the full URL is https://www.example.com/path/to/page.html, the relative URL is
+ * path/to/page.html. Use this input for the Payflow Pro and Payment Pro payment methods.
  */
 public class PayflowProUrlInput implements Serializable {
     private String cancelUrl;
@@ -40,7 +40,7 @@ public class PayflowProUrlInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in
+     * The relative URL of the page that PayPal redirects to when the buyer cancels the transaction in
      * order to choose a different payment method. If the full URL to this page is
      * https://www.example.com/paypal/action/cancel.html, the relative URL is paypal/action/cancel.html.
      */
@@ -49,7 +49,7 @@ public class PayflowProUrlInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in
+     * The relative URL of the page that PayPal redirects to when the buyer cancels the transaction in
      * order to choose a different payment method. If the full URL to this page is
      * https://www.example.com/paypal/action/cancel.html, the relative URL is paypal/action/cancel.html.
      */
@@ -59,8 +59,8 @@ public class PayflowProUrlInput implements Serializable {
     }
 
     /**
-     * The relative URL of the transaction error page that PayPal will redirect to upon payment error. If
-     * the full URL to this page is https://www.example.com/paypal/action/error.html, the relative URL is
+     * The relative URL of the transaction error page that PayPal redirects to upon payment error. If the
+     * full URL to this page is https://www.example.com/paypal/action/error.html, the relative URL is
      * paypal/action/error.html.
      */
     public String getErrorUrl() {
@@ -68,8 +68,8 @@ public class PayflowProUrlInput implements Serializable {
     }
 
     /**
-     * The relative URL of the transaction error page that PayPal will redirect to upon payment error. If
-     * the full URL to this page is https://www.example.com/paypal/action/error.html, the relative URL is
+     * The relative URL of the transaction error page that PayPal redirects to upon payment error. If the
+     * full URL to this page is https://www.example.com/paypal/action/error.html, the relative URL is
      * paypal/action/error.html.
      */
     public PayflowProUrlInput setErrorUrl(String errorUrl) {
@@ -78,18 +78,18 @@ public class PayflowProUrlInput implements Serializable {
     }
 
     /**
-     * The relative URL of the final confirmation page that PayPal will redirect to upon payment success.
-     * If the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL
-     * is paypal/action/return.html.
+     * The relative URL of the final confirmation page that PayPal redirects to upon payment success. If
+     * the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL is
+     * paypal/action/return.html.
      */
     public String getReturnUrl() {
         return returnUrl;
     }
 
     /**
-     * The relative URL of the final confirmation page that PayPal will redirect to upon payment success.
-     * If the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL
-     * is paypal/action/return.html.
+     * The relative URL of the final confirmation page that PayPal redirects to upon payment success. If
+     * the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL is
+     * paypal/action/return.html.
      */
     public PayflowProUrlInput setReturnUrl(String returnUrl) {
         this.returnUrl = returnUrl;

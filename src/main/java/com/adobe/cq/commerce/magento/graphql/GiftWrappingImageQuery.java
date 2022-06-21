@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Points to an image associated with a gift wrapping option.
+ */
 public class GiftWrappingImageQuery extends AbstractQuery<GiftWrappingImageQuery> {
     GiftWrappingImageQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Gift wrapping preview image label
+     * The gift wrapping preview image label.
      */
     public GiftWrappingImageQuery label() {
         startField("label");
@@ -32,7 +35,7 @@ public class GiftWrappingImageQuery extends AbstractQuery<GiftWrappingImageQuery
     }
 
     /**
-     * Gift wrapping preview image URL
+     * The gift wrapping preview image URL.
      */
     public GiftWrappingImageQuery url() {
         startField("url");

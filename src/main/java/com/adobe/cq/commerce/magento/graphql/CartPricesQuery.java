@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the final price of items in the cart, including discount and tax information.
+ */
 public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
     CartPricesQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An array containing the names and amounts of taxes applied to each item in the cart.
+     */
     public CartPricesQuery appliedTaxes(CartTaxItemQueryDefinition queryDef) {
         startField("applied_taxes");
 
@@ -33,7 +39,7 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
     }
 
     /**
-     * @deprecated Use discounts instead
+     * @deprecated Use discounts instead.
      */
     @Deprecated
     public CartPricesQuery discount(CartDiscountQueryDefinition queryDef) {
@@ -47,7 +53,7 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
     }
 
     /**
-     * An array of applied discounts
+     * An array containing all discounts applied to the cart.
      */
     public CartPricesQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -60,7 +66,7 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
     }
 
     /**
-     * The list of prices for the selected gift options
+     * The list of prices for the selected gift options.
      */
     public CartPricesQuery giftOptions(GiftOptionsPricesQueryDefinition queryDef) {
         startField("gift_options");
@@ -72,6 +78,9 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
         return this;
     }
 
+    /**
+     * The total, including discounts, taxes, shipping, and other fees.
+     */
     public CartPricesQuery grandTotal(MoneyQueryDefinition queryDef) {
         startField("grand_total");
 
@@ -82,6 +91,9 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
         return this;
     }
 
+    /**
+     * The subtotal without any applied taxes.
+     */
     public CartPricesQuery subtotalExcludingTax(MoneyQueryDefinition queryDef) {
         startField("subtotal_excluding_tax");
 
@@ -92,6 +104,9 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
         return this;
     }
 
+    /**
+     * The subtotal including any applied taxes.
+     */
     public CartPricesQuery subtotalIncludingTax(MoneyQueryDefinition queryDef) {
         startField("subtotal_including_tax");
 
@@ -102,6 +117,9 @@ public class CartPricesQuery extends AbstractQuery<CartPricesQuery> {
         return this;
     }
 
+    /**
+     * The subtotal with any discounts applied, but not taxes.
+     */
     public CartPricesQuery subtotalWithDiscountExcludingTax(MoneyQueryDefinition queryDef) {
         startField("subtotal_with_discount_excluding_tax");
 

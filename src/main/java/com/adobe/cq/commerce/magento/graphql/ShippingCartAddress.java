@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains shipping addresses and methods.
+ */
 public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> implements CartAddressInterface {
     public ShippingCartAddress() {}
 
@@ -212,7 +215,12 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
                 }
 
                 case "telephone": {
-                    responseData.put(key, jsonAsString(field.getValue(), key));
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -233,6 +241,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return "ShippingCartAddress";
     }
 
+    /**
+     * An array that lists the shipping methods that can be applied to the cart.
+     */
     public List<AvailableShippingMethod> getAvailableShippingMethods() {
         return (List<AvailableShippingMethod>) get("available_shipping_methods");
     }
@@ -243,7 +254,7 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
     }
 
     /**
-     * @deprecated `cart_items_v2` should be used instead
+     * @deprecated Use `cart_items_v2` instead.
      */
     @Deprecated
     public List<CartItemQuantity> getCartItems() {
@@ -255,6 +266,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * An array that lists the items in the cart.
+     */
     public List<CartItemInterface> getCartItemsV2() {
         return (List<CartItemInterface>) get("cart_items_v2");
     }
@@ -264,6 +278,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * The city specified for the billing or shipping address.
+     */
     public String getCity() {
         return (String) get("city");
     }
@@ -273,6 +290,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * The company specified for the billing or shipping address.
+     */
     public String getCompany() {
         return (String) get("company");
     }
@@ -282,6 +302,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * An object containing the country label and code.
+     */
     public CartAddressCountry getCountry() {
         return (CartAddressCountry) get("country");
     }
@@ -291,6 +314,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * Text provided by the shopper.
+     */
     public String getCustomerNotes() {
         return (String) get("customer_notes");
     }
@@ -300,6 +326,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * The first name of the customer or guest.
+     */
     public String getFirstname() {
         return (String) get("firstname");
     }
@@ -310,7 +339,7 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
     }
 
     /**
-     * @deprecated This information shoud not be exposed on frontend
+     * @deprecated This information should not be exposed on the frontend.
      */
     @Deprecated
     public Double getItemsWeight() {
@@ -322,6 +351,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * The last name of the customer or guest.
+     */
     public String getLastname() {
         return (String) get("lastname");
     }
@@ -340,6 +372,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * The ZIP or postal code of the billing or shipping address.
+     */
     public String getPostcode() {
         return (String) get("postcode");
     }
@@ -349,6 +384,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * An object containing the region label and code.
+     */
     public CartAddressRegion getRegion() {
         return (CartAddressRegion) get("region");
     }
@@ -358,6 +396,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * An object that describes the selected shipping method.
+     */
     public SelectedShippingMethod getSelectedShippingMethod() {
         return (SelectedShippingMethod) get("selected_shipping_method");
     }
@@ -367,6 +408,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * An array containing the street for the billing or shipping address.
+     */
     public List<String> getStreet() {
         return (List<String>) get("street");
     }
@@ -376,6 +420,9 @@ public class ShippingCartAddress extends AbstractResponse<ShippingCartAddress> i
         return this;
     }
 
+    /**
+     * The telephone number for the billing or shipping address.
+     */
     public String getTelephone() {
         return (String) get("telephone");
     }

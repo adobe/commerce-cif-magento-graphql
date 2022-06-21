@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains price details from an invoice
+ * Contains price details from an invoice.
  */
 public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     public InvoiceTotal() {}
@@ -134,7 +134,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * The final base grand total amount in the base currency
+     * The final base grand total amount in the base currency.
      */
     public Money getBaseGrandTotal() {
         return (Money) get("base_grand_total");
@@ -146,7 +146,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * The applied discounts to the invoice
+     * The applied discounts to the invoice.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -158,7 +158,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * The final total amount, including shipping, discounts, and taxes
+     * The final total amount, including shipping, discounts, and taxes.
      */
     public Money getGrandTotal() {
         return (Money) get("grand_total");
@@ -170,7 +170,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * Contains details about the shipping and handling costs for the invoice
+     * Details about the shipping and handling costs for the invoice.
      */
     public ShippingHandling getShippingHandling() {
         return (ShippingHandling) get("shipping_handling");
@@ -182,7 +182,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * The subtotal of the invoice, excluding shipping, discounts, and taxes
+     * The subtotal of the invoice, excluding shipping, discounts, and taxes.
      */
     public Money getSubtotal() {
         return (Money) get("subtotal");
@@ -194,7 +194,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * The invoice tax details
+     * The invoice tax details.
      */
     public List<TaxItem> getTaxes() {
         return (List<TaxItem>) get("taxes");
@@ -206,7 +206,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * The shipping amount for the invoice
+     * The shipping amount for the invoice.
      */
     public Money getTotalShipping() {
         return (Money) get("total_shipping");
@@ -218,7 +218,7 @@ public class InvoiceTotal extends AbstractResponse<InvoiceTotal> {
     }
 
     /**
-     * The amount of tax applied to the invoice
+     * The amount of tax applied to the invoice.
      */
     public Money getTotalTax() {
         return (Money) get("total_tax");

@@ -23,7 +23,7 @@ public class GiftRegistryDynamicAttributeQuery extends AbstractQuery<GiftRegistr
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeQuery code() {
         startField("code");
@@ -32,7 +32,7 @@ public class GiftRegistryDynamicAttributeQuery extends AbstractQuery<GiftRegistr
     }
 
     /**
-     * Indicates which group the dynamic attribute is a member of
+     * Indicates which group the dynamic attribute is a member of.
      */
     public GiftRegistryDynamicAttributeQuery group() {
         startField("group");
@@ -41,7 +41,7 @@ public class GiftRegistryDynamicAttributeQuery extends AbstractQuery<GiftRegistr
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeQuery label() {
         startField("label");
@@ -50,7 +50,7 @@ public class GiftRegistryDynamicAttributeQuery extends AbstractQuery<GiftRegistr
     }
 
     /**
-     * A corresponding value for the code
+     * A corresponding value for the code.
      */
     public GiftRegistryDynamicAttributeQuery value() {
         startField("value");

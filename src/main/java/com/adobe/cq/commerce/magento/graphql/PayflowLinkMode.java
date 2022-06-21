@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * Mode for payment: TEST or LIVE. Applies to Payflow Link and Payments Advanced payment methods.
+ * Indicates the mode for payment. Applies to the Payflow Link and Payments Advanced payment methods.
  */
 public enum PayflowLinkMode {
     LIVE,

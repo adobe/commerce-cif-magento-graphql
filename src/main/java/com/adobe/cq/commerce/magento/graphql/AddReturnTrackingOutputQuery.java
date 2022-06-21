@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the response after adding tracking information.
+ */
 public class AddReturnTrackingOutputQuery extends AbstractQuery<AddReturnTrackingOutputQuery> {
     AddReturnTrackingOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains details about the modified return
+     * Details about the modified return.
      */
     public AddReturnTrackingOutputQuery returnValue(ReturnQueryDefinition queryDef) {
         startField("return");
@@ -36,7 +39,7 @@ public class AddReturnTrackingOutputQuery extends AbstractQuery<AddReturnTrackin
     }
 
     /**
-     * Contains details about shipping for a return
+     * Details about shipping for a return.
      */
     public AddReturnTrackingOutputQuery returnShippingTracking(ReturnShippingTrackingQueryDefinition queryDef) {
         startField("return_shipping_tracking");

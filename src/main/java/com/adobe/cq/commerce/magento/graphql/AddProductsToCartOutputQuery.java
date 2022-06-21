@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after adding products to it.
+ */
 public class AddProductsToCartOutputQuery extends AbstractQuery<AddProductsToCartOutputQuery> {
     AddProductsToCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The cart after products have been added
+     * The cart after products have been added.
      */
     public AddProductsToCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
@@ -36,7 +39,7 @@ public class AddProductsToCartOutputQuery extends AbstractQuery<AddProductsToCar
     }
 
     /**
-     * An error encountered while adding an item to the cart.
+     * Contains errors encountered while adding an item to the cart.
      */
     public AddProductsToCartOutputQuery userErrors(CartUserInputErrorQueryDefinition queryDef) {
         startField("user_errors");

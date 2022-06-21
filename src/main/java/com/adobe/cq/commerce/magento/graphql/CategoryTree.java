@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Category tree implementation
+ * Contains the hierarchy of categories.
  */
 public class CategoryTree extends AbstractResponse<CategoryTree> implements CategoryInterface, RoutableInterface {
     public CategoryTree() {}
@@ -492,7 +492,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Breadcrumbs, parent categories info.
+     * An array of breadcrumb items.
      */
     public List<Breadcrumb> getBreadcrumbs() {
         return (List<Breadcrumb>) get("breadcrumbs");
@@ -504,8 +504,8 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Categories&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Categories&#39; is enabled.
      */
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
@@ -517,7 +517,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Child categories tree.
+     * A tree of child categories.
      */
     public List<CategoryTree> getChildren() {
         return (List<CategoryTree>) get("children");
@@ -538,7 +538,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Category CMS Block.
+     * Contains a category CMS block.
      */
     public CmsBlock getCmsBlock() {
         return (CmsBlock) get("cms_block");
@@ -550,7 +550,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Timestamp indicating when the category was created.
+     * The timestamp indicating when the category was created.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -618,7 +618,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     /**
      * An ID that uniquely identifies the category.
      *
-     * @deprecated Use the `uid` argument instead.
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public Integer getId() {
@@ -667,7 +667,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Indicates the depth of the category within the tree.
+     * The depth of the category within the tree.
      */
     public Integer getLevel() {
         return (Integer) get("level");
@@ -718,7 +718,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Category Path.
+     * The full category path.
      */
     public String getPath() {
         return (String) get("path");
@@ -730,7 +730,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Category path in store.
+     * The category path within the store.
      */
     public String getPathInStore() {
         return (String) get("path_in_store");
@@ -780,7 +780,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public Integer getRedirectCode() {
         return (Integer) get("redirect_code");
@@ -793,7 +793,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public String getRelativeUrl() {
         return (String) get("relative_url");
@@ -804,6 +804,9 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
         return this;
     }
 
+    /**
+     * Indicates whether the category is staged for a future campaign.
+     */
     public Boolean getStaged() {
         return (Boolean) get("staged");
     }
@@ -838,7 +841,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * Timestamp indicating when the category was updated.
+     * The timestamp indicating when the category was updated.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -853,7 +856,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The url key assigned to the category.
+     * The URL key assigned to the category.
      */
     public String getUrlKey() {
         return (String) get("url_key");
@@ -865,7 +868,7 @@ public class CategoryTree extends AbstractResponse<CategoryTree> implements Cate
     }
 
     /**
-     * The url path assigned to the category.
+     * The URL path assigned to the category.
      */
     public String getUrlPath() {
         return (String) get("url_path");

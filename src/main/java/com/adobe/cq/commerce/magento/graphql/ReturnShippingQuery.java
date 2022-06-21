@@ -19,13 +19,16 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Contains details about the return shipping address.
+ */
 public class ReturnShippingQuery extends AbstractQuery<ReturnShippingQuery> {
     ReturnShippingQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The merchant-defined return shipping address
+     * The merchant-defined return shipping address.
      */
     public ReturnShippingQuery address(ReturnShippingAddressQueryDefinition queryDef) {
         startField("address");
@@ -56,16 +59,16 @@ public class ReturnShippingQuery extends AbstractQuery<ReturnShippingQuery> {
     }
 
     /**
-     * The unique ID for a `ReturnShippingTracking` object. If a single UID is specified, contains a single
-     * tracking record. Otherwise, contains all tracking information
+     * The unique ID for a `ReturnShippingTracking` object. If a single UID is specified, the array
+     * contains a single tracking record. Otherwise, array contains all tracking information.
      */
     public ReturnShippingQuery tracking(ReturnShippingTrackingQueryDefinition queryDef) {
         return tracking(args -> {}, queryDef);
     }
 
     /**
-     * The unique ID for a `ReturnShippingTracking` object. If a single UID is specified, contains a single
-     * tracking record. Otherwise, contains all tracking information
+     * The unique ID for a `ReturnShippingTracking` object. If a single UID is specified, the array
+     * contains a single tracking record. Otherwise, array contains all tracking information.
      */
     public ReturnShippingQuery tracking(TrackingArgumentsDefinition argsDef, ReturnShippingTrackingQueryDefinition queryDef) {
         startField("tracking");

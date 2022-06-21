@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Invoice item details
+ * Contains detailes about invoiced items.
  */
 public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfaceQuery> {
     InvoiceItemInterfaceQuery(StringBuilder _queryBuilder) {
@@ -33,8 +33,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     public InvoiceItemInterfaceQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -47,7 +46,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     public InvoiceItemInterfaceQuery id() {
         startField("id");
@@ -56,7 +55,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     public InvoiceItemInterfaceQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -69,7 +68,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public InvoiceItemInterfaceQuery productName() {
         startField("product_name");
@@ -78,7 +77,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     public InvoiceItemInterfaceQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -91,7 +90,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public InvoiceItemInterfaceQuery productSku() {
         startField("product_sku");
@@ -100,7 +99,7 @@ public class InvoiceItemInterfaceQuery extends AbstractQuery<InvoiceItemInterfac
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public InvoiceItemInterfaceQuery quantityInvoiced() {
         startField("quantity_invoiced");

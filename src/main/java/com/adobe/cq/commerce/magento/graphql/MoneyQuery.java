@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A Money object defines a monetary value, including a numeric value and a currency code.
+ * Defines a monetary value, including a numeric value and a currency code.
  */
 public class MoneyQuery extends AbstractQuery<MoneyQuery> {
     MoneyQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class MoneyQuery extends AbstractQuery<MoneyQuery> {
     }
 
     /**
-     * A three-letter currency code, such as USD or EUR
+     * A three-letter currency code, such as USD or EUR.
      */
     public MoneyQuery currency() {
         startField("currency");
@@ -35,7 +35,7 @@ public class MoneyQuery extends AbstractQuery<MoneyQuery> {
     }
 
     /**
-     * A number expressing a monetary value
+     * A number expressing a monetary value.
      */
     public MoneyQuery value() {
         startField("value");

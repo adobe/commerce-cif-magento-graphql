@@ -22,6 +22,9 @@ public class RegionQuery extends AbstractQuery<RegionQuery> {
         super(_queryBuilder);
     }
 
+    /**
+     * The two-letter code for the region, such as TX for Texas.
+     */
     public RegionQuery code() {
         startField("code");
 
@@ -37,6 +40,9 @@ public class RegionQuery extends AbstractQuery<RegionQuery> {
         return this;
     }
 
+    /**
+     * The name of the region, such as Texas.
+     */
     public RegionQuery name() {
         startField("name");
 

@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * DownloadableProductLinks defines characteristics of a downloadable product
+ * Defines characteristics of the links for downloadable product.
  */
 public class DownloadableItemsLinks extends AbstractResponse<DownloadableItemsLinks> {
     public DownloadableItemsLinks() {}
@@ -78,7 +78,7 @@ public class DownloadableItemsLinks extends AbstractResponse<DownloadableItemsLi
     }
 
     /**
-     * A number indicating the sort order
+     * A number indicating the sort order.
      */
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
@@ -90,7 +90,7 @@ public class DownloadableItemsLinks extends AbstractResponse<DownloadableItemsLi
     }
 
     /**
-     * The display name of the link
+     * The display name of the link.
      */
     public String getTitle() {
         return (String) get("title");

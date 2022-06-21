@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains an array of metadata about each aspect of a product review.
+ */
 public class ProductReviewRatingsMetadata extends AbstractResponse<ProductReviewRatingsMetadata> {
     public ProductReviewRatingsMetadata() {}
 
@@ -64,7 +67,7 @@ public class ProductReviewRatingsMetadata extends AbstractResponse<ProductReview
     }
 
     /**
-     * List of product reviews sorted by position
+     * An array of product reviews sorted by position.
      */
     public List<ProductReviewRatingMetadata> getItems() {
         return (List<ProductReviewRatingMetadata>) get("items");

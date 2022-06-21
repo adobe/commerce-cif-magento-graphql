@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a registrant.
+ */
 public class GiftRegistryRegistrantQuery extends AbstractQuery<GiftRegistryRegistrantQuery> {
     GiftRegistryRegistrantQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of dynamic attributes assigned to the registrant
+     * An array of dynamic attributes assigned to the registrant.
      */
     public GiftRegistryRegistrantQuery dynamicAttributes(GiftRegistryRegistrantDynamicAttributeQueryDefinition queryDef) {
         startField("dynamic_attributes");
@@ -36,7 +39,7 @@ public class GiftRegistryRegistrantQuery extends AbstractQuery<GiftRegistryRegis
     }
 
     /**
-     * The email address of the registrant. Only the registry owner can access this attribute
+     * The email address of the registrant. Only the registry owner can access this attribute.
      */
     public GiftRegistryRegistrantQuery email() {
         startField("email");
@@ -45,7 +48,7 @@ public class GiftRegistryRegistrantQuery extends AbstractQuery<GiftRegistryRegis
     }
 
     /**
-     * The first name of the registrant
+     * The first name of the registrant.
      */
     public GiftRegistryRegistrantQuery firstname() {
         startField("firstname");
@@ -54,7 +57,7 @@ public class GiftRegistryRegistrantQuery extends AbstractQuery<GiftRegistryRegis
     }
 
     /**
-     * The last name of the registrant
+     * The last name of the registrant.
      */
     public GiftRegistryRegistrantQuery lastname() {
         startField("lastname");
@@ -63,7 +66,7 @@ public class GiftRegistryRegistrantQuery extends AbstractQuery<GiftRegistryRegis
     }
 
     /**
-     * The unique ID assigned to the registrant
+     * The unique ID assigned to the registrant.
      */
     public GiftRegistryRegistrantQuery uid() {
         startField("uid");

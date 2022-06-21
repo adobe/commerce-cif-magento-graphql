@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a value for a selected bundle option.
+ */
 public class SelectedBundleOptionValue extends AbstractResponse<SelectedBundleOptionValue> {
     public SelectedBundleOptionValue() {}
 
@@ -88,6 +91,9 @@ public class SelectedBundleOptionValue extends AbstractResponse<SelectedBundleOp
         return this;
     }
 
+    /**
+     * The display name of the value for the selected bundle product option.
+     */
     public String getLabel() {
         return (String) get("label");
     }
@@ -97,6 +103,9 @@ public class SelectedBundleOptionValue extends AbstractResponse<SelectedBundleOp
         return this;
     }
 
+    /**
+     * The price of the value for the selected bundle product option.
+     */
     public Double getPrice() {
         return (Double) get("price");
     }
@@ -106,6 +115,9 @@ public class SelectedBundleOptionValue extends AbstractResponse<SelectedBundleOp
         return this;
     }
 
+    /**
+     * The quantity of the value for the selected bundle product option.
+     */
     public Double getQuantity() {
         return (Double) get("quantity");
     }

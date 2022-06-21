@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * The interface for wish list items.
+ */
 public class WishlistItemInterfaceQuery extends AbstractQuery<WishlistItemInterfaceQuery> {
     WishlistItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
@@ -30,7 +33,7 @@ public class WishlistItemInterfaceQuery extends AbstractQuery<WishlistItemInterf
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public WishlistItemInterfaceQuery addedAt() {
         startField("added_at");
@@ -39,7 +42,7 @@ public class WishlistItemInterfaceQuery extends AbstractQuery<WishlistItemInterf
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public WishlistItemInterfaceQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -52,7 +55,7 @@ public class WishlistItemInterfaceQuery extends AbstractQuery<WishlistItemInterf
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public WishlistItemInterfaceQuery description() {
         startField("description");
@@ -61,7 +64,7 @@ public class WishlistItemInterfaceQuery extends AbstractQuery<WishlistItemInterf
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public WishlistItemInterfaceQuery id() {
         startField("id");
@@ -70,7 +73,7 @@ public class WishlistItemInterfaceQuery extends AbstractQuery<WishlistItemInterf
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public WishlistItemInterfaceQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -83,7 +86,7 @@ public class WishlistItemInterfaceQuery extends AbstractQuery<WishlistItemInterf
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public WishlistItemInterfaceQuery quantity() {
         startField("quantity");

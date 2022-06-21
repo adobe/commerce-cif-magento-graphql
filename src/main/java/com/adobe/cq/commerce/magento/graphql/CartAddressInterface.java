@@ -21,21 +21,48 @@ import com.shopify.graphql.support.CustomFieldInterface;
 public interface CartAddressInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
+    /**
+     * The city specified for the billing or shipping address.
+     */
     String getCity();
 
+    /**
+     * The company specified for the billing or shipping address.
+     */
     String getCompany();
 
+    /**
+     * An object containing the country label and code.
+     */
     CartAddressCountry getCountry();
 
+    /**
+     * The first name of the customer or guest.
+     */
     String getFirstname();
 
+    /**
+     * The last name of the customer or guest.
+     */
     String getLastname();
 
+    /**
+     * The ZIP or postal code of the billing or shipping address.
+     */
     String getPostcode();
 
+    /**
+     * An object containing the region label and code.
+     */
     CartAddressRegion getRegion();
 
+    /**
+     * An array containing the street for the billing or shipping address.
+     */
     List<String> getStreet();
 
+    /**
+     * The telephone number for the billing or shipping address.
+     */
     String getTelephone();
 }

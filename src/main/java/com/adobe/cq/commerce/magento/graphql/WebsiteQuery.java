@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Website is deprecated because it is should not be used on storefront. The type contains information
- * about a website
+ * Deprecated. It should not be used on the storefront. Contains information about a website.
  */
 public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     WebsiteQuery(StringBuilder _queryBuilder) {
@@ -27,7 +26,7 @@ public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     }
 
     /**
-     * A code assigned to the website to identify it
+     * A code assigned to the website to identify it.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -39,7 +38,7 @@ public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     }
 
     /**
-     * The default group ID that the website has
+     * The default group ID of the website.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -51,7 +50,7 @@ public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     }
 
     /**
-     * The ID number assigned to the website
+     * The ID number assigned to the website.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -63,7 +62,7 @@ public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     }
 
     /**
-     * Specifies if this is the default website
+     * Indicates whether this is the default website.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -87,7 +86,7 @@ public class WebsiteQuery extends AbstractQuery<WebsiteQuery> {
     }
 
     /**
-     * The attribute to use for sorting websites
+     * The attribute to use for sorting websites.
      *
      * @deprecated The field should not be used on the storefront.
      */

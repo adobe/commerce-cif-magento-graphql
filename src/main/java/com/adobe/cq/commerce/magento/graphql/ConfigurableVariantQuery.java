@@ -18,13 +18,16 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * An array containing all the simple product variants of a configurable product
+ * Contains all the simple product variants of a configurable product.
  */
 public class ConfigurableVariantQuery extends AbstractQuery<ConfigurableVariantQuery> {
     ConfigurableVariantQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An array of configurable attribute options.
+     */
     public ConfigurableVariantQuery attributes(ConfigurableAttributeOptionQueryDefinition queryDef) {
         startField("attributes");
 
@@ -35,6 +38,9 @@ public class ConfigurableVariantQuery extends AbstractQuery<ConfigurableVariantQ
         return this;
     }
 
+    /**
+     * An array of linked simple products.
+     */
     public ConfigurableVariantQuery product(SimpleProductQueryDefinition queryDef) {
         startField("product");
 

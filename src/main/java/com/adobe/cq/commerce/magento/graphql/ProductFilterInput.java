@@ -103,21 +103,21 @@ public class ProductFilterInput implements Serializable {
     private Input<FilterTypeInput> weight = Input.undefined();
 
     /**
-     * Category ID the product belongs to.
+     * The category ID the product belongs to.
      */
     public FilterTypeInput getCategoryId() {
         return categoryId.getValue();
     }
 
     /**
-     * Category ID the product belongs to.
+     * The category ID the product belongs to.
      */
     public Input<FilterTypeInput> getCategoryIdInput() {
         return categoryId;
     }
 
     /**
-     * Category ID the product belongs to.
+     * The category ID the product belongs to.
      */
     public ProductFilterInput setCategoryId(FilterTypeInput categoryId) {
         this.categoryId = Input.optional(categoryId);
@@ -125,7 +125,7 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * Category ID the product belongs to.
+     * The category ID the product belongs to.
      */
     public ProductFilterInput setCategoryIdInput(Input<FilterTypeInput> categoryId) {
         if (categoryId == null) {
@@ -169,21 +169,21 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public FilterTypeInput getCreatedAt() {
         return createdAt.getValue();
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public Input<FilterTypeInput> getCreatedAtInput() {
         return createdAt;
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public ProductFilterInput setCreatedAt(FilterTypeInput createdAt) {
         this.createdAt = Input.optional(createdAt);
@@ -191,7 +191,7 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public ProductFilterInput setCreatedAtInput(Input<FilterTypeInput> createdAt) {
         if (createdAt == null) {
@@ -433,21 +433,21 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public FilterTypeInput getIsReturnable() {
         return isReturnable.getValue();
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public Input<FilterTypeInput> getIsReturnableInput() {
         return isReturnable;
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public ProductFilterInput setIsReturnable(FilterTypeInput isReturnable) {
         this.isReturnable = Input.optional(isReturnable);
@@ -455,7 +455,7 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public ProductFilterInput setIsReturnableInput(Input<FilterTypeInput> isReturnable) {
         if (isReturnable == null) {
@@ -1130,21 +1130,21 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public FilterTypeInput getSwatchImage() {
         return swatchImage.getValue();
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public Input<FilterTypeInput> getSwatchImageInput() {
         return swatchImage;
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public ProductFilterInput setSwatchImage(FilterTypeInput swatchImage) {
         this.swatchImage = Input.optional(swatchImage);
@@ -1152,7 +1152,7 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public ProductFilterInput setSwatchImageInput(Input<FilterTypeInput> swatchImage) {
         if (swatchImage == null) {
@@ -1262,21 +1262,21 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public FilterTypeInput getUpdatedAt() {
         return updatedAt.getValue();
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public Input<FilterTypeInput> getUpdatedAtInput() {
         return updatedAt;
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public ProductFilterInput setUpdatedAt(FilterTypeInput updatedAt) {
         this.updatedAt = Input.optional(updatedAt);
@@ -1284,7 +1284,7 @@ public class ProductFilterInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public ProductFilterInput setUpdatedAtInput(Input<FilterTypeInput> updatedAt) {
         if (updatedAt == null) {

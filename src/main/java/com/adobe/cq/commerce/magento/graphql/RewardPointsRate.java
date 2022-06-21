@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about customer&#39;s reward points rate.
+ */
 public class RewardPointsRate extends AbstractResponse<RewardPointsRate> {
     public RewardPointsRate() {}
 
@@ -58,8 +61,8 @@ public class RewardPointsRate extends AbstractResponse<RewardPointsRate> {
     }
 
     /**
-     * The money value for exchange rate. For earnings this is amount spent to earn the specified points.
-     * For redemption this is the amount of money the number of points represents.
+     * The money value for the exchange rate. For earnings, this is the amount spent to earn the specified
+     * points. For redemption, this is the amount of money the number of points represents.
      */
     public Double getCurrencyAmount() {
         return (Double) get("currency_amount");
@@ -71,8 +74,8 @@ public class RewardPointsRate extends AbstractResponse<RewardPointsRate> {
     }
 
     /**
-     * The number of points for exchange rate. For earnings this is the number of points earned. For
-     * redemption this is the number of points needed for redemption.
+     * The number of points for an exchange rate. For earnings, this is the number of points earned. For
+     * redemption, this is the number of points needed for redemption.
      */
     public Double getPoints() {
         return (Double) get("points");

@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the price of the item, including taxes and discounts.
+ */
 public class CartItemPrices extends AbstractResponse<CartItemPrices> {
     public CartItemPrices() {}
 
@@ -119,7 +122,7 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
     }
 
     /**
-     * An array of discounts to be applied to the cart item
+     * An array of discounts to be applied to the cart item.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -131,7 +134,7 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
     }
 
     /**
-     * Applied FPT to the cart item.
+     * An array of FPTs applied to the cart item.
      */
     public List<FixedProductTax> getFixedProductTaxes() {
         return (List<FixedProductTax>) get("fixed_product_taxes");
@@ -142,6 +145,10 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
         return this;
     }
 
+    /**
+     * The price of the item before any discounts were applied. The price that might include tax, depending
+     * on the configured display settings for cart.
+     */
     public Money getPrice() {
         return (Money) get("price");
     }
@@ -151,6 +158,9 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
         return this;
     }
 
+    /**
+     * The value of the price multiplied by the quantity of the item.
+     */
     public Money getRowTotal() {
         return (Money) get("row_total");
     }
@@ -160,6 +170,9 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
         return this;
     }
 
+    /**
+     * The value of `row_total` plus the tax applied to the item.
+     */
     public Money getRowTotalIncludingTax() {
         return (Money) get("row_total_including_tax");
     }
@@ -170,7 +183,7 @@ public class CartItemPrices extends AbstractResponse<CartItemPrices> {
     }
 
     /**
-     * The total of all discounts applied to the item
+     * The total of all discounts applied to the item.
      */
     public Money getTotalItemDiscount() {
         return (Money) get("total_item_discount");

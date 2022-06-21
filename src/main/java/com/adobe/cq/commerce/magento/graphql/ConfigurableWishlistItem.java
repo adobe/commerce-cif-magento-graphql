@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A configurable product wish list item
+ * A configurable product wish list item.
  */
 public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishlistItem> implements WishlistItemInterface {
     public ConfigurableWishlistItem() {}
@@ -135,7 +135,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public String getAddedAt() {
         return (String) get("added_at");
@@ -147,7 +147,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * The SKU of the simple product corresponding to a set of selected configurable options
+     * The SKU of the simple product corresponding to a set of selected configurable options.
      */
     public String getChildSku() {
         return (String) get("child_sku");
@@ -159,7 +159,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * An array of selected configurable options
+     * An array of selected configurable options.
      */
     public List<SelectedConfigurableOption> getConfigurableOptions() {
         return (List<SelectedConfigurableOption>) get("configurable_options");
@@ -171,7 +171,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
@@ -183,7 +183,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public String getDescription() {
         return (String) get("description");
@@ -195,7 +195,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -207,7 +207,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -219,7 +219,7 @@ public class ConfigurableWishlistItem extends AbstractResponse<ConfigurableWishl
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public Double getQuantity() {
         return (Double) get("quantity");

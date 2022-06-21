@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableFileOption contains information about a file picker that is defined as part of a
- * customizable option.
+ * Contains information about a file picker that is defined as part of a customizable option.
  */
 public class CustomizableFileOption extends AbstractResponse<CustomizableFileOption> implements CustomizableOptionInterface {
     public CustomizableFileOption() {}

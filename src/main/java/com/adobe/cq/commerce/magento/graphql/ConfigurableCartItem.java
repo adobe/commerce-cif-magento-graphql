@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * An implementation for configurable product cart items.
+ */
 public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem> implements CartItemInterface {
     public ConfigurableCartItem() {}
 
@@ -165,7 +168,7 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
     }
 
     /**
-     * The list of available gift wrapping options for the cart item
+     * The list of available gift wrapping options for the cart item.
      */
     public List<GiftWrapping> getAvailableGiftWrapping() {
         return (List<GiftWrapping>) get("available_gift_wrapping");
@@ -176,6 +179,9 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
         return this;
     }
 
+    /**
+     * An array containing the configuranle options the shopper selected.
+     */
     public List<SelectedConfigurableOption> getConfigurableOptions() {
         return (List<SelectedConfigurableOption>) get("configurable_options");
     }
@@ -186,7 +192,7 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
     }
 
     /**
-     * Product details of the cart item
+     * Product details of the cart item.
      */
     public ProductInterface getConfiguredVariant() {
         return (ProductInterface) get("configured_variant");
@@ -197,6 +203,9 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
         return this;
     }
 
+    /**
+     * An array containing the customizable options the shopper selected.
+     */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
     }
@@ -219,7 +228,7 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
     }
 
     /**
-     * The selected gift wrapping for the cart item
+     * The selected gift wrapping for the cart item.
      */
     public GiftWrapping getGiftWrapping() {
         return (GiftWrapping) get("gift_wrapping");
@@ -231,7 +240,7 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public String getId() {
@@ -243,6 +252,9 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public CartItemPrices getPrices() {
         return (CartItemPrices) get("prices");
     }
@@ -252,6 +264,9 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -261,6 +276,9 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public Double getQuantity() {
         return (Double) get("quantity");
     }
@@ -271,7 +289,7 @@ public class ConfigurableCartItem extends AbstractResponse<ConfigurableCartItem>
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ID getUid() {
         return (ID) get("uid");

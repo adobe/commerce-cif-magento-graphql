@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Specifies the attribute code and value of a customer address attribute.
+ */
 public class CustomerAddressAttribute extends AbstractResponse<CustomerAddressAttribute> {
     public CustomerAddressAttribute() {}
 
@@ -68,7 +71,7 @@ public class CustomerAddressAttribute extends AbstractResponse<CustomerAddressAt
     }
 
     /**
-     * Attribute code
+     * The name assigned to the customer address attribute.
      */
     public String getAttributeCode() {
         return (String) get("attribute_code");
@@ -80,7 +83,7 @@ public class CustomerAddressAttribute extends AbstractResponse<CustomerAddressAt
     }
 
     /**
-     * Attribute value
+     * The valuue assigned to the customer address attribute.
      */
     public String getValue() {
         return (String) get("value");

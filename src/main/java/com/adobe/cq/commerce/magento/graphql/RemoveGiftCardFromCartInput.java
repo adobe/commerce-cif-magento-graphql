@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Defines the input required to run the removeGiftCardFromCart mutation
+ * Defines the input required to run the `removeGiftCardFromCart` mutation.
  */
 public class RemoveGiftCardFromCartInput implements Serializable {
     private String cartId;
@@ -33,14 +33,14 @@ public class RemoveGiftCardFromCartInput implements Serializable {
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public String getCartId() {
         return cartId;
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public RemoveGiftCardFromCartInput setCartId(String cartId) {
         this.cartId = cartId;
@@ -48,14 +48,14 @@ public class RemoveGiftCardFromCartInput implements Serializable {
     }
 
     /**
-     * The gift card code to be removed to the cart
+     * The gift card code to be removed to the cart.
      */
     public String getGiftCardCode() {
         return giftCardCode;
     }
 
     /**
-     * The gift card code to be removed to the cart
+     * The gift card code to be removed to the cart.
      */
     public RemoveGiftCardFromCartInput setGiftCardCode(String giftCardCode) {
         this.giftCardCode = giftCardCode;

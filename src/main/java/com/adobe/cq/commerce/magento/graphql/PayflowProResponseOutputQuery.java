@@ -22,6 +22,9 @@ public class PayflowProResponseOutputQuery extends AbstractQuery<PayflowProRespo
         super(_queryBuilder);
     }
 
+    /**
+     * The cart with the updated selected payment method.
+     */
     public PayflowProResponseOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

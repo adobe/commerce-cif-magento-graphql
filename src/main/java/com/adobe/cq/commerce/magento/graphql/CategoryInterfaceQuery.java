@@ -19,7 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CategoryInterface contains the full set of attributes that can be returned in a category search.
+ * Contains the full set of attributes that can be returned in a category search.
  */
 public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery> {
     CategoryInterfaceQuery(StringBuilder _queryBuilder) {
@@ -46,7 +46,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Breadcrumbs, parent categories info.
+     * An array of breadcrumb items.
      */
     public CategoryInterfaceQuery breadcrumbs(BreadcrumbQueryDefinition queryDef) {
         startField("breadcrumbs");
@@ -59,8 +59,8 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Categories&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Categories&#39; is enabled.
      */
     public CategoryInterfaceQuery canonicalUrl() {
         startField("canonical_url");
@@ -75,7 +75,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Category CMS Block.
+     * Contains a category CMS block.
      */
     public CategoryInterfaceQuery cmsBlock(CmsBlockQueryDefinition queryDef) {
         startField("cms_block");
@@ -88,7 +88,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Timestamp indicating when the category was created.
+     * The timestamp indicating when the category was created.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -138,7 +138,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     /**
      * An ID that uniquely identifies the category.
      *
-     * @deprecated Use the `uid` argument instead.
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public CategoryInterfaceQuery id() {
@@ -172,7 +172,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Indicates the depth of the category within the tree.
+     * The depth of the category within the tree.
      */
     public CategoryInterfaceQuery level() {
         startField("level");
@@ -208,7 +208,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Category Path.
+     * The full category path.
      */
     public CategoryInterfaceQuery path() {
         startField("path");
@@ -217,7 +217,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Category path in store.
+     * The category path within the store.
      */
     public CategoryInterfaceQuery pathInStore() {
         startField("path_in_store");
@@ -250,7 +250,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         }
 
         /**
-         * Specifies the maximum number of results to return at once. This attribute is optional.
+         * The maximum number of results to return at once. The default value is 20.
          */
         public ProductsArguments pageSize(Integer value) {
             if (value != null) {
@@ -261,7 +261,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         }
 
         /**
-         * Specifies which page of results to return. The default value is 1.
+         * The page of results to return. The default value is 1.
          */
         public ProductsArguments currentPage(Integer value) {
             if (value != null) {
@@ -272,8 +272,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         }
 
         /**
-         * Specifies which attributes to sort on, and whether to return the results in ascending or descending
-         * order.
+         * The attributes to sort on, and whether to return the results in ascending or descending order.
          */
         public ProductsArguments sort(ProductAttributeSortInput value) {
             if (value != null) {
@@ -312,6 +311,9 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
         return this;
     }
 
+    /**
+     * Indicates whether the category is staged for a future campaign.
+     */
     public CategoryInterfaceQuery staged() {
         startField("staged");
 
@@ -328,7 +330,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * Timestamp indicating when the category was updated.
+     * The timestamp indicating when the category was updated.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -340,7 +342,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * The url key assigned to the category.
+     * The URL key assigned to the category.
      */
     public CategoryInterfaceQuery urlKey() {
         startField("url_key");
@@ -349,7 +351,7 @@ public class CategoryInterfaceQuery extends AbstractQuery<CategoryInterfaceQuery
     }
 
     /**
-     * The url path assigned to the category.
+     * The URL path assigned to the category.
      */
     public CategoryInterfaceQuery urlPath() {
         startField("url_path");

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A price based on the quantity purchased.
+ * Defines a price based on the quantity purchased.
  */
 public class TierPriceQuery extends AbstractQuery<TierPriceQuery> {
     TierPriceQuery(StringBuilder _queryBuilder) {
@@ -38,6 +38,9 @@ public class TierPriceQuery extends AbstractQuery<TierPriceQuery> {
         return this;
     }
 
+    /**
+     * The price of the product at this tier.
+     */
     public TierPriceQuery finalPrice(MoneyQueryDefinition queryDef) {
         startField("final_price");
 

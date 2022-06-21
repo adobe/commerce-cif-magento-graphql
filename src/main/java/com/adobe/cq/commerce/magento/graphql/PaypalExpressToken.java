@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Deprecated: use type `PaypalExpressTokenOutput` instead
+ * Deprecated. Use `PaypalExpressTokenOutput` instead.
  */
 public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
     public PaypalExpressToken() {}
@@ -71,9 +71,9 @@ public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
     }
 
     /**
-     * A set of URLs that allow the buyer to authorize payment and adjust checkout details
+     * A set of URLs that allow the buyer to authorize payment and adjust checkout details.
      *
-     * @deprecated Use field `paypal_urls` of type `PaypalExpressTokenOutput` instead
+     * @deprecated Use `PaypalExpressTokenOutput.paypal_urls` instead.
      */
     @Deprecated
     public PaypalExpressUrlList getPaypalUrls() {
@@ -86,9 +86,9 @@ public class PaypalExpressToken extends AbstractResponse<PaypalExpressToken> {
     }
 
     /**
-     * The token returned by PayPal
+     * The token returned by PayPal.
      *
-     * @deprecated Use field `token` of type `PaypalExpressTokenOutput` instead
+     * @deprecated Use `PaypalExpressTokenOutput.token` instead.
      */
     @Deprecated
     public String getToken() {

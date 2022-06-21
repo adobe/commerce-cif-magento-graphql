@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a gift registry.
+ */
 public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     public GiftRegistry() {}
 
@@ -176,7 +179,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * The date on which the gift registry was created. Only the registry owner can access this attribute
+     * The date on which the gift registry was created. Only the registry owner can access this attribute.
      */
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -189,7 +192,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
 
     /**
      * An array of attributes that define elements of the gift registry. Each attribute is specified as a
-     * code-value pair
+     * code-value pair.
      */
     public List<GiftRegistryDynamicAttribute> getDynamicAttributes() {
         return (List<GiftRegistryDynamicAttribute>) get("dynamic_attributes");
@@ -201,7 +204,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * The name of the event
+     * The name of the event.
      */
     public String getEventName() {
         return (String) get("event_name");
@@ -213,7 +216,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * An array of products added to the gift registry
+     * An array of products added to the gift registry.
      */
     public List<GiftRegistryItemInterface> getItems() {
         return (List<GiftRegistryItemInterface>) get("items");
@@ -225,7 +228,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * The message text the customer entered to describe the event
+     * The message text the customer entered to describe the event.
      */
     public String getMessage() {
         return (String) get("message");
@@ -237,7 +240,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * The customer who created the gift registry
+     * The customer who created the gift registry.
      */
     public String getOwnerName() {
         return (String) get("owner_name");
@@ -250,7 +253,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
 
     /**
      * An enum that states whether the gift registry is PRIVATE or PUBLIC. Only the registry owner can
-     * access this attribute
+     * access this attribute.
      */
     public GiftRegistryPrivacySettings getPrivacySettings() {
         return (GiftRegistryPrivacySettings) get("privacy_settings");
@@ -262,7 +265,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * Contains details about each registrant for the event
+     * Contains details about each registrant for the event.
      */
     public List<GiftRegistryRegistrant> getRegistrants() {
         return (List<GiftRegistryRegistrant>) get("registrants");
@@ -274,7 +277,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * Contains the customer&#39;s shipping address. Only the registry owner can access this attribute
+     * Contains the customer&#39;s shipping address. Only the registry owner can access this attribute.
      */
     public CustomerAddress getShippingAddress() {
         return (CustomerAddress) get("shipping_address");
@@ -287,7 +290,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
 
     /**
      * An enum that states whether the gift registry is ACTIVE or INACTIVE. Only the registry owner can
-     * access this attribute
+     * access this attribute.
      */
     public GiftRegistryStatus getStatus() {
         return (GiftRegistryStatus) get("status");
@@ -299,7 +302,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * Contains details about the type of gift registry
+     * The type of gift registry.
      */
     public GiftRegistryType getType() {
         return (GiftRegistryType) get("type");
@@ -311,7 +314,7 @@ public class GiftRegistry extends AbstractResponse<GiftRegistry> {
     }
 
     /**
-     * The unique ID assigned to the gift registry
+     * The unique ID assigned to the gift registry.
      */
     public ID getUid() {
         return (ID) get("uid");

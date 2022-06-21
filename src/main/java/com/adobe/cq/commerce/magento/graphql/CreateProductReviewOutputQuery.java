@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the completed product review.
+ */
 public class CreateProductReviewOutputQuery extends AbstractQuery<CreateProductReviewOutputQuery> {
     CreateProductReviewOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains the completed product review
+     * Product review details.
      */
     public CreateProductReviewOutputQuery review(ProductReviewQueryDefinition queryDef) {
         startField("review");

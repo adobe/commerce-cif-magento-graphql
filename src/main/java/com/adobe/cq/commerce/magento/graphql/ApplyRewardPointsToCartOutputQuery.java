@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the customer cart.
+ */
 public class ApplyRewardPointsToCartOutputQuery extends AbstractQuery<ApplyRewardPointsToCartOutputQuery> {
     ApplyRewardPointsToCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The customer cart after reward points are applied
+     * The customer cart after reward points are applied.
      */
     public ApplyRewardPointsToCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");

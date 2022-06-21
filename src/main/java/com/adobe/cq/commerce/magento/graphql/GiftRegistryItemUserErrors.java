@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains error information.
+ */
 public class GiftRegistryItemUserErrors extends AbstractResponse<GiftRegistryItemUserErrors> implements GiftRegistryItemUserErrorInterface {
     public GiftRegistryItemUserErrors() {}
 
@@ -70,7 +73,7 @@ public class GiftRegistryItemUserErrors extends AbstractResponse<GiftRegistryIte
     }
 
     /**
-     * Indicates whether the attempt to move the cart items to the gift registry was successful
+     * Indicates whether the attempt to move the cart items to the gift registry was successful.
      */
     public Boolean getStatus() {
         return (Boolean) get("status");
@@ -82,7 +85,7 @@ public class GiftRegistryItemUserErrors extends AbstractResponse<GiftRegistryIte
     }
 
     /**
-     * An array of errors encountered while moving items from the cart to the gift registry
+     * An array of errors encountered while moving items from the cart to the gift registry.
      */
     public List<GiftRegistryItemsUserError> getUserErrors() {
         return (List<GiftRegistryItemsUserError>) get("user_errors");

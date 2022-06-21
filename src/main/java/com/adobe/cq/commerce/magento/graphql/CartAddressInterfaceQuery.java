@@ -29,18 +29,27 @@ public class CartAddressInterfaceQuery extends AbstractQuery<CartAddressInterfac
         }
     }
 
+    /**
+     * The city specified for the billing or shipping address.
+     */
     public CartAddressInterfaceQuery city() {
         startField("city");
 
         return this;
     }
 
+    /**
+     * The company specified for the billing or shipping address.
+     */
     public CartAddressInterfaceQuery company() {
         startField("company");
 
         return this;
     }
 
+    /**
+     * An object containing the country label and code.
+     */
     public CartAddressInterfaceQuery country(CartAddressCountryQueryDefinition queryDef) {
         startField("country");
 
@@ -51,24 +60,36 @@ public class CartAddressInterfaceQuery extends AbstractQuery<CartAddressInterfac
         return this;
     }
 
+    /**
+     * The first name of the customer or guest.
+     */
     public CartAddressInterfaceQuery firstname() {
         startField("firstname");
 
         return this;
     }
 
+    /**
+     * The last name of the customer or guest.
+     */
     public CartAddressInterfaceQuery lastname() {
         startField("lastname");
 
         return this;
     }
 
+    /**
+     * The ZIP or postal code of the billing or shipping address.
+     */
     public CartAddressInterfaceQuery postcode() {
         startField("postcode");
 
         return this;
     }
 
+    /**
+     * An object containing the region label and code.
+     */
     public CartAddressInterfaceQuery region(CartAddressRegionQueryDefinition queryDef) {
         startField("region");
 
@@ -79,12 +100,18 @@ public class CartAddressInterfaceQuery extends AbstractQuery<CartAddressInterfac
         return this;
     }
 
+    /**
+     * An array containing the street for the billing or shipping address.
+     */
     public CartAddressInterfaceQuery street() {
         startField("street");
 
         return this;
     }
 
+    /**
+     * The telephone number for the billing or shipping address.
+     */
     public CartAddressInterfaceQuery telephone() {
         startField("telephone");
 

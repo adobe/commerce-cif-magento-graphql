@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomAttributeMetadata defines an array of attribute_codes and entity_types
+ * Defines an array of custom attributes.
  */
 public class CustomAttributeMetadataQuery extends AbstractQuery<CustomAttributeMetadataQuery> {
     CustomAttributeMetadataQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomAttributeMetadataQuery extends AbstractQuery<CustomAttributeM
     }
 
     /**
-     * An array of attributes
+     * An array of attributes.
      */
     public CustomAttributeMetadataQuery items(AttributeQueryDefinition queryDef) {
         startField("items");

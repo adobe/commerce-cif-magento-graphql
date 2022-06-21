@@ -83,7 +83,7 @@ public class UnknownGiftRegistryDynamicAttributeInterface extends AbstractRespon
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public ID getCode() {
         return (ID) get("code");
@@ -95,7 +95,7 @@ public class UnknownGiftRegistryDynamicAttributeInterface extends AbstractRespon
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public String getLabel() {
         return (String) get("label");
@@ -107,7 +107,7 @@ public class UnknownGiftRegistryDynamicAttributeInterface extends AbstractRespon
     }
 
     /**
-     * A corresponding value for the code
+     * A corresponding value for the code.
      */
     public String getValue() {
         return (String) get("value");

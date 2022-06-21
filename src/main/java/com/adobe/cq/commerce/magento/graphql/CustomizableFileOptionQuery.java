@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableFileOption contains information about a file picker that is defined as part of a
- * customizable option.
+ * Contains information about a file picker that is defined as part of a customizable option.
  */
 public class CustomizableFileOptionQuery extends AbstractQuery<CustomizableFileOptionQuery> {
     CustomizableFileOptionQuery(StringBuilder _queryBuilder) {

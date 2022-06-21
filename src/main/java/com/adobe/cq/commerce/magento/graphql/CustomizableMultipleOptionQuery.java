@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableMultipleOption contains information about a multiselect that is defined as part of a
- * customizable option.
+ * Contains information about a multiselect that is defined as part of a customizable option.
  */
 public class CustomizableMultipleOptionQuery extends AbstractQuery<CustomizableMultipleOptionQuery> {
     CustomizableMultipleOptionQuery(StringBuilder _queryBuilder) {

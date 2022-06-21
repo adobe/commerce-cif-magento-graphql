@@ -17,23 +17,35 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the region in a billing or shipping address.
+ */
 public class CartAddressRegionQuery extends AbstractQuery<CartAddressRegionQuery> {
     CartAddressRegionQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The state or province code.
+     */
     public CartAddressRegionQuery code() {
         startField("code");
 
         return this;
     }
 
+    /**
+     * The display label for the region.
+     */
     public CartAddressRegionQuery label() {
         startField("label");
 
         return this;
     }
 
+    /**
+     * The unique ID for a pre-defined region.
+     */
     public CartAddressRegionQuery regionId() {
         startField("region_id");
 

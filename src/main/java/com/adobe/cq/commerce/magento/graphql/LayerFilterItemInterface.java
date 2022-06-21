@@ -20,25 +20,25 @@ public interface LayerFilterItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Count of items by filter.
+     * The count of items per filter.
      *
-     * @deprecated Use AggregationOption.count instead.
+     * @deprecated Use `AggregationOption.count` instead.
      */
     @Deprecated
     Integer getItemsCount();
 
     /**
-     * Filter label.
+     * The label for a filter.
      *
-     * @deprecated Use AggregationOption.label instead.
+     * @deprecated Use `AggregationOption.label` instead.
      */
     @Deprecated
     String getLabel();
 
     /**
-     * Value for filter request variable to be used in query.
+     * The value of a filter request variable to be used in query.
      *
-     * @deprecated Use AggregationOption.value instead.
+     * @deprecated Use `AggregationOption.value` instead.
      */
     @Deprecated
     String getValueString();

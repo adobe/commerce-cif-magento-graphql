@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CategoryInterface contains the full set of attributes that can be returned in a category search.
+ * Contains the full set of attributes that can be returned in a category search.
  */
 public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryInterface> implements CategoryInterface {
     public UnknownCategoryInterface() {}
@@ -456,7 +456,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Breadcrumbs, parent categories info.
+     * An array of breadcrumb items.
      */
     public List<Breadcrumb> getBreadcrumbs() {
         return (List<Breadcrumb>) get("breadcrumbs");
@@ -468,8 +468,8 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Categories&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Categories&#39; is enabled.
      */
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
@@ -490,7 +490,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Category CMS Block.
+     * Contains a category CMS block.
      */
     public CmsBlock getCmsBlock() {
         return (CmsBlock) get("cms_block");
@@ -502,7 +502,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Timestamp indicating when the category was created.
+     * The timestamp indicating when the category was created.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -570,7 +570,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     /**
      * An ID that uniquely identifies the category.
      *
-     * @deprecated Use the `uid` argument instead.
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public Integer getId() {
@@ -619,7 +619,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Indicates the depth of the category within the tree.
+     * The depth of the category within the tree.
      */
     public Integer getLevel() {
         return (Integer) get("level");
@@ -670,7 +670,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Category Path.
+     * The full category path.
      */
     public String getPath() {
         return (String) get("path");
@@ -682,7 +682,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Category path in store.
+     * The category path within the store.
      */
     public String getPathInStore() {
         return (String) get("path_in_store");
@@ -730,6 +730,9 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
         return this;
     }
 
+    /**
+     * Indicates whether the category is staged for a future campaign.
+     */
     public Boolean getStaged() {
         return (Boolean) get("staged");
     }
@@ -752,7 +755,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * Timestamp indicating when the category was updated.
+     * The timestamp indicating when the category was updated.
      *
      * @deprecated The field should not be used on the storefront.
      */
@@ -767,7 +770,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * The url key assigned to the category.
+     * The URL key assigned to the category.
      */
     public String getUrlKey() {
         return (String) get("url_key");
@@ -779,7 +782,7 @@ public class UnknownCategoryInterface extends AbstractResponse<UnknownCategoryIn
     }
 
     /**
-     * The url path assigned to the category.
+     * The URL path assigned to the category.
      */
     public String getUrlPath() {
         return (String) get("url_path");

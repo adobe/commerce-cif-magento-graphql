@@ -89,7 +89,7 @@ public class GiftRegistryDynamicAttributeMetadata extends AbstractResponse<GiftR
     }
 
     /**
-     * Indicates which group the dynamic attribute a member of
+     * Indicates which group the dynamic attribute a member of.
      */
     public String getAttributeGroup() {
         return (String) get("attribute_group");
@@ -101,7 +101,7 @@ public class GiftRegistryDynamicAttributeMetadata extends AbstractResponse<GiftR
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public ID getCode() {
         return (ID) get("code");
@@ -114,7 +114,7 @@ public class GiftRegistryDynamicAttributeMetadata extends AbstractResponse<GiftR
 
     /**
      * The selected input type for this dynamic attribute. The value can be one of several static or custom
-     * types
+     * types.
      */
     public String getInputType() {
         return (String) get("input_type");
@@ -126,7 +126,7 @@ public class GiftRegistryDynamicAttributeMetadata extends AbstractResponse<GiftR
     }
 
     /**
-     * Indicates whether the dynamic attribute is required
+     * Indicates whether the dynamic attribute is required.
      */
     public Boolean getIsRequired() {
         return (Boolean) get("is_required");
@@ -138,7 +138,7 @@ public class GiftRegistryDynamicAttributeMetadata extends AbstractResponse<GiftR
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public String getLabel() {
         return (String) get("label");
@@ -150,7 +150,7 @@ public class GiftRegistryDynamicAttributeMetadata extends AbstractResponse<GiftR
     }
 
     /**
-     * The order in which to display the dynamic attribute
+     * The order in which to display the dynamic attribute.
      */
     public Integer getSortOrder() {
         return (Integer) get("sort_order");

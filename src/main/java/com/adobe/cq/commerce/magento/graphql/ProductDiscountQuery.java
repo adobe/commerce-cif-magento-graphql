@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A discount applied to a product price.
+ * Contains the discount applied to a product price.
  */
 public class ProductDiscountQuery extends AbstractQuery<ProductDiscountQuery> {
     ProductDiscountQuery(StringBuilder _queryBuilder) {

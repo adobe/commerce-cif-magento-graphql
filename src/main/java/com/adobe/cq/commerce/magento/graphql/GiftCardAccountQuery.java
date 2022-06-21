@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains details about the gift card account
+ * Contains details about the gift card account.
  */
 public class GiftCardAccountQuery extends AbstractQuery<GiftCardAccountQuery> {
     GiftCardAccountQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class GiftCardAccountQuery extends AbstractQuery<GiftCardAccountQuery> {
     }
 
     /**
-     * Balance remaining on gift card
+     * The balance remaining on the gift card.
      */
     public GiftCardAccountQuery balance(MoneyQueryDefinition queryDef) {
         startField("balance");
@@ -39,7 +39,7 @@ public class GiftCardAccountQuery extends AbstractQuery<GiftCardAccountQuery> {
     }
 
     /**
-     * Gift card account code
+     * The gift card account code.
      */
     public GiftCardAccountQuery code() {
         startField("code");
@@ -48,7 +48,7 @@ public class GiftCardAccountQuery extends AbstractQuery<GiftCardAccountQuery> {
     }
 
     /**
-     * Gift card expiration date
+     * The expiration date of the gift card.
      */
     public GiftCardAccountQuery expirationDate() {
         startField("expiration_date");

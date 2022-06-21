@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains an array of metadata about each aspect of a product review.
+ */
 public class ProductReviewRatingsMetadataQuery extends AbstractQuery<ProductReviewRatingsMetadataQuery> {
     ProductReviewRatingsMetadataQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * List of product reviews sorted by position
+     * An array of product reviews sorted by position.
      */
     public ProductReviewRatingsMetadataQuery items(ProductReviewRatingMetadataQueryDefinition queryDef) {
         startField("items");

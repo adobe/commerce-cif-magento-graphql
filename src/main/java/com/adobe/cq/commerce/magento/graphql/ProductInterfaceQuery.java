@@ -19,8 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The ProductInterface contains attributes that are common to all types of products. Note that
- * descriptions may not be available for custom and EAV attributes.
+ * Contains fields that are common to all types of products.
  */
 public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> {
     ProductInterfaceQuery(StringBuilder _queryBuilder) {
@@ -47,8 +46,8 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Products&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Products&#39; is enabled.
      */
     public ProductInterfaceQuery canonicalUrl() {
         startField("canonical_url");
@@ -97,7 +96,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Crosssell Products
+     * An array of cross-sell products.
      */
     public ProductInterfaceQuery crosssellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("crosssell_products");
@@ -122,11 +121,47 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         return this;
     }
 
+    public ProductInterfaceQuery fashionColor() {
+        startField("fashion_color");
+
+        return this;
+    }
+
+    public ProductInterfaceQuery fashionMaterial() {
+        startField("fashion_material");
+
+        return this;
+    }
+
+    public ProductInterfaceQuery fashionSize() {
+        startField("fashion_size");
+
+        return this;
+    }
+
+    public ProductInterfaceQuery fashionStyle() {
+        startField("fashion_style");
+
+        return this;
+    }
+
+    public ProductInterfaceQuery format() {
+        startField("format");
+
+        return this;
+    }
+
     /**
      * Indicates whether a gift message is available.
      */
     public ProductInterfaceQuery giftMessageAvailable() {
         startField("gift_message_available");
+
+        return this;
+    }
+
+    public ProductInterfaceQuery hasVideo() {
+        startField("has_video");
 
         return this;
     }
@@ -157,7 +192,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public ProductInterfaceQuery isReturnable() {
         startField("is_returnable");
@@ -175,7 +210,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of Media Gallery objects.
+     * An array of media gallery objects.
      */
     public ProductInterfaceQuery mediaGallery(MediaGalleryInterfaceQueryDefinition queryDef) {
         startField("media_gallery");
@@ -190,7 +225,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * An array of MediaGalleryEntry objects.
      *
-     * @deprecated Use product&#39;s `media_gallery` instead
+     * @deprecated Use `media_gallery` instead.
      */
     @Deprecated
     public ProductInterfaceQuery mediaGalleryEntries(MediaGalleryEntryQueryDefinition queryDef) {
@@ -283,9 +318,9 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item.
+     * Indicates the price of an item.
      *
-     * @deprecated Use price_range for product price information.
+     * @deprecated Use `price_range` for product price information.
      */
     @Deprecated
     public ProductInterfaceQuery price(ProductPricesQueryDefinition queryDef) {
@@ -299,7 +334,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * A PriceRange object, indicating the range of prices for the product
+     * The range of prices for the product
      */
     public ProductInterfaceQuery priceRange(PriceRangeQueryDefinition queryDef) {
         startField("price_range");
@@ -312,7 +347,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of TierPrice objects.
+     * An array of `TierPrice` objects.
      */
     public ProductInterfaceQuery priceTiers(TierPriceQueryDefinition queryDef) {
         startField("price_tiers");
@@ -325,7 +360,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * An array of ProductLinks objects.
+     * An array of `ProductLinks` objects.
      */
     public ProductInterfaceQuery productLinks(ProductLinksInterfaceQueryDefinition queryDef) {
         startField("product_links");
@@ -333,6 +368,12 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         _queryBuilder.append('{');
         queryDef.define(new ProductLinksInterfaceQuery(_queryBuilder));
         _queryBuilder.append('}');
+
+        return this;
+    }
+
+    public ProductInterfaceQuery purpose() {
+        startField("purpose");
 
         return this;
     }
@@ -347,7 +388,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Related Products
+     * An array of related products.
      */
     public ProductInterfaceQuery relatedProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("related_products");
@@ -374,7 +415,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         }
 
         /**
-         * Specifies the maximum number of results to return at once.
+         * The maximum number of results to return at once. The default is 20.
          */
         public ReviewsArguments pageSize(Integer value) {
             if (value != null) {
@@ -385,7 +426,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         }
 
         /**
-         * Specifies which page of results to return.
+         * The page of results to return. The default is 1.
          */
         public ReviewsArguments currentPage(Integer value) {
             if (value != null) {
@@ -481,7 +522,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The end date that a product has a special price.
+     * The end date for a product with a special price.
      */
     public ProductInterfaceQuery specialToDate() {
         startField("special_to_date");
@@ -489,6 +530,9 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
         return this;
     }
 
+    /**
+     * Indicates whether the product is staged for a future campaign.
+     */
     public ProductInterfaceQuery staged() {
         startField("staged");
 
@@ -505,7 +549,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public ProductInterfaceQuery swatchImage() {
         startField("swatch_image");
@@ -529,7 +573,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public ProductInterfaceQuery tierPrice() {
@@ -541,7 +585,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * An array of ProductTierPrices objects.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public ProductInterfaceQuery tierPrices(ProductTierPricesQueryDefinition queryDef) {
@@ -557,7 +601,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
-     * @deprecated Use __typename instead.
+     * @deprecated Use `__typename` instead.
      */
     @Deprecated
     public ProductInterfaceQuery typeId() {
@@ -588,7 +632,7 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
     }
 
     /**
-     * Upsell Products
+     * An array of up-sell products.
      */
     public ProductInterfaceQuery upsellProducts(ProductInterfaceQueryDefinition queryDef) {
         startField("upsell_products");
@@ -637,6 +681,12 @@ public class ProductInterfaceQuery extends AbstractQuery<ProductInterfaceQuery> 
      */
     public ProductInterfaceQuery urlSuffix() {
         startField("url_suffix");
+
+        return this;
+    }
+
+    public ProductInterfaceQuery videoFile() {
+        startField("video_file");
 
         return this;
     }

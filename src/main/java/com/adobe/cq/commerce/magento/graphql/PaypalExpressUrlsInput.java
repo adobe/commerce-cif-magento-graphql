@@ -20,10 +20,10 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
 /**
- * A set of relative URLs that PayPal will use in response to various actions during the authorization
- * process. Magento prepends the base URL to this value to create a full URL. For example, if the full
- * URL is https://www.example.com/path/to/page.html, the relative URL is path/to/page.html. Use this
- * input for Express Checkout and Payments Standard payment methods.
+ * Contains a set of relative URLs that PayPal uses in response to various actions during the
+ * authorization process. Magento prepends the base URL to this value to create a full URL. For
+ * example, if the full URL is https://www.example.com/path/to/page.html, the relative URL is
+ * path/to/page.html. Use this input for Express Checkout and Payments Standard payment methods.
  */
 public class PaypalExpressUrlsInput implements Serializable {
     private String cancelUrl;
@@ -41,7 +41,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in
+     * The relative URL of the page that PayPal redirects to when the buyer cancels the transaction in
      * order to choose a different payment method. If the full URL to this page is
      * https://www.example.com/paypal/action/cancel.html, the relative URL is paypal/action/cancel.html.
      */
@@ -50,7 +50,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in
+     * The relative URL of the page that PayPal redirects to when the buyer cancels the transaction in
      * order to choose a different payment method. If the full URL to this page is
      * https://www.example.com/paypal/action/cancel.html, the relative URL is paypal/action/cancel.html.
      */
@@ -60,18 +60,18 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the final confirmation page that PayPal will redirect to upon payment success.
-     * If the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL
-     * is paypal/action/return.html.
+     * The relative URL of the final confirmation page that PayPal redirects to upon payment success. If
+     * the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL is
+     * paypal/action/return.html.
      */
     public String getReturnUrl() {
         return returnUrl;
     }
 
     /**
-     * The relative URL of the final confirmation page that PayPal will redirect to upon payment success.
-     * If the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL
-     * is paypal/action/return.html.
+     * The relative URL of the final confirmation page that PayPal redirects to upon payment success. If
+     * the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL is
+     * paypal/action/return.html.
      */
     public PaypalExpressUrlsInput setReturnUrl(String returnUrl) {
         this.returnUrl = returnUrl;
@@ -79,7 +79,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the payment has been put on hold for
+     * The relative URL of the page that PayPal redirects to when the payment has been put on hold for
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
@@ -90,7 +90,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the payment has been put on hold for
+     * The relative URL of the page that PayPal redirects to when the payment has been put on hold for
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
@@ -101,7 +101,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the payment has been put on hold for
+     * The relative URL of the page that PayPal redirects to when the payment has been put on hold for
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
@@ -113,7 +113,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the payment has been put on hold for
+     * The relative URL of the page that PayPal redirects to when the payment has been put on hold for
      * additional review. This condition mostly applies to ACH transactions, and is not applicable to most
      * PayPal solutions. If the full URL to this page is
      * https://www.example.com/paypal/action/success_pending.html, the relative URL is
@@ -128,7 +128,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the order confirmation page that PayPal will redirect to when the payment is
+     * The relative URL of the order confirmation page that PayPal redirects to when the payment is
      * successful and additional confirmation is not needed. Not applicable to most PayPal solutions. If
      * the full URL to this page is https://www.example.com/paypal/action/success.html, the relative URL is
      * paypal/action/success.html.
@@ -138,7 +138,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the order confirmation page that PayPal will redirect to when the payment is
+     * The relative URL of the order confirmation page that PayPal redirects to when the payment is
      * successful and additional confirmation is not needed. Not applicable to most PayPal solutions. If
      * the full URL to this page is https://www.example.com/paypal/action/success.html, the relative URL is
      * paypal/action/success.html.
@@ -148,7 +148,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the order confirmation page that PayPal will redirect to when the payment is
+     * The relative URL of the order confirmation page that PayPal redirects to when the payment is
      * successful and additional confirmation is not needed. Not applicable to most PayPal solutions. If
      * the full URL to this page is https://www.example.com/paypal/action/success.html, the relative URL is
      * paypal/action/success.html.
@@ -159,7 +159,7 @@ public class PaypalExpressUrlsInput implements Serializable {
     }
 
     /**
-     * The relative URL of the order confirmation page that PayPal will redirect to when the payment is
+     * The relative URL of the order confirmation page that PayPal redirects to when the payment is
      * successful and additional confirmation is not needed. Not applicable to most PayPal solutions. If
      * the full URL to this page is https://www.example.com/paypal/action/success.html, the relative URL is
      * paypal/action/success.html.

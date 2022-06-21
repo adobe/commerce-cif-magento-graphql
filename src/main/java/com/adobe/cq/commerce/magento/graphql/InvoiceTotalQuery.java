@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains price details from an invoice
+ * Contains price details from an invoice.
  */
 public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     InvoiceTotalQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * The final base grand total amount in the base currency
+     * The final base grand total amount in the base currency.
      */
     public InvoiceTotalQuery baseGrandTotal(MoneyQueryDefinition queryDef) {
         startField("base_grand_total");
@@ -39,7 +39,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * The applied discounts to the invoice
+     * The applied discounts to the invoice.
      */
     public InvoiceTotalQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -52,7 +52,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * The final total amount, including shipping, discounts, and taxes
+     * The final total amount, including shipping, discounts, and taxes.
      */
     public InvoiceTotalQuery grandTotal(MoneyQueryDefinition queryDef) {
         startField("grand_total");
@@ -65,7 +65,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * Contains details about the shipping and handling costs for the invoice
+     * Details about the shipping and handling costs for the invoice.
      */
     public InvoiceTotalQuery shippingHandling(ShippingHandlingQueryDefinition queryDef) {
         startField("shipping_handling");
@@ -78,7 +78,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * The subtotal of the invoice, excluding shipping, discounts, and taxes
+     * The subtotal of the invoice, excluding shipping, discounts, and taxes.
      */
     public InvoiceTotalQuery subtotal(MoneyQueryDefinition queryDef) {
         startField("subtotal");
@@ -91,7 +91,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * The invoice tax details
+     * The invoice tax details.
      */
     public InvoiceTotalQuery taxes(TaxItemQueryDefinition queryDef) {
         startField("taxes");
@@ -104,7 +104,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * The shipping amount for the invoice
+     * The shipping amount for the invoice.
      */
     public InvoiceTotalQuery totalShipping(MoneyQueryDefinition queryDef) {
         startField("total_shipping");
@@ -117,7 +117,7 @@ public class InvoiceTotalQuery extends AbstractQuery<InvoiceTotalQuery> {
     }
 
     /**
-     * The amount of tax applied to the invoice
+     * The amount of tax applied to the invoice.
      */
     public InvoiceTotalQuery totalTax(MoneyQueryDefinition queryDef) {
         startField("total_tax");

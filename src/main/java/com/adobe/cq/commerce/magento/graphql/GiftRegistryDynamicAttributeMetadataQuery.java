@@ -23,7 +23,7 @@ public class GiftRegistryDynamicAttributeMetadataQuery extends AbstractQuery<Gif
     }
 
     /**
-     * Indicates which group the dynamic attribute a member of
+     * Indicates which group the dynamic attribute a member of.
      */
     public GiftRegistryDynamicAttributeMetadataQuery attributeGroup() {
         startField("attribute_group");
@@ -32,7 +32,7 @@ public class GiftRegistryDynamicAttributeMetadataQuery extends AbstractQuery<Gif
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeMetadataQuery code() {
         startField("code");
@@ -42,7 +42,7 @@ public class GiftRegistryDynamicAttributeMetadataQuery extends AbstractQuery<Gif
 
     /**
      * The selected input type for this dynamic attribute. The value can be one of several static or custom
-     * types
+     * types.
      */
     public GiftRegistryDynamicAttributeMetadataQuery inputType() {
         startField("input_type");
@@ -51,7 +51,7 @@ public class GiftRegistryDynamicAttributeMetadataQuery extends AbstractQuery<Gif
     }
 
     /**
-     * Indicates whether the dynamic attribute is required
+     * Indicates whether the dynamic attribute is required.
      */
     public GiftRegistryDynamicAttributeMetadataQuery isRequired() {
         startField("is_required");
@@ -60,7 +60,7 @@ public class GiftRegistryDynamicAttributeMetadataQuery extends AbstractQuery<Gif
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeMetadataQuery label() {
         startField("label");
@@ -69,7 +69,7 @@ public class GiftRegistryDynamicAttributeMetadataQuery extends AbstractQuery<Gif
     }
 
     /**
-     * The order in which to display the dynamic attribute
+     * The order in which to display the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeMetadataQuery sortOrder() {
         startField("sort_order");

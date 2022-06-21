@@ -22,8 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
- * the video.
+ * Contains a link to a video file and basic information about the video.
  */
 public class ProductMediaGalleryEntriesVideoContent extends AbstractResponse<ProductMediaGalleryEntriesVideoContent> {
     public ProductMediaGalleryEntriesVideoContent() {}

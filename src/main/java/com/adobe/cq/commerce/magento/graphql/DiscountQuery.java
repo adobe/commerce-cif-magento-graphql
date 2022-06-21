@@ -26,7 +26,7 @@ public class DiscountQuery extends AbstractQuery<DiscountQuery> {
     }
 
     /**
-     * The amount of the discount
+     * The amount of the discount.
      */
     public DiscountQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
@@ -39,7 +39,7 @@ public class DiscountQuery extends AbstractQuery<DiscountQuery> {
     }
 
     /**
-     * A description of the discount
+     * A description of the discount.
      */
     public DiscountQuery label() {
         startField("label");

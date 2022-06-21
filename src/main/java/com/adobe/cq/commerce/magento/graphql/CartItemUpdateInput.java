@@ -21,6 +21,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * A single item to be updated.
+ */
 public class CartItemUpdateInput implements Serializable {
     private Input<Integer> cartItemId = Input.undefined();
 
@@ -68,21 +71,21 @@ public class CartItemUpdateInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ID getCartItemUid() {
         return cartItemUid.getValue();
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public Input<ID> getCartItemUidInput() {
         return cartItemUid;
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public CartItemUpdateInput setCartItemUid(ID cartItemUid) {
         this.cartItemUid = Input.optional(cartItemUid);
@@ -90,7 +93,7 @@ public class CartItemUpdateInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public CartItemUpdateInput setCartItemUidInput(Input<ID> cartItemUid) {
         if (cartItemUid == null) {
@@ -100,19 +103,31 @@ public class CartItemUpdateInput implements Serializable {
         return this;
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public List<CustomizableOptionInput> getCustomizableOptions() {
         return customizableOptions.getValue();
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public Input<List<CustomizableOptionInput>> getCustomizableOptionsInput() {
         return customizableOptions;
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public CartItemUpdateInput setCustomizableOptions(List<CustomizableOptionInput> customizableOptions) {
         this.customizableOptions = Input.optional(customizableOptions);
         return this;
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public CartItemUpdateInput setCustomizableOptionsInput(Input<List<CustomizableOptionInput>> customizableOptions) {
         if (customizableOptions == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -155,21 +170,21 @@ public class CartItemUpdateInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item.
      */
     public ID getGiftWrappingId() {
         return giftWrappingId.getValue();
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item.
      */
     public Input<ID> getGiftWrappingIdInput() {
         return giftWrappingId;
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item.
      */
     public CartItemUpdateInput setGiftWrappingId(ID giftWrappingId) {
         this.giftWrappingId = Input.optional(giftWrappingId);
@@ -177,7 +192,7 @@ public class CartItemUpdateInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart item
+     * The unique ID for a `GiftWrapping` object to be used for the cart item.
      */
     public CartItemUpdateInput setGiftWrappingIdInput(Input<ID> giftWrappingId) {
         if (giftWrappingId == null) {
@@ -187,19 +202,31 @@ public class CartItemUpdateInput implements Serializable {
         return this;
     }
 
+    /**
+     * The new quantity of the item.
+     */
     public Double getQuantity() {
         return quantity.getValue();
     }
 
+    /**
+     * The new quantity of the item.
+     */
     public Input<Double> getQuantityInput() {
         return quantity;
     }
 
+    /**
+     * The new quantity of the item.
+     */
     public CartItemUpdateInput setQuantity(Double quantity) {
         this.quantity = Input.optional(quantity);
         return this;
     }
 
+    /**
+     * The new quantity of the item.
+     */
     public CartItemUpdateInput setQuantityInput(Input<Double> quantity) {
         if (quantity == null) {
             throw new IllegalArgumentException("Input can not be null");

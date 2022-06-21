@@ -14,8 +14,6 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import com.google.gson.JsonElement;
@@ -24,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains details about the requested order
+ * Contains the order ID.
  */
 public class Order extends AbstractResponse<Order> {
     public Order() {}
@@ -34,27 +32,6 @@ public class Order extends AbstractResponse<Order> {
             String key = field.getKey();
             String fieldName = getFieldName(key);
             switch (fieldName) {
-                case "items": {
-                    List<String> optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        List<String> list1 = new ArrayList<>();
-                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
-                            String optional2 = null;
-                            if (!element1.isJsonNull()) {
-                                optional2 = jsonAsString(element1, key);
-                            }
-
-                            list1.add(optional2);
-                        }
-
-                        optional1 = list1;
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
                 case "order_id": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -68,17 +45,6 @@ public class Order extends AbstractResponse<Order> {
 
                 case "order_number": {
                     responseData.put(key, jsonAsString(field.getValue(), key));
-
-                    break;
-                }
-
-                case "total": {
-                    String optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = jsonAsString(field.getValue(), key);
-                    }
-
-                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -100,19 +66,7 @@ public class Order extends AbstractResponse<Order> {
     }
 
     /**
-     * An array containing the items purchased in this order
-     */
-    public List<String> getItems() {
-        return (List<String>) get("items");
-    }
-
-    public Order setItems(List<String> arg) {
-        optimisticData.put(getKey("items"), arg);
-        return this;
-    }
-
-    /**
-     * @deprecated The order_id field is deprecated, use order_number instead.
+     * @deprecated Use `order_number` instead.
      */
     @Deprecated
     public String getOrderId() {
@@ -125,7 +79,7 @@ public class Order extends AbstractResponse<Order> {
     }
 
     /**
-     * The unique ID for a `Order` object.
+     * The unique ID for an `Order` object.
      */
     public String getOrderNumber() {
         return (String) get("order_number");
@@ -136,30 +90,12 @@ public class Order extends AbstractResponse<Order> {
         return this;
     }
 
-    /**
-     * Contains the calculated total for this order
-     */
-    public String getTotal() {
-        return (String) get("total");
-    }
-
-    public Order setTotal(String arg) {
-        optimisticData.put(getKey("total"), arg);
-        return this;
-    }
-
     public boolean unwrapsToObject(String key) {
         switch (getFieldName(key)) {
-            case "items":
-                return false;
-
             case "order_id":
                 return false;
 
             case "order_number":
-                return false;
-
-            case "total":
                 return false;
 
             default:

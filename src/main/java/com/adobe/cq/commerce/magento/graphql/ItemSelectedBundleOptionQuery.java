@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A list of options of the selected bundle product
+ * A list of options of the selected bundle product.
  */
 public class ItemSelectedBundleOptionQuery extends AbstractQuery<ItemSelectedBundleOptionQuery> {
     ItemSelectedBundleOptionQuery(StringBuilder _queryBuilder) {
@@ -26,9 +26,9 @@ public class ItemSelectedBundleOptionQuery extends AbstractQuery<ItemSelectedBun
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOption` object
+     * The unique ID for a `ItemSelectedBundleOption` object.
      *
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public ItemSelectedBundleOptionQuery id() {
@@ -38,7 +38,7 @@ public class ItemSelectedBundleOptionQuery extends AbstractQuery<ItemSelectedBun
     }
 
     /**
-     * The label of the option
+     * The label of the option.
      */
     public ItemSelectedBundleOptionQuery label() {
         startField("label");
@@ -47,7 +47,7 @@ public class ItemSelectedBundleOptionQuery extends AbstractQuery<ItemSelectedBun
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOption` object
+     * The unique ID for a `ItemSelectedBundleOption` object.
      */
     public ItemSelectedBundleOptionQuery uid() {
         startField("uid");
@@ -56,7 +56,7 @@ public class ItemSelectedBundleOptionQuery extends AbstractQuery<ItemSelectedBun
     }
 
     /**
-     * A list of products that represent the values of the parent option
+     * A list of products that represent the values of the parent option.
      */
     public ItemSelectedBundleOptionQuery values(ItemSelectedBundleOptionValueQueryDefinition queryDef) {
         startField("values");

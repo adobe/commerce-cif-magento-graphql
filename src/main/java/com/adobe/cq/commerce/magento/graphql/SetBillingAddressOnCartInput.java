@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Sets the billing address.
+ */
 public class SetBillingAddressOnCartInput implements Serializable {
     private BillingAddressInput billingAddress;
 
@@ -29,19 +32,31 @@ public class SetBillingAddressOnCartInput implements Serializable {
         this.cartId = cartId;
     }
 
+    /**
+     * The billing address.
+     */
     public BillingAddressInput getBillingAddress() {
         return billingAddress;
     }
 
+    /**
+     * The billing address.
+     */
     public SetBillingAddressOnCartInput setBillingAddress(BillingAddressInput billingAddress) {
         this.billingAddress = billingAddress;
         return this;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public SetBillingAddressOnCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;

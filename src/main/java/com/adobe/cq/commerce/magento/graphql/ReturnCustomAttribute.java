@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a `ReturnCustomerAttribute` object.
+ */
 public class ReturnCustomAttribute extends AbstractResponse<ReturnCustomAttribute> {
     public ReturnCustomAttribute() {}
 
@@ -65,7 +68,7 @@ public class ReturnCustomAttribute extends AbstractResponse<ReturnCustomAttribut
     }
 
     /**
-     * A description of the attribute
+     * A description of the attribute.
      */
     public String getLabel() {
         return (String) get("label");
@@ -77,7 +80,7 @@ public class ReturnCustomAttribute extends AbstractResponse<ReturnCustomAttribut
     }
 
     /**
-     * The unique ID for a `ReturnCustomAttribute` object
+     * The unique ID for a `ReturnCustomAttribute` object.
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -89,7 +92,7 @@ public class ReturnCustomAttribute extends AbstractResponse<ReturnCustomAttribut
     }
 
     /**
-     * A JSON-encoded value of the attribute
+     * A JSON-encoded value of the attribute.
      */
     public String getValue() {
         return (String) get("value");

@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * BundleItemOption defines characteristics and options for a specific bundle item.
+ * Defines the characteristics that comprise a specific bundle item and its options.
  */
 public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     public BundleItemOption() {}
@@ -268,7 +268,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     /**
      * Indicates the quantity of this specific bundle item.
      *
-     * @deprecated The `qty` is deprecated. Use `quantity` instead.
+     * @deprecated Use `quantity` instead.
      */
     @Deprecated
     public Double getQty() {
@@ -281,7 +281,7 @@ public class BundleItemOption extends AbstractResponse<BundleItemOption> {
     }
 
     /**
-     * Indicates the quantity of this specific bundle item.
+     * The quantity of this specific bundle item.
      */
     public Double getQuantity() {
         return (Double) get("quantity");

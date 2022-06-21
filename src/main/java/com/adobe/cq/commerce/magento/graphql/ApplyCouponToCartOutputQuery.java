@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after applying a coupon.
+ */
 public class ApplyCouponToCartOutputQuery extends AbstractQuery<ApplyCouponToCartOutputQuery> {
     ApplyCouponToCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after applying a coupon.
+     */
     public ApplyCouponToCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains information for rendering layered navigation.
+ */
 public class LayerFilter extends AbstractResponse<LayerFilter> {
     public LayerFilter() {}
 
@@ -102,9 +105,9 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Array of filter items.
+     * An array of filter items.
      *
-     * @deprecated Use Aggregation.options instead.
+     * @deprecated Use `Aggregation.options` instead.
      */
     @Deprecated
     public List<LayerFilterItemInterface> getFilterItems() {
@@ -117,9 +120,9 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Count of filter items in filter group.
+     * The count of filter items in filter group.
      *
-     * @deprecated Use Aggregation.count instead.
+     * @deprecated Use `Aggregation.count` instead.
      */
     @Deprecated
     public Integer getFilterItemsCount() {
@@ -132,9 +135,9 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Layered navigation filter name.
+     * The name of a layered navigation filter.
      *
-     * @deprecated Use Aggregation.label instead.
+     * @deprecated Use `Aggregation.label` instead.
      */
     @Deprecated
     public String getName() {
@@ -147,9 +150,9 @@ public class LayerFilter extends AbstractResponse<LayerFilter> {
     }
 
     /**
-     * Request variable name for filter query.
+     * The request variable name for a filter query.
      *
-     * @deprecated Use Aggregation.attribute_code instead.
+     * @deprecated Use `Aggregation.attribute_code` instead.
      */
     @Deprecated
     public String getRequestVar() {

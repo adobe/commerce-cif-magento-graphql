@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Exchange rates depend on the customer group
+ * Lists the reward points exchange rates. The values depend on the customer group.
  */
 public class RewardPointsExchangeRates extends AbstractResponse<RewardPointsExchangeRates> {
     public RewardPointsExchangeRates() {}
@@ -71,7 +71,7 @@ public class RewardPointsExchangeRates extends AbstractResponse<RewardPointsExch
     }
 
     /**
-     * How many points are earned for a given amount spent
+     * How many points are earned for a given amount spent.
      */
     public RewardPointsRate getEarning() {
         return (RewardPointsRate) get("earning");
@@ -83,7 +83,7 @@ public class RewardPointsExchangeRates extends AbstractResponse<RewardPointsExch
     }
 
     /**
-     * How many points must be redeemed to get a given amount of currency discount at the checkout
+     * How many points must be redeemed to get a given amount of currency discount at the checkout.
      */
     public RewardPointsRate getRedemption() {
         return (RewardPointsRate) get("redemption");

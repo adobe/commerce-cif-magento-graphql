@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the name and visibility of a new wish list.
+ */
 public class CreateWishlistInput implements Serializable {
     private String name;
 
@@ -30,14 +33,14 @@ public class CreateWishlistInput implements Serializable {
     }
 
     /**
-     * The name of the new wish list
+     * The name of the new wish list.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * The name of the new wish list
+     * The name of the new wish list.
      */
     public CreateWishlistInput setName(String name) {
         this.name = name;
@@ -45,14 +48,14 @@ public class CreateWishlistInput implements Serializable {
     }
 
     /**
-     * Indicates whether the wish list is public or private
+     * Indicates whether the wish list is public or private.
      */
     public WishlistVisibilityEnum getVisibility() {
         return visibility;
     }
 
     /**
-     * Indicates whether the wish list is public or private
+     * Indicates whether the wish list is public or private.
      */
     public CreateWishlistInput setVisibility(WishlistVisibilityEnum visibility) {
         this.visibility = visibility;

@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Contains the reviewer&#39;s rating for a single aspect of a review.
+ */
 public class ProductReviewRatingInput implements Serializable {
     private String id;
 
@@ -45,14 +48,14 @@ public class ProductReviewRatingInput implements Serializable {
     }
 
     /**
-     * An encoded rating value id.
+     * An encoded rating value ID.
      */
     public String getValueId() {
         return valueId;
     }
 
     /**
-     * An encoded rating value id.
+     * An encoded rating value ID.
      */
     public ProductReviewRatingInput setValueId(String valueId) {
         this.valueId = valueId;

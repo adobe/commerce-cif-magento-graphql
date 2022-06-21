@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A price based on the quantity purchased.
+ * Defines a price based on the quantity purchased.
  */
 public class TierPrice extends AbstractResponse<TierPrice> {
     public TierPrice() {}
@@ -93,6 +93,9 @@ public class TierPrice extends AbstractResponse<TierPrice> {
         return this;
     }
 
+    /**
+     * The price of the product at this tier.
+     */
     public Money getFinalPrice() {
         return (Money) get("final_price");
     }

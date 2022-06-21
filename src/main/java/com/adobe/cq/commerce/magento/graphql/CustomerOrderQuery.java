@@ -19,7 +19,7 @@ import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains details about each of the customer&#39;s orders
+ * Contains details about each of the customer&#39;s orders.
  */
 public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     CustomerOrderQuery(StringBuilder _queryBuilder) {
@@ -27,7 +27,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The billing address for the order
+     * The billing address for the order.
      */
     public CustomerOrderQuery billingAddress(OrderAddressQueryDefinition queryDef) {
         startField("billing_address");
@@ -40,7 +40,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The shipping carrier for the order delivery
+     * The shipping carrier for the order delivery.
      */
     public CustomerOrderQuery carrier() {
         startField("carrier");
@@ -49,7 +49,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * Comments about the order
+     * Comments about the order.
      */
     public CustomerOrderQuery comments(SalesCommentItemQueryDefinition queryDef) {
         startField("comments");
@@ -62,7 +62,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * @deprecated Use the order_date attribute instead
+     * @deprecated Use the `order_date` field instead.
      */
     @Deprecated
     public CustomerOrderQuery createdAt() {
@@ -72,7 +72,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * A list of credit memos
+     * A list of credit memos.
      */
     public CustomerOrderQuery creditMemos(CreditMemoQueryDefinition queryDef) {
         startField("credit_memos");
@@ -98,7 +98,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * Whether customer requested gift receipt for the order
+     * Indicates whether the customer requested a gift receipt for the order.
      */
     public CustomerOrderQuery giftReceiptIncluded() {
         startField("gift_receipt_included");
@@ -107,7 +107,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The selected gift wrapping for the order
+     * The selected gift wrapping for the order.
      */
     public CustomerOrderQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -120,7 +120,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * @deprecated Use the totals.grand_total attribute instead
+     * @deprecated Use the `totals.grand_total` field instead.
      */
     @Deprecated
     public CustomerOrderQuery grandTotal() {
@@ -130,7 +130,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The unique ID for a `CustomerOrder` object
+     * The unique ID for a `CustomerOrder` object.
      */
     public CustomerOrderQuery id() {
         startField("id");
@@ -139,7 +139,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * @deprecated Use the id attribute instead
+     * @deprecated Use the `id` field instead.
      */
     @Deprecated
     public CustomerOrderQuery incrementId() {
@@ -149,7 +149,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * A list of invoices for the order
+     * A list of invoices for the order.
      */
     public CustomerOrderQuery invoices(InvoiceQueryDefinition queryDef) {
         startField("invoices");
@@ -162,7 +162,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * An array containing the items purchased in this order
+     * An array containing the items purchased in this order.
      */
     public CustomerOrderQuery items(OrderItemInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -175,7 +175,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * A list of order items eligible to be in a return request
+     * A list of order items eligible to be in a return request.
      */
     public CustomerOrderQuery itemsEligibleForReturn(OrderItemInterfaceQueryDefinition queryDef) {
         startField("items_eligible_for_return");
@@ -188,7 +188,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The order number
+     * The order number.
      */
     public CustomerOrderQuery number() {
         startField("number");
@@ -197,7 +197,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The date the order was placed
+     * The date the order was placed.
      */
     public CustomerOrderQuery orderDate() {
         startField("order_date");
@@ -206,7 +206,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * @deprecated Use the number attribute instead
+     * @deprecated Use the `number` field instead.
      */
     @Deprecated
     public CustomerOrderQuery orderNumber() {
@@ -216,7 +216,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * Payment details for the order
+     * Payment details for the order.
      */
     public CustomerOrderQuery paymentMethods(OrderPaymentMethodQueryDefinition queryDef) {
         startField("payment_methods");
@@ -229,7 +229,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * Whether customer requested printed card for the order
+     * Indicates whether the customer requested a printed card for the order.
      */
     public CustomerOrderQuery printedCardIncluded() {
         startField("printed_card_included");
@@ -243,7 +243,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once. The default value is 20
+         * The maximum number of results to return at once. The default is 20.
          */
         public ReturnsArguments pageSize(Integer value) {
             if (value != null) {
@@ -254,7 +254,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
         }
 
         /**
-         * Specifies which page of results to return. The default value is 1
+         * The page of results to return. The default is 1.
          */
         public ReturnsArguments currentPage(Integer value) {
             if (value != null) {
@@ -294,7 +294,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * A list of shipments for the order
+     * A list of shipments for the order.
      */
     public CustomerOrderQuery shipments(OrderShipmentQueryDefinition queryDef) {
         startField("shipments");
@@ -307,7 +307,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The shipping address for the order
+     * The shipping address for the order.
      */
     public CustomerOrderQuery shippingAddress(OrderAddressQueryDefinition queryDef) {
         startField("shipping_address");
@@ -320,7 +320,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The delivery method for the order
+     * The delivery method for the order.
      */
     public CustomerOrderQuery shippingMethod() {
         startField("shipping_method");
@@ -329,7 +329,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * The current status of the order
+     * The current status of the order.
      */
     public CustomerOrderQuery status() {
         startField("status");
@@ -338,7 +338,7 @@ public class CustomerOrderQuery extends AbstractQuery<CustomerOrderQuery> {
     }
 
     /**
-     * Contains details about the calculated totals for this order
+     * Details about the calculated totals for this order.
      */
     public CustomerOrderQuery total(OrderTotalQueryDefinition queryDef) {
         startField("total");

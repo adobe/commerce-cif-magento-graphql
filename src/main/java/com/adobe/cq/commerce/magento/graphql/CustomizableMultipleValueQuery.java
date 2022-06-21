@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableMultipleValue defines the price and sku of a product whose page contains a customized
- * multiselect.
+ * Defines the price and sku of a product whose page contains a customized multiselect.
  */
 public class CustomizableMultipleValueQuery extends AbstractQuery<CustomizableMultipleValueQuery> {
     CustomizableMultipleValueQuery(StringBuilder _queryBuilder) {

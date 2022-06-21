@@ -16,6 +16,10 @@ package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.CustomFieldInterface;
 
+/**
+ * Defines aggregation option fields.
+ */
+
 public interface AggregationOptionInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
@@ -25,7 +29,7 @@ public interface AggregationOptionInterface extends CustomFieldInterface {
     Integer getCount();
 
     /**
-     * Aggregation option display label.
+     * The display label for an aggregation option.
      */
     String getLabel();
 

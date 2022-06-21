@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Defines basic features of a bundle product and contains multiple BundleItems
+ * Defines basic features of a bundle product and contains multiple BundleItems.
  */
 public class BundleProduct extends AbstractResponse<BundleProduct> implements CustomizableProductInterface, PhysicalProductInterface,
     ProductInterface, RoutableInterface {
@@ -177,10 +177,76 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     break;
                 }
 
+                case "fashion_color": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "fashion_material": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "fashion_size": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "fashion_style": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "format": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "gift_message_available": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "has_video": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -467,6 +533,17 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                         }
 
                         optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "purpose": {
+                    Integer optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsInteger(field.getValue(), key);
                     }
 
                     responseData.put(key, optional1);
@@ -792,6 +869,17 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                     break;
                 }
 
+                case "video_file": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "websites": {
                     List<Website> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -856,8 +944,8 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Products&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Products&#39; is enabled.
      */
     public String getCanonicalUrl() {
         return (String) get("canonical_url");
@@ -917,7 +1005,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Crosssell Products
+     * An array of cross-sell products.
      */
     public List<ProductInterface> getCrosssellProducts() {
         return (List<ProductInterface>) get("crosssell_products");
@@ -953,7 +1041,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Indicates whether the bundle product has a dynamic SK.
+     * Indicates whether the bundle product has a dynamic SKU.
      */
     public Boolean getDynamicSku() {
         return (Boolean) get("dynamic_sku");
@@ -976,6 +1064,51 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
         return this;
     }
 
+    public Integer getFashionColor() {
+        return (Integer) get("fashion_color");
+    }
+
+    public BundleProduct setFashionColor(Integer arg) {
+        optimisticData.put(getKey("fashion_color"), arg);
+        return this;
+    }
+
+    public String getFashionMaterial() {
+        return (String) get("fashion_material");
+    }
+
+    public BundleProduct setFashionMaterial(String arg) {
+        optimisticData.put(getKey("fashion_material"), arg);
+        return this;
+    }
+
+    public Integer getFashionSize() {
+        return (Integer) get("fashion_size");
+    }
+
+    public BundleProduct setFashionSize(Integer arg) {
+        optimisticData.put(getKey("fashion_size"), arg);
+        return this;
+    }
+
+    public String getFashionStyle() {
+        return (String) get("fashion_style");
+    }
+
+    public BundleProduct setFashionStyle(String arg) {
+        optimisticData.put(getKey("fashion_style"), arg);
+        return this;
+    }
+
+    public Integer getFormat() {
+        return (Integer) get("format");
+    }
+
+    public BundleProduct setFormat(Integer arg) {
+        optimisticData.put(getKey("format"), arg);
+        return this;
+    }
+
     /**
      * Indicates whether a gift message is available.
      */
@@ -985,6 +1118,15 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public BundleProduct setGiftMessageAvailable(String arg) {
         optimisticData.put(getKey("gift_message_available"), arg);
+        return this;
+    }
+
+    public Integer getHasVideo() {
+        return (Integer) get("has_video");
+    }
+
+    public BundleProduct setHasVideo(Integer arg) {
+        optimisticData.put(getKey("has_video"), arg);
         return this;
     }
 
@@ -1016,7 +1158,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public String getIsReturnable() {
         return (String) get("is_returnable");
@@ -1052,7 +1194,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of Media Gallery objects.
+     * An array of media gallery objects.
      */
     public List<MediaGalleryInterface> getMediaGallery() {
         return (List<MediaGalleryInterface>) get("media_gallery");
@@ -1066,7 +1208,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     /**
      * An array of MediaGalleryEntry objects.
      *
-     * @deprecated Use product&#39;s `media_gallery` instead
+     * @deprecated Use `media_gallery` instead.
      */
     @Deprecated
     public List<MediaGalleryEntry> getMediaGalleryEntries() {
@@ -1194,9 +1336,9 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A ProductPrices object, indicating the price of an item.
+     * Indicates the price of an item.
      *
-     * @deprecated Use price_range for product price information.
+     * @deprecated Use `price_range` for product price information.
      */
     @Deprecated
     public ProductPrices getPrice() {
@@ -1209,7 +1351,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * A PriceRange object, indicating the range of prices for the product
+     * The range of prices for the product
      */
     public PriceRange getPriceRange() {
         return (PriceRange) get("price_range");
@@ -1221,7 +1363,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of TierPrice objects.
+     * An array of `TierPrice` objects.
      */
     public List<TierPrice> getPriceTiers() {
         return (List<TierPrice>) get("price_tiers");
@@ -1245,7 +1387,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * An array of ProductLinks objects.
+     * An array of `ProductLinks` objects.
      */
     public List<ProductLinksInterface> getProductLinks() {
         return (List<ProductLinksInterface>) get("product_links");
@@ -1253,6 +1395,15 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public BundleProduct setProductLinks(List<ProductLinksInterface> arg) {
         optimisticData.put(getKey("product_links"), arg);
+        return this;
+    }
+
+    public Integer getPurpose() {
+        return (Integer) get("purpose");
+    }
+
+    public BundleProduct setPurpose(Integer arg) {
+        optimisticData.put(getKey("purpose"), arg);
         return this;
     }
 
@@ -1270,7 +1421,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public Integer getRedirectCode() {
         return (Integer) get("redirect_code");
@@ -1282,7 +1433,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Related Products
+     * An array of related products.
      */
     public List<ProductInterface> getRelatedProducts() {
         return (List<ProductInterface>) get("related_products");
@@ -1295,7 +1446,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public String getRelativeUrl() {
         return (String) get("relative_url");
@@ -1406,7 +1557,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The end date that a product has a special price.
+     * The end date for a product with a special price.
      */
     public String getSpecialToDate() {
         return (String) get("special_to_date");
@@ -1417,6 +1568,9 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
         return this;
     }
 
+    /**
+     * Indicates whether the product is staged for a future campaign.
+     */
     public Boolean getStaged() {
         return (Boolean) get("staged");
     }
@@ -1439,7 +1593,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     public String getSwatchImage() {
         return (String) get("swatch_image");
@@ -1465,7 +1619,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public Double getTierPrice() {
@@ -1480,7 +1634,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     /**
      * An array of ProductTierPrices objects.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     public List<ProductTierPrices> getTierPrices() {
@@ -1507,7 +1661,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
-     * @deprecated Use __typename instead.
+     * @deprecated Use `__typename` instead.
      */
     @Deprecated
     public String getTypeId() {
@@ -1547,7 +1701,7 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
     }
 
     /**
-     * Upsell Products
+     * An array of up-sell products.
      */
     public List<ProductInterface> getUpsellProducts() {
         return (List<ProductInterface>) get("upsell_products");
@@ -1604,6 +1758,15 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
 
     public BundleProduct setUrlSuffix(String arg) {
         optimisticData.put(getKey("url_suffix"), arg);
+        return this;
+    }
+
+    public String getVideoFile() {
+        return (String) get("video_file");
+    }
+
+    public BundleProduct setVideoFile(String arg) {
+        optimisticData.put(getKey("video_file"), arg);
         return this;
     }
 
@@ -1669,7 +1832,25 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
             case "dynamic_weight":
                 return false;
 
+            case "fashion_color":
+                return false;
+
+            case "fashion_material":
+                return false;
+
+            case "fashion_size":
+                return false;
+
+            case "fashion_style":
+                return false;
+
+            case "format":
+                return false;
+
             case "gift_message_available":
+                return false;
+
+            case "has_video":
                 return false;
 
             case "id":
@@ -1733,6 +1914,9 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                 return false;
 
             case "product_links":
+                return false;
+
+            case "purpose":
                 return false;
 
             case "rating_summary":
@@ -1817,6 +2001,9 @@ public class BundleProduct extends AbstractResponse<BundleProduct> implements Cu
                 return true;
 
             case "url_suffix":
+                return false;
+
+            case "video_file":
                 return false;
 
             case "websites":

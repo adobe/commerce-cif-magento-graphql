@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains error information.
+ */
 public class GiftRegistryItemUserErrorsQuery extends AbstractQuery<GiftRegistryItemUserErrorsQuery> {
     GiftRegistryItemUserErrorsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Indicates whether the attempt to move the cart items to the gift registry was successful
+     * Indicates whether the attempt to move the cart items to the gift registry was successful.
      */
     public GiftRegistryItemUserErrorsQuery status() {
         startField("status");
@@ -32,7 +35,7 @@ public class GiftRegistryItemUserErrorsQuery extends AbstractQuery<GiftRegistryI
     }
 
     /**
-     * An array of errors encountered while moving items from the cart to the gift registry
+     * An array of errors encountered while moving items from the cart to the gift registry.
      */
     public GiftRegistryItemUserErrorsQuery userErrors(GiftRegistryItemsUserErrorQueryDefinition queryDef) {
         startField("user_errors");

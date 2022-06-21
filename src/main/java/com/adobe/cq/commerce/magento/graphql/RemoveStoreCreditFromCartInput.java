@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Defines the input required to run the removeStoreCreditFromCart mutation
+ * Defines the input required to run the `removeStoreCreditFromCart` mutation.
  */
 public class RemoveStoreCreditFromCartInput implements Serializable {
     private String cartId;
@@ -29,14 +29,14 @@ public class RemoveStoreCreditFromCartInput implements Serializable {
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public String getCartId() {
         return cartId;
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public RemoveStoreCreditFromCartInput setCartId(String cartId) {
         this.cartId = cartId;

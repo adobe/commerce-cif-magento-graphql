@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains an array of items in a wish list.
+ */
 public class WishlistItemsQuery extends AbstractQuery<WishlistItemsQuery> {
     WishlistItemsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A list of items in the wish list
+     * A list of items in the wish list.
      */
     public WishlistItemsQuery items(WishlistItemInterfaceQueryDefinition queryDef) {
         startField("items");
@@ -36,7 +39,7 @@ public class WishlistItemsQuery extends AbstractQuery<WishlistItemsQuery> {
     }
 
     /**
-     * Contains pagination metadata
+     * Contains pagination metadata.
      */
     public WishlistItemsQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");

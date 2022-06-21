@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the cart and any errors after adding products.
+ */
 public class ReorderItemsOutputQuery extends AbstractQuery<ReorderItemsOutputQuery> {
     ReorderItemsOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains detailed information about the customer&#39;s cart.
+     * Detailed information about the customer&#39;s cart.
      */
     public ReorderItemsOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");

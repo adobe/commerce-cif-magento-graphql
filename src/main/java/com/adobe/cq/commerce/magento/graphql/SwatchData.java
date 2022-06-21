@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Describes the swatch type and a value.
+ */
 public class SwatchData extends AbstractResponse<SwatchData> {
     public SwatchData() {}
 
@@ -68,7 +71,7 @@ public class SwatchData extends AbstractResponse<SwatchData> {
     }
 
     /**
-     * Type of swatch filter item: 1 - text, 2 - image
+     * The type of swatch filter item: 1 - text; 2 - image.
      */
     public String getType() {
         return (String) get("type");
@@ -80,7 +83,7 @@ public class SwatchData extends AbstractResponse<SwatchData> {
     }
 
     /**
-     * Value for swatch item (text or image link)
+     * The value for the swatch item. It could be text or an image link.
      */
     public String getValue() {
         return (String) get("value");

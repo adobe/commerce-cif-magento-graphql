@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Identifies a customized product that has been placed in a cart.
+ */
 public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomizableOption> {
     public SelectedCustomizableOption() {}
 
@@ -101,8 +104,8 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
     }
 
     /**
-     * The unique ID for a `CustomizableRadioOption`, `CustomizableDropDownOption`,
-     * `CustomizableMultipleOption`, etc. of `CustomizableOptionInterface` objects
+     * The unique ID for a specific `CustomizableOptionInterface` object, such as a
+     * `CustomizableFieldOption`, `CustomizableFileOption`, or `CustomizableAreaOption` object.
      */
     public ID getCustomizableOptionUid() {
         return (ID) get("customizable_option_uid");
@@ -114,7 +117,7 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
     }
 
     /**
-     * @deprecated Use SelectedCustomizableOption.customizable_option_uid instead
+     * @deprecated Use `SelectedCustomizableOption.customizable_option_uid` instead.
      */
     @Deprecated
     public Integer getId() {
@@ -126,6 +129,9 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
         return this;
     }
 
+    /**
+     * Indicates whether the customizable option is required.
+     */
     public Boolean getIsRequired() {
         return (Boolean) get("is_required");
     }
@@ -135,6 +141,9 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
         return this;
     }
 
+    /**
+     * The display name of the selected customizable option.
+     */
     public String getLabel() {
         return (String) get("label");
     }
@@ -144,6 +153,9 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
         return this;
     }
 
+    /**
+     * A value indicating the order to display this option.
+     */
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
     }
@@ -153,6 +165,9 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
         return this;
     }
 
+    /**
+     * The type of `CustomizableOptionInterface` object.
+     */
     public String getType() {
         return (String) get("type");
     }
@@ -162,6 +177,9 @@ public class SelectedCustomizableOption extends AbstractResponse<SelectedCustomi
         return this;
     }
 
+    /**
+     * An array of selectable values.
+     */
     public List<SelectedCustomizableOptionValue> getValues() {
         return (List<SelectedCustomizableOptionValue>) get("values");
     }

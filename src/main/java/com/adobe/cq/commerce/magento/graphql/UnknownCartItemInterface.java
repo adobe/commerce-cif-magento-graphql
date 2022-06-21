@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * An interface for products in a cart.
+ */
 public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemInterface> implements CartItemInterface {
     public UnknownCartItemInterface() {}
 
@@ -115,7 +118,7 @@ public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemIn
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public String getId() {
@@ -127,6 +130,9 @@ public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemIn
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public CartItemPrices getPrices() {
         return (CartItemPrices) get("prices");
     }
@@ -136,6 +142,9 @@ public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemIn
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -145,6 +154,9 @@ public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemIn
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public Double getQuantity() {
         return (Double) get("quantity");
     }
@@ -155,7 +167,7 @@ public class UnknownCartItemInterface extends AbstractResponse<UnknownCartItemIn
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ID getUid() {
         return (ID) get("uid");

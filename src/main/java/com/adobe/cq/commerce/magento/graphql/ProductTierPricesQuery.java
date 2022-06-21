@@ -18,8 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ProductTierPrices is deprecated and has been replaced by TierPrice. The ProductTierPrices object
- * defines a tier price, which is a quantity discount offered to a specific customer group.
+ * Deprecated. Use `TierPrice` instead. Defines a tier price, which is a quantity discount offered to a
+ * specific customer group.
  */
 public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery> {
     ProductTierPricesQuery(StringBuilder _queryBuilder) {
@@ -29,7 +29,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     /**
      * The ID of the customer group.
      *
-     * @deprecated customer_group_id is not relevant for storefront.
+     * @deprecated Not relevant for the storefront.
      */
     @Deprecated
     public ProductTierPricesQuery customerGroupId() {
@@ -41,7 +41,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     /**
      * The percentage discount of the item.
      *
-     * @deprecated ProductTierPrices is deprecated. Use TierPrice.discount.
+     * @deprecated Use `TierPrice.discount` instead.
      */
     @Deprecated
     public ProductTierPricesQuery percentageValue() {
@@ -53,7 +53,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     /**
      * The number of items that must be purchased to qualify for tier pricing.
      *
-     * @deprecated ProductTierPrices is deprecated, use TierPrice.quantity.
+     * @deprecated Use `TierPrice.quantity` instead.
      */
     @Deprecated
     public ProductTierPricesQuery qty() {
@@ -65,7 +65,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     /**
      * The price of the fixed price item.
      *
-     * @deprecated ProductTierPrices is deprecated. Use TierPrice.final_price
+     * @deprecated Use `TierPrice.final_price` instead.
      */
     @Deprecated
     public ProductTierPricesQuery value() {
@@ -77,7 +77,7 @@ public class ProductTierPricesQuery extends AbstractQuery<ProductTierPricesQuery
     /**
      * The ID assigned to the website.
      *
-     * @deprecated website_id is not relevant for storefront.
+     * @deprecated Not relevant for the storefront.
      */
     @Deprecated
     public ProductTierPricesQuery websiteId() {

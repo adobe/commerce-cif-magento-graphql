@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after setting the billing address.
+ */
 public class SetBillingAddressOnCartOutput extends AbstractResponse<SetBillingAddressOnCartOutput> {
     public SetBillingAddressOnCartOutput() {}
 
@@ -51,6 +54,9 @@ public class SetBillingAddressOnCartOutput extends AbstractResponse<SetBillingAd
         return "SetBillingAddressOnCartOutput";
     }
 
+    /**
+     * The cart after setting the billing address.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

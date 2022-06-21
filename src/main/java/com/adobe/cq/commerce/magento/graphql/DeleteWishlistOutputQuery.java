@@ -17,13 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the status of the request to delete a wish list and an array of the customer&#39;s remaining
+ * wish lists.
+ */
 public class DeleteWishlistOutputQuery extends AbstractQuery<DeleteWishlistOutputQuery> {
     DeleteWishlistOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Indicates whether the wish list was deleted
+     * Indicates whether the wish list was deleted.
      */
     public DeleteWishlistOutputQuery status() {
         startField("status");
@@ -32,7 +36,7 @@ public class DeleteWishlistOutputQuery extends AbstractQuery<DeleteWishlistOutpu
     }
 
     /**
-     * A list of undeleted wish lists
+     * A list of undeleted wish lists.
      */
     public DeleteWishlistOutputQuery wishlists(WishlistQueryDefinition queryDef) {
         startField("wishlists");

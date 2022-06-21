@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Defines all Checkout Agreement information
+ * Defines details about an individual checkout agreement.
  */
 public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     public CheckoutAgreement() {}
@@ -96,7 +96,7 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     }
 
     /**
-     * Checkout Agreement identifier
+     * The ID for a checkout agreement.
      */
     public Integer getAgreementId() {
         return (Integer) get("agreement_id");
@@ -108,7 +108,7 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     }
 
     /**
-     * Checkout Agreement checkbox text
+     * The checkbox text for the checkout agreement.
      */
     public String getCheckboxText() {
         return (String) get("checkbox_text");
@@ -120,7 +120,7 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     }
 
     /**
-     * Checkout Agreement content
+     * Required. The text of the agreement.
      */
     public String getContent() {
         return (String) get("content");
@@ -132,7 +132,7 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     }
 
     /**
-     * Checkout Agreement content height
+     * The height of the text box where the Terms and Conditions statement appears during checkout.
      */
     public String getContentHeight() {
         return (String) get("content_height");
@@ -144,7 +144,7 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     }
 
     /**
-     * Is Checkout Agreement content in HTML format
+     * Indicates whether the `content` text is in HTML format.
      */
     public Boolean getIsHtml() {
         return (Boolean) get("is_html");
@@ -155,6 +155,9 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
         return this;
     }
 
+    /**
+     * Indicates whether agreements are accepted automatically or manually.
+     */
     public CheckoutAgreementMode getMode() {
         return (CheckoutAgreementMode) get("mode");
     }
@@ -165,7 +168,7 @@ public class CheckoutAgreement extends AbstractResponse<CheckoutAgreement> {
     }
 
     /**
-     * Checkout Agreement name
+     * The name given to the condition.
      */
     public String getName() {
         return (String) get("name");

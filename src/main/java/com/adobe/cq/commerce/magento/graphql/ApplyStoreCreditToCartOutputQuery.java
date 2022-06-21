@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Defines the possible output for the applyStoreCreditToCart mutation
+ * Defines the possible output for the `applyStoreCreditToCart` mutation.
  */
 public class ApplyStoreCreditToCartOutputQuery extends AbstractQuery<ApplyStoreCreditToCartOutputQuery> {
     ApplyStoreCreditToCartOutputQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ApplyStoreCreditToCartOutputQuery extends AbstractQuery<ApplyStoreC
     }
 
     /**
-     * Describes the contents of the specified shopping cart
+     * The contents of the specified shopping cart.
      */
     public ApplyStoreCreditToCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");

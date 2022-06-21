@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the status of a shipment.
+ */
 public class ReturnShippingTrackingStatus extends AbstractResponse<ReturnShippingTrackingStatus> {
     public ReturnShippingTrackingStatus() {}
 
@@ -58,7 +61,7 @@ public class ReturnShippingTrackingStatus extends AbstractResponse<ReturnShippin
     }
 
     /**
-     * Text that describes the status
+     * Text that describes the status.
      */
     public String getText() {
         return (String) get("text");
@@ -70,7 +73,7 @@ public class ReturnShippingTrackingStatus extends AbstractResponse<ReturnShippin
     }
 
     /**
-     * Indicates whether the status type is informational or an error
+     * Indicates whether the status type is informational or an error.
      */
     public ReturnShippingTrackingStatusType getType() {
         return (ReturnShippingTrackingStatusType) get("type");

@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains information about discounts applied to the cart.
+ */
 public class CartDiscount extends AbstractResponse<CartDiscount> {
     public CartDiscount() {}
 
@@ -69,6 +72,9 @@ public class CartDiscount extends AbstractResponse<CartDiscount> {
         return "CartDiscount";
     }
 
+    /**
+     * The amount of the discount applied to the item.
+     */
     public Money getAmount() {
         return (Money) get("amount");
     }
@@ -78,6 +84,9 @@ public class CartDiscount extends AbstractResponse<CartDiscount> {
         return this;
     }
 
+    /**
+     * The description of the discount.
+     */
     public List<String> getLabel() {
         return (List<String>) get("label");
     }

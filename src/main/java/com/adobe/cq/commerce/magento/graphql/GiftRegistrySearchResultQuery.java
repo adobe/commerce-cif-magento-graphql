@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of a gift registry search.
+ */
 public class GiftRegistrySearchResultQuery extends AbstractQuery<GiftRegistrySearchResultQuery> {
     GiftRegistrySearchResultQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The date of the event
+     * The date of the event.
      */
     public GiftRegistrySearchResultQuery eventDate() {
         startField("event_date");
@@ -32,7 +35,7 @@ public class GiftRegistrySearchResultQuery extends AbstractQuery<GiftRegistrySea
     }
 
     /**
-     * The title given to the event
+     * The title given to the event.
      */
     public GiftRegistrySearchResultQuery eventTitle() {
         startField("event_title");
@@ -41,7 +44,7 @@ public class GiftRegistrySearchResultQuery extends AbstractQuery<GiftRegistrySea
     }
 
     /**
-     * The URL key of the gift registry
+     * The URL key of the gift registry.
      */
     public GiftRegistrySearchResultQuery giftRegistryUid() {
         startField("gift_registry_uid");
@@ -50,7 +53,7 @@ public class GiftRegistrySearchResultQuery extends AbstractQuery<GiftRegistrySea
     }
 
     /**
-     * The location of the event
+     * The location of the event.
      */
     public GiftRegistrySearchResultQuery location() {
         startField("location");
@@ -59,7 +62,7 @@ public class GiftRegistrySearchResultQuery extends AbstractQuery<GiftRegistrySea
     }
 
     /**
-     * The name of the gift registry owner
+     * The name of the gift registry owner.
      */
     public GiftRegistrySearchResultQuery name() {
         startField("name");
@@ -68,7 +71,7 @@ public class GiftRegistrySearchResultQuery extends AbstractQuery<GiftRegistrySea
     }
 
     /**
-     * The type of event being held
+     * The type of event being held.
      */
     public GiftRegistrySearchResultQuery type() {
         startField("type");

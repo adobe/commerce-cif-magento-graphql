@@ -20,6 +20,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Specifies which items to remove from the cart.
+ */
 public class RemoveItemFromCartInput implements Serializable {
     private String cartId;
 
@@ -31,10 +34,16 @@ public class RemoveItemFromCartInput implements Serializable {
         this.cartId = cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public RemoveItemFromCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
@@ -74,21 +83,21 @@ public class RemoveItemFromCartInput implements Serializable {
     }
 
     /**
-     * Required field. The unique ID for a `CartItemInterface` object
+     * Required field. The unique ID for a `CartItemInterface` object.
      */
     public ID getCartItemUid() {
         return cartItemUid.getValue();
     }
 
     /**
-     * Required field. The unique ID for a `CartItemInterface` object
+     * Required field. The unique ID for a `CartItemInterface` object.
      */
     public Input<ID> getCartItemUidInput() {
         return cartItemUid;
     }
 
     /**
-     * Required field. The unique ID for a `CartItemInterface` object
+     * Required field. The unique ID for a `CartItemInterface` object.
      */
     public RemoveItemFromCartInput setCartItemUid(ID cartItemUid) {
         this.cartItemUid = Input.optional(cartItemUid);
@@ -96,7 +105,7 @@ public class RemoveItemFromCartInput implements Serializable {
     }
 
     /**
-     * Required field. The unique ID for a `CartItemInterface` object
+     * Required field. The unique ID for a `CartItemInterface` object.
      */
     public RemoveItemFromCartInput setCartItemUidInput(Input<ID> cartItemUid) {
         if (cartItemUid == null) {

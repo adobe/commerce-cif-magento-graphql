@@ -17,14 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines downloadable product options for `InvoiceItemInterface`.
+ */
 public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvoiceItemQuery> {
     DownloadableInvoiceItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     public DownloadableInvoiceItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -37,7 +39,7 @@ public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvo
     }
 
     /**
-     * A list of downloadable links that are invoiced from the downloadable product
+     * A list of downloadable links that are invoiced from the downloadable product.
      */
     public DownloadableInvoiceItemQuery downloadableLinks(DownloadableItemsLinksQueryDefinition queryDef) {
         startField("downloadable_links");
@@ -50,7 +52,7 @@ public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvo
     }
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     public DownloadableInvoiceItemQuery id() {
         startField("id");
@@ -59,7 +61,7 @@ public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvo
     }
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     public DownloadableInvoiceItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -72,7 +74,7 @@ public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvo
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public DownloadableInvoiceItemQuery productName() {
         startField("product_name");
@@ -81,7 +83,7 @@ public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvo
     }
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     public DownloadableInvoiceItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -94,7 +96,7 @@ public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvo
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public DownloadableInvoiceItemQuery productSku() {
         startField("product_sku");
@@ -103,7 +105,7 @@ public class DownloadableInvoiceItemQuery extends AbstractQuery<DownloadableInvo
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public DownloadableInvoiceItemQuery quantityInvoiced() {
         startField("quantity_invoiced");

@@ -107,7 +107,7 @@ public class ProductPrice extends AbstractResponse<ProductPrice> {
     }
 
     /**
-     * The final price of the product after discounts applied.
+     * The final price of the product after applying discounts.
      */
     public Money getFinalPrice() {
         return (Money) get("final_price");
@@ -119,7 +119,7 @@ public class ProductPrice extends AbstractResponse<ProductPrice> {
     }
 
     /**
-     * The multiple FPTs that can be applied to a product price.
+     * An array of the multiple Fixed Product Taxes that can be applied to a product price.
      */
     public List<FixedProductTax> getFixedProductTaxes() {
         return (List<FixedProductTax>) get("fixed_product_taxes");

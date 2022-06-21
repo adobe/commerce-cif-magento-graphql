@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * The list of countries codes
+ * The list of country codes.
  */
 public enum CountryCodeEnum {
     /**

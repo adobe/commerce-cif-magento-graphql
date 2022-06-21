@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * An output object that contains information about the recipient.
+ */
 public class SendEmailToFriendRecipient extends AbstractResponse<SendEmailToFriendRecipient> {
     public SendEmailToFriendRecipient() {}
 
@@ -57,6 +60,9 @@ public class SendEmailToFriendRecipient extends AbstractResponse<SendEmailToFrie
         return "SendEmailToFriendRecipient";
     }
 
+    /**
+     * The email address of the recipient.
+     */
     public String getEmail() {
         return (String) get("email");
     }
@@ -66,6 +72,9 @@ public class SendEmailToFriendRecipient extends AbstractResponse<SendEmailToFrie
         return this;
     }
 
+    /**
+     * The name of the recipient.
+     */
     public String getName() {
         return (String) get("name");
     }

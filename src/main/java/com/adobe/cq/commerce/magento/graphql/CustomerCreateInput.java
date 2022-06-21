@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * An input object for creating a customer.
+ */
 public class CustomerCreateInput implements Serializable {
     private String email;
 
@@ -55,14 +58,14 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s email address. Required for customer creation
+     * The customer&#39;s email address.
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * The customer&#39;s email address. Required for customer creation
+     * The customer&#39;s email address.
      */
     public CustomerCreateInput setEmail(String email) {
         this.email = email;
@@ -70,14 +73,14 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s first name
+     * The customer&#39;s first name.
      */
     public String getFirstname() {
         return firstname;
     }
 
     /**
-     * The customer&#39;s first name
+     * The customer&#39;s first name.
      */
     public CustomerCreateInput setFirstname(String firstname) {
         this.firstname = firstname;
@@ -85,14 +88,14 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s family name
+     * The customer&#39;s family name.
      */
     public String getLastname() {
         return lastname;
     }
 
     /**
-     * The customer&#39;s family name
+     * The customer&#39;s family name.
      */
     public CustomerCreateInput setLastname(String lastname) {
         this.lastname = lastname;
@@ -100,21 +103,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * Indicates whether the customer has enabled remote shopping assistance
+     * Indicates whether the customer has enabled remote shopping assistance.
      */
     public Boolean getAllowRemoteShoppingAssistance() {
         return allowRemoteShoppingAssistance.getValue();
     }
 
     /**
-     * Indicates whether the customer has enabled remote shopping assistance
+     * Indicates whether the customer has enabled remote shopping assistance.
      */
     public Input<Boolean> getAllowRemoteShoppingAssistanceInput() {
         return allowRemoteShoppingAssistance;
     }
 
     /**
-     * Indicates whether the customer has enabled remote shopping assistance
+     * Indicates whether the customer has enabled remote shopping assistance.
      */
     public CustomerCreateInput setAllowRemoteShoppingAssistance(Boolean allowRemoteShoppingAssistance) {
         this.allowRemoteShoppingAssistance = Input.optional(allowRemoteShoppingAssistance);
@@ -122,7 +125,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * Indicates whether the customer has enabled remote shopping assistance
+     * Indicates whether the customer has enabled remote shopping assistance.
      */
     public CustomerCreateInput setAllowRemoteShoppingAssistanceInput(Input<Boolean> allowRemoteShoppingAssistance) {
         if (allowRemoteShoppingAssistance == null) {
@@ -133,21 +136,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      */
     public String getDateOfBirth() {
         return dateOfBirth.getValue();
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      */
     public Input<String> getDateOfBirthInput() {
         return dateOfBirth;
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      */
     public CustomerCreateInput setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = Input.optional(dateOfBirth);
@@ -155,7 +158,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      */
     public CustomerCreateInput setDateOfBirthInput(Input<String> dateOfBirth) {
         if (dateOfBirth == null) {
@@ -166,21 +169,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * Deprecated: Use `date_of_birth` instead
+     * Deprecated: Use `date_of_birth` instead.
      */
     public String getDob() {
         return dob.getValue();
     }
 
     /**
-     * Deprecated: Use `date_of_birth` instead
+     * Deprecated: Use `date_of_birth` instead.
      */
     public Input<String> getDobInput() {
         return dob;
     }
 
     /**
-     * Deprecated: Use `date_of_birth` instead
+     * Deprecated: Use `date_of_birth` instead.
      */
     public CustomerCreateInput setDob(String dob) {
         this.dob = Input.optional(dob);
@@ -188,7 +191,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * Deprecated: Use `date_of_birth` instead
+     * Deprecated: Use `date_of_birth` instead.
      */
     public CustomerCreateInput setDobInput(Input<String> dob) {
         if (dob == null) {
@@ -199,21 +202,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s gender (Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2).
      */
     public Integer getGender() {
         return gender.getValue();
     }
 
     /**
-     * The customer&#39;s gender (Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2).
      */
     public Input<Integer> getGenderInput() {
         return gender;
     }
 
     /**
-     * The customer&#39;s gender (Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2).
      */
     public CustomerCreateInput setGender(Integer gender) {
         this.gender = Input.optional(gender);
@@ -221,7 +224,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s gender (Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2).
      */
     public CustomerCreateInput setGenderInput(Input<Integer> gender) {
         if (gender == null) {
@@ -232,21 +235,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter.
      */
     public Boolean getIsSubscribed() {
         return isSubscribed.getValue();
     }
 
     /**
-     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter.
      */
     public Input<Boolean> getIsSubscribedInput() {
         return isSubscribed;
     }
 
     /**
-     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter.
      */
     public CustomerCreateInput setIsSubscribed(Boolean isSubscribed) {
         this.isSubscribed = Input.optional(isSubscribed);
@@ -254,7 +257,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter.
      */
     public CustomerCreateInput setIsSubscribedInput(Input<Boolean> isSubscribed) {
         if (isSubscribed == null) {
@@ -265,21 +268,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s middle name
+     * The customer&#39;s middle name.
      */
     public String getMiddlename() {
         return middlename.getValue();
     }
 
     /**
-     * The customer&#39;s middle name
+     * The customer&#39;s middle name.
      */
     public Input<String> getMiddlenameInput() {
         return middlename;
     }
 
     /**
-     * The customer&#39;s middle name
+     * The customer&#39;s middle name.
      */
     public CustomerCreateInput setMiddlename(String middlename) {
         this.middlename = Input.optional(middlename);
@@ -287,7 +290,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s middle name
+     * The customer&#39;s middle name.
      */
     public CustomerCreateInput setMiddlenameInput(Input<String> middlename) {
         if (middlename == null) {
@@ -298,21 +301,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s password
+     * The customer&#39;s password.
      */
     public String getPassword() {
         return password.getValue();
     }
 
     /**
-     * The customer&#39;s password
+     * The customer&#39;s password.
      */
     public Input<String> getPasswordInput() {
         return password;
     }
 
     /**
-     * The customer&#39;s password
+     * The customer&#39;s password.
      */
     public CustomerCreateInput setPassword(String password) {
         this.password = Input.optional(password);
@@ -320,7 +323,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s password
+     * The customer&#39;s password.
      */
     public CustomerCreateInput setPasswordInput(Input<String> password) {
         if (password == null) {
@@ -364,21 +367,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public String getSuffix() {
         return suffix.getValue();
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public Input<String> getSuffixInput() {
         return suffix;
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public CustomerCreateInput setSuffix(String suffix) {
         this.suffix = Input.optional(suffix);
@@ -386,7 +389,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public CustomerCreateInput setSuffixInput(Input<String> suffix) {
         if (suffix == null) {
@@ -397,21 +400,21 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s Tax/VAT number (for corporate customers)
+     * The customer&#39;s Tax/VAT number (for corporate customers).
      */
     public String getTaxvat() {
         return taxvat.getValue();
     }
 
     /**
-     * The customer&#39;s Tax/VAT number (for corporate customers)
+     * The customer&#39;s Tax/VAT number (for corporate customers).
      */
     public Input<String> getTaxvatInput() {
         return taxvat;
     }
 
     /**
-     * The customer&#39;s Tax/VAT number (for corporate customers)
+     * The customer&#39;s Tax/VAT number (for corporate customers).
      */
     public CustomerCreateInput setTaxvat(String taxvat) {
         this.taxvat = Input.optional(taxvat);
@@ -419,7 +422,7 @@ public class CustomerCreateInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s Tax/VAT number (for corporate customers)
+     * The customer&#39;s Tax/VAT number (for corporate customers).
      */
     public CustomerCreateInput setTaxvatInput(Input<String> taxvat) {
         if (taxvat == null) {

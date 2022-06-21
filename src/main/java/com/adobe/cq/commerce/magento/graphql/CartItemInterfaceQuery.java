@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * An interface for products in a cart.
+ */
 public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery> {
     CartItemInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
@@ -30,7 +33,7 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public CartItemInterfaceQuery id() {
@@ -39,6 +42,9 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public CartItemInterfaceQuery prices(CartItemPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -49,6 +55,9 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public CartItemInterfaceQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -59,6 +68,9 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public CartItemInterfaceQuery quantity() {
         startField("quantity");
 
@@ -66,7 +78,7 @@ public class CartItemInterfaceQuery extends AbstractQuery<CartItemInterfaceQuery
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public CartItemInterfaceQuery uid() {
         startField("uid");

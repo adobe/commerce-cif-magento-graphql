@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the result of a request to revoke a customer token.
+ */
 public class RevokeCustomerTokenOutputQuery extends AbstractQuery<RevokeCustomerTokenOutputQuery> {
     RevokeCustomerTokenOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The result of a request to revoke a customer token.
+     */
     public RevokeCustomerTokenOutputQuery result() {
         startField("result");
 

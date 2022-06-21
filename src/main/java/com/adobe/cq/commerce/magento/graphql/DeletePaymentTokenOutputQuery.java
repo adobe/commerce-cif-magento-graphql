@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Indicates whether the request succeeded and returns the remaining customer payment tokens.
+ */
 public class DeletePaymentTokenOutputQuery extends AbstractQuery<DeletePaymentTokenOutputQuery> {
     DeletePaymentTokenOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * A container for the customer&#39;s remaining payment tokens.
+     */
     public DeletePaymentTokenOutputQuery customerPaymentTokens(CustomerPaymentTokensQueryDefinition queryDef) {
         startField("customerPaymentTokens");
 
@@ -32,6 +38,9 @@ public class DeletePaymentTokenOutputQuery extends AbstractQuery<DeletePaymentTo
         return this;
     }
 
+    /**
+     * Indicates whether the request succeeded.
+     */
     public DeletePaymentTokenOutputQuery result() {
         startField("result");
 

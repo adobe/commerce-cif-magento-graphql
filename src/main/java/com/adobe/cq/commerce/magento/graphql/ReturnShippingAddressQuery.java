@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the shipping address used for receiving returned items.
+ */
 public class ReturnShippingAddressQuery extends AbstractQuery<ReturnShippingAddressQuery> {
     ReturnShippingAddressQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The city for product returns
+     * The city for product returns.
      */
     public ReturnShippingAddressQuery city() {
         startField("city");
@@ -32,7 +35,7 @@ public class ReturnShippingAddressQuery extends AbstractQuery<ReturnShippingAddr
     }
 
     /**
-     * The merchant&#39;s contact person
+     * The merchant&#39;s contact person.
      */
     public ReturnShippingAddressQuery contactName() {
         startField("contact_name");
@@ -41,7 +44,7 @@ public class ReturnShippingAddressQuery extends AbstractQuery<ReturnShippingAddr
     }
 
     /**
-     * An object that defines the country for product returns
+     * An object that defines the country for product returns.
      */
     public ReturnShippingAddressQuery country(CountryQueryDefinition queryDef) {
         startField("country");
@@ -54,7 +57,7 @@ public class ReturnShippingAddressQuery extends AbstractQuery<ReturnShippingAddr
     }
 
     /**
-     * The postal code for product returns
+     * The postal code for product returns.
      */
     public ReturnShippingAddressQuery postcode() {
         startField("postcode");
@@ -63,7 +66,7 @@ public class ReturnShippingAddressQuery extends AbstractQuery<ReturnShippingAddr
     }
 
     /**
-     * An object that defines the state or province for product returns
+     * An object that defines the state or province for product returns.
      */
     public ReturnShippingAddressQuery region(RegionQueryDefinition queryDef) {
         startField("region");
@@ -76,7 +79,7 @@ public class ReturnShippingAddressQuery extends AbstractQuery<ReturnShippingAddr
     }
 
     /**
-     * The street address for product returns
+     * The street address for product returns.
      */
     public ReturnShippingAddressQuery street() {
         startField("street");
@@ -85,7 +88,7 @@ public class ReturnShippingAddressQuery extends AbstractQuery<ReturnShippingAddr
     }
 
     /**
-     * The telephone number for product returns
+     * The telephone number for product returns.
      */
     public ReturnShippingAddressQuery telephone() {
         startField("telephone");

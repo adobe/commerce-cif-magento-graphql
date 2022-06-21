@@ -17,23 +17,36 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
+/**
+ * An interface for products in a cart.
+ */
+
 public interface CartItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     String getId();
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     CartItemPrices getPrices();
 
+    /**
+     * Details about an item in the cart.
+     */
     ProductInterface getProduct();
 
+    /**
+     * The quantity of this item in the cart.
+     */
     Double getQuantity();
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     ID getUid();
 }

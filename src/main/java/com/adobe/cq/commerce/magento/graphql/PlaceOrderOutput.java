@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of the request to place an order.
+ */
 public class PlaceOrderOutput extends AbstractResponse<PlaceOrderOutput> {
     public PlaceOrderOutput() {}
 
@@ -51,6 +54,9 @@ public class PlaceOrderOutput extends AbstractResponse<PlaceOrderOutput> {
         return "PlaceOrderOutput";
     }
 
+    /**
+     * The ID of the order.
+     */
     public Order getOrder() {
         return (Order) get("order");
     }

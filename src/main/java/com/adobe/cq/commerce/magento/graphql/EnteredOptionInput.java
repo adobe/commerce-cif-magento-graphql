@@ -20,7 +20,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
 /**
- * Defines a customer-entered option
+ * Defines a customer-entered option.
  */
 public class EnteredOptionInput implements Serializable {
     private ID uid;
@@ -34,16 +34,16 @@ public class EnteredOptionInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `CustomizableFieldOption`, `CustomizableFileOption`, `CustomizableAreaOption`,
-     * etc. of `CustomizableOptionInterface` objects
+     * The unique ID for a `CustomizableOptionInterface` object, such as a `CustomizableFieldOption`,
+     * `CustomizableFileOption`, or `CustomizableAreaOption` object.
      */
     public ID getUid() {
         return uid;
     }
 
     /**
-     * The unique ID for a `CustomizableFieldOption`, `CustomizableFileOption`, `CustomizableAreaOption`,
-     * etc. of `CustomizableOptionInterface` objects
+     * The unique ID for a `CustomizableOptionInterface` object, such as a `CustomizableFieldOption`,
+     * `CustomizableFileOption`, or `CustomizableAreaOption` object.
      */
     public EnteredOptionInput setUid(ID uid) {
         this.uid = uid;
@@ -51,14 +51,14 @@ public class EnteredOptionInput implements Serializable {
     }
 
     /**
-     * Text the customer entered
+     * Text the customer entered.
      */
     public String getValue() {
         return value;
     }
 
     /**
-     * Text the customer entered
+     * Text the customer entered.
      */
     public EnteredOptionInput setValue(String value) {
         this.value = value;

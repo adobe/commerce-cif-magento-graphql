@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * GroupedProductItem contains information about an individual grouped product item
+ * Contains information about an individual grouped product item.
  */
 public class GroupedProductItemQuery extends AbstractQuery<GroupedProductItemQuery> {
     GroupedProductItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class GroupedProductItemQuery extends AbstractQuery<GroupedProductItemQue
     }
 
     /**
-     * The relative position of this item compared to the other group items
+     * The relative position of this item compared to the other group items.
      */
     public GroupedProductItemQuery position() {
         startField("position");
@@ -35,7 +35,7 @@ public class GroupedProductItemQuery extends AbstractQuery<GroupedProductItemQue
     }
 
     /**
-     * The ProductInterface object, which contains details about this product option
+     * Details about this product option.
      */
     public GroupedProductItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -48,7 +48,7 @@ public class GroupedProductItemQuery extends AbstractQuery<GroupedProductItemQue
     }
 
     /**
-     * The quantity of this grouped product item
+     * The quantity of this grouped product item.
      */
     public GroupedProductItemQuery qty() {
         startField("qty");

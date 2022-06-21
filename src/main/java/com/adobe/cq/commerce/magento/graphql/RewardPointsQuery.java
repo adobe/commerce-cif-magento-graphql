@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a customer&#39;s reward points.
+ */
 public class RewardPointsQuery extends AbstractQuery<RewardPointsQuery> {
     RewardPointsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The current balance of reward points
+     * The current balance of reward points.
      */
     public RewardPointsQuery balance(RewardPointsAmountQueryDefinition queryDef) {
         startField("balance");
@@ -37,7 +40,7 @@ public class RewardPointsQuery extends AbstractQuery<RewardPointsQuery> {
 
     /**
      * The balance history of reward points. If the ability for customers to view the balance history has
-     * been disabled in the Admin, this field will be set to null
+     * been disabled in the Admin, this field will be set to null.
      */
     public RewardPointsQuery balanceHistory(RewardPointsBalanceHistoryItemQueryDefinition queryDef) {
         startField("balance_history");
@@ -50,7 +53,7 @@ public class RewardPointsQuery extends AbstractQuery<RewardPointsQuery> {
     }
 
     /**
-     * The current exchange rates for reward points
+     * The current exchange rates for reward points.
      */
     public RewardPointsQuery exchangeRates(RewardPointsExchangeRatesQueryDefinition queryDef) {
         startField("exchange_rates");
@@ -63,7 +66,7 @@ public class RewardPointsQuery extends AbstractQuery<RewardPointsQuery> {
     }
 
     /**
-     * The subscription status of emails related to reward points
+     * The subscription status of emails related to reward points.
      */
     public RewardPointsQuery subscriptionStatus(RewardPointsSubscriptionStatusQueryDefinition queryDef) {
         startField("subscription_status");

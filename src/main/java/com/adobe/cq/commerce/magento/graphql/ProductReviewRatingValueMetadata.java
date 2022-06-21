@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a single value in a product review.
+ */
 public class ProductReviewRatingValueMetadata extends AbstractResponse<ProductReviewRatingValueMetadata> {
     public ProductReviewRatingValueMetadata() {}
 
@@ -58,7 +61,7 @@ public class ProductReviewRatingValueMetadata extends AbstractResponse<ProductRe
     }
 
     /**
-     * A ratings scale, such as the number of stars awarded
+     * A ratings scale, such as the number of stars awarded.
      */
     public String getValue() {
         return (String) get("value");
@@ -70,7 +73,7 @@ public class ProductReviewRatingValueMetadata extends AbstractResponse<ProductRe
     }
 
     /**
-     * An encoded rating value id.
+     * An encoded rating value ID.
      */
     public String getValueId() {
         return (String) get("value_id");

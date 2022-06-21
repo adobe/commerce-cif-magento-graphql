@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a wish list item.
+ */
 public class WishlistItem extends AbstractResponse<WishlistItem> {
     public WishlistItem() {}
 
@@ -101,7 +104,7 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     }
 
     /**
-     * The time when the customer added the item to the wish list
+     * The time when the customer added the item to the wish list.
      */
     public String getAddedAt() {
         return (String) get("added_at");
@@ -113,7 +116,7 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     }
 
     /**
-     * The customer&#39;s comment about this item
+     * The customer&#39;s comment about this item.
      */
     public String getDescription() {
         return (String) get("description");
@@ -125,7 +128,7 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
     }
 
     /**
-     * The unique ID for a `WishlistItem` object
+     * The unique ID for a `WishlistItem` object.
      */
     public Integer getId() {
         return (Integer) get("id");
@@ -136,6 +139,9 @@ public class WishlistItem extends AbstractResponse<WishlistItem> {
         return this;
     }
 
+    /**
+     * Details about the wish list item.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }

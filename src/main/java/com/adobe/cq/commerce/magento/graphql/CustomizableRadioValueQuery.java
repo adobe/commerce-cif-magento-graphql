@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableRadioValue defines the price and sku of a product whose page contains a customized set
- * of radio buttons.
+ * Defines the price and sku of a product whose page contains a customized set of radio buttons.
  */
 public class CustomizableRadioValueQuery extends AbstractQuery<CustomizableRadioValueQuery> {
     CustomizableRadioValueQuery(StringBuilder _queryBuilder) {

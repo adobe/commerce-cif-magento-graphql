@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ConfigurableProductOptions defines configurable attributes for the specified product
+ * Defines configurable attributes for the specified product.
  */
 public class ConfigurableProductOptions extends AbstractResponse<ConfigurableProductOptions> {
     public ConfigurableProductOptions() {}
@@ -173,7 +173,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * A string that identifies the attribute
+     * A string that identifies the attribute.
      */
     public String getAttributeCode() {
         return (String) get("attribute_code");
@@ -185,9 +185,9 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * The ID assigned to the attribute
+     * The ID assigned to the attribute.
      *
-     * @deprecated Use attribute_uid instead
+     * @deprecated Use `attribute_uid` instead.
      */
     @Deprecated
     public String getAttributeId() {
@@ -200,9 +200,9 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * The ID assigned to the attribute
+     * The ID assigned to the attribute.
      *
-     * @deprecated Use attribute_uid instead
+     * @deprecated Use `attribute_uid` instead.
      */
     @Deprecated
     public Integer getAttributeIdV2() {
@@ -215,7 +215,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * The unique ID for a `Attribute` object
+     * The unique ID for an `Attribute` object.
      */
     public ID getAttributeUid() {
         return (ID) get("attribute_uid");
@@ -227,9 +227,9 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * The configurable option ID number assigned by the system
+     * The configurable option ID number assigned by the system.
      *
-     * @deprecated Use uid instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public Integer getId() {
@@ -242,7 +242,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * A string that describes the configurable product option, which is displayed on the UI
+     * A displayed string that describes the configurable product option.
      */
     public String getLabel() {
         return (String) get("label");
@@ -254,7 +254,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * A number that indicates the order in which the attribute is displayed
+     * A number that indicates the order in which the attribute is displayed.
      */
     public Integer getPosition() {
         return (Integer) get("position");
@@ -266,9 +266,9 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * This is the same as a product&#39;s id field
+     * This is the same as a product&#39;s `id` field.
      *
-     * @deprecated `product_id` is not needed and can be obtained from it&#39;s parent
+     * @deprecated `product_id` is not needed and can be obtained from its parent.
      */
     @Deprecated
     public Integer getProductId() {
@@ -281,7 +281,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptions` object
+     * The unique ID for a `ConfigurableProductOptions` object.
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -293,7 +293,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * Indicates whether the option is the default
+     * Indicates whether the option is the default.
      */
     public Boolean getUseDefault() {
         return (Boolean) get("use_default");
@@ -305,7 +305,7 @@ public class ConfigurableProductOptions extends AbstractResponse<ConfigurablePro
     }
 
     /**
-     * An array that defines the value_index codes assigned to the configurable product
+     * An array that defines the `value_index` codes assigned to the configurable product.
      */
     public List<ConfigurableProductOptionsValues> getValues() {
         return (List<ConfigurableProductOptionsValues>) get("values");

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The type contains information about a store config
+ * Contains information about a store&#39;s configuration.
  */
 public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     StoreConfigQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Footer Miscellaneous HTML
+     * Contains scripts that must be included in the HTML before the closing `&lt;body&gt;` tag.
      */
     public StoreConfigQuery absoluteFooter() {
         startField("absolute_footer");
@@ -35,7 +35,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Allow Gift Receipt
+     * Indicates if the gift sender has the option to send a gift receipt. Possible values: 1 (Yes) and 0
+     * (No).
      */
     public StoreConfigQuery allowGiftReceipt() {
         startField("allow_gift_receipt");
@@ -44,7 +45,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Allow Gift Wrapping on Order Level
+     * Indicates whether gift wrapping can be added for the entire order. Possible values: 1 (Yes) and 0
+     * (No).
      */
     public StoreConfigQuery allowGiftWrappingOnOrder() {
         startField("allow_gift_wrapping_on_order");
@@ -53,7 +55,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Allow Gift Wrapping for Order Items
+     * Indicates whether gift wrapping can be added for individual order items. Possible values: 1 (Yes)
+     * and 0 (No).
      */
     public StoreConfigQuery allowGiftWrappingOnOrderItems() {
         startField("allow_gift_wrapping_on_order_items");
@@ -62,7 +65,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Indicates whether guest users can write product reviews. Possible values: 1 (Yes) and 0 (No)
+     * Indicates whether guest users can write product reviews. Possible values: 1 (Yes) and 0 (No).
      */
     public StoreConfigQuery allowGuestsToWriteProductReviews() {
         startField("allow_guests_to_write_product_reviews");
@@ -89,7 +92,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Allow Printed Card
+     * Indicates if a printed card can accompany an order. Possible values: 1 (Yes) and 0 (No).
      */
     public StoreConfigQuery allowPrintedCard() {
         startField("allow_printed_card");
@@ -98,7 +101,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Enable autocomplete on login and forgot password forms
+     * Indicates whether to enable autocomplete on login and forgot password forms.
      */
     public StoreConfigQuery autocompleteOnStorefront() {
         startField("autocomplete_on_storefront");
@@ -107,7 +110,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Base currency code
+     * The base currency code.
      */
     public StoreConfigQuery baseCurrencyCode() {
         startField("base_currency_code");
@@ -116,7 +119,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Base link URL for the store
+     * A fully-qualified URL that is used to create relative links to the `base_url`.
      */
     public StoreConfigQuery baseLinkUrl() {
         startField("base_link_url");
@@ -125,7 +128,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Base media URL for the store
+     * The fully-qualified URL that specifies the location of media files.
      */
     public StoreConfigQuery baseMediaUrl() {
         startField("base_media_url");
@@ -134,7 +137,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Base static URL for the store
+     * The fully-qualified URL that specifies the location of static view files.
      */
     public StoreConfigQuery baseStaticUrl() {
         startField("base_static_url");
@@ -143,7 +146,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Base URL for the store
+     * The store’s fully-qualified base URL.
      */
     public StoreConfigQuery baseUrl() {
         startField("base_url");
@@ -161,7 +164,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Display Gift Wrapping Prices
+     * Indicates if gift wrapping prices are displayed on the Shopping Cart page. Possible values: 1 (Yes)
+     * and 0 (No).
      */
     public StoreConfigQuery cartGiftWrapping() {
         startField("cart_gift_wrapping");
@@ -170,7 +174,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Display Printed Card Prices
+     * Indicates if printed card prices are displayed on the Shopping Cart page. Possible values: 1 (Yes)
+     * and 0 (No).
      */
     public StoreConfigQuery cartPrintedCard() {
         startField("cart_printed_card");
@@ -179,7 +184,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default Sort By.
+     * The default sort order of the search results list.
      */
     public StoreConfigQuery catalogDefaultSortBy() {
         startField("catalog_default_sort_by");
@@ -188,8 +193,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Corresponds to the &#39;Display Prices In Product Lists&#39; field. It indicates how FPT information is
-     * displayed on category pages
+     * Corresponds to the &#39;Display Prices In Product Lists&#39; field in the Admin. It indicates how FPT
+     * information is displayed on category pages.
      */
     public StoreConfigQuery categoryFixedProductTaxDisplaySetting() {
         startField("category_fixed_product_tax_display_setting");
@@ -198,7 +203,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Category URL Suffix.
+     * The suffix applied to category pages, such as `.htm` or `.html`.
      */
     public StoreConfigQuery categoryUrlSuffix() {
         startField("category_url_suffix");
@@ -207,7 +212,98 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * CMS Home Page
+     * Indicates whether only specific countries can use this payment method.
+     */
+    public StoreConfigQuery checkMoneyOrderEnableForSpecificCountries() {
+        startField("check_money_order_enable_for_specific_countries");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the Check/Money Order payment method is enabled.
+     */
+    public StoreConfigQuery checkMoneyOrderEnabled() {
+        startField("check_money_order_enabled");
+
+        return this;
+    }
+
+    /**
+     * The name of the party to whom the check must be payable.
+     */
+    public StoreConfigQuery checkMoneyOrderMakeCheckPayableTo() {
+        startField("check_money_order_make_check_payable_to");
+
+        return this;
+    }
+
+    /**
+     * The maximum order amount required to qualify for the Check/Money Order payment method.
+     */
+    public StoreConfigQuery checkMoneyOrderMaxOrderTotal() {
+        startField("check_money_order_max_order_total");
+
+        return this;
+    }
+
+    /**
+     * The minimum order amount required to qualify for the Check/Money Order payment method.
+     */
+    public StoreConfigQuery checkMoneyOrderMinOrderTotal() {
+        startField("check_money_order_min_order_total");
+
+        return this;
+    }
+
+    /**
+     * The status of new orders placed using the Check/Money Order payment method.
+     */
+    public StoreConfigQuery checkMoneyOrderNewOrderStatus() {
+        startField("check_money_order_new_order_status");
+
+        return this;
+    }
+
+    /**
+     * A comma-separated list of specific countries allowed to use the Check/Money Order payment method.
+     */
+    public StoreConfigQuery checkMoneyOrderPaymentFromSpecificCountries() {
+        startField("check_money_order_payment_from_specific_countries");
+
+        return this;
+    }
+
+    /**
+     * The full street address or PO Box where the checks are mailed.
+     */
+    public StoreConfigQuery checkMoneyOrderSendCheckTo() {
+        startField("check_money_order_send_check_to");
+
+        return this;
+    }
+
+    /**
+     * A number indicating the position of the Check/Money Order payment method in the list of available
+     * payment methods during checkout.
+     */
+    public StoreConfigQuery checkMoneyOrderSortOrder() {
+        startField("check_money_order_sort_order");
+
+        return this;
+    }
+
+    /**
+     * The title of the Check/Money Order payment method displayed on the storefront.
+     */
+    public StoreConfigQuery checkMoneyOrderTitle() {
+        startField("check_money_order_title");
+
+        return this;
+    }
+
+    /**
+     * The name of the CMS page that identifies the home page for the store.
      */
     public StoreConfigQuery cmsHomePage() {
         startField("cms_home_page");
@@ -216,7 +312,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * CMS No Cookies Page
+     * A specific CMS page that displays when cookies are not enabled for the browser.
      */
     public StoreConfigQuery cmsNoCookies() {
         startField("cms_no_cookies");
@@ -225,7 +321,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * CMS No Route Page
+     * A specific CMS page that displays when a 404 &#39;Page Not Found&#39; error occurs.
      */
     public StoreConfigQuery cmsNoRoute() {
         startField("cms_no_route");
@@ -234,7 +330,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * A code assigned to the store to identify it
+     * A code assigned to the store to identify it.
      *
      * @deprecated Use `store_code` instead.
      */
@@ -246,8 +342,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The configuration setting determines which thumbnail should be used in the cart for configurable
-     * products.
+     * Indicates whether the `parent` or child (`itself`) thumbnail should be used in the cart for
+     * configurable products.
      */
     public StoreConfigQuery configurableThumbnailSource() {
         startField("configurable_thumbnail_source");
@@ -256,7 +352,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Copyright
+     * The copyright statement that appears at the bottom of each page.
      */
     public StoreConfigQuery copyright() {
         startField("copyright");
@@ -265,7 +361,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default Meta Description
+     * The description that provides a summary of your site for search engine listings. It should not be
+     * more than 160 characters in length.
      */
     public StoreConfigQuery defaultDescription() {
         startField("default_description");
@@ -274,7 +371,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default display currency code
+     * The default display currency code.
      */
     public StoreConfigQuery defaultDisplayCurrencyCode() {
         startField("default_display_currency_code");
@@ -283,7 +380,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default Meta Keywords
+     * A series of keywords that describe your store, each separated by a comma.
      */
     public StoreConfigQuery defaultKeywords() {
         startField("default_keywords");
@@ -292,7 +389,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default Page Title
+     * The title that appears at the title bar of each page when viewed in a browser.
      */
     public StoreConfigQuery defaultTitle() {
         startField("default_title");
@@ -301,7 +398,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Display Demo Store Notice
+     * Controls the display of the demo store notice at the top of the page. Options: 0 (No) or 1 (Yes).
      */
     public StoreConfigQuery demonotice() {
         startField("demonotice");
@@ -310,7 +407,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Indicates whether customers can have multiple wish lists. Possible values: 1 (Yes) and 0 (No)
+     * Indicates whether customers can have multiple wish lists. Possible values: 1 (Yes) and 0 (No).
      */
     public StoreConfigQuery enableMultipleWishlists() {
         startField("enable_multiple_wishlists");
@@ -319,7 +416,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default Web URL
+     * The landing page that is associated with the base URL.
      */
     public StoreConfigQuery front() {
         startField("front");
@@ -328,7 +425,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Products per Page on Grid Default Value.
+     * The default number of products per page in Grid View.
      */
     public StoreConfigQuery gridPerPage() {
         startField("grid_per_page");
@@ -337,7 +434,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Products per Page on Grid Allowed Values.
+     * A list of numbers that define how many products can be displayed in Grid View.
      */
     public StoreConfigQuery gridPerPageValues() {
         startField("grid_per_page_values");
@@ -346,7 +443,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Scripts and Style Sheets
+     * Scripts that must be included in the HTML before the closing `&lt;head&gt;` tag.
      */
     public StoreConfigQuery headIncludes() {
         startField("head_includes");
@@ -355,7 +452,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Favicon Icon
+     * The small graphic image (favicon) that appears in the address bar and tab of the browser.
      */
     public StoreConfigQuery headShortcutIcon() {
         startField("head_shortcut_icon");
@@ -364,7 +461,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Logo Image
+     * The path to the logo that appears in the header.
      */
     public StoreConfigQuery headerLogoSrc() {
         startField("header_logo_src");
@@ -373,7 +470,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The ID number assigned to the store
+     * The ID number assigned to the store.
      *
      * @deprecated Use `store_code` instead.
      */
@@ -385,7 +482,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Indicates whether the store view has been designated as the default within the store group
+     * Indicates whether the store view has been designated as the default within the store group.
      */
     public StoreConfigQuery isDefaultStore() {
         startField("is_default_store");
@@ -394,7 +491,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Indicates whether the store group has been designated as the default within the website
+     * Indicates whether the store group has been designated as the default within the website.
      */
     public StoreConfigQuery isDefaultStoreGroup() {
         startField("is_default_store_group");
@@ -403,7 +500,25 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * List Mode.
+     * Indicates whether negotiable quote functionality is enabled.
+     */
+    public StoreConfigQuery isNegotiableQuoteActive() {
+        startField("is_negotiable_quote_active");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether requisition lists are enabled. Possible values: 1 (Yes) and 0 (No).
+     */
+    public StoreConfigQuery isRequisitionListActive() {
+        startField("is_requisition_list_active");
+
+        return this;
+    }
+
+    /**
+     * The format of the search results list.
      */
     public StoreConfigQuery listMode() {
         startField("list_mode");
@@ -412,7 +527,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Products per Page on List Default Value.
+     * The default number of products per page in List View.
      */
     public StoreConfigQuery listPerPage() {
         startField("list_per_page");
@@ -421,7 +536,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Products per Page on List Allowed Values.
+     * A list of numbers that define how many products can be displayed in List View.
      */
     public StoreConfigQuery listPerPageValues() {
         startField("list_per_page_values");
@@ -430,7 +545,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Store locale
+     * The store locale.
      */
     public StoreConfigQuery locale() {
         startField("locale");
@@ -439,7 +554,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Logo Image Alt
+     * The Alt text that is associated with the logo.
      */
     public StoreConfigQuery logoAlt() {
         startField("logo_alt");
@@ -448,7 +563,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Logo Attribute Height
+     * The height of the logo image, in pixels.
      */
     public StoreConfigQuery logoHeight() {
         startField("logo_height");
@@ -457,7 +572,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Logo Attribute Width
+     * The width of the logo image, in pixels.
      */
     public StoreConfigQuery logoWidth() {
         startField("logo_width");
@@ -466,7 +581,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Reward points functionality status: enabled/disabled
+     * Indicates whether reward points functionality is enabled. Possible values: 1 (Enabled) and 0
+     * (Disabled).
      */
     public StoreConfigQuery magentoRewardGeneralIsEnabled() {
         startField("magento_reward_general_is_enabled");
@@ -475,7 +591,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Reward points functionality status on the storefront: enabled/disabled
+     * Indicates whether reward points functionality is enabled on the storefront. Possible values: 1
+     * (Enabled) and 0 (Disabled).
      */
     public StoreConfigQuery magentoRewardGeneralIsEnabledOnFront() {
         startField("magento_reward_general_is_enabled_on_front");
@@ -484,7 +601,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Reward points redemption minimum threshold
+     * The minimum point balance customers must have before they can redeem them. A null value indicates no
+     * minimum.
      */
     public StoreConfigQuery magentoRewardGeneralMinPointsBalance() {
         startField("magento_reward_general_min_points_balance");
@@ -493,7 +611,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Enable reward points history for the customer
+     * When enabled, customers can see a detailed history of their reward points. Possible values: 1
+     * (Enabled) and 0 (Disabled).
      */
     public StoreConfigQuery magentoRewardGeneralPublishHistory() {
         startField("magento_reward_general_publish_history");
@@ -502,7 +621,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Number of points for referral, when invitee registers on the site
+     * The number of points for a referral when an invitee registers on the site.
      */
     public StoreConfigQuery magentoRewardPointsInvitationCustomer() {
         startField("magento_reward_points_invitation_customer");
@@ -511,7 +630,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Maximum number of registration referrals that will qualify for rewards
+     * The maximum number of registration referrals that will qualify for rewards. A null value indicates
+     * no limit.
      */
     public StoreConfigQuery magentoRewardPointsInvitationCustomerLimit() {
         startField("magento_reward_points_invitation_customer_limit");
@@ -520,7 +640,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Number of points for referral, when invitee places an initial order on the site
+     * The number of points for a referral, when an invitee places their first order on the site.
      */
     public StoreConfigQuery magentoRewardPointsInvitationOrder() {
         startField("magento_reward_points_invitation_order");
@@ -529,7 +649,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Maximum number of order placements by invitees that will qualify for rewards
+     * The number of order conversions that can earn points for the customer who sends the invitation. A
+     * null value indicates no limit.
      */
     public StoreConfigQuery magentoRewardPointsInvitationOrderLimit() {
         startField("magento_reward_points_invitation_order_limit");
@@ -538,7 +659,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Number of points for newsletter subscription
+     * The number of points earned by registered customers who subscribe to a newsletter.
      */
     public StoreConfigQuery magentoRewardPointsNewsletter() {
         startField("magento_reward_points_newsletter");
@@ -547,9 +668,9 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Whether customer earns points for shopping according to the reward point exchange rate. In Luma this
-     * also controls whether to show a message in shopping cart about the rewards points earned for the
-     * purchase, as well as the customer’s current reward point balance
+     * Indicates customers earn points for shopping according to the reward point exchange rate. In Luma,
+     * this also controls whether to show a message in the shopping cart about the rewards points earned
+     * for the purchase, as well as the customer’s current reward point balance.
      */
     public StoreConfigQuery magentoRewardPointsOrder() {
         startField("magento_reward_points_order");
@@ -558,7 +679,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Number of points customer gets for registration
+     * The number of points customer gets for registering.
      */
     public StoreConfigQuery magentoRewardPointsRegister() {
         startField("magento_reward_points_register");
@@ -567,7 +688,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Number of points for writing a review
+     * The number of points for writing a review.
      */
     public StoreConfigQuery magentoRewardPointsReview() {
         startField("magento_reward_points_review");
@@ -576,7 +697,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Maximum number of reviews that will qualify for the rewards
+     * The maximum number of reviews that will qualify for the rewards. A null value indicates no limit.
      */
     public StoreConfigQuery magentoRewardPointsReviewLimit() {
         startField("magento_reward_points_review_limit");
@@ -585,7 +706,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Indicates whether wishlists are enabled (1) or disabled (0)
+     * Indicates whether wishlists are enabled (1) or disabled (0).
      */
     public StoreConfigQuery magentoWishlistGeneralIsEnabled() {
         startField("magento_wishlist_general_is_enabled");
@@ -594,7 +715,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * If multiple wish lists are enabled, the maximum number of wish lists the customer can have
+     * If multiple wish lists are enabled, the maximum number of wish lists the customer can have.
      */
     public StoreConfigQuery maximumNumberOfWishlists() {
         startField("maximum_number_of_wishlists");
@@ -612,7 +733,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default No-route URL
+     * The default page that displays when a 404 &#39;Page not Found&#39; error occurs.
      */
     public StoreConfigQuery noRoute() {
         startField("no_route");
@@ -630,7 +751,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Default Price for Printed Card
+     * The default price of a printed card that accompanies an order.
      */
     public StoreConfigQuery printedCardPrice() {
         startField("printed_card_price");
@@ -639,8 +760,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Corresponds to the &#39;Display Prices On Product View Page&#39; field. It indicates how FPT information is
-     * displayed on product pages
+     * Corresponds to the &#39;Display Prices On Product View Page&#39; field in the Admin. It indicates how FPT
+     * information is displayed on product pages.
      */
     public StoreConfigQuery productFixedProductTaxDisplaySetting() {
         startField("product_fixed_product_tax_display_setting");
@@ -649,7 +770,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Indicates whether product reviews are enabled. Possible values: 1 (Yes) and 0 (No)
+     * Indicates whether product reviews are enabled. Possible values: 1 (Yes) and 0 (No).
      */
     public StoreConfigQuery productReviewsEnabled() {
         startField("product_reviews_enabled");
@@ -658,7 +779,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Product URL Suffix.
+     * The suffix applied to product pages, such as `.htm` or `.html`.
      */
     public StoreConfigQuery productUrlSuffix() {
         startField("product_url_suffix");
@@ -667,8 +788,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The number of different character classes required in a password (lowercase, uppercase, digits,
-     * special characters).
+     * The number of different character classes (lowercase, uppercase, digits, special characters)
+     * required in a password.
      */
     public StoreConfigQuery requiredCharacterClassesNumber() {
         startField("required_character_classes_number");
@@ -677,7 +798,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled
+     * Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled.
      */
     public StoreConfigQuery returnsEnabled() {
         startField("returns_enabled");
@@ -686,9 +807,9 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The ID of the root category
+     * The ID of the root category.
      *
-     * @deprecated Use `root_category_uid` instead
+     * @deprecated Use `root_category_uid` instead.
      */
     @Deprecated
     public StoreConfigQuery rootCategoryId() {
@@ -707,8 +828,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Corresponds to the &#39;Display Prices In Sales Modules&#39; field. It indicates how FPT information is
-     * displayed on cart, checkout, and order pages
+     * Corresponds to the &#39;Display Prices In Sales Modules&#39; field in the Admin. It indicates how FPT
+     * information is displayed on cart, checkout, and order pages.
      */
     public StoreConfigQuery salesFixedProductTaxDisplaySetting() {
         startField("sales_fixed_product_tax_display_setting");
@@ -717,7 +838,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Display Gift Wrapping Prices
+     * Indicates if gift wrapping prices are displayed on the Orders page. Possible values: 1 (Yes) and 0
+     * (No).
      */
     public StoreConfigQuery salesGiftWrapping() {
         startField("sales_gift_wrapping");
@@ -726,7 +848,8 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Display Printed Card Prices
+     * Indicates if printed card prices are displayed on the Orders page. Possible values: 1 (Yes) and 0
+     * (No).
      */
     public StoreConfigQuery salesPrintedCard() {
         startField("sales_printed_card");
@@ -735,7 +858,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Secure base link URL for the store
+     * A secure fully-qualified URL that is used to create relative links to the `base_url`.
      */
     public StoreConfigQuery secureBaseLinkUrl() {
         startField("secure_base_link_url");
@@ -744,7 +867,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Secure base media URL for the store
+     * The secure fully-qualified URL that specifies the location of media files.
      */
     public StoreConfigQuery secureBaseMediaUrl() {
         startField("secure_base_media_url");
@@ -753,7 +876,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Secure base static URL for the store
+     * The secure fully-qualified URL that specifies the location of static view files.
      */
     public StoreConfigQuery secureBaseStaticUrl() {
         startField("secure_base_static_url");
@@ -762,7 +885,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Secure base URL for the store
+     * The store’s fully-qualified secure base URL.
      */
     public StoreConfigQuery secureBaseUrl() {
         startField("secure_base_url");
@@ -784,7 +907,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Show Breadcrumbs for CMS Pages
+     * Indicates whether a breadcrumb trail appears on all CMS pages in the catalog. 0 (No) or 1 (Yes).
      */
     public StoreConfigQuery showCmsBreadcrumbs() {
         startField("show_cms_breadcrumbs");
@@ -794,7 +917,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
 
     /**
      * The unique ID of the store view. In the Admin, this is called the Store View Code. When making a
-     * GraphQL call, assign this value to the `Store` header to provide the scope
+     * GraphQL call, assign this value to the `Store` header to provide the scope.
      */
     public StoreConfigQuery storeCode() {
         startField("store_code");
@@ -803,7 +926,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The unique ID assigned to the store group. In the Admin, this is called the Store Name
+     * The unique ID assigned to the store group. In the Admin, this is called the Store Name.
      */
     public StoreConfigQuery storeGroupCode() {
         startField("store_group_code");
@@ -812,7 +935,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The label assigned to the store group
+     * The label assigned to the store group.
      */
     public StoreConfigQuery storeGroupName() {
         startField("store_group_name");
@@ -821,7 +944,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The label assigned to the store view
+     * The label assigned to the store view.
      */
     public StoreConfigQuery storeName() {
         startField("store_name");
@@ -830,7 +953,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The store view sort order
+     * The store view sort order.
      */
     public StoreConfigQuery storeSortOrder() {
         startField("store_sort_order");
@@ -839,7 +962,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Timezone of the store
+     * The time zone of the store.
      */
     public StoreConfigQuery timezone() {
         startField("timezone");
@@ -848,7 +971,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Page Title Prefix
+     * A prefix that appears before the title to create a two- or three-part title.
      */
     public StoreConfigQuery titlePrefix() {
         startField("title_prefix");
@@ -857,7 +980,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Page Title Separator.
+     * The character that separates the category name and subcategory in the browser title bar.
      */
     public StoreConfigQuery titleSeparator() {
         startField("title_separator");
@@ -866,7 +989,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Page Title Suffix
+     * A suffix that appears after the title to create a two- or three-part title.
      */
     public StoreConfigQuery titleSuffix() {
         startField("title_suffix");
@@ -875,7 +998,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The configuration determines if the store code should be used in the URL
+     * Indicates whether the store code should be used in the URL.
      */
     public StoreConfigQuery useStoreInUrl() {
         startField("use_store_in_url");
@@ -884,7 +1007,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The unique ID for the website
+     * The unique ID for the website.
      */
     public StoreConfigQuery websiteCode() {
         startField("website_code");
@@ -893,9 +1016,9 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The ID number assigned to the website store
+     * The ID number assigned to the website store.
      *
-     * @deprecated The field should not be used on the storefront
+     * @deprecated The field should not be used on the storefront.
      */
     @Deprecated
     public StoreConfigQuery websiteId() {
@@ -905,7 +1028,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The label assigned to the website
+     * The label assigned to the website.
      */
     public StoreConfigQuery websiteName() {
         startField("website_name");
@@ -914,7 +1037,7 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * The unit of weight
+     * The unit of weight.
      */
     public StoreConfigQuery weightUnit() {
         startField("weight_unit");
@@ -923,10 +1046,75 @@ public class StoreConfigQuery extends AbstractQuery<StoreConfigQuery> {
     }
 
     /**
-     * Welcome Text
+     * Text that appears in the header of the page and includes the name of the logged in customer.
      */
     public StoreConfigQuery welcome() {
         startField("welcome");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether only specific countries can use this payment method.
+     */
+    public StoreConfigQuery zeroSubtotalEnableForSpecificCountries() {
+        startField("zero_subtotal_enable_for_specific_countries");
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the Zero Subtotal payment method is enabled.
+     */
+    public StoreConfigQuery zeroSubtotalEnabled() {
+        startField("zero_subtotal_enabled");
+
+        return this;
+    }
+
+    /**
+     * The status of new orders placed using the Zero Subtotal payment method.
+     */
+    public StoreConfigQuery zeroSubtotalNewOrderStatus() {
+        startField("zero_subtotal_new_order_status");
+
+        return this;
+    }
+
+    /**
+     * When the new order status is &#39;Processing&#39;, this can be set to `authorize_capture` to automatically
+     * invoice all items that have a zero balance.
+     */
+    public StoreConfigQuery zeroSubtotalPaymentAction() {
+        startField("zero_subtotal_payment_action");
+
+        return this;
+    }
+
+    /**
+     * A comma-separated list of specific countries allowed to use the Zero Subtotal payment method.
+     */
+    public StoreConfigQuery zeroSubtotalPaymentFromSpecificCountries() {
+        startField("zero_subtotal_payment_from_specific_countries");
+
+        return this;
+    }
+
+    /**
+     * A number indicating the position of the Zero Subtotal payment method in the list of available
+     * payment methods during checkout.
+     */
+    public StoreConfigQuery zeroSubtotalSortOrder() {
+        startField("zero_subtotal_sort_order");
+
+        return this;
+    }
+
+    /**
+     * The title of the Zero Subtotal payment method displayed on the storefront.
+     */
+    public StoreConfigQuery zeroSubtotalTitle() {
+        startField("zero_subtotal_title");
 
         return this;
     }

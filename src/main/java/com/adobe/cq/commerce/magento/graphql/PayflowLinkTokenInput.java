@@ -19,8 +19,8 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Input required to fetch payment token information for Payflow Link and Payments Advanced payment
- * methods.
+ * Contains information required to fetch payment token information for the Payflow Link and Payments
+ * Advanced payment methods.
  */
 public class PayflowLinkTokenInput implements Serializable {
     private String cartId;
@@ -30,14 +30,14 @@ public class PayflowLinkTokenInput implements Serializable {
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public String getCartId() {
         return cartId;
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the customer&#39;s cart.
      */
     public PayflowLinkTokenInput setCartId(String cartId) {
         this.cartId = cartId;

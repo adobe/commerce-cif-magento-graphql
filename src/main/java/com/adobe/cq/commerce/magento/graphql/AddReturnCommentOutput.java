@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the return request.
+ */
 public class AddReturnCommentOutput extends AbstractResponse<AddReturnCommentOutput> {
     public AddReturnCommentOutput() {}
 
@@ -57,7 +60,7 @@ public class AddReturnCommentOutput extends AbstractResponse<AddReturnCommentOut
     }
 
     /**
-     * Contains details about the modified return
+     * The modified return.
      */
     public Return getReturn() {
         return (Return) get("return");

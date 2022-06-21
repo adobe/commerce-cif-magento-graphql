@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableDropDownOption contains information about a drop down menu that is defined as part of a
- * customizable option.
+ * Contains information about a drop down menu that is defined as part of a customizable option.
  */
 public class CustomizableDropDownOptionQuery extends AbstractQuery<CustomizableDropDownOptionQuery> {
     CustomizableDropDownOptionQuery(StringBuilder _queryBuilder) {

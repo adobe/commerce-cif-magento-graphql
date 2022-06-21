@@ -20,6 +20,9 @@ import java.util.List;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines an item to add to the gift registry.
+ */
 public class AddGiftRegistryItemInput implements Serializable {
     private double quantity;
 
@@ -40,14 +43,14 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * The quantity of the product to add
+     * The quantity of the product to add.
      */
     public double getQuantity() {
         return quantity;
     }
 
     /**
-     * The quantity of the product to add
+     * The quantity of the product to add.
      */
     public AddGiftRegistryItemInput setQuantity(double quantity) {
         this.quantity = quantity;
@@ -55,14 +58,14 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * The SKU of the product to add to the gift registry
+     * The SKU of the product to add to the gift registry.
      */
     public String getSku() {
         return sku;
     }
 
     /**
-     * The SKU of the product to add to the gift registry
+     * The SKU of the product to add to the gift registry.
      */
     public AddGiftRegistryItemInput setSku(String sku) {
         this.sku = sku;
@@ -70,21 +73,21 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * An array of options the customer has entered
+     * An array of options the customer has entered.
      */
     public List<EnteredOptionInput> getEnteredOptions() {
         return enteredOptions.getValue();
     }
 
     /**
-     * An array of options the customer has entered
+     * An array of options the customer has entered.
      */
     public Input<List<EnteredOptionInput>> getEnteredOptionsInput() {
         return enteredOptions;
     }
 
     /**
-     * An array of options the customer has entered
+     * An array of options the customer has entered.
      */
     public AddGiftRegistryItemInput setEnteredOptions(List<EnteredOptionInput> enteredOptions) {
         this.enteredOptions = Input.optional(enteredOptions);
@@ -92,7 +95,7 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * An array of options the customer has entered
+     * An array of options the customer has entered.
      */
     public AddGiftRegistryItemInput setEnteredOptionsInput(Input<List<EnteredOptionInput>> enteredOptions) {
         if (enteredOptions == null) {
@@ -103,21 +106,21 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * A brief note about the item
+     * A brief note about the item.
      */
     public String getNote() {
         return note.getValue();
     }
 
     /**
-     * A brief note about the item
+     * A brief note about the item.
      */
     public Input<String> getNoteInput() {
         return note;
     }
 
     /**
-     * A brief note about the item
+     * A brief note about the item.
      */
     public AddGiftRegistryItemInput setNote(String note) {
         this.note = Input.optional(note);
@@ -125,7 +128,7 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * A brief note about the item
+     * A brief note about the item.
      */
     public AddGiftRegistryItemInput setNoteInput(Input<String> note) {
         if (note == null) {
@@ -136,21 +139,21 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public String getParentSku() {
         return parentSku.getValue();
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public Input<String> getParentSkuInput() {
         return parentSku;
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public AddGiftRegistryItemInput setParentSku(String parentSku) {
         this.parentSku = Input.optional(parentSku);
@@ -158,7 +161,7 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public AddGiftRegistryItemInput setParentSkuInput(Input<String> parentSku) {
         if (parentSku == null) {
@@ -169,21 +172,21 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * An array of strings corresponding to options the customer has selected
+     * An array of strings corresponding to options the customer has selected.
      */
     public List<String> getSelectedOptions() {
         return selectedOptions.getValue();
     }
 
     /**
-     * An array of strings corresponding to options the customer has selected
+     * An array of strings corresponding to options the customer has selected.
      */
     public Input<List<String>> getSelectedOptionsInput() {
         return selectedOptions;
     }
 
     /**
-     * An array of strings corresponding to options the customer has selected
+     * An array of strings corresponding to options the customer has selected.
      */
     public AddGiftRegistryItemInput setSelectedOptions(List<String> selectedOptions) {
         this.selectedOptions = Input.optional(selectedOptions);
@@ -191,7 +194,7 @@ public class AddGiftRegistryItemInput implements Serializable {
     }
 
     /**
-     * An array of strings corresponding to options the customer has selected
+     * An array of strings corresponding to options the customer has selected.
      */
     public AddGiftRegistryItemInput setSelectedOptionsInput(Input<List<String>> selectedOptions) {
         if (selectedOptions == null) {

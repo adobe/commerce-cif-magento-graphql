@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains the customer&#39;s gift registry
+ * Contains the customer&#39;s gift registry.
  */
 public class UnknownGiftRegistryOutputInterface extends AbstractResponse<UnknownGiftRegistryOutputInterface> implements
     GiftRegistryOutputInterface {
@@ -78,7 +78,7 @@ public class UnknownGiftRegistryOutputInterface extends AbstractResponse<Unknown
     }
 
     /**
-     * The gift registry
+     * The gift registry.
      */
     public GiftRegistry getGiftRegistry() {
         return (GiftRegistry) get("gift_registry");

@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the shipping carrier and method.
+ */
 public class ShippingMethodInput implements Serializable {
     private String carrierCode;
 
@@ -29,19 +32,33 @@ public class ShippingMethodInput implements Serializable {
         this.methodCode = methodCode;
     }
 
+    /**
+     * A string that identifies a commercial carrier or an offline delivery method.
+     */
     public String getCarrierCode() {
         return carrierCode;
     }
 
+    /**
+     * A string that identifies a commercial carrier or an offline delivery method.
+     */
     public ShippingMethodInput setCarrierCode(String carrierCode) {
         this.carrierCode = carrierCode;
         return this;
     }
 
+    /**
+     * A string that indicates which service a commercial carrier will use to ship items. For offline
+     * delivery methods, this value is similar to the label displayed on the checkout page.
+     */
     public String getMethodCode() {
         return methodCode;
     }
 
+    /**
+     * A string that indicates which service a commercial carrier will use to ship items. For offline
+     * delivery methods, this value is similar to the label displayed on the checkout page.
+     */
     public ShippingMethodInput setMethodCode(String methodCode) {
         this.methodCode = methodCode;
         return this;

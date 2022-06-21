@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A collection of CategoryTree objects and pagination information.
+ * Contains a collection of `CategoryTree` objects and pagination information.
  */
 public class CategoryResult extends AbstractResponse<CategoryResult> {
     public CategoryResult() {}
@@ -106,7 +106,7 @@ public class CategoryResult extends AbstractResponse<CategoryResult> {
     }
 
     /**
-     * An object that includes the page_info and currentPage values specified in the query.
+     * An object that includes the `page_info` and `currentPage` values specified in the query.
      */
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");

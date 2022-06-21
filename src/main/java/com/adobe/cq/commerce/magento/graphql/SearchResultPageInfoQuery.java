@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * SearchResultPageInfo provides navigation for the query response
+ * Provides navigation for the query response.
  */
 public class SearchResultPageInfoQuery extends AbstractQuery<SearchResultPageInfoQuery> {
     SearchResultPageInfoQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class SearchResultPageInfoQuery extends AbstractQuery<SearchResultPageInf
     }
 
     /**
-     * Specifies which page of results to return
+     * The specific page to return.
      */
     public SearchResultPageInfoQuery currentPage() {
         startField("current_page");
@@ -35,7 +35,7 @@ public class SearchResultPageInfoQuery extends AbstractQuery<SearchResultPageInf
     }
 
     /**
-     * Specifies the maximum number of items to return
+     * The maximum number of items to return per page of results.
      */
     public SearchResultPageInfoQuery pageSize() {
         startField("page_size");
@@ -44,7 +44,7 @@ public class SearchResultPageInfoQuery extends AbstractQuery<SearchResultPageInf
     }
 
     /**
-     * Total pages
+     * The total number of pages in the response.
      */
     public SearchResultPageInfoQuery totalPages() {
         startField("total_pages");

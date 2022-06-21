@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after updating items.
+ */
 public class UpdateCartItemsOutput extends AbstractResponse<UpdateCartItemsOutput> {
     public UpdateCartItemsOutput() {}
 
@@ -51,6 +54,9 @@ public class UpdateCartItemsOutput extends AbstractResponse<UpdateCartItemsOutpu
         return "UpdateCartItemsOutput";
     }
 
+    /**
+     * The cart after updating products.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

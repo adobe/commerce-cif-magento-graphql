@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * MediaGalleryEntry defines characteristics about images and videos associated with a specific
- * product.
+ * Defines characteristics about images and videos associated with a specific product.
  */
 public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     public MediaGalleryEntry() {}
@@ -168,7 +167,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesContent object.
+     * Details about the content of the media gallery item.
      */
     public ProductMediaGalleryEntriesContent getContent() {
         return (ProductMediaGalleryEntriesContent) get("content");
@@ -180,7 +179,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public Boolean getDisabled() {
         return (Boolean) get("disabled");
@@ -219,7 +218,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * The alt text displayed on the UI when the user points to the image.
+     * The alt text displayed on the storefront when the user points to the image.
      */
     public String getLabel() {
         return (String) get("label");
@@ -231,7 +230,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * image or video.
+     * Either `image` or `video`.
      */
     public String getMediaType() {
         return (String) get("media_type");
@@ -279,7 +278,7 @@ public class MediaGalleryEntry extends AbstractResponse<MediaGalleryEntry> {
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesVideoContent object.
+     * Details about the content of a video item.
      */
     public ProductMediaGalleryEntriesVideoContent getVideoContent() {
         return (ProductMediaGalleryEntriesVideoContent) get("video_content");

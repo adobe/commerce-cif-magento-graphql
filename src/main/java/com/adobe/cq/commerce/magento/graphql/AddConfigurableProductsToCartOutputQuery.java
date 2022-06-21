@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after adding configurable products.
+ */
 public class AddConfigurableProductsToCartOutputQuery extends AbstractQuery<AddConfigurableProductsToCartOutputQuery> {
     AddConfigurableProductsToCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after adding products.
+     */
     public AddConfigurableProductsToCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

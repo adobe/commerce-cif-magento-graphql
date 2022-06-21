@@ -23,9 +23,9 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
     }
 
     /**
-     * Count of items by filter.
+     * The count of items per filter.
      *
-     * @deprecated Use AggregationOption.count instead.
+     * @deprecated Use `AggregationOption.count` instead.
      */
     @Deprecated
     public SwatchLayerFilterItemQuery itemsCount() {
@@ -35,9 +35,9 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
     }
 
     /**
-     * Filter label.
+     * The label for a filter.
      *
-     * @deprecated Use AggregationOption.label instead.
+     * @deprecated Use `AggregationOption.label` instead.
      */
     @Deprecated
     public SwatchLayerFilterItemQuery label() {
@@ -47,7 +47,7 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
     }
 
     /**
-     * Data required to render swatch filter item
+     * Data required to render a swatch filter item.
      */
     public SwatchLayerFilterItemQuery swatchData(SwatchDataQueryDefinition queryDef) {
         startField("swatch_data");
@@ -60,9 +60,9 @@ public class SwatchLayerFilterItemQuery extends AbstractQuery<SwatchLayerFilterI
     }
 
     /**
-     * Value for filter request variable to be used in query.
+     * The value of a filter request variable to be used in query.
      *
-     * @deprecated Use AggregationOption.value instead.
+     * @deprecated Use `AggregationOption.value` instead.
      */
     @Deprecated
     public SwatchLayerFilterItemQuery valueString() {
