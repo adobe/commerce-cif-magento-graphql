@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Order shipment item details
+ * Order shipment item details.
  */
 public class UnknownShipmentItemInterface extends AbstractResponse<UnknownShipmentItemInterface> implements ShipmentItemInterface {
     public UnknownShipmentItemInterface() {}
@@ -117,7 +117,7 @@ public class UnknownShipmentItemInterface extends AbstractResponse<UnknownShipme
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -129,7 +129,7 @@ public class UnknownShipmentItemInterface extends AbstractResponse<UnknownShipme
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -141,7 +141,7 @@ public class UnknownShipmentItemInterface extends AbstractResponse<UnknownShipme
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -153,7 +153,7 @@ public class UnknownShipmentItemInterface extends AbstractResponse<UnknownShipme
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -165,7 +165,7 @@ public class UnknownShipmentItemInterface extends AbstractResponse<UnknownShipme
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -177,7 +177,7 @@ public class UnknownShipmentItemInterface extends AbstractResponse<UnknownShipme
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public Double getQuantityShipped() {
         return (Double) get("quantity_shipped");

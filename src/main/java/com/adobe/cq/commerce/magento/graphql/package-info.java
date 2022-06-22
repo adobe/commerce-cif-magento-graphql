@@ -12,7 +12,7 @@
  *
  ******************************************************************************/
 
-@Version("10.0.0")
+@Version("11.0.0")
 package com.adobe.cq.commerce.magento.graphql;
 
 import org.osgi.annotation.versioning.Version;

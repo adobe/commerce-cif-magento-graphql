@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines bundle product options for `WishlistItemInterface`.
+ */
 public class BundleWishlistItemQuery extends AbstractQuery<BundleWishlistItemQuery> {
     BundleWishlistItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public BundleWishlistItemQuery addedAt() {
         startField("added_at");
@@ -32,7 +35,7 @@ public class BundleWishlistItemQuery extends AbstractQuery<BundleWishlistItemQue
     }
 
     /**
-     * An array containing information about the selected bundle items
+     * An array containing information about the selected bundle items.
      */
     public BundleWishlistItemQuery bundleOptions(SelectedBundleOptionQueryDefinition queryDef) {
         startField("bundle_options");
@@ -45,7 +48,7 @@ public class BundleWishlistItemQuery extends AbstractQuery<BundleWishlistItemQue
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public BundleWishlistItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -58,7 +61,7 @@ public class BundleWishlistItemQuery extends AbstractQuery<BundleWishlistItemQue
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public BundleWishlistItemQuery description() {
         startField("description");
@@ -67,7 +70,7 @@ public class BundleWishlistItemQuery extends AbstractQuery<BundleWishlistItemQue
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public BundleWishlistItemQuery id() {
         startField("id");
@@ -76,7 +79,7 @@ public class BundleWishlistItemQuery extends AbstractQuery<BundleWishlistItemQue
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public BundleWishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -89,7 +92,7 @@ public class BundleWishlistItemQuery extends AbstractQuery<BundleWishlistItemQue
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public BundleWishlistItemQuery quantity() {
         startField("quantity");

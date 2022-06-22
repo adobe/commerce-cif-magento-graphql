@@ -107,7 +107,7 @@ public class UnknownGiftRegistryItemInterface extends AbstractResponse<UnknownGi
     }
 
     /**
-     * The date the product was added to the gift registry
+     * The date the product was added to the gift registry.
      */
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -119,7 +119,7 @@ public class UnknownGiftRegistryItemInterface extends AbstractResponse<UnknownGi
     }
 
     /**
-     * A brief message about the gift registry item
+     * A brief message about the gift registry item.
      */
     public String getNote() {
         return (String) get("note");
@@ -130,6 +130,9 @@ public class UnknownGiftRegistryItemInterface extends AbstractResponse<UnknownGi
         return this;
     }
 
+    /**
+     * Details about the gift registry item.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -140,7 +143,7 @@ public class UnknownGiftRegistryItemInterface extends AbstractResponse<UnknownGi
     }
 
     /**
-     * The requested quantity of the product
+     * The requested quantity of the product.
      */
     public Double getQuantity() {
         return (Double) get("quantity");
@@ -152,7 +155,7 @@ public class UnknownGiftRegistryItemInterface extends AbstractResponse<UnknownGi
     }
 
     /**
-     * The fulfilled quantity of the product
+     * The fulfilled quantity of the product.
      */
     public Double getQuantityFulfilled() {
         return (Double) get("quantity_fulfilled");
@@ -164,7 +167,7 @@ public class UnknownGiftRegistryItemInterface extends AbstractResponse<UnknownGi
     }
 
     /**
-     * The unique ID of a gift registry item
+     * The unique ID of a gift registry item.
      */
     public ID getUid() {
         return (ID) get("uid");

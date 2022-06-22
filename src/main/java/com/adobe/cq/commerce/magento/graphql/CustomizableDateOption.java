@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableDateOption contains information about a date picker that is defined as part of a
- * customizable option.
+ * Contains information about a date picker that is defined as part of a customizable option.
  */
 public class CustomizableDateOption extends AbstractResponse<CustomizableDateOption> implements CustomizableOptionInterface {
     public CustomizableDateOption() {}

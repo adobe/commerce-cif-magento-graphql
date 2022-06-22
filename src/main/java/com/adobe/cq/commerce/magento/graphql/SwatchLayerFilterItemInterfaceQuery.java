@@ -30,7 +30,7 @@ public class SwatchLayerFilterItemInterfaceQuery extends AbstractQuery<SwatchLay
     }
 
     /**
-     * Data required to render swatch filter item
+     * Data required to render a swatch filter item.
      */
     public SwatchLayerFilterItemInterfaceQuery swatchData(SwatchDataQueryDefinition queryDef) {
         startField("swatch_data");

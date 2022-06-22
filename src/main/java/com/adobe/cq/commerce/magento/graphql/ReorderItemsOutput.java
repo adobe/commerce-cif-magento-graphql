@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the cart and any errors after adding products.
+ */
 public class ReorderItemsOutput extends AbstractResponse<ReorderItemsOutput> {
     public ReorderItemsOutput() {}
 
@@ -70,7 +73,7 @@ public class ReorderItemsOutput extends AbstractResponse<ReorderItemsOutput> {
     }
 
     /**
-     * Contains detailed information about the customer&#39;s cart.
+     * Detailed information about the customer&#39;s cart.
      */
     public Cart getCart() {
         return (Cart) get("cart");

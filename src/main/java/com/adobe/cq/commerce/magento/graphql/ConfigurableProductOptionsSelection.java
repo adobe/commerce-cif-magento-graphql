@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Metadata corresponding to the configurable options selection.
+ * Contains metadata corresponding to the selected configurable options.
  */
 public class ConfigurableProductOptionsSelection extends AbstractResponse<ConfigurableProductOptionsSelection> {
     public ConfigurableProductOptionsSelection() {}
@@ -125,7 +125,7 @@ public class ConfigurableProductOptionsSelection extends AbstractResponse<Config
     }
 
     /**
-     * Configurable options available for further selection based on current selection.
+     * An array of all possible configurable options.
      */
     public List<ConfigurableProductOption> getConfigurableOptions() {
         return (List<ConfigurableProductOption>) get("configurable_options");
@@ -149,7 +149,7 @@ public class ConfigurableProductOptionsSelection extends AbstractResponse<Config
     }
 
     /**
-     * Configurable options available for further selection based on current selection.
+     * The configurable options available for further selection based on the current selection.
      */
     public List<ConfigurableOptionAvailableForSelection> getOptionsAvailableForSelection() {
         return (List<ConfigurableOptionAvailableForSelection>) get("options_available_for_selection");
@@ -161,8 +161,8 @@ public class ConfigurableProductOptionsSelection extends AbstractResponse<Config
     }
 
     /**
-     * Variant represented by the specified configurable options selection. It is expected to be null,
-     * until selections are made for each configurable option.
+     * A variant represented by the specified configurable options selection. The value is expected to be
+     * null until selections are made for each configurable option.
      */
     public SimpleProduct getVariant() {
         return (SimpleProduct) get("variant");

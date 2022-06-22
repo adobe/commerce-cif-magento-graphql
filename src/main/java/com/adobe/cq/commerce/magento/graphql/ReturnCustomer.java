@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The Customer information for the return.
+ * The customer information for the return.
  */
 public class ReturnCustomer extends AbstractResponse<ReturnCustomer> {
     public ReturnCustomer() {}
@@ -77,7 +77,7 @@ public class ReturnCustomer extends AbstractResponse<ReturnCustomer> {
     }
 
     /**
-     * Customer email address.
+     * The email address of the customer.
      */
     public String getEmail() {
         return (String) get("email");
@@ -89,7 +89,7 @@ public class ReturnCustomer extends AbstractResponse<ReturnCustomer> {
     }
 
     /**
-     * Customer first name.
+     * The first name of the customer.
      */
     public String getFirstname() {
         return (String) get("firstname");
@@ -101,7 +101,7 @@ public class ReturnCustomer extends AbstractResponse<ReturnCustomer> {
     }
 
     /**
-     * Customer last name.
+     * The last name of the customer.
      */
     public String getLastname() {
         return (String) get("lastname");

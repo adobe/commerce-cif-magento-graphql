@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Defines tracking information to be added to the return.
+ */
 public class AddReturnTrackingInput implements Serializable {
     private ID carrierUid;
 
@@ -35,14 +38,14 @@ public class AddReturnTrackingInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `ReturnShippingCarrier` object
+     * The unique ID for a `ReturnShippingCarrier` object.
      */
     public ID getCarrierUid() {
         return carrierUid;
     }
 
     /**
-     * The unique ID for a `ReturnShippingCarrier` object
+     * The unique ID for a `ReturnShippingCarrier` object.
      */
     public AddReturnTrackingInput setCarrierUid(ID carrierUid) {
         this.carrierUid = carrierUid;
@@ -50,14 +53,14 @@ public class AddReturnTrackingInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `Returns` object
+     * The unique ID for a `Returns` object.
      */
     public ID getReturnUid() {
         return returnUid;
     }
 
     /**
-     * The unique ID for a `Returns` object
+     * The unique ID for a `Returns` object.
      */
     public AddReturnTrackingInput setReturnUid(ID returnUid) {
         this.returnUid = returnUid;
@@ -65,14 +68,14 @@ public class AddReturnTrackingInput implements Serializable {
     }
 
     /**
-     * The shipping tracking number for this return request
+     * The shipping tracking number for this return request.
      */
     public String getTrackingNumber() {
         return trackingNumber;
     }
 
     /**
-     * The shipping tracking number for this return request
+     * The shipping tracking number for this return request.
      */
     public AddReturnTrackingInput setTrackingNumber(String trackingNumber) {
         this.trackingNumber = trackingNumber;

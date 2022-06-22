@@ -20,49 +20,49 @@ import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
 /**
- * Order item details
+ * Order item details.
  */
 
 public interface OrderItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * The final discount information for the product
+     * The final discount information for the product.
      */
     List<Discount> getDiscounts();
 
     /**
-     * Indicates whether the order item is eligible is eligible to be in a return request
+     * Indicates whether the order item is eligible to be in a return request.
      */
     Boolean getEligibleForReturn();
 
     /**
-     * The entered option for the base product, such as a logo or image
+     * The entered option for the base product, such as a logo or image.
      */
     List<OrderItemOption> getEnteredOptions();
 
     /**
-     * The selected gift wrapping for the order item
+     * The selected gift wrapping for the order item.
      */
     GiftWrapping getGiftWrapping();
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for an `OrderItemInterface` object.
      */
     ID getId();
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     String getProductName();
 
     /**
-     * The sale price of the base product, including selected options
+     * The sale price of the base product, including selected options.
      */
     Money getProductSalePrice();
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     String getProductSku();
 
@@ -72,47 +72,47 @@ public interface OrderItemInterface extends CustomFieldInterface {
     String getProductType();
 
     /**
-     * URL key of the base product
+     * URL key of the base product.
      */
     String getProductUrlKey();
 
     /**
-     * The number of canceled items
+     * The number of canceled items.
      */
     Double getQuantityCanceled();
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     Double getQuantityInvoiced();
 
     /**
-     * The number of units ordered for this item
+     * The number of units ordered for this item.
      */
     Double getQuantityOrdered();
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     Double getQuantityRefunded();
 
     /**
-     * The number of returned items
+     * The number of returned items.
      */
     Double getQuantityReturned();
 
     /**
-     * The number of shipped items
+     * The number of shipped items.
      */
     Double getQuantityShipped();
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size.
      */
     List<OrderItemOption> getSelectedOptions();
 
     /**
-     * The status of the order item
+     * The status of the order item.
      */
     String getStatus();
 }

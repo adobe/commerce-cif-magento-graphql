@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines a single product to add to the cart.
+ */
 public class VirtualProductCartItemInput implements Serializable {
     private CartItemInput data;
 
@@ -28,28 +31,46 @@ public class VirtualProductCartItemInput implements Serializable {
         this.data = data;
     }
 
+    /**
+     * An object containing the `sku`, `quantity`, and other relevant information about the product.
+     */
     public CartItemInput getData() {
         return data;
     }
 
+    /**
+     * An object containing the `sku`, `quantity`, and other relevant information about the product.
+     */
     public VirtualProductCartItemInput setData(CartItemInput data) {
         this.data = data;
         return this;
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public List<CustomizableOptionInput> getCustomizableOptions() {
         return customizableOptions.getValue();
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public Input<List<CustomizableOptionInput>> getCustomizableOptionsInput() {
         return customizableOptions;
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public VirtualProductCartItemInput setCustomizableOptions(List<CustomizableOptionInput> customizableOptions) {
         this.customizableOptions = Input.optional(customizableOptions);
         return this;
     }
 
+    /**
+     * An array that defines customizable options for the product.
+     */
     public VirtualProductCartItemInput setCustomizableOptionsInput(Input<List<CustomizableOptionInput>> customizableOptions) {
         if (customizableOptions == null) {
             throw new IllegalArgumentException("Input can not be null");

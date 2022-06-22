@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * BundleItem defines an individual item in a bundle product.
+ * Defines an individual item within a bundle product.
  */
 public class BundleItemQuery extends AbstractQuery<BundleItemQuery> {
     BundleItemQuery(StringBuilder _queryBuilder) {
@@ -51,7 +51,7 @@ public class BundleItemQuery extends AbstractQuery<BundleItemQuery> {
     }
 
     /**
-     * he relative position of this item compared to the other bundle items.
+     * A number indicating the sequence order of this item compared to the other bundle items.
      */
     public BundleItemQuery position() {
         startField("position");

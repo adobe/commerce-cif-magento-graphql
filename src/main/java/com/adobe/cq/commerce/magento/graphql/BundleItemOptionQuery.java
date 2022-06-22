@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * BundleItemOption defines characteristics and options for a specific bundle item.
+ * Defines the characteristics that comprise a specific bundle item and its options.
  */
 public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> {
     BundleItemOptionQuery(StringBuilder _queryBuilder) {
@@ -108,7 +108,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     /**
      * Indicates the quantity of this specific bundle item.
      *
-     * @deprecated The `qty` is deprecated. Use `quantity` instead.
+     * @deprecated Use `quantity` instead.
      */
     @Deprecated
     public BundleItemOptionQuery qty() {
@@ -118,7 +118,7 @@ public class BundleItemOptionQuery extends AbstractQuery<BundleItemOptionQuery> 
     }
 
     /**
-     * Indicates the quantity of this specific bundle item.
+     * The quantity of this specific bundle item.
      */
     public BundleItemOptionQuery quantity() {
         startField("quantity");

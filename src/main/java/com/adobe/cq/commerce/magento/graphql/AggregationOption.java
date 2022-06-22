@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * An implementation of `AggregationOptionInterface`.
+ */
 public class AggregationOption extends AbstractResponse<AggregationOption> implements AggregationOptionInterface {
     public AggregationOption() {}
 
@@ -86,7 +89,7 @@ public class AggregationOption extends AbstractResponse<AggregationOption> imple
     }
 
     /**
-     * Aggregation option display label.
+     * The display label for an aggregation option.
      */
     public String getLabel() {
         return (String) get("label");

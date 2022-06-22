@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of the request to delete a compare list.
+ */
 public class DeleteCompareListOutput extends AbstractResponse<DeleteCompareListOutput> {
     public DeleteCompareListOutput() {}
 
@@ -52,7 +55,7 @@ public class DeleteCompareListOutput extends AbstractResponse<DeleteCompareListO
     }
 
     /**
-     * Indicates whether the compare list was successfully deleted
+     * Indicates whether the compare list was successfully deleted.
      */
     public Boolean getResult() {
         return (Boolean) get("result");

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Simple Cart Item
+ * An implementation for simple product cart items.
  */
 public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
     SimpleCartItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
     }
 
     /**
-     * The list of available gift wrapping options for the cart item
+     * The list of available gift wrapping options for the cart item.
      */
     public SimpleCartItemQuery availableGiftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("available_gift_wrapping");
@@ -38,6 +38,9 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
         return this;
     }
 
+    /**
+     * An array containing the customizable options the shopper selected.
+     */
     public SimpleCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
 
@@ -62,7 +65,7 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
     }
 
     /**
-     * The selected gift wrapping for the cart item
+     * The selected gift wrapping for the cart item.
      */
     public SimpleCartItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -75,7 +78,7 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public SimpleCartItemQuery id() {
@@ -84,6 +87,9 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public SimpleCartItemQuery prices(CartItemPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -94,6 +100,9 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public SimpleCartItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -104,6 +113,9 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public SimpleCartItemQuery quantity() {
         startField("quantity");
 
@@ -111,7 +123,7 @@ public class SimpleCartItemQuery extends AbstractQuery<SimpleCartItemQuery> {
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public SimpleCartItemQuery uid() {
         startField("uid");

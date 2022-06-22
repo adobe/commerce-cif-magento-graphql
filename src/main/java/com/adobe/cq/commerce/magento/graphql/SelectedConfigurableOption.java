@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a selected configurable option.
+ */
 public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigurableOption> {
     public SelectedConfigurableOption() {}
 
@@ -83,7 +86,7 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptions` object
+     * The unique ID for a `ConfigurableProductOptions` object.
      */
     public ID getConfigurableProductOptionUid() {
         return (ID) get("configurable_product_option_uid");
@@ -95,7 +98,7 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptionsValues` object
+     * The unique ID for a `ConfigurableProductOptionsValues` object.
      */
     public ID getConfigurableProductOptionValueUid() {
         return (ID) get("configurable_product_option_value_uid");
@@ -107,7 +110,7 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
     }
 
     /**
-     * @deprecated Use SelectedConfigurableOption.configurable_product_option_uid instead
+     * @deprecated Use `SelectedConfigurableOption.configurable_product_option_uid` instead.
      */
     @Deprecated
     public Integer getId() {
@@ -119,6 +122,9 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
         return this;
     }
 
+    /**
+     * The display text for the option.
+     */
     public String getOptionLabel() {
         return (String) get("option_label");
     }
@@ -129,7 +135,7 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
     }
 
     /**
-     * @deprecated Use SelectedConfigurableOption.configurable_product_option_value_uid instead
+     * @deprecated Use `SelectedConfigurableOption.configurable_product_option_value_uid` instead.
      */
     @Deprecated
     public Integer getValueId() {
@@ -141,6 +147,9 @@ public class SelectedConfigurableOption extends AbstractResponse<SelectedConfigu
         return this;
     }
 
+    /**
+     * The display name of the selected configurable option.
+     */
     public String getValueLabel() {
         return (String) get("value_label");
     }

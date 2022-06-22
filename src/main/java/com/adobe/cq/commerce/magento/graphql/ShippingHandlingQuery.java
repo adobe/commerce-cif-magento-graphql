@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The Shipping handling details
+ * Contains details about shipping and handling costs.
  */
 public class ShippingHandlingQuery extends AbstractQuery<ShippingHandlingQuery> {
     ShippingHandlingQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ShippingHandlingQuery extends AbstractQuery<ShippingHandlingQuery> 
     }
 
     /**
-     * The shipping amount, excluding tax
+     * The shipping amount, excluding tax.
      */
     public ShippingHandlingQuery amountExcludingTax(MoneyQueryDefinition queryDef) {
         startField("amount_excluding_tax");
@@ -39,7 +39,7 @@ public class ShippingHandlingQuery extends AbstractQuery<ShippingHandlingQuery> 
     }
 
     /**
-     * The shipping amount, including tax
+     * The shipping amount, including tax.
      */
     public ShippingHandlingQuery amountIncludingTax(MoneyQueryDefinition queryDef) {
         startField("amount_including_tax");
@@ -52,7 +52,7 @@ public class ShippingHandlingQuery extends AbstractQuery<ShippingHandlingQuery> 
     }
 
     /**
-     * The applied discounts to the shipping
+     * The applied discounts to the shipping.
      */
     public ShippingHandlingQuery discounts(ShippingDiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -65,7 +65,7 @@ public class ShippingHandlingQuery extends AbstractQuery<ShippingHandlingQuery> 
     }
 
     /**
-     * Contains details about taxes applied for shipping
+     * Details about taxes applied for shipping.
      */
     public ShippingHandlingQuery taxes(TaxItemQueryDefinition queryDef) {
         startField("taxes");
@@ -78,7 +78,7 @@ public class ShippingHandlingQuery extends AbstractQuery<ShippingHandlingQuery> 
     }
 
     /**
-     * The total amount for shipping
+     * The total amount for shipping.
      */
     public ShippingHandlingQuery totalAmount(MoneyQueryDefinition queryDef) {
         startField("total_amount");

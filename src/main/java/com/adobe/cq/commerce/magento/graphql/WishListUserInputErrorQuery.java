@@ -26,7 +26,7 @@ public class WishListUserInputErrorQuery extends AbstractQuery<WishListUserInput
     }
 
     /**
-     * Wishlist-specific error code
+     * A wish list-specific error code.
      */
     public WishListUserInputErrorQuery code() {
         startField("code");
@@ -35,7 +35,7 @@ public class WishListUserInputErrorQuery extends AbstractQuery<WishListUserInput
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public WishListUserInputErrorQuery message() {
         startField("message");

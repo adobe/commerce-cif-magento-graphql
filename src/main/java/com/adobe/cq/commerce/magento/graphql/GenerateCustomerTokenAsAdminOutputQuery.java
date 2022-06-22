@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the generated customer token.
+ */
 public class GenerateCustomerTokenAsAdminOutputQuery extends AbstractQuery<GenerateCustomerTokenAsAdminOutputQuery> {
     GenerateCustomerTokenAsAdminOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The generated customer token
+     * The generated customer token.
      */
     public GenerateCustomerTokenAsAdminOutputQuery customerToken() {
         startField("customer_token");

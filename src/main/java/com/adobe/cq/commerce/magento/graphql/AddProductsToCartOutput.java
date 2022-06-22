@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after adding products to it.
+ */
 public class AddProductsToCartOutput extends AbstractResponse<AddProductsToCartOutput> {
     public AddProductsToCartOutput() {}
 
@@ -70,7 +73,7 @@ public class AddProductsToCartOutput extends AbstractResponse<AddProductsToCartO
     }
 
     /**
-     * The cart after products have been added
+     * The cart after products have been added.
      */
     public Cart getCart() {
         return (Cart) get("cart");
@@ -82,7 +85,7 @@ public class AddProductsToCartOutput extends AbstractResponse<AddProductsToCartO
     }
 
     /**
-     * An error encountered while adding an item to the cart.
+     * Contains errors encountered while adding an item to the cart.
      */
     public List<CartUserInputError> getUserErrors() {
         return (List<CartUserInputError>) get("user_errors");

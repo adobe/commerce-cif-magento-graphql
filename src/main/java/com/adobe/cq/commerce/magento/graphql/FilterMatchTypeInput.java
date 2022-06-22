@@ -26,21 +26,24 @@ public class FilterMatchTypeInput implements Serializable {
     private Input<String> match = Input.undefined();
 
     /**
-     * One or more words to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific SKU,
+     * specify a value such as `24-MB01`.
      */
     public String getMatch() {
         return match.getValue();
     }
 
     /**
-     * One or more words to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific SKU,
+     * specify a value such as `24-MB01`.
      */
     public Input<String> getMatchInput() {
         return match;
     }
 
     /**
-     * One or more words to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific SKU,
+     * specify a value such as `24-MB01`.
      */
     public FilterMatchTypeInput setMatch(String match) {
         this.match = Input.optional(match);
@@ -48,7 +51,8 @@ public class FilterMatchTypeInput implements Serializable {
     }
 
     /**
-     * One or more words to filter on
+     * Use this attribute to exactly match the specified string. For example, to filter on a specific SKU,
+     * specify a value such as `24-MB01`.
      */
     public FilterMatchTypeInput setMatchInput(Input<String> match) {
         if (match == null) {

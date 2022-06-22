@@ -14,6 +14,10 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Indicates the locations the dynamic block can be placed. If this field is not specified, the query
+ * returns all locations.
+ */
 public enum DynamicBlockLocationEnum {
     CONTENT,
 

@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains shipping addresses and methods.
+ */
 public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQuery> {
     ShippingCartAddressQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An array that lists the shipping methods that can be applied to the cart.
+     */
     public ShippingCartAddressQuery availableShippingMethods(AvailableShippingMethodQueryDefinition queryDef) {
         startField("available_shipping_methods");
 
@@ -33,7 +39,7 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
     }
 
     /**
-     * @deprecated `cart_items_v2` should be used instead
+     * @deprecated Use `cart_items_v2` instead.
      */
     @Deprecated
     public ShippingCartAddressQuery cartItems(CartItemQuantityQueryDefinition queryDef) {
@@ -46,6 +52,9 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * An array that lists the items in the cart.
+     */
     public ShippingCartAddressQuery cartItemsV2(CartItemInterfaceQueryDefinition queryDef) {
         startField("cart_items_v2");
 
@@ -56,18 +65,27 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * The city specified for the billing or shipping address.
+     */
     public ShippingCartAddressQuery city() {
         startField("city");
 
         return this;
     }
 
+    /**
+     * The company specified for the billing or shipping address.
+     */
     public ShippingCartAddressQuery company() {
         startField("company");
 
         return this;
     }
 
+    /**
+     * An object containing the country label and code.
+     */
     public ShippingCartAddressQuery country(CartAddressCountryQueryDefinition queryDef) {
         startField("country");
 
@@ -78,12 +96,18 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * Text provided by the shopper.
+     */
     public ShippingCartAddressQuery customerNotes() {
         startField("customer_notes");
 
         return this;
     }
 
+    /**
+     * The first name of the customer or guest.
+     */
     public ShippingCartAddressQuery firstname() {
         startField("firstname");
 
@@ -91,7 +115,7 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
     }
 
     /**
-     * @deprecated This information shoud not be exposed on frontend
+     * @deprecated This information should not be exposed on the frontend.
      */
     @Deprecated
     public ShippingCartAddressQuery itemsWeight() {
@@ -100,6 +124,9 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * The last name of the customer or guest.
+     */
     public ShippingCartAddressQuery lastname() {
         startField("lastname");
 
@@ -112,12 +139,18 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * The ZIP or postal code of the billing or shipping address.
+     */
     public ShippingCartAddressQuery postcode() {
         startField("postcode");
 
         return this;
     }
 
+    /**
+     * An object containing the region label and code.
+     */
     public ShippingCartAddressQuery region(CartAddressRegionQueryDefinition queryDef) {
         startField("region");
 
@@ -128,6 +161,9 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * An object that describes the selected shipping method.
+     */
     public ShippingCartAddressQuery selectedShippingMethod(SelectedShippingMethodQueryDefinition queryDef) {
         startField("selected_shipping_method");
 
@@ -138,12 +174,18 @@ public class ShippingCartAddressQuery extends AbstractQuery<ShippingCartAddressQ
         return this;
     }
 
+    /**
+     * An array containing the street for the billing or shipping address.
+     */
     public ShippingCartAddressQuery street() {
         startField("street");
 
         return this;
     }
 
+    /**
+     * The telephone number for the billing or shipping address.
+     */
     public ShippingCartAddressQuery telephone() {
         startField("telephone");
 

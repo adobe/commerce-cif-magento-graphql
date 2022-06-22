@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after adding bundle products.
+ */
 public class AddBundleProductsToCartOutput extends AbstractResponse<AddBundleProductsToCartOutput> {
     public AddBundleProductsToCartOutput() {}
 
@@ -51,6 +54,9 @@ public class AddBundleProductsToCartOutput extends AbstractResponse<AddBundlePro
         return "AddBundleProductsToCartOutput";
     }
 
+    /**
+     * The cart after adding products.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

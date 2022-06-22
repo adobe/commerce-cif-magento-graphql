@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains an attribute code that is used for product comparisons.
+ */
 public class ComparableAttribute extends AbstractResponse<ComparableAttribute> {
     public ComparableAttribute() {}
 
@@ -58,7 +61,7 @@ public class ComparableAttribute extends AbstractResponse<ComparableAttribute> {
     }
 
     /**
-     * An attribute code that is enabled for product comparisons
+     * An attribute code that is enabled for product comparisons.
      */
     public String getCode() {
         return (String) get("code");
@@ -70,7 +73,7 @@ public class ComparableAttribute extends AbstractResponse<ComparableAttribute> {
     }
 
     /**
-     * The label of the attribute code
+     * The label of the attribute code.
      */
     public String getLabel() {
         return (String) get("label");

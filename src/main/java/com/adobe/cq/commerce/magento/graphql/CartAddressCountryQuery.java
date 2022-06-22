@@ -17,17 +17,26 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details the country in a billing or shipping address.
+ */
 public class CartAddressCountryQuery extends AbstractQuery<CartAddressCountryQuery> {
     CartAddressCountryQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The country code.
+     */
     public CartAddressCountryQuery code() {
         startField("code");
 
         return this;
     }
 
+    /**
+     * The display label for the country.
+     */
     public CartAddressCountryQuery label() {
         startField("label");
 

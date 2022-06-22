@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after removing an item.
+ */
 public class RemoveItemFromCartOutputQuery extends AbstractQuery<RemoveItemFromCartOutputQuery> {
     RemoveItemFromCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after removing an item.
+     */
     public RemoveItemFromCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

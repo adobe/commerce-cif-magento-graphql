@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * OrderAddress contains detailed information about an order&#39;s billing and shipping addresses
+ * Contains detailed information about an order&#39;s billing and shipping addresses.
  */
 public class OrderAddress extends AbstractResponse<OrderAddress> {
     public OrderAddress() {}
@@ -169,7 +169,12 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
                 }
 
                 case "telephone": {
-                    responseData.put(key, jsonAsString(field.getValue(), key));
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -202,7 +207,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The city or town
+     * The city or town.
      */
     public String getCity() {
         return (String) get("city");
@@ -214,7 +219,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The customer&#39;s company
+     * The customer&#39;s company.
      */
     public String getCompany() {
         return (String) get("company");
@@ -226,7 +231,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The customer&#39;s country
+     * The customer&#39;s country.
      */
     public CountryCodeEnum getCountryCode() {
         return (CountryCodeEnum) get("country_code");
@@ -238,7 +243,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The fax number
+     * The fax number.
      */
     public String getFax() {
         return (String) get("fax");
@@ -250,7 +255,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The first name of the person associated with the shipping/billing address
+     * The first name of the person associated with the shipping/billing address.
      */
     public String getFirstname() {
         return (String) get("firstname");
@@ -262,7 +267,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The family name of the person associated with the shipping/billing address
+     * The family name of the person associated with the shipping/billing address.
      */
     public String getLastname() {
         return (String) get("lastname");
@@ -274,7 +279,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The middle name of the person associated with the shipping/billing address
+     * The middle name of the person associated with the shipping/billing address.
      */
     public String getMiddlename() {
         return (String) get("middlename");
@@ -286,7 +291,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The customer&#39;s order ZIP or postal code
+     * The customer&#39;s ZIP or postal code.
      */
     public String getPostcode() {
         return (String) get("postcode");
@@ -310,7 +315,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The state or province name
+     * The state or province name.
      */
     public String getRegion() {
         return (String) get("region");
@@ -322,7 +327,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The unique ID for a `Region` object of a pre-defined region
+     * The unique ID for a `Region` object of a pre-defined region.
      */
     public ID getRegionId() {
         return (ID) get("region_id");
@@ -334,7 +339,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * An array of strings that define the street number and name
+     * An array of strings that define the street number and name.
      */
     public List<String> getStreet() {
         return (List<String>) get("street");
@@ -346,7 +351,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public String getSuffix() {
         return (String) get("suffix");
@@ -358,7 +363,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The telephone number
+     * The telephone number.
      */
     public String getTelephone() {
         return (String) get("telephone");
@@ -370,7 +375,7 @@ public class OrderAddress extends AbstractResponse<OrderAddress> {
     }
 
     /**
-     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers).
      */
     public String getVatId() {
         return (String) get("vat_id");

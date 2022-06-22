@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Deprecated: `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of
- * `CartItemQuantity`
+ * Deprecated: The `ShippingCartAddress.cart_items` field now returns `CartItemInterface`.
  */
 public class CartItemQuantityQuery extends AbstractQuery<CartItemQuantityQuery> {
     CartItemQuantityQuery(StringBuilder _queryBuilder) {
@@ -27,7 +26,7 @@ public class CartItemQuantityQuery extends AbstractQuery<CartItemQuantityQuery> 
     }
 
     /**
-     * @deprecated `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of `CartItemQuantity`
+     * @deprecated The `ShippingCartAddress.cart_items` field now returns `CartItemInterface`.
      */
     @Deprecated
     public CartItemQuantityQuery cartItemId() {
@@ -37,7 +36,7 @@ public class CartItemQuantityQuery extends AbstractQuery<CartItemQuantityQuery> 
     }
 
     /**
-     * @deprecated `cart_items` field of `ShippingCartAddress` returns now `CartItemInterface` instead of `CartItemQuantity`
+     * @deprecated The `ShippingCartAddress.cart_items` field now returns `CartItemInterface`.
      */
     @Deprecated
     public CartItemQuantityQuery quantity() {

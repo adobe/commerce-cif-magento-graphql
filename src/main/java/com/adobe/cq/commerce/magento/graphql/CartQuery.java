@@ -17,15 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the contents and other details about a guest or customer cart.
+ */
 public class CartQuery extends AbstractQuery<CartQuery> {
     CartQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of coupons that have been applied to the cart
-     *
-     * @deprecated Use applied_coupons instead
+     * @deprecated Use `applied_coupons` instead.
      */
     @Deprecated
     public CartQuery appliedCoupon(AppliedCouponQueryDefinition queryDef) {
@@ -40,7 +41,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
 
     /**
      * An array of `AppliedCoupon` objects. Each object contains the `code` text attribute, which specifies
-     * the coupon code
+     * the coupon code.
      */
     public CartQuery appliedCoupons(AppliedCouponQueryDefinition queryDef) {
         startField("applied_coupons");
@@ -53,7 +54,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * Contains the code attribute, which specifies the applied gift card codes
+     * An array of gift card items applied to the cart.
      */
     public CartQuery appliedGiftCards(AppliedGiftCardQueryDefinition queryDef) {
         startField("applied_gift_cards");
@@ -66,7 +67,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * The amount of reward points applied to the cart
+     * The amount of reward points applied to the cart.
      */
     public CartQuery appliedRewardPoints(RewardPointsAmountQueryDefinition queryDef) {
         startField("applied_reward_points");
@@ -79,7 +80,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * Contains store credit information applied on the cart
+     * Store credit information applied to the cart.
      */
     public CartQuery appliedStoreCredit(AppliedStoreCreditQueryDefinition queryDef) {
         startField("applied_store_credit");
@@ -92,7 +93,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * The list of available gift wrapping options for the cart
+     * The list of available gift wrapping options for the cart.
      */
     public CartQuery availableGiftWrappings(GiftWrappingQueryDefinition queryDef) {
         startField("available_gift_wrappings");
@@ -105,7 +106,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * Available payment methods
+     * An array of available payment methods.
      */
     public CartQuery availablePaymentMethods(AvailablePaymentMethodQueryDefinition queryDef) {
         startField("available_payment_methods");
@@ -117,6 +118,9 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         return this;
     }
 
+    /**
+     * The billing address assigned to the cart.
+     */
     public CartQuery billingAddress(BillingCartAddressQueryDefinition queryDef) {
         startField("billing_address");
 
@@ -127,6 +131,9 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         return this;
     }
 
+    /**
+     * The email address of the guest or customer.
+     */
     public CartQuery email() {
         startField("email");
 
@@ -147,7 +154,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * Wether customer requested gift receipt for the cart
+     * Indicates whether the shopper requested gift receipt for the cart.
      */
     public CartQuery giftReceiptIncluded() {
         startField("gift_receipt_included");
@@ -156,7 +163,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * The selected gift wrapping for the cart
+     * The selected gift wrapping for the cart.
      */
     public CartQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -169,7 +176,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * The unique ID for a `Cart` object
+     * The unique ID for a `Cart` object.
      */
     public CartQuery id() {
         startField("id");
@@ -177,12 +184,18 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         return this;
     }
 
+    /**
+     * Indicates whether the cart contains only virtual products.
+     */
     public CartQuery isVirtual() {
         startField("is_virtual");
 
         return this;
     }
 
+    /**
+     * An array of products that have been added to the cart.
+     */
     public CartQuery items(CartItemInterfaceQueryDefinition queryDef) {
         startField("items");
 
@@ -193,6 +206,9 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         return this;
     }
 
+    /**
+     * Pricing details for the quote.
+     */
     public CartQuery prices(CartPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -204,7 +220,7 @@ public class CartQuery extends AbstractQuery<CartQuery> {
     }
 
     /**
-     * Wether customer requested printed card for the cart
+     * Indicates whether the shopper requested a printed card for the cart.
      */
     public CartQuery printedCardIncluded() {
         startField("printed_card_included");
@@ -212,6 +228,9 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         return this;
     }
 
+    /**
+     * Indicates which payment method was applied to the cart.
+     */
     public CartQuery selectedPaymentMethod(SelectedPaymentMethodQueryDefinition queryDef) {
         startField("selected_payment_method");
 
@@ -222,6 +241,9 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         return this;
     }
 
+    /**
+     * An array of shipping addresses assigned to the cart.
+     */
     public CartQuery shippingAddresses(ShippingCartAddressQueryDefinition queryDef) {
         startField("shipping_addresses");
 
@@ -232,6 +254,9 @@ public class CartQuery extends AbstractQuery<CartQuery> {
         return this;
     }
 
+    /**
+     * The total number of items in the cart.
+     */
     public CartQuery totalQuantity() {
         startField("total_quantity");
 

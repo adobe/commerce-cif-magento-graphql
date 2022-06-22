@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration defines the wish list visibility types
+ * Defines the wish list visibility types.
  */
 public enum WishlistVisibilityEnum {
     PRIVATE,

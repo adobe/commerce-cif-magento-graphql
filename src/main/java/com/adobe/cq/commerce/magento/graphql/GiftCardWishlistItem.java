@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A gift card product wish list item
+ * A single gift card added to a wish list.
  */
 public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem> implements WishlistItemInterface {
     public GiftCardWishlistItem() {}
@@ -114,7 +114,7 @@ public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem>
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public String getAddedAt() {
         return (String) get("added_at");
@@ -126,7 +126,7 @@ public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem>
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
@@ -138,7 +138,7 @@ public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem>
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public String getDescription() {
         return (String) get("description");
@@ -149,6 +149,9 @@ public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem>
         return this;
     }
 
+    /**
+     * Details about a gift card.
+     */
     public GiftCardOptions getGiftCardOptions() {
         return (GiftCardOptions) get("gift_card_options");
     }
@@ -159,7 +162,7 @@ public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem>
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -171,7 +174,7 @@ public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem>
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -183,7 +186,7 @@ public class GiftCardWishlistItem extends AbstractResponse<GiftCardWishlistItem>
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public Double getQuantity() {
         return (Double) get("quantity");

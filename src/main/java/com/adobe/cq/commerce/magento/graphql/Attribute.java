@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Attribute contains the attribute_type of the specified attribute_code and entity_type
+ * Contains details about the attribute, including the code and type.
  */
 public class Attribute extends AbstractResponse<Attribute> {
     public Attribute() {}
@@ -152,7 +152,7 @@ public class Attribute extends AbstractResponse<Attribute> {
     }
 
     /**
-     * The data type of the attribute
+     * The data type of the attribute.
      */
     public String getAttributeType() {
         return (String) get("attribute_type");
@@ -164,7 +164,7 @@ public class Attribute extends AbstractResponse<Attribute> {
     }
 
     /**
-     * The type of entity that defines the attribute
+     * The type of entity that defines the attribute.
      */
     public String getEntityType() {
         return (String) get("entity_type");
@@ -176,7 +176,7 @@ public class Attribute extends AbstractResponse<Attribute> {
     }
 
     /**
-     * The frontend input type of the attribute
+     * The frontend input type of the attribute.
      */
     public String getInputType() {
         return (String) get("input_type");
@@ -188,7 +188,7 @@ public class Attribute extends AbstractResponse<Attribute> {
     }
 
     /**
-     * Contains details about the storefront properties configured for the attribute
+     * Details about the storefront properties configured for the attribute.
      */
     public StorefrontProperties getStorefrontProperties() {
         return (StorefrontProperties) get("storefront_properties");

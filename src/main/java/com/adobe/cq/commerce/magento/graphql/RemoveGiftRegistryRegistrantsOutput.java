@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of a request to delete a registrant.
+ */
 public class RemoveGiftRegistryRegistrantsOutput extends AbstractResponse<RemoveGiftRegistryRegistrantsOutput> {
     public RemoveGiftRegistryRegistrantsOutput() {}
 
@@ -57,7 +60,7 @@ public class RemoveGiftRegistryRegistrantsOutput extends AbstractResponse<Remove
     }
 
     /**
-     * The gift registry after deleting registrants
+     * The gift registry after deleting registrants.
      */
     public GiftRegistry getGiftRegistry() {
         return (GiftRegistry) get("gift_registry");

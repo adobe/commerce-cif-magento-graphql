@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Required input for Express Checkout and Payments Standard payments
+ * Contains required input for Express Checkout and Payments Standard payments.
  */
 public class PaypalExpressInput implements Serializable {
     private String payerId;
@@ -33,14 +33,14 @@ public class PaypalExpressInput implements Serializable {
     }
 
     /**
-     * The unique ID of the PayPal user
+     * The unique ID of the PayPal user.
      */
     public String getPayerId() {
         return payerId;
     }
 
     /**
-     * The unique ID of the PayPal user
+     * The unique ID of the PayPal user.
      */
     public PaypalExpressInput setPayerId(String payerId) {
         this.payerId = payerId;
@@ -48,14 +48,14 @@ public class PaypalExpressInput implements Serializable {
     }
 
     /**
-     * The token returned by the createPaypalExpressToken mutation
+     * The token returned by the `createPaypalExpressToken` mutation.
      */
     public String getToken() {
         return token;
     }
 
     /**
-     * The token returned by the createPaypalExpressToken mutation
+     * The token returned by the `createPaypalExpressToken` mutation.
      */
     public PaypalExpressInput setToken(String token) {
         this.token = token;

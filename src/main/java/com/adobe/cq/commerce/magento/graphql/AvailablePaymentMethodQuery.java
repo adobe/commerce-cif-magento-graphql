@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Describes a payment method that the shopper can use to pay for the order.
+ */
 public class AvailablePaymentMethodQuery extends AbstractQuery<AvailablePaymentMethodQuery> {
     AvailablePaymentMethodQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The payment method code
+     * The payment method code.
      */
     public AvailablePaymentMethodQuery code() {
         startField("code");

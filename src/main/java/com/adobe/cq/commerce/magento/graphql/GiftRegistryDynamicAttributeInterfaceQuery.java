@@ -30,7 +30,7 @@ public class GiftRegistryDynamicAttributeInterfaceQuery extends AbstractQuery<Gi
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeInterfaceQuery code() {
         startField("code");
@@ -39,7 +39,7 @@ public class GiftRegistryDynamicAttributeInterfaceQuery extends AbstractQuery<Gi
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public GiftRegistryDynamicAttributeInterfaceQuery label() {
         startField("label");
@@ -48,7 +48,7 @@ public class GiftRegistryDynamicAttributeInterfaceQuery extends AbstractQuery<Gi
     }
 
     /**
-     * A corresponding value for the code
+     * A corresponding value for the code.
      */
     public GiftRegistryDynamicAttributeInterfaceQuery value() {
         startField("value");

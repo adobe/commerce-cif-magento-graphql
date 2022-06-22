@@ -19,7 +19,8 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Input required to fetch payment token information for Payflow Pro and Payments Pro payment methods.
+ * Contains input required to fetch payment token information for the Payflow Pro and Payments Pro
+ * payment methods.
  */
 public class PayflowProTokenInput implements Serializable {
     private String cartId;
@@ -33,14 +34,14 @@ public class PayflowProTokenInput implements Serializable {
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the shopper&#39;s cart.
      */
     public String getCartId() {
         return cartId;
     }
 
     /**
-     * The unique ID that identifies the customer&#39;s cart
+     * The unique ID that identifies the shopper&#39;s cart.
      */
     public PayflowProTokenInput setCartId(String cartId) {
         this.cartId = cartId;

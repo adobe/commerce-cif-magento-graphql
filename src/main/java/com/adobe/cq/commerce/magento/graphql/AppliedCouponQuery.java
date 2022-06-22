@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the applied coupon code.
+ */
 public class AppliedCouponQuery extends AbstractQuery<AppliedCouponQuery> {
     AppliedCouponQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The coupon code the shopper applied to the card.
+     */
     public AppliedCouponQuery code() {
         startField("code");
 

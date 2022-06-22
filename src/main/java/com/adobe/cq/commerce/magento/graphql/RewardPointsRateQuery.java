@@ -17,14 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about customer&#39;s reward points rate.
+ */
 public class RewardPointsRateQuery extends AbstractQuery<RewardPointsRateQuery> {
     RewardPointsRateQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The money value for exchange rate. For earnings this is amount spent to earn the specified points.
-     * For redemption this is the amount of money the number of points represents.
+     * The money value for the exchange rate. For earnings, this is the amount spent to earn the specified
+     * points. For redemption, this is the amount of money the number of points represents.
      */
     public RewardPointsRateQuery currencyAmount() {
         startField("currency_amount");
@@ -33,8 +36,8 @@ public class RewardPointsRateQuery extends AbstractQuery<RewardPointsRateQuery> 
     }
 
     /**
-     * The number of points for exchange rate. For earnings this is the number of points earned. For
-     * redemption this is the number of points needed for redemption.
+     * The number of points for an exchange rate. For earnings, this is the number of points earned. For
+     * redemption, this is the number of points needed for redemption.
      */
     public RewardPointsRateQuery points() {
         startField("points");

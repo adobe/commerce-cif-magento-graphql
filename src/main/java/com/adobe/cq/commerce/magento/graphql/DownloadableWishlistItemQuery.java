@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A downloadable product wish list item
+ * A downloadable product wish list item.
  */
 public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWishlistItemQuery> {
     DownloadableWishlistItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public DownloadableWishlistItemQuery addedAt() {
         startField("added_at");
@@ -35,7 +35,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public DownloadableWishlistItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -48,7 +48,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public DownloadableWishlistItemQuery description() {
         startField("description");
@@ -57,7 +57,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public DownloadableWishlistItemQuery id() {
         startField("id");
@@ -66,7 +66,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * An array containing information about the selected links
+     * An array containing information about the selected links.
      */
     public DownloadableWishlistItemQuery linksV2(DownloadableProductLinksQueryDefinition queryDef) {
         startField("links_v2");
@@ -79,7 +79,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public DownloadableWishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -92,7 +92,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public DownloadableWishlistItemQuery quantity() {
         startField("quantity");
@@ -101,7 +101,7 @@ public class DownloadableWishlistItemQuery extends AbstractQuery<DownloadableWis
     }
 
     /**
-     * An array containing information about the selected samples
+     * An array containing information about the selected samples.
      */
     public DownloadableWishlistItemQuery samples(DownloadableProductSamplesQueryDefinition queryDef) {
         startField("samples");

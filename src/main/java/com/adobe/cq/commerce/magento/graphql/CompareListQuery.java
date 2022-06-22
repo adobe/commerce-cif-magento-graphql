@@ -17,13 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains iterable information such as the array of items, the count, and attributes that represent
+ * the compare list.
+ */
 public class CompareListQuery extends AbstractQuery<CompareListQuery> {
     CompareListQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of attributes that can be used for comparing products
+     * An array of attributes that can be used for comparing products.
      */
     public CompareListQuery attributes(ComparableAttributeQueryDefinition queryDef) {
         startField("attributes");
@@ -36,7 +40,7 @@ public class CompareListQuery extends AbstractQuery<CompareListQuery> {
     }
 
     /**
-     * The number of items in the compare list
+     * The number of items in the compare list.
      */
     public CompareListQuery itemCount() {
         startField("item_count");
@@ -45,7 +49,7 @@ public class CompareListQuery extends AbstractQuery<CompareListQuery> {
     }
 
     /**
-     * An array of products to compare
+     * An array of products to compare.
      */
     public CompareListQuery items(ComparableItemQueryDefinition queryDef) {
         startField("items");
@@ -58,7 +62,7 @@ public class CompareListQuery extends AbstractQuery<CompareListQuery> {
     }
 
     /**
-     * The unique ID assigned to the compare list
+     * The unique ID assigned to the compare list.
      */
     public CompareListQuery uid() {
         startField("uid");

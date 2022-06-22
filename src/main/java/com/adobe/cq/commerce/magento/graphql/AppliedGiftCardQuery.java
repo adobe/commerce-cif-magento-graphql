@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains the applied gift card with applied and remaining balance
+ * Contains an applied gift card with applied and remaining balance.
  */
 public class AppliedGiftCardQuery extends AbstractQuery<AppliedGiftCardQuery> {
     AppliedGiftCardQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class AppliedGiftCardQuery extends AbstractQuery<AppliedGiftCardQuery> {
     }
 
     /**
-     * Applied balance to the current cart
+     * The amount applied to the current cart.
      */
     public AppliedGiftCardQuery appliedBalance(MoneyQueryDefinition queryDef) {
         startField("applied_balance");
@@ -39,7 +39,7 @@ public class AppliedGiftCardQuery extends AbstractQuery<AppliedGiftCardQuery> {
     }
 
     /**
-     * Gift card account code
+     * The gift card account code.
      */
     public AppliedGiftCardQuery code() {
         startField("code");
@@ -48,7 +48,7 @@ public class AppliedGiftCardQuery extends AbstractQuery<AppliedGiftCardQuery> {
     }
 
     /**
-     * Current balance remaining on gift card
+     * The remaining balance on the gift card.
      */
     public AppliedGiftCardQuery currentBalance(MoneyQueryDefinition queryDef) {
         startField("current_balance");
@@ -61,7 +61,7 @@ public class AppliedGiftCardQuery extends AbstractQuery<AppliedGiftCardQuery> {
     }
 
     /**
-     * Gift card expiration date
+     * The expiration date of the gift card.
      */
     public AppliedGiftCardQuery expirationDate() {
         startField("expiration_date");

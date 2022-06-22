@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines bundle product options for `ShipmentItemInterface`.
+ */
 public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQuery> {
     BundleShipmentItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A list of bundle options that are assigned to the bundle product
+     * A list of bundle options that are assigned to a shipped product.
      */
     public BundleShipmentItemQuery bundleOptions(ItemSelectedBundleOptionQueryDefinition queryDef) {
         startField("bundle_options");
@@ -36,7 +39,7 @@ public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQue
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public BundleShipmentItemQuery id() {
         startField("id");
@@ -45,7 +48,7 @@ public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQue
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public BundleShipmentItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -58,7 +61,7 @@ public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQue
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public BundleShipmentItemQuery productName() {
         startField("product_name");
@@ -67,7 +70,7 @@ public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQue
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public BundleShipmentItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -80,7 +83,7 @@ public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQue
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public BundleShipmentItemQuery productSku() {
         startField("product_sku");
@@ -89,7 +92,7 @@ public class BundleShipmentItemQuery extends AbstractQuery<BundleShipmentItemQue
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public BundleShipmentItemQuery quantityShipped() {
         startField("quantity_shipped");

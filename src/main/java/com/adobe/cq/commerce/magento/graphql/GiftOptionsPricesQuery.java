@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains prices for gift wrapping options.
+ */
 public class GiftOptionsPricesQuery extends AbstractQuery<GiftOptionsPricesQuery> {
     GiftOptionsPricesQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Price of the gift wrapping for all individual order items
+     * Price of the gift wrapping for all individual order items.
      */
     public GiftOptionsPricesQuery giftWrappingForItems(MoneyQueryDefinition queryDef) {
         startField("gift_wrapping_for_items");
@@ -36,7 +39,7 @@ public class GiftOptionsPricesQuery extends AbstractQuery<GiftOptionsPricesQuery
     }
 
     /**
-     * Price of the gift wrapping for the whole order
+     * Price of the gift wrapping for the whole order.
      */
     public GiftOptionsPricesQuery giftWrappingForOrder(MoneyQueryDefinition queryDef) {
         startField("gift_wrapping_for_order");
@@ -49,7 +52,7 @@ public class GiftOptionsPricesQuery extends AbstractQuery<GiftOptionsPricesQuery
     }
 
     /**
-     * Price for the printed card
+     * Price for the printed card.
      */
     public GiftOptionsPricesQuery printedCard(MoneyQueryDefinition queryDef) {
         startField("printed_card");

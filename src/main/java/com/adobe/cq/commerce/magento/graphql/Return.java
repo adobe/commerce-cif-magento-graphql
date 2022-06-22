@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Customer return
+ * Contains details about a return.
  */
 public class Return extends AbstractResponse<Return> {
     public Return() {}
@@ -172,7 +172,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * A list of shipping carriers available for returns
+     * A list of shipping carriers available for returns.
      */
     public List<ReturnShippingCarrier> getAvailableShippingCarriers() {
         return (List<ReturnShippingCarrier>) get("available_shipping_carriers");
@@ -184,7 +184,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * A list of comments posted for the return request
+     * A list of comments posted for the return request.
      */
     public List<ReturnComment> getComments() {
         return (List<ReturnComment>) get("comments");
@@ -196,7 +196,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * The date the return was requested
+     * The date the return was requested.
      */
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -208,7 +208,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * The data from customer who created the return request
+     * Data from the customer who created the return request.
      */
     public ReturnCustomer getCustomer() {
         return (ReturnCustomer) get("customer");
@@ -220,7 +220,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * A list of items being returned
+     * A list of items being returned.
      */
     public List<ReturnItem> getItems() {
         return (List<ReturnItem>) get("items");
@@ -232,7 +232,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * Human-readable return number
+     * A human-readable return number.
      */
     public String getNumber() {
         return (String) get("number");
@@ -244,7 +244,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * The order associated with the return
+     * The order associated with the return.
      */
     public CustomerOrder getOrder() {
         return (CustomerOrder) get("order");
@@ -256,7 +256,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * Shipping information for the return
+     * Shipping information for the return.
      */
     public ReturnShipping getShipping() {
         return (ReturnShipping) get("shipping");
@@ -268,7 +268,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * The status of the return request
+     * The status of the return request.
      */
     public ReturnStatus getStatus() {
         return (ReturnStatus) get("status");
@@ -280,7 +280,7 @@ public class Return extends AbstractResponse<Return> {
     }
 
     /**
-     * The unique ID for a `Return` object
+     * The unique ID for a `Return` object.
      */
     public ID getUid() {
         return (ID) get("uid");

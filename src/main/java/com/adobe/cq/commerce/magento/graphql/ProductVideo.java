@@ -104,7 +104,7 @@ public class ProductVideo extends AbstractResponse<ProductVideo> implements Medi
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public Boolean getDisabled() {
         return (Boolean) get("disabled");
@@ -152,7 +152,7 @@ public class ProductVideo extends AbstractResponse<ProductVideo> implements Medi
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesVideoContent object.
+     * Contains a `ProductMediaGalleryEntriesVideoContent` object.
      */
     public ProductMediaGalleryEntriesVideoContent getVideoContent() {
         return (ProductMediaGalleryEntriesVideoContent) get("video_content");

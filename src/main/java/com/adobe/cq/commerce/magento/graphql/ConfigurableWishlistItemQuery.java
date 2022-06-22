@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A configurable product wish list item
+ * A configurable product wish list item.
  */
 public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWishlistItemQuery> {
     ConfigurableWishlistItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public ConfigurableWishlistItemQuery addedAt() {
         startField("added_at");
@@ -35,7 +35,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * The SKU of the simple product corresponding to a set of selected configurable options
+     * The SKU of the simple product corresponding to a set of selected configurable options.
      */
     public ConfigurableWishlistItemQuery childSku() {
         startField("child_sku");
@@ -44,7 +44,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * An array of selected configurable options
+     * An array of selected configurable options.
      */
     public ConfigurableWishlistItemQuery configurableOptions(SelectedConfigurableOptionQueryDefinition queryDef) {
         startField("configurable_options");
@@ -57,7 +57,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public ConfigurableWishlistItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -70,7 +70,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public ConfigurableWishlistItemQuery description() {
         startField("description");
@@ -79,7 +79,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public ConfigurableWishlistItemQuery id() {
         startField("id");
@@ -88,7 +88,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public ConfigurableWishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -101,7 +101,7 @@ public class ConfigurableWishlistItemQuery extends AbstractQuery<ConfigurableWis
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public ConfigurableWishlistItemQuery quantity() {
         startField("quantity");

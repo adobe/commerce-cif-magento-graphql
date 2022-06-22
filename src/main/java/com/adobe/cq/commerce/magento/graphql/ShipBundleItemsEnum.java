@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration defines whether bundle items must be shipped together.
+ * Defines whether bundle items must be shipped together.
  */
 public enum ShipBundleItemsEnum {
     SEPARATELY,

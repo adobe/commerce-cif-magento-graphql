@@ -20,6 +20,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Specifies the IDs of items to copy and their quantities.
+ */
 public class WishlistItemCopyInput implements Serializable {
     private ID wishlistItemId;
 
@@ -30,14 +33,14 @@ public class WishlistItemCopyInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object to be copied
+     * The unique ID of the `WishlistItemInterface` object to be copied.
      */
     public ID getWishlistItemId() {
         return wishlistItemId;
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object to be copied
+     * The unique ID of the `WishlistItemInterface` object to be copied.
      */
     public WishlistItemCopyInput setWishlistItemId(ID wishlistItemId) {
         this.wishlistItemId = wishlistItemId;

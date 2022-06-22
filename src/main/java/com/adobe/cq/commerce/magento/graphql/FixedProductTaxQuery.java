@@ -26,7 +26,7 @@ public class FixedProductTaxQuery extends AbstractQuery<FixedProductTaxQuery> {
     }
 
     /**
-     * Amount of the FPT as a money object.
+     * The amount of the Fixed Product Tax.
      */
     public FixedProductTaxQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
@@ -39,7 +39,7 @@ public class FixedProductTaxQuery extends AbstractQuery<FixedProductTaxQuery> {
     }
 
     /**
-     * The label assigned to the FPT to be displayed on the frontend.
+     * The display label assigned to the Fixed Product Tax.
      */
     public FixedProductTaxQuery label() {
         startField("label");

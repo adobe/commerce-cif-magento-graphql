@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contain details about the reward points transaction.
+ */
 public class RewardPointsBalanceHistoryItem extends AbstractResponse<RewardPointsBalanceHistoryItem> {
     public RewardPointsBalanceHistoryItem() {}
 
@@ -75,7 +78,7 @@ public class RewardPointsBalanceHistoryItem extends AbstractResponse<RewardPoint
     }
 
     /**
-     * Reward points balance after the completion of the transaction
+     * The award points balance after the completion of the transaction.
      */
     public RewardPointsAmount getBalance() {
         return (RewardPointsAmount) get("balance");
@@ -87,7 +90,7 @@ public class RewardPointsBalanceHistoryItem extends AbstractResponse<RewardPoint
     }
 
     /**
-     * The reason the balance changed
+     * The reason the balance changed.
      */
     public String getChangeReason() {
         return (String) get("change_reason");
@@ -99,7 +102,7 @@ public class RewardPointsBalanceHistoryItem extends AbstractResponse<RewardPoint
     }
 
     /**
-     * Transaction date
+     * The date of the transaction.
      */
     public String getDate() {
         return (String) get("date");
@@ -111,7 +114,7 @@ public class RewardPointsBalanceHistoryItem extends AbstractResponse<RewardPoint
     }
 
     /**
-     * The number of points added or deducted in the transaction
+     * The number of points added or deducted in the transaction.
      */
     public Double getPointsChange() {
         return (Double) get("points_change");

@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The key-value type
+ * Contains a key-value pair.
  */
 public class KeyValue extends AbstractResponse<KeyValue> {
     public KeyValue() {}
@@ -71,7 +71,7 @@ public class KeyValue extends AbstractResponse<KeyValue> {
     }
 
     /**
-     * The name part of the name/value pair
+     * The name part of the key/value pair.
      */
     public String getName() {
         return (String) get("name");
@@ -83,7 +83,7 @@ public class KeyValue extends AbstractResponse<KeyValue> {
     }
 
     /**
-     * The value part of the name/value pair
+     * The value part of the key/value pair.
      */
     public String getValue() {
         return (String) get("value");

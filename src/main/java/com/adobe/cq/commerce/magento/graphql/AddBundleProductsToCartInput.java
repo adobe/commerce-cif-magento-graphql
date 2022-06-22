@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the bundle products to add to the cart.
+ */
 public class AddBundleProductsToCartInput implements Serializable {
     private String cartId;
 
@@ -30,19 +33,31 @@ public class AddBundleProductsToCartInput implements Serializable {
         this.cartItems = cartItems;
     }
 
+    /**
+     * The ID of the cart.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The ID of the cart.
+     */
     public AddBundleProductsToCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of bundle products to add.
+     */
     public List<BundleProductCartItemInput> getCartItems() {
         return cartItems;
     }
 
+    /**
+     * An array of bundle products to add.
+     */
     public AddBundleProductsToCartInput setCartItems(List<BundleProductCartItemInput> cartItems) {
         this.cartItems = cartItems;
         return this;

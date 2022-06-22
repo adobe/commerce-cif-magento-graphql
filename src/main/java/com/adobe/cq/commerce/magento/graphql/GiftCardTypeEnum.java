@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration defines the types of gift cards
+ * Specifies the gift card type.
  */
 public enum GiftCardTypeEnum {
     COMBINED,

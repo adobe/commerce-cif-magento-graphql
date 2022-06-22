@@ -17,35 +17,53 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a single downloadable product.
+ */
 public class CustomerDownloadableProductQuery extends AbstractQuery<CustomerDownloadableProductQuery> {
     CustomerDownloadableProductQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The date and time the purchase was made.
+     */
     public CustomerDownloadableProductQuery date() {
         startField("date");
 
         return this;
     }
 
+    /**
+     * The fully qualified URL to the download file.
+     */
     public CustomerDownloadableProductQuery downloadUrl() {
         startField("download_url");
 
         return this;
     }
 
+    /**
+     * The unique ID assigned to the item.
+     */
     public CustomerDownloadableProductQuery orderIncrementId() {
         startField("order_increment_id");
 
         return this;
     }
 
+    /**
+     * The remaining number of times the customer can download the product.
+     */
     public CustomerDownloadableProductQuery remainingDownloads() {
         startField("remaining_downloads");
 
         return this;
     }
 
+    /**
+     * Indicates when the product becomes available for download. Options are `Pending` and `Invoiced`.
+     */
     public CustomerDownloadableProductQuery status() {
         startField("status");
 

@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines a value for a configurable product option.
+ */
 public class ConfigurableProductOptionValue extends AbstractResponse<ConfigurableProductOptionValue> {
     public ConfigurableProductOptionValue() {}
 
@@ -81,6 +84,9 @@ public class ConfigurableProductOptionValue extends AbstractResponse<Configurabl
         return "ConfigurableProductOptionValue";
     }
 
+    /**
+     * Indicates whether the product is available with this selected option.
+     */
     public Boolean getIsAvailable() {
         return (Boolean) get("is_available");
     }
@@ -90,6 +96,9 @@ public class ConfigurableProductOptionValue extends AbstractResponse<Configurabl
         return this;
     }
 
+    /**
+     * Indicates whether the value is the default.
+     */
     public Boolean getIsUseDefault() {
         return (Boolean) get("is_use_default");
     }
@@ -99,6 +108,9 @@ public class ConfigurableProductOptionValue extends AbstractResponse<Configurabl
         return this;
     }
 
+    /**
+     * The display name of the value.
+     */
     public String getLabel() {
         return (String) get("label");
     }
@@ -108,6 +120,9 @@ public class ConfigurableProductOptionValue extends AbstractResponse<Configurabl
         return this;
     }
 
+    /**
+     * The URL assigned to the thumbnail of the swatch image.
+     */
     public SwatchDataInterface getSwatch() {
         return (SwatchDataInterface) get("swatch");
     }
@@ -117,6 +132,9 @@ public class ConfigurableProductOptionValue extends AbstractResponse<Configurabl
         return this;
     }
 
+    /**
+     * The unique ID of the value.
+     */
     public ID getUid() {
         return (ID) get("uid");
     }

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the completed product review.
+ */
 public class CreateProductReviewOutput extends AbstractResponse<CreateProductReviewOutput> {
     public CreateProductReviewOutput() {}
 
@@ -52,7 +55,7 @@ public class CreateProductReviewOutput extends AbstractResponse<CreateProductRev
     }
 
     /**
-     * Contains the completed product review
+     * Product review details.
      */
     public ProductReview getReview() {
         return (ProductReview) get("review");

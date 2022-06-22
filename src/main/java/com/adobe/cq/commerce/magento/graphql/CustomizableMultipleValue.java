@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableMultipleValue defines the price and sku of a product whose page contains a customized
- * multiselect.
+ * Defines the price and sku of a product whose page contains a customized multiselect.
  */
 public class CustomizableMultipleValue extends AbstractResponse<CustomizableMultipleValue> {
     public CustomizableMultipleValue() {}

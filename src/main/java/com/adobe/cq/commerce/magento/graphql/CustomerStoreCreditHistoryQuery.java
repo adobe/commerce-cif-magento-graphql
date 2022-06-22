@@ -39,7 +39,7 @@ public class CustomerStoreCreditHistoryQuery extends AbstractQuery<CustomerStore
     }
 
     /**
-     * An object that includes the current_page page_info and page_size values specified in the query.
+     * Metadata for pagination rendering.
      */
     public CustomerStoreCreditHistoryQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");

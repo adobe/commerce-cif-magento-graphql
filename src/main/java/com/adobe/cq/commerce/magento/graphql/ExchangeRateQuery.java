@@ -17,17 +17,26 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Lists the exchange rate.
+ */
 public class ExchangeRateQuery extends AbstractQuery<ExchangeRateQuery> {
     ExchangeRateQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * Specifies the store’s default currency to exchange to.
+     */
     public ExchangeRateQuery currencyTo() {
         startField("currency_to");
 
         return this;
     }
 
+    /**
+     * The exchange rate for the store’s default currency.
+     */
     public ExchangeRateQuery rate() {
         startField("rate");
 

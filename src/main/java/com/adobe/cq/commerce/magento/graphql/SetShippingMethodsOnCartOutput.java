@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after setting the shipping methods.
+ */
 public class SetShippingMethodsOnCartOutput extends AbstractResponse<SetShippingMethodsOnCartOutput> {
     public SetShippingMethodsOnCartOutput() {}
 
@@ -51,6 +54,9 @@ public class SetShippingMethodsOnCartOutput extends AbstractResponse<SetShipping
         return "SetShippingMethodsOnCartOutput";
     }
 
+    /**
+     * The cart after setting the shipping methods.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

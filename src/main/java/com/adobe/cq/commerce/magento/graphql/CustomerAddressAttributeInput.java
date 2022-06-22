@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Specifies the attribute code and value of a customer attribute.
+ */
 public class CustomerAddressAttributeInput implements Serializable {
     private String attributeCode;
 
@@ -30,14 +33,14 @@ public class CustomerAddressAttributeInput implements Serializable {
     }
 
     /**
-     * Attribute code
+     * The name assigned to the attribute.
      */
     public String getAttributeCode() {
         return attributeCode;
     }
 
     /**
-     * Attribute code
+     * The name assigned to the attribute.
      */
     public CustomerAddressAttributeInput setAttributeCode(String attributeCode) {
         this.attributeCode = attributeCode;
@@ -45,14 +48,14 @@ public class CustomerAddressAttributeInput implements Serializable {
     }
 
     /**
-     * Attribute value
+     * The value assigned to the attribute.
      */
     public String getValue() {
         return value;
     }
 
     /**
-     * Attribute value
+     * The value assigned to the attribute.
      */
     public CustomerAddressAttributeInput setValue(String value) {
         this.value = value;

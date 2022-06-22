@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines a single shipping address.
+ */
 public class ShippingAddressInput implements Serializable {
     private Input<CartAddressInput> address = Input.undefined();
 
@@ -28,19 +31,31 @@ public class ShippingAddressInput implements Serializable {
 
     private Input<String> pickupLocationCode = Input.undefined();
 
+    /**
+     * Defines a shipping address.
+     */
     public CartAddressInput getAddress() {
         return address.getValue();
     }
 
+    /**
+     * Defines a shipping address.
+     */
     public Input<CartAddressInput> getAddressInput() {
         return address;
     }
 
+    /**
+     * Defines a shipping address.
+     */
     public ShippingAddressInput setAddress(CartAddressInput address) {
         this.address = Input.optional(address);
         return this;
     }
 
+    /**
+     * Defines a shipping address.
+     */
     public ShippingAddressInput setAddressInput(Input<CartAddressInput> address) {
         if (address == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -49,19 +64,31 @@ public class ShippingAddressInput implements Serializable {
         return this;
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for shipping.
+     */
     public Integer getCustomerAddressId() {
         return customerAddressId.getValue();
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for shipping.
+     */
     public Input<Integer> getCustomerAddressIdInput() {
         return customerAddressId;
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for shipping.
+     */
     public ShippingAddressInput setCustomerAddressId(Integer customerAddressId) {
         this.customerAddressId = Input.optional(customerAddressId);
         return this;
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for shipping.
+     */
     public ShippingAddressInput setCustomerAddressIdInput(Input<Integer> customerAddressId) {
         if (customerAddressId == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -70,19 +97,31 @@ public class ShippingAddressInput implements Serializable {
         return this;
     }
 
+    /**
+     * Text provided by the shopper.
+     */
     public String getCustomerNotes() {
         return customerNotes.getValue();
     }
 
+    /**
+     * Text provided by the shopper.
+     */
     public Input<String> getCustomerNotesInput() {
         return customerNotes;
     }
 
+    /**
+     * Text provided by the shopper.
+     */
     public ShippingAddressInput setCustomerNotes(String customerNotes) {
         this.customerNotes = Input.optional(customerNotes);
         return this;
     }
 
+    /**
+     * Text provided by the shopper.
+     */
     public ShippingAddressInput setCustomerNotesInput(Input<String> customerNotes) {
         if (customerNotes == null) {
             throw new IllegalArgumentException("Input can not be null");

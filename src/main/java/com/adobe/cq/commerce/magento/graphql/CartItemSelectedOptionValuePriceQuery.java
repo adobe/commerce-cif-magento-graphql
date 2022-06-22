@@ -17,23 +17,35 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the price of a selected customizable value.
+ */
 public class CartItemSelectedOptionValuePriceQuery extends AbstractQuery<CartItemSelectedOptionValuePriceQuery> {
     CartItemSelectedOptionValuePriceQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * Indicates whether the price type is fixed, percent, or dynamic.
+     */
     public CartItemSelectedOptionValuePriceQuery type() {
         startField("type");
 
         return this;
     }
 
+    /**
+     * A string that describes the unit of the value.
+     */
     public CartItemSelectedOptionValuePriceQuery units() {
         startField("units");
 
         return this;
     }
 
+    /**
+     * A price value.
+     */
     public CartItemSelectedOptionValuePriceQuery value() {
         startField("value");
 

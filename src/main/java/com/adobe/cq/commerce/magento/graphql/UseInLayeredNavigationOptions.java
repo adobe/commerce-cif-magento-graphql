@@ -14,6 +14,9 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Defines whether the attribute is filterable in layered navigation.
+ */
 public enum UseInLayeredNavigationOptions {
     FILTERABLE_NO_RESULT,
 

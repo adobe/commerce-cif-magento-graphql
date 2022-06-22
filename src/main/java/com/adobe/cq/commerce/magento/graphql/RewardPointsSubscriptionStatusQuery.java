@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Indicates whether the customer subscribes to reward points emails.
+ */
 public class RewardPointsSubscriptionStatusQuery extends AbstractQuery<RewardPointsSubscriptionStatusQuery> {
     RewardPointsSubscriptionStatusQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Customer subscription status to &#39;Reward points balance updates&#39; emails
+     * Indicates whether the customer subscribes to &#39;Reward points balance updates&#39; emails.
      */
     public RewardPointsSubscriptionStatusQuery balanceUpdates() {
         startField("balance_updates");
@@ -32,7 +35,7 @@ public class RewardPointsSubscriptionStatusQuery extends AbstractQuery<RewardPoi
     }
 
     /**
-     * Customer subscription status to &#39;Reward points expiration notifications&#39; emails
+     * Indicates whether the customer subscribes to &#39;Reward points expiration notifications&#39; emails.
      */
     public RewardPointsSubscriptionStatusQuery pointsExpirationNotifications() {
         startField("points_expiration_notifications");

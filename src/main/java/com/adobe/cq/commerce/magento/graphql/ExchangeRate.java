@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Lists the exchange rate.
+ */
 public class ExchangeRate extends AbstractResponse<ExchangeRate> {
     public ExchangeRate() {}
 
@@ -67,6 +70,9 @@ public class ExchangeRate extends AbstractResponse<ExchangeRate> {
         return "ExchangeRate";
     }
 
+    /**
+     * Specifies the store’s default currency to exchange to.
+     */
     public String getCurrencyTo() {
         return (String) get("currency_to");
     }
@@ -76,6 +82,9 @@ public class ExchangeRate extends AbstractResponse<ExchangeRate> {
         return this;
     }
 
+    /**
+     * The exchange rate for the store’s default currency.
+     */
     public Double getRate() {
         return (Double) get("rate");
     }

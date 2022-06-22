@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines aggregation option fields.
+ */
 public class AggregationOptionInterfaceQuery extends AbstractQuery<AggregationOptionInterfaceQuery> {
     AggregationOptionInterfaceQuery(StringBuilder _queryBuilder) {
         this(_queryBuilder, true);
@@ -39,7 +42,7 @@ public class AggregationOptionInterfaceQuery extends AbstractQuery<AggregationOp
     }
 
     /**
-     * Aggregation option display label.
+     * The display label for an aggregation option.
      */
     public AggregationOptionInterfaceQuery label() {
         startField("label");

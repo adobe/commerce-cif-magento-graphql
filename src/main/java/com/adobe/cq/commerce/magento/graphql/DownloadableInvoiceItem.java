@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines downloadable product options for `InvoiceItemInterface`.
+ */
 public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoiceItem> implements InvoiceItemInterface {
     public DownloadableInvoiceItem() {}
 
@@ -142,8 +145,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -155,7 +157,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * A list of downloadable links that are invoiced from the downloadable product
+     * A list of downloadable links that are invoiced from the downloadable product.
      */
     public List<DownloadableItemsLinks> getDownloadableLinks() {
         return (List<DownloadableItemsLinks>) get("downloadable_links");
@@ -167,7 +169,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -179,7 +181,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -191,7 +193,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -203,7 +205,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -215,7 +217,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -227,7 +229,7 @@ public class DownloadableInvoiceItem extends AbstractResponse<DownloadableInvoic
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public Double getQuantityInvoiced() {
         return (Double) get("quantity_invoiced");

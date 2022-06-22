@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * DownloadableProductSamples defines characteristics of a downloadable product
+ * Defines characteristics of a downloadable product.
  */
 public class DownloadableProductSamples extends AbstractResponse<DownloadableProductSamples> {
     public DownloadableProductSamples() {}
@@ -115,7 +115,7 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     }
 
     /**
-     * @deprecated This information should not be exposed on frontend
+     * @deprecated This information should not be exposed on frontend.
      */
     @Deprecated
     public Integer getId() {
@@ -154,7 +154,7 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     }
 
     /**
-     * URL to the downloadable sample
+     * The full URL to the downloadable sample.
      */
     public String getSampleUrl() {
         return (String) get("sample_url");
@@ -166,7 +166,7 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     }
 
     /**
-     * A number indicating the sort order
+     * A number indicating the sort order.
      */
     public Integer getSortOrder() {
         return (Integer) get("sort_order");
@@ -178,7 +178,7 @@ public class DownloadableProductSamples extends AbstractResponse<DownloadablePro
     }
 
     /**
-     * The display name of the sample
+     * The display name of the sample.
      */
     public String getTitle() {
         return (String) get("title");

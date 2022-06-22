@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains information about the sender and recipients.
+ */
 public class SendEmailToFriendOutput extends AbstractResponse<SendEmailToFriendOutput> {
     public SendEmailToFriendOutput() {}
 
@@ -79,6 +82,9 @@ public class SendEmailToFriendOutput extends AbstractResponse<SendEmailToFriendO
         return "SendEmailToFriendOutput";
     }
 
+    /**
+     * An array containing information about each recipient.
+     */
     public List<SendEmailToFriendRecipient> getRecipients() {
         return (List<SendEmailToFriendRecipient>) get("recipients");
     }
@@ -88,6 +94,9 @@ public class SendEmailToFriendOutput extends AbstractResponse<SendEmailToFriendO
         return this;
     }
 
+    /**
+     * Information about the customer and the content of the message.
+     */
     public SendEmailToFriendSender getSender() {
         return (SendEmailToFriendSender) get("sender");
     }

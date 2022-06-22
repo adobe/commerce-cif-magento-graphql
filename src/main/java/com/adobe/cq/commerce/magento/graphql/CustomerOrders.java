@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The collection of orders that match the conditions defined in the filter
+ * The collection of orders that match the conditions defined in the filter.
  */
 public class CustomerOrders extends AbstractResponse<CustomerOrders> {
     public CustomerOrders() {}
@@ -89,7 +89,7 @@ public class CustomerOrders extends AbstractResponse<CustomerOrders> {
     }
 
     /**
-     * An array of customer orders
+     * An array of customer orders.
      */
     public List<CustomerOrder> getItems() {
         return (List<CustomerOrder>) get("items");
@@ -101,7 +101,7 @@ public class CustomerOrders extends AbstractResponse<CustomerOrders> {
     }
 
     /**
-     * An object that includes the current_page, page_info, and page_size values specified in the query
+     * Contains pagination metadata.
      */
     public SearchResultPageInfo getPageInfo() {
         return (SearchResultPageInfo) get("page_info");
@@ -113,7 +113,7 @@ public class CustomerOrders extends AbstractResponse<CustomerOrders> {
     }
 
     /**
-     * The total count of customer orders
+     * The total count of customer orders.
      */
     public Integer getTotalCount() {
         return (Integer) get("total_count");

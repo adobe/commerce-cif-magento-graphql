@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A gift card product wish list item
+ * A single gift card added to a wish list.
  */
 public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistItemQuery> {
     GiftCardWishlistItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistIte
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public GiftCardWishlistItemQuery addedAt() {
         startField("added_at");
@@ -35,7 +35,7 @@ public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistIte
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public GiftCardWishlistItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -48,7 +48,7 @@ public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistIte
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public GiftCardWishlistItemQuery description() {
         startField("description");
@@ -56,6 +56,9 @@ public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistIte
         return this;
     }
 
+    /**
+     * Details about a gift card.
+     */
     public GiftCardWishlistItemQuery giftCardOptions(GiftCardOptionsQueryDefinition queryDef) {
         startField("gift_card_options");
 
@@ -67,7 +70,7 @@ public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistIte
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public GiftCardWishlistItemQuery id() {
         startField("id");
@@ -76,7 +79,7 @@ public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistIte
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public GiftCardWishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -89,7 +92,7 @@ public class GiftCardWishlistItemQuery extends AbstractQuery<GiftCardWishlistIte
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public GiftCardWishlistItemQuery quantity() {
         startField("quantity");

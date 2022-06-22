@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains a single dynamic block.
+ */
 public class DynamicBlock extends AbstractResponse<DynamicBlock> {
     public DynamicBlock() {}
 
@@ -59,7 +62,7 @@ public class DynamicBlock extends AbstractResponse<DynamicBlock> {
     }
 
     /**
-     * Contains the renderable HTML code of the dynamic block
+     * The renderable HTML code of the dynamic block.
      */
     public ComplexTextValue getContent() {
         return (ComplexTextValue) get("content");
@@ -71,7 +74,7 @@ public class DynamicBlock extends AbstractResponse<DynamicBlock> {
     }
 
     /**
-     * The unique ID of a `DynamicBlock` object
+     * The unique ID of a `DynamicBlock` object.
      */
     public ID getUid() {
         return (ID) get("uid");

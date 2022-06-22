@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Defines the possible output for the removeGiftCardFromCart mutation
+ * Defines the possible output for the `removeGiftCardFromCart` mutation.
  */
 public class RemoveGiftCardFromCartOutput extends AbstractResponse<RemoveGiftCardFromCartOutput> {
     public RemoveGiftCardFromCartOutput() {}
@@ -55,7 +55,7 @@ public class RemoveGiftCardFromCartOutput extends AbstractResponse<RemoveGiftCar
     }
 
     /**
-     * Describes the contents of the specified shopping cart
+     * The contents of the specified shopping cart.
      */
     public Cart getCart() {
         return (Cart) get("cart");

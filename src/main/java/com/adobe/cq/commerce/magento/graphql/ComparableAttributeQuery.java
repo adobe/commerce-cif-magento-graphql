@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains an attribute code that is used for product comparisons.
+ */
 public class ComparableAttributeQuery extends AbstractQuery<ComparableAttributeQuery> {
     ComparableAttributeQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An attribute code that is enabled for product comparisons
+     * An attribute code that is enabled for product comparisons.
      */
     public ComparableAttributeQuery code() {
         startField("code");
@@ -32,7 +35,7 @@ public class ComparableAttributeQuery extends AbstractQuery<ComparableAttributeQ
     }
 
     /**
-     * The label of the attribute code
+     * The label of the attribute code.
      */
     public ComparableAttributeQuery label() {
         startField("label");

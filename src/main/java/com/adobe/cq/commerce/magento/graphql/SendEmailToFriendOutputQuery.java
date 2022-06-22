@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains information about the sender and recipients.
+ */
 public class SendEmailToFriendOutputQuery extends AbstractQuery<SendEmailToFriendOutputQuery> {
     SendEmailToFriendOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An array containing information about each recipient.
+     */
     public SendEmailToFriendOutputQuery recipients(SendEmailToFriendRecipientQueryDefinition queryDef) {
         startField("recipients");
 
@@ -32,6 +38,9 @@ public class SendEmailToFriendOutputQuery extends AbstractQuery<SendEmailToFrien
         return this;
     }
 
+    /**
+     * Information about the customer and the content of the message.
+     */
     public SendEmailToFriendOutputQuery sender(SendEmailToFriendSenderQueryDefinition queryDef) {
         startField("sender");
 

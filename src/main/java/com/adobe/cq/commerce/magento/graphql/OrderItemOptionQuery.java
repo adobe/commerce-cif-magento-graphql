@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Represents order item options like selected or entered
+ * Represents order item options like selected or entered.
  */
 public class OrderItemOptionQuery extends AbstractQuery<OrderItemOptionQuery> {
     OrderItemOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class OrderItemOptionQuery extends AbstractQuery<OrderItemOptionQuery> {
     }
 
     /**
-     * The name of the option
+     * The name of the option.
      */
     public OrderItemOptionQuery label() {
         startField("label");
@@ -35,7 +35,7 @@ public class OrderItemOptionQuery extends AbstractQuery<OrderItemOptionQuery> {
     }
 
     /**
-     * The value of the option
+     * The value of the option.
      */
     public OrderItemOptionQuery value() {
         startField("value");

@@ -19,7 +19,7 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * Required input for payment methods with Vault support.
+ * Contains required input for payment methods with Vault support.
  */
 public class VaultTokenInput implements Serializable {
     private String publicHash;
@@ -29,14 +29,14 @@ public class VaultTokenInput implements Serializable {
     }
 
     /**
-     * The public hash of the payment token
+     * The public hash of the payment token.
      */
     public String getPublicHash() {
         return publicHash;
     }
 
     /**
-     * The public hash of the payment token
+     * The public hash of the payment token.
      */
     public VaultTokenInput setPublicHash(String publicHash) {
         this.publicHash = publicHash;

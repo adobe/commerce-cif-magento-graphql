@@ -19,10 +19,10 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 
 /**
- * A set of relative URLs that PayPal will use in response to various actions during the authorization
- * process. Magento prepends the base URL to this value to create a full URL. For example, if the full
- * URL is https://www.example.com/path/to/page.html, the relative URL is path/to/page.html. Use this
- * input for Payments Pro Hosted Solution payment method.
+ * Contains a set of relative URLs that PayPal uses in response to various actions during the
+ * authorization process. Magento prepends the base URL to this value to create a full URL. For
+ * example, if the full URL is https://www.example.com/path/to/page.html, the relative URL is
+ * path/to/page.html. Use this input for Payments Pro Hosted Solution payment method.
  */
 public class HostedProInput implements Serializable {
     private String cancelUrl;
@@ -36,8 +36,8 @@ public class HostedProInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in
-     * order to choose a different payment method. If the full URL to this page is
+     * The relative URL of the page that PayPal redirects to when the buyer cancels the transaction in
+     * order to choose a different payment method. For example, if the full URL to this page is
      * https://www.example.com/paypal/action/cancel.html, the relative URL is paypal/action/cancel.html.
      */
     public String getCancelUrl() {
@@ -45,8 +45,8 @@ public class HostedProInput implements Serializable {
     }
 
     /**
-     * The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in
-     * order to choose a different payment method. If the full URL to this page is
+     * The relative URL of the page that PayPal redirects to when the buyer cancels the transaction in
+     * order to choose a different payment method. For example, if the full URL to this page is
      * https://www.example.com/paypal/action/cancel.html, the relative URL is paypal/action/cancel.html.
      */
     public HostedProInput setCancelUrl(String cancelUrl) {
@@ -55,18 +55,18 @@ public class HostedProInput implements Serializable {
     }
 
     /**
-     * The relative URL of the final confirmation page that PayPal will redirect to upon payment success.
-     * If the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL
-     * is paypal/action/return.html.
+     * The relative URL of the final confirmation page that PayPal redirects to upon payment success. For
+     * example, if the full URL to this page is https://www.example.com/paypal/action/return.html, the
+     * relative URL is paypal/action/return.html.
      */
     public String getReturnUrl() {
         return returnUrl;
     }
 
     /**
-     * The relative URL of the final confirmation page that PayPal will redirect to upon payment success.
-     * If the full URL to this page is https://www.example.com/paypal/action/return.html, the relative URL
-     * is paypal/action/return.html.
+     * The relative URL of the final confirmation page that PayPal redirects to upon payment success. For
+     * example, if the full URL to this page is https://www.example.com/paypal/action/return.html, the
+     * relative URL is paypal/action/return.html.
      */
     public HostedProInput setReturnUrl(String returnUrl) {
         this.returnUrl = returnUrl;

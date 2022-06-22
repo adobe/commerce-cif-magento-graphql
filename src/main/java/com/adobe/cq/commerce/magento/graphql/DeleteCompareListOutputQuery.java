@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of the request to delete a compare list.
+ */
 public class DeleteCompareListOutputQuery extends AbstractQuery<DeleteCompareListOutputQuery> {
     DeleteCompareListOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Indicates whether the compare list was successfully deleted
+     * Indicates whether the compare list was successfully deleted.
      */
     public DeleteCompareListOutputQuery result() {
         startField("result");

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Order shipment item details
+ * Order shipment item details.
  */
 public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterfaceQuery> {
     ShipmentItemInterfaceQuery(StringBuilder _queryBuilder) {
@@ -33,7 +33,7 @@ public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterf
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public ShipmentItemInterfaceQuery id() {
         startField("id");
@@ -42,7 +42,7 @@ public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterf
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public ShipmentItemInterfaceQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -55,7 +55,7 @@ public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterf
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public ShipmentItemInterfaceQuery productName() {
         startField("product_name");
@@ -64,7 +64,7 @@ public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterf
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public ShipmentItemInterfaceQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -77,7 +77,7 @@ public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterf
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public ShipmentItemInterfaceQuery productSku() {
         startField("product_sku");
@@ -86,7 +86,7 @@ public class ShipmentItemInterfaceQuery extends AbstractQuery<ShipmentItemInterf
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public ShipmentItemInterfaceQuery quantityShipped() {
         startField("quantity_shipped");

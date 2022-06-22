@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains a single dynamic block.
+ */
 public class DynamicBlockQuery extends AbstractQuery<DynamicBlockQuery> {
     DynamicBlockQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains the renderable HTML code of the dynamic block
+     * The renderable HTML code of the dynamic block.
      */
     public DynamicBlockQuery content(ComplexTextValueQueryDefinition queryDef) {
         startField("content");
@@ -36,7 +39,7 @@ public class DynamicBlockQuery extends AbstractQuery<DynamicBlockQuery> {
     }
 
     /**
-     * The unique ID of a `DynamicBlock` object
+     * The unique ID of a `DynamicBlock` object.
      */
     public DynamicBlockQuery uid() {
         startField("uid");

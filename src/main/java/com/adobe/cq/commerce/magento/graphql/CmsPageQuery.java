@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CMS page defines all CMS page information
+ * Contains details about a CMS page.
  */
 public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     CmsPageQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * CMS page content
+     * The content of the CMS page in raw HTML.
      */
     public CmsPageQuery content() {
         startField("content");
@@ -35,7 +35,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * CMS page content heading
+     * The heading that displays at the top of the CMS page.
      */
     public CmsPageQuery contentHeading() {
         startField("content_heading");
@@ -44,7 +44,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * Identifier of the CMS page
+     * The ID of a CMS page.
      */
     public CmsPageQuery identifier() {
         startField("identifier");
@@ -53,7 +53,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * CMS page meta description
+     * A brief description of the page for search results listings.
      */
     public CmsPageQuery metaDescription() {
         startField("meta_description");
@@ -62,7 +62,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * CMS page meta keywords
+     * A brief description of the page for search results listings.
      */
     public CmsPageQuery metaKeywords() {
         startField("meta_keywords");
@@ -71,7 +71,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * CMS page meta title
+     * A page title that is indexed by search engines and appears in search results listings.
      */
     public CmsPageQuery metaTitle() {
         startField("meta_title");
@@ -80,7 +80,8 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * CMS page content heading
+     * The design layout of the page, indicating the number of columns and navigation features used on the
+     * page.
      */
     public CmsPageQuery pageLayout() {
         startField("page_layout");
@@ -90,7 +91,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public CmsPageQuery redirectCode() {
         startField("redirect_code");
@@ -100,7 +101,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public CmsPageQuery relativeUrl() {
         startField("relative_url");
@@ -109,7 +110,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * CMS page title
+     * The name that appears in the breadcrumb trail navigation and in the browser title bar and tab.
      */
     public CmsPageQuery title() {
         startField("title");
@@ -127,7 +128,7 @@ public class CmsPageQuery extends AbstractQuery<CmsPageQuery> {
     }
 
     /**
-     * URL key of CMS page
+     * The URL key of the CMS page, which is often based on the `content_heading`.
      */
     public CmsPageQuery urlKey() {
         startField("url_key");

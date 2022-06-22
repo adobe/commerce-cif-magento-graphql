@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the result of the `subscribeEmailToNewsletter` operation.
+ */
 public class SubscribeEmailToNewsletterOutput extends AbstractResponse<SubscribeEmailToNewsletterOutput> {
     public SubscribeEmailToNewsletterOutput() {}
 
@@ -57,7 +60,7 @@ public class SubscribeEmailToNewsletterOutput extends AbstractResponse<Subscribe
     }
 
     /**
-     * Returns the status of the subscription request
+     * The status of the subscription request.
      */
     public SubscriptionStatusesEnum getStatus() {
         return (SubscriptionStatusesEnum) get("status");

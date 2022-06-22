@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Defines the possible output for the applyGiftCardToCart mutation
+ * Defines the possible output for the `applyGiftCardToCart` mutation.
  */
 public class ApplyGiftCardToCartOutput extends AbstractResponse<ApplyGiftCardToCartOutput> {
     public ApplyGiftCardToCartOutput() {}
@@ -55,7 +55,7 @@ public class ApplyGiftCardToCartOutput extends AbstractResponse<ApplyGiftCardToC
     }
 
     /**
-     * Describes the contents of the specified shopping cart
+     * Describes the contents of the specified shopping cart.
      */
     public Cart getCart() {
         return (Cart) get("cart");

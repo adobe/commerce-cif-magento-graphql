@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableRadioValue defines the price and sku of a product whose page contains a customized set
- * of radio buttons.
+ * Defines the price and sku of a product whose page contains a customized set of radio buttons.
  */
 public class CustomizableRadioValue extends AbstractResponse<CustomizableRadioValue> {
     public CustomizableRadioValue() {}

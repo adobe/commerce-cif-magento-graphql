@@ -20,7 +20,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
 /**
- * CustomerAddressRegionInput defines the customer&#39;s state or province
+ * Defines the customer&#39;s state or province.
  */
 public class CustomerAddressRegionInput implements Serializable {
     private Input<String> region = Input.undefined();
@@ -30,21 +30,21 @@ public class CustomerAddressRegionInput implements Serializable {
     private Input<Integer> regionId = Input.undefined();
 
     /**
-     * The state or province name
+     * The state or province name.
      */
     public String getRegion() {
         return region.getValue();
     }
 
     /**
-     * The state or province name
+     * The state or province name.
      */
     public Input<String> getRegionInput() {
         return region;
     }
 
     /**
-     * The state or province name
+     * The state or province name.
      */
     public CustomerAddressRegionInput setRegion(String region) {
         this.region = Input.optional(region);
@@ -52,7 +52,7 @@ public class CustomerAddressRegionInput implements Serializable {
     }
 
     /**
-     * The state or province name
+     * The state or province name.
      */
     public CustomerAddressRegionInput setRegionInput(Input<String> region) {
         if (region == null) {
@@ -63,21 +63,21 @@ public class CustomerAddressRegionInput implements Serializable {
     }
 
     /**
-     * The address region code
+     * The address region code.
      */
     public String getRegionCode() {
         return regionCode.getValue();
     }
 
     /**
-     * The address region code
+     * The address region code.
      */
     public Input<String> getRegionCodeInput() {
         return regionCode;
     }
 
     /**
-     * The address region code
+     * The address region code.
      */
     public CustomerAddressRegionInput setRegionCode(String regionCode) {
         this.regionCode = Input.optional(regionCode);
@@ -85,7 +85,7 @@ public class CustomerAddressRegionInput implements Serializable {
     }
 
     /**
-     * The address region code
+     * The address region code.
      */
     public CustomerAddressRegionInput setRegionCodeInput(Input<String> regionCode) {
         if (regionCode == null) {
@@ -96,21 +96,21 @@ public class CustomerAddressRegionInput implements Serializable {
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a pre-defined region.
      */
     public Integer getRegionId() {
         return regionId.getValue();
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a pre-defined region.
      */
     public Input<Integer> getRegionIdInput() {
         return regionId;
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a pre-defined region.
      */
     public CustomerAddressRegionInput setRegionId(Integer regionId) {
         this.regionId = Input.optional(regionId);
@@ -118,7 +118,7 @@ public class CustomerAddressRegionInput implements Serializable {
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a pre-defined region.
      */
     public CustomerAddressRegionInput setRegionIdInput(Input<Integer> regionId) {
         if (regionId == null) {

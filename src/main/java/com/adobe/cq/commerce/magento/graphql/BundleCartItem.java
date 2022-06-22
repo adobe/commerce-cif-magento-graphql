@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * An implementation for bundle product cart items.
+ */
 public class BundleCartItem extends AbstractResponse<BundleCartItem> implements CartItemInterface {
     public BundleCartItem() {}
 
@@ -154,7 +157,7 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
     }
 
     /**
-     * The list of available gift wrapping options for the cart item
+     * The list of available gift wrapping options for the cart item.
      */
     public List<GiftWrapping> getAvailableGiftWrapping() {
         return (List<GiftWrapping>) get("available_gift_wrapping");
@@ -165,6 +168,9 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
         return this;
     }
 
+    /**
+     * An array containing the bundle options the shopper selected.
+     */
     public List<SelectedBundleOption> getBundleOptions() {
         return (List<SelectedBundleOption>) get("bundle_options");
     }
@@ -174,6 +180,9 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
         return this;
     }
 
+    /**
+     * An array containing the customizable options the shopper selected.
+     */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
     }
@@ -196,7 +205,7 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
     }
 
     /**
-     * The selected gift wrapping for the cart item
+     * The selected gift wrapping for the cart item.
      */
     public GiftWrapping getGiftWrapping() {
         return (GiftWrapping) get("gift_wrapping");
@@ -208,7 +217,7 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public String getId() {
@@ -220,6 +229,9 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public CartItemPrices getPrices() {
         return (CartItemPrices) get("prices");
     }
@@ -229,6 +241,9 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
     }
@@ -238,6 +253,9 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public Double getQuantity() {
         return (Double) get("quantity");
     }
@@ -248,7 +266,7 @@ public class BundleCartItem extends AbstractResponse<BundleCartItem> implements 
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public ID getUid() {
         return (ID) get("uid");

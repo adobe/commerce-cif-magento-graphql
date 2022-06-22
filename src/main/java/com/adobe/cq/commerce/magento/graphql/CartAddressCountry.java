@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details the country in a billing or shipping address.
+ */
 public class CartAddressCountry extends AbstractResponse<CartAddressCountry> {
     public CartAddressCountry() {}
 
@@ -57,6 +60,9 @@ public class CartAddressCountry extends AbstractResponse<CartAddressCountry> {
         return "CartAddressCountry";
     }
 
+    /**
+     * The country code.
+     */
     public String getCode() {
         return (String) get("code");
     }
@@ -66,6 +72,9 @@ public class CartAddressCountry extends AbstractResponse<CartAddressCountry> {
         return this;
     }
 
+    /**
+     * The display label for the country.
+     */
     public String getLabel() {
         return (String) get("label");
     }

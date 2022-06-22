@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Defines the possible output for the removeStoreCreditFromCart mutation
+ * Defines the possible output for the `removeStoreCreditFromCart` mutation.
  */
 public class RemoveStoreCreditFromCartOutput extends AbstractResponse<RemoveStoreCreditFromCartOutput> {
     public RemoveStoreCreditFromCartOutput() {}
@@ -55,7 +55,7 @@ public class RemoveStoreCreditFromCartOutput extends AbstractResponse<RemoveStor
     }
 
     /**
-     * Describes the contents of the specified shopping cart
+     * The contents of the specified shopping cart.
      */
     public Cart getCart() {
         return (Cart) get("cart");

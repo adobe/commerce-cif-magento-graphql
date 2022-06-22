@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CMS block defines all CMS block information
+ * Contains details about a specific CMS block.
  */
 public class CmsBlock extends AbstractResponse<CmsBlock> {
     public CmsBlock() {}
@@ -82,7 +82,7 @@ public class CmsBlock extends AbstractResponse<CmsBlock> {
     }
 
     /**
-     * CMS block content
+     * The content of the CMS block in raw HTML.
      */
     public String getContent() {
         return (String) get("content");
@@ -94,7 +94,7 @@ public class CmsBlock extends AbstractResponse<CmsBlock> {
     }
 
     /**
-     * CMS block identifier
+     * The CMS block identifier.
      */
     public String getIdentifier() {
         return (String) get("identifier");
@@ -106,7 +106,7 @@ public class CmsBlock extends AbstractResponse<CmsBlock> {
     }
 
     /**
-     * CMS block title
+     * The title assigned to the CMS block.
      */
     public String getTitle() {
         return (String) get("title");

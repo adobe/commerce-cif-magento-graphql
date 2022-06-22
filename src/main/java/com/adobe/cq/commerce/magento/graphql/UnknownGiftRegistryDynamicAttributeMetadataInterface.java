@@ -102,7 +102,7 @@ public class UnknownGiftRegistryDynamicAttributeMetadataInterface extends
     }
 
     /**
-     * Indicates which group the dynamic attribute a member of
+     * Indicates which group the dynamic attribute a member of.
      */
     public String getAttributeGroup() {
         return (String) get("attribute_group");
@@ -114,7 +114,7 @@ public class UnknownGiftRegistryDynamicAttributeMetadataInterface extends
     }
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     public ID getCode() {
         return (ID) get("code");
@@ -127,7 +127,7 @@ public class UnknownGiftRegistryDynamicAttributeMetadataInterface extends
 
     /**
      * The selected input type for this dynamic attribute. The value can be one of several static or custom
-     * types
+     * types.
      */
     public String getInputType() {
         return (String) get("input_type");
@@ -139,7 +139,7 @@ public class UnknownGiftRegistryDynamicAttributeMetadataInterface extends
     }
 
     /**
-     * Indicates whether the dynamic attribute is required
+     * Indicates whether the dynamic attribute is required.
      */
     public Boolean getIsRequired() {
         return (Boolean) get("is_required");
@@ -151,7 +151,7 @@ public class UnknownGiftRegistryDynamicAttributeMetadataInterface extends
     }
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     public String getLabel() {
         return (String) get("label");
@@ -163,7 +163,7 @@ public class UnknownGiftRegistryDynamicAttributeMetadataInterface extends
     }
 
     /**
-     * The order in which to display the dynamic attribute
+     * The order in which to display the dynamic attribute.
      */
     public Integer getSortOrder() {
         return (Integer) get("sort_order");

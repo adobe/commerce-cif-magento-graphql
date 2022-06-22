@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * This enumeration indicates whether to return results in ascending or descending order
+ * Indicates whether to return results in ascending or descending order.
  */
 public enum SortEnum {
     ASC,

@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableFileValue defines the price and sku of a product whose page contains a customized file
- * picker.
+ * Defines the price and sku of a product whose page contains a customized file picker.
  */
 public class CustomizableFileValue extends AbstractResponse<CustomizableFileValue> {
     public CustomizableFileValue() {}

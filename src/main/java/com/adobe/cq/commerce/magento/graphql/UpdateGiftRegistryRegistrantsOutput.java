@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results a request to update registrants.
+ */
 public class UpdateGiftRegistryRegistrantsOutput extends AbstractResponse<UpdateGiftRegistryRegistrantsOutput> {
     public UpdateGiftRegistryRegistrantsOutput() {}
 
@@ -57,7 +60,7 @@ public class UpdateGiftRegistryRegistrantsOutput extends AbstractResponse<Update
     }
 
     /**
-     * The gift registry after updating registrants
+     * The gift registry after updating registrants.
      */
     public GiftRegistry getGiftRegistry() {
         return (GiftRegistry) get("gift_registry");

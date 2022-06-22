@@ -24,9 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Customer defines the customer name and address and other details
+ * Defines the customer name, addresses, and other details.
  */
-public class Customer extends AbstractResponse<Customer> {
+public class Customer extends AbstractResponse<Customer> implements CompanyStructureEntity {
     public Customer() {}
 
     public Customer(JsonObject fields) throws SchemaViolationError {
@@ -225,6 +225,17 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "job_title": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "lastname": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -262,6 +273,17 @@ public class Customer extends AbstractResponse<Customer> {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "requisition_lists": {
+                    RequisitionLists optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new RequisitionLists(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -308,6 +330,28 @@ public class Customer extends AbstractResponse<Customer> {
                     break;
                 }
 
+                case "role": {
+                    CompanyRole optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CompanyRole(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "status": {
+                    CompanyUserStatusEnum optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = CompanyUserStatusEnum.fromGraphQl(jsonAsString(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "store_credit": {
                     CustomerStoreCredit optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -331,6 +375,28 @@ public class Customer extends AbstractResponse<Customer> {
                 }
 
                 case "taxvat": {
+                    String optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = jsonAsString(field.getValue(), key);
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "team": {
+                    CompanyTeam optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new CompanyTeam(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "telephone": {
                     String optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = jsonAsString(field.getValue(), key);
@@ -391,7 +457,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * An array containing the customer&#39;s shipping and billing addresses
+     * An array containing the customer&#39;s shipping and billing addresses.
      */
     public List<CustomerAddress> getAddresses() {
         return (List<CustomerAddress>) get("addresses");
@@ -403,7 +469,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Indicates whether the customer has enabled remote shopping assistance
+     * Indicates whether the customer has enabled remote shopping assistance.
      */
     public Boolean getAllowRemoteShoppingAssistance() {
         return (Boolean) get("allow_remote_shopping_assistance");
@@ -415,7 +481,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The contents of the customer&#39;s compare list
+     * The contents of the customer&#39;s compare list.
      */
     public CompareList getCompareList() {
         return (CompareList) get("compare_list");
@@ -427,7 +493,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Timestamp indicating when the account was created
+     * Timestamp indicating when the account was created.
      */
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -439,7 +505,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      */
     public String getDateOfBirth() {
         return (String) get("date_of_birth");
@@ -451,7 +517,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The ID assigned to the billing address
+     * The ID assigned to the billing address.
      */
     public String getDefaultBilling() {
         return (String) get("default_billing");
@@ -463,7 +529,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The ID assigned to the shipping address
+     * The ID assigned to the shipping address.
      */
     public String getDefaultShipping() {
         return (String) get("default_shipping");
@@ -475,9 +541,9 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      *
-     * @deprecated Use `date_of_birth` instead
+     * @deprecated Use `date_of_birth` instead.
      */
     @Deprecated
     public String getDob() {
@@ -490,7 +556,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s email address. Required
+     * The customer&#39;s email address. Required.
      */
     public String getEmail() {
         return (String) get("email");
@@ -502,7 +568,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s first name
+     * The customer&#39;s first name.
      */
     public String getFirstname() {
         return (String) get("firstname");
@@ -514,7 +580,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s gender (Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2).
      */
     public Integer getGender() {
         return (Integer) get("gender");
@@ -526,7 +592,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Details about all of the customer&#39;s gift registries
+     * Details about all of the customer&#39;s gift registries.
      */
     public List<GiftRegistry> getGiftRegistries() {
         return (List<GiftRegistry>) get("gift_registries");
@@ -538,7 +604,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Details about a specific gift registry
+     * Details about a specific gift registry.
      */
     public GiftRegistry getGiftRegistry() {
         return (GiftRegistry) get("gift_registry");
@@ -550,7 +616,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * @deprecated Customer group should not be exposed in the storefront scenarios
+     * @deprecated Customer group should not be exposed in the storefront scenarios.
      */
     @Deprecated
     public Integer getGroupId() {
@@ -563,10 +629,10 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The ID assigned to the customer
+     * The ID assigned to the customer.
      *
-     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for
-     *             authentication. There is no need to know customer ID on the client side.
+     * @deprecated `id` is not needed as part of `Customer`, because on the server side, it can be identified based on the customer token
+     *             used for authentication. There is no need to know customer ID on the client side.
      */
     @Deprecated
     public Integer getId() {
@@ -579,7 +645,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter.
      */
     public Boolean getIsSubscribed() {
         return (Boolean) get("is_subscribed");
@@ -591,7 +657,19 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s family name
+     * The job title of a company user.
+     */
+    public String getJobTitle() {
+        return (String) get("job_title");
+    }
+
+    public Customer setJobTitle(String arg) {
+        optimisticData.put(getKey("job_title"), arg);
+        return this;
+    }
+
+    /**
+     * The customer&#39;s family name.
      */
     public String getLastname() {
         return (String) get("lastname");
@@ -603,7 +681,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s middle name
+     * The customer&#39;s middle name.
      */
     public String getMiddlename() {
         return (String) get("middlename");
@@ -636,7 +714,19 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Retrieves details about the specified return request from the unique ID for a `Return` object
+     * An object that contains the customer&#39;s requisition lists.
+     */
+    public RequisitionLists getRequisitionLists() {
+        return (RequisitionLists) get("requisition_lists");
+    }
+
+    public Customer setRequisitionLists(RequisitionLists arg) {
+        optimisticData.put(getKey("requisition_lists"), arg);
+        return this;
+    }
+
+    /**
+     * Details about the specified return request from the unique ID for a `Return` object.
      */
     public Return getReturn() {
         return (Return) get("return");
@@ -660,7 +750,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Contains the customer&#39;s product reviews
+     * Contains the customer&#39;s product reviews.
      */
     public ProductReviews getReviews() {
         return (ProductReviews) get("reviews");
@@ -672,7 +762,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Customer reward points details
+     * Customer reward points details.
      */
     public RewardPoints getRewardPoints() {
         return (RewardPoints) get("reward_points");
@@ -684,7 +774,31 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Contains the store credit information applied for the logged in customer
+     * The role name and permissions assigned to the company user.
+     */
+    public CompanyRole getRole() {
+        return (CompanyRole) get("role");
+    }
+
+    public Customer setRole(CompanyRole arg) {
+        optimisticData.put(getKey("role"), arg);
+        return this;
+    }
+
+    /**
+     * Indicates whether the company user is ACTIVE or INACTIVE.
+     */
+    public CompanyUserStatusEnum getStatus() {
+        return (CompanyUserStatusEnum) get("status");
+    }
+
+    public Customer setStatus(CompanyUserStatusEnum arg) {
+        optimisticData.put(getKey("status"), arg);
+        return this;
+    }
+
+    /**
+     * Store credit information applied for the logged in customer.
      */
     public CustomerStoreCredit getStoreCredit() {
         return (CustomerStoreCredit) get("store_credit");
@@ -696,7 +810,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public String getSuffix() {
         return (String) get("suffix");
@@ -708,7 +822,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers).
      */
     public String getTaxvat() {
         return (String) get("taxvat");
@@ -720,9 +834,33 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Contains a customer&#39;s wish lists
+     * The team the company user is assigned to.
+     */
+    public CompanyTeam getTeam() {
+        return (CompanyTeam) get("team");
+    }
+
+    public Customer setTeam(CompanyTeam arg) {
+        optimisticData.put(getKey("team"), arg);
+        return this;
+    }
+
+    /**
+     * The phone number of the company user.
+     */
+    public String getTelephone() {
+        return (String) get("telephone");
+    }
+
+    public Customer setTelephone(String arg) {
+        optimisticData.put(getKey("telephone"), arg);
+        return this;
+    }
+
+    /**
+     * Return a customer&#39;s wish lists.
      *
-     * @deprecated Use `Customer.wishlists` or `Customer.wishlist_v2`
+     * @deprecated Use `Customer.wishlists` or `Customer.wishlist_v2` instead.
      */
     @Deprecated
     public Wishlist getWishlist() {
@@ -735,7 +873,7 @@ public class Customer extends AbstractResponse<Customer> {
     }
 
     /**
-     * Retrieve the specified wish list identified by the unique ID for a `Wishlist` object
+     * Retrieve the wish list identified by the unique ID for a `Wishlist` object.
      */
     public Wishlist getWishlistV2() {
         return (Wishlist) get("wishlist_v2");
@@ -748,7 +886,7 @@ public class Customer extends AbstractResponse<Customer> {
 
     /**
      * An array of wishlists. In Magento Open Source, customers are limited to one wish list. The number of
-     * wish lists is configurable for Magento Commerce
+     * wish lists is configurable for Adobe Commerce.
      */
     public List<Wishlist> getWishlists() {
         return (List<Wishlist>) get("wishlists");
@@ -809,6 +947,9 @@ public class Customer extends AbstractResponse<Customer> {
             case "is_subscribed":
                 return false;
 
+            case "job_title":
+                return false;
+
             case "lastname":
                 return false;
 
@@ -820,6 +961,9 @@ public class Customer extends AbstractResponse<Customer> {
 
             case "prefix":
                 return false;
+
+            case "requisition_lists":
+                return true;
 
             case "return":
                 return true;
@@ -833,6 +977,12 @@ public class Customer extends AbstractResponse<Customer> {
             case "reward_points":
                 return true;
 
+            case "role":
+                return true;
+
+            case "status":
+                return false;
+
             case "store_credit":
                 return true;
 
@@ -840,6 +990,12 @@ public class Customer extends AbstractResponse<Customer> {
                 return false;
 
             case "taxvat":
+                return false;
+
+            case "team":
+                return true;
+
+            case "telephone":
                 return false;
 
             case "wishlist":

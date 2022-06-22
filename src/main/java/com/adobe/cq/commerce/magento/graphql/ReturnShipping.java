@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the return shipping address.
+ */
 public class ReturnShipping extends AbstractResponse<ReturnShipping> {
     public ReturnShipping() {}
 
@@ -80,7 +83,7 @@ public class ReturnShipping extends AbstractResponse<ReturnShipping> {
     }
 
     /**
-     * The merchant-defined return shipping address
+     * The merchant-defined return shipping address.
      */
     public ReturnShippingAddress getAddress() {
         return (ReturnShippingAddress) get("address");
@@ -92,8 +95,8 @@ public class ReturnShipping extends AbstractResponse<ReturnShipping> {
     }
 
     /**
-     * The unique ID for a `ReturnShippingTracking` object. If a single UID is specified, contains a single
-     * tracking record. Otherwise, contains all tracking information
+     * The unique ID for a `ReturnShippingTracking` object. If a single UID is specified, the array
+     * contains a single tracking record. Otherwise, array contains all tracking information.
      */
     public List<ReturnShippingTracking> getTracking() {
         return (List<ReturnShippingTracking>) get("tracking");

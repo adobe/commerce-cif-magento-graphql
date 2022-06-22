@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Contains details about the sender.
+ */
 public class SendEmailToFriendSenderInput implements Serializable {
     private String email;
 
@@ -33,28 +36,46 @@ public class SendEmailToFriendSenderInput implements Serializable {
         this.name = name;
     }
 
+    /**
+     * The email address of the sender.
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * The email address of the sender.
+     */
     public SendEmailToFriendSenderInput setEmail(String email) {
         this.email = email;
         return this;
     }
 
+    /**
+     * The text of the message to be sent.
+     */
     public String getMessage() {
         return message;
     }
 
+    /**
+     * The text of the message to be sent.
+     */
     public SendEmailToFriendSenderInput setMessage(String message) {
         this.message = message;
         return this;
     }
 
+    /**
+     * The name of the sender.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * The name of the sender.
+     */
     public SendEmailToFriendSenderInput setName(String name) {
         this.name = name;
         return this;

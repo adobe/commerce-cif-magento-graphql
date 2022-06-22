@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableAreaOption contains information about a text area that is defined as part of a
- * customizable option.
+ * Contains information about a text area that is defined as part of a customizable option.
  */
 public class CustomizableAreaOptionQuery extends AbstractQuery<CustomizableAreaOptionQuery> {
     CustomizableAreaOptionQuery(StringBuilder _queryBuilder) {

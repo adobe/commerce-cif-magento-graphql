@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Customer return
+ * Contains details about a return.
  */
 public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     ReturnQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * A list of shipping carriers available for returns
+     * A list of shipping carriers available for returns.
      */
     public ReturnQuery availableShippingCarriers(ReturnShippingCarrierQueryDefinition queryDef) {
         startField("available_shipping_carriers");
@@ -39,7 +39,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * A list of comments posted for the return request
+     * A list of comments posted for the return request.
      */
     public ReturnQuery comments(ReturnCommentQueryDefinition queryDef) {
         startField("comments");
@@ -52,7 +52,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * The date the return was requested
+     * The date the return was requested.
      */
     public ReturnQuery createdAt() {
         startField("created_at");
@@ -61,7 +61,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * The data from customer who created the return request
+     * Data from the customer who created the return request.
      */
     public ReturnQuery customer(ReturnCustomerQueryDefinition queryDef) {
         startField("customer");
@@ -74,7 +74,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * A list of items being returned
+     * A list of items being returned.
      */
     public ReturnQuery items(ReturnItemQueryDefinition queryDef) {
         startField("items");
@@ -87,7 +87,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * Human-readable return number
+     * A human-readable return number.
      */
     public ReturnQuery number() {
         startField("number");
@@ -96,7 +96,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * The order associated with the return
+     * The order associated with the return.
      */
     public ReturnQuery order(CustomerOrderQueryDefinition queryDef) {
         startField("order");
@@ -109,7 +109,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * Shipping information for the return
+     * Shipping information for the return.
      */
     public ReturnQuery shipping(ReturnShippingQueryDefinition queryDef) {
         startField("shipping");
@@ -122,7 +122,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * The status of the return request
+     * The status of the return request.
      */
     public ReturnQuery status() {
         startField("status");
@@ -131,7 +131,7 @@ public class ReturnQuery extends AbstractQuery<ReturnQuery> {
     }
 
     /**
-     * The unique ID for a `Return` object
+     * The unique ID for a `Return` object.
      */
     public ReturnQuery uid() {
         startField("uid");

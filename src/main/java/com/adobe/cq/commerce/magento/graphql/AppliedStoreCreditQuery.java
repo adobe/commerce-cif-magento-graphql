@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Applied and current balance
+ * Contains the applied and current balances.
  */
 public class AppliedStoreCreditQuery extends AbstractQuery<AppliedStoreCreditQuery> {
     AppliedStoreCreditQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class AppliedStoreCreditQuery extends AbstractQuery<AppliedStoreCreditQue
     }
 
     /**
-     * Applied store credit balance to the current cart
+     * The applied store credit balance to the current cart.
      */
     public AppliedStoreCreditQuery appliedBalance(MoneyQueryDefinition queryDef) {
         startField("applied_balance");
@@ -39,7 +39,7 @@ public class AppliedStoreCreditQuery extends AbstractQuery<AppliedStoreCreditQue
     }
 
     /**
-     * Current balance remaining on store credit
+     * The current balance remaining on store credit.
      */
     public AppliedStoreCreditQuery currentBalance(MoneyQueryDefinition queryDef) {
         startField("current_balance");
@@ -53,7 +53,7 @@ public class AppliedStoreCreditQuery extends AbstractQuery<AppliedStoreCreditQue
 
     /**
      * Indicates whether store credits are enabled. If the feature is disabled, then the current balance
-     * will not be returned
+     * will not be returned.
      */
     public AppliedStoreCreditQuery enabled() {
         startField("enabled");

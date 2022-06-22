@@ -23,7 +23,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * Selected gift card properties for an shipment item
+     * Selected gift card properties for a shipment item.
      */
     public GiftCardShipmentItemQuery giftCard(GiftCardItemQueryDefinition queryDef) {
         startField("gift_card");
@@ -36,7 +36,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     public GiftCardShipmentItemQuery id() {
         startField("id");
@@ -45,7 +45,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     public GiftCardShipmentItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -58,7 +58,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     public GiftCardShipmentItemQuery productName() {
         startField("product_name");
@@ -67,7 +67,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     public GiftCardShipmentItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -80,7 +80,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public GiftCardShipmentItemQuery productSku() {
         startField("product_sku");
@@ -89,7 +89,7 @@ public class GiftCardShipmentItemQuery extends AbstractQuery<GiftCardShipmentIte
     }
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     public GiftCardShipmentItemQuery quantityShipped() {
         startField("quantity_shipped");

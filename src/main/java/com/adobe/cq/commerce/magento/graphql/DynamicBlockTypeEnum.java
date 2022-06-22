@@ -14,6 +14,9 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Indicates the selected Dynamic Blocks Rotator inline widget.
+ */
 public enum DynamicBlockTypeEnum {
     CART_PRICE_RULE_RELATED,
 

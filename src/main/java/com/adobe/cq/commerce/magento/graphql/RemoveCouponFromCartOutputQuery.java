@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after removing a coupon.
+ */
 public class RemoveCouponFromCartOutputQuery extends AbstractQuery<RemoveCouponFromCartOutputQuery> {
     RemoveCouponFromCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after removing a coupon.
+     */
     public RemoveCouponFromCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

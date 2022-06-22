@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Indicates where an attribute can be displayed.
+ */
 public class StorefrontPropertiesQuery extends AbstractQuery<StorefrontPropertiesQuery> {
     StorefrontPropertiesQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The relative position of the attribute in the layered navigation block
+     * The relative position of the attribute in the layered navigation block.
      */
     public StorefrontPropertiesQuery position() {
         startField("position");
@@ -32,7 +35,7 @@ public class StorefrontPropertiesQuery extends AbstractQuery<StorefrontPropertie
     }
 
     /**
-     * Indicates whether the attribute is filterable with results, without results, or not at all
+     * Indicates whether the attribute is filterable with results, without results, or not at all.
      */
     public StorefrontPropertiesQuery useInLayeredNavigation() {
         startField("use_in_layered_navigation");
@@ -41,7 +44,7 @@ public class StorefrontPropertiesQuery extends AbstractQuery<StorefrontPropertie
     }
 
     /**
-     * Indicates whether the attribute is displayed in product listings
+     * Indicates whether the attribute is displayed in product listings.
      */
     public StorefrontPropertiesQuery useInProductListing() {
         startField("use_in_product_listing");
@@ -50,7 +53,7 @@ public class StorefrontPropertiesQuery extends AbstractQuery<StorefrontPropertie
     }
 
     /**
-     * Indicates whether the attribute can be used in layered navigation on search results pages
+     * Indicates whether the attribute can be used in layered navigation on search results pages.
      */
     public StorefrontPropertiesQuery useInSearchResultsLayeredNavigation() {
         startField("use_in_search_results_layered_navigation");
@@ -59,7 +62,7 @@ public class StorefrontPropertiesQuery extends AbstractQuery<StorefrontPropertie
     }
 
     /**
-     * Indicates whether the attribute is displayed on product pages
+     * Indicates whether the attribute is displayed on product pages.
      */
     public StorefrontPropertiesQuery visibleOnCatalogPages() {
         startField("visible_on_catalog_pages");

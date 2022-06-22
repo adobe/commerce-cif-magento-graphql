@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines a possible sort field.
+ */
 public class SortFieldQuery extends AbstractQuery<SortFieldQuery> {
     SortFieldQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Label of sort field.
+     * The label of the sort field.
      */
     public SortFieldQuery label() {
         startField("label");
@@ -32,7 +35,7 @@ public class SortFieldQuery extends AbstractQuery<SortFieldQuery> {
     }
 
     /**
-     * Attribute code of sort field.
+     * The attribute code of the sort field.
      */
     public SortFieldQuery value() {
         startField("value");

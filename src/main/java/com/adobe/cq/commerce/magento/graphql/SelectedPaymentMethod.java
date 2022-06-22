@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Describes the payment method the shopper selected.
+ */
 public class SelectedPaymentMethod extends AbstractResponse<SelectedPaymentMethod> {
     public SelectedPaymentMethod() {}
 
@@ -69,7 +72,7 @@ public class SelectedPaymentMethod extends AbstractResponse<SelectedPaymentMetho
     }
 
     /**
-     * The payment method code
+     * The payment method code.
      */
     public String getCode() {
         return (String) get("code");

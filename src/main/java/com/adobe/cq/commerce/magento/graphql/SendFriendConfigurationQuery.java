@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the configuration of the Email to a Friend feature.
+ */
 public class SendFriendConfigurationQuery extends AbstractQuery<SendFriendConfigurationQuery> {
     SendFriendConfigurationQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);

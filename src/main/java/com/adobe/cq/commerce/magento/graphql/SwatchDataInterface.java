@@ -20,7 +20,7 @@ public interface SwatchDataInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Value of swatch item (HEX color code, image link or textual value)
+     * The value can be represented as color (HEX code), image link, or text.
      */
     String getValue();
 }

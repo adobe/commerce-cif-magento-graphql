@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The object details of target path parameters
+ * Contains target path parameters.
  */
 public class HttpQueryParameter extends AbstractResponse<HttpQueryParameter> {
     public HttpQueryParameter() {}
@@ -71,7 +71,7 @@ public class HttpQueryParameter extends AbstractResponse<HttpQueryParameter> {
     }
 
     /**
-     * Parameter name
+     * A parameter name.
      */
     public String getName() {
         return (String) get("name");
@@ -83,7 +83,7 @@ public class HttpQueryParameter extends AbstractResponse<HttpQueryParameter> {
     }
 
     /**
-     * Parameter value
+     * A parameter value.
      */
     public String getValue() {
         return (String) get("value");

@@ -19,7 +19,6 @@ import java.util.Map;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
-import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 public class Region extends AbstractResponse<Region> {
@@ -79,6 +78,9 @@ public class Region extends AbstractResponse<Region> {
         return "Region";
     }
 
+    /**
+     * The two-letter code for the region, such as TX for Texas.
+     */
     public String getCode() {
         return (String) get("code");
     }
@@ -100,6 +102,9 @@ public class Region extends AbstractResponse<Region> {
         return this;
     }
 
+    /**
+     * The name of the region, such as Texas.
+     */
     public String getName() {
         return (String) get("name");
     }

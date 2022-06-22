@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the result of the `isEmailAvailable` query.
+ */
 public class IsEmailAvailableOutput extends AbstractResponse<IsEmailAvailableOutput> {
     public IsEmailAvailableOutput() {}
 
@@ -57,7 +60,7 @@ public class IsEmailAvailableOutput extends AbstractResponse<IsEmailAvailableOut
     }
 
     /**
-     * Is email availabel value
+     * Indicates whether the specified email address can be used to create a customer.
      */
     public Boolean getIsEmailAvailable() {
         return (Boolean) get("is_email_available");

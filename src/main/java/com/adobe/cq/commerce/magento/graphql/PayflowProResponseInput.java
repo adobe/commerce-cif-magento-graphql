@@ -32,19 +32,31 @@ public class PayflowProResponseInput implements Serializable {
         this.paypalPayload = paypalPayload;
     }
 
+    /**
+     * The unique ID that identifies the shopper&#39;s cart.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID that identifies the shopper&#39;s cart.
+     */
     public PayflowProResponseInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * The payload returned from PayPal.
+     */
     public String getPaypalPayload() {
         return paypalPayload;
     }
 
+    /**
+     * The payload returned from PayPal.
+     */
     public PayflowProResponseInput setPaypalPayload(String paypalPayload) {
         this.paypalPayload = paypalPayload;
         return this;

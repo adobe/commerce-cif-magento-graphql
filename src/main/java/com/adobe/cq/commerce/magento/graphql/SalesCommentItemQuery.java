@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Comment item details
+ * Contains details about a comment.
  */
 public class SalesCommentItemQuery extends AbstractQuery<SalesCommentItemQuery> {
     SalesCommentItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class SalesCommentItemQuery extends AbstractQuery<SalesCommentItemQuery> 
     }
 
     /**
-     * The text of the message
+     * The text of the message.
      */
     public SalesCommentItemQuery message() {
         startField("message");
@@ -35,7 +35,7 @@ public class SalesCommentItemQuery extends AbstractQuery<SalesCommentItemQuery> 
     }
 
     /**
-     * The timestamp of the comment
+     * The timestamp of the comment.
      */
     public SalesCommentItemQuery timestamp() {
         startField("timestamp");

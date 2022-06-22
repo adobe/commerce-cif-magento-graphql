@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ConfigurableProductOptionsValues contains the index number assigned to a configurable product option
+ * Contains the index number assigned to a configurable product option.
  */
 public class ConfigurableProductOptionsValues extends AbstractResponse<ConfigurableProductOptionsValues> {
     public ConfigurableProductOptionsValues() {}
@@ -127,7 +127,7 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-     * The label of the product on the default store
+     * The label of the product on the default store.
      */
     public String getDefaultLabel() {
         return (String) get("default_label");
@@ -139,7 +139,7 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-     * The label of the product
+     * The label of the product.
      */
     public String getLabel() {
         return (String) get("label");
@@ -151,7 +151,7 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-     * The label of the product on the current store
+     * The label of the product on the current store.
      */
     public String getStoreLabel() {
         return (String) get("store_label");
@@ -163,7 +163,7 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-     * Swatch data for configurable product option
+     * Swatch data for a configurable product option.
      */
     public SwatchDataInterface getSwatchData() {
         return (SwatchDataInterface) get("swatch_data");
@@ -175,7 +175,7 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptionsValues` object
+     * The unique ID for a `ConfigurableProductOptionsValues` object.
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -187,7 +187,7 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-     * Indicates whether to use the default_label
+     * Indicates whether to use the default_label.
      */
     public Boolean getUseDefaultValue() {
         return (Boolean) get("use_default_value");
@@ -199,9 +199,9 @@ public class ConfigurableProductOptionsValues extends AbstractResponse<Configura
     }
 
     /**
-     * A unique index number assigned to the configurable product option
+     * A unique index number assigned to the configurable product option.
      *
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public Integer getValueIndex() {

@@ -39,7 +39,7 @@ public class ProductPriceQuery extends AbstractQuery<ProductPriceQuery> {
     }
 
     /**
-     * The final price of the product after discounts applied.
+     * The final price of the product after applying discounts.
      */
     public ProductPriceQuery finalPrice(MoneyQueryDefinition queryDef) {
         startField("final_price");
@@ -52,7 +52,7 @@ public class ProductPriceQuery extends AbstractQuery<ProductPriceQuery> {
     }
 
     /**
-     * The multiple FPTs that can be applied to a product price.
+     * An array of the multiple Fixed Product Taxes that can be applied to a product price.
      */
     public ProductPriceQuery fixedProductTaxes(FixedProductTaxQueryDefinition queryDef) {
         startField("fixed_product_taxes");

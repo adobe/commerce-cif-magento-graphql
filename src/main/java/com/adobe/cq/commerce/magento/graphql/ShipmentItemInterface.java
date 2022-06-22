@@ -18,39 +18,39 @@ import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
 /**
- * Order shipment item details
+ * Order shipment item details.
  */
 
 public interface ShipmentItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * The unique ID for a `ShipmentItemInterface` object
+     * The unique ID for a `ShipmentItemInterface` object.
      */
     ID getId();
 
     /**
-     * Associated order item
+     * The order item associated with the shipment item.
      */
     OrderItemInterface getOrderItem();
 
     /**
-     * Name of the base product
+     * The name of the base product.
      */
     String getProductName();
 
     /**
-     * Sale price for the base product
+     * The sale price for the base product.
      */
     Money getProductSalePrice();
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     String getProductSku();
 
     /**
-     * Number of shipped items
+     * The number of shipped items.
      */
     Double getQuantityShipped();
 }

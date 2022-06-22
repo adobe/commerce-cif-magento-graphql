@@ -17,29 +17,44 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines a value for a configurable product option.
+ */
 public class ConfigurableProductOptionValueQuery extends AbstractQuery<ConfigurableProductOptionValueQuery> {
     ConfigurableProductOptionValueQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * Indicates whether the product is available with this selected option.
+     */
     public ConfigurableProductOptionValueQuery isAvailable() {
         startField("is_available");
 
         return this;
     }
 
+    /**
+     * Indicates whether the value is the default.
+     */
     public ConfigurableProductOptionValueQuery isUseDefault() {
         startField("is_use_default");
 
         return this;
     }
 
+    /**
+     * The display name of the value.
+     */
     public ConfigurableProductOptionValueQuery label() {
         startField("label");
 
         return this;
     }
 
+    /**
+     * The URL assigned to the thumbnail of the swatch image.
+     */
     public ConfigurableProductOptionValueQuery swatch(SwatchDataInterfaceQueryDefinition queryDef) {
         startField("swatch");
 
@@ -50,6 +65,9 @@ public class ConfigurableProductOptionValueQuery extends AbstractQuery<Configura
         return this;
     }
 
+    /**
+     * The unique ID of the value.
+     */
     public ConfigurableProductOptionValueQuery uid() {
         startField("uid");
 

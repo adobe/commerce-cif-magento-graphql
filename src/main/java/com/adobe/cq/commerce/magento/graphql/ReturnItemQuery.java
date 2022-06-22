@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a product being returned.
+ */
 public class ReturnItemQuery extends AbstractQuery<ReturnItemQuery> {
     ReturnItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Return item custom attributes that are visible on the storefront
+     * Return item custom attributes that are visible on the storefront.
      */
     public ReturnItemQuery customAttributes(ReturnCustomAttributeQueryDefinition queryDef) {
         startField("custom_attributes");
@@ -37,7 +40,7 @@ public class ReturnItemQuery extends AbstractQuery<ReturnItemQuery> {
 
     /**
      * Provides access to the product being returned, including information about selected and entered
-     * options
+     * options.
      */
     public ReturnItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -50,7 +53,7 @@ public class ReturnItemQuery extends AbstractQuery<ReturnItemQuery> {
     }
 
     /**
-     * The quantity of the item the merchant authorized to be returned
+     * The quantity of the item the merchant authorized to be returned.
      */
     public ReturnItemQuery quantity() {
         startField("quantity");
@@ -59,7 +62,7 @@ public class ReturnItemQuery extends AbstractQuery<ReturnItemQuery> {
     }
 
     /**
-     * The quantity of the item requested to be returned
+     * The quantity of the item requested to be returned.
      */
     public ReturnItemQuery requestQuantity() {
         startField("request_quantity");
@@ -68,7 +71,7 @@ public class ReturnItemQuery extends AbstractQuery<ReturnItemQuery> {
     }
 
     /**
-     * The return status of the item
+     * The return status of the item.
      */
     public ReturnItemQuery status() {
         startField("status");
@@ -77,7 +80,7 @@ public class ReturnItemQuery extends AbstractQuery<ReturnItemQuery> {
     }
 
     /**
-     * The unique ID for a `ReturnItem` object
+     * The unique ID for a `ReturnItem` object.
      */
     public ReturnItemQuery uid() {
         startField("uid");

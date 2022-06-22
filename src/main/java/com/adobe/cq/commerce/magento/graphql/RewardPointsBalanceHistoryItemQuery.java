@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contain details about the reward points transaction.
+ */
 public class RewardPointsBalanceHistoryItemQuery extends AbstractQuery<RewardPointsBalanceHistoryItemQuery> {
     RewardPointsBalanceHistoryItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Reward points balance after the completion of the transaction
+     * The award points balance after the completion of the transaction.
      */
     public RewardPointsBalanceHistoryItemQuery balance(RewardPointsAmountQueryDefinition queryDef) {
         startField("balance");
@@ -36,7 +39,7 @@ public class RewardPointsBalanceHistoryItemQuery extends AbstractQuery<RewardPoi
     }
 
     /**
-     * The reason the balance changed
+     * The reason the balance changed.
      */
     public RewardPointsBalanceHistoryItemQuery changeReason() {
         startField("change_reason");
@@ -45,7 +48,7 @@ public class RewardPointsBalanceHistoryItemQuery extends AbstractQuery<RewardPoi
     }
 
     /**
-     * Transaction date
+     * The date of the transaction.
      */
     public RewardPointsBalanceHistoryItemQuery date() {
         startField("date");
@@ -54,7 +57,7 @@ public class RewardPointsBalanceHistoryItemQuery extends AbstractQuery<RewardPoi
     }
 
     /**
-     * The number of points added or deducted in the transaction
+     * The number of points added or deducted in the transaction.
      */
     public RewardPointsBalanceHistoryItemQuery pointsChange() {
         startField("points_change");

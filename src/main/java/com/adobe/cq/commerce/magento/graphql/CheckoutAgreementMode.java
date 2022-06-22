@@ -14,9 +14,18 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Indicates how agreements are accepted.
+ */
 public enum CheckoutAgreementMode {
+    /**
+     * Conditions are automatically accepted upon checkout.
+     */
     AUTO,
 
+    /**
+     * Shoppers must manually accept the conditions to place an order.
+     */
     MANUAL,
 
     UNKNOWN_VALUE;

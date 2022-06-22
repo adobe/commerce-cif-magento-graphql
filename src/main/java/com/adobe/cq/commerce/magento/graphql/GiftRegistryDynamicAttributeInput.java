@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Defines a dynamic attribute.
+ */
 public class GiftRegistryDynamicAttributeInput implements Serializable {
     private ID code;
 
@@ -31,14 +34,14 @@ public class GiftRegistryDynamicAttributeInput implements Serializable {
     }
 
     /**
-     * A unique key for an additional attribute of the event
+     * A unique key for an additional attribute of the event.
      */
     public ID getCode() {
         return code;
     }
 
     /**
-     * A unique key for an additional attribute of the event
+     * A unique key for an additional attribute of the event.
      */
     public GiftRegistryDynamicAttributeInput setCode(ID code) {
         this.code = code;
@@ -46,14 +49,14 @@ public class GiftRegistryDynamicAttributeInput implements Serializable {
     }
 
     /**
-     * A string that describes a dynamic attribute
+     * A string that describes a dynamic attribute.
      */
     public String getValue() {
         return value;
     }
 
     /**
-     * A string that describes a dynamic attribute
+     * A string that describes a dynamic attribute.
      */
     public GiftRegistryDynamicAttributeInput setValue(String value) {
         this.value = value;

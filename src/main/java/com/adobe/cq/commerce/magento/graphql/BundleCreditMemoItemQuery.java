@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines bundle product options for `CreditMemoItemInterface`.
+ */
 public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoItemQuery> {
     BundleCreditMemoItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A list of bundle options that are assigned to the bundle product
+     * A list of bundle options that are assigned to a bundle product that is part of a credit memo.
      */
     public BundleCreditMemoItemQuery bundleOptions(ItemSelectedBundleOptionQueryDefinition queryDef) {
         startField("bundle_options");
@@ -36,8 +39,7 @@ public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoIte
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Details about the final discount amount for the base product, including discounts on options.
      */
     public BundleCreditMemoItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -50,7 +52,7 @@ public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoIte
     }
 
     /**
-     * The unique ID for a `CreditMemoItemInterface` object
+     * The unique ID for a `CreditMemoItemInterface` object.
      */
     public BundleCreditMemoItemQuery id() {
         startField("id");
@@ -59,7 +61,7 @@ public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoIte
     }
 
     /**
-     * The order item the credit memo is applied to
+     * The order item the credit memo is applied to.
      */
     public BundleCreditMemoItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -72,7 +74,7 @@ public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoIte
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public BundleCreditMemoItemQuery productName() {
         startField("product_name");
@@ -81,7 +83,7 @@ public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoIte
     }
 
     /**
-     * The sale price for the base product, including selected options
+     * The sale price for the base product, including selected options.
      */
     public BundleCreditMemoItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -94,7 +96,7 @@ public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoIte
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public BundleCreditMemoItemQuery productSku() {
         startField("product_sku");
@@ -103,7 +105,7 @@ public class BundleCreditMemoItemQuery extends AbstractQuery<BundleCreditMemoIte
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public BundleCreditMemoItemQuery quantityRefunded() {
         startField("quantity_refunded");

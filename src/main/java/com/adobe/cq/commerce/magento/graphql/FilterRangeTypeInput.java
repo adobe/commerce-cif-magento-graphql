@@ -28,21 +28,21 @@ public class FilterRangeTypeInput implements Serializable {
     private Input<String> to = Input.undefined();
 
     /**
-     * The beginning of the range
+     * Use this attribute to specify the lowest possible value in the range.
      */
     public String getFrom() {
         return from.getValue();
     }
 
     /**
-     * The beginning of the range
+     * Use this attribute to specify the lowest possible value in the range.
      */
     public Input<String> getFromInput() {
         return from;
     }
 
     /**
-     * The beginning of the range
+     * Use this attribute to specify the lowest possible value in the range.
      */
     public FilterRangeTypeInput setFrom(String from) {
         this.from = Input.optional(from);
@@ -50,7 +50,7 @@ public class FilterRangeTypeInput implements Serializable {
     }
 
     /**
-     * The beginning of the range
+     * Use this attribute to specify the lowest possible value in the range.
      */
     public FilterRangeTypeInput setFromInput(Input<String> from) {
         if (from == null) {
@@ -61,21 +61,21 @@ public class FilterRangeTypeInput implements Serializable {
     }
 
     /**
-     * The end of the range
+     * Use this attribute to specify the highest possible value in the range.
      */
     public String getTo() {
         return to.getValue();
     }
 
     /**
-     * The end of the range
+     * Use this attribute to specify the highest possible value in the range.
      */
     public Input<String> getToInput() {
         return to;
     }
 
     /**
-     * The end of the range
+     * Use this attribute to specify the highest possible value in the range.
      */
     public FilterRangeTypeInput setTo(String to) {
         this.to = Input.optional(to);
@@ -83,7 +83,7 @@ public class FilterRangeTypeInput implements Serializable {
     }
 
     /**
-     * The end of the range
+     * Use this attribute to specify the highest possible value in the range.
      */
     public FilterRangeTypeInput setToInput(Input<String> to) {
         if (to == null) {

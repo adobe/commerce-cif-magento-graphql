@@ -21,6 +21,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Contains details about an item to be returned.
+ */
 public class RequestReturnItemInput implements Serializable {
     private ID orderItemUid;
 
@@ -37,14 +40,14 @@ public class RequestReturnItemInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for a `OrderItemInterface` object.
      */
     public ID getOrderItemUid() {
         return orderItemUid;
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for a `OrderItemInterface` object.
      */
     public RequestReturnItemInput setOrderItemUid(ID orderItemUid) {
         this.orderItemUid = orderItemUid;
@@ -52,14 +55,14 @@ public class RequestReturnItemInput implements Serializable {
     }
 
     /**
-     * The quantity of the item to be returned
+     * The quantity of the item to be returned.
      */
     public double getQuantityToReturn() {
         return quantityToReturn;
     }
 
     /**
-     * The quantity of the item to be returned
+     * The quantity of the item to be returned.
      */
     public RequestReturnItemInput setQuantityToReturn(double quantityToReturn) {
         this.quantityToReturn = quantityToReturn;
@@ -67,21 +70,21 @@ public class RequestReturnItemInput implements Serializable {
     }
 
     /**
-     * Contains details about a custom attribute that was entered, such as text or a file
+     * Details about a custom attribute that was entered.
      */
     public List<EnteredCustomAttributeInput> getEnteredCustomAttributes() {
         return enteredCustomAttributes.getValue();
     }
 
     /**
-     * Contains details about a custom attribute that was entered, such as text or a file
+     * Details about a custom attribute that was entered.
      */
     public Input<List<EnteredCustomAttributeInput>> getEnteredCustomAttributesInput() {
         return enteredCustomAttributes;
     }
 
     /**
-     * Contains details about a custom attribute that was entered, such as text or a file
+     * Details about a custom attribute that was entered.
      */
     public RequestReturnItemInput setEnteredCustomAttributes(List<EnteredCustomAttributeInput> enteredCustomAttributes) {
         this.enteredCustomAttributes = Input.optional(enteredCustomAttributes);
@@ -89,7 +92,7 @@ public class RequestReturnItemInput implements Serializable {
     }
 
     /**
-     * Contains details about a custom attribute that was entered, such as text or a file
+     * Details about a custom attribute that was entered.
      */
     public RequestReturnItemInput setEnteredCustomAttributesInput(Input<List<EnteredCustomAttributeInput>> enteredCustomAttributes) {
         if (enteredCustomAttributes == null) {
@@ -101,7 +104,7 @@ public class RequestReturnItemInput implements Serializable {
 
     /**
      * An array of selected custom option IDs associated with the item to be returned. For example, the IDs
-     * for the selected color and size of a configurable product
+     * for the selected color and size of a configurable product.
      */
     public List<SelectedCustomAttributeInput> getSelectedCustomAttributes() {
         return selectedCustomAttributes.getValue();
@@ -109,7 +112,7 @@ public class RequestReturnItemInput implements Serializable {
 
     /**
      * An array of selected custom option IDs associated with the item to be returned. For example, the IDs
-     * for the selected color and size of a configurable product
+     * for the selected color and size of a configurable product.
      */
     public Input<List<SelectedCustomAttributeInput>> getSelectedCustomAttributesInput() {
         return selectedCustomAttributes;
@@ -117,7 +120,7 @@ public class RequestReturnItemInput implements Serializable {
 
     /**
      * An array of selected custom option IDs associated with the item to be returned. For example, the IDs
-     * for the selected color and size of a configurable product
+     * for the selected color and size of a configurable product.
      */
     public RequestReturnItemInput setSelectedCustomAttributes(List<SelectedCustomAttributeInput> selectedCustomAttributes) {
         this.selectedCustomAttributes = Input.optional(selectedCustomAttributes);
@@ -126,7 +129,7 @@ public class RequestReturnItemInput implements Serializable {
 
     /**
      * An array of selected custom option IDs associated with the item to be returned. For example, the IDs
-     * for the selected color and size of a configurable product
+     * for the selected color and size of a configurable product.
      */
     public RequestReturnItemInput setSelectedCustomAttributesInput(Input<List<SelectedCustomAttributeInput>> selectedCustomAttributes) {
         if (selectedCustomAttributes == null) {

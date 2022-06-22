@@ -57,7 +57,7 @@ public class ColorSwatchData extends AbstractResponse<ColorSwatchData> implement
     }
 
     /**
-     * Value of swatch item (HEX color code, image link or textual value)
+     * The value can be represented as color (HEX code), image link, or text.
      */
     public String getValue() {
         return (String) get("value");

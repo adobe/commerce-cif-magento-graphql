@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * An array containing all the simple product variants of a configurable product
+ * Contains all the simple product variants of a configurable product.
  */
 public class ConfigurableVariant extends AbstractResponse<ConfigurableVariant> {
     public ConfigurableVariant() {}
@@ -82,6 +82,9 @@ public class ConfigurableVariant extends AbstractResponse<ConfigurableVariant> {
         return "ConfigurableVariant";
     }
 
+    /**
+     * An array of configurable attribute options.
+     */
     public List<ConfigurableAttributeOption> getAttributes() {
         return (List<ConfigurableAttributeOption>) get("attributes");
     }
@@ -91,6 +94,9 @@ public class ConfigurableVariant extends AbstractResponse<ConfigurableVariant> {
         return this;
     }
 
+    /**
+     * An array of linked simple products.
+     */
     public SimpleProduct getProduct() {
         return (SimpleProduct) get("product");
     }

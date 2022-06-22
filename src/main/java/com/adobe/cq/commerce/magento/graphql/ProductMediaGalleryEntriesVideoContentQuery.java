@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ProductMediaGalleryEntriesVideoContent contains a link to a video file and basic information about
- * the video.
+ * Contains a link to a video file and basic information about the video.
  */
 public class ProductMediaGalleryEntriesVideoContentQuery extends AbstractQuery<ProductMediaGalleryEntriesVideoContentQuery> {
     ProductMediaGalleryEntriesVideoContentQuery(StringBuilder _queryBuilder) {

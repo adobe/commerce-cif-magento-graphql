@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A simple product wish list Item
+ * Contains a simple product wish list item.
  */
 public class SimpleWishlistItemQuery extends AbstractQuery<SimpleWishlistItemQuery> {
     SimpleWishlistItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class SimpleWishlistItemQuery extends AbstractQuery<SimpleWishlistItemQue
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public SimpleWishlistItemQuery addedAt() {
         startField("added_at");
@@ -35,7 +35,7 @@ public class SimpleWishlistItemQuery extends AbstractQuery<SimpleWishlistItemQue
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public SimpleWishlistItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -48,7 +48,7 @@ public class SimpleWishlistItemQuery extends AbstractQuery<SimpleWishlistItemQue
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public SimpleWishlistItemQuery description() {
         startField("description");
@@ -57,7 +57,7 @@ public class SimpleWishlistItemQuery extends AbstractQuery<SimpleWishlistItemQue
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public SimpleWishlistItemQuery id() {
         startField("id");
@@ -66,7 +66,7 @@ public class SimpleWishlistItemQuery extends AbstractQuery<SimpleWishlistItemQue
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public SimpleWishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -79,7 +79,7 @@ public class SimpleWishlistItemQuery extends AbstractQuery<SimpleWishlistItemQue
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public SimpleWishlistItemQuery quantity() {
         startField("quantity");

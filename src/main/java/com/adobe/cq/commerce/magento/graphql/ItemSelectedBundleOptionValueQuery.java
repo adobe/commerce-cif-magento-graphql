@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A list of values for the selected bundle product
+ * A list of values for the selected bundle product.
  */
 public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelectedBundleOptionValueQuery> {
     ItemSelectedBundleOptionValueQuery(StringBuilder _queryBuilder) {
@@ -26,9 +26,9 @@ public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelect
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOptionValue` object
+     * The unique ID for a `ItemSelectedBundleOptionValue` object.
      *
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public ItemSelectedBundleOptionValueQuery id() {
@@ -38,7 +38,7 @@ public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelect
     }
 
     /**
-     * The price of the child bundle product
+     * The price of the child bundle product.
      */
     public ItemSelectedBundleOptionValueQuery price(MoneyQueryDefinition queryDef) {
         startField("price");
@@ -51,7 +51,7 @@ public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelect
     }
 
     /**
-     * The name of the child bundle product
+     * The name of the child bundle product.
      */
     public ItemSelectedBundleOptionValueQuery productName() {
         startField("product_name");
@@ -60,7 +60,7 @@ public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelect
     }
 
     /**
-     * The SKU of the child bundle product
+     * The SKU of the child bundle product.
      */
     public ItemSelectedBundleOptionValueQuery productSku() {
         startField("product_sku");
@@ -69,7 +69,7 @@ public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelect
     }
 
     /**
-     * Indicates how many of this bundle product were ordered
+     * The number of this bundle product that were ordered.
      */
     public ItemSelectedBundleOptionValueQuery quantity() {
         startField("quantity");
@@ -78,7 +78,7 @@ public class ItemSelectedBundleOptionValueQuery extends AbstractQuery<ItemSelect
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOptionValue` object
+     * The unique ID for a `ItemSelectedBundleOptionValue` object.
      */
     public ItemSelectedBundleOptionValueQuery uid() {
         startField("uid");

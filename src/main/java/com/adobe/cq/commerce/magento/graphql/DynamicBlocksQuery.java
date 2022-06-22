@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains an array of dynamic blocks.
+ */
 public class DynamicBlocksQuery extends AbstractQuery<DynamicBlocksQuery> {
     DynamicBlocksQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array containing individual dynamic blocks
+     * An array containing individual dynamic blocks.
      */
     public DynamicBlocksQuery items(DynamicBlockQueryDefinition queryDef) {
         startField("items");
@@ -36,7 +39,7 @@ public class DynamicBlocksQuery extends AbstractQuery<DynamicBlocksQuery> {
     }
 
     /**
-     * Metadata for pagination rendering
+     * Metadata for pagination rendering.
      */
     public DynamicBlocksQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");
@@ -49,7 +52,7 @@ public class DynamicBlocksQuery extends AbstractQuery<DynamicBlocksQuery> {
     }
 
     /**
-     * The number of returned dynamic blocks
+     * The number of returned dynamic blocks.
      */
     public DynamicBlocksQuery totalCount() {
         startField("total_count");

@@ -17,29 +17,44 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about configurable product options.
+ */
 public class ConfigurableProductOptionQuery extends AbstractQuery<ConfigurableProductOptionQuery> {
     ConfigurableProductOptionQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An attribute code that uniquely identifies a configurable option.
+     */
     public ConfigurableProductOptionQuery attributeCode() {
         startField("attribute_code");
 
         return this;
     }
 
+    /**
+     * The display name of the option.
+     */
     public ConfigurableProductOptionQuery label() {
         startField("label");
 
         return this;
     }
 
+    /**
+     * The unique ID of the configurable option.
+     */
     public ConfigurableProductOptionQuery uid() {
         startField("uid");
 
         return this;
     }
 
+    /**
+     * An array of values that are applicable for this option.
+     */
     public ConfigurableProductOptionQuery values(ConfigurableProductOptionValueQueryDefinition queryDef) {
         startField("values");
 

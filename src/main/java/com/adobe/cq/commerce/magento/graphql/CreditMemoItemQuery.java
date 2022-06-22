@@ -23,8 +23,7 @@ public class CreditMemoItemQuery extends AbstractQuery<CreditMemoItemQuery> {
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Details about the final discount amount for the base product, including discounts on options.
      */
     public CreditMemoItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -37,7 +36,7 @@ public class CreditMemoItemQuery extends AbstractQuery<CreditMemoItemQuery> {
     }
 
     /**
-     * The unique ID for a `CreditMemoItemInterface` object
+     * The unique ID for a `CreditMemoItemInterface` object.
      */
     public CreditMemoItemQuery id() {
         startField("id");
@@ -46,7 +45,7 @@ public class CreditMemoItemQuery extends AbstractQuery<CreditMemoItemQuery> {
     }
 
     /**
-     * The order item the credit memo is applied to
+     * The order item the credit memo is applied to.
      */
     public CreditMemoItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -59,7 +58,7 @@ public class CreditMemoItemQuery extends AbstractQuery<CreditMemoItemQuery> {
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public CreditMemoItemQuery productName() {
         startField("product_name");
@@ -68,7 +67,7 @@ public class CreditMemoItemQuery extends AbstractQuery<CreditMemoItemQuery> {
     }
 
     /**
-     * The sale price for the base product, including selected options
+     * The sale price for the base product, including selected options.
      */
     public CreditMemoItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -81,7 +80,7 @@ public class CreditMemoItemQuery extends AbstractQuery<CreditMemoItemQuery> {
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public CreditMemoItemQuery productSku() {
         startField("product_sku");
@@ -90,7 +89,7 @@ public class CreditMemoItemQuery extends AbstractQuery<CreditMemoItemQuery> {
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public CreditMemoItemQuery quantityRefunded() {
         startField("quantity_refunded");

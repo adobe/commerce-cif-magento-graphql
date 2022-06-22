@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ConfigurableProductOptions defines configurable attributes for the specified product
+ * Defines configurable attributes for the specified product.
  */
 public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableProductOptionsQuery> {
     ConfigurableProductOptionsQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * A string that identifies the attribute
+     * A string that identifies the attribute.
      */
     public ConfigurableProductOptionsQuery attributeCode() {
         startField("attribute_code");
@@ -35,9 +35,9 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * The ID assigned to the attribute
+     * The ID assigned to the attribute.
      *
-     * @deprecated Use attribute_uid instead
+     * @deprecated Use `attribute_uid` instead.
      */
     @Deprecated
     public ConfigurableProductOptionsQuery attributeId() {
@@ -47,9 +47,9 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * The ID assigned to the attribute
+     * The ID assigned to the attribute.
      *
-     * @deprecated Use attribute_uid instead
+     * @deprecated Use `attribute_uid` instead.
      */
     @Deprecated
     public ConfigurableProductOptionsQuery attributeIdV2() {
@@ -59,7 +59,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * The unique ID for a `Attribute` object
+     * The unique ID for an `Attribute` object.
      */
     public ConfigurableProductOptionsQuery attributeUid() {
         startField("attribute_uid");
@@ -68,9 +68,9 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * The configurable option ID number assigned by the system
+     * The configurable option ID number assigned by the system.
      *
-     * @deprecated Use uid instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public ConfigurableProductOptionsQuery id() {
@@ -80,7 +80,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * A string that describes the configurable product option, which is displayed on the UI
+     * A displayed string that describes the configurable product option.
      */
     public ConfigurableProductOptionsQuery label() {
         startField("label");
@@ -89,7 +89,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * A number that indicates the order in which the attribute is displayed
+     * A number that indicates the order in which the attribute is displayed.
      */
     public ConfigurableProductOptionsQuery position() {
         startField("position");
@@ -98,9 +98,9 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * This is the same as a product&#39;s id field
+     * This is the same as a product&#39;s `id` field.
      *
-     * @deprecated `product_id` is not needed and can be obtained from it&#39;s parent
+     * @deprecated `product_id` is not needed and can be obtained from its parent.
      */
     @Deprecated
     public ConfigurableProductOptionsQuery productId() {
@@ -110,7 +110,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptions` object
+     * The unique ID for a `ConfigurableProductOptions` object.
      */
     public ConfigurableProductOptionsQuery uid() {
         startField("uid");
@@ -119,7 +119,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * Indicates whether the option is the default
+     * Indicates whether the option is the default.
      */
     public ConfigurableProductOptionsQuery useDefault() {
         startField("use_default");
@@ -128,7 +128,7 @@ public class ConfigurableProductOptionsQuery extends AbstractQuery<ConfigurableP
     }
 
     /**
-     * An array that defines the value_index codes assigned to the configurable product
+     * An array that defines the `value_index` codes assigned to the configurable product.
      */
     public ConfigurableProductOptionsQuery values(ConfigurableProductOptionsValuesQueryDefinition queryDef) {
         startField("values");

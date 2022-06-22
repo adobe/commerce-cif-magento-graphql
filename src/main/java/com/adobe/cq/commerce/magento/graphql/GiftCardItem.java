@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a gift card.
+ */
 public class GiftCardItem extends AbstractResponse<GiftCardItem> {
     public GiftCardItem() {}
 
@@ -101,7 +104,7 @@ public class GiftCardItem extends AbstractResponse<GiftCardItem> {
     }
 
     /**
-     * Entered gift card message intended for the recipient
+     * The message from the sender to the recipient.
      */
     public String getMessage() {
         return (String) get("message");
@@ -113,7 +116,7 @@ public class GiftCardItem extends AbstractResponse<GiftCardItem> {
     }
 
     /**
-     * Entered gift card recipient email for virtual cards
+     * The email address of the receiver of a virtual gift card.
      */
     public String getRecipientEmail() {
         return (String) get("recipient_email");
@@ -125,7 +128,7 @@ public class GiftCardItem extends AbstractResponse<GiftCardItem> {
     }
 
     /**
-     * Entered gift card sender namefor physical and virtual cards
+     * The name of the receiver of a physical or virtual gift card.
      */
     public String getRecipientName() {
         return (String) get("recipient_name");
@@ -137,7 +140,7 @@ public class GiftCardItem extends AbstractResponse<GiftCardItem> {
     }
 
     /**
-     * Entered gift card sender email for virtual cards
+     * The email address of the sender of a virtual gift card.
      */
     public String getSenderEmail() {
         return (String) get("sender_email");
@@ -149,7 +152,7 @@ public class GiftCardItem extends AbstractResponse<GiftCardItem> {
     }
 
     /**
-     * Entered gift card sender name for physical and virtual cards
+     * The name of the sender of a physical or virtual gift card.
      */
     public String getSenderName() {
         return (String) get("sender_name");

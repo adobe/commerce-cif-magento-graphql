@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the status of a shipment.
+ */
 public class ReturnShippingTrackingStatusQuery extends AbstractQuery<ReturnShippingTrackingStatusQuery> {
     ReturnShippingTrackingStatusQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Text that describes the status
+     * Text that describes the status.
      */
     public ReturnShippingTrackingStatusQuery text() {
         startField("text");
@@ -32,7 +35,7 @@ public class ReturnShippingTrackingStatusQuery extends AbstractQuery<ReturnShipp
     }
 
     /**
-     * Indicates whether the status type is informational or an error
+     * Indicates whether the status type is informational or an error.
      */
     public ReturnShippingTrackingStatusQuery type() {
         startField("type");

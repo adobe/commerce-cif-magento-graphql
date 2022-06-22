@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of a request to delete a registrant.
+ */
 public class RemoveGiftRegistryRegistrantsOutputQuery extends AbstractQuery<RemoveGiftRegistryRegistrantsOutputQuery> {
     RemoveGiftRegistryRegistrantsOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The gift registry after deleting registrants
+     * The gift registry after deleting registrants.
      */
     public RemoveGiftRegistryRegistrantsOutputQuery giftRegistry(GiftRegistryQueryDefinition queryDef) {
         startField("gift_registry");

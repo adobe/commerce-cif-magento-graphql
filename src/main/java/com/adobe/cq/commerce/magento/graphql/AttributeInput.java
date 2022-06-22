@@ -20,7 +20,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
 /**
- * AttributeInput specifies the attribute_code and entity_type to search
+ * Defines the attribute characteristics to search for the `attribute_code` and `entity_type` to
+ * search.
  */
 public class AttributeInput implements Serializable {
     private Input<String> attributeCode = Input.undefined();
@@ -65,21 +66,21 @@ public class AttributeInput implements Serializable {
     }
 
     /**
-     * The type of entity that defines the attribute
+     * The type of entity that defines the attribute.
      */
     public String getEntityType() {
         return entityType.getValue();
     }
 
     /**
-     * The type of entity that defines the attribute
+     * The type of entity that defines the attribute.
      */
     public Input<String> getEntityTypeInput() {
         return entityType;
     }
 
     /**
-     * The type of entity that defines the attribute
+     * The type of entity that defines the attribute.
      */
     public AttributeInput setEntityType(String entityType) {
         this.entityType = Input.optional(entityType);
@@ -87,7 +88,7 @@ public class AttributeInput implements Serializable {
     }
 
     /**
-     * The type of entity that defines the attribute
+     * The type of entity that defines the attribute.
      */
     public AttributeInput setEntityTypeInput(Input<String> entityType) {
         if (entityType == null) {

@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Applies a payment method to the quote.
+ */
 public class SetPaymentMethodAndPlaceOrderInput implements Serializable {
     private String cartId;
 
@@ -29,19 +32,31 @@ public class SetPaymentMethodAndPlaceOrderInput implements Serializable {
         this.paymentMethod = paymentMethod;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public SetPaymentMethodAndPlaceOrderInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * The payment method data to apply to the cart.
+     */
     public PaymentMethodInput getPaymentMethod() {
         return paymentMethod;
     }
 
+    /**
+     * The payment method data to apply to the cart.
+     */
     public SetPaymentMethodAndPlaceOrderInput setPaymentMethod(PaymentMethodInput paymentMethod) {
         this.paymentMethod = paymentMethod;
         return this;

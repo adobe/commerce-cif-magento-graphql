@@ -18,8 +18,8 @@ import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
 /**
- * The CustomizableOptionInterface contains basic information about a customizable option. It can be
- * implemented by several types of configurable options.
+ * Contains basic information about a customizable option. It can be implemented by several types of
+ * configurable options.
  */
 
 public interface CustomizableOptionInterface extends CustomFieldInterface {

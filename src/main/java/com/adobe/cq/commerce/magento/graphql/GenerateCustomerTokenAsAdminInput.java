@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Identifies which customer requires remote shopping assistance.
+ */
 public class GenerateCustomerTokenAsAdminInput implements Serializable {
     private String customerEmail;
 
@@ -26,14 +29,14 @@ public class GenerateCustomerTokenAsAdminInput implements Serializable {
     }
 
     /**
-     * The email address of the customer requesting remote shopping assistance
+     * The email address of the customer requesting remote shopping assistance.
      */
     public String getCustomerEmail() {
         return customerEmail;
     }
 
     /**
-     * The email address of the customer requesting remote shopping assistance
+     * The email address of the customer requesting remote shopping assistance.
      */
     public GenerateCustomerTokenAsAdminInput setCustomerEmail(String customerEmail) {
         this.customerEmail = customerEmail;

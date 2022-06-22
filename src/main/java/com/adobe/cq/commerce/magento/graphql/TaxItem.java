@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The tax item details
+ * Contains tax item details.
  */
 public class TaxItem extends AbstractResponse<TaxItem> {
     public TaxItem() {}
@@ -67,7 +67,7 @@ public class TaxItem extends AbstractResponse<TaxItem> {
     }
 
     /**
-     * The amount of tax applied to the item
+     * The amount of tax applied to the item.
      */
     public Money getAmount() {
         return (Money) get("amount");
@@ -79,7 +79,7 @@ public class TaxItem extends AbstractResponse<TaxItem> {
     }
 
     /**
-     * The rate used to calculate the tax
+     * The rate used to calculate the tax.
      */
     public Double getRate() {
         return (Double) get("rate");
@@ -91,7 +91,7 @@ public class TaxItem extends AbstractResponse<TaxItem> {
     }
 
     /**
-     * A title that describes the tax
+     * A title that describes the tax.
      */
     public String getTitle() {
         return (String) get("title");

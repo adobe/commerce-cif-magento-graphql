@@ -22,8 +22,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * ProductTierPrices is deprecated and has been replaced by TierPrice. The ProductTierPrices object
- * defines a tier price, which is a quantity discount offered to a specific customer group.
+ * Deprecated. Use `TierPrice` instead. Defines a tier price, which is a quantity discount offered to a
+ * specific customer group.
  */
 public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     public ProductTierPrices() {}
@@ -107,7 +107,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     /**
      * The ID of the customer group.
      *
-     * @deprecated customer_group_id is not relevant for storefront.
+     * @deprecated Not relevant for the storefront.
      */
     @Deprecated
     public String getCustomerGroupId() {
@@ -122,7 +122,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     /**
      * The percentage discount of the item.
      *
-     * @deprecated ProductTierPrices is deprecated. Use TierPrice.discount.
+     * @deprecated Use `TierPrice.discount` instead.
      */
     @Deprecated
     public Double getPercentageValue() {
@@ -137,7 +137,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     /**
      * The number of items that must be purchased to qualify for tier pricing.
      *
-     * @deprecated ProductTierPrices is deprecated, use TierPrice.quantity.
+     * @deprecated Use `TierPrice.quantity` instead.
      */
     @Deprecated
     public Double getQty() {
@@ -152,7 +152,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     /**
      * The price of the fixed price item.
      *
-     * @deprecated ProductTierPrices is deprecated. Use TierPrice.final_price
+     * @deprecated Use `TierPrice.final_price` instead.
      */
     @Deprecated
     public Double getValue() {
@@ -167,7 +167,7 @@ public class ProductTierPrices extends AbstractResponse<ProductTierPrices> {
     /**
      * The ID assigned to the website.
      *
-     * @deprecated website_id is not relevant for storefront.
+     * @deprecated Not relevant for the storefront.
      */
     @Deprecated
     public Double getWebsiteId() {

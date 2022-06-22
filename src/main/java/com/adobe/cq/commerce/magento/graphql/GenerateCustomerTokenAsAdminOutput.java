@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the generated customer token.
+ */
 public class GenerateCustomerTokenAsAdminOutput extends AbstractResponse<GenerateCustomerTokenAsAdminOutput> {
     public GenerateCustomerTokenAsAdminOutput() {}
 
@@ -52,7 +55,7 @@ public class GenerateCustomerTokenAsAdminOutput extends AbstractResponse<Generat
     }
 
     /**
-     * The generated customer token
+     * The generated customer token.
      */
     public String getCustomerToken() {
         return (String) get("customer_token");

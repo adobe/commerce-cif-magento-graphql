@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after setting the email of a guest.
+ */
 public class SetGuestEmailOnCartOutputQuery extends AbstractQuery<SetGuestEmailOnCartOutputQuery> {
     SetGuestEmailOnCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after setting the guest email.
+     */
     public SetGuestEmailOnCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

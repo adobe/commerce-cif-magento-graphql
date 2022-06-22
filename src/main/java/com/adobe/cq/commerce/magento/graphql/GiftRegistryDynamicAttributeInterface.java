@@ -21,17 +21,17 @@ public interface GiftRegistryDynamicAttributeInterface extends CustomFieldInterf
     String getGraphQlTypeName();
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     ID getCode();
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     String getLabel();
 
     /**
-     * A corresponding value for the code
+     * A corresponding value for the code.
      */
     String getValue();
 }

@@ -20,6 +20,9 @@ import java.util.List;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Defines which products to remove from a compare list.
+ */
 public class RemoveProductsFromCompareListInput implements Serializable {
     private List<ID> products;
 
@@ -32,14 +35,14 @@ public class RemoveProductsFromCompareListInput implements Serializable {
     }
 
     /**
-     * An array of product IDs to remove from the compare list
+     * An array of product IDs to remove from the compare list.
      */
     public List<ID> getProducts() {
         return products;
     }
 
     /**
-     * An array of product IDs to remove from the compare list
+     * An array of product IDs to remove from the compare list.
      */
     public RemoveProductsFromCompareListInput setProducts(List<ID> products) {
         this.products = products;
@@ -47,14 +50,14 @@ public class RemoveProductsFromCompareListInput implements Serializable {
     }
 
     /**
-     * The unique identifier of the compare list to modify
+     * The unique identifier of the compare list to modify.
      */
     public ID getUid() {
         return uid;
     }
 
     /**
-     * The unique identifier of the compare list to modify
+     * The unique identifier of the compare list to modify.
      */
     public RemoveProductsFromCompareListInput setUid(ID uid) {
         this.uid = uid;

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Defines the possible output for the applyGiftCardToCart mutation
+ * Defines the possible output for the `applyGiftCardToCart` mutation.
  */
 public class ApplyGiftCardToCartOutputQuery extends AbstractQuery<ApplyGiftCardToCartOutputQuery> {
     ApplyGiftCardToCartOutputQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ApplyGiftCardToCartOutputQuery extends AbstractQuery<ApplyGiftCardT
     }
 
     /**
-     * Describes the contents of the specified shopping cart
+     * Describes the contents of the specified shopping cart.
      */
     public ApplyGiftCardToCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");

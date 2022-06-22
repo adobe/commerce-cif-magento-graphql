@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The stored payment method available to the customer
+ * The stored payment method available to the customer.
  */
 public class PaymentTokenQuery extends AbstractQuery<PaymentTokenQuery> {
     PaymentTokenQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class PaymentTokenQuery extends AbstractQuery<PaymentTokenQuery> {
     }
 
     /**
-     * Stored account details
+     * A description of the stored account details.
      */
     public PaymentTokenQuery details() {
         startField("details");
@@ -35,7 +35,7 @@ public class PaymentTokenQuery extends AbstractQuery<PaymentTokenQuery> {
     }
 
     /**
-     * The payment method code associated with the token
+     * The payment method code associated with the token.
      */
     public PaymentTokenQuery paymentMethodCode() {
         startField("payment_method_code");
@@ -44,7 +44,7 @@ public class PaymentTokenQuery extends AbstractQuery<PaymentTokenQuery> {
     }
 
     /**
-     * The public hash of the token
+     * The public hash of the token.
      */
     public PaymentTokenQuery publicHash() {
         startField("public_hash");
@@ -52,6 +52,9 @@ public class PaymentTokenQuery extends AbstractQuery<PaymentTokenQuery> {
         return this;
     }
 
+    /**
+     * Specifies the payment token type.
+     */
     public PaymentTokenQuery type() {
         startField("type");
 

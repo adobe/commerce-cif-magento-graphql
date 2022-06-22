@@ -22,6 +22,9 @@ public class CountryQuery extends AbstractQuery<CountryQuery> {
         super(_queryBuilder);
     }
 
+    /**
+     * An array of regions within a particular country.
+     */
     public CountryQuery availableRegions(RegionQueryDefinition queryDef) {
         startField("available_regions");
 
@@ -32,12 +35,18 @@ public class CountryQuery extends AbstractQuery<CountryQuery> {
         return this;
     }
 
+    /**
+     * The name of the country in English.
+     */
     public CountryQuery fullNameEnglish() {
         startField("full_name_english");
 
         return this;
     }
 
+    /**
+     * The name of the country in the current locale.
+     */
     public CountryQuery fullNameLocale() {
         startField("full_name_locale");
 
@@ -53,12 +62,18 @@ public class CountryQuery extends AbstractQuery<CountryQuery> {
         return this;
     }
 
+    /**
+     * The three-letter abbreviation of the country, such as USA.
+     */
     public CountryQuery threeLetterAbbreviation() {
         startField("three_letter_abbreviation");
 
         return this;
     }
 
+    /**
+     * The two-letter abbreviation of the country, such as US.
+     */
     public CountryQuery twoLetterAbbreviation() {
         startField("two_letter_abbreviation");
 

@@ -21,6 +21,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines updates to an existing registrant.
+ */
 public class UpdateGiftRegistryRegistrantInput implements Serializable {
     private ID giftRegistryRegistrantUid;
 
@@ -37,14 +40,14 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The unique ID of a `giftRegistryRegistrant` object
+     * The unique ID of a `giftRegistryRegistrant` object.
      */
     public ID getGiftRegistryRegistrantUid() {
         return giftRegistryRegistrantUid;
     }
 
     /**
-     * The unique ID of a `giftRegistryRegistrant` object
+     * The unique ID of a `giftRegistryRegistrant` object.
      */
     public UpdateGiftRegistryRegistrantInput setGiftRegistryRegistrantUid(ID giftRegistryRegistrantUid) {
         this.giftRegistryRegistrantUid = giftRegistryRegistrantUid;
@@ -53,7 +56,7 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
 
     /**
      * As a result of the update, only the values of provided attributes will be affected. If the attribute
-     * is missing in the request, its value will not be changed
+     * is missing in the request, its value will not be changed.
      */
     public List<GiftRegistryDynamicAttributeInput> getDynamicAttributes() {
         return dynamicAttributes.getValue();
@@ -61,7 +64,7 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
 
     /**
      * As a result of the update, only the values of provided attributes will be affected. If the attribute
-     * is missing in the request, its value will not be changed
+     * is missing in the request, its value will not be changed.
      */
     public Input<List<GiftRegistryDynamicAttributeInput>> getDynamicAttributesInput() {
         return dynamicAttributes;
@@ -69,7 +72,7 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
 
     /**
      * As a result of the update, only the values of provided attributes will be affected. If the attribute
-     * is missing in the request, its value will not be changed
+     * is missing in the request, its value will not be changed.
      */
     public UpdateGiftRegistryRegistrantInput setDynamicAttributes(List<GiftRegistryDynamicAttributeInput> dynamicAttributes) {
         this.dynamicAttributes = Input.optional(dynamicAttributes);
@@ -78,7 +81,7 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
 
     /**
      * As a result of the update, only the values of provided attributes will be affected. If the attribute
-     * is missing in the request, its value will not be changed
+     * is missing in the request, its value will not be changed.
      */
     public UpdateGiftRegistryRegistrantInput setDynamicAttributesInput(Input<List<GiftRegistryDynamicAttributeInput>> dynamicAttributes) {
         if (dynamicAttributes == null) {
@@ -89,21 +92,21 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The updated email address of the registrant
+     * The updated email address of the registrant.
      */
     public String getEmail() {
         return email.getValue();
     }
 
     /**
-     * The updated email address of the registrant
+     * The updated email address of the registrant.
      */
     public Input<String> getEmailInput() {
         return email;
     }
 
     /**
-     * The updated email address of the registrant
+     * The updated email address of the registrant.
      */
     public UpdateGiftRegistryRegistrantInput setEmail(String email) {
         this.email = Input.optional(email);
@@ -111,7 +114,7 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The updated email address of the registrant
+     * The updated email address of the registrant.
      */
     public UpdateGiftRegistryRegistrantInput setEmailInput(Input<String> email) {
         if (email == null) {
@@ -122,21 +125,21 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The updated first name of the registrant
+     * The updated first name of the registrant.
      */
     public String getFirstname() {
         return firstname.getValue();
     }
 
     /**
-     * The updated first name of the registrant
+     * The updated first name of the registrant.
      */
     public Input<String> getFirstnameInput() {
         return firstname;
     }
 
     /**
-     * The updated first name of the registrant
+     * The updated first name of the registrant.
      */
     public UpdateGiftRegistryRegistrantInput setFirstname(String firstname) {
         this.firstname = Input.optional(firstname);
@@ -144,7 +147,7 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The updated first name of the registrant
+     * The updated first name of the registrant.
      */
     public UpdateGiftRegistryRegistrantInput setFirstnameInput(Input<String> firstname) {
         if (firstname == null) {
@@ -155,21 +158,21 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The updated last name of the registrant
+     * The updated last name of the registrant.
      */
     public String getLastname() {
         return lastname.getValue();
     }
 
     /**
-     * The updated last name of the registrant
+     * The updated last name of the registrant.
      */
     public Input<String> getLastnameInput() {
         return lastname;
     }
 
     /**
-     * The updated last name of the registrant
+     * The updated last name of the registrant.
      */
     public UpdateGiftRegistryRegistrantInput setLastname(String lastname) {
         this.lastname = Input.optional(lastname);
@@ -177,7 +180,7 @@ public class UpdateGiftRegistryRegistrantInput implements Serializable {
     }
 
     /**
-     * The updated last name of the registrant
+     * The updated last name of the registrant.
      */
     public UpdateGiftRegistryRegistrantInput setLastnameInput(Input<String> lastname) {
         if (lastname == null) {

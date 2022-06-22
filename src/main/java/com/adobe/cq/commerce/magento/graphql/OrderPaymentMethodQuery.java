@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains details about the payment method used to pay for the order
+ * Contains details about the payment method used to pay for the order.
  */
 public class OrderPaymentMethodQuery extends AbstractQuery<OrderPaymentMethodQuery> {
     OrderPaymentMethodQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class OrderPaymentMethodQuery extends AbstractQuery<OrderPaymentMethodQue
     }
 
     /**
-     * Additional data per payment method type
+     * Additional data per payment method type.
      */
     public OrderPaymentMethodQuery additionalData(KeyValueQueryDefinition queryDef) {
         startField("additional_data");
@@ -39,7 +39,7 @@ public class OrderPaymentMethodQuery extends AbstractQuery<OrderPaymentMethodQue
     }
 
     /**
-     * The label that describes the payment method
+     * The label that describes the payment method.
      */
     public OrderPaymentMethodQuery name() {
         startField("name");
@@ -48,7 +48,7 @@ public class OrderPaymentMethodQuery extends AbstractQuery<OrderPaymentMethodQue
     }
 
     /**
-     * The payment method code that indicates how the order was paid for
+     * The payment method code that indicates how the order was paid for.
      */
     public OrderPaymentMethodQuery type() {
         startField("type");

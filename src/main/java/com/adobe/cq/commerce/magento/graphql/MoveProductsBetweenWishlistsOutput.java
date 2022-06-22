@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the source and target wish lists after moving products.
+ */
 public class MoveProductsBetweenWishlistsOutput extends AbstractResponse<MoveProductsBetweenWishlistsOutput> {
     public MoveProductsBetweenWishlistsOutput() {}
 
@@ -76,7 +79,7 @@ public class MoveProductsBetweenWishlistsOutput extends AbstractResponse<MovePro
     }
 
     /**
-     * The destination wish list after receiving products move from the source wish list
+     * The destination wish list after receiving products moved from the source wish list.
      */
     public Wishlist getDestinationWishlist() {
         return (Wishlist) get("destination_wishlist");
@@ -88,7 +91,7 @@ public class MoveProductsBetweenWishlistsOutput extends AbstractResponse<MovePro
     }
 
     /**
-     * The source wish list after moving products from it
+     * The source wish list after moving products from it.
      */
     public Wishlist getSourceWishlist() {
         return (Wishlist) get("source_wishlist");
@@ -100,7 +103,7 @@ public class MoveProductsBetweenWishlistsOutput extends AbstractResponse<MovePro
     }
 
     /**
-     * An array of errors encountered while moving products in a wish list
+     * An array of errors encountered while moving products to a wish list.
      */
     public List<WishListUserInputError> getUserErrors() {
         return (List<WishListUserInputError>) get("user_errors");

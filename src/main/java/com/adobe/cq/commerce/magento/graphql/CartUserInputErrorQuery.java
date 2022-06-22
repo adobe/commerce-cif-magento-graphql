@@ -26,7 +26,7 @@ public class CartUserInputErrorQuery extends AbstractQuery<CartUserInputErrorQue
     }
 
     /**
-     * Cart-specific error code
+     * A cart-specific error code.
      */
     public CartUserInputErrorQuery code() {
         startField("code");
@@ -35,7 +35,7 @@ public class CartUserInputErrorQuery extends AbstractQuery<CartUserInputErrorQue
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public CartUserInputErrorQuery message() {
         startField("message");

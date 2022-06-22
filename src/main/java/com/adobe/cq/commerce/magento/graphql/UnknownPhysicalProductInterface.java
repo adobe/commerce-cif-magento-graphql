@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * PhysicalProductInterface contains attributes specific to tangible products.
+ * Contains attributes specific to tangible products.
  */
 public class UnknownPhysicalProductInterface extends AbstractResponse<UnknownPhysicalProductInterface> implements PhysicalProductInterface {
     public UnknownPhysicalProductInterface() {}

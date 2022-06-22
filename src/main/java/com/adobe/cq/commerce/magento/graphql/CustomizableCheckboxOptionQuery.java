@@ -18,8 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableCheckbbixOption contains information about a set of checkbox values that are defined as
- * part of a customizable option.
+ * Contains information about a set of checkbox values that are defined as part of a customizable
+ * option.
  */
 public class CustomizableCheckboxOptionQuery extends AbstractQuery<CustomizableCheckboxOptionQuery> {
     CustomizableCheckboxOptionQuery(StringBuilder _queryBuilder) {

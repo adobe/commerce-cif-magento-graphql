@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * An error encountered while adding an item the the cart.
+ * An error encountered while adding an item to the cart.
  */
 public class CheckoutUserInputError extends AbstractResponse<CheckoutUserInputError> {
     public CheckoutUserInputError() {}
@@ -79,7 +79,7 @@ public class CheckoutUserInputError extends AbstractResponse<CheckoutUserInputEr
     }
 
     /**
-     * Checkout-specific error code
+     * An error code that is specific to Checkout.
      */
     public CheckoutUserInputErrorCodes getCode() {
         return (CheckoutUserInputErrorCodes) get("code");
@@ -91,7 +91,7 @@ public class CheckoutUserInputError extends AbstractResponse<CheckoutUserInputEr
     }
 
     /**
-     * Localized error message
+     * A localized error message.
      */
     public String getMessage() {
         return (String) get("message");
@@ -103,8 +103,8 @@ public class CheckoutUserInputError extends AbstractResponse<CheckoutUserInputEr
     }
 
     /**
-     * Path to the input field that caused an error. See the GraphQL specification about path errors for
-     * details: http://spec.graphql.org/draft/#sec-Errors
+     * The path to the input field that caused an error. See the GraphQL specification about path errors
+     * for details: http://spec.graphql.org/draft/#sec-Errors
      */
     public List<String> getPath() {
         return (List<String>) get("path");

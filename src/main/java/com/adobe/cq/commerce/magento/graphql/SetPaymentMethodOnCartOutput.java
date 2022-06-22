@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after setting the payment method.
+ */
 public class SetPaymentMethodOnCartOutput extends AbstractResponse<SetPaymentMethodOnCartOutput> {
     public SetPaymentMethodOnCartOutput() {}
 
@@ -51,6 +54,9 @@ public class SetPaymentMethodOnCartOutput extends AbstractResponse<SetPaymentMet
         return "SetPaymentMethodOnCartOutput";
     }
 
+    /**
+     * The cart after setting the payment method.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

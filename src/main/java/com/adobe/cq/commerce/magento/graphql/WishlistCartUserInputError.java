@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about errors encountered when a customer added wish list items to the cart.
+ */
 public class WishlistCartUserInputError extends AbstractResponse<WishlistCartUserInputError> {
     public WishlistCartUserInputError() {}
 
@@ -71,7 +74,7 @@ public class WishlistCartUserInputError extends AbstractResponse<WishlistCartUse
     }
 
     /**
-     * An error code that describes the error encountered
+     * An error code that describes the error encountered.
      */
     public WishlistCartUserInputErrorType getCode() {
         return (WishlistCartUserInputErrorType) get("code");
@@ -83,7 +86,7 @@ public class WishlistCartUserInputError extends AbstractResponse<WishlistCartUse
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public String getMessage() {
         return (String) get("message");
@@ -95,7 +98,7 @@ public class WishlistCartUserInputError extends AbstractResponse<WishlistCartUse
     }
 
     /**
-     * The unique ID of the `Wishlist` object containing an error
+     * The unique ID of the `Wishlist` object containing an error.
      */
     public ID getWishlistId() {
         return (ID) get("wishlistId");
@@ -107,7 +110,7 @@ public class WishlistCartUserInputError extends AbstractResponse<WishlistCartUse
     }
 
     /**
-     * The unique ID of the wish list item containing an error
+     * The unique ID of the wish list item containing an error.
      */
     public ID getWishlistItemId() {
         return (ID) get("wishlistItemId");

@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains store credit information with balance and history
+ * Contains store credit information with balance and history.
  */
 public class CustomerStoreCredit extends AbstractResponse<CustomerStoreCredit> {
     public CustomerStoreCredit() {}
@@ -82,8 +82,8 @@ public class CustomerStoreCredit extends AbstractResponse<CustomerStoreCredit> {
     }
 
     /**
-     * Customer Store credit balance history. If the history or store credit feature is disabled, then a
-     * null value will be returned.
+     * Contains the customer&#39;s store credit balance history. If the history or store credit feature is
+     * disabled, then a null value will be returned.
      */
     public CustomerStoreCreditHistory getBalanceHistory() {
         return (CustomerStoreCreditHistory) get("balance_history");
@@ -95,7 +95,7 @@ public class CustomerStoreCredit extends AbstractResponse<CustomerStoreCredit> {
     }
 
     /**
-     * Current balance on store credit
+     * The current balance of store credit.
      */
     public Money getCurrentBalance() {
         return (Money) get("current_balance");
@@ -108,7 +108,7 @@ public class CustomerStoreCredit extends AbstractResponse<CustomerStoreCredit> {
 
     /**
      * Indicates whether store credits are enabled. If the feature is disabled, then the balance will not
-     * be returned
+     * be returned.
      */
     public Boolean getEnabled() {
         return (Boolean) get("enabled");

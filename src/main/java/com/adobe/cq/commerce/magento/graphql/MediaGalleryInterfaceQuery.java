@@ -33,7 +33,7 @@ public class MediaGalleryInterfaceQuery extends AbstractQuery<MediaGalleryInterf
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public MediaGalleryInterfaceQuery disabled() {
         startField("disabled");

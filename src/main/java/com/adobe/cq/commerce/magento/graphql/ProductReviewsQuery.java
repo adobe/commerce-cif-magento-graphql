@@ -17,6 +17,9 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains an array of product reviews.
+ */
 public class ProductReviewsQuery extends AbstractQuery<ProductReviewsQuery> {
     ProductReviewsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);

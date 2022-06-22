@@ -52,7 +52,7 @@ public class ComplexTextValue extends AbstractResponse<ComplexTextValue> {
     }
 
     /**
-     * HTML format
+     * Text that can contain HTML tags.
      */
     public String getHtml() {
         return (String) get("html");

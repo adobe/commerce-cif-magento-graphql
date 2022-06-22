@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Credit memo price details
+ * Contains credit memo price details.
  */
 public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     public CreditMemoTotal() {}
@@ -140,7 +140,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * An adjustment manually applied to the order
+     * An adjustment manually applied to the order.
      */
     public Money getAdjustment() {
         return (Money) get("adjustment");
@@ -152,7 +152,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * The final base grand total amount in the base currency
+     * The final base grand total amount in the base currency.
      */
     public Money getBaseGrandTotal() {
         return (Money) get("base_grand_total");
@@ -164,7 +164,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * The applied discounts to the credit memo
+     * The applied discounts to the credit memo.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -176,7 +176,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * The final total amount, including shipping, discounts, and taxes
+     * The final total amount, including shipping, discounts, and taxes.
      */
     public Money getGrandTotal() {
         return (Money) get("grand_total");
@@ -188,7 +188,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * Contains details about the shipping and handling costs for the credit memo
+     * Details about the shipping and handling costs for the credit memo.
      */
     public ShippingHandling getShippingHandling() {
         return (ShippingHandling) get("shipping_handling");
@@ -200,7 +200,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * The subtotal of the invoice, excluding shipping, discounts, and taxes
+     * The subtotal of the invoice, excluding shipping, discounts, and taxes.
      */
     public Money getSubtotal() {
         return (Money) get("subtotal");
@@ -212,7 +212,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * The credit memo tax details
+     * The credit memo tax details.
      */
     public List<TaxItem> getTaxes() {
         return (List<TaxItem>) get("taxes");
@@ -224,7 +224,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * The shipping amount for the credit memo
+     * The shipping amount for the credit memo.
      */
     public Money getTotalShipping() {
         return (Money) get("total_shipping");
@@ -236,7 +236,7 @@ public class CreditMemoTotal extends AbstractResponse<CreditMemoTotal> {
     }
 
     /**
-     * The amount of tax applied to the credit memo
+     * The amount of tax applied to the credit memo.
      */
     public Money getTotalTax() {
         return (Money) get("total_tax");

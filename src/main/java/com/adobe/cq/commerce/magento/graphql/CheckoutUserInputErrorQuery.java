@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * An error encountered while adding an item the the cart.
+ * An error encountered while adding an item to the cart.
  */
 public class CheckoutUserInputErrorQuery extends AbstractQuery<CheckoutUserInputErrorQuery> {
     CheckoutUserInputErrorQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CheckoutUserInputErrorQuery extends AbstractQuery<CheckoutUserInput
     }
 
     /**
-     * Checkout-specific error code
+     * An error code that is specific to Checkout.
      */
     public CheckoutUserInputErrorQuery code() {
         startField("code");
@@ -35,7 +35,7 @@ public class CheckoutUserInputErrorQuery extends AbstractQuery<CheckoutUserInput
     }
 
     /**
-     * Localized error message
+     * A localized error message.
      */
     public CheckoutUserInputErrorQuery message() {
         startField("message");
@@ -44,8 +44,8 @@ public class CheckoutUserInputErrorQuery extends AbstractQuery<CheckoutUserInput
     }
 
     /**
-     * Path to the input field that caused an error. See the GraphQL specification about path errors for
-     * details: http://spec.graphql.org/draft/#sec-Errors
+     * The path to the input field that caused an error. See the GraphQL specification about path errors
+     * for details: http://spec.graphql.org/draft/#sec-Errors
      */
     public CheckoutUserInputErrorQuery path() {
         startField("path");

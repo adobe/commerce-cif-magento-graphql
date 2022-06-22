@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Contains the gift card code.
+ */
 public class GiftCardAccountInput implements Serializable {
     private String giftCardCode;
 
@@ -26,14 +29,14 @@ public class GiftCardAccountInput implements Serializable {
     }
 
     /**
-     * Defines the input required to identify the gift card account
+     * The applied gift card code.
      */
     public String getGiftCardCode() {
         return giftCardCode;
     }
 
     /**
-     * Defines the input required to identify the gift card account
+     * The applied gift card code.
      */
     public GiftCardAccountInput setGiftCardCode(String giftCardCode) {
         this.giftCardCode = giftCardCode;

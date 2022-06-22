@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableFieldOption contains information about a text field that is defined as part of a
- * customizable option.
+ * Contains information about a text field that is defined as part of a customizable option.
  */
 public class CustomizableFieldOptionQuery extends AbstractQuery<CustomizableFieldOptionQuery> {
     CustomizableFieldOptionQuery(StringBuilder _queryBuilder) {

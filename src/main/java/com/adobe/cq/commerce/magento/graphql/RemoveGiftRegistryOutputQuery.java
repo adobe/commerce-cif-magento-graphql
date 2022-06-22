@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of a request to delete a gift registry.
+ */
 public class RemoveGiftRegistryOutputQuery extends AbstractQuery<RemoveGiftRegistryOutputQuery> {
     RemoveGiftRegistryOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Indicates whether the gift registry was successfully deleted
+     * Indicates whether the gift registry was successfully deleted.
      */
     public RemoveGiftRegistryOutputQuery success() {
         startField("success");

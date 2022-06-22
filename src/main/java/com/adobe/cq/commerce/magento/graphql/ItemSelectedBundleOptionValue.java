@@ -23,7 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A list of values for the selected bundle product
+ * A list of values for the selected bundle product.
  */
 public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelectedBundleOptionValue> {
     public ItemSelectedBundleOptionValue() {}
@@ -86,9 +86,9 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOptionValue` object
+     * The unique ID for a `ItemSelectedBundleOptionValue` object.
      *
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public ID getId() {
@@ -101,7 +101,7 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
     }
 
     /**
-     * The price of the child bundle product
+     * The price of the child bundle product.
      */
     public Money getPrice() {
         return (Money) get("price");
@@ -113,7 +113,7 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
     }
 
     /**
-     * The name of the child bundle product
+     * The name of the child bundle product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -125,7 +125,7 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
     }
 
     /**
-     * The SKU of the child bundle product
+     * The SKU of the child bundle product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -137,7 +137,7 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
     }
 
     /**
-     * Indicates how many of this bundle product were ordered
+     * The number of this bundle product that were ordered.
      */
     public Double getQuantity() {
         return (Double) get("quantity");
@@ -149,7 +149,7 @@ public class ItemSelectedBundleOptionValue extends AbstractResponse<ItemSelected
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOptionValue` object
+     * The unique ID for a `ItemSelectedBundleOptionValue` object.
      */
     public ID getUid() {
         return (ID) get("uid");

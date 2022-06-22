@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines bundle product options for `InvoiceItemInterface`.
+ */
 public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery> {
     BundleInvoiceItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A list of bundle options that are assigned to the bundle product
+     * A list of bundle options that are assigned to an invoiced bundle product.
      */
     public BundleInvoiceItemQuery bundleOptions(ItemSelectedBundleOptionQueryDefinition queryDef) {
         startField("bundle_options");
@@ -36,8 +39,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     public BundleInvoiceItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -50,7 +52,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     public BundleInvoiceItemQuery id() {
         startField("id");
@@ -59,7 +61,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     public BundleInvoiceItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -72,7 +74,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public BundleInvoiceItemQuery productName() {
         startField("product_name");
@@ -81,7 +83,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     public BundleInvoiceItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -94,7 +96,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public BundleInvoiceItemQuery productSku() {
         startField("product_sku");
@@ -103,7 +105,7 @@ public class BundleInvoiceItemQuery extends AbstractQuery<BundleInvoiceItemQuery
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public BundleInvoiceItemQuery quantityInvoiced() {
         startField("quantity_invoiced");

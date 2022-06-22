@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a registrant.
+ */
 public class GiftRegistryRegistrant extends AbstractResponse<GiftRegistryRegistrant> {
     public GiftRegistryRegistrant() {}
 
@@ -94,7 +97,7 @@ public class GiftRegistryRegistrant extends AbstractResponse<GiftRegistryRegistr
     }
 
     /**
-     * An array of dynamic attributes assigned to the registrant
+     * An array of dynamic attributes assigned to the registrant.
      */
     public List<GiftRegistryRegistrantDynamicAttribute> getDynamicAttributes() {
         return (List<GiftRegistryRegistrantDynamicAttribute>) get("dynamic_attributes");
@@ -106,7 +109,7 @@ public class GiftRegistryRegistrant extends AbstractResponse<GiftRegistryRegistr
     }
 
     /**
-     * The email address of the registrant. Only the registry owner can access this attribute
+     * The email address of the registrant. Only the registry owner can access this attribute.
      */
     public String getEmail() {
         return (String) get("email");
@@ -118,7 +121,7 @@ public class GiftRegistryRegistrant extends AbstractResponse<GiftRegistryRegistr
     }
 
     /**
-     * The first name of the registrant
+     * The first name of the registrant.
      */
     public String getFirstname() {
         return (String) get("firstname");
@@ -130,7 +133,7 @@ public class GiftRegistryRegistrant extends AbstractResponse<GiftRegistryRegistr
     }
 
     /**
-     * The last name of the registrant
+     * The last name of the registrant.
      */
     public String getLastname() {
         return (String) get("lastname");
@@ -142,7 +145,7 @@ public class GiftRegistryRegistrant extends AbstractResponse<GiftRegistryRegistr
     }
 
     /**
-     * The unique ID assigned to the registrant
+     * The unique ID assigned to the registrant.
      */
     public ID getUid() {
         return (ID) get("uid");

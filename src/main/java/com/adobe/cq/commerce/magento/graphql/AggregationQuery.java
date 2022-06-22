@@ -18,8 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A bucket that contains information for each filterable option (such as price, category `UID`, and
- * custom attributes).
+ * Contains information for each filterable option (such as price, category `UID`, and custom
+ * attributes).
  */
 public class AggregationQuery extends AbstractQuery<AggregationQuery> {
     AggregationQuery(StringBuilder _queryBuilder) {
@@ -67,7 +67,7 @@ public class AggregationQuery extends AbstractQuery<AggregationQuery> {
     }
 
     /**
-     * The relative position of the attribute in a layered navigation block
+     * The relative position of the attribute in a layered navigation block.
      */
     public AggregationQuery position() {
         startField("position");

@@ -106,17 +106,6 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
-                case "chatData": {
-                    ChatData optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = new ChatData(jsonAsObject(field.getValue(), key));
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
                 case "checkoutAgreements": {
                     List<CheckoutAgreement> optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -153,6 +142,17 @@ public class Query extends AbstractResponse<Query> {
                     CmsPage optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new CmsPage(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "company": {
+                    Company optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new Company(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -277,28 +277,6 @@ public class Query extends AbstractResponse<Query> {
 
                 case "dynamicBlocks": {
                     responseData.put(key, new DynamicBlocks(jsonAsObject(field.getValue(), key)));
-
-                    break;
-                }
-
-                case "emailCaptureCheckout": {
-                    IsConfigSettingEnabledOutput optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = new IsConfigSettingEnabledOutput(jsonAsObject(field.getValue(), key));
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "emailCaptureNewsletter": {
-                    IsConfigSettingEnabledOutput optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = new IsConfigSettingEnabledOutput(jsonAsObject(field.getValue(), key));
-                    }
-
-                    responseData.put(key, optional1);
 
                     break;
                 }
@@ -431,6 +409,50 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
+                case "isCompanyAdminEmailAvailable": {
+                    IsCompanyAdminEmailAvailableOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new IsCompanyAdminEmailAvailableOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "isCompanyEmailAvailable": {
+                    IsCompanyEmailAvailableOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new IsCompanyEmailAvailableOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "isCompanyRoleNameAvailable": {
+                    IsCompanyRoleNameAvailableOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new IsCompanyRoleNameAvailableOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "isCompanyUserEmailAvailable": {
+                    IsCompanyUserEmailAvailableOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new IsCompanyUserEmailAvailableOutput(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "isEmailAvailable": {
                     IsEmailAvailableOutput optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -442,10 +464,21 @@ public class Query extends AbstractResponse<Query> {
                     break;
                 }
 
-                case "orderData": {
-                    Order optional1 = null;
+                case "negotiableQuote": {
+                    NegotiableQuote optional1 = null;
                     if (!field.getValue().isJsonNull()) {
-                        optional1 = new Order(jsonAsObject(field.getValue(), key));
+                        optional1 = new NegotiableQuote(jsonAsObject(field.getValue(), key));
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
+                case "negotiableQuotes": {
+                    NegotiableQuotesOutput optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        optional1 = new NegotiableQuotesOutput(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -496,17 +529,6 @@ public class Query extends AbstractResponse<Query> {
                     StoreConfig optional1 = null;
                     if (!field.getValue().isJsonNull()) {
                         optional1 = new StoreConfig(jsonAsObject(field.getValue(), key));
-                    }
-
-                    responseData.put(key, optional1);
-
-                    break;
-                }
-
-                case "trackingData": {
-                    TrackingData optional1 = null;
-                    if (!field.getValue().isJsonNull()) {
-                        optional1 = new TrackingData(jsonAsObject(field.getValue(), key));
                     }
 
                     responseData.put(key, optional1);
@@ -587,7 +609,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Returns information about shopping cart
+     * Return information about the specified shopping cart.
      */
     public Cart getCart() {
         return (Cart) get("cart");
@@ -598,6 +620,9 @@ public class Query extends AbstractResponse<Query> {
         return this;
     }
 
+    /**
+     * Return a list of categories that match the specified filter.
+     */
     public CategoryResult getCategories() {
         return (CategoryResult) get("categories");
     }
@@ -608,10 +633,9 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The category query searches for categories that match the criteria specified in the search and
-     * filter attributes.
+     * Search for categories that match the criteria specified in the `search` and `filter` attributes.
      *
-     * @deprecated Use &#39;categoryList&#39; query instead of &#39;category&#39; query
+     * @deprecated Use `categoryList` instead.
      */
     @Deprecated
     public CategoryTree getCategory() {
@@ -624,7 +648,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Returns an array of categories based on the specified filters.
+     * Return an array of categories based on the specified filters.
      */
     public List<CategoryTree> getCategoryList() {
         return (List<CategoryTree>) get("categoryList");
@@ -636,19 +660,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Retrieves an array of configuration data for the chat widget.
-     */
-    public ChatData getChatData() {
-        return (ChatData) get("chatData");
-    }
-
-    public Query setChatData(ChatData arg) {
-        optimisticData.put(getKey("chatData"), arg);
-        return this;
-    }
-
-    /**
-     * The Checkout Agreements information
+     * Return Terms and Conditions configuration information.
      */
     public List<CheckoutAgreement> getCheckoutAgreements() {
         return (List<CheckoutAgreement>) get("checkoutAgreements");
@@ -660,7 +672,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The CMS block query returns information about CMS blocks
+     * Return information about CMS blocks.
      */
     public CmsBlocks getCmsBlocks() {
         return (CmsBlocks) get("cmsBlocks");
@@ -672,7 +684,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The CMS page query returns information about a CMS page
+     * Return details about a CMS page.
      */
     public CmsPage getCmsPage() {
         return (CmsPage) get("cmsPage");
@@ -684,7 +696,19 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Return products that have been added to the specified compare list
+     * Return detailed information about the authenticated customer&#39;s company.
+     */
+    public Company getCompany() {
+        return (Company) get("company");
+    }
+
+    public Query setCompany(Company arg) {
+        optimisticData.put(getKey("company"), arg);
+        return this;
+    }
+
+    /**
+     * Return products that have been added to the specified compare list.
      */
     public CompareList getCompareList() {
         return (CompareList) get("compareList");
@@ -720,7 +744,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The currency query returns information about store currency.
+     * Return information about the store&#39;s currency.
      */
     public Currency getCurrency() {
         return (Currency) get("currency");
@@ -732,8 +756,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The customAttributeMetadata query returns the attribute type, given an attribute code and entity
-     * type
+     * Return the attribute type, given an attribute code and entity type.
      */
     public CustomAttributeMetadata getCustomAttributeMetadata() {
         return (CustomAttributeMetadata) get("customAttributeMetadata");
@@ -745,7 +768,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The customer query returns information about a customer account
+     * Return detailed information about a customer account.
      */
     public Customer getCustomer() {
         return (Customer) get("customer");
@@ -757,7 +780,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Returns information about the customer shopping cart
+     * Return information about the customer&#39;s shopping cart.
      */
     public Cart getCustomerCart() {
         return (Cart) get("customerCart");
@@ -769,7 +792,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The query returns the contents of a customer&#39;s downloadable products
+     * Return a list of downloadable products the customer has purchased.
      */
     public CustomerDownloadableProducts getCustomerDownloadableProducts() {
         return (CustomerDownloadableProducts) get("customerDownloadableProducts");
@@ -781,7 +804,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * @deprecated Use orders from customer instead
+     * @deprecated Use the `customer` query instead.
      */
     @Deprecated
     public CustomerOrders getCustomerOrders() {
@@ -794,7 +817,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Return a list of customer payment tokens
+     * Return a list of customer payment tokens stored in the vault.
      */
     public CustomerPaymentTokens getCustomerPaymentTokens() {
         return (CustomerPaymentTokens) get("customerPaymentTokens");
@@ -806,7 +829,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Return a list of dynamic blocks filtered by type, location, or UIDs
+     * Return a list of dynamic blocks filtered by type, location, or UIDs.
      */
     public DynamicBlocks getDynamicBlocks() {
         return (DynamicBlocks) get("dynamicBlocks");
@@ -818,31 +841,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Returns status of Easy Email Capture for Checkout.
-     */
-    public IsConfigSettingEnabledOutput getEmailCaptureCheckout() {
-        return (IsConfigSettingEnabledOutput) get("emailCaptureCheckout");
-    }
-
-    public Query setEmailCaptureCheckout(IsConfigSettingEnabledOutput arg) {
-        optimisticData.put(getKey("emailCaptureCheckout"), arg);
-        return this;
-    }
-
-    /**
-     * Returns status of Easy Email Capture for Newsletter.
-     */
-    public IsConfigSettingEnabledOutput getEmailCaptureNewsletter() {
-        return (IsConfigSettingEnabledOutput) get("emailCaptureNewsletter");
-    }
-
-    public Query setEmailCaptureNewsletter(IsConfigSettingEnabledOutput arg) {
-        optimisticData.put(getKey("emailCaptureNewsletter"), arg);
-        return this;
-    }
-
-    /**
-     * Retrieve secure PayPal url for Payments Pro Hosted Solution transaction.
+     * Retrieve the secure PayPal URL for a Payments Pro Hosted Solution transaction.
      */
     public HostedProUrl getGetHostedProUrl() {
         return (HostedProUrl) get("getHostedProUrl");
@@ -854,8 +853,8 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Retrieve payment credentials for transaction. Use this query for Payflow Link and Payments Advanced
-     * payment methods.
+     * Retrieve payment credentials for a transaction. Use this query for Payflow Link and Payments
+     * Advanced payment methods.
      */
     public PayflowLinkToken getGetPayflowLinkToken() {
         return (PayflowLinkToken) get("getPayflowLinkToken");
@@ -867,7 +866,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Get information for gift card account by code
+     * Return details about a specific gift card.
      */
     public GiftCardAccount getGiftCardAccount() {
         return (GiftCardAccount) get("giftCardAccount");
@@ -891,7 +890,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Search for gift registries by specifying a registrant email address
+     * Search for gift registries by specifying a registrant email address.
      */
     public List<GiftRegistrySearchResult> getGiftRegistryEmailSearch() {
         return (List<GiftRegistrySearchResult>) get("giftRegistryEmailSearch");
@@ -903,7 +902,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Search for gift registries by specifying a registry URL key
+     * Search for gift registries by specifying a registry URL key.
      */
     public List<GiftRegistrySearchResult> getGiftRegistryIdSearch() {
         return (List<GiftRegistrySearchResult>) get("giftRegistryIdSearch");
@@ -915,7 +914,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Search for gift registries by specifying the registrant name and registry type ID
+     * Search for gift registries by specifying the registrant name and registry type ID.
      */
     public List<GiftRegistrySearchResult> getGiftRegistryTypeSearch() {
         return (List<GiftRegistrySearchResult>) get("giftRegistryTypeSearch");
@@ -927,7 +926,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Get a list of available gift registry types
+     * Get a list of available gift registry types.
      */
     public List<GiftRegistryType> getGiftRegistryTypes() {
         return (List<GiftRegistryType>) get("giftRegistryTypes");
@@ -938,6 +937,57 @@ public class Query extends AbstractResponse<Query> {
         return this;
     }
 
+    /**
+     * Check whether the specified email can be used to register a company admin.
+     */
+    public IsCompanyAdminEmailAvailableOutput getIsCompanyAdminEmailAvailable() {
+        return (IsCompanyAdminEmailAvailableOutput) get("isCompanyAdminEmailAvailable");
+    }
+
+    public Query setIsCompanyAdminEmailAvailable(IsCompanyAdminEmailAvailableOutput arg) {
+        optimisticData.put(getKey("isCompanyAdminEmailAvailable"), arg);
+        return this;
+    }
+
+    /**
+     * Check whether the specified email can be used to register a new company.
+     */
+    public IsCompanyEmailAvailableOutput getIsCompanyEmailAvailable() {
+        return (IsCompanyEmailAvailableOutput) get("isCompanyEmailAvailable");
+    }
+
+    public Query setIsCompanyEmailAvailable(IsCompanyEmailAvailableOutput arg) {
+        optimisticData.put(getKey("isCompanyEmailAvailable"), arg);
+        return this;
+    }
+
+    /**
+     * Check whether the specified role name is valid for the company.
+     */
+    public IsCompanyRoleNameAvailableOutput getIsCompanyRoleNameAvailable() {
+        return (IsCompanyRoleNameAvailableOutput) get("isCompanyRoleNameAvailable");
+    }
+
+    public Query setIsCompanyRoleNameAvailable(IsCompanyRoleNameAvailableOutput arg) {
+        optimisticData.put(getKey("isCompanyRoleNameAvailable"), arg);
+        return this;
+    }
+
+    /**
+     * Check whether the specified email can be used to register a company user.
+     */
+    public IsCompanyUserEmailAvailableOutput getIsCompanyUserEmailAvailable() {
+        return (IsCompanyUserEmailAvailableOutput) get("isCompanyUserEmailAvailable");
+    }
+
+    public Query setIsCompanyUserEmailAvailable(IsCompanyUserEmailAvailableOutput arg) {
+        optimisticData.put(getKey("isCompanyUserEmailAvailable"), arg);
+        return this;
+    }
+
+    /**
+     * Check whether the specified email has already been used to create a customer account.
+     */
     public IsEmailAvailableOutput getIsEmailAvailable() {
         return (IsEmailAvailableOutput) get("isEmailAvailable");
     }
@@ -948,14 +998,26 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Retrieves information about an order by order id.
+     * Retrieve the specified negotiable quote.
      */
-    public Order getOrderData() {
-        return (Order) get("orderData");
+    public NegotiableQuote getNegotiableQuote() {
+        return (NegotiableQuote) get("negotiableQuote");
     }
 
-    public Query setOrderData(Order arg) {
-        optimisticData.put(getKey("orderData"), arg);
+    public Query setNegotiableQuote(NegotiableQuote arg) {
+        optimisticData.put(getKey("negotiableQuote"), arg);
+        return this;
+    }
+
+    /**
+     * Return a list of negotiable quotes that can be viewed by the logged-in customer.
+     */
+    public NegotiableQuotesOutput getNegotiableQuotes() {
+        return (NegotiableQuotesOutput) get("negotiableQuotes");
+    }
+
+    public Query setNegotiableQuotes(NegotiableQuotesOutput arg) {
+        optimisticData.put(getKey("negotiableQuotes"), arg);
         return this;
     }
 
@@ -972,7 +1034,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Retrieves metadata required by clients to render the Reviews section.
+     * Return the active ratings attributes and the values each rating can have.
      */
     public ProductReviewRatingsMetadata getProductReviewRatingsMetadata() {
         return (ProductReviewRatingsMetadata) get("productReviewRatingsMetadata");
@@ -984,8 +1046,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The products query searches for products that match the criteria specified in the search and filter
-     * attributes.
+     * Search for products that match the criteria specified in the `search` and `filter` attributes.
      */
     public Products getProducts() {
         return (Products) get("products");
@@ -997,8 +1058,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Return the full details for a specified product, category, or CMS page given the specified url_key,
-     * appended by the url_suffix, if one exists
+     * Return the full details for a specified product, category, or CMS page.
      */
     public RoutableInterface getRoute() {
         return (RoutableInterface) get("route");
@@ -1010,7 +1070,7 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The store config query
+     * Return details about the store&#39;s configuration.
      */
     public StoreConfig getStoreConfig() {
         return (StoreConfig) get("storeConfig");
@@ -1022,22 +1082,9 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * Retrieves an array of configuration data for different types of tracking.
-     */
-    public TrackingData getTrackingData() {
-        return (TrackingData) get("trackingData");
-    }
-
-    public Query setTrackingData(TrackingData arg) {
-        optimisticData.put(getKey("trackingData"), arg);
-        return this;
-    }
-
-    /**
-     * The urlResolver query returns the relative URL for a specified product, category or CMS page, using
-     * as input a url_key appended by the url_suffix, if one exists
+     * Return the relative URL for a specified product, category or CMS page.
      *
-     * @deprecated Use the &#39;route&#39; query instead
+     * @deprecated Use the `route` query instead.
      */
     @Deprecated
     public EntityUrl getUrlResolver() {
@@ -1050,9 +1097,9 @@ public class Query extends AbstractResponse<Query> {
     }
 
     /**
-     * The wishlist query returns the contents of a customer&#39;s wish list
+     * Return the contents of a customer&#39;s wish list.
      *
-     * @deprecated Moved under `Customer` `wishlist`
+     * @deprecated Moved under `Customer.wishlist`.
      */
     @Deprecated
     public WishlistOutput getWishlist() {
@@ -1095,9 +1142,6 @@ public class Query extends AbstractResponse<Query> {
             case "categoryList":
                 return true;
 
-            case "chatData":
-                return true;
-
             case "checkoutAgreements":
                 return true;
 
@@ -1105,6 +1149,9 @@ public class Query extends AbstractResponse<Query> {
                 return true;
 
             case "cmsPage":
+                return true;
+
+            case "company":
                 return true;
 
             case "compareList":
@@ -1140,12 +1187,6 @@ public class Query extends AbstractResponse<Query> {
             case "dynamicBlocks":
                 return true;
 
-            case "emailCaptureCheckout":
-                return true;
-
-            case "emailCaptureNewsletter":
-                return true;
-
             case "getHostedProUrl":
                 return true;
 
@@ -1170,10 +1211,25 @@ public class Query extends AbstractResponse<Query> {
             case "giftRegistryTypes":
                 return true;
 
+            case "isCompanyAdminEmailAvailable":
+                return true;
+
+            case "isCompanyEmailAvailable":
+                return true;
+
+            case "isCompanyRoleNameAvailable":
+                return true;
+
+            case "isCompanyUserEmailAvailable":
+                return true;
+
             case "isEmailAvailable":
                 return true;
 
-            case "orderData":
+            case "negotiableQuote":
+                return true;
+
+            case "negotiableQuotes":
                 return true;
 
             case "pickupLocations":
@@ -1189,9 +1245,6 @@ public class Query extends AbstractResponse<Query> {
                 return false;
 
             case "storeConfig":
-                return true;
-
-            case "trackingData":
                 return true;
 
             case "urlResolver":

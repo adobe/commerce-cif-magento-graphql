@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * SortFields contains a default value for sort fields and all available sort fields.
+ * Contains a default value for sort fields and all available sort fields.
  */
 public class SortFieldsQuery extends AbstractQuery<SortFieldsQuery> {
     SortFieldsQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class SortFieldsQuery extends AbstractQuery<SortFieldsQuery> {
     }
 
     /**
-     * Default value of sort fields.
+     * The default sort field value.
      */
     public SortFieldsQuery defaultValue() {
         startField("default");
@@ -35,7 +35,7 @@ public class SortFieldsQuery extends AbstractQuery<SortFieldsQuery> {
     }
 
     /**
-     * Available sort fields.
+     * An array of possible sort fields.
      */
     public SortFieldsQuery options(SortFieldQueryDefinition queryDef) {
         startField("options");

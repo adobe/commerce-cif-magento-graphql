@@ -18,9 +18,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * PriceAdjustment is deprecated. Taxes will be included or excluded in the price. The PricedAdjustment
- * object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and
- * whether the item is included or excluded from the adjustment.
+ * Deprecated. Taxes will be included or excluded in the price. Defines the amount of money to apply as
+ * an adjustment, the type of adjustment to apply, and whether the item is included or excluded from
+ * the adjustment.
  */
 public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
     PriceAdjustmentQuery(StringBuilder _queryBuilder) {
@@ -43,7 +43,7 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
     /**
      * Indicates whether the adjustment involves tax, weee, or weee_tax.
      *
-     * @deprecated PriceAdjustment is deprecated.
+     * @deprecated `PriceAdjustment` is deprecated.
      */
     @Deprecated
     public PriceAdjustmentQuery code() {
@@ -56,7 +56,7 @@ public class PriceAdjustmentQuery extends AbstractQuery<PriceAdjustmentQuery> {
      * Indicates whether the entity described by the code attribute is included or excluded from the
      * adjustment.
      *
-     * @deprecated PriceAdjustment is deprecated.
+     * @deprecated `PriceAdjustment` is deprecated.
      */
     @Deprecated
     public PriceAdjustmentQuery description() {

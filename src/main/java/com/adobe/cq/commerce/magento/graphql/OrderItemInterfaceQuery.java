@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Order item details
+ * Order item details.
  */
 public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQuery> {
     OrderItemInterfaceQuery(StringBuilder _queryBuilder) {
@@ -33,7 +33,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The final discount information for the product
+     * The final discount information for the product.
      */
     public OrderItemInterfaceQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -46,7 +46,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * Indicates whether the order item is eligible is eligible to be in a return request
+     * Indicates whether the order item is eligible to be in a return request.
      */
     public OrderItemInterfaceQuery eligibleForReturn() {
         startField("eligible_for_return");
@@ -55,7 +55,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The entered option for the base product, such as a logo or image
+     * The entered option for the base product, such as a logo or image.
      */
     public OrderItemInterfaceQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("entered_options");
@@ -68,7 +68,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The selected gift wrapping for the order item
+     * The selected gift wrapping for the order item.
      */
     public OrderItemInterfaceQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -81,7 +81,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for an `OrderItemInterface` object.
      */
     public OrderItemInterfaceQuery id() {
         startField("id");
@@ -90,7 +90,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public OrderItemInterfaceQuery productName() {
         startField("product_name");
@@ -99,7 +99,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The sale price of the base product, including selected options
+     * The sale price of the base product, including selected options.
      */
     public OrderItemInterfaceQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -112,7 +112,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public OrderItemInterfaceQuery productSku() {
         startField("product_sku");
@@ -130,7 +130,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * URL key of the base product
+     * URL key of the base product.
      */
     public OrderItemInterfaceQuery productUrlKey() {
         startField("product_url_key");
@@ -139,7 +139,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The number of canceled items
+     * The number of canceled items.
      */
     public OrderItemInterfaceQuery quantityCanceled() {
         startField("quantity_canceled");
@@ -148,7 +148,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public OrderItemInterfaceQuery quantityInvoiced() {
         startField("quantity_invoiced");
@@ -157,7 +157,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The number of units ordered for this item
+     * The number of units ordered for this item.
      */
     public OrderItemInterfaceQuery quantityOrdered() {
         startField("quantity_ordered");
@@ -166,7 +166,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public OrderItemInterfaceQuery quantityRefunded() {
         startField("quantity_refunded");
@@ -175,7 +175,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The number of returned items
+     * The number of returned items.
      */
     public OrderItemInterfaceQuery quantityReturned() {
         startField("quantity_returned");
@@ -184,7 +184,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The number of shipped items
+     * The number of shipped items.
      */
     public OrderItemInterfaceQuery quantityShipped() {
         startField("quantity_shipped");
@@ -193,7 +193,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size.
      */
     public OrderItemInterfaceQuery selectedOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("selected_options");
@@ -206,7 +206,7 @@ public class OrderItemInterfaceQuery extends AbstractQuery<OrderItemInterfaceQue
     }
 
     /**
-     * The status of the order item
+     * The status of the order item.
      */
     public OrderItemInterfaceQuery status() {
         startField("status");

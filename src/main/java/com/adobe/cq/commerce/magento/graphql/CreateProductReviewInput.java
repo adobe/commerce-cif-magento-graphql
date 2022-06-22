@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines a new product review.
+ */
 public class CreateProductReviewInput implements Serializable {
     private String nickname;
 
@@ -43,14 +46,14 @@ public class CreateProductReviewInput implements Serializable {
     }
 
     /**
-     * The customer&#39;s nickname. Defaults to the customer name, if logged in
+     * The customer&#39;s nickname. Defaults to the customer name, if logged in.
      */
     public String getNickname() {
         return nickname;
     }
 
     /**
-     * The customer&#39;s nickname. Defaults to the customer name, if logged in
+     * The customer&#39;s nickname. Defaults to the customer name, if logged in.
      */
     public CreateProductReviewInput setNickname(String nickname) {
         this.nickname = nickname;
@@ -58,14 +61,14 @@ public class CreateProductReviewInput implements Serializable {
     }
 
     /**
-     * Ratings details by category. e.g price: 5, quality: 4 etc
+     * The ratings details by category. For example, Price: 5 stars, Quality: 4 stars, etc.
      */
     public List<ProductReviewRatingInput> getRatings() {
         return ratings;
     }
 
     /**
-     * Ratings details by category. e.g price: 5, quality: 4 etc
+     * The ratings details by category. For example, Price: 5 stars, Quality: 4 stars, etc.
      */
     public CreateProductReviewInput setRatings(List<ProductReviewRatingInput> ratings) {
         this.ratings = ratings;
@@ -73,14 +76,14 @@ public class CreateProductReviewInput implements Serializable {
     }
 
     /**
-     * The SKU of the reviewed product
+     * The SKU of the reviewed product.
      */
     public String getSku() {
         return sku;
     }
 
     /**
-     * The SKU of the reviewed product
+     * The SKU of the reviewed product.
      */
     public CreateProductReviewInput setSku(String sku) {
         this.sku = sku;
@@ -88,14 +91,14 @@ public class CreateProductReviewInput implements Serializable {
     }
 
     /**
-     * The summary (title) of the review
+     * The summary (title) of the review.
      */
     public String getSummary() {
         return summary;
     }
 
     /**
-     * The summary (title) of the review
+     * The summary (title) of the review.
      */
     public CreateProductReviewInput setSummary(String summary) {
         this.summary = summary;

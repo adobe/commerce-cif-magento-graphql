@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableDropDownValue defines the price and sku of a product whose page contains a customized
- * drop down menu.
+ * Defines the price and sku of a product whose page contains a customized drop down menu.
  */
 public class CustomizableDropDownValue extends AbstractResponse<CustomizableDropDownValue> {
     public CustomizableDropDownValue() {}

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Contains details about a gift card
+ * Contains details about a gift card that has been added to a cart.
  */
 public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> {
     GiftCardCartItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * The amount and currency of the gift card
+     * The amount and currency of the gift card.
      */
     public GiftCardCartItemQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
@@ -39,7 +39,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * An array of customizations made to the gift card
+     * An array of customizations applied to the gift card.
      */
     public GiftCardCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -52,7 +52,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public GiftCardCartItemQuery id() {
@@ -62,7 +62,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * A message to the recipient
+     * The message from the sender to the recipient.
      */
     public GiftCardCartItemQuery message() {
         startField("message");
@@ -70,6 +70,9 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public GiftCardCartItemQuery prices(CartItemPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -80,6 +83,9 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public GiftCardCartItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -90,6 +96,9 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public GiftCardCartItemQuery quantity() {
         startField("quantity");
 
@@ -97,7 +106,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * The email of the person receiving the gift card
+     * The email address of the person receiving the gift card.
      */
     public GiftCardCartItemQuery recipientEmail() {
         startField("recipient_email");
@@ -106,7 +115,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * The name of the person receiving the gift card
+     * The name of the person receiving the gift card.
      */
     public GiftCardCartItemQuery recipientName() {
         startField("recipient_name");
@@ -115,7 +124,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * The email of the sender
+     * The email address of the sender.
      */
     public GiftCardCartItemQuery senderEmail() {
         startField("sender_email");
@@ -124,7 +133,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * The name of the sender
+     * The name of the sender.
      */
     public GiftCardCartItemQuery senderName() {
         startField("sender_name");
@@ -133,7 +142,7 @@ public class GiftCardCartItemQuery extends AbstractQuery<GiftCardCartItemQuery> 
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public GiftCardCartItemQuery uid() {
         startField("uid");

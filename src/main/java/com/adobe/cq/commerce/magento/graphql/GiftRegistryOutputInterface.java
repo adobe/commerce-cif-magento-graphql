@@ -17,14 +17,14 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.CustomFieldInterface;
 
 /**
- * Contains the customer&#39;s gift registry
+ * Contains the customer&#39;s gift registry.
  */
 
 public interface GiftRegistryOutputInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * The gift registry
+     * The gift registry.
      */
     GiftRegistry getGiftRegistry();
 }

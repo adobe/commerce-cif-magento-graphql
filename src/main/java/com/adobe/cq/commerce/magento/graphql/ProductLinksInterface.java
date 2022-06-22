@@ -17,8 +17,7 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.CustomFieldInterface;
 
 /**
- * ProductLinks contains information about linked products, including the link type and product type of
- * each item.
+ * Contains information about linked products, including the link type and product type of each item.
  */
 
 public interface ProductLinksInterface extends CustomFieldInterface {

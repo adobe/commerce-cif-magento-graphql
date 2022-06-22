@@ -15,7 +15,7 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * The list of available currency codes
+ * The list of available currency codes.
  */
 public enum CurrencyEnum {
     AED,

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Indicates whether the request succeeded and returns the remaining customer payment tokens.
+ */
 public class DeletePaymentTokenOutput extends AbstractResponse<DeletePaymentTokenOutput> {
     public DeletePaymentTokenOutput() {}
 
@@ -62,6 +65,9 @@ public class DeletePaymentTokenOutput extends AbstractResponse<DeletePaymentToke
         return "DeletePaymentTokenOutput";
     }
 
+    /**
+     * A container for the customer&#39;s remaining payment tokens.
+     */
     public CustomerPaymentTokens getCustomerPaymentTokens() {
         return (CustomerPaymentTokens) get("customerPaymentTokens");
     }
@@ -71,6 +77,9 @@ public class DeletePaymentTokenOutput extends AbstractResponse<DeletePaymentToke
         return this;
     }
 
+    /**
+     * Indicates whether the request succeeded.
+     */
     public Boolean getResult() {
         return (Boolean) get("result");
     }

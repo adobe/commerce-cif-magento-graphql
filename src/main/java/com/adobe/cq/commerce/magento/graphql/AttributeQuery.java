@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Attribute contains the attribute_type of the specified attribute_code and entity_type
+ * Contains details about the attribute, including the code and type.
  */
 public class AttributeQuery extends AbstractQuery<AttributeQuery> {
     AttributeQuery(StringBuilder _queryBuilder) {
@@ -49,7 +49,7 @@ public class AttributeQuery extends AbstractQuery<AttributeQuery> {
     }
 
     /**
-     * The data type of the attribute
+     * The data type of the attribute.
      */
     public AttributeQuery attributeType() {
         startField("attribute_type");
@@ -58,7 +58,7 @@ public class AttributeQuery extends AbstractQuery<AttributeQuery> {
     }
 
     /**
-     * The type of entity that defines the attribute
+     * The type of entity that defines the attribute.
      */
     public AttributeQuery entityType() {
         startField("entity_type");
@@ -67,7 +67,7 @@ public class AttributeQuery extends AbstractQuery<AttributeQuery> {
     }
 
     /**
-     * The frontend input type of the attribute
+     * The frontend input type of the attribute.
      */
     public AttributeQuery inputType() {
         startField("input_type");
@@ -76,7 +76,7 @@ public class AttributeQuery extends AbstractQuery<AttributeQuery> {
     }
 
     /**
-     * Contains details about the storefront properties configured for the attribute
+     * Details about the storefront properties configured for the attribute.
      */
     public AttributeQuery storefrontProperties(StorefrontPropertiesQueryDefinition queryDef) {
         startField("storefront_properties");

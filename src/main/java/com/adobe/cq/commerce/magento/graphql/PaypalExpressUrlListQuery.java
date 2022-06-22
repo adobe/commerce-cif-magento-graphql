@@ -18,8 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A set of URLs that allow the buyer to authorize payment and adjust checkout details for Express
- * Checkout and Payments Standard transactions.
+ * Contains a set of URLs that allow the buyer to authorize payment and adjust checkout details for
+ * Express Checkout and Payments Standard transactions.
  */
 public class PaypalExpressUrlListQuery extends AbstractQuery<PaypalExpressUrlListQuery> {
     PaypalExpressUrlListQuery(StringBuilder _queryBuilder) {
@@ -27,7 +27,7 @@ public class PaypalExpressUrlListQuery extends AbstractQuery<PaypalExpressUrlLis
     }
 
     /**
-     * The PayPal URL that allows the buyer to edit their checkout details
+     * The PayPal URL that allows the buyer to edit their checkout details.
      */
     public PaypalExpressUrlListQuery edit() {
         startField("edit");
@@ -36,7 +36,7 @@ public class PaypalExpressUrlListQuery extends AbstractQuery<PaypalExpressUrlLis
     }
 
     /**
-     * The URL to the PayPal login page
+     * The URL to the PayPal login page.
      */
     public PaypalExpressUrlListQuery start() {
         startField("start");

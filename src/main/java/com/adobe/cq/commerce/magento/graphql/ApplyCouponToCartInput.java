@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Specifies the coupon code to apply to the cart.
+ */
 public class ApplyCouponToCartInput implements Serializable {
     private String cartId;
 
@@ -29,19 +32,31 @@ public class ApplyCouponToCartInput implements Serializable {
         this.couponCode = couponCode;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public ApplyCouponToCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * A valid coupon code.
+     */
     public String getCouponCode() {
         return couponCode;
     }
 
+    /**
+     * A valid coupon code.
+     */
     public ApplyCouponToCartInput setCouponCode(String couponCode) {
         this.couponCode = couponCode;
         return this;

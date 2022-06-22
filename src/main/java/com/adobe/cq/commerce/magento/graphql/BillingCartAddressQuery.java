@@ -17,23 +17,35 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the billing address.
+ */
 public class BillingCartAddressQuery extends AbstractQuery<BillingCartAddressQuery> {
     BillingCartAddressQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The city specified for the billing or shipping address.
+     */
     public BillingCartAddressQuery city() {
         startField("city");
 
         return this;
     }
 
+    /**
+     * The company specified for the billing or shipping address.
+     */
     public BillingCartAddressQuery company() {
         startField("company");
 
         return this;
     }
 
+    /**
+     * An object containing the country label and code.
+     */
     public BillingCartAddressQuery country(CartAddressCountryQueryDefinition queryDef) {
         startField("country");
 
@@ -45,7 +57,7 @@ public class BillingCartAddressQuery extends AbstractQuery<BillingCartAddressQue
     }
 
     /**
-     * @deprecated The field is used only in shipping address
+     * @deprecated The field is used only in shipping address.
      */
     @Deprecated
     public BillingCartAddressQuery customerNotes() {
@@ -54,24 +66,36 @@ public class BillingCartAddressQuery extends AbstractQuery<BillingCartAddressQue
         return this;
     }
 
+    /**
+     * The first name of the customer or guest.
+     */
     public BillingCartAddressQuery firstname() {
         startField("firstname");
 
         return this;
     }
 
+    /**
+     * The last name of the customer or guest.
+     */
     public BillingCartAddressQuery lastname() {
         startField("lastname");
 
         return this;
     }
 
+    /**
+     * The ZIP or postal code of the billing or shipping address.
+     */
     public BillingCartAddressQuery postcode() {
         startField("postcode");
 
         return this;
     }
 
+    /**
+     * An object containing the region label and code.
+     */
     public BillingCartAddressQuery region(CartAddressRegionQueryDefinition queryDef) {
         startField("region");
 
@@ -82,12 +106,18 @@ public class BillingCartAddressQuery extends AbstractQuery<BillingCartAddressQue
         return this;
     }
 
+    /**
+     * An array containing the street for the billing or shipping address.
+     */
     public BillingCartAddressQuery street() {
         startField("street");
 
         return this;
     }
 
+    /**
+     * The telephone number for the billing or shipping address.
+     */
     public BillingCartAddressQuery telephone() {
         startField("telephone");
 

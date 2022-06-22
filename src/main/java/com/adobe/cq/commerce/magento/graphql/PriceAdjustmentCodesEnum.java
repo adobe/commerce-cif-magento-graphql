@@ -15,25 +15,24 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * PriceAdjustment.code is deprecated. This enumeration contains values defined in modules other than
- * the Catalog module.
+ * `PriceAdjustment.code` is deprecated.
  */
 public enum PriceAdjustmentCodesEnum {
     /**
-     * @deprecated PriceAdjustmentCodesEnum is deprecated. Tax is included or excluded in price. Tax is not shown separtely in Catalog
+     * @deprecated `PriceAdjustmentCodesEnum` is deprecated. Tax is included or excluded in the price. Tax is not shown separately in
+     *             Catalog.
      */
     @Deprecated
     TAX,
 
     /**
-     * @deprecated WEEE code is deprecated, use fixed_product_taxes.label
+     * @deprecated WEEE code is deprecated. Use `fixed_product_taxes.label` instead.
      */
     @Deprecated
     WEEE,
 
     /**
-     * @deprecated Use fixed_product_taxes. PriceAdjustmentCodesEnum is deprecated. Tax is included or excluded in price. Tax is not shown
-     *             separtely in Catalog
+     * @deprecated Use `fixed_product_taxes` instead. Tax is included or excluded in price. The tax is not shown separtely in Catalog.
      */
     @Deprecated
     WEEE_TAX,

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a single downloadable product.
+ */
 public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownloadableProduct> {
     public CustomerDownloadableProduct() {}
 
@@ -100,6 +103,9 @@ public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownlo
         return "CustomerDownloadableProduct";
     }
 
+    /**
+     * The date and time the purchase was made.
+     */
     public String getDate() {
         return (String) get("date");
     }
@@ -109,6 +115,9 @@ public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownlo
         return this;
     }
 
+    /**
+     * The fully qualified URL to the download file.
+     */
     public String getDownloadUrl() {
         return (String) get("download_url");
     }
@@ -118,6 +127,9 @@ public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownlo
         return this;
     }
 
+    /**
+     * The unique ID assigned to the item.
+     */
     public String getOrderIncrementId() {
         return (String) get("order_increment_id");
     }
@@ -127,6 +139,9 @@ public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownlo
         return this;
     }
 
+    /**
+     * The remaining number of times the customer can download the product.
+     */
     public String getRemainingDownloads() {
         return (String) get("remaining_downloads");
     }
@@ -136,6 +151,9 @@ public class CustomerDownloadableProduct extends AbstractResponse<CustomerDownlo
         return this;
     }
 
+    /**
+     * Indicates when the product becomes available for download. Options are `Pending` and `Invoiced`.
+     */
     public String getStatus() {
         return (String) get("status");
     }

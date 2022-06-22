@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines bundle product options for `OrderItemInterface`.
+ */
 public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     BundleOrderItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A list of bundle options that are assigned to the bundle product
+     * A list of bundle options that are assigned to the bundle product.
      */
     public BundleOrderItemQuery bundleOptions(ItemSelectedBundleOptionQueryDefinition queryDef) {
         startField("bundle_options");
@@ -36,7 +39,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The final discount information for the product
+     * The final discount information for the product.
      */
     public BundleOrderItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -49,7 +52,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * Indicates whether the order item is eligible is eligible to be in a return request
+     * Indicates whether the order item is eligible to be in a return request.
      */
     public BundleOrderItemQuery eligibleForReturn() {
         startField("eligible_for_return");
@@ -58,7 +61,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The entered option for the base product, such as a logo or image
+     * The entered option for the base product, such as a logo or image.
      */
     public BundleOrderItemQuery enteredOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("entered_options");
@@ -71,7 +74,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The selected gift wrapping for the order item
+     * The selected gift wrapping for the order item.
      */
     public BundleOrderItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -84,7 +87,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for an `OrderItemInterface` object.
      */
     public BundleOrderItemQuery id() {
         startField("id");
@@ -93,7 +96,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public BundleOrderItemQuery productName() {
         startField("product_name");
@@ -102,7 +105,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The sale price of the base product, including selected options
+     * The sale price of the base product, including selected options.
      */
     public BundleOrderItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -115,7 +118,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public BundleOrderItemQuery productSku() {
         startField("product_sku");
@@ -133,7 +136,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * URL key of the base product
+     * URL key of the base product.
      */
     public BundleOrderItemQuery productUrlKey() {
         startField("product_url_key");
@@ -142,7 +145,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The number of canceled items
+     * The number of canceled items.
      */
     public BundleOrderItemQuery quantityCanceled() {
         startField("quantity_canceled");
@@ -151,7 +154,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public BundleOrderItemQuery quantityInvoiced() {
         startField("quantity_invoiced");
@@ -160,7 +163,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The number of units ordered for this item
+     * The number of units ordered for this item.
      */
     public BundleOrderItemQuery quantityOrdered() {
         startField("quantity_ordered");
@@ -169,7 +172,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public BundleOrderItemQuery quantityRefunded() {
         startField("quantity_refunded");
@@ -178,7 +181,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The number of returned items
+     * The number of returned items.
      */
     public BundleOrderItemQuery quantityReturned() {
         startField("quantity_returned");
@@ -187,7 +190,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The number of shipped items
+     * The number of shipped items.
      */
     public BundleOrderItemQuery quantityShipped() {
         startField("quantity_shipped");
@@ -196,7 +199,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size.
      */
     public BundleOrderItemQuery selectedOptions(OrderItemOptionQueryDefinition queryDef) {
         startField("selected_options");
@@ -209,7 +212,7 @@ public class BundleOrderItemQuery extends AbstractQuery<BundleOrderItemQuery> {
     }
 
     /**
-     * The status of the order item
+     * The status of the order item.
      */
     public BundleOrderItemQuery status() {
         startField("status");

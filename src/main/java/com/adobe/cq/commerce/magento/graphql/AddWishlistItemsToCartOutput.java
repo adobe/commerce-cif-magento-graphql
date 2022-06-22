@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the resultant wish list and any error information.
+ */
 public class AddWishlistItemsToCartOutput extends AbstractResponse<AddWishlistItemsToCartOutput> {
     public AddWishlistItemsToCartOutput() {}
 
@@ -76,7 +79,7 @@ public class AddWishlistItemsToCartOutput extends AbstractResponse<AddWishlistIt
     }
 
     /**
-     * An array of errors encountered while adding products to the customer&#39;s cart
+     * An array of errors encountered while adding products to the customer&#39;s cart.
      */
     public List<WishlistCartUserInputError> getAddWishlistItemsToCartUserErrors() {
         return (List<WishlistCartUserInputError>) get("add_wishlist_items_to_cart_user_errors");
@@ -88,7 +91,7 @@ public class AddWishlistItemsToCartOutput extends AbstractResponse<AddWishlistIt
     }
 
     /**
-     * Indicates whether the attempt to add items to the customer&#39;s cart was successful
+     * Indicates whether the attempt to add items to the customer&#39;s cart was successful.
      */
     public Boolean getStatus() {
         return (Boolean) get("status");
@@ -100,7 +103,7 @@ public class AddWishlistItemsToCartOutput extends AbstractResponse<AddWishlistIt
     }
 
     /**
-     * Contains the wish list with all items that were successfully added
+     * Contains the wish list with all items that were successfully added.
      */
     public Wishlist getWishlist() {
         return (Wishlist) get("wishlist");

@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableFieldValue defines the price and sku of a product whose page contains a customized text
- * field.
+ * Defines the price and sku of a product whose page contains a customized text field.
  */
 public class CustomizableFieldValue extends AbstractResponse<CustomizableFieldValue> {
     public CustomizableFieldValue() {}

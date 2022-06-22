@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Contains details about an attribute the buyer selected.
+ */
 public class SelectedCustomAttributeInput implements Serializable {
     private String attributeCode;
 
@@ -31,14 +34,14 @@ public class SelectedCustomAttributeInput implements Serializable {
     }
 
     /**
-     * A string that identifies the selected attribute
+     * A string that identifies the selected attribute.
      */
     public String getAttributeCode() {
         return attributeCode;
     }
 
     /**
-     * A string that identifies the selected attribute
+     * A string that identifies the selected attribute.
      */
     public SelectedCustomAttributeInput setAttributeCode(String attributeCode) {
         this.attributeCode = attributeCode;
@@ -46,14 +49,14 @@ public class SelectedCustomAttributeInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `CustomAttribute` object of a selected custom attribute
+     * The unique ID for a `CustomAttribute` object of a selected custom attribute.
      */
     public ID getValue() {
         return value;
     }
 
     /**
-     * The unique ID for a `CustomAttribute` object of a selected custom attribute
+     * The unique ID for a `CustomAttribute` object of a selected custom attribute.
      */
     public SelectedCustomAttributeInput setValue(ID value) {
         this.value = value;

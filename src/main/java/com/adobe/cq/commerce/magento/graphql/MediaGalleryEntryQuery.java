@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * MediaGalleryEntry defines characteristics about images and videos associated with a specific
- * product.
+ * Defines characteristics about images and videos associated with a specific product.
  */
 public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery> {
     MediaGalleryEntryQuery(StringBuilder _queryBuilder) {
@@ -27,7 +26,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesContent object.
+     * Details about the content of the media gallery item.
      */
     public MediaGalleryEntryQuery content(ProductMediaGalleryEntriesContentQueryDefinition queryDef) {
         startField("content");
@@ -40,7 +39,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public MediaGalleryEntryQuery disabled() {
         startField("disabled");
@@ -70,7 +69,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * The alt text displayed on the UI when the user points to the image.
+     * The alt text displayed on the storefront when the user points to the image.
      */
     public MediaGalleryEntryQuery label() {
         startField("label");
@@ -79,7 +78,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * image or video.
+     * Either `image` or `video`.
      */
     public MediaGalleryEntryQuery mediaType() {
         startField("media_type");
@@ -115,7 +114,7 @@ public class MediaGalleryEntryQuery extends AbstractQuery<MediaGalleryEntryQuery
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesVideoContent object.
+     * Details about the content of a video item.
      */
     public MediaGalleryEntryQuery videoContent(ProductMediaGalleryEntriesVideoContentQueryDefinition queryDef) {
         startField("video_content");

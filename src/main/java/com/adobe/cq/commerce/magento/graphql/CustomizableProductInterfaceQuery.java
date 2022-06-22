@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableProductInterface contains information about customizable product options.
+ * Contains information about customizable product options.
  */
 public class CustomizableProductInterfaceQuery extends AbstractQuery<CustomizableProductInterfaceQuery> {
     CustomizableProductInterfaceQuery(StringBuilder _queryBuilder) {

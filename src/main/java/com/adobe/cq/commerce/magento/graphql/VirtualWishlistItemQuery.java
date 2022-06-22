@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * A virtual product wish list item
+ * Contains a virtual product wish list item.
  */
 public class VirtualWishlistItemQuery extends AbstractQuery<VirtualWishlistItemQuery> {
     VirtualWishlistItemQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class VirtualWishlistItemQuery extends AbstractQuery<VirtualWishlistItemQ
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public VirtualWishlistItemQuery addedAt() {
         startField("added_at");
@@ -35,7 +35,7 @@ public class VirtualWishlistItemQuery extends AbstractQuery<VirtualWishlistItemQ
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public VirtualWishlistItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
@@ -48,7 +48,7 @@ public class VirtualWishlistItemQuery extends AbstractQuery<VirtualWishlistItemQ
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public VirtualWishlistItemQuery description() {
         startField("description");
@@ -57,7 +57,7 @@ public class VirtualWishlistItemQuery extends AbstractQuery<VirtualWishlistItemQ
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public VirtualWishlistItemQuery id() {
         startField("id");
@@ -66,7 +66,7 @@ public class VirtualWishlistItemQuery extends AbstractQuery<VirtualWishlistItemQ
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public VirtualWishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
@@ -79,7 +79,7 @@ public class VirtualWishlistItemQuery extends AbstractQuery<VirtualWishlistItemQ
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public VirtualWishlistItemQuery quantity() {
         startField("quantity");

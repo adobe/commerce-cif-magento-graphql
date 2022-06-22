@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * GroupedProductItem contains information about an individual grouped product item
+ * Contains information about an individual grouped product item.
  */
 public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
     public GroupedProductItem() {}
@@ -82,7 +82,7 @@ public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
     }
 
     /**
-     * The relative position of this item compared to the other group items
+     * The relative position of this item compared to the other group items.
      */
     public Integer getPosition() {
         return (Integer) get("position");
@@ -94,7 +94,7 @@ public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
     }
 
     /**
-     * The ProductInterface object, which contains details about this product option
+     * Details about this product option.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -106,7 +106,7 @@ public class GroupedProductItem extends AbstractResponse<GroupedProductItem> {
     }
 
     /**
-     * The quantity of this grouped product item
+     * The quantity of this grouped product item.
      */
     public Double getQty() {
         return (Double) get("qty");

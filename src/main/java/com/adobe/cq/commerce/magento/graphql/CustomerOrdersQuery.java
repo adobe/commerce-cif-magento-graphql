@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The collection of orders that match the conditions defined in the filter
+ * The collection of orders that match the conditions defined in the filter.
  */
 public class CustomerOrdersQuery extends AbstractQuery<CustomerOrdersQuery> {
     CustomerOrdersQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomerOrdersQuery extends AbstractQuery<CustomerOrdersQuery> {
     }
 
     /**
-     * An array of customer orders
+     * An array of customer orders.
      */
     public CustomerOrdersQuery items(CustomerOrderQueryDefinition queryDef) {
         startField("items");
@@ -39,7 +39,7 @@ public class CustomerOrdersQuery extends AbstractQuery<CustomerOrdersQuery> {
     }
 
     /**
-     * An object that includes the current_page, page_info, and page_size values specified in the query
+     * Contains pagination metadata.
      */
     public CustomerOrdersQuery pageInfo(SearchResultPageInfoQueryDefinition queryDef) {
         startField("page_info");
@@ -52,7 +52,7 @@ public class CustomerOrdersQuery extends AbstractQuery<CustomerOrdersQuery> {
     }
 
     /**
-     * The total count of customer orders
+     * The total count of customer orders.
      */
     public CustomerOrdersQuery totalCount() {
         startField("total_count");

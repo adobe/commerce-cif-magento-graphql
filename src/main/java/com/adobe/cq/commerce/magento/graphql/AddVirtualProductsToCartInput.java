@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the virtual products to add to the cart.
+ */
 public class AddVirtualProductsToCartInput implements Serializable {
     private String cartId;
 
@@ -30,19 +33,31 @@ public class AddVirtualProductsToCartInput implements Serializable {
         this.cartItems = cartItems;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public AddVirtualProductsToCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of virtual products to add.
+     */
     public List<VirtualProductCartItemInput> getCartItems() {
         return cartItems;
     }
 
+    /**
+     * An array of virtual products to add.
+     */
     public AddVirtualProductsToCartInput setCartItems(List<VirtualProductCartItemInput> cartItems) {
         this.cartItems = cartItems;
         return this;

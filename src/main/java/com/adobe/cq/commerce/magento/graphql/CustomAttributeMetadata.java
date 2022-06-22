@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomAttributeMetadata defines an array of attribute_codes and entity_types
+ * Defines an array of custom attributes.
  */
 public class CustomAttributeMetadata extends AbstractResponse<CustomAttributeMetadata> {
     public CustomAttributeMetadata() {}
@@ -72,7 +72,7 @@ public class CustomAttributeMetadata extends AbstractResponse<CustomAttributeMet
     }
 
     /**
-     * An array of attributes
+     * An array of attributes.
      */
     public List<Attribute> getItems() {
         return (List<Attribute>) get("items");

@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * An implementation for bundle product cart items.
+ */
 public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
     BundleCartItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The list of available gift wrapping options for the cart item
+     * The list of available gift wrapping options for the cart item.
      */
     public BundleCartItemQuery availableGiftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("available_gift_wrapping");
@@ -35,6 +38,9 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
         return this;
     }
 
+    /**
+     * An array containing the bundle options the shopper selected.
+     */
     public BundleCartItemQuery bundleOptions(SelectedBundleOptionQueryDefinition queryDef) {
         startField("bundle_options");
 
@@ -45,6 +51,9 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
         return this;
     }
 
+    /**
+     * An array containing the customizable options the shopper selected.
+     */
     public BundleCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
 
@@ -69,7 +78,7 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
     }
 
     /**
-     * The selected gift wrapping for the cart item
+     * The selected gift wrapping for the cart item.
      */
     public BundleCartItemQuery giftWrapping(GiftWrappingQueryDefinition queryDef) {
         startField("gift_wrapping");
@@ -82,7 +91,7 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public BundleCartItemQuery id() {
@@ -91,6 +100,9 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public BundleCartItemQuery prices(CartItemPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -101,6 +113,9 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public BundleCartItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -111,6 +126,9 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public BundleCartItemQuery quantity() {
         startField("quantity");
 
@@ -118,7 +136,7 @@ public class BundleCartItemQuery extends AbstractQuery<BundleCartItemQuery> {
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public BundleCartItemQuery uid() {
         startField("uid");

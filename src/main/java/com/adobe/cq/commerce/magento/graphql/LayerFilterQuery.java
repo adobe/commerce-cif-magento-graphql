@@ -17,15 +17,18 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains information for rendering layered navigation.
+ */
 public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     LayerFilterQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Array of filter items.
+     * An array of filter items.
      *
-     * @deprecated Use Aggregation.options instead.
+     * @deprecated Use `Aggregation.options` instead.
      */
     @Deprecated
     public LayerFilterQuery filterItems(LayerFilterItemInterfaceQueryDefinition queryDef) {
@@ -39,9 +42,9 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     }
 
     /**
-     * Count of filter items in filter group.
+     * The count of filter items in filter group.
      *
-     * @deprecated Use Aggregation.count instead.
+     * @deprecated Use `Aggregation.count` instead.
      */
     @Deprecated
     public LayerFilterQuery filterItemsCount() {
@@ -51,9 +54,9 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     }
 
     /**
-     * Layered navigation filter name.
+     * The name of a layered navigation filter.
      *
-     * @deprecated Use Aggregation.label instead.
+     * @deprecated Use `Aggregation.label` instead.
      */
     @Deprecated
     public LayerFilterQuery name() {
@@ -63,9 +66,9 @@ public class LayerFilterQuery extends AbstractQuery<LayerFilterQuery> {
     }
 
     /**
-     * Request variable name for filter query.
+     * The request variable name for a filter query.
      *
-     * @deprecated Use Aggregation.attribute_code instead.
+     * @deprecated Use `Aggregation.attribute_code` instead.
      */
     @Deprecated
     public LayerFilterQuery requestVar() {

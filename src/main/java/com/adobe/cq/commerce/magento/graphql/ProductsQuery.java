@@ -15,21 +15,51 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Arguments;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * The Products object is the top-level object returned in a product search.
+ * Contains the results of a `products` query.
  */
 public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     ProductsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    public class AggregationsArguments extends Arguments {
+        AggregationsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        public AggregationsArguments filter(AggregationsFilterInput value) {
+            if (value != null) {
+                startArgument("filter");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface AggregationsArgumentsDefinition {
+        void define(AggregationsArguments args);
+    }
+
     /**
-     * Layered navigation aggregations.
+     * A bucket that contains the attribute code and label for each filterable option.
      */
     public ProductsQuery aggregations(AggregationQueryDefinition queryDef) {
+        return aggregations(args -> {}, queryDef);
+    }
+
+    /**
+     * A bucket that contains the attribute code and label for each filterable option.
+     */
+    public ProductsQuery aggregations(AggregationsArgumentsDefinition argsDef, AggregationQueryDefinition queryDef) {
         startField("aggregations");
+
+        AggregationsArguments args = new AggregationsArguments(_queryBuilder);
+        argsDef.define(args);
+        AggregationsArguments.end(args);
 
         _queryBuilder.append('{');
         queryDef.define(new AggregationQuery(_queryBuilder));
@@ -41,7 +71,7 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
     /**
      * Layered navigation filters array.
      *
-     * @deprecated Use aggregations instead
+     * @deprecated Use `aggregations` instead.
      */
     @Deprecated
     public ProductsQuery filters(LayerFilterQueryDefinition queryDef) {
@@ -88,6 +118,19 @@ public class ProductsQuery extends AbstractQuery<ProductsQuery> {
 
         _queryBuilder.append('{');
         queryDef.define(new SortFieldsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * An array of search suggestions for case when search query have no results.
+     */
+    public ProductsQuery suggestions(SearchSuggestionQueryDefinition queryDef) {
+        startField("suggestions");
+
+        _queryBuilder.append('{');
+        queryDef.define(new SearchSuggestionQuery(_queryBuilder));
         _queryBuilder.append('}');
 
         return this;

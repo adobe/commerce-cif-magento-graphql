@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the carrier on a return.
+ */
 public class ReturnShippingCarrier extends AbstractResponse<ReturnShippingCarrier> {
     public ReturnShippingCarrier() {}
 
@@ -59,7 +62,7 @@ public class ReturnShippingCarrier extends AbstractResponse<ReturnShippingCarrie
     }
 
     /**
-     * A description of the shipping carrier
+     * A description of the shipping carrier.
      */
     public String getLabel() {
         return (String) get("label");
@@ -71,7 +74,7 @@ public class ReturnShippingCarrier extends AbstractResponse<ReturnShippingCarrie
     }
 
     /**
-     * The unique ID for a `ReturnShippingCarrier` object assigned to the shipping carrier
+     * The unique ID for a `ReturnShippingCarrier` object assigned to the shipping carrier.
      */
     public ID getUid() {
         return (ID) get("uid");

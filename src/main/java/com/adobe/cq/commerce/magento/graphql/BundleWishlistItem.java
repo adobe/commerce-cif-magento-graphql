@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines bundle product options for `WishlistItemInterface`.
+ */
 public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> implements WishlistItemInterface {
     public BundleWishlistItem() {}
 
@@ -126,7 +129,7 @@ public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> imp
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public String getAddedAt() {
         return (String) get("added_at");
@@ -138,7 +141,7 @@ public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> imp
     }
 
     /**
-     * An array containing information about the selected bundle items
+     * An array containing information about the selected bundle items.
      */
     public List<SelectedBundleOption> getBundleOptions() {
         return (List<SelectedBundleOption>) get("bundle_options");
@@ -150,7 +153,7 @@ public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> imp
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
@@ -162,7 +165,7 @@ public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> imp
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public String getDescription() {
         return (String) get("description");
@@ -174,7 +177,7 @@ public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> imp
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -186,7 +189,7 @@ public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> imp
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -198,7 +201,7 @@ public class BundleWishlistItem extends AbstractResponse<BundleWishlistItem> imp
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public Double getQuantity() {
         return (Double) get("quantity");

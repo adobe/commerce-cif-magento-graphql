@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains a list of downloadable products.
+ */
 public class CustomerDownloadableProductsQuery extends AbstractQuery<CustomerDownloadableProductsQuery> {
     CustomerDownloadableProductsQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * List of purchased downloadable items
+     * An array of purchased downloadable items.
      */
     public CustomerDownloadableProductsQuery items(CustomerDownloadableProductQueryDefinition queryDef) {
         startField("items");

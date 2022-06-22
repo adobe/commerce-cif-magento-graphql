@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Exchange rates depend on the customer group
+ * Lists the reward points exchange rates. The values depend on the customer group.
  */
 public class RewardPointsExchangeRatesQuery extends AbstractQuery<RewardPointsExchangeRatesQuery> {
     RewardPointsExchangeRatesQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class RewardPointsExchangeRatesQuery extends AbstractQuery<RewardPointsEx
     }
 
     /**
-     * How many points are earned for a given amount spent
+     * How many points are earned for a given amount spent.
      */
     public RewardPointsExchangeRatesQuery earning(RewardPointsRateQueryDefinition queryDef) {
         startField("earning");
@@ -39,7 +39,7 @@ public class RewardPointsExchangeRatesQuery extends AbstractQuery<RewardPointsEx
     }
 
     /**
-     * How many points must be redeemed to get a given amount of currency discount at the checkout
+     * How many points must be redeemed to get a given amount of currency discount at the checkout.
      */
     public RewardPointsExchangeRatesQuery redemption(RewardPointsRateQueryDefinition queryDef) {
         startField("redemption");

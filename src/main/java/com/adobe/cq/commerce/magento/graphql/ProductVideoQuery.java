@@ -26,7 +26,7 @@ public class ProductVideoQuery extends AbstractQuery<ProductVideoQuery> {
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public ProductVideoQuery disabled() {
         startField("disabled");
@@ -62,7 +62,7 @@ public class ProductVideoQuery extends AbstractQuery<ProductVideoQuery> {
     }
 
     /**
-     * Contains a ProductMediaGalleryEntriesVideoContent object.
+     * Contains a `ProductMediaGalleryEntriesVideoContent` object.
      */
     public ProductVideoQuery videoContent(ProductMediaGalleryEntriesVideoContentQueryDefinition queryDef) {
         startField("video_content");

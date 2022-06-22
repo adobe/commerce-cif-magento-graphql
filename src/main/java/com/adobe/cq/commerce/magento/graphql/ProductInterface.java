@@ -20,8 +20,7 @@ import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
 /**
- * The ProductInterface contains attributes that are common to all types of products. Note that
- * descriptions may not be available for custom and EAV attributes.
+ * Contains fields that are common to all types of products.
  */
 
 public interface ProductInterface extends CustomFieldInterface {
@@ -36,8 +35,8 @@ public interface ProductInterface extends CustomFieldInterface {
     Integer getAttributeSetId();
 
     /**
-     * Relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link Meta
-     * Tag For Products&#39; is enabled
+     * The relative canonical URL. This value is returned only if the system setting &#39;Use Canonical Link
+     * Meta Tag For Products&#39; is enabled.
      */
     String getCanonicalUrl();
 
@@ -62,7 +61,7 @@ public interface ProductInterface extends CustomFieldInterface {
     String getCreatedAt();
 
     /**
-     * Crosssell Products
+     * An array of cross-sell products.
      */
     List<ProductInterface> getCrosssellProducts();
 
@@ -71,10 +70,22 @@ public interface ProductInterface extends CustomFieldInterface {
      */
     ComplexTextValue getDescription();
 
+    Integer getFashionColor();
+
+    String getFashionMaterial();
+
+    Integer getFashionSize();
+
+    String getFashionStyle();
+
+    Integer getFormat();
+
     /**
      * Indicates whether a gift message is available.
      */
     String getGiftMessageAvailable();
+
+    Integer getHasVideo();
 
     /**
      * The ID number assigned to the product.
@@ -90,7 +101,7 @@ public interface ProductInterface extends CustomFieldInterface {
     ProductImage getImage();
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     String getIsReturnable();
 
@@ -100,14 +111,14 @@ public interface ProductInterface extends CustomFieldInterface {
     Integer getManufacturer();
 
     /**
-     * An array of Media Gallery objects.
+     * An array of media gallery objects.
      */
     List<MediaGalleryInterface> getMediaGallery();
 
     /**
      * An array of MediaGalleryEntry objects.
      *
-     * @deprecated Use product&#39;s `media_gallery` instead
+     * @deprecated Use `media_gallery` instead.
      */
     @Deprecated
     List<MediaGalleryEntry> getMediaGalleryEntries();
@@ -160,27 +171,29 @@ public interface ProductInterface extends CustomFieldInterface {
     String getOptionsContainer();
 
     /**
-     * A ProductPrices object, indicating the price of an item.
+     * Indicates the price of an item.
      *
-     * @deprecated Use price_range for product price information.
+     * @deprecated Use `price_range` for product price information.
      */
     @Deprecated
     ProductPrices getPrice();
 
     /**
-     * A PriceRange object, indicating the range of prices for the product
+     * The range of prices for the product
      */
     PriceRange getPriceRange();
 
     /**
-     * An array of TierPrice objects.
+     * An array of `TierPrice` objects.
      */
     List<TierPrice> getPriceTiers();
 
     /**
-     * An array of ProductLinks objects.
+     * An array of `ProductLinks` objects.
      */
     List<ProductLinksInterface> getProductLinks();
+
+    Integer getPurpose();
 
     /**
      * The average of all the ratings given to the product.
@@ -188,7 +201,7 @@ public interface ProductInterface extends CustomFieldInterface {
     Double getRatingSummary();
 
     /**
-     * Related Products
+     * An array of related products.
      */
     List<ProductInterface> getRelatedProducts();
 
@@ -231,10 +244,13 @@ public interface ProductInterface extends CustomFieldInterface {
     Double getSpecialPrice();
 
     /**
-     * The end date that a product has a special price.
+     * The end date for a product with a special price.
      */
     String getSpecialToDate();
 
+    /**
+     * Indicates whether the product is staged for a future campaign.
+     */
     Boolean getStaged();
 
     /**
@@ -243,7 +259,7 @@ public interface ProductInterface extends CustomFieldInterface {
     ProductStockStatus getStockStatus();
 
     /**
-     * The file name of a swatch image
+     * The file name of a swatch image.
      */
     String getSwatchImage();
 
@@ -255,7 +271,7 @@ public interface ProductInterface extends CustomFieldInterface {
     /**
      * The price when tier pricing is in effect and the items purchased threshold has been reached.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     Double getTierPrice();
@@ -263,7 +279,7 @@ public interface ProductInterface extends CustomFieldInterface {
     /**
      * An array of ProductTierPrices objects.
      *
-     * @deprecated Use price_tiers for product tier price information.
+     * @deprecated Use `price_tiers` for product tier price information.
      */
     @Deprecated
     List<ProductTierPrices> getTierPrices();
@@ -271,7 +287,7 @@ public interface ProductInterface extends CustomFieldInterface {
     /**
      * One of simple, virtual, bundle, downloadable, grouped, or configurable.
      *
-     * @deprecated Use __typename instead.
+     * @deprecated Use `__typename` instead.
      */
     @Deprecated
     String getTypeId();
@@ -290,7 +306,7 @@ public interface ProductInterface extends CustomFieldInterface {
     String getUpdatedAt();
 
     /**
-     * Upsell Products
+     * An array of up-sell products.
      */
     List<ProductInterface> getUpsellProducts();
 
@@ -314,6 +330,8 @@ public interface ProductInterface extends CustomFieldInterface {
      * The part of the product URL that is appended after the url key
      */
     String getUrlSuffix();
+
+    String getVideoFile();
 
     /**
      * An array of websites in which the product is available.

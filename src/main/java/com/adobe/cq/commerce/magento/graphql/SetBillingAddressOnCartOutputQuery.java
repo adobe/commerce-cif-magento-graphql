@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after setting the billing address.
+ */
 public class SetBillingAddressOnCartOutputQuery extends AbstractQuery<SetBillingAddressOnCartOutputQuery> {
     SetBillingAddressOnCartOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after setting the billing address.
+     */
     public SetBillingAddressOnCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

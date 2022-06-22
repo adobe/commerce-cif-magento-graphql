@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a gift card.
+ */
 public class GiftCardItemQuery extends AbstractQuery<GiftCardItemQuery> {
     GiftCardItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Entered gift card message intended for the recipient
+     * The message from the sender to the recipient.
      */
     public GiftCardItemQuery message() {
         startField("message");
@@ -32,7 +35,7 @@ public class GiftCardItemQuery extends AbstractQuery<GiftCardItemQuery> {
     }
 
     /**
-     * Entered gift card recipient email for virtual cards
+     * The email address of the receiver of a virtual gift card.
      */
     public GiftCardItemQuery recipientEmail() {
         startField("recipient_email");
@@ -41,7 +44,7 @@ public class GiftCardItemQuery extends AbstractQuery<GiftCardItemQuery> {
     }
 
     /**
-     * Entered gift card sender namefor physical and virtual cards
+     * The name of the receiver of a physical or virtual gift card.
      */
     public GiftCardItemQuery recipientName() {
         startField("recipient_name");
@@ -50,7 +53,7 @@ public class GiftCardItemQuery extends AbstractQuery<GiftCardItemQuery> {
     }
 
     /**
-     * Entered gift card sender email for virtual cards
+     * The email address of the sender of a virtual gift card.
      */
     public GiftCardItemQuery senderEmail() {
         startField("sender_email");
@@ -59,7 +62,7 @@ public class GiftCardItemQuery extends AbstractQuery<GiftCardItemQuery> {
     }
 
     /**
-     * Entered gift card sender name for physical and virtual cards
+     * The name of the sender of a physical or virtual gift card.
      */
     public GiftCardItemQuery senderName() {
         startField("sender_name");

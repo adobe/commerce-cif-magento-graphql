@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Defines the tracking information to delete.
+ */
 public class RemoveReturnTrackingInput implements Serializable {
     private ID returnShippingTrackingUid;
 
@@ -27,14 +30,14 @@ public class RemoveReturnTrackingInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `ReturnShippingTracking` object
+     * The unique ID for a `ReturnShippingTracking` object.
      */
     public ID getReturnShippingTrackingUid() {
         return returnShippingTrackingUid;
     }
 
     /**
-     * The unique ID for a `ReturnShippingTracking` object
+     * The unique ID for a `ReturnShippingTracking` object.
      */
     public RemoveReturnTrackingInput setReturnShippingTrackingUid(ID returnShippingTrackingUid) {
         this.returnShippingTrackingUid = returnShippingTrackingUid;

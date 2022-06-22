@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a wish list item.
+ */
 public class WishlistItemQuery extends AbstractQuery<WishlistItemQuery> {
     WishlistItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The time when the customer added the item to the wish list
+     * The time when the customer added the item to the wish list.
      */
     public WishlistItemQuery addedAt() {
         startField("added_at");
@@ -32,7 +35,7 @@ public class WishlistItemQuery extends AbstractQuery<WishlistItemQuery> {
     }
 
     /**
-     * The customer&#39;s comment about this item
+     * The customer&#39;s comment about this item.
      */
     public WishlistItemQuery description() {
         startField("description");
@@ -41,7 +44,7 @@ public class WishlistItemQuery extends AbstractQuery<WishlistItemQuery> {
     }
 
     /**
-     * The unique ID for a `WishlistItem` object
+     * The unique ID for a `WishlistItem` object.
      */
     public WishlistItemQuery id() {
         startField("id");
@@ -49,6 +52,9 @@ public class WishlistItemQuery extends AbstractQuery<WishlistItemQuery> {
         return this;
     }
 
+    /**
+     * Details about the wish list item.
+     */
     public WishlistItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 

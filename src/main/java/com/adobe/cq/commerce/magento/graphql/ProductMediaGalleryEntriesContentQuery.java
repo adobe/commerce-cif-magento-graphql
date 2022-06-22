@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ProductMediaGalleryEntriesContent contains an image in base64 format and basic information about the
- * image.
+ * Contains an image in base64 format and basic information about the image.
  */
 public class ProductMediaGalleryEntriesContentQuery extends AbstractQuery<ProductMediaGalleryEntriesContentQuery> {
     ProductMediaGalleryEntriesContentQuery(StringBuilder _queryBuilder) {

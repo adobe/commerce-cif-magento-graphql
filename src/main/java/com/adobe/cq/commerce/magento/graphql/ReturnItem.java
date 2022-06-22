@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a product being returned.
+ */
 public class ReturnItem extends AbstractResponse<ReturnItem> {
     public ReturnItem() {}
 
@@ -100,7 +103,7 @@ public class ReturnItem extends AbstractResponse<ReturnItem> {
     }
 
     /**
-     * Return item custom attributes that are visible on the storefront
+     * Return item custom attributes that are visible on the storefront.
      */
     public List<ReturnCustomAttribute> getCustomAttributes() {
         return (List<ReturnCustomAttribute>) get("custom_attributes");
@@ -113,7 +116,7 @@ public class ReturnItem extends AbstractResponse<ReturnItem> {
 
     /**
      * Provides access to the product being returned, including information about selected and entered
-     * options
+     * options.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -125,7 +128,7 @@ public class ReturnItem extends AbstractResponse<ReturnItem> {
     }
 
     /**
-     * The quantity of the item the merchant authorized to be returned
+     * The quantity of the item the merchant authorized to be returned.
      */
     public Double getQuantity() {
         return (Double) get("quantity");
@@ -137,7 +140,7 @@ public class ReturnItem extends AbstractResponse<ReturnItem> {
     }
 
     /**
-     * The quantity of the item requested to be returned
+     * The quantity of the item requested to be returned.
      */
     public Double getRequestQuantity() {
         return (Double) get("request_quantity");
@@ -149,7 +152,7 @@ public class ReturnItem extends AbstractResponse<ReturnItem> {
     }
 
     /**
-     * The return status of the item
+     * The return status of the item.
      */
     public ReturnItemStatus getStatus() {
         return (ReturnItemStatus) get("status");
@@ -161,7 +164,7 @@ public class ReturnItem extends AbstractResponse<ReturnItem> {
     }
 
     /**
-     * The unique ID for a `ReturnItem` object
+     * The unique ID for a `ReturnItem` object.
      */
     public ID getUid() {
         return (ID) get("uid");

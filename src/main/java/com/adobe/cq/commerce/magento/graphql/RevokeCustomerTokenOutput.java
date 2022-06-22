@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the result of a request to revoke a customer token.
+ */
 public class RevokeCustomerTokenOutput extends AbstractResponse<RevokeCustomerTokenOutput> {
     public RevokeCustomerTokenOutput() {}
 
@@ -51,6 +54,9 @@ public class RevokeCustomerTokenOutput extends AbstractResponse<RevokeCustomerTo
         return "RevokeCustomerTokenOutput";
     }
 
+    /**
+     * The result of a request to revoke a customer token.
+     */
     public Boolean getResult() {
         return (Boolean) get("result");
     }

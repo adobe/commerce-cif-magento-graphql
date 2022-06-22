@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ConfigurableProductOptionsValues contains the index number assigned to a configurable product option
+ * Contains the index number assigned to a configurable product option.
  */
 public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<ConfigurableProductOptionsValuesQuery> {
     ConfigurableProductOptionsValuesQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
-     * The label of the product on the default store
+     * The label of the product on the default store.
      */
     public ConfigurableProductOptionsValuesQuery defaultLabel() {
         startField("default_label");
@@ -35,7 +35,7 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
-     * The label of the product
+     * The label of the product.
      */
     public ConfigurableProductOptionsValuesQuery label() {
         startField("label");
@@ -44,7 +44,7 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
-     * The label of the product on the current store
+     * The label of the product on the current store.
      */
     public ConfigurableProductOptionsValuesQuery storeLabel() {
         startField("store_label");
@@ -53,7 +53,7 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
-     * Swatch data for configurable product option
+     * Swatch data for a configurable product option.
      */
     public ConfigurableProductOptionsValuesQuery swatchData(SwatchDataInterfaceQueryDefinition queryDef) {
         startField("swatch_data");
@@ -66,7 +66,7 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
-     * The unique ID for a `ConfigurableProductOptionsValues` object
+     * The unique ID for a `ConfigurableProductOptionsValues` object.
      */
     public ConfigurableProductOptionsValuesQuery uid() {
         startField("uid");
@@ -75,7 +75,7 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
-     * Indicates whether to use the default_label
+     * Indicates whether to use the default_label.
      */
     public ConfigurableProductOptionsValuesQuery useDefaultValue() {
         startField("use_default_value");
@@ -84,9 +84,9 @@ public class ConfigurableProductOptionsValuesQuery extends AbstractQuery<Configu
     }
 
     /**
-     * A unique index number assigned to the configurable product option
+     * A unique index number assigned to the configurable product option.
      *
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public ConfigurableProductOptionsValuesQuery valueIndex() {

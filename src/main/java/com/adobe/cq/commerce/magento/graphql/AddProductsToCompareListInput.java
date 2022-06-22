@@ -20,6 +20,9 @@ import java.util.List;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Contains products to add to an existing compare list.
+ */
 public class AddProductsToCompareListInput implements Serializable {
     private List<ID> products;
 
@@ -32,14 +35,14 @@ public class AddProductsToCompareListInput implements Serializable {
     }
 
     /**
-     * An array of product IDs to add to the compare list
+     * An array of product IDs to add to the compare list.
      */
     public List<ID> getProducts() {
         return products;
     }
 
     /**
-     * An array of product IDs to add to the compare list
+     * An array of product IDs to add to the compare list.
      */
     public AddProductsToCompareListInput setProducts(List<ID> products) {
         this.products = products;
@@ -47,14 +50,14 @@ public class AddProductsToCompareListInput implements Serializable {
     }
 
     /**
-     * The unique identifier of the compare list to modify
+     * The unique identifier of the compare list to modify.
      */
     public ID getUid() {
         return uid;
     }
 
     /**
-     * The unique identifier of the compare list to modify
+     * The unique identifier of the compare list to modify.
      */
     public AddProductsToCompareListInput setUid(ID uid) {
         this.uid = uid;

@@ -20,6 +20,9 @@ import java.util.List;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines updates to a `GiftRegistry` object.
+ */
 public class UpdateGiftRegistryInput implements Serializable {
     private Input<List<GiftRegistryDynamicAttributeInput>> dynamicAttributes = Input.undefined();
 
@@ -34,21 +37,24 @@ public class UpdateGiftRegistryInput implements Serializable {
     private Input<GiftRegistryStatus> status = Input.undefined();
 
     /**
-     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not changed
+     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not
+     * changed.
      */
     public List<GiftRegistryDynamicAttributeInput> getDynamicAttributes() {
         return dynamicAttributes.getValue();
     }
 
     /**
-     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not changed
+     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not
+     * changed.
      */
     public Input<List<GiftRegistryDynamicAttributeInput>> getDynamicAttributesInput() {
         return dynamicAttributes;
     }
 
     /**
-     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not changed
+     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not
+     * changed.
      */
     public UpdateGiftRegistryInput setDynamicAttributes(List<GiftRegistryDynamicAttributeInput> dynamicAttributes) {
         this.dynamicAttributes = Input.optional(dynamicAttributes);
@@ -56,7 +62,8 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not changed
+     * Additional attributes specified as a code-value pair. Unspecified dynamic attributes are not
+     * changed.
      */
     public UpdateGiftRegistryInput setDynamicAttributesInput(Input<List<GiftRegistryDynamicAttributeInput>> dynamicAttributes) {
         if (dynamicAttributes == null) {
@@ -67,21 +74,21 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The updated name of the event
+     * The updated name of the event.
      */
     public String getEventName() {
         return eventName.getValue();
     }
 
     /**
-     * The updated name of the event
+     * The updated name of the event.
      */
     public Input<String> getEventNameInput() {
         return eventName;
     }
 
     /**
-     * The updated name of the event
+     * The updated name of the event.
      */
     public UpdateGiftRegistryInput setEventName(String eventName) {
         this.eventName = Input.optional(eventName);
@@ -89,7 +96,7 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The updated name of the event
+     * The updated name of the event.
      */
     public UpdateGiftRegistryInput setEventNameInput(Input<String> eventName) {
         if (eventName == null) {
@@ -100,21 +107,21 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The updated message describing the event
+     * The updated message describing the event.
      */
     public String getMessage() {
         return message.getValue();
     }
 
     /**
-     * The updated message describing the event
+     * The updated message describing the event.
      */
     public Input<String> getMessageInput() {
         return message;
     }
 
     /**
-     * The updated message describing the event
+     * The updated message describing the event.
      */
     public UpdateGiftRegistryInput setMessage(String message) {
         this.message = Input.optional(message);
@@ -122,7 +129,7 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The updated message describing the event
+     * The updated message describing the event.
      */
     public UpdateGiftRegistryInput setMessageInput(Input<String> message) {
         if (message == null) {
@@ -133,21 +140,21 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Indicates whether the gift registry is PRIVATE or PUBLIC
+     * Indicates whether the gift registry is PRIVATE or PUBLIC.
      */
     public GiftRegistryPrivacySettings getPrivacySettings() {
         return privacySettings.getValue();
     }
 
     /**
-     * Indicates whether the gift registry is PRIVATE or PUBLIC
+     * Indicates whether the gift registry is PRIVATE or PUBLIC.
      */
     public Input<GiftRegistryPrivacySettings> getPrivacySettingsInput() {
         return privacySettings;
     }
 
     /**
-     * Indicates whether the gift registry is PRIVATE or PUBLIC
+     * Indicates whether the gift registry is PRIVATE or PUBLIC.
      */
     public UpdateGiftRegistryInput setPrivacySettings(GiftRegistryPrivacySettings privacySettings) {
         this.privacySettings = Input.optional(privacySettings);
@@ -155,7 +162,7 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Indicates whether the gift registry is PRIVATE or PUBLIC
+     * Indicates whether the gift registry is PRIVATE or PUBLIC.
      */
     public UpdateGiftRegistryInput setPrivacySettingsInput(Input<GiftRegistryPrivacySettings> privacySettings) {
         if (privacySettings == null) {
@@ -166,21 +173,21 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The updated shipping address for all gift registry items
+     * The updated shipping address for all gift registry items.
      */
     public GiftRegistryShippingAddressInput getShippingAddress() {
         return shippingAddress.getValue();
     }
 
     /**
-     * The updated shipping address for all gift registry items
+     * The updated shipping address for all gift registry items.
      */
     public Input<GiftRegistryShippingAddressInput> getShippingAddressInput() {
         return shippingAddress;
     }
 
     /**
-     * The updated shipping address for all gift registry items
+     * The updated shipping address for all gift registry items.
      */
     public UpdateGiftRegistryInput setShippingAddress(GiftRegistryShippingAddressInput shippingAddress) {
         this.shippingAddress = Input.optional(shippingAddress);
@@ -188,7 +195,7 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * The updated shipping address for all gift registry items
+     * The updated shipping address for all gift registry items.
      */
     public UpdateGiftRegistryInput setShippingAddressInput(Input<GiftRegistryShippingAddressInput> shippingAddress) {
         if (shippingAddress == null) {
@@ -199,21 +206,21 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Indicates whether the gift registry is ACTIVE or INACTIVE
+     * Indicates whether the gift registry is ACTIVE or INACTIVE.
      */
     public GiftRegistryStatus getStatus() {
         return status.getValue();
     }
 
     /**
-     * Indicates whether the gift registry is ACTIVE or INACTIVE
+     * Indicates whether the gift registry is ACTIVE or INACTIVE.
      */
     public Input<GiftRegistryStatus> getStatusInput() {
         return status;
     }
 
     /**
-     * Indicates whether the gift registry is ACTIVE or INACTIVE
+     * Indicates whether the gift registry is ACTIVE or INACTIVE.
      */
     public UpdateGiftRegistryInput setStatus(GiftRegistryStatus status) {
         this.status = Input.optional(status);
@@ -221,7 +228,7 @@ public class UpdateGiftRegistryInput implements Serializable {
     }
 
     /**
-     * Indicates whether the gift registry is ACTIVE or INACTIVE
+     * Indicates whether the gift registry is ACTIVE or INACTIVE.
      */
     public UpdateGiftRegistryInput setStatusInput(Input<GiftRegistryStatus> status) {
         if (status == null) {

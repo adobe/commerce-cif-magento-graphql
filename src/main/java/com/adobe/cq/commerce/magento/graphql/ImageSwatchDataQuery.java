@@ -23,7 +23,7 @@ public class ImageSwatchDataQuery extends AbstractQuery<ImageSwatchDataQuery> {
     }
 
     /**
-     * Thumbnail swatch image URL
+     * The URL assigned to the thumbnail of the swatch image.
      */
     public ImageSwatchDataQuery thumbnail() {
         startField("thumbnail");
@@ -32,7 +32,7 @@ public class ImageSwatchDataQuery extends AbstractQuery<ImageSwatchDataQuery> {
     }
 
     /**
-     * Value of swatch item (HEX color code, image link or textual value)
+     * The value can be represented as color (HEX code), image link, or text.
      */
     public ImageSwatchDataQuery value() {
         startField("value");

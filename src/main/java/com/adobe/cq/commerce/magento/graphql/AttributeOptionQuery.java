@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Attribute option.
+ * Defines an attribute option.
  */
 public class AttributeOptionQuery extends AbstractQuery<AttributeOptionQuery> {
     AttributeOptionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class AttributeOptionQuery extends AbstractQuery<AttributeOptionQuery> {
     }
 
     /**
-     * Attribute option label.
+     * The label assigned to the attribute option.
      */
     public AttributeOptionQuery label() {
         startField("label");
@@ -35,7 +35,7 @@ public class AttributeOptionQuery extends AbstractQuery<AttributeOptionQuery> {
     }
 
     /**
-     * Attribute option value.
+     * The attribute option value.
      */
     public AttributeOptionQuery value() {
         startField("value");

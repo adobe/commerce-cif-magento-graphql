@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Order shipment details
+ * Contains order shipment details.
  */
 public class OrderShipment extends AbstractResponse<OrderShipment> {
     public OrderShipment() {}
@@ -127,7 +127,7 @@ public class OrderShipment extends AbstractResponse<OrderShipment> {
     }
 
     /**
-     * Comments added to the shipment
+     * Comments added to the shipment.
      */
     public List<SalesCommentItem> getComments() {
         return (List<SalesCommentItem>) get("comments");
@@ -139,7 +139,7 @@ public class OrderShipment extends AbstractResponse<OrderShipment> {
     }
 
     /**
-     * The unique ID for a `OrderShipment` object
+     * The unique ID for a `OrderShipment` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -151,7 +151,7 @@ public class OrderShipment extends AbstractResponse<OrderShipment> {
     }
 
     /**
-     * Contains items included in the shipment
+     * An array of items included in the shipment.
      */
     public List<ShipmentItemInterface> getItems() {
         return (List<ShipmentItemInterface>) get("items");
@@ -163,7 +163,7 @@ public class OrderShipment extends AbstractResponse<OrderShipment> {
     }
 
     /**
-     * The sequential credit shipment number
+     * The sequential credit shipment number.
      */
     public String getNumber() {
         return (String) get("number");
@@ -175,7 +175,7 @@ public class OrderShipment extends AbstractResponse<OrderShipment> {
     }
 
     /**
-     * Contains shipment tracking details
+     * An array of shipment tracking details.
      */
     public List<ShipmentTracking> getTracking() {
         return (List<ShipmentTracking>) get("tracking");

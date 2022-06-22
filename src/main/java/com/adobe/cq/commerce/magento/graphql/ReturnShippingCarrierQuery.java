@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the carrier on a return.
+ */
 public class ReturnShippingCarrierQuery extends AbstractQuery<ReturnShippingCarrierQuery> {
     ReturnShippingCarrierQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * A description of the shipping carrier
+     * A description of the shipping carrier.
      */
     public ReturnShippingCarrierQuery label() {
         startField("label");
@@ -32,7 +35,7 @@ public class ReturnShippingCarrierQuery extends AbstractQuery<ReturnShippingCarr
     }
 
     /**
-     * The unique ID for a `ReturnShippingCarrier` object assigned to the shipping carrier
+     * The unique ID for a `ReturnShippingCarrier` object assigned to the shipping carrier.
      */
     public ReturnShippingCarrierQuery uid() {
         startField("uid");

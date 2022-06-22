@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A list of options of the selected bundle product
+ * A list of options of the selected bundle product.
  */
 public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundleOption> {
     public ItemSelectedBundleOption() {}
@@ -91,9 +91,9 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOption` object
+     * The unique ID for a `ItemSelectedBundleOption` object.
      *
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public ID getId() {
@@ -106,7 +106,7 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
     }
 
     /**
-     * The label of the option
+     * The label of the option.
      */
     public String getLabel() {
         return (String) get("label");
@@ -118,7 +118,7 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
     }
 
     /**
-     * The unique ID for a `ItemSelectedBundleOption` object
+     * The unique ID for a `ItemSelectedBundleOption` object.
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -130,7 +130,7 @@ public class ItemSelectedBundleOption extends AbstractResponse<ItemSelectedBundl
     }
 
     /**
-     * A list of products that represent the values of the parent option
+     * A list of products that represent the values of the parent option.
      */
     public List<ItemSelectedBundleOptionValue> getValues() {
         return (List<ItemSelectedBundleOptionValue>) get("values");

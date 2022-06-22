@@ -18,7 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Configurable option available for further selection based on current selection.
+ * Describes configurable options that have been selected and can be selected as a result of the
+ * previous selections.
  */
 public class ConfigurableOptionAvailableForSelectionQuery extends AbstractQuery<ConfigurableOptionAvailableForSelectionQuery> {
     ConfigurableOptionAvailableForSelectionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +27,7 @@ public class ConfigurableOptionAvailableForSelectionQuery extends AbstractQuery<
     }
 
     /**
-     * Attribute code that uniquely identifies configurable option.
+     * An attribute code that uniquely identifies a configurable option.
      */
     public ConfigurableOptionAvailableForSelectionQuery attributeCode() {
         startField("attribute_code");
@@ -35,7 +36,7 @@ public class ConfigurableOptionAvailableForSelectionQuery extends AbstractQuery<
     }
 
     /**
-     * Configurable option values available for further selection.
+     * An array of selectable option value IDs.
      */
     public ConfigurableOptionAvailableForSelectionQuery optionValueUids() {
         startField("option_value_uids");

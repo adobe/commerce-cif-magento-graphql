@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CMS block defines all CMS block information
+ * Contains details about a specific CMS block.
  */
 public class CmsBlockQuery extends AbstractQuery<CmsBlockQuery> {
     CmsBlockQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CmsBlockQuery extends AbstractQuery<CmsBlockQuery> {
     }
 
     /**
-     * CMS block content
+     * The content of the CMS block in raw HTML.
      */
     public CmsBlockQuery content() {
         startField("content");
@@ -35,7 +35,7 @@ public class CmsBlockQuery extends AbstractQuery<CmsBlockQuery> {
     }
 
     /**
-     * CMS block identifier
+     * The CMS block identifier.
      */
     public CmsBlockQuery identifier() {
         startField("identifier");
@@ -44,7 +44,7 @@ public class CmsBlockQuery extends AbstractQuery<CmsBlockQuery> {
     }
 
     /**
-     * CMS block title
+     * The title assigned to the CMS block.
      */
     public CmsBlockQuery title() {
         startField("title");

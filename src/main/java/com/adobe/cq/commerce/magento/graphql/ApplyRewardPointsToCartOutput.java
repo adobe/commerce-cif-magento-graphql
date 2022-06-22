@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the customer cart.
+ */
 public class ApplyRewardPointsToCartOutput extends AbstractResponse<ApplyRewardPointsToCartOutput> {
     public ApplyRewardPointsToCartOutput() {}
 
@@ -52,7 +55,7 @@ public class ApplyRewardPointsToCartOutput extends AbstractResponse<ApplyRewardP
     }
 
     /**
-     * The customer cart after reward points are applied
+     * The customer cart after reward points are applied.
      */
     public Cart getCart() {
         return (Cart) get("cart");

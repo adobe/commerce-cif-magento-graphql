@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomerAddress contains detailed information about a customer&#39;s billing and shipping addresses
+ * Contains detailed information about a customer&#39;s billing or shipping address.
  */
 public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     CustomerAddressQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The city or town
+     * The customer&#39;s city or town.
      */
     public CustomerAddressQuery city() {
         startField("city");
@@ -35,7 +35,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The customer&#39;s company
+     * The customer&#39;s company.
      */
     public CustomerAddressQuery company() {
         startField("company");
@@ -44,7 +44,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The customer&#39;s country
+     * The customer&#39;s country.
      */
     public CustomerAddressQuery countryCode() {
         startField("country_code");
@@ -53,7 +53,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The customer&#39;s country
+     * The customer&#39;s country.
      *
      * @deprecated Use `country_code` instead.
      */
@@ -65,7 +65,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * @deprecated Custom attributes should not be put into container
+     * @deprecated Custom attributes should not be put into a container.
      */
     @Deprecated
     public CustomerAddressQuery customAttributes(CustomerAddressAttributeQueryDefinition queryDef) {
@@ -81,7 +81,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     /**
      * The customer ID
      *
-     * @deprecated customer_id is not needed as part of CustomerAddress, address ID (id) is unique identifier for the addresses.
+     * @deprecated `customer_id` is not needed as part of `CustomerAddress`. The `id` is a unique identifier for the addresses.
      */
     @Deprecated
     public CustomerAddressQuery customerId() {
@@ -91,7 +91,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * Indicates whether the address is the default billing address
+     * Indicates whether the address is the customer&#39;s default billing address.
      */
     public CustomerAddressQuery defaultBilling() {
         startField("default_billing");
@@ -100,7 +100,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * Indicates whether the address is the default shipping address
+     * Indicates whether the address is the customer&#39;s default shipping address.
      */
     public CustomerAddressQuery defaultShipping() {
         startField("default_shipping");
@@ -109,7 +109,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * Address extension attributes
+     * Contains any extension attributes for the address.
      */
     public CustomerAddressQuery extensionAttributes(CustomerAddressAttributeQueryDefinition queryDef) {
         startField("extension_attributes");
@@ -122,7 +122,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The fax number
+     * The customer&#39;s fax number.
      */
     public CustomerAddressQuery fax() {
         startField("fax");
@@ -131,7 +131,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The first name of the person associated with the shipping/billing address
+     * The first name of the person associated with the shipping/billing address.
      */
     public CustomerAddressQuery firstname() {
         startField("firstname");
@@ -140,7 +140,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The ID assigned to the address object
+     * The ID of a `CustomerAddress` object.
      */
     public CustomerAddressQuery id() {
         startField("id");
@@ -149,7 +149,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The family name of the person associated with the shipping/billing address
+     * The family name of the person associated with the shipping/billing address.
      */
     public CustomerAddressQuery lastname() {
         startField("lastname");
@@ -158,7 +158,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The middle name of the person associated with the shipping/billing address
+     * The middle name of the person associated with the shipping/billing address.
      */
     public CustomerAddressQuery middlename() {
         startField("middlename");
@@ -167,7 +167,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The customer&#39;s ZIP or postal code
+     * The customer&#39;s ZIP or postal code.
      */
     public CustomerAddressQuery postcode() {
         startField("postcode");
@@ -185,7 +185,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * An object containing the region name, region code, and region ID
+     * An object containing the region name, region code, and region ID.
      */
     public CustomerAddressQuery region(CustomerAddressRegionQueryDefinition queryDef) {
         startField("region");
@@ -198,7 +198,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The unique ID for a pre-defined region
+     * The unique ID for a pre-defined region.
      */
     public CustomerAddressQuery regionId() {
         startField("region_id");
@@ -207,7 +207,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * An array of strings that define the street number and name
+     * An array of strings that define the street number and name.
      */
     public CustomerAddressQuery street() {
         startField("street");
@@ -216,7 +216,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public CustomerAddressQuery suffix() {
         startField("suffix");
@@ -225,7 +225,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The telephone number
+     * The customer&#39;s telephone number.
      */
     public CustomerAddressQuery telephone() {
         startField("telephone");
@@ -234,7 +234,7 @@ public class CustomerAddressQuery extends AbstractQuery<CustomerAddressQuery> {
     }
 
     /**
-     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers).
      */
     public CustomerAddressQuery vatId() {
         startField("vat_id");

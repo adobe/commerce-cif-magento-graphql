@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Defines the configurable products to add to the cart.
+ */
 public class AddConfigurableProductsToCartInput implements Serializable {
     private String cartId;
 
@@ -30,19 +33,31 @@ public class AddConfigurableProductsToCartInput implements Serializable {
         this.cartItems = cartItems;
     }
 
+    /**
+     * The ID of the cart.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The ID of the cart.
+     */
     public AddConfigurableProductsToCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of configurable products to add.
+     */
     public List<ConfigurableProductCartItemInput> getCartItems() {
         return cartItems;
     }
 
+    /**
+     * An array of configurable products to add.
+     */
     public AddConfigurableProductsToCartInput setCartItems(List<ConfigurableProductCartItemInput> cartItems) {
         this.cartItems = cartItems;
         return this;

@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableDateValue defines the price and sku of a product whose page contains a customized date
- * picker.
+ * Defines the price and sku of a product whose page contains a customized date picker.
  */
 public class CustomizableDateValue extends AbstractResponse<CustomizableDateValue> {
     public CustomizableDateValue() {}

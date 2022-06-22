@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Defines an object used to iterate through items for product comparisons.
+ */
 public class ComparableItem extends AbstractResponse<ComparableItem> {
     public ComparableItem() {}
 
@@ -77,7 +80,7 @@ public class ComparableItem extends AbstractResponse<ComparableItem> {
     }
 
     /**
-     * An array of product attributes that can be used to compare products
+     * An array of product attributes that can be used to compare products.
      */
     public List<ProductAttribute> getAttributes() {
         return (List<ProductAttribute>) get("attributes");
@@ -89,7 +92,7 @@ public class ComparableItem extends AbstractResponse<ComparableItem> {
     }
 
     /**
-     * Contains details about a product in a compare list
+     * Details about a product in a compare list.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -101,7 +104,7 @@ public class ComparableItem extends AbstractResponse<ComparableItem> {
     }
 
     /**
-     * The unique ID of an item in a compare list
+     * The unique ID of an item in a compare list.
      */
     public ID getUid() {
         return (ID) get("uid");

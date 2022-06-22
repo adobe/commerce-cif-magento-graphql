@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Deprecated: use type `PaypalExpressTokenOutput` instead
+ * Deprecated. Use `PaypalExpressTokenOutput` instead.
  */
 public class PaypalExpressTokenQuery extends AbstractQuery<PaypalExpressTokenQuery> {
     PaypalExpressTokenQuery(StringBuilder _queryBuilder) {
@@ -26,9 +26,9 @@ public class PaypalExpressTokenQuery extends AbstractQuery<PaypalExpressTokenQue
     }
 
     /**
-     * A set of URLs that allow the buyer to authorize payment and adjust checkout details
+     * A set of URLs that allow the buyer to authorize payment and adjust checkout details.
      *
-     * @deprecated Use field `paypal_urls` of type `PaypalExpressTokenOutput` instead
+     * @deprecated Use `PaypalExpressTokenOutput.paypal_urls` instead.
      */
     @Deprecated
     public PaypalExpressTokenQuery paypalUrls(PaypalExpressUrlListQueryDefinition queryDef) {
@@ -42,9 +42,9 @@ public class PaypalExpressTokenQuery extends AbstractQuery<PaypalExpressTokenQue
     }
 
     /**
-     * The token returned by PayPal
+     * The token returned by PayPal.
      *
-     * @deprecated Use field `token` of type `PaypalExpressTokenOutput` instead
+     * @deprecated Use `PaypalExpressTokenOutput.token` instead.
      */
     @Deprecated
     public PaypalExpressTokenQuery token() {

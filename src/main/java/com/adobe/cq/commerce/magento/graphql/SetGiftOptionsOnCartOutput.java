@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the cart after gift options have been applied.
+ */
 public class SetGiftOptionsOnCartOutput extends AbstractResponse<SetGiftOptionsOnCartOutput> {
     public SetGiftOptionsOnCartOutput() {}
 
@@ -52,7 +55,7 @@ public class SetGiftOptionsOnCartOutput extends AbstractResponse<SetGiftOptionsO
     }
 
     /**
-     * The modified cart object
+     * The modified cart object.
      */
     public Cart getCart() {
         return (Cart) get("cart");

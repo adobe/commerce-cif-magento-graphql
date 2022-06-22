@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 
+/**
+ * Defines a return comment.
+ */
 public class AddReturnCommentInput implements Serializable {
     private String commentText;
 
@@ -31,14 +34,14 @@ public class AddReturnCommentInput implements Serializable {
     }
 
     /**
-     * The text added to the return request
+     * The text added to the return request.
      */
     public String getCommentText() {
         return commentText;
     }
 
     /**
-     * The text added to the return request
+     * The text added to the return request.
      */
     public AddReturnCommentInput setCommentText(String commentText) {
         this.commentText = commentText;
@@ -46,14 +49,14 @@ public class AddReturnCommentInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `Return` object
+     * The unique ID for a `Return` object.
      */
     public ID getReturnUid() {
         return returnUid;
     }
 
     /**
-     * The unique ID for a `Return` object
+     * The unique ID for a `Return` object.
      */
     public AddReturnCommentInput setReturnUid(ID returnUid) {
         this.returnUid = returnUid;

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about a newly-created or updated customer.
+ */
 public class CustomerOutput extends AbstractResponse<CustomerOutput> {
     public CustomerOutput() {}
 
@@ -51,6 +54,9 @@ public class CustomerOutput extends AbstractResponse<CustomerOutput> {
         return "CustomerOutput";
     }
 
+    /**
+     * Customer details after creating or updating a customer.
+     */
     public Customer getCustomer() {
         return (Customer) get("customer");
     }

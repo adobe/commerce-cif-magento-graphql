@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableDateValue defines the price and sku of a product whose page contains a customized date
- * picker.
+ * Defines the price and sku of a product whose page contains a customized date picker.
  */
 public class CustomizableDateValueQuery extends AbstractQuery<CustomizableDateValueQuery> {
     CustomizableDateValueQuery(StringBuilder _queryBuilder) {

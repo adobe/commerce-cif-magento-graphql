@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the configuration of the Email to a Friend feature.
+ */
 public class SendFriendConfiguration extends AbstractResponse<SendFriendConfiguration> {
     public SendFriendConfiguration() {}
 

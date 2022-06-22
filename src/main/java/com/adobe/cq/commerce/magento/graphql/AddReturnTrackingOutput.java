@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the response after adding tracking information.
+ */
 public class AddReturnTrackingOutput extends AbstractResponse<AddReturnTrackingOutput> {
     public AddReturnTrackingOutput() {}
 
@@ -68,7 +71,7 @@ public class AddReturnTrackingOutput extends AbstractResponse<AddReturnTrackingO
     }
 
     /**
-     * Contains details about the modified return
+     * Details about the modified return.
      */
     public Return getReturn() {
         return (Return) get("return");
@@ -80,7 +83,7 @@ public class AddReturnTrackingOutput extends AbstractResponse<AddReturnTrackingO
     }
 
     /**
-     * Contains details about shipping for a return
+     * Details about shipping for a return.
      */
     public ReturnShippingTracking getReturnShippingTracking() {
         return (ReturnShippingTracking) get("return_shipping_tracking");

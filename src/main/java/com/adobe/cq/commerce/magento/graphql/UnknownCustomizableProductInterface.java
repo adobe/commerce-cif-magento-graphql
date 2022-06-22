@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableProductInterface contains information about customizable product options.
+ * Contains information about customizable product options.
  */
 public class UnknownCustomizableProductInterface extends AbstractResponse<UnknownCustomizableProductInterface> implements
     CustomizableProductInterface {

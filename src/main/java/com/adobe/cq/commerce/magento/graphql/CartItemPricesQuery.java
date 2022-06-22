@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the price of the item, including taxes and discounts.
+ */
 public class CartItemPricesQuery extends AbstractQuery<CartItemPricesQuery> {
     CartItemPricesQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An array of discounts to be applied to the cart item
+     * An array of discounts to be applied to the cart item.
      */
     public CartItemPricesQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -36,7 +39,7 @@ public class CartItemPricesQuery extends AbstractQuery<CartItemPricesQuery> {
     }
 
     /**
-     * Applied FPT to the cart item.
+     * An array of FPTs applied to the cart item.
      */
     public CartItemPricesQuery fixedProductTaxes(FixedProductTaxQueryDefinition queryDef) {
         startField("fixed_product_taxes");
@@ -48,6 +51,10 @@ public class CartItemPricesQuery extends AbstractQuery<CartItemPricesQuery> {
         return this;
     }
 
+    /**
+     * The price of the item before any discounts were applied. The price that might include tax, depending
+     * on the configured display settings for cart.
+     */
     public CartItemPricesQuery price(MoneyQueryDefinition queryDef) {
         startField("price");
 
@@ -58,6 +65,9 @@ public class CartItemPricesQuery extends AbstractQuery<CartItemPricesQuery> {
         return this;
     }
 
+    /**
+     * The value of the price multiplied by the quantity of the item.
+     */
     public CartItemPricesQuery rowTotal(MoneyQueryDefinition queryDef) {
         startField("row_total");
 
@@ -68,6 +78,9 @@ public class CartItemPricesQuery extends AbstractQuery<CartItemPricesQuery> {
         return this;
     }
 
+    /**
+     * The value of `row_total` plus the tax applied to the item.
+     */
     public CartItemPricesQuery rowTotalIncludingTax(MoneyQueryDefinition queryDef) {
         startField("row_total_including_tax");
 
@@ -79,7 +92,7 @@ public class CartItemPricesQuery extends AbstractQuery<CartItemPricesQuery> {
     }
 
     /**
-     * The total of all discounts applied to the item
+     * The total of all discounts applied to the item.
      */
     public CartItemPricesQuery totalItemDiscount(MoneyQueryDefinition queryDef) {
         startField("total_item_discount");

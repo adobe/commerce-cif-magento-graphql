@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains a product attribute code and value.
+ */
 public class ProductAttribute extends AbstractResponse<ProductAttribute> {
     public ProductAttribute() {}
 
@@ -70,7 +73,7 @@ public class ProductAttribute extends AbstractResponse<ProductAttribute> {
     }
 
     /**
-     * The display value of the attribute
+     * The display value of the attribute.
      */
     public String getValue() {
         return (String) get("value");

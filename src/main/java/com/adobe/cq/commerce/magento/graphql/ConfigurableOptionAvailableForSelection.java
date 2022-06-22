@@ -25,7 +25,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Configurable option available for further selection based on current selection.
+ * Describes configurable options that have been selected and can be selected as a result of the
+ * previous selections.
  */
 public class ConfigurableOptionAvailableForSelection extends AbstractResponse<ConfigurableOptionAvailableForSelection> {
     public ConfigurableOptionAvailableForSelection() {}
@@ -74,7 +75,7 @@ public class ConfigurableOptionAvailableForSelection extends AbstractResponse<Co
     }
 
     /**
-     * Attribute code that uniquely identifies configurable option.
+     * An attribute code that uniquely identifies a configurable option.
      */
     public String getAttributeCode() {
         return (String) get("attribute_code");
@@ -86,7 +87,7 @@ public class ConfigurableOptionAvailableForSelection extends AbstractResponse<Co
     }
 
     /**
-     * Configurable option values available for further selection.
+     * An array of selectable option value IDs.
      */
     public List<ID> getOptionValueUids() {
         return (List<ID>) get("option_value_uids");

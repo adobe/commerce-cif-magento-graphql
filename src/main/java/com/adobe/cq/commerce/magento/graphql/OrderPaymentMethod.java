@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Contains details about the payment method used to pay for the order
+ * Contains details about the payment method used to pay for the order.
  */
 public class OrderPaymentMethod extends AbstractResponse<OrderPaymentMethod> {
     public OrderPaymentMethod() {}
@@ -84,7 +84,7 @@ public class OrderPaymentMethod extends AbstractResponse<OrderPaymentMethod> {
     }
 
     /**
-     * Additional data per payment method type
+     * Additional data per payment method type.
      */
     public List<KeyValue> getAdditionalData() {
         return (List<KeyValue>) get("additional_data");
@@ -96,7 +96,7 @@ public class OrderPaymentMethod extends AbstractResponse<OrderPaymentMethod> {
     }
 
     /**
-     * The label that describes the payment method
+     * The label that describes the payment method.
      */
     public String getName() {
         return (String) get("name");
@@ -108,7 +108,7 @@ public class OrderPaymentMethod extends AbstractResponse<OrderPaymentMethod> {
     }
 
     /**
-     * The payment method code that indicates how the order was paid for
+     * The payment method code that indicates how the order was paid for.
      */
     public String getType() {
         return (String) get("type");

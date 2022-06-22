@@ -21,25 +21,28 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Contains an array of product IDs to use for creating a compare list.
+ */
 public class CreateCompareListInput implements Serializable {
     private Input<List<ID>> products = Input.undefined();
 
     /**
-     * An array of product IDs to add to the compare list
+     * An array of product IDs to add to the compare list.
      */
     public List<ID> getProducts() {
         return products.getValue();
     }
 
     /**
-     * An array of product IDs to add to the compare list
+     * An array of product IDs to add to the compare list.
      */
     public Input<List<ID>> getProductsInput() {
         return products;
     }
 
     /**
-     * An array of product IDs to add to the compare list
+     * An array of product IDs to add to the compare list.
      */
     public CreateCompareListInput setProducts(List<ID> products) {
         this.products = Input.optional(products);
@@ -47,7 +50,7 @@ public class CreateCompareListInput implements Serializable {
     }
 
     /**
-     * An array of product IDs to add to the compare list
+     * An array of product IDs to add to the compare list.
      */
     public CreateCompareListInput setProductsInput(Input<List<ID>> products) {
         if (products == null) {

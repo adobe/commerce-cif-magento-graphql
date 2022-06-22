@@ -132,8 +132,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Details about the final discount amount for the base product, including discounts on options.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -145,7 +144,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * Selected gift card properties for an credit memo item
+     * Selected gift card properties for a credit memo item.
      */
     public GiftCardItem getGiftCard() {
         return (GiftCardItem) get("gift_card");
@@ -157,7 +156,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * The unique ID for a `CreditMemoItemInterface` object
+     * The unique ID for a `CreditMemoItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -169,7 +168,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * The order item the credit memo is applied to
+     * The order item the credit memo is applied to.
      */
     public OrderItemInterface getOrderItem() {
         return (OrderItemInterface) get("order_item");
@@ -181,7 +180,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -193,7 +192,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * The sale price for the base product, including selected options
+     * The sale price for the base product, including selected options.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -205,7 +204,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -217,7 +216,7 @@ public class GiftCardCreditMemoItem extends AbstractResponse<GiftCardCreditMemoI
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public Double getQuantityRefunded() {
         return (Double) get("quantity_refunded");

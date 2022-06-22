@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableMultipleOption contains information about a multiselect that is defined as part of a
- * customizable option.
+ * Contains information about a multiselect that is defined as part of a customizable option.
  */
 public class CustomizableMultipleOption extends AbstractResponse<CustomizableMultipleOption> implements CustomizableOptionInterface {
     public CustomizableMultipleOption() {}

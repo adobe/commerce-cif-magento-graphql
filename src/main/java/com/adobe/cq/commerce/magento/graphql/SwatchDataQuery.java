@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Describes the swatch type and a value.
+ */
 public class SwatchDataQuery extends AbstractQuery<SwatchDataQuery> {
     SwatchDataQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Type of swatch filter item: 1 - text, 2 - image
+     * The type of swatch filter item: 1 - text; 2 - image.
      */
     public SwatchDataQuery type() {
         startField("type");
@@ -32,7 +35,7 @@ public class SwatchDataQuery extends AbstractQuery<SwatchDataQuery> {
     }
 
     /**
-     * Value for swatch item (text or image link)
+     * The value for the swatch item. It could be text or an image link.
      */
     public SwatchDataQuery value() {
         startField("value");

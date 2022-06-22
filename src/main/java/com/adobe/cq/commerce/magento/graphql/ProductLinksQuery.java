@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ProductLinks is an implementation of ProductLinksInterface.
+ * An implementation of `ProductLinksInterface`.
  */
 public class ProductLinksQuery extends AbstractQuery<ProductLinksQuery> {
     ProductLinksQuery(StringBuilder _queryBuilder) {

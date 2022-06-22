@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Order shipment tracking details
+ * Contains order shipment tracking details.
  */
 public class ShipmentTracking extends AbstractResponse<ShipmentTracking> {
     public ShipmentTracking() {}
@@ -72,7 +72,7 @@ public class ShipmentTracking extends AbstractResponse<ShipmentTracking> {
     }
 
     /**
-     * The shipping carrier for the order delivery
+     * The shipping carrier for the order delivery.
      */
     public String getCarrier() {
         return (String) get("carrier");
@@ -84,7 +84,7 @@ public class ShipmentTracking extends AbstractResponse<ShipmentTracking> {
     }
 
     /**
-     * The tracking number of the order shipment
+     * The tracking number of the order shipment.
      */
     public String getNumber() {
         return (String) get("number");
@@ -96,7 +96,7 @@ public class ShipmentTracking extends AbstractResponse<ShipmentTracking> {
     }
 
     /**
-     * The shipment tracking title
+     * The shipment tracking title.
      */
     public String getTitle() {
         return (String) get("title");

@@ -110,7 +110,7 @@ public class UnknownMediaGalleryInterface extends AbstractResponse<UnknownMediaG
     }
 
     /**
-     * Whether the image is hidden from view.
+     * Indicates whether the image is hidden from view.
      */
     public Boolean getDisabled() {
         return (Boolean) get("disabled");

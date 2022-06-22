@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * A downloadable product wish list item
+ * A downloadable product wish list item.
  */
 public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishlistItem> implements WishlistItemInterface {
     public DownloadableWishlistItem() {}
@@ -150,7 +150,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * The date and time the item was added to the wish list
+     * The date and time the item was added to the wish list.
      */
     public String getAddedAt() {
         return (String) get("added_at");
@@ -162,7 +162,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * Custom options selected for the wish list item
+     * Custom options selected for the wish list item.
      */
     public List<SelectedCustomizableOption> getCustomizableOptions() {
         return (List<SelectedCustomizableOption>) get("customizable_options");
@@ -174,7 +174,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * The description of the item
+     * The description of the item.
      */
     public String getDescription() {
         return (String) get("description");
@@ -186,7 +186,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -198,7 +198,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * An array containing information about the selected links
+     * An array containing information about the selected links.
      */
     public List<DownloadableProductLinks> getLinksV2() {
         return (List<DownloadableProductLinks>) get("links_v2");
@@ -210,7 +210,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * Product details of the wish list item
+     * Product details of the wish list item.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -222,7 +222,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * The quantity of this wish list item
+     * The quantity of this wish list item.
      */
     public Double getQuantity() {
         return (Double) get("quantity");
@@ -234,7 +234,7 @@ public class DownloadableWishlistItem extends AbstractResponse<DownloadableWishl
     }
 
     /**
-     * An array containing information about the selected samples
+     * An array containing information about the selected samples.
      */
     public List<DownloadableProductSamples> getSamples() {
         return (List<DownloadableProductSamples>) get("samples");

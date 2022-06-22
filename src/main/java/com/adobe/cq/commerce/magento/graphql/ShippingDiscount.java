@@ -55,7 +55,7 @@ public class ShippingDiscount extends AbstractResponse<ShippingDiscount> {
     }
 
     /**
-     * The amount of the discount
+     * The amount of the discount.
      */
     public Money getAmount() {
         return (Money) get("amount");

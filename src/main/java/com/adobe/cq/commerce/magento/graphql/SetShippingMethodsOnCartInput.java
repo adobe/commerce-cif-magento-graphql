@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Applies one or shipping methods to the cart.
+ */
 public class SetShippingMethodsOnCartInput implements Serializable {
     private String cartId;
 
@@ -30,19 +33,31 @@ public class SetShippingMethodsOnCartInput implements Serializable {
         this.shippingMethods = shippingMethods;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public SetShippingMethodsOnCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of shipping methods.
+     */
     public List<ShippingMethodInput> getShippingMethods() {
         return shippingMethods;
     }
 
+    /**
+     * An array of shipping methods.
+     */
     public SetShippingMethodsOnCartInput setShippingMethods(List<ShippingMethodInput> shippingMethods) {
         this.shippingMethods = shippingMethods;
         return this;

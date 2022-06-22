@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the result of the `isEmailAvailable` query.
+ */
 public class IsEmailAvailableOutputQuery extends AbstractQuery<IsEmailAvailableOutputQuery> {
     IsEmailAvailableOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Is email availabel value
+     * Indicates whether the specified email address can be used to create a customer.
      */
     public IsEmailAvailableOutputQuery isEmailAvailable() {
         startField("is_email_available");

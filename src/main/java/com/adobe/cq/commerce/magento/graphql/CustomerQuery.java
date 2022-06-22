@@ -20,7 +20,7 @@ import com.shopify.graphql.support.Fragment;
 import com.shopify.graphql.support.ID;
 
 /**
- * Customer defines the customer name and address and other details
+ * Defines the customer name, addresses, and other details.
  */
 public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     CustomerQuery(StringBuilder _queryBuilder) {
@@ -28,7 +28,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * An array containing the customer&#39;s shipping and billing addresses
+     * An array containing the customer&#39;s shipping and billing addresses.
      */
     public CustomerQuery addresses(CustomerAddressQueryDefinition queryDef) {
         startField("addresses");
@@ -41,7 +41,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Indicates whether the customer has enabled remote shopping assistance
+     * Indicates whether the customer has enabled remote shopping assistance.
      */
     public CustomerQuery allowRemoteShoppingAssistance() {
         startField("allow_remote_shopping_assistance");
@@ -50,7 +50,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The contents of the customer&#39;s compare list
+     * The contents of the customer&#39;s compare list.
      */
     public CustomerQuery compareList(CompareListQueryDefinition queryDef) {
         startField("compare_list");
@@ -63,7 +63,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Timestamp indicating when the account was created
+     * Timestamp indicating when the account was created.
      */
     public CustomerQuery createdAt() {
         startField("created_at");
@@ -72,7 +72,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      */
     public CustomerQuery dateOfBirth() {
         startField("date_of_birth");
@@ -81,7 +81,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The ID assigned to the billing address
+     * The ID assigned to the billing address.
      */
     public CustomerQuery defaultBilling() {
         startField("default_billing");
@@ -90,7 +90,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The ID assigned to the shipping address
+     * The ID assigned to the shipping address.
      */
     public CustomerQuery defaultShipping() {
         startField("default_shipping");
@@ -99,9 +99,9 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s date of birth
+     * The customer&#39;s date of birth.
      *
-     * @deprecated Use `date_of_birth` instead
+     * @deprecated Use `date_of_birth` instead.
      */
     @Deprecated
     public CustomerQuery dob() {
@@ -111,7 +111,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s email address. Required
+     * The customer&#39;s email address. Required.
      */
     public CustomerQuery email() {
         startField("email");
@@ -120,7 +120,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s first name
+     * The customer&#39;s first name.
      */
     public CustomerQuery firstname() {
         startField("firstname");
@@ -129,7 +129,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s gender (Male - 1, Female - 2)
+     * The customer&#39;s gender (Male - 1, Female - 2).
      */
     public CustomerQuery gender() {
         startField("gender");
@@ -138,7 +138,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Details about all of the customer&#39;s gift registries
+     * Details about all of the customer&#39;s gift registries.
      */
     public CustomerQuery giftRegistries(GiftRegistryQueryDefinition queryDef) {
         startField("gift_registries");
@@ -151,7 +151,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Details about a specific gift registry
+     * Details about a specific gift registry.
      */
     public CustomerQuery giftRegistry(ID giftRegistryUid, GiftRegistryQueryDefinition queryDef) {
         startField("gift_registry");
@@ -169,7 +169,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * @deprecated Customer group should not be exposed in the storefront scenarios
+     * @deprecated Customer group should not be exposed in the storefront scenarios.
      */
     @Deprecated
     public CustomerQuery groupId() {
@@ -179,10 +179,10 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The ID assigned to the customer
+     * The ID assigned to the customer.
      *
-     * @deprecated id is not needed as part of Customer because on server side it can be identified based on customer token used for
-     *             authentication. There is no need to know customer ID on the client side.
+     * @deprecated `id` is not needed as part of `Customer`, because on the server side, it can be identified based on the customer token
+     *             used for authentication. There is no need to know customer ID on the client side.
      */
     @Deprecated
     public CustomerQuery id() {
@@ -192,7 +192,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Indicates whether the customer is subscribed to the company&#39;s newsletter
+     * Indicates whether the customer is subscribed to the company&#39;s newsletter.
      */
     public CustomerQuery isSubscribed() {
         startField("is_subscribed");
@@ -201,7 +201,16 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s family name
+     * The job title of a company user.
+     */
+    public CustomerQuery jobTitle() {
+        startField("job_title");
+
+        return this;
+    }
+
+    /**
+     * The customer&#39;s family name.
      */
     public CustomerQuery lastname() {
         startField("lastname");
@@ -210,7 +219,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s middle name
+     * The customer&#39;s middle name.
      */
     public CustomerQuery middlename() {
         startField("middlename");
@@ -224,7 +233,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         }
 
         /**
-         * Defines the filter to use for searching customer orders
+         * Defines the filter to use for searching customer orders.
          */
         public OrdersArguments filter(CustomerOrdersFilterInput value) {
             if (value != null) {
@@ -235,7 +244,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         }
 
         /**
-         * Specifies which page of results to return. The default value is 1
+         * Specifies which page of results to return. The default value is 1.
          */
         public OrdersArguments currentPage(Integer value) {
             if (value != null) {
@@ -246,7 +255,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once. The default value is 20
+         * Specifies the maximum number of results to return at once. The default value is 20.
          */
         public OrdersArguments pageSize(Integer value) {
             if (value != null) {
@@ -288,8 +297,75 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         return this;
     }
 
+    public class RequisitionListsArguments extends Arguments {
+        RequisitionListsArguments(StringBuilder _queryBuilder) {
+            super(_queryBuilder, true);
+        }
+
+        /**
+         * The maximum number of results to return at once. The default value is 20.
+         */
+        public RequisitionListsArguments pageSize(Integer value) {
+            if (value != null) {
+                startArgument("pageSize");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * The page of results to return. The default value is 1.
+         */
+        public RequisitionListsArguments currentPage(Integer value) {
+            if (value != null) {
+                startArgument("currentPage");
+                _queryBuilder.append(value);
+            }
+            return this;
+        }
+
+        /**
+         * The filter to use to limit the number of requisition lists to return.
+         */
+        public RequisitionListsArguments filter(RequisitionListFilterInput value) {
+            if (value != null) {
+                startArgument("filter");
+                value.appendTo(_queryBuilder);
+            }
+            return this;
+        }
+    }
+
+    public interface RequisitionListsArgumentsDefinition {
+        void define(RequisitionListsArguments args);
+    }
+
     /**
-     * Retrieves details about the specified return request from the unique ID for a `Return` object
+     * An object that contains the customer&#39;s requisition lists.
+     */
+    public CustomerQuery requisitionLists(RequisitionListsQueryDefinition queryDef) {
+        return requisitionLists(args -> {}, queryDef);
+    }
+
+    /**
+     * An object that contains the customer&#39;s requisition lists.
+     */
+    public CustomerQuery requisitionLists(RequisitionListsArgumentsDefinition argsDef, RequisitionListsQueryDefinition queryDef) {
+        startField("requisition_lists");
+
+        RequisitionListsArguments args = new RequisitionListsArguments(_queryBuilder);
+        argsDef.define(args);
+        RequisitionListsArguments.end(args);
+
+        _queryBuilder.append('{');
+        queryDef.define(new RequisitionListsQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Details about the specified return request from the unique ID for a `Return` object.
      */
     public CustomerQuery returnValue(ID uid, ReturnQueryDefinition queryDef) {
         startField("return");
@@ -312,7 +388,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once. The default value is 20
+         * The maximum number of results to return at once. The default is 20.
          */
         public ReturnsArguments pageSize(Integer value) {
             if (value != null) {
@@ -323,7 +399,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         }
 
         /**
-         * Specifies which page of results to return. The default value is 1
+         * The page of results to return. The default is 1.
          */
         public ReturnsArguments currentPage(Integer value) {
             if (value != null) {
@@ -368,7 +444,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         }
 
         /**
-         * Specifies the maximum number of results to return at once.
+         * The maximum number of results to return at once. The default value is 20.
          */
         public ReviewsArguments pageSize(Integer value) {
             if (value != null) {
@@ -379,7 +455,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
         }
 
         /**
-         * Specifies which page of results to return.
+         * The page of results to return. The default value is 1.
          */
         public ReviewsArguments currentPage(Integer value) {
             if (value != null) {
@@ -395,14 +471,14 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Contains the customer&#39;s product reviews
+     * Contains the customer&#39;s product reviews.
      */
     public CustomerQuery reviews(ProductReviewsQueryDefinition queryDef) {
         return reviews(args -> {}, queryDef);
     }
 
     /**
-     * Contains the customer&#39;s product reviews
+     * Contains the customer&#39;s product reviews.
      */
     public CustomerQuery reviews(ReviewsArgumentsDefinition argsDef, ProductReviewsQueryDefinition queryDef) {
         startField("reviews");
@@ -419,7 +495,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Customer reward points details
+     * Customer reward points details.
      */
     public CustomerQuery rewardPoints(RewardPointsQueryDefinition queryDef) {
         startField("reward_points");
@@ -432,7 +508,29 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Contains the store credit information applied for the logged in customer
+     * The role name and permissions assigned to the company user.
+     */
+    public CustomerQuery role(CompanyRoleQueryDefinition queryDef) {
+        startField("role");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompanyRoleQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * Indicates whether the company user is ACTIVE or INACTIVE.
+     */
+    public CustomerQuery status() {
+        startField("status");
+
+        return this;
+    }
+
+    /**
+     * Store credit information applied for the logged in customer.
      */
     public CustomerQuery storeCredit(CustomerStoreCreditQueryDefinition queryDef) {
         startField("store_credit");
@@ -445,7 +543,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * A value such as Sr., Jr., or III
+     * A value such as Sr., Jr., or III.
      */
     public CustomerQuery suffix() {
         startField("suffix");
@@ -454,7 +552,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * The customer&#39;s Value-added tax (VAT) number (for corporate customers)
+     * The customer&#39;s Value-added tax (VAT) number (for corporate customers).
      */
     public CustomerQuery taxvat() {
         startField("taxvat");
@@ -463,9 +561,31 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Contains a customer&#39;s wish lists
+     * The team the company user is assigned to.
+     */
+    public CustomerQuery team(CompanyTeamQueryDefinition queryDef) {
+        startField("team");
+
+        _queryBuilder.append('{');
+        queryDef.define(new CompanyTeamQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return this;
+    }
+
+    /**
+     * The phone number of the company user.
+     */
+    public CustomerQuery telephone() {
+        startField("telephone");
+
+        return this;
+    }
+
+    /**
+     * Return a customer&#39;s wish lists.
      *
-     * @deprecated Use `Customer.wishlists` or `Customer.wishlist_v2`
+     * @deprecated Use `Customer.wishlists` or `Customer.wishlist_v2` instead.
      */
     @Deprecated
     public CustomerQuery wishlist(WishlistQueryDefinition queryDef) {
@@ -479,7 +599,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
     }
 
     /**
-     * Retrieve the specified wish list identified by the unique ID for a `Wishlist` object
+     * Retrieve the wish list identified by the unique ID for a `Wishlist` object.
      */
     public CustomerQuery wishlistV2(ID id, WishlistQueryDefinition queryDef) {
         startField("wishlist_v2");
@@ -530,7 +650,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
 
     /**
      * An array of wishlists. In Magento Open Source, customers are limited to one wish list. The number of
-     * wish lists is configurable for Magento Commerce
+     * wish lists is configurable for Adobe Commerce.
      */
     public CustomerQuery wishlists(WishlistQueryDefinition queryDef) {
         return wishlists(args -> {}, queryDef);
@@ -538,7 +658,7 @@ public class CustomerQuery extends AbstractQuery<CustomerQuery> {
 
     /**
      * An array of wishlists. In Magento Open Source, customers are limited to one wish list. The number of
-     * wish lists is configurable for Magento Commerce
+     * wish lists is configurable for Adobe Commerce.
      */
     public CustomerQuery wishlists(WishlistsArgumentsDefinition argsDef, WishlistQueryDefinition queryDef) {
         startField("wishlists");

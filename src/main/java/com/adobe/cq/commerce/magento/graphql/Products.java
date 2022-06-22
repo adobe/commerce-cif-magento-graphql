@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The Products object is the top-level object returned in a product search.
+ * Contains the results of a `products` query.
  */
 public class Products extends AbstractResponse<Products> {
     public Products() {}
@@ -119,6 +119,27 @@ public class Products extends AbstractResponse<Products> {
                     break;
                 }
 
+                case "suggestions": {
+                    List<SearchSuggestion> optional1 = null;
+                    if (!field.getValue().isJsonNull()) {
+                        List<SearchSuggestion> list1 = new ArrayList<>();
+                        for (JsonElement element1 : jsonAsArray(field.getValue(), key)) {
+                            SearchSuggestion optional2 = null;
+                            if (!element1.isJsonNull()) {
+                                optional2 = new SearchSuggestion(jsonAsObject(element1, key));
+                            }
+
+                            list1.add(optional2);
+                        }
+
+                        optional1 = list1;
+                    }
+
+                    responseData.put(key, optional1);
+
+                    break;
+                }
+
                 case "total_count": {
                     Integer optional1 = null;
                     if (!field.getValue().isJsonNull()) {
@@ -147,7 +168,7 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
-     * Layered navigation aggregations.
+     * A bucket that contains the attribute code and label for each filterable option.
      */
     public List<Aggregation> getAggregations() {
         return (List<Aggregation>) get("aggregations");
@@ -161,7 +182,7 @@ public class Products extends AbstractResponse<Products> {
     /**
      * Layered navigation filters array.
      *
-     * @deprecated Use aggregations instead
+     * @deprecated Use `aggregations` instead.
      */
     @Deprecated
     public List<LayerFilter> getFilters() {
@@ -210,6 +231,18 @@ public class Products extends AbstractResponse<Products> {
     }
 
     /**
+     * An array of search suggestions for case when search query have no results.
+     */
+    public List<SearchSuggestion> getSuggestions() {
+        return (List<SearchSuggestion>) get("suggestions");
+    }
+
+    public Products setSuggestions(List<SearchSuggestion> arg) {
+        optimisticData.put(getKey("suggestions"), arg);
+        return this;
+    }
+
+    /**
      * The number of products that are marked as visible. By default, in complex products, parent products
      * are visible, but their child products are not.
      */
@@ -237,6 +270,9 @@ public class Products extends AbstractResponse<Products> {
                 return true;
 
             case "sort_fields":
+                return true;
+
+            case "suggestions":
                 return true;
 
             case "total_count":

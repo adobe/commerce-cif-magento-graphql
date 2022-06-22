@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Details of a product review
+ * Contains details of a product review.
  */
 public class ProductReview extends AbstractResponse<ProductReview> {
     public ProductReview() {}
@@ -103,7 +103,7 @@ public class ProductReview extends AbstractResponse<ProductReview> {
     }
 
     /**
-     * The average rating for product review.
+     * The average of all ratings for this product.
      */
     public Double getAverageRating() {
         return (Double) get("average_rating");
@@ -115,7 +115,7 @@ public class ProductReview extends AbstractResponse<ProductReview> {
     }
 
     /**
-     * Date indicating when the review was created.
+     * The date the review was created.
      */
     public String getCreatedAt() {
         return (String) get("created_at");
@@ -127,7 +127,7 @@ public class ProductReview extends AbstractResponse<ProductReview> {
     }
 
     /**
-     * The customer&#39;s nickname. Defaults to the customer name, if logged in
+     * The customer&#39;s nickname. Defaults to the customer name, if logged in.
      */
     public String getNickname() {
         return (String) get("nickname");
@@ -139,7 +139,7 @@ public class ProductReview extends AbstractResponse<ProductReview> {
     }
 
     /**
-     * Contains details about the reviewed product
+     * The reviewed product.
      */
     public ProductInterface getProduct() {
         return (ProductInterface) get("product");
@@ -151,7 +151,7 @@ public class ProductReview extends AbstractResponse<ProductReview> {
     }
 
     /**
-     * An array of ratings by rating category, such as quality, price, and value
+     * An array of ratings by rating category, such as quality, price, and value.
      */
     public List<ProductReviewRating> getRatingsBreakdown() {
         return (List<ProductReviewRating>) get("ratings_breakdown");
@@ -163,7 +163,7 @@ public class ProductReview extends AbstractResponse<ProductReview> {
     }
 
     /**
-     * The summary (title) of the review
+     * The summary (title) of the review.
      */
     public String getSummary() {
         return (String) get("summary");

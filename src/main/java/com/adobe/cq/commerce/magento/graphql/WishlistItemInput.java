@@ -22,7 +22,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 /**
- * Defines the items to add to a wish list
+ * Defines the items to add to a wish list.
  */
 public class WishlistItemInput implements Serializable {
     private double quantity;
@@ -42,14 +42,14 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * The amount or number of items to add
+     * The amount or number of items to add.
      */
     public double getQuantity() {
         return quantity;
     }
 
     /**
-     * The amount or number of items to add
+     * The amount or number of items to add.
      */
     public WishlistItemInput setQuantity(double quantity) {
         this.quantity = quantity;
@@ -57,14 +57,14 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * The SKU of the product to add. For complex product types, specify the child product SKU
+     * The SKU of the product to add. For complex product types, specify the child product SKU.
      */
     public String getSku() {
         return sku;
     }
 
     /**
-     * The SKU of the product to add. For complex product types, specify the child product SKU
+     * The SKU of the product to add. For complex product types, specify the child product SKU.
      */
     public WishlistItemInput setSku(String sku) {
         this.sku = sku;
@@ -72,21 +72,21 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public List<EnteredOptionInput> getEnteredOptions() {
         return enteredOptions.getValue();
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public Input<List<EnteredOptionInput>> getEnteredOptionsInput() {
         return enteredOptions;
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public WishlistItemInput setEnteredOptions(List<EnteredOptionInput> enteredOptions) {
         this.enteredOptions = Input.optional(enteredOptions);
@@ -94,7 +94,7 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public WishlistItemInput setEnteredOptionsInput(Input<List<EnteredOptionInput>> enteredOptions) {
         if (enteredOptions == null) {
@@ -105,21 +105,21 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public String getParentSku() {
         return parentSku.getValue();
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public Input<String> getParentSkuInput() {
         return parentSku;
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public WishlistItemInput setParentSku(String parentSku) {
         this.parentSku = Input.optional(parentSku);
@@ -127,7 +127,7 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * For complex product types, the SKU of the parent product
+     * For complex product types, the SKU of the parent product.
      */
     public WishlistItemInput setParentSkuInput(Input<String> parentSku) {
         if (parentSku == null) {
@@ -138,21 +138,21 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public List<ID> getSelectedOptions() {
         return selectedOptions.getValue();
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public Input<List<ID>> getSelectedOptionsInput() {
         return selectedOptions;
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public WishlistItemInput setSelectedOptions(List<ID> selectedOptions) {
         this.selectedOptions = Input.optional(selectedOptions);
@@ -160,7 +160,7 @@ public class WishlistItemInput implements Serializable {
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public WishlistItemInput setSelectedOptionsInput(Input<List<ID>> selectedOptions) {
         if (selectedOptions == null) {

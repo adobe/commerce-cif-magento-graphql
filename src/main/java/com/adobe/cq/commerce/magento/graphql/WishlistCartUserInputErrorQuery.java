@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about errors encountered when a customer added wish list items to the cart.
+ */
 public class WishlistCartUserInputErrorQuery extends AbstractQuery<WishlistCartUserInputErrorQuery> {
     WishlistCartUserInputErrorQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An error code that describes the error encountered
+     * An error code that describes the error encountered.
      */
     public WishlistCartUserInputErrorQuery code() {
         startField("code");
@@ -32,7 +35,7 @@ public class WishlistCartUserInputErrorQuery extends AbstractQuery<WishlistCartU
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public WishlistCartUserInputErrorQuery message() {
         startField("message");
@@ -41,7 +44,7 @@ public class WishlistCartUserInputErrorQuery extends AbstractQuery<WishlistCartU
     }
 
     /**
-     * The unique ID of the `Wishlist` object containing an error
+     * The unique ID of the `Wishlist` object containing an error.
      */
     public WishlistCartUserInputErrorQuery wishlistId() {
         startField("wishlistId");
@@ -50,7 +53,7 @@ public class WishlistCartUserInputErrorQuery extends AbstractQuery<WishlistCartU
     }
 
     /**
-     * The unique ID of the wish list item containing an error
+     * The unique ID of the wish list item containing an error.
      */
     public WishlistCartUserInputErrorQuery wishlistItemId() {
         startField("wishlistItemId");

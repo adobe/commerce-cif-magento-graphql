@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableDropDownOption contains information about a drop down menu that is defined as part of a
- * customizable option.
+ * Contains information about a drop down menu that is defined as part of a customizable option.
  */
 public class CustomizableDropDownOption extends AbstractResponse<CustomizableDropDownOption> implements CustomizableOptionInterface {
     public CustomizableDropDownOption() {}

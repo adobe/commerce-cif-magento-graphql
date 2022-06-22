@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about a newly-created or updated customer.
+ */
 public class CustomerOutputQuery extends AbstractQuery<CustomerOutputQuery> {
     CustomerOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * Customer details after creating or updating a customer.
+     */
     public CustomerOutputQuery customer(CustomerQueryDefinition queryDef) {
         startField("customer");
 

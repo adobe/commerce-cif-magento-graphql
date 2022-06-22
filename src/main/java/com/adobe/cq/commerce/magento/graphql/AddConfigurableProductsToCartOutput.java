@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after adding configurable products.
+ */
 public class AddConfigurableProductsToCartOutput extends AbstractResponse<AddConfigurableProductsToCartOutput> {
     public AddConfigurableProductsToCartOutput() {}
 
@@ -51,6 +54,9 @@ public class AddConfigurableProductsToCartOutput extends AbstractResponse<AddCon
         return "AddConfigurableProductsToCartOutput";
     }
 
+    /**
+     * The cart after adding products.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

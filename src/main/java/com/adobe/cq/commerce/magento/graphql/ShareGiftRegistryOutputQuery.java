@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the results of a request to share a gift registry.
+ */
 public class ShareGiftRegistryOutputQuery extends AbstractQuery<ShareGiftRegistryOutputQuery> {
     ShareGiftRegistryOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Indicates whether the gift registry was successfully shared
+     * Indicates whether the gift registry was successfully shared.
      */
     public ShareGiftRegistryOutputQuery isShared() {
         startField("is_shared");

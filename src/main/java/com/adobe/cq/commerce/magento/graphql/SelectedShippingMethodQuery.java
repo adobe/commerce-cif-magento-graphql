@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the selected shipping method and carrier.
+ */
 public class SelectedShippingMethodQuery extends AbstractQuery<SelectedShippingMethodQuery> {
     SelectedShippingMethodQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cost of shipping using this shipping method.
+     */
     public SelectedShippingMethodQuery amount(MoneyQueryDefinition queryDef) {
         startField("amount");
 
@@ -33,7 +39,7 @@ public class SelectedShippingMethodQuery extends AbstractQuery<SelectedShippingM
     }
 
     /**
-     * @deprecated The field should not be used on the storefront
+     * @deprecated The field should not be used on the storefront.
      */
     @Deprecated
     public SelectedShippingMethodQuery baseAmount(MoneyQueryDefinition queryDef) {
@@ -46,24 +52,36 @@ public class SelectedShippingMethodQuery extends AbstractQuery<SelectedShippingM
         return this;
     }
 
+    /**
+     * A string that identifies a commercial carrier or an offline shipping method.
+     */
     public SelectedShippingMethodQuery carrierCode() {
         startField("carrier_code");
 
         return this;
     }
 
+    /**
+     * The label for the carrier code.
+     */
     public SelectedShippingMethodQuery carrierTitle() {
         startField("carrier_title");
 
         return this;
     }
 
+    /**
+     * A shipping method code associated with a carrier.
+     */
     public SelectedShippingMethodQuery methodCode() {
         startField("method_code");
 
         return this;
     }
 
+    /**
+     * The label for the method code.
+     */
     public SelectedShippingMethodQuery methodTitle() {
         startField("method_title");
 

@@ -20,6 +20,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Specifies the IDs of the items to move and their quantities.
+ */
 public class WishlistItemMoveInput implements Serializable {
     private ID wishlistItemId;
 
@@ -30,14 +33,14 @@ public class WishlistItemMoveInput implements Serializable {
     }
 
     /**
-     * filtered by the unique ID for a `WishlistItemInterface` object to be moved
+     * The unique ID of the `WishlistItemInterface` object to be moved.
      */
     public ID getWishlistItemId() {
         return wishlistItemId;
     }
 
     /**
-     * filtered by the unique ID for a `WishlistItemInterface` object to be moved
+     * The unique ID of the `WishlistItemInterface` object to be moved.
      */
     public WishlistItemMoveInput setWishlistItemId(ID wishlistItemId) {
         this.wishlistItemId = wishlistItemId;

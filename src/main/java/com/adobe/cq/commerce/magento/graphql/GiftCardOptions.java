@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the sender, recipient, and amount of a gift card.
+ */
 public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     public GiftCardOptions() {}
 
@@ -123,7 +126,7 @@ public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     }
 
     /**
-     * The amount and currency of the gift card
+     * The amount and currency of the gift card.
      */
     public Money getAmount() {
         return (Money) get("amount");
@@ -135,7 +138,7 @@ public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     }
 
     /**
-     * The custom amount and currency of the gift card
+     * The custom amount and currency of the gift card.
      */
     public Money getCustomGiftcardAmount() {
         return (Money) get("custom_giftcard_amount");
@@ -147,7 +150,7 @@ public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     }
 
     /**
-     * A message to the recipient
+     * A message to the recipient.
      */
     public String getMessage() {
         return (String) get("message");
@@ -159,7 +162,7 @@ public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     }
 
     /**
-     * The email of the person receiving the gift card
+     * The email address of the person receiving the gift card.
      */
     public String getRecipientEmail() {
         return (String) get("recipient_email");
@@ -171,7 +174,7 @@ public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     }
 
     /**
-     * The name of the person receiving the gift card
+     * The name of the person receiving the gift card.
      */
     public String getRecipientName() {
         return (String) get("recipient_name");
@@ -183,7 +186,7 @@ public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     }
 
     /**
-     * The email of the sender
+     * The email address of the person sending the gift card.
      */
     public String getSenderEmail() {
         return (String) get("sender_email");
@@ -195,7 +198,7 @@ public class GiftCardOptions extends AbstractResponse<GiftCardOptions> {
     }
 
     /**
-     * The name of the sender
+     * The name of the person sending the gift card.
      */
     public String getSenderName() {
         return (String) get("sender_name");

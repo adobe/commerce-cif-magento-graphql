@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableDateOption contains information about a date picker that is defined as part of a
- * customizable option.
+ * Contains information about a date picker that is defined as part of a customizable option.
  */
 public class CustomizableDateOptionQuery extends AbstractQuery<CustomizableDateOptionQuery> {
     CustomizableDateOptionQuery(StringBuilder _queryBuilder) {

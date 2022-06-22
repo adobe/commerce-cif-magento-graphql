@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Represents order item options like selected or entered
+ * Represents order item options like selected or entered.
  */
 public class OrderItemOption extends AbstractResponse<OrderItemOption> {
     public OrderItemOption() {}
@@ -61,7 +61,7 @@ public class OrderItemOption extends AbstractResponse<OrderItemOption> {
     }
 
     /**
-     * The name of the option
+     * The name of the option.
      */
     public String getLabel() {
         return (String) get("label");
@@ -73,7 +73,7 @@ public class OrderItemOption extends AbstractResponse<OrderItemOption> {
     }
 
     /**
-     * The value of the option
+     * The value of the option.
      */
     public String getValue() {
         return (String) get("value");

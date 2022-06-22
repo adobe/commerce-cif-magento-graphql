@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about an error that occurred when processing a gift registry item.
+ */
 public class GiftRegistryItemsUserErrorQuery extends AbstractQuery<GiftRegistryItemsUserErrorQuery> {
     GiftRegistryItemsUserErrorQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * An error code that describes the error encountered
+     * An error code that describes the error encountered.
      */
     public GiftRegistryItemsUserErrorQuery code() {
         startField("code");
@@ -32,7 +35,7 @@ public class GiftRegistryItemsUserErrorQuery extends AbstractQuery<GiftRegistryI
     }
 
     /**
-     * The unique ID of the gift registry item containing an error
+     * The unique ID of the gift registry item containing an error.
      */
     public GiftRegistryItemsUserErrorQuery giftRegistryItemUid() {
         startField("gift_registry_item_uid");
@@ -41,7 +44,7 @@ public class GiftRegistryItemsUserErrorQuery extends AbstractQuery<GiftRegistryI
     }
 
     /**
-     * The unique ID of the `Gift registry` object containing an error
+     * The unique ID of the `GiftRegistry` object containing an error.
      */
     public GiftRegistryItemsUserErrorQuery giftRegistryUid() {
         startField("gift_registry_uid");
@@ -50,7 +53,7 @@ public class GiftRegistryItemsUserErrorQuery extends AbstractQuery<GiftRegistryI
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public GiftRegistryItemsUserErrorQuery message() {
         startField("message");
@@ -59,7 +62,7 @@ public class GiftRegistryItemsUserErrorQuery extends AbstractQuery<GiftRegistryI
     }
 
     /**
-     * The unique ID of the product containing an error
+     * The unique ID of the product containing an error.
      */
     public GiftRegistryItemsUserErrorQuery productUid() {
         startField("product_uid");

@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * GiftCardAmounts contains the value of a gift card, the website that generated the card, and related
- * information
+ * Contains the value of a gift card, the website that generated the card, and related information.
  */
 public class GiftCardAmountsQuery extends AbstractQuery<GiftCardAmountsQuery> {
     GiftCardAmountsQuery(StringBuilder _queryBuilder) {
@@ -36,7 +35,7 @@ public class GiftCardAmountsQuery extends AbstractQuery<GiftCardAmountsQuery> {
     }
 
     /**
-     * The unique ID for a `GiftCardAmounts` object
+     * The unique ID for a `GiftCardAmounts` object.
      */
     public GiftCardAmountsQuery uid() {
         startField("uid");
@@ -45,7 +44,7 @@ public class GiftCardAmountsQuery extends AbstractQuery<GiftCardAmountsQuery> {
     }
 
     /**
-     * The value of the gift card
+     * The value of the gift card.
      */
     public GiftCardAmountsQuery value() {
         startField("value");
@@ -66,7 +65,7 @@ public class GiftCardAmountsQuery extends AbstractQuery<GiftCardAmountsQuery> {
     }
 
     /**
-     * ID of the website that generated the gift card
+     * The ID of the website that generated the gift card.
      */
     public GiftCardAmountsQuery websiteId() {
         startField("website_id");
@@ -75,7 +74,7 @@ public class GiftCardAmountsQuery extends AbstractQuery<GiftCardAmountsQuery> {
     }
 
     /**
-     * The value of the gift card
+     * The value of the gift card.
      */
     public GiftCardAmountsQuery websiteValue() {
         startField("website_value");

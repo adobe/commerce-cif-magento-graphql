@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines the billing address.
+ */
 public class BillingAddressInput implements Serializable {
     private Input<CartAddressInput> address = Input.undefined();
 
@@ -27,19 +30,31 @@ public class BillingAddressInput implements Serializable {
 
     private Input<Boolean> useForShipping = Input.undefined();
 
+    /**
+     * Defines a billing address.
+     */
     public CartAddressInput getAddress() {
         return address.getValue();
     }
 
+    /**
+     * Defines a billing address.
+     */
     public Input<CartAddressInput> getAddressInput() {
         return address;
     }
 
+    /**
+     * Defines a billing address.
+     */
     public BillingAddressInput setAddress(CartAddressInput address) {
         this.address = Input.optional(address);
         return this;
     }
 
+    /**
+     * Defines a billing address.
+     */
     public BillingAddressInput setAddressInput(Input<CartAddressInput> address) {
         if (address == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -48,19 +63,31 @@ public class BillingAddressInput implements Serializable {
         return this;
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for billing.
+     */
     public Integer getCustomerAddressId() {
         return customerAddressId.getValue();
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for billing.
+     */
     public Input<Integer> getCustomerAddressIdInput() {
         return customerAddressId;
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for billing.
+     */
     public BillingAddressInput setCustomerAddressId(Integer customerAddressId) {
         this.customerAddressId = Input.optional(customerAddressId);
         return this;
     }
 
+    /**
+     * An ID from the customer&#39;s address book that uniquely identifies the address to be used for billing.
+     */
     public BillingAddressInput setCustomerAddressIdInput(Input<Integer> customerAddressId) {
         if (customerAddressId == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -70,21 +97,24 @@ public class BillingAddressInput implements Serializable {
     }
 
     /**
-     * Set billing address same as shipping
+     * Indicates whether to set the billing address to be the same as the existing shipping address on the
+     * cart.
      */
     public Boolean getSameAsShipping() {
         return sameAsShipping.getValue();
     }
 
     /**
-     * Set billing address same as shipping
+     * Indicates whether to set the billing address to be the same as the existing shipping address on the
+     * cart.
      */
     public Input<Boolean> getSameAsShippingInput() {
         return sameAsShipping;
     }
 
     /**
-     * Set billing address same as shipping
+     * Indicates whether to set the billing address to be the same as the existing shipping address on the
+     * cart.
      */
     public BillingAddressInput setSameAsShipping(Boolean sameAsShipping) {
         this.sameAsShipping = Input.optional(sameAsShipping);
@@ -92,7 +122,8 @@ public class BillingAddressInput implements Serializable {
     }
 
     /**
-     * Set billing address same as shipping
+     * Indicates whether to set the billing address to be the same as the existing shipping address on the
+     * cart.
      */
     public BillingAddressInput setSameAsShippingInput(Input<Boolean> sameAsShipping) {
         if (sameAsShipping == null) {
@@ -103,21 +134,21 @@ public class BillingAddressInput implements Serializable {
     }
 
     /**
-     * Deprecated: use `same_as_shipping` field instead
+     * Indicates whether to set the shipping address to be the same as this billing address.
      */
     public Boolean getUseForShipping() {
         return useForShipping.getValue();
     }
 
     /**
-     * Deprecated: use `same_as_shipping` field instead
+     * Indicates whether to set the shipping address to be the same as this billing address.
      */
     public Input<Boolean> getUseForShippingInput() {
         return useForShipping;
     }
 
     /**
-     * Deprecated: use `same_as_shipping` field instead
+     * Indicates whether to set the shipping address to be the same as this billing address.
      */
     public BillingAddressInput setUseForShipping(Boolean useForShipping) {
         this.useForShipping = Input.optional(useForShipping);
@@ -125,7 +156,7 @@ public class BillingAddressInput implements Serializable {
     }
 
     /**
-     * Deprecated: use `same_as_shipping` field instead
+     * Indicates whether to set the shipping address to be the same as this billing address.
      */
     public BillingAddressInput setUseForShippingInput(Input<Boolean> useForShipping) {
         if (useForShipping == null) {

@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * GiftCardAmounts contains the value of a gift card, the website that generated the card, and related
- * information
+ * Contains the value of a gift card, the website that generated the card, and related information.
  */
 public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
     public GiftCardAmounts() {}
@@ -124,7 +123,7 @@ public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
     }
 
     /**
-     * The unique ID for a `GiftCardAmounts` object
+     * The unique ID for a `GiftCardAmounts` object.
      */
     public ID getUid() {
         return (ID) get("uid");
@@ -136,7 +135,7 @@ public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
     }
 
     /**
-     * The value of the gift card
+     * The value of the gift card.
      */
     public Double getValue() {
         return (Double) get("value");
@@ -163,7 +162,7 @@ public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
     }
 
     /**
-     * ID of the website that generated the gift card
+     * The ID of the website that generated the gift card.
      */
     public Integer getWebsiteId() {
         return (Integer) get("website_id");
@@ -175,7 +174,7 @@ public class GiftCardAmounts extends AbstractResponse<GiftCardAmounts> {
     }
 
     /**
-     * The value of the gift card
+     * The value of the gift card.
      */
     public Double getWebsiteValue() {
         return (Double) get("website_value");

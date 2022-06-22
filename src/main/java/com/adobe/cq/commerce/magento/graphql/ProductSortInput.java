@@ -19,9 +19,8 @@ import java.io.Serializable;
 import com.shopify.graphql.support.Input;
 
 /**
- * ProductSortInput is deprecated, use @ProductAttributeSortInput instead. ProductSortInput specifies
- * the attribute to use for sorting search results and indicates whether the results are sorted in
- * ascending or descending order.
+ * Deprecated. Use `ProductAttributeSortInput` instead. Specifies the attribute to use for sorting
+ * search results and indicates whether the results are sorted in ascending or descending order.
  */
 public class ProductSortInput implements Serializable {
     private Input<SortEnum> countryOfManufacture = Input.undefined();
@@ -128,21 +127,21 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public SortEnum getCreatedAt() {
         return createdAt.getValue();
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public Input<SortEnum> getCreatedAtInput() {
         return createdAt;
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public ProductSortInput setCreatedAt(SortEnum createdAt) {
         this.createdAt = Input.optional(createdAt);
@@ -150,7 +149,7 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was created.
+     * The timestamp indicating when the product was created.
      */
     public ProductSortInput setCreatedAtInput(Input<SortEnum> createdAt) {
         if (createdAt == null) {
@@ -392,21 +391,21 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public SortEnum getIsReturnable() {
         return isReturnable.getValue();
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public Input<SortEnum> getIsReturnableInput() {
         return isReturnable;
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public ProductSortInput setIsReturnable(SortEnum isReturnable) {
         this.isReturnable = Input.optional(isReturnable);
@@ -414,7 +413,7 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * Indicates whether the product can be returned
+     * Indicates whether the product can be returned.
      */
     public ProductSortInput setIsReturnableInput(Input<SortEnum> isReturnable) {
         if (isReturnable == null) {
@@ -990,21 +989,21 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * The file name of a swatch image
+     * Indicates the criteria to sort swatches.
      */
     public SortEnum getSwatchImage() {
         return swatchImage.getValue();
     }
 
     /**
-     * The file name of a swatch image
+     * Indicates the criteria to sort swatches.
      */
     public Input<SortEnum> getSwatchImageInput() {
         return swatchImage;
     }
 
     /**
-     * The file name of a swatch image
+     * Indicates the criteria to sort swatches.
      */
     public ProductSortInput setSwatchImage(SortEnum swatchImage) {
         this.swatchImage = Input.optional(swatchImage);
@@ -1012,7 +1011,7 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * The file name of a swatch image
+     * Indicates the criteria to sort swatches.
      */
     public ProductSortInput setSwatchImageInput(Input<SortEnum> swatchImage) {
         if (swatchImage == null) {
@@ -1122,21 +1121,21 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public SortEnum getUpdatedAt() {
         return updatedAt.getValue();
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public Input<SortEnum> getUpdatedAtInput() {
         return updatedAt;
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public ProductSortInput setUpdatedAt(SortEnum updatedAt) {
         this.updatedAt = Input.optional(updatedAt);
@@ -1144,7 +1143,7 @@ public class ProductSortInput implements Serializable {
     }
 
     /**
-     * Timestamp indicating when the product was updated.
+     * The timestamp indicating when the product was updated.
      */
     public ProductSortInput setUpdatedAtInput(Input<SortEnum> updatedAt) {
         if (updatedAt == null) {

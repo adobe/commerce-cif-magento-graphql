@@ -23,7 +23,7 @@ public class RewardPointsAmountQuery extends AbstractQuery<RewardPointsAmountQue
     }
 
     /**
-     * Reward points amount in store currency
+     * The reward points amount in store currency.
      */
     public RewardPointsAmountQuery money(MoneyQueryDefinition queryDef) {
         startField("money");
@@ -36,7 +36,7 @@ public class RewardPointsAmountQuery extends AbstractQuery<RewardPointsAmountQue
     }
 
     /**
-     * Reward points amount in points
+     * The reward points amount in points.
      */
     public RewardPointsAmountQuery points() {
         startField("points");

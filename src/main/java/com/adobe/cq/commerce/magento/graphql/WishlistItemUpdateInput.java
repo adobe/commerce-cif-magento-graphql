@@ -22,7 +22,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 /**
- * Defines updates to items in a wish list
+ * Defines updates to items in a wish list.
  */
 public class WishlistItemUpdateInput implements Serializable {
     private ID wishlistItemId;
@@ -40,14 +40,14 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public ID getWishlistItemId() {
         return wishlistItemId;
     }
 
     /**
-     * The unique ID for a `WishlistItemInterface` object
+     * The unique ID for a `WishlistItemInterface` object.
      */
     public WishlistItemUpdateInput setWishlistItemId(ID wishlistItemId) {
         this.wishlistItemId = wishlistItemId;
@@ -55,21 +55,21 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * Customer-entered comments about the item
+     * Customer-entered comments about the item.
      */
     public String getDescription() {
         return description.getValue();
     }
 
     /**
-     * Customer-entered comments about the item
+     * Customer-entered comments about the item.
      */
     public Input<String> getDescriptionInput() {
         return description;
     }
 
     /**
-     * Customer-entered comments about the item
+     * Customer-entered comments about the item.
      */
     public WishlistItemUpdateInput setDescription(String description) {
         this.description = Input.optional(description);
@@ -77,7 +77,7 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * Customer-entered comments about the item
+     * Customer-entered comments about the item.
      */
     public WishlistItemUpdateInput setDescriptionInput(Input<String> description) {
         if (description == null) {
@@ -88,21 +88,21 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public List<EnteredOptionInput> getEnteredOptions() {
         return enteredOptions.getValue();
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public Input<List<EnteredOptionInput>> getEnteredOptionsInput() {
         return enteredOptions;
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public WishlistItemUpdateInput setEnteredOptions(List<EnteredOptionInput> enteredOptions) {
         this.enteredOptions = Input.optional(enteredOptions);
@@ -110,7 +110,7 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * An array of options that the customer entered
+     * An array of options that the customer entered.
      */
     public WishlistItemUpdateInput setEnteredOptionsInput(Input<List<EnteredOptionInput>> enteredOptions) {
         if (enteredOptions == null) {
@@ -121,21 +121,21 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * The new amount or number of this item
+     * The new amount or number of this item.
      */
     public Double getQuantity() {
         return quantity.getValue();
     }
 
     /**
-     * The new amount or number of this item
+     * The new amount or number of this item.
      */
     public Input<Double> getQuantityInput() {
         return quantity;
     }
 
     /**
-     * The new amount or number of this item
+     * The new amount or number of this item.
      */
     public WishlistItemUpdateInput setQuantity(Double quantity) {
         this.quantity = Input.optional(quantity);
@@ -143,7 +143,7 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * The new amount or number of this item
+     * The new amount or number of this item.
      */
     public WishlistItemUpdateInput setQuantityInput(Input<Double> quantity) {
         if (quantity == null) {
@@ -154,21 +154,21 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public List<ID> getSelectedOptions() {
         return selectedOptions.getValue();
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public Input<List<ID>> getSelectedOptionsInput() {
         return selectedOptions;
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public WishlistItemUpdateInput setSelectedOptions(List<ID> selectedOptions) {
         this.selectedOptions = Input.optional(selectedOptions);
@@ -176,7 +176,7 @@ public class WishlistItemUpdateInput implements Serializable {
     }
 
     /**
-     * An array of strings corresponding to options the customer selected
+     * An array of strings corresponding to options the customer selected.
      */
     public WishlistItemUpdateInput setSelectedOptionsInput(Input<List<ID>> selectedOptions) {
         if (selectedOptions == null) {

@@ -23,8 +23,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableAreaOption contains information about a text area that is defined as part of a
- * customizable option.
+ * Contains information about a text area that is defined as part of a customizable option.
  */
 public class CustomizableAreaOption extends AbstractResponse<CustomizableAreaOption> implements CustomizableOptionInterface {
     public CustomizableAreaOption() {}

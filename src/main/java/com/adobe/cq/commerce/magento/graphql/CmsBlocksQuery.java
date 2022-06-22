@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CMS blocks information
+ * Contains an array CMS block items.
  */
 public class CmsBlocksQuery extends AbstractQuery<CmsBlocksQuery> {
     CmsBlocksQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class CmsBlocksQuery extends AbstractQuery<CmsBlocksQuery> {
     }
 
     /**
-     * An array of CMS blocks
+     * An array of CMS blocks.
      */
     public CmsBlocksQuery items(CmsBlockQueryDefinition queryDef) {
         startField("items");

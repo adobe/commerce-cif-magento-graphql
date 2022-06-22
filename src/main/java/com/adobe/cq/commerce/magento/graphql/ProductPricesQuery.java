@@ -18,9 +18,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * ProductPrices is deprecated, replaced by PriceRange. The ProductPrices object contains the regular
- * price of an item, as well as its minimum and maximum prices. Only composite products, which include
- * bundle, configurable, and grouped products, can contain a minimum and maximum price.
+ * Deprecated. Use `PriceRange` instead. Contains the regular price of an item, as well as its minimum
+ * and maximum prices. Only composite products, which include bundle, configurable, and grouped
+ * products, can contain a minimum and maximum price.
  */
 public class ProductPricesQuery extends AbstractQuery<ProductPricesQuery> {
     ProductPricesQuery(StringBuilder _queryBuilder) {
@@ -29,9 +29,9 @@ public class ProductPricesQuery extends AbstractQuery<ProductPricesQuery> {
 
     /**
      * The highest possible final price for all the options defined within a composite product. If you are
-     * specifying a price range, this would be the to value.
+     * specifying a price range, this would be the `to` value.
      *
-     * @deprecated Use PriceRange.maximum_price.
+     * @deprecated Use `PriceRange.maximum_price` instead.
      */
     @Deprecated
     public ProductPricesQuery maximalPrice(PriceQueryDefinition queryDef) {
@@ -46,9 +46,9 @@ public class ProductPricesQuery extends AbstractQuery<ProductPricesQuery> {
 
     /**
      * The lowest possible final price for all the options defined within a composite product. If you are
-     * specifying a price range, this would be the from value.
+     * specifying a price range, this would be the `from` value.
      *
-     * @deprecated Use PriceRange.minimum_price.
+     * @deprecated Use `PriceRange.minimum_price` instead.
      */
     @Deprecated
     public ProductPricesQuery minimalPrice(PriceQueryDefinition queryDef) {
@@ -64,7 +64,7 @@ public class ProductPricesQuery extends AbstractQuery<ProductPricesQuery> {
     /**
      * The base price of a product.
      *
-     * @deprecated Use regular_price from PriceRange.minimum_price or PriceRange.maximum_price.
+     * @deprecated Use `regular_price` from `PriceRange.minimum_price` or `PriceRange.maximum_price` instead.
      */
     @Deprecated
     public ProductPricesQuery regularPrice(PriceQueryDefinition queryDef) {

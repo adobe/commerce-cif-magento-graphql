@@ -30,19 +30,31 @@ public class AddDownloadableProductsToCartInput implements Serializable {
         this.cartItems = cartItems;
     }
 
+    /**
+     * The ID of the cart.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The ID of the cart.
+     */
     public AddDownloadableProductsToCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of downloadable products to add.
+     */
     public List<DownloadableProductCartItemInput> getCartItems() {
         return cartItems;
     }
 
+    /**
+     * An array of downloadable products to add.
+     */
     public AddDownloadableProductsToCartInput setCartItems(List<DownloadableProductCartItemInput> cartItems) {
         this.cartItems = cartItems;
         return this;

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after adding simple or group products.
+ */
 public class AddSimpleProductsToCartOutput extends AbstractResponse<AddSimpleProductsToCartOutput> {
     public AddSimpleProductsToCartOutput() {}
 
@@ -51,6 +54,9 @@ public class AddSimpleProductsToCartOutput extends AbstractResponse<AddSimplePro
         return "AddSimpleProductsToCartOutput";
     }
 
+    /**
+     * The cart after adding products.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

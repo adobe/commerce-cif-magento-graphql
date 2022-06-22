@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Specifies an array of addresses to use for shipping.
+ */
 public class SetShippingAddressesOnCartInput implements Serializable {
     private String cartId;
 
@@ -30,19 +33,31 @@ public class SetShippingAddressesOnCartInput implements Serializable {
         this.shippingAddresses = shippingAddresses;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public SetShippingAddressesOnCartInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;
     }
 
+    /**
+     * An array of shipping addresses.
+     */
     public List<ShippingAddressInput> getShippingAddresses() {
         return shippingAddresses;
     }
 
+    /**
+     * An array of shipping addresses.
+     */
     public SetShippingAddressesOnCartInput setShippingAddresses(List<ShippingAddressInput> shippingAddresses) {
         this.shippingAddresses = shippingAddresses;
         return this;

@@ -79,9 +79,9 @@ public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implement
     }
 
     /**
-     * Count of items by filter.
+     * The count of items per filter.
      *
-     * @deprecated Use AggregationOption.count instead.
+     * @deprecated Use `AggregationOption.count` instead.
      */
     @Deprecated
     public Integer getItemsCount() {
@@ -94,9 +94,9 @@ public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implement
     }
 
     /**
-     * Filter label.
+     * The label for a filter.
      *
-     * @deprecated Use AggregationOption.label instead.
+     * @deprecated Use `AggregationOption.label` instead.
      */
     @Deprecated
     public String getLabel() {
@@ -109,9 +109,9 @@ public class LayerFilterItem extends AbstractResponse<LayerFilterItem> implement
     }
 
     /**
-     * Value for filter request variable to be used in query.
+     * The value of a filter request variable to be used in query.
      *
-     * @deprecated Use AggregationOption.value instead.
+     * @deprecated Use `AggregationOption.value` instead.
      */
     @Deprecated
     public String getValueString() {

@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the source and target wish lists after copying products.
+ */
 public class CopyProductsBetweenWishlistsOutputQuery extends AbstractQuery<CopyProductsBetweenWishlistsOutputQuery> {
     CopyProductsBetweenWishlistsOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The destination wish list containing the copied products
+     * The destination wish list containing the copied products.
      */
     public CopyProductsBetweenWishlistsOutputQuery destinationWishlist(WishlistQueryDefinition queryDef) {
         startField("destination_wishlist");
@@ -36,7 +39,7 @@ public class CopyProductsBetweenWishlistsOutputQuery extends AbstractQuery<CopyP
     }
 
     /**
-     * The wish list that the products were copied from
+     * The wish list that the products were copied from.
      */
     public CopyProductsBetweenWishlistsOutputQuery sourceWishlist(WishlistQueryDefinition queryDef) {
         startField("source_wishlist");
@@ -49,7 +52,7 @@ public class CopyProductsBetweenWishlistsOutputQuery extends AbstractQuery<CopyP
     }
 
     /**
-     * An array of errors encountered while copying products in a wish list
+     * An array of errors encountered while copying products in a wish list.
      */
     public CopyProductsBetweenWishlistsOutputQuery userErrors(WishListUserInputErrorQueryDefinition queryDef) {
         startField("user_errors");

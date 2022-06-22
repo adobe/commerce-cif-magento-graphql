@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Identifies the value of the selected customized option.
+ */
 public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCustomizableOptionValue> {
     public SelectedCustomizableOptionValue() {}
 
@@ -77,8 +80,8 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
     }
 
     /**
-     * The unique ID for a `CustomizableMultipleValue`, `CustomizableRadioValue`,
-     * `CustomizableCheckboxValue`, `CustomizableDropDownValue`, etc. objects
+     * The unique ID for a value object that corresponds to the object represented by the
+     * `customizable_option_uid` attribute.
      */
     public ID getCustomizableOptionValueUid() {
         return (ID) get("customizable_option_value_uid");
@@ -90,7 +93,7 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
     }
 
     /**
-     * @deprecated Use SelectedCustomizableOptionValue.customizable_option_value_uid instead
+     * @deprecated Use `SelectedCustomizableOptionValue.customizable_option_value_uid` instead.
      */
     @Deprecated
     public Integer getId() {
@@ -102,6 +105,9 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
         return this;
     }
 
+    /**
+     * The display name of the selected value.
+     */
     public String getLabel() {
         return (String) get("label");
     }
@@ -111,6 +117,9 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
         return this;
     }
 
+    /**
+     * The price of the selected customizable value.
+     */
     public CartItemSelectedOptionValuePrice getPrice() {
         return (CartItemSelectedOptionValuePrice) get("price");
     }
@@ -120,6 +129,9 @@ public class SelectedCustomizableOptionValue extends AbstractResponse<SelectedCu
         return this;
     }
 
+    /**
+     * The text identifying the selected value.
+     */
     public String getValue() {
         return (String) get("value");
     }

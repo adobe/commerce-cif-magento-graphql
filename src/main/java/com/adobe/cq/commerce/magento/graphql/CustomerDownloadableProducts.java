@@ -23,6 +23,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains a list of downloadable products.
+ */
 public class CustomerDownloadableProducts extends AbstractResponse<CustomerDownloadableProducts> {
     public CustomerDownloadableProducts() {}
 
@@ -69,7 +72,7 @@ public class CustomerDownloadableProducts extends AbstractResponse<CustomerDownl
     }
 
     /**
-     * List of purchased downloadable items
+     * An array of purchased downloadable items.
      */
     public List<CustomerDownloadableProduct> getItems() {
         return (List<CustomerDownloadableProduct>) get("items");

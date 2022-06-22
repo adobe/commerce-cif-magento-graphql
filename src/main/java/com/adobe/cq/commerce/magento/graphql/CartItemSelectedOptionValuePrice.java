@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the price of a selected customizable value.
+ */
 public class CartItemSelectedOptionValuePrice extends AbstractResponse<CartItemSelectedOptionValuePrice> {
     public CartItemSelectedOptionValuePrice() {}
 
@@ -63,6 +66,9 @@ public class CartItemSelectedOptionValuePrice extends AbstractResponse<CartItemS
         return "CartItemSelectedOptionValuePrice";
     }
 
+    /**
+     * Indicates whether the price type is fixed, percent, or dynamic.
+     */
     public PriceTypeEnum getType() {
         return (PriceTypeEnum) get("type");
     }
@@ -72,6 +78,9 @@ public class CartItemSelectedOptionValuePrice extends AbstractResponse<CartItemS
         return this;
     }
 
+    /**
+     * A string that describes the unit of the value.
+     */
     public String getUnits() {
         return (String) get("units");
     }
@@ -81,6 +90,9 @@ public class CartItemSelectedOptionValuePrice extends AbstractResponse<CartItemS
         return this;
     }
 
+    /**
+     * A price value.
+     */
     public Double getValue() {
         return (Double) get("value");
     }

@@ -18,13 +18,16 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Virtual Cart Item
+ * An implementation for virtual product cart items.
  */
 public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
     VirtualCartItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * An array containing customizable options the shopper selected.
+     */
     public VirtualCartItemQuery customizableOptions(SelectedCustomizableOptionQueryDefinition queryDef) {
         startField("customizable_options");
 
@@ -36,7 +39,7 @@ public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
     }
 
     /**
-     * @deprecated Use `uid` instead
+     * @deprecated Use `uid` instead.
      */
     @Deprecated
     public VirtualCartItemQuery id() {
@@ -45,6 +48,9 @@ public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
         return this;
     }
 
+    /**
+     * Contains details about the price of the item, including taxes and discounts.
+     */
     public VirtualCartItemQuery prices(CartItemPricesQueryDefinition queryDef) {
         startField("prices");
 
@@ -55,6 +61,9 @@ public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
         return this;
     }
 
+    /**
+     * Details about an item in the cart.
+     */
     public VirtualCartItemQuery product(ProductInterfaceQueryDefinition queryDef) {
         startField("product");
 
@@ -65,6 +74,9 @@ public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
         return this;
     }
 
+    /**
+     * The quantity of this item in the cart.
+     */
     public VirtualCartItemQuery quantity() {
         startField("quantity");
 
@@ -72,7 +84,7 @@ public class VirtualCartItemQuery extends AbstractQuery<VirtualCartItemQuery> {
     }
 
     /**
-     * The unique ID for a `CartItemInterface` object
+     * The unique ID for a `CartItemInterface` object.
      */
     public VirtualCartItemQuery uid() {
         startField("uid");

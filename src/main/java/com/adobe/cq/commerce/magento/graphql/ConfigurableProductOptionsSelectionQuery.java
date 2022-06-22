@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Metadata corresponding to the configurable options selection.
+ * Contains metadata corresponding to the selected configurable options.
  */
 public class ConfigurableProductOptionsSelectionQuery extends AbstractQuery<ConfigurableProductOptionsSelectionQuery> {
     ConfigurableProductOptionsSelectionQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ConfigurableProductOptionsSelectionQuery extends AbstractQuery<Conf
     }
 
     /**
-     * Configurable options available for further selection based on current selection.
+     * An array of all possible configurable options.
      */
     public ConfigurableProductOptionsSelectionQuery configurableOptions(ConfigurableProductOptionQueryDefinition queryDef) {
         startField("configurable_options");
@@ -52,7 +52,7 @@ public class ConfigurableProductOptionsSelectionQuery extends AbstractQuery<Conf
     }
 
     /**
-     * Configurable options available for further selection based on current selection.
+     * The configurable options available for further selection based on the current selection.
      */
     public ConfigurableProductOptionsSelectionQuery optionsAvailableForSelection(
         ConfigurableOptionAvailableForSelectionQueryDefinition queryDef) {
@@ -66,8 +66,8 @@ public class ConfigurableProductOptionsSelectionQuery extends AbstractQuery<Conf
     }
 
     /**
-     * Variant represented by the specified configurable options selection. It is expected to be null,
-     * until selections are made for each configurable option.
+     * A variant represented by the specified configurable options selection. The value is expected to be
+     * null until selections are made for each configurable option.
      */
     public ConfigurableProductOptionsSelectionQuery variant(SimpleProductQueryDefinition queryDef) {
         startField("variant");

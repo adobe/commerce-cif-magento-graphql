@@ -17,11 +17,17 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains details about the cart after updating items.
+ */
 public class UpdateCartItemsOutputQuery extends AbstractQuery<UpdateCartItemsOutputQuery> {
     UpdateCartItemsOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
+    /**
+     * The cart after updating products.
+     */
     public UpdateCartItemsOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");
 

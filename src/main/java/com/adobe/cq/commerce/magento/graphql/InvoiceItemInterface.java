@@ -20,45 +20,44 @@ import com.shopify.graphql.support.CustomFieldInterface;
 import com.shopify.graphql.support.ID;
 
 /**
- * Invoice item details
+ * Contains detailes about invoiced items.
  */
 
 public interface InvoiceItemInterface extends CustomFieldInterface {
     String getGraphQlTypeName();
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Information about the final discount amount for the base product, including discounts on options.
      */
     List<Discount> getDiscounts();
 
     /**
-     * The unique ID for a `InvoiceItemInterface` object
+     * The unique ID for an `InvoiceItemInterface` object.
      */
     ID getId();
 
     /**
-     * Contains details about an individual order item
+     * Details about an individual order item.
      */
     OrderItemInterface getOrderItem();
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     String getProductName();
 
     /**
-     * The sale price for the base product including selected options
+     * The sale price for the base product including selected options.
      */
     Money getProductSalePrice();
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     String getProductSku();
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     Double getQuantityInvoiced();
 }

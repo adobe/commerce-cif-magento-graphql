@@ -61,7 +61,7 @@ public class WishListUserInputError extends AbstractResponse<WishListUserInputEr
     }
 
     /**
-     * Wishlist-specific error code
+     * A wish list-specific error code.
      */
     public WishListUserInputErrorType getCode() {
         return (WishListUserInputErrorType) get("code");
@@ -73,7 +73,7 @@ public class WishListUserInputError extends AbstractResponse<WishListUserInputEr
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public String getMessage() {
         return (String) get("message");

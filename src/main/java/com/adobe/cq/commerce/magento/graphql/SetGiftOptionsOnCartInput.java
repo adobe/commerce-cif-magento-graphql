@@ -20,6 +20,9 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
+/**
+ * Defines the gift options applied to the cart.
+ */
 public class SetGiftOptionsOnCartInput implements Serializable {
     private String cartId;
 
@@ -40,14 +43,14 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * The unique ID that identifies the shopper&#39;s cart
+     * The unique ID that identifies the shopper&#39;s cart.
      */
     public String getCartId() {
         return cartId;
     }
 
     /**
-     * The unique ID that identifies the shopper&#39;s cart
+     * The unique ID that identifies the shopper&#39;s cart.
      */
     public SetGiftOptionsOnCartInput setCartId(String cartId) {
         this.cartId = cartId;
@@ -55,14 +58,14 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * Whether customer requested gift receipt for the cart
+     * Whether customer requested gift receipt for the cart.
      */
     public boolean getGiftReceiptIncluded() {
         return giftReceiptIncluded;
     }
 
     /**
-     * Whether customer requested gift receipt for the cart
+     * Whether customer requested gift receipt for the cart.
      */
     public SetGiftOptionsOnCartInput setGiftReceiptIncluded(boolean giftReceiptIncluded) {
         this.giftReceiptIncluded = giftReceiptIncluded;
@@ -70,14 +73,14 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * Whether customer requested printed card for the cart
+     * Whether customer requested printed card for the cart.
      */
     public boolean getPrintedCardIncluded() {
         return printedCardIncluded;
     }
 
     /**
-     * Whether customer requested printed card for the cart
+     * Whether customer requested printed card for the cart.
      */
     public SetGiftOptionsOnCartInput setPrintedCardIncluded(boolean printedCardIncluded) {
         this.printedCardIncluded = printedCardIncluded;
@@ -85,21 +88,21 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * Gift message details for the cart
+     * Gift message details for the cart.
      */
     public GiftMessageInput getGiftMessage() {
         return giftMessage.getValue();
     }
 
     /**
-     * Gift message details for the cart
+     * Gift message details for the cart.
      */
     public Input<GiftMessageInput> getGiftMessageInput() {
         return giftMessage;
     }
 
     /**
-     * Gift message details for the cart
+     * Gift message details for the cart.
      */
     public SetGiftOptionsOnCartInput setGiftMessage(GiftMessageInput giftMessage) {
         this.giftMessage = Input.optional(giftMessage);
@@ -107,7 +110,7 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * Gift message details for the cart
+     * Gift message details for the cart.
      */
     public SetGiftOptionsOnCartInput setGiftMessageInput(Input<GiftMessageInput> giftMessage) {
         if (giftMessage == null) {
@@ -118,21 +121,21 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart.
      */
     public ID getGiftWrappingId() {
         return giftWrappingId.getValue();
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart.
      */
     public Input<ID> getGiftWrappingIdInput() {
         return giftWrappingId;
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart.
      */
     public SetGiftOptionsOnCartInput setGiftWrappingId(ID giftWrappingId) {
         this.giftWrappingId = Input.optional(giftWrappingId);
@@ -140,7 +143,7 @@ public class SetGiftOptionsOnCartInput implements Serializable {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object to be used for the cart
+     * The unique ID for a `GiftWrapping` object to be used for the cart.
      */
     public SetGiftOptionsOnCartInput setGiftWrappingIdInput(Input<ID> giftWrappingId) {
         if (giftWrappingId == null) {

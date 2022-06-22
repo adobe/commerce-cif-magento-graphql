@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Indicates whether the customer subscribes to reward points emails.
+ */
 public class RewardPointsSubscriptionStatus extends AbstractResponse<RewardPointsSubscriptionStatus> {
     public RewardPointsSubscriptionStatus() {}
 
@@ -58,7 +61,7 @@ public class RewardPointsSubscriptionStatus extends AbstractResponse<RewardPoint
     }
 
     /**
-     * Customer subscription status to &#39;Reward points balance updates&#39; emails
+     * Indicates whether the customer subscribes to &#39;Reward points balance updates&#39; emails.
      */
     public RewardPointsSubscriptionStatusesEnum getBalanceUpdates() {
         return (RewardPointsSubscriptionStatusesEnum) get("balance_updates");
@@ -70,7 +73,7 @@ public class RewardPointsSubscriptionStatus extends AbstractResponse<RewardPoint
     }
 
     /**
-     * Customer subscription status to &#39;Reward points expiration notifications&#39; emails
+     * Indicates whether the customer subscribes to &#39;Reward points expiration notifications&#39; emails.
      */
     public RewardPointsSubscriptionStatusesEnum getPointsExpirationNotifications() {
         return (RewardPointsSubscriptionStatusesEnum) get("points_expiration_notifications");

@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Order shipment tracking details
+ * Contains order shipment tracking details.
  */
 public class ShipmentTrackingQuery extends AbstractQuery<ShipmentTrackingQuery> {
     ShipmentTrackingQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class ShipmentTrackingQuery extends AbstractQuery<ShipmentTrackingQuery> 
     }
 
     /**
-     * The shipping carrier for the order delivery
+     * The shipping carrier for the order delivery.
      */
     public ShipmentTrackingQuery carrier() {
         startField("carrier");
@@ -35,7 +35,7 @@ public class ShipmentTrackingQuery extends AbstractQuery<ShipmentTrackingQuery> 
     }
 
     /**
-     * The tracking number of the order shipment
+     * The tracking number of the order shipment.
      */
     public ShipmentTrackingQuery number() {
         startField("number");
@@ -44,7 +44,7 @@ public class ShipmentTrackingQuery extends AbstractQuery<ShipmentTrackingQuery> 
     }
 
     /**
-     * The shipment tracking title
+     * The shipment tracking title.
      */
     public ShipmentTrackingQuery title() {
         startField("title");

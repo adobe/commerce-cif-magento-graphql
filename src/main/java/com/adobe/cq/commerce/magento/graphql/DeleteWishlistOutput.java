@@ -23,6 +23,10 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the status of the request to delete a wish list and an array of the customer&#39;s remaining
+ * wish lists.
+ */
 public class DeleteWishlistOutput extends AbstractResponse<DeleteWishlistOutput> {
     public DeleteWishlistOutput() {}
 
@@ -70,7 +74,7 @@ public class DeleteWishlistOutput extends AbstractResponse<DeleteWishlistOutput>
     }
 
     /**
-     * Indicates whether the wish list was deleted
+     * Indicates whether the wish list was deleted.
      */
     public Boolean getStatus() {
         return (Boolean) get("status");
@@ -82,7 +86,7 @@ public class DeleteWishlistOutput extends AbstractResponse<DeleteWishlistOutput>
     }
 
     /**
-     * A list of undeleted wish lists
+     * A list of undeleted wish lists.
      */
     public List<Wishlist> getWishlists() {
         return (List<Wishlist>) get("wishlists");

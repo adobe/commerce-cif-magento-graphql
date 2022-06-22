@@ -23,7 +23,7 @@ public class ComplexTextValueQuery extends AbstractQuery<ComplexTextValueQuery> 
     }
 
     /**
-     * HTML format
+     * Text that can contain HTML tags.
      */
     public ComplexTextValueQuery html() {
         startField("html");

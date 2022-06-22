@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the response to a return request.
+ */
 public class RequestReturnOutput extends AbstractResponse<RequestReturnOutput> {
     public RequestReturnOutput() {}
 
@@ -68,7 +71,7 @@ public class RequestReturnOutput extends AbstractResponse<RequestReturnOutput> {
     }
 
     /**
-     * Contains details about a single return request
+     * Details about a single return request.
      */
     public Return getReturn() {
         return (Return) get("return");
@@ -80,7 +83,7 @@ public class RequestReturnOutput extends AbstractResponse<RequestReturnOutput> {
     }
 
     /**
-     * Contains an array of return requests
+     * An array of return requests.
      */
     public Returns getReturns() {
         return (Returns) get("returns");

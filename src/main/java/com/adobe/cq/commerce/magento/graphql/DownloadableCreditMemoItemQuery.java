@@ -17,14 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Defines downloadable product options for `CreditMemoItemInterface`.
+ */
 public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableCreditMemoItemQuery> {
     DownloadableCreditMemoItemQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * Contains information about the final discount amount for the base product, including discounts on
-     * options
+     * Details about the final discount amount for the base product, including discounts on options.
      */
     public DownloadableCreditMemoItemQuery discounts(DiscountQueryDefinition queryDef) {
         startField("discounts");
@@ -37,7 +39,7 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
     }
 
     /**
-     * A list of downloadable links that are refunded from the downloadable product
+     * A list of downloadable links that are refunded from the downloadable product.
      */
     public DownloadableCreditMemoItemQuery downloadableLinks(DownloadableItemsLinksQueryDefinition queryDef) {
         startField("downloadable_links");
@@ -50,7 +52,7 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
     }
 
     /**
-     * The unique ID for a `CreditMemoItemInterface` object
+     * The unique ID for a `CreditMemoItemInterface` object.
      */
     public DownloadableCreditMemoItemQuery id() {
         startField("id");
@@ -59,7 +61,7 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
     }
 
     /**
-     * The order item the credit memo is applied to
+     * The order item the credit memo is applied to.
      */
     public DownloadableCreditMemoItemQuery orderItem(OrderItemInterfaceQueryDefinition queryDef) {
         startField("order_item");
@@ -72,7 +74,7 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public DownloadableCreditMemoItemQuery productName() {
         startField("product_name");
@@ -81,7 +83,7 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
     }
 
     /**
-     * The sale price for the base product, including selected options
+     * The sale price for the base product, including selected options.
      */
     public DownloadableCreditMemoItemQuery productSalePrice(MoneyQueryDefinition queryDef) {
         startField("product_sale_price");
@@ -94,7 +96,7 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
     }
 
     /**
-     * SKU of the base product
+     * The SKU of the base product.
      */
     public DownloadableCreditMemoItemQuery productSku() {
         startField("product_sku");
@@ -103,7 +105,7 @@ public class DownloadableCreditMemoItemQuery extends AbstractQuery<DownloadableC
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public DownloadableCreditMemoItemQuery quantityRefunded() {
         startField("quantity_refunded");

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the cart after removing a coupon.
+ */
 public class RemoveCouponFromCartOutput extends AbstractResponse<RemoveCouponFromCartOutput> {
     public RemoveCouponFromCartOutput() {}
 
@@ -56,6 +59,9 @@ public class RemoveCouponFromCartOutput extends AbstractResponse<RemoveCouponFro
         return "RemoveCouponFromCartOutput";
     }
 
+    /**
+     * The cart after removing a coupon.
+     */
     public Cart getCart() {
         return (Cart) get("cart");
     }

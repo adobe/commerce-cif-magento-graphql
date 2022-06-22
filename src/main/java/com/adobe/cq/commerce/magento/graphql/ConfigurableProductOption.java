@@ -24,6 +24,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about configurable product options.
+ */
 public class ConfigurableProductOption extends AbstractResponse<ConfigurableProductOption> {
     public ConfigurableProductOption() {}
 
@@ -87,6 +90,9 @@ public class ConfigurableProductOption extends AbstractResponse<ConfigurableProd
         return "ConfigurableProductOption";
     }
 
+    /**
+     * An attribute code that uniquely identifies a configurable option.
+     */
     public String getAttributeCode() {
         return (String) get("attribute_code");
     }
@@ -96,6 +102,9 @@ public class ConfigurableProductOption extends AbstractResponse<ConfigurableProd
         return this;
     }
 
+    /**
+     * The display name of the option.
+     */
     public String getLabel() {
         return (String) get("label");
     }
@@ -105,6 +114,9 @@ public class ConfigurableProductOption extends AbstractResponse<ConfigurableProd
         return this;
     }
 
+    /**
+     * The unique ID of the configurable option.
+     */
     public ID getUid() {
         return (ID) get("uid");
     }
@@ -114,6 +126,9 @@ public class ConfigurableProductOption extends AbstractResponse<ConfigurableProd
         return this;
     }
 
+    /**
+     * An array of values that are applicable for this option.
+     */
     public List<ConfigurableProductOptionValue> getValues() {
         return (List<ConfigurableProductOptionValue>) get("values");
     }

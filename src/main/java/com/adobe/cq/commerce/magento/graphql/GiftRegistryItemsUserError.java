@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about an error that occurred when processing a gift registry item.
+ */
 public class GiftRegistryItemsUserError extends AbstractResponse<GiftRegistryItemsUserError> {
     public GiftRegistryItemsUserError() {}
 
@@ -92,7 +95,7 @@ public class GiftRegistryItemsUserError extends AbstractResponse<GiftRegistryIte
     }
 
     /**
-     * An error code that describes the error encountered
+     * An error code that describes the error encountered.
      */
     public GiftRegistryItemsUserErrorType getCode() {
         return (GiftRegistryItemsUserErrorType) get("code");
@@ -104,7 +107,7 @@ public class GiftRegistryItemsUserError extends AbstractResponse<GiftRegistryIte
     }
 
     /**
-     * The unique ID of the gift registry item containing an error
+     * The unique ID of the gift registry item containing an error.
      */
     public ID getGiftRegistryItemUid() {
         return (ID) get("gift_registry_item_uid");
@@ -116,7 +119,7 @@ public class GiftRegistryItemsUserError extends AbstractResponse<GiftRegistryIte
     }
 
     /**
-     * The unique ID of the `Gift registry` object containing an error
+     * The unique ID of the `GiftRegistry` object containing an error.
      */
     public ID getGiftRegistryUid() {
         return (ID) get("gift_registry_uid");
@@ -128,7 +131,7 @@ public class GiftRegistryItemsUserError extends AbstractResponse<GiftRegistryIte
     }
 
     /**
-     * A localized error message
+     * A localized error message.
      */
     public String getMessage() {
         return (String) get("message");
@@ -140,7 +143,7 @@ public class GiftRegistryItemsUserError extends AbstractResponse<GiftRegistryIte
     }
 
     /**
-     * The unique ID of the product containing an error
+     * The unique ID of the product containing an error.
      */
     public ID getProductUid() {
         return (ID) get("product_uid");

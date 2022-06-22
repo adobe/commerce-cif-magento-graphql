@@ -17,13 +17,16 @@ package com.adobe.cq.commerce.magento.graphql;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
+/**
+ * Contains the name and visibility of an updated wish list.
+ */
 public class UpdateWishlistOutputQuery extends AbstractQuery<UpdateWishlistOutputQuery> {
     UpdateWishlistOutputQuery(StringBuilder _queryBuilder) {
         super(_queryBuilder);
     }
 
     /**
-     * The wish list name
+     * The wish list name.
      */
     public UpdateWishlistOutputQuery name() {
         startField("name");
@@ -32,7 +35,7 @@ public class UpdateWishlistOutputQuery extends AbstractQuery<UpdateWishlistOutpu
     }
 
     /**
-     * The unique ID for a `Wishlist` object
+     * The unique ID of a `Wishlist` object.
      */
     public UpdateWishlistOutputQuery uid() {
         startField("uid");
@@ -41,7 +44,7 @@ public class UpdateWishlistOutputQuery extends AbstractQuery<UpdateWishlistOutpu
     }
 
     /**
-     * Indicates whether the wish list is public or private
+     * Indicates whether the wish list is public or private.
      */
     public UpdateWishlistOutputQuery visibility() {
         startField("visibility");

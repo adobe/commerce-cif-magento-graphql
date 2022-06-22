@@ -22,6 +22,9 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains details about the selected or available gift wrapping options.
+ */
 public class GiftWrapping extends AbstractResponse<GiftWrapping> {
     public GiftWrapping() {}
 
@@ -82,7 +85,7 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
     }
 
     /**
-     * Gift wrapping design name
+     * The name of the gift wrapping design.
      */
     public String getDesign() {
         return (String) get("design");
@@ -94,7 +97,7 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object
+     * The unique ID for a `GiftWrapping` object.
      *
      * @deprecated Use `uid` instead
      */
@@ -109,7 +112,7 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
     }
 
     /**
-     * Gift wrapping preview image
+     * The preview image for a gift wrapping option.
      */
     public GiftWrappingImage getImage() {
         return (GiftWrappingImage) get("image");
@@ -121,7 +124,7 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
     }
 
     /**
-     * Gift wrapping price
+     * The gift wrapping price.
      */
     public Money getPrice() {
         return (Money) get("price");
@@ -133,7 +136,7 @@ public class GiftWrapping extends AbstractResponse<GiftWrapping> {
     }
 
     /**
-     * The unique ID for a `GiftWrapping` object
+     * The unique ID for a `GiftWrapping` object.
      */
     public ID getUid() {
         return (ID) get("uid");

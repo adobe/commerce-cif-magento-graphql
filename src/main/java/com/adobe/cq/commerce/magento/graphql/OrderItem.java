@@ -262,7 +262,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The final discount information for the product
+     * The final discount information for the product.
      */
     public List<Discount> getDiscounts() {
         return (List<Discount>) get("discounts");
@@ -274,7 +274,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * Indicates whether the order item is eligible is eligible to be in a return request
+     * Indicates whether the order item is eligible to be in a return request.
      */
     public Boolean getEligibleForReturn() {
         return (Boolean) get("eligible_for_return");
@@ -286,7 +286,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The entered option for the base product, such as a logo or image
+     * The entered option for the base product, such as a logo or image.
      */
     public List<OrderItemOption> getEnteredOptions() {
         return (List<OrderItemOption>) get("entered_options");
@@ -298,7 +298,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The selected gift wrapping for the order item
+     * The selected gift wrapping for the order item.
      */
     public GiftWrapping getGiftWrapping() {
         return (GiftWrapping) get("gift_wrapping");
@@ -310,7 +310,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The unique ID for a `OrderItemInterface` object
+     * The unique ID for an `OrderItemInterface` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -322,7 +322,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The name of the base product
+     * The name of the base product.
      */
     public String getProductName() {
         return (String) get("product_name");
@@ -334,7 +334,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The sale price of the base product, including selected options
+     * The sale price of the base product, including selected options.
      */
     public Money getProductSalePrice() {
         return (Money) get("product_sale_price");
@@ -346,7 +346,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The SKU of the base product
+     * The SKU of the base product.
      */
     public String getProductSku() {
         return (String) get("product_sku");
@@ -370,7 +370,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * URL key of the base product
+     * URL key of the base product.
      */
     public String getProductUrlKey() {
         return (String) get("product_url_key");
@@ -382,7 +382,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The number of canceled items
+     * The number of canceled items.
      */
     public Double getQuantityCanceled() {
         return (Double) get("quantity_canceled");
@@ -394,7 +394,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The number of invoiced items
+     * The number of invoiced items.
      */
     public Double getQuantityInvoiced() {
         return (Double) get("quantity_invoiced");
@@ -406,7 +406,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The number of units ordered for this item
+     * The number of units ordered for this item.
      */
     public Double getQuantityOrdered() {
         return (Double) get("quantity_ordered");
@@ -418,7 +418,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The number of refunded items
+     * The number of refunded items.
      */
     public Double getQuantityRefunded() {
         return (Double) get("quantity_refunded");
@@ -430,7 +430,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The number of returned items
+     * The number of returned items.
      */
     public Double getQuantityReturned() {
         return (Double) get("quantity_returned");
@@ -442,7 +442,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The number of shipped items
+     * The number of shipped items.
      */
     public Double getQuantityShipped() {
         return (Double) get("quantity_shipped");
@@ -454,7 +454,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The selected options for the base product, such as color or size
+     * The selected options for the base product, such as color or size.
      */
     public List<OrderItemOption> getSelectedOptions() {
         return (List<OrderItemOption>) get("selected_options");
@@ -466,7 +466,7 @@ public class OrderItem extends AbstractResponse<OrderItem> implements OrderItemI
     }
 
     /**
-     * The status of the order item
+     * The status of the order item.
      */
     public String getStatus() {
         return (String) get("status");

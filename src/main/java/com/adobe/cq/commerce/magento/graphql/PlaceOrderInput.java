@@ -18,6 +18,9 @@ import java.io.Serializable;
 
 import com.shopify.graphql.support.AbstractQuery;
 
+/**
+ * Specifies the quote to be converted to an order.
+ */
 public class PlaceOrderInput implements Serializable {
     private String cartId;
 
@@ -25,10 +28,16 @@ public class PlaceOrderInput implements Serializable {
         this.cartId = cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public String getCartId() {
         return cartId;
     }
 
+    /**
+     * The unique ID of a `Cart` object.
+     */
     public PlaceOrderInput setCartId(String cartId) {
         this.cartId = cartId;
         return this;

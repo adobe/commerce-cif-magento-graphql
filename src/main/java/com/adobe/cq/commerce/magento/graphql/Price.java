@@ -24,8 +24,8 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Price is deprecated, replaced by ProductPrice. The Price object defines the price of a product as
- * well as any tax-related adjustments.
+ * Deprecated. Use `ProductPrice` instead. Defines the price of a product as well as any tax-related
+ * adjustments.
  */
 public class Price extends AbstractResponse<Price> {
     public Price() {}
@@ -86,7 +86,7 @@ public class Price extends AbstractResponse<Price> {
     /**
      * An array that provides information about tax, weee, or weee_tax adjustments.
      *
-     * @deprecated Price is deprecated, use ProductPrice.
+     * @deprecated Use `ProductPrice` instead.
      */
     @Deprecated
     public List<PriceAdjustment> getAdjustments() {
@@ -101,7 +101,7 @@ public class Price extends AbstractResponse<Price> {
     /**
      * The price of a product plus a three-letter currency code.
      *
-     * @deprecated Price is deprecated, use ProductPrice.
+     * @deprecated Use `ProductPrice` instead.
      */
     @Deprecated
     public Money getAmount() {

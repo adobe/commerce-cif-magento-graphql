@@ -25,7 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Credit memo details
+ * Contains credit memo details.
  */
 public class CreditMemo extends AbstractResponse<CreditMemo> {
     public CreditMemo() {}
@@ -117,7 +117,7 @@ public class CreditMemo extends AbstractResponse<CreditMemo> {
     }
 
     /**
-     * Comments on the credit memo
+     * Comments on the credit memo.
      */
     public List<SalesCommentItem> getComments() {
         return (List<SalesCommentItem>) get("comments");
@@ -129,7 +129,7 @@ public class CreditMemo extends AbstractResponse<CreditMemo> {
     }
 
     /**
-     * The unique ID for a `CreditMemo` object
+     * The unique ID for a `CreditMemo` object.
      */
     public ID getId() {
         return (ID) get("id");
@@ -141,7 +141,7 @@ public class CreditMemo extends AbstractResponse<CreditMemo> {
     }
 
     /**
-     * An array containing details about refunded items
+     * An array containing details about refunded items.
      */
     public List<CreditMemoItemInterface> getItems() {
         return (List<CreditMemoItemInterface>) get("items");
@@ -153,7 +153,7 @@ public class CreditMemo extends AbstractResponse<CreditMemo> {
     }
 
     /**
-     * The sequential credit memo number
+     * The sequential credit memo number.
      */
     public String getNumber() {
         return (String) get("number");
@@ -165,7 +165,7 @@ public class CreditMemo extends AbstractResponse<CreditMemo> {
     }
 
     /**
-     * Contains details about the total refunded amount
+     * Details about the total refunded amount.
      */
     public CreditMemoTotal getTotal() {
         return (CreditMemoTotal) get("total");

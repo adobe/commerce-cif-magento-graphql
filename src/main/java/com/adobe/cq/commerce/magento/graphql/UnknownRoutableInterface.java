@@ -22,7 +22,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * Routable entities serve as the model for a rendered page
+ * Routable entities serve as the model for a rendered page.
  */
 public class UnknownRoutableInterface extends AbstractResponse<UnknownRoutableInterface> implements RoutableInterface {
     public UnknownRoutableInterface() {}
@@ -123,7 +123,7 @@ public class UnknownRoutableInterface extends AbstractResponse<UnknownRoutableIn
 
     /**
      * Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested
-     * resource has been changed permanently, while a value of 302 indicates a temporary redirect
+     * resource has been changed permanently, while a value of 302 indicates a temporary redirect.
      */
     public Integer getRedirectCode() {
         return (Integer) get("redirect_code");
@@ -136,7 +136,7 @@ public class UnknownRoutableInterface extends AbstractResponse<UnknownRoutableIn
 
     /**
      * The internal relative URL. If the specified URL is a redirect, the query returns the redirected URL,
-     * not the original
+     * not the original.
      */
     public String getRelativeUrl() {
         return (String) get("relative_url");

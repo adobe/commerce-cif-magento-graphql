@@ -18,7 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Defines the possible output for the removeGiftCardFromCart mutation
+ * Defines the possible output for the `removeGiftCardFromCart` mutation.
  */
 public class RemoveGiftCardFromCartOutputQuery extends AbstractQuery<RemoveGiftCardFromCartOutputQuery> {
     RemoveGiftCardFromCartOutputQuery(StringBuilder _queryBuilder) {
@@ -26,7 +26,7 @@ public class RemoveGiftCardFromCartOutputQuery extends AbstractQuery<RemoveGiftC
     }
 
     /**
-     * Describes the contents of the specified shopping cart
+     * The contents of the specified shopping cart.
      */
     public RemoveGiftCardFromCartOutputQuery cart(CartQueryDefinition queryDef) {
         startField("cart");

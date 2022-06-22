@@ -21,33 +21,33 @@ public interface GiftRegistryDynamicAttributeMetadataInterface extends CustomFie
     String getGraphQlTypeName();
 
     /**
-     * Indicates which group the dynamic attribute a member of
+     * Indicates which group the dynamic attribute a member of.
      */
     String getAttributeGroup();
 
     /**
-     * The internal ID of the dynamic attribute
+     * The internal ID of the dynamic attribute.
      */
     ID getCode();
 
     /**
      * The selected input type for this dynamic attribute. The value can be one of several static or custom
-     * types
+     * types.
      */
     String getInputType();
 
     /**
-     * Indicates whether the dynamic attribute is required
+     * Indicates whether the dynamic attribute is required.
      */
     Boolean getIsRequired();
 
     /**
-     * The display name of the dynamic attribute
+     * The display name of the dynamic attribute.
      */
     String getLabel();
 
     /**
-     * The order in which to display the dynamic attribute
+     * The order in which to display the dynamic attribute.
      */
     Integer getSortOrder();
 }

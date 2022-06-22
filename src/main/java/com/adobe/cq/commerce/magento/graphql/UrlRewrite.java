@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The object contains URL rewrite details
+ * Contains URL rewrite details.
  */
 public class UrlRewrite extends AbstractResponse<UrlRewrite> {
     public UrlRewrite() {}
@@ -83,7 +83,7 @@ public class UrlRewrite extends AbstractResponse<UrlRewrite> {
     }
 
     /**
-     * Request parameters
+     * An array of request parameters.
      */
     public List<HttpQueryParameter> getParameters() {
         return (List<HttpQueryParameter>) get("parameters");
@@ -95,7 +95,7 @@ public class UrlRewrite extends AbstractResponse<UrlRewrite> {
     }
 
     /**
-     * Request URL
+     * The request URL.
      */
     public String getUrl() {
         return (String) get("url");

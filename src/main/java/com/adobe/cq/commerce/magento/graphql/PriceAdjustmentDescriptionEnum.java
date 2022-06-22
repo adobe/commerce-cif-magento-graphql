@@ -15,8 +15,8 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 /**
- * PriceAdjustmentDescriptionEnum is deprecated. This enumeration states whether a price adjustment is
- * included or excluded.
+ * `PriceAdjustmentDescriptionEnum` is deprecated. States whether a price adjustment is included or
+ * excluded.
  */
 public enum PriceAdjustmentDescriptionEnum {
     EXCLUDED,

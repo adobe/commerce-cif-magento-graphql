@@ -25,8 +25,7 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * CustomizableRadioOption contains information about a set of radio buttons that are defined as part
- * of a customizable option.
+ * Contains information about a set of radio buttons that are defined as part of a customizable option.
  */
 public class CustomizableRadioOption extends AbstractResponse<CustomizableRadioOption> implements CustomizableOptionInterface {
     public CustomizableRadioOption() {}

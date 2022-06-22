@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableFileValue defines the price and sku of a product whose page contains a customized file
- * picker.
+ * Defines the price and sku of a product whose page contains a customized file picker.
  */
 public class CustomizableFileValueQuery extends AbstractQuery<CustomizableFileValueQuery> {
     CustomizableFileValueQuery(StringBuilder _queryBuilder) {

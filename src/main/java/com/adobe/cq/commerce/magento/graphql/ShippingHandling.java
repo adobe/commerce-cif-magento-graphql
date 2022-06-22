@@ -24,7 +24,7 @@ import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
 /**
- * The Shipping handling details
+ * Contains details about shipping and handling costs.
  */
 public class ShippingHandling extends AbstractResponse<ShippingHandling> {
     public ShippingHandling() {}
@@ -121,7 +121,7 @@ public class ShippingHandling extends AbstractResponse<ShippingHandling> {
     }
 
     /**
-     * The shipping amount, excluding tax
+     * The shipping amount, excluding tax.
      */
     public Money getAmountExcludingTax() {
         return (Money) get("amount_excluding_tax");
@@ -133,7 +133,7 @@ public class ShippingHandling extends AbstractResponse<ShippingHandling> {
     }
 
     /**
-     * The shipping amount, including tax
+     * The shipping amount, including tax.
      */
     public Money getAmountIncludingTax() {
         return (Money) get("amount_including_tax");
@@ -145,7 +145,7 @@ public class ShippingHandling extends AbstractResponse<ShippingHandling> {
     }
 
     /**
-     * The applied discounts to the shipping
+     * The applied discounts to the shipping.
      */
     public List<ShippingDiscount> getDiscounts() {
         return (List<ShippingDiscount>) get("discounts");
@@ -157,7 +157,7 @@ public class ShippingHandling extends AbstractResponse<ShippingHandling> {
     }
 
     /**
-     * Contains details about taxes applied for shipping
+     * Details about taxes applied for shipping.
      */
     public List<TaxItem> getTaxes() {
         return (List<TaxItem>) get("taxes");
@@ -169,7 +169,7 @@ public class ShippingHandling extends AbstractResponse<ShippingHandling> {
     }
 
     /**
-     * The total amount for shipping
+     * The total amount for shipping.
      */
     public Money getTotalAmount() {
         return (Money) get("total_amount");

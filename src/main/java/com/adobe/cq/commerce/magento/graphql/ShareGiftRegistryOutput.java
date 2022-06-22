@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of a request to share a gift registry.
+ */
 public class ShareGiftRegistryOutput extends AbstractResponse<ShareGiftRegistryOutput> {
     public ShareGiftRegistryOutput() {}
 
@@ -52,7 +55,7 @@ public class ShareGiftRegistryOutput extends AbstractResponse<ShareGiftRegistryO
     }
 
     /**
-     * Indicates whether the gift registry was successfully shared
+     * Indicates whether the gift registry was successfully shared.
      */
     public Boolean getIsShared() {
         return (Boolean) get("is_shared");

@@ -18,8 +18,8 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * Price range for a product. If the product has a single price, the minimum and maximum price will be
- * the same.
+ * Contains the price range for a product. If the product has a single price, the minimum and maximum
+ * price will be the same.
  */
 public class PriceRangeQuery extends AbstractQuery<PriceRangeQuery> {
     PriceRangeQuery(StringBuilder _queryBuilder) {

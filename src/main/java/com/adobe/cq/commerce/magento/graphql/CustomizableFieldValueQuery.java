@@ -18,8 +18,7 @@ import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
 
 /**
- * CustomizableFieldValue defines the price and sku of a product whose page contains a customized text
- * field.
+ * Defines the price and sku of a product whose page contains a customized text field.
  */
 public class CustomizableFieldValueQuery extends AbstractQuery<CustomizableFieldValueQuery> {
     CustomizableFieldValueQuery(StringBuilder _queryBuilder) {

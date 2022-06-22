@@ -21,7 +21,8 @@ import com.shopify.graphql.support.ID;
 import com.shopify.graphql.support.Input;
 
 /**
- * Specify either address_data or the address_id. If both are provided, validation will fail
+ * Defines a shipping address for a gift registry. Specify either `address_data` or the `address_id`.
+ * If both are provided, validation will fail.
  */
 public class GiftRegistryShippingAddressInput implements Serializable {
     private Input<CustomerAddressInput> addressData = Input.undefined();
@@ -29,21 +30,21 @@ public class GiftRegistryShippingAddressInput implements Serializable {
     private Input<ID> addressId = Input.undefined();
 
     /**
-     * Defines the shipping address for this gift registry
+     * Defines the shipping address for this gift registry.
      */
     public CustomerAddressInput getAddressData() {
         return addressData.getValue();
     }
 
     /**
-     * Defines the shipping address for this gift registry
+     * Defines the shipping address for this gift registry.
      */
     public Input<CustomerAddressInput> getAddressDataInput() {
         return addressData;
     }
 
     /**
-     * Defines the shipping address for this gift registry
+     * Defines the shipping address for this gift registry.
      */
     public GiftRegistryShippingAddressInput setAddressData(CustomerAddressInput addressData) {
         this.addressData = Input.optional(addressData);
@@ -51,7 +52,7 @@ public class GiftRegistryShippingAddressInput implements Serializable {
     }
 
     /**
-     * Defines the shipping address for this gift registry
+     * Defines the shipping address for this gift registry.
      */
     public GiftRegistryShippingAddressInput setAddressDataInput(Input<CustomerAddressInput> addressData) {
         if (addressData == null) {
@@ -62,21 +63,21 @@ public class GiftRegistryShippingAddressInput implements Serializable {
     }
 
     /**
-     * The ID assigned to this customer address
+     * The ID assigned to this customer address.
      */
     public ID getAddressId() {
         return addressId.getValue();
     }
 
     /**
-     * The ID assigned to this customer address
+     * The ID assigned to this customer address.
      */
     public Input<ID> getAddressIdInput() {
         return addressId;
     }
 
     /**
-     * The ID assigned to this customer address
+     * The ID assigned to this customer address.
      */
     public GiftRegistryShippingAddressInput setAddressId(ID addressId) {
         this.addressId = Input.optional(addressId);
@@ -84,7 +85,7 @@ public class GiftRegistryShippingAddressInput implements Serializable {
     }
 
     /**
-     * The ID assigned to this customer address
+     * The ID assigned to this customer address.
      */
     public GiftRegistryShippingAddressInput setAddressIdInput(Input<ID> addressId) {
         if (addressId == null) {

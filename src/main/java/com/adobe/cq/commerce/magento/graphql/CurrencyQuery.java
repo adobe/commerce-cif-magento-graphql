@@ -22,18 +22,27 @@ public class CurrencyQuery extends AbstractQuery<CurrencyQuery> {
         super(_queryBuilder);
     }
 
+    /**
+     * An array of three-letter currency codes accepted by the store, such as USD and EUR.
+     */
     public CurrencyQuery availableCurrencyCodes() {
         startField("available_currency_codes");
 
         return this;
     }
 
+    /**
+     * The base currency set for the store, such as USD.
+     */
     public CurrencyQuery baseCurrencyCode() {
         startField("base_currency_code");
 
         return this;
     }
 
+    /**
+     * The symbol for the specified base currency, such as $.
+     */
     public CurrencyQuery baseCurrencySymbol() {
         startField("base_currency_symbol");
 
@@ -51,7 +60,7 @@ public class CurrencyQuery extends AbstractQuery<CurrencyQuery> {
     }
 
     /**
-     * @deprecated Symbol was missed. Use `default_display_currency_symbol`.
+     * @deprecated Symbol was missed. Use `default_display_currency_code`.
      */
     @Deprecated
     public CurrencyQuery defaultDisplayCurrecySymbol() {
@@ -60,18 +69,27 @@ public class CurrencyQuery extends AbstractQuery<CurrencyQuery> {
         return this;
     }
 
+    /**
+     * The currency that is displayed by default, such as USD.
+     */
     public CurrencyQuery defaultDisplayCurrencyCode() {
         startField("default_display_currency_code");
 
         return this;
     }
 
+    /**
+     * The currency symbol that is displayed by default, such as $.
+     */
     public CurrencyQuery defaultDisplayCurrencySymbol() {
         startField("default_display_currency_symbol");
 
         return this;
     }
 
+    /**
+     * An array of exchange rates for currencies defined in the store.
+     */
     public CurrencyQuery exchangeRates(ExchangeRateQueryDefinition queryDef) {
         startField("exchange_rates");
 

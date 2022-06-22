@@ -33,28 +33,46 @@ public class ConfigurableProductCartItemInput implements Serializable {
         this.data = data;
     }
 
+    /**
+     * The quantity and SKU of the configurable product.
+     */
     public CartItemInput getData() {
         return data;
     }
 
+    /**
+     * The quantity and SKU of the configurable product.
+     */
     public ConfigurableProductCartItemInput setData(CartItemInput data) {
         this.data = data;
         return this;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public List<CustomizableOptionInput> getCustomizableOptions() {
         return customizableOptions.getValue();
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public Input<List<CustomizableOptionInput>> getCustomizableOptionsInput() {
         return customizableOptions;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public ConfigurableProductCartItemInput setCustomizableOptions(List<CustomizableOptionInput> customizableOptions) {
         this.customizableOptions = Input.optional(customizableOptions);
         return this;
     }
 
+    /**
+     * The ID and value of the option.
+     */
     public ConfigurableProductCartItemInput setCustomizableOptionsInput(Input<List<CustomizableOptionInput>> customizableOptions) {
         if (customizableOptions == null) {
             throw new IllegalArgumentException("Input can not be null");
@@ -64,21 +82,21 @@ public class ConfigurableProductCartItemInput implements Serializable {
     }
 
     /**
-     * Configurable product SKU.
+     * The SKU of the parent configurable product.
      */
     public String getParentSku() {
         return parentSku.getValue();
     }
 
     /**
-     * Configurable product SKU.
+     * The SKU of the parent configurable product.
      */
     public Input<String> getParentSkuInput() {
         return parentSku;
     }
 
     /**
-     * Configurable product SKU.
+     * The SKU of the parent configurable product.
      */
     public ConfigurableProductCartItemInput setParentSku(String parentSku) {
         this.parentSku = Input.optional(parentSku);
@@ -86,7 +104,7 @@ public class ConfigurableProductCartItemInput implements Serializable {
     }
 
     /**
-     * Configurable product SKU.
+     * The SKU of the parent configurable product.
      */
     public ConfigurableProductCartItemInput setParentSkuInput(Input<String> parentSku) {
         if (parentSku == null) {
@@ -97,21 +115,21 @@ public class ConfigurableProductCartItemInput implements Serializable {
     }
 
     /**
-     * Deprecated. Use CartItemInput.sku instead.
+     * Deprecated. Use `CartItemInput.sku` instead.
      */
     public String getVariantSku() {
         return variantSku.getValue();
     }
 
     /**
-     * Deprecated. Use CartItemInput.sku instead.
+     * Deprecated. Use `CartItemInput.sku` instead.
      */
     public Input<String> getVariantSkuInput() {
         return variantSku;
     }
 
     /**
-     * Deprecated. Use CartItemInput.sku instead.
+     * Deprecated. Use `CartItemInput.sku` instead.
      */
     public ConfigurableProductCartItemInput setVariantSku(String variantSku) {
         this.variantSku = Input.optional(variantSku);
@@ -119,7 +137,7 @@ public class ConfigurableProductCartItemInput implements Serializable {
     }
 
     /**
-     * Deprecated. Use CartItemInput.sku instead.
+     * Deprecated. Use `CartItemInput.sku` instead.
      */
     public ConfigurableProductCartItemInput setVariantSkuInput(Input<String> variantSku) {
         if (variantSku == null) {

@@ -21,6 +21,9 @@ import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.SchemaViolationError;
 
+/**
+ * Contains the results of the request to assign a compare list.
+ */
 public class AssignCompareListToCustomerOutput extends AbstractResponse<AssignCompareListToCustomerOutput> {
     public AssignCompareListToCustomerOutput() {}
 
@@ -63,7 +66,7 @@ public class AssignCompareListToCustomerOutput extends AbstractResponse<AssignCo
     }
 
     /**
-     * The contents of the customer&#39;s compare list
+     * The contents of the customer&#39;s compare list.
      */
     public CompareList getCompareList() {
         return (CompareList) get("compare_list");
@@ -74,6 +77,9 @@ public class AssignCompareListToCustomerOutput extends AbstractResponse<AssignCo
         return this;
     }
 
+    /**
+     * Indicates whether the compare list was successfully assigned to the customer.
+     */
     public Boolean getResult() {
         return (Boolean) get("result");
     }

@@ -14,19 +14,22 @@
 
 package com.adobe.cq.commerce.magento.graphql;
 
+/**
+ * Defines the error type.
+ */
 public enum GiftRegistryItemsUserErrorType {
     /**
-     * Used for exceptions like EntityNotFound
+     * Used for exceptions like EntityNotFound.
      */
     NOT_FOUND,
 
     /**
-     * Used for handling out of stock products
+     * Used for handling out of stock products.
      */
     OUT_OF_STOCK,
 
     /**
-     * Used for other exceptions, such as database connection failures
+     * Used for other exceptions, such as database connection failures.
      */
     UNDEFINED,
 
