@@ -15,9 +15,14 @@
 package com.adobe.cq.commerce.magento.graphql;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.Input;
 
 /**
  * Defines the input schema for defining a company&#39;s legal address.
@@ -34,6 +39,8 @@ public class CompanyLegalAddressCreateInput implements Serializable {
     private List<String> street;
 
     private String telephone;
+
+    private Map<String, Input<Serializable>> customFilters = new HashMap<>();
 
     public CompanyLegalAddressCreateInput(String city, CountryCodeEnum countryId, String postcode, CustomerAddressRegionInput region,
                                           List<String> street, String telephone) {
@@ -144,9 +151,38 @@ public class CompanyLegalAddressCreateInput implements Serializable {
         return this;
     }
 
+    /**
+     * Set custom filter.
+     */
+    public CompanyLegalAddressCreateInput setCustomFilter(String name, Serializable filterInput) {
+        this.customFilters.put(name, Input.optional(filterInput));
+        return this;
+    }
+
     public void appendTo(StringBuilder _queryBuilder) {
         String separator = "";
         _queryBuilder.append('{');
+
+        if (!this.customFilters.isEmpty()) {
+            for (Map.Entry<String, Input<Serializable>> entry : customFilters.entrySet()) {
+                _queryBuilder.append(separator);
+                separator = ",";
+                _queryBuilder.append(entry.getKey() + ":");
+
+                Serializable filter = entry.getValue().getValue();
+
+                if (filter != null) {
+                    try {
+                        Method appendTo = filter.getClass().getMethod("appendTo", StringBuilder.class);
+                        appendTo.invoke(filter, _queryBuilder);
+                    } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+                        _queryBuilder.append("null");
+                    }
+                } else {
+                    _queryBuilder.append("null");
+                }
+            }
+        }
 
         _queryBuilder.append(separator);
         separator = ",";

@@ -589,6 +589,9 @@ public class ProductAttributeFilterInput implements Serializable {
         return this;
     }
 
+    /**
+     * Set custom filter.
+     */
     public ProductAttributeFilterInput setCustomFilter(String name, Serializable filterInput) {
         this.customFilters.put(name, Input.optional(filterInput));
         return this;
