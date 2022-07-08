@@ -451,4 +451,29 @@ public class QueryBuilderTest {
 
         Assert.assertEquals(expectedQuery, queryString);
     }
+
+    @Test
+    public void testProductQueryWithCustomFilters() throws IOException {
+        String expectedQuery = getResource("queries/products-custom-filter.txt");
+
+        // Search parameters
+        ProductAttributeFilterInput filter = new ProductAttributeFilterInput()
+            .setSku(new FilterEqualTypeInput()
+                .setEq("whatever"))
+            .setCustomFilter("equal-attribute", new FilterEqualTypeInput()
+                .setEq("my-equal-value"))
+            .setCustomFilter("match-attribute", new FilterMatchTypeInput()
+                .setMatch("my-match-value"))
+            .setCustomFilter("my-range-attribute", new FilterRangeTypeInput()
+                .setFrom("range-from")
+                .setTo("range-to"));
+        ProductsArgumentsDefinition searchArgs = s -> s.filter(filter);
+
+        // Main query
+        ProductsQueryDefinition queryArgs = q -> q.items(TestGraphqlQueries.CONFIGURABLE_PRODUCT_QUERY);
+
+        // Check that the generated query matches the reference query
+        String queryString = Operations.query(query -> query.products(searchArgs, queryArgs)).toString();
+        Assert.assertEquals(expectedQuery, queryString);
+    }
 }
