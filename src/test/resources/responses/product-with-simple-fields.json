@@ -1,0 +1,14 @@
+{
+  "products": {
+    "items": [
+      {
+        "__typename": "ConfigurableProduct",
+        "sku": "MSH12",
+        "erin_recommends": 0,
+        "climate": "205,212,209",
+        "special_price": 24.99,
+        "is_featured": true
+      }
+    ]
+  }
+}

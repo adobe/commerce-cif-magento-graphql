@@ -1,0 +1,1 @@
+{products(search:"short",currentPage:1){items{__typename,sku,erin_recommends,climate,replacement_product{__typename,sku,name,weight},crosssell_products{__typename,sku,name}}}}

@@ -148,4 +148,37 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
 
         return (T) this;
     }
+
+    /**
+     * Adds a simple field to the GraphQL query without using aliases. The adjective "simple" here refers to
+     * a scalar/primitive field like String, Integer, Double, Boolean, or an array of fields.
+     * 
+     * @param fieldName The name of the field that will be added to the GraphQL request.
+     * @return The current query builder.
+     */
+    @SuppressWarnings("unchecked")
+    public T addSimpleField(String fieldName) {
+        startField(fieldName);
+        return (T) this;
+    }
+
+    /**
+     * Adds an object field to the GraphQL query without using aliases. The term "object" here refers to
+     * a GraphQL object, which means some fields of the object must also be defined
+     * in the query.
+     * 
+     * @param fieldName The name of the field that will be added to the GraphQL request.
+     * @param queryDef The definition of the requested sub-fields of the object.
+     * @return The current query builder.
+     */
+    @SuppressWarnings("unchecked")
+    public T addObjectField(String fieldName, CustomFieldQueryDefinition queryDef) {
+        startField(fieldName);
+
+        _queryBuilder.append('{');
+        queryDef.define(new CustomFieldQuery(_queryBuilder));
+        _queryBuilder.append('}');
+
+        return (T) this;
+    }
 }

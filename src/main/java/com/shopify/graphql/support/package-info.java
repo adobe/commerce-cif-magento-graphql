@@ -12,7 +12,7 @@
  *
  ******************************************************************************/
 
-@Version("1.2.0")
+@Version("1.3.0")
 package com.shopify.graphql.support;
 
 import org.osgi.annotation.versioning.Version;

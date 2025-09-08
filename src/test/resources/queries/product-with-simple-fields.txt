@@ -1,0 +1,1 @@
+{products(search:"short",currentPage:1){items{__typename,sku,erin_recommends,climate,special_price,is_featured}}}
