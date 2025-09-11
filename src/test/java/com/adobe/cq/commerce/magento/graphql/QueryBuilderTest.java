@@ -31,7 +31,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
-import com.shopify.graphql.support.SchemaViolationError;
 
 public class QueryBuilderTest {
 
@@ -122,8 +121,8 @@ public class QueryBuilderTest {
         Assert.assertEquals(1, categoryTree.getChildren().size());
     }
 
-    @Test(expected = SchemaViolationError.class)
-    public void testSchemaViolationError() throws Exception {
+    @Test
+    public void testNoSchemaViolationError() throws Exception {
         String jsonResponse = getResource("responses/root-category-with-unknown-field.json");
 
         // Triggers a SchemaViolationError

@@ -159,22 +159,34 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     }
 
     /**
-     * Tries to read a custom field from the GraphQL JSON response. The method throws a schema violation
-     * exception if the field name does not contain the <code>_custom_</code> alias suffix added by the library,
-     * which would indicate that the field does not belong to the GraphQL Schema and was not explicitly requested
-     * as a custom field.
+     * Tries to read a custom field from the GraphQL JSON response. The method can handle both
+     * fields with the <code>_custom_</code> alias suffix added by the library and fields without it.
+     * If the field name contains the custom field label, it will be stripped before storing.
+     * If it doesn't contain the label, the field name will be used as-is.
+     * 
+     * <p>
+     * <strong>Note:</strong> Schema validation has been removed from this method to support
+     * integration with commerce versions that may not strictly follow the custom field naming
+     * convention. This allows for more flexible field handling across different commerce
+     * platform versions.
+     * </p>
      * 
      * @param fieldName The field name.
      * @param element The JSON element parsed by the JSON deserialiser.
-     * @throws SchemaViolationError If the field name does not contain the <code>_custom_</code> suffix.
      */
-    protected void readCustomField(String fieldName, JsonElement element) throws SchemaViolationError {
-        if (!fieldName.endsWith(AbstractQuery.CUSTOM_FIELD_LABEL)) {
-            throw new SchemaViolationError(this, fieldName, element);
+    protected void readCustomField(String fieldName, JsonElement element) {
+        String actualFieldName;
+
+        if (fieldName.endsWith(AbstractQuery.CUSTOM_FIELD_LABEL)) {
+            // Field has custom field label suffix, remove it
+            int end = fieldName.lastIndexOf(AbstractQuery.CUSTOM_FIELD_LABEL);
+            actualFieldName = fieldName.substring(0, end);
+        } else {
+            // Field doesn't have custom field label suffix, use as-is
+            actualFieldName = fieldName;
         }
 
-        int end = fieldName.lastIndexOf(AbstractQuery.CUSTOM_FIELD_LABEL);
-        responseData.put(fieldName.substring(0, end), element);
+        responseData.put(actualFieldName, element);
     }
 
     protected String getFieldName(String key) {
