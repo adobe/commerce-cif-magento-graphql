@@ -40,6 +40,8 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     public final HashMap<String, Object> optimisticData = new HashMap<>();
     private String aliasSuffix = null;
 
+    private static final String DISABLE_SCHEMA_VIOLATION_ERROR_PROPERTY = "com.shopify.graphql.support.disableSchemaViolationError";
+
     @SuppressWarnings("unchecked")
     public T withAlias(String aliasSuffix) {
         if (this.aliasSuffix != null) {
@@ -159,22 +161,43 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     }
 
     /**
-     * Tries to read a custom field from the GraphQL JSON response. The method can handle both
-     * fields with the <code>_custom_</code> alias suffix added by the library and fields without it.
+     * Tries to read a custom field from the GraphQL JSON response. The behavior of this method
+     * depends on the system property <code>com.shopify.graphql.support.disableSchemaViolationError</code>:
+     * 
+     * <ul>
+     * <li><strong>Default behavior (property unset or false)</strong>: <em>Strict mode</em> -
+     * field names MUST have the _custom_ suffix (like <code>myField_custom_</code>).
+     * If a field name lacks this suffix, throws {@link SchemaViolationError}.</li>
+     * <li><strong>When property is set to true</strong>: <em>Flexible mode</em> -
+     * accepts ANY field name, with or without the _custom_ suffix.
+     * Schema violation errors are disabled - no {@link SchemaViolationError} is thrown.</li>
+     * </ul>
+     * 
      * If the field name contains the custom field label, it will be stripped before storing.
-     * If it doesn't contain the label, the field name will be used as-is.
+     * If it doesn't contain the label, the field name will be used as-is (in flexible mode only).
      * 
      * <p>
-     * <strong>Note:</strong> Schema validation has been removed from this method to support
-     * integration with commerce versions that may not strictly follow the custom field naming
-     * convention. This allows for more flexible field handling across different commerce
-     * platform versions.
+     * <strong>Examples of setting the system property:</strong>
      * </p>
+     * 
+     * <pre>
+     * {@code
+     * // JVM command line argument
+     * java -Dcom.shopify.graphql.support.disableSchemaViolationError=true MyApp
+     * 
+     * // Programmatically in code
+     * System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
+     * }
+     * </pre>
      * 
      * @param fieldName The field name.
      * @param element The JSON element parsed by the JSON deserialiser.
+     * @throws SchemaViolationError If the field name does not contain the <code>_custom_</code> suffix
+     *             and schema violation error is not disabled.
      */
-    protected void readCustomField(String fieldName, JsonElement element) {
+    protected void readCustomField(String fieldName, JsonElement element) throws SchemaViolationError {
+        boolean disableSchemaViolationError = Boolean.getBoolean(DISABLE_SCHEMA_VIOLATION_ERROR_PROPERTY);
+
         String actualFieldName;
 
         if (fieldName.endsWith(AbstractQuery.CUSTOM_FIELD_LABEL)) {
@@ -182,7 +205,12 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
             int end = fieldName.lastIndexOf(AbstractQuery.CUSTOM_FIELD_LABEL);
             actualFieldName = fieldName.substring(0, end);
         } else {
-            // Field doesn't have custom field label suffix, use as-is
+            // Field doesn't have custom field label suffix
+            if (!disableSchemaViolationError) {
+                // Strict mode: throw error for fields without custom field label
+                throw new SchemaViolationError(this, fieldName, element);
+            }
+            // Flexible mode: use field name as-is
             actualFieldName = fieldName;
         }
 

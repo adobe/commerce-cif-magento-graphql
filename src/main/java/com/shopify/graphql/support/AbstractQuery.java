@@ -150,29 +150,38 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
     }
 
     /**
-     * Adds a simple field to the GraphQL query without using aliases. The adjective "simple" here refers to
-     * a scalar/primitive field like String, Integer, Double, Boolean, or an array of fields.
+     * Adds a simple field to the GraphQL query without custom field aliasing.
+     * Unlike {@link #addCustomSimpleField(String)}, this method adds the field directly
+     * without the custom field labeling mechanism. Use this method when adding standard
+     * GraphQL fields that don't require custom field treatment.
+     * 
+     * The adjective "simple" here refers to a scalar/primitive field like String,
+     * Integer, Double, Boolean, or an array of fields.
      * 
      * @param fieldName The name of the field that will be added to the GraphQL request.
      * @return The current query builder.
      */
     @SuppressWarnings("unchecked")
-    public T addSimpleField(String fieldName) {
+    public T addCustomSimpleFieldUnsafe(String fieldName) {
         startField(fieldName);
         return (T) this;
     }
 
     /**
-     * Adds an object field to the GraphQL query without using aliases. The term "object" here refers to
-     * a GraphQL object, which means some fields of the object must also be defined
-     * in the query.
+     * Adds an object field to the GraphQL query without custom field aliasing.
+     * Unlike {@link #addCustomObjectField(String, CustomFieldQueryDefinition)}, this method
+     * adds the field directly without the custom field labeling mechanism. Use this method
+     * when adding standard GraphQL object fields that don't require custom field treatment.
+     * 
+     * The term "object" here refers to a GraphQL object, which means some fields of the
+     * object must also be defined in the query.
      * 
      * @param fieldName The name of the field that will be added to the GraphQL request.
      * @param queryDef The definition of the requested sub-fields of the object.
      * @return The current query builder.
      */
     @SuppressWarnings("unchecked")
-    public T addObjectField(String fieldName, CustomFieldQueryDefinition queryDef) {
+    public T addCustomObjectFieldUnsafe(String fieldName, CustomFieldQueryDefinition queryDef) {
         startField(fieldName);
 
         _queryBuilder.append('{');

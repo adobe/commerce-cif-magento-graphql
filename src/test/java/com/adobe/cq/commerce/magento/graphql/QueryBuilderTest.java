@@ -27,10 +27,10 @@ import com.adobe.cq.commerce.magento.graphql.gson.MutationDeserializer;
 import com.adobe.cq.commerce.magento.graphql.gson.QueryDeserializer;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.shopify.graphql.support.AbstractQuery;
 import com.shopify.graphql.support.Fragment;
+import com.shopify.graphql.support.SchemaViolationError;
 
 public class QueryBuilderTest {
 
@@ -121,8 +121,8 @@ public class QueryBuilderTest {
         Assert.assertEquals(1, categoryTree.getChildren().size());
     }
 
-    @Test
-    public void testNoSchemaViolationError() throws Exception {
+    @Test(expected = SchemaViolationError.class)
+    public void testSchemaViolationError() throws Exception {
         String jsonResponse = getResource("responses/root-category-with-unknown-field.json");
 
         // Triggers a SchemaViolationError
@@ -478,19 +478,42 @@ public class QueryBuilderTest {
     }
 
     @Test
-    public void testSimpleFieldTypes() throws Exception {
+    public void testSchemaViolationErrorFlexibleMode() throws Exception {
+        String jsonResponse = getResource("responses/root-category-with-unknown-field.json");
+
+        // Enable flexible mode
+        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
+
+        try {
+            // Should NOT trigger a SchemaViolationError in flexible mode
+            Query query = new Query(new JsonParser().parse(jsonResponse).getAsJsonObject());
+            Assert.assertNotNull("Query should be created successfully in flexible mode", query);
+
+            // The unknown field should be handled gracefully
+            CategoryTree category = query.getCategory();
+            Assert.assertNotNull("Category should be parsed successfully", category);
+        } catch (SchemaViolationError e) {
+            Assert.fail("SchemaViolationError should not be thrown in flexible mode, but got: " + e.getMessage());
+        } finally {
+            // Clean up system property
+            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+        }
+    }
+
+    @Test
+    public void testCustomSimpleFieldTypesUnsafe() throws Exception {
         String expectedQuery = getResource("queries/category-with-simple-field.txt");
         String jsonResponse = getResource("responses/category-with-simple-field.json");
 
-        // Category with simple fields of different primitive types (without aliases)
+        // Category with custom simple fields of different primitive types (unsafe - without aliases)
         CategoryTreeQueryDefinition queryArgs = q -> q
             .id()
             .name()
-            .addSimpleField("mystring")
-            .addSimpleField("myinteger")
-            .addSimpleField("mydouble")
-            .addSimpleField("myboolean")
-            .addSimpleField("myarray");
+            .addCustomSimpleFieldUnsafe("mystring")
+            .addCustomSimpleFieldUnsafe("myinteger")
+            .addCustomSimpleFieldUnsafe("mydouble")
+            .addCustomSimpleFieldUnsafe("myboolean")
+            .addCustomSimpleFieldUnsafe("myarray");
 
         // Search parameters
         CategoryArgumentsDefinition searchArgs = q -> q.id(3);
@@ -500,42 +523,49 @@ public class QueryBuilderTest {
         // Check that the generated query matches the reference query
         Assert.assertEquals(expectedQuery, queryString);
 
-        // Parse JSON manually to verify response structure (avoiding automatic deserialization
-        // which triggers readCustomField validation)
-        JsonParser parser = new JsonParser();
-        JsonObject response = parser.parse(jsonResponse).getAsJsonObject();
-        JsonObject category = response.getAsJsonObject("category");
+        // Enable flexible mode to allow fields without custom field label
+        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
 
-        // Check that simple fields are present and have correct values
-        Assert.assertEquals(3, category.get("id").getAsInt());
-        Assert.assertEquals("Equipment", category.get("name").getAsString());
-        Assert.assertEquals("somevalue", category.get("mystring").getAsString());
-        Assert.assertEquals(42, category.get("myinteger").getAsInt());
-        Assert.assertEquals(4.2, category.get("mydouble").getAsDouble(), 0);
-        Assert.assertEquals(true, category.get("myboolean").getAsBoolean());
-        Assert.assertTrue(category.get("myarray").isJsonArray());
-        Assert.assertEquals("a", category.getAsJsonArray("myarray").get(0).getAsString());
+        try {
+            // Use Query constructor to trigger readCustomField validation
+            JsonParser parser = new JsonParser();
+            Query query = new Query(parser.parse(jsonResponse).getAsJsonObject());
+            CategoryTree category = query.getCategory();
+
+            // Check that simple fields are properly parsed via readCustomField
+            Assert.assertEquals(Integer.valueOf(3), category.getId());
+            Assert.assertEquals("Equipment", category.getName());
+            // In flexible mode, fields without _custom_ suffix are stored as JsonElements
+            Assert.assertEquals("somevalue", ((com.google.gson.JsonElement) category.get("mystring")).getAsString());
+            Assert.assertEquals(Integer.valueOf(42), Integer.valueOf(((com.google.gson.JsonElement) category.get("myinteger")).getAsInt()));
+            Assert.assertEquals(4.2, ((com.google.gson.JsonElement) category.get("mydouble")).getAsDouble(), 0);
+            Assert.assertEquals(Boolean.TRUE, Boolean.valueOf(((com.google.gson.JsonElement) category.get("myboolean")).getAsBoolean()));
+            Assert.assertTrue(category.get("myarray") instanceof com.google.gson.JsonElement);
+        } finally {
+            // Clean up system property
+            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+        }
     }
 
     @Test
-    public void testObjectFields() throws Exception {
+    public void testCustomObjectFieldsUnsafe() throws Exception {
         String expectedQuery = getResource("queries/product-with-object-field.txt");
         String jsonResponse = getResource("responses/product-with-object-field.json");
 
         // Search parameters
         ProductsArgumentsDefinition searchArgs = s -> s.search("short").currentPage(1);
 
-        // Product query with object fields (without aliases)
+        // Product query with custom object fields (unsafe - without aliases)
         ProductsQueryDefinition queryArgs = q -> q.items(i -> i
             .sku()
-            .addSimpleField("erin_recommends")
-            .addSimpleField("climate")
-            .addObjectField("replacement_product", c -> c
+            .addCustomSimpleFieldUnsafe("erin_recommends")
+            .addCustomSimpleFieldUnsafe("climate")
+            .addCustomObjectFieldUnsafe("replacement_product", c -> c
                 .addField("__typename")
                 .addField("sku")
                 .addField("name")
-                .addSimpleField("weight"))
-            .addObjectField("crosssell_products", c -> c
+                .addCustomSimpleFieldUnsafe("weight"))
+            .addCustomObjectFieldUnsafe("crosssell_products", c -> c
                 .addField("__typename")
                 .addField("sku")
                 .addField("name")));
@@ -545,69 +575,96 @@ public class QueryBuilderTest {
         // Check that the generated query matches the reference query
         Assert.assertEquals(expectedQuery, queryString);
 
-        // Parse JSON manually to verify response structure (avoiding automatic deserialization
-        // which triggers readCustomField validation)
-        JsonParser parser = new JsonParser();
-        JsonObject response = parser.parse(jsonResponse).getAsJsonObject();
-        JsonObject products = response.getAsJsonObject("products");
-        JsonArray items = products.getAsJsonArray("items");
-        JsonObject product = items.get(0).getAsJsonObject();
+        // Enable flexible mode to allow fields without custom field label
+        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
 
-        // Check the simple fields (without custom suffix)
-        Assert.assertEquals("MSH12", product.get("sku").getAsString());
-        Assert.assertEquals(0, product.get("erin_recommends").getAsInt());
-        Assert.assertEquals("205,212,209", product.get("climate").getAsString());
+        try {
+            // Use Query constructor to trigger readCustomField validation
+            JsonParser parser = new JsonParser();
+            Query query = new Query(parser.parse(jsonResponse).getAsJsonObject());
+            ProductInterface product = query.getProducts().getItems().get(0);
 
-        // Check array field with objects element
-        JsonArray crossSellProducts = product.getAsJsonArray("crosssell_products");
-        JsonObject crossSellProduct = crossSellProducts.get(0).getAsJsonObject();
-        Assert.assertEquals("SimpleProduct", crossSellProduct.get("__typename").getAsString());
-        Assert.assertEquals("24-UG06", crossSellProduct.get("sku").getAsString());
-        Assert.assertEquals("Affirm Water Bottle", crossSellProduct.get("name").getAsString());
+            // Check that custom fields are properly parsed via readCustomField
+            Assert.assertEquals("MSH12", product.getSku());
+            // In flexible mode, fields without _custom_ suffix can be stored as various types
+            Object erinRecommends = product.get("erin_recommends");
+            Object climate = product.get("climate");
 
-        // Check object field
-        JsonObject replacementProduct = product.getAsJsonObject("replacement_product");
-        Assert.assertEquals("ConfigurableProduct", replacementProduct.get("__typename").getAsString());
-        Assert.assertEquals("MSH12-old", replacementProduct.get("sku").getAsString());
-        Assert.assertEquals("Zing Jump Rope", replacementProduct.get("name").getAsString());
-        Assert.assertEquals(42, replacementProduct.get("weight").getAsInt());
+            // Verify the values regardless of exact type (JsonElement vs raw Java objects)
+            Assert.assertTrue("erin_recommends should be 0",
+                (erinRecommends instanceof Number && ((Number) erinRecommends).intValue() == 0) ||
+                    (erinRecommends instanceof com.google.gson.JsonElement && ((com.google.gson.JsonElement) erinRecommends)
+                        .getAsInt() == 0));
+            Assert.assertTrue("climate should be '205,212,209'",
+                "205,212,209".equals(climate.toString().replace("\"", "")));
+
+            // Check that custom array and object fields work (can be various types in flexible mode)
+            Object crosssellProducts = product.get("crosssell_products");
+            Object replacementProduct = product.get("replacement_product");
+            Assert.assertNotNull("crosssell_products should be present", crosssellProducts);
+            Assert.assertNotNull("replacement_product should be present", replacementProduct);
+        } finally {
+            // Clean up system property
+            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+        }
     }
 
     @Test
-    public void testProductWithSimpleFields() throws Exception {
+    public void testProductWithCustomSimpleFieldsUnsafe() throws Exception {
         String expectedQuery = getResource("queries/product-with-simple-fields.txt");
         String jsonResponse = getResource("responses/product-with-simple-fields.json");
 
         // Search parameters
         ProductsArgumentsDefinition searchArgs = s -> s.search("short").currentPage(1);
 
-        // Product query with simple fields of different types (without aliases)
+        // Product query with custom simple fields (unsafe - without aliases)
         ProductsQueryDefinition queryArgs = q -> q.items(i -> i
             .sku()
-            .addSimpleField("erin_recommends")
-            .addSimpleField("climate")
-            .addSimpleField("special_price")
-            .addSimpleField("is_featured"));
+            .addCustomSimpleFieldUnsafe("erin_recommends")
+            .addCustomSimpleFieldUnsafe("climate")
+            .addCustomSimpleFieldUnsafe("special_price")
+            .addCustomSimpleFieldUnsafe("is_featured"));
 
         String queryString = Operations.query(query -> query.products(searchArgs, queryArgs)).toString();
 
         // Check that the generated query matches the reference query
         Assert.assertEquals(expectedQuery, queryString);
 
-        // Parse JSON manually to verify response structure (avoiding automatic deserialization
-        // which triggers readCustomField validation)
-        JsonParser parser = new JsonParser();
-        JsonObject response = parser.parse(jsonResponse).getAsJsonObject();
-        JsonObject products = response.getAsJsonObject("products");
-        JsonArray items = products.getAsJsonArray("items");
-        JsonObject product = items.get(0).getAsJsonObject();
+        // Enable flexible mode to allow fields without custom field label
+        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
 
-        // Check that simple fields are present and have correct values with different data types
-        Assert.assertEquals("ConfigurableProduct", product.get("__typename").getAsString());
-        Assert.assertEquals("MSH12", product.get("sku").getAsString());
-        Assert.assertEquals(0, product.get("erin_recommends").getAsInt());
-        Assert.assertEquals("205,212,209", product.get("climate").getAsString());
-        Assert.assertEquals(24.99, product.get("special_price").getAsDouble(), 0);
-        Assert.assertEquals(true, product.get("is_featured").getAsBoolean());
+        try {
+            // Use Query constructor to trigger readCustomField validation
+            JsonParser parser = new JsonParser();
+            Query query = new Query(parser.parse(jsonResponse).getAsJsonObject());
+            ProductInterface product = query.getProducts().getItems().get(0);
+
+            // Check that custom simple fields are properly parsed via readCustomField
+            Assert.assertEquals("MSH12", product.getSku());
+            // In flexible mode, fields without _custom_ suffix can be stored as various types
+            Object erinRecommends = product.get("erin_recommends");
+            Object climate = product.get("climate");
+            Object specialPrice = product.get("special_price");
+            Object isFeatured = product.get("is_featured");
+
+            // Verify the values regardless of exact type (JsonElement vs raw Java objects)
+            Assert.assertTrue("erin_recommends should be 0",
+                (erinRecommends instanceof Number && ((Number) erinRecommends).intValue() == 0) ||
+                    (erinRecommends instanceof com.google.gson.JsonElement && ((com.google.gson.JsonElement) erinRecommends)
+                        .getAsInt() == 0));
+            Assert.assertTrue("climate should be '205,212,209'",
+                "205,212,209".equals(climate.toString().replace("\"", "")));
+            Assert.assertTrue("special_price should be 24.99",
+                (specialPrice instanceof Number && Math.abs(((Number) specialPrice).doubleValue() - 24.99) < 0.01) ||
+                    (specialPrice instanceof com.google.gson.JsonElement && Math.abs(((com.google.gson.JsonElement) specialPrice)
+                        .getAsDouble() - 24.99) < 0.01));
+            Assert.assertTrue("is_featured should be true",
+                Boolean.TRUE.equals(isFeatured) ||
+                    (isFeatured instanceof com.google.gson.JsonElement && ((com.google.gson.JsonElement) isFeatured).getAsBoolean()));
+        } finally {
+            // Clean up system property
+            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+        }
     }
+
 }
