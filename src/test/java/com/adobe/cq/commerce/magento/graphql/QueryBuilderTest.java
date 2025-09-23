@@ -29,6 +29,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.Fragment;
 import com.shopify.graphql.support.SchemaViolationError;
 
@@ -482,7 +483,7 @@ public class QueryBuilderTest {
         String jsonResponse = getResource("responses/root-category-with-unknown-field.json");
 
         // Enable flexible mode
-        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
 
         try {
             // Should NOT trigger a SchemaViolationError in flexible mode
@@ -496,7 +497,7 @@ public class QueryBuilderTest {
             Assert.fail("SchemaViolationError should not be thrown in flexible mode, but got: " + e.getMessage());
         } finally {
             // Clean up system property
-            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
         }
     }
 
@@ -524,7 +525,7 @@ public class QueryBuilderTest {
         Assert.assertEquals(expectedQuery, queryString);
 
         // Enable flexible mode to allow fields without custom field label
-        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
 
         try {
             // Use Query constructor to trigger readCustomField validation
@@ -543,7 +544,7 @@ public class QueryBuilderTest {
             Assert.assertTrue(category.get("myarray") instanceof com.google.gson.JsonElement);
         } finally {
             // Clean up system property
-            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
         }
     }
 
@@ -576,7 +577,7 @@ public class QueryBuilderTest {
         Assert.assertEquals(expectedQuery, queryString);
 
         // Enable flexible mode to allow fields without custom field label
-        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
 
         try {
             // Use Query constructor to trigger readCustomField validation
@@ -605,7 +606,7 @@ public class QueryBuilderTest {
             Assert.assertNotNull("replacement_product should be present", replacementProduct);
         } finally {
             // Clean up system property
-            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
         }
     }
 
@@ -631,7 +632,7 @@ public class QueryBuilderTest {
         Assert.assertEquals(expectedQuery, queryString);
 
         // Enable flexible mode to allow fields without custom field label
-        System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
 
         try {
             // Use Query constructor to trigger readCustomField validation
@@ -663,7 +664,7 @@ public class QueryBuilderTest {
                     (isFeatured instanceof com.google.gson.JsonElement && ((com.google.gson.JsonElement) isFeatured).getAsBoolean()));
         } finally {
             // Clean up system property
-            System.clearProperty("com.shopify.graphql.support.disableSchemaViolationError");
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
         }
     }
 

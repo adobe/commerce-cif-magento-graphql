@@ -150,10 +150,10 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
     }
 
     /**
-     * Adds a simple field to the GraphQL query without custom field aliasing.
-     * Unlike {@link #addCustomSimpleField(String)}, this method adds the field directly
-     * without the custom field labeling mechanism. Use this method when adding standard
-     * GraphQL fields that don't require custom field treatment.
+     * Use this method when adding custom fields to the GraphQL query without the protection mechanism.
+     * This bypasses the aliasing that
+     * prevents potential clashes with existing standard fields in the schema, so users may
+     * more easily encounter field name conflicts.
      * 
      * The adjective "simple" here refers to a scalar/primitive field like String,
      * Integer, Double, Boolean, or an array of fields.
@@ -168,10 +168,9 @@ public abstract class AbstractQuery<T extends AbstractQuery> {
     }
 
     /**
-     * Adds an object field to the GraphQL query without custom field aliasing.
-     * Unlike {@link #addCustomObjectField(String, CustomFieldQueryDefinition)}, this method
-     * adds the field directly without the custom field labeling mechanism. Use this method
-     * when adding standard GraphQL object fields that don't require custom field treatment.
+     * Use this method when adding custom object fields to the GraphQL query without the protection mechanism.
+     * This bypasses the aliasing that prevents potential clashes with existing standard fields
+     * in the schema, so users may more easily encounter field name conflicts.
      * 
      * The term "object" here refers to a GraphQL object, which means some fields of the
      * object must also be defined in the query.

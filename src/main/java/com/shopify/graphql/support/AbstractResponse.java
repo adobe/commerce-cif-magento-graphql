@@ -40,7 +40,19 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     public final HashMap<String, Object> optimisticData = new HashMap<>();
     private String aliasSuffix = null;
 
-    private static final String DISABLE_SCHEMA_VIOLATION_ERROR_PROPERTY = "com.shopify.graphql.support.disableSchemaViolationError";
+    /**
+     * System property that unlocks the use of custom unsafe fields without the protection mechanism.
+     * When set to {@code true}, allows field names without the {@code _custom_} suffix to be used,
+     * bypassing schema violation checks and potentially causing field name conflicts with existing
+     * standard fields in the GraphQL schema.
+     * 
+     * <p>
+     * <strong>Property name:</strong> {@code cif.magento.graphql.UnlockCustomUnsafeFields}
+     * </p>
+     * 
+     * @see #readCustomField(String, JsonElement)
+     */
+    public static final String UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY = "cif.magento.graphql.UnlockCustomUnsafeFields";
 
     @SuppressWarnings("unchecked")
     public T withAlias(String aliasSuffix) {
@@ -162,7 +174,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
 
     /**
      * Tries to read a custom field from the GraphQL JSON response. The behavior of this method
-     * depends on the system property <code>com.shopify.graphql.support.disableSchemaViolationError</code>:
+     * depends on the system property <code>cif.magento.graphql.UnlockCustomUnsafeFields</code>:
      * 
      * <ul>
      * <li><strong>Default behavior (property unset or false)</strong>: <em>Strict mode</em> -
@@ -183,10 +195,10 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      * <pre>
      * {@code
      * // JVM command line argument
-     * java -Dcom.shopify.graphql.support.disableSchemaViolationError=true MyApp
+     * java -Dcif.magento.graphql.UnlockCustomUnsafeFields=true MyApp
      * 
      * // Programmatically in code
-     * System.setProperty("com.shopify.graphql.support.disableSchemaViolationError", "true");
+     * System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
      * }
      * </pre>
      * 
@@ -196,7 +208,7 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
      *             and schema violation error is not disabled.
      */
     protected void readCustomField(String fieldName, JsonElement element) throws SchemaViolationError {
-        boolean disableSchemaViolationError = Boolean.getBoolean(DISABLE_SCHEMA_VIOLATION_ERROR_PROPERTY);
+        boolean disableSchemaViolationError = Boolean.getBoolean(UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
 
         String actualFieldName;
 
