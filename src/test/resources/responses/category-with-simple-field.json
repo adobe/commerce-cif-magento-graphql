@@ -1,0 +1,11 @@
+{
+  "category": {
+    "id": 3,
+    "name": "Equipment",
+    "mystring": "somevalue",
+    "myinteger": 42,
+    "mydouble": 4.2,
+    "myboolean": true,
+    "myarray": ["a", "b"]
+  }
+}

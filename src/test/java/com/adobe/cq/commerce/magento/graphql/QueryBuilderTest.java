@@ -29,6 +29,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.shopify.graphql.support.AbstractQuery;
+import com.shopify.graphql.support.AbstractResponse;
 import com.shopify.graphql.support.Fragment;
 import com.shopify.graphql.support.SchemaViolationError;
 
@@ -476,4 +477,195 @@ public class QueryBuilderTest {
         String queryString = Operations.query(query -> query.products(searchArgs, queryArgs)).toString();
         Assert.assertEquals(expectedQuery, queryString);
     }
+
+    @Test
+    public void testSchemaViolationErrorFlexibleMode() throws Exception {
+        String jsonResponse = getResource("responses/root-category-with-unknown-field.json");
+
+        // Enable flexible mode
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
+
+        try {
+            // Should NOT trigger a SchemaViolationError in flexible mode
+            Query query = new Query(new JsonParser().parse(jsonResponse).getAsJsonObject());
+            Assert.assertNotNull("Query should be created successfully in flexible mode", query);
+
+            // The unknown field should be handled gracefully
+            CategoryTree category = query.getCategory();
+            Assert.assertNotNull("Category should be parsed successfully", category);
+        } catch (SchemaViolationError e) {
+            Assert.fail("SchemaViolationError should not be thrown in flexible mode, but got: " + e.getMessage());
+        } finally {
+            // Clean up system property
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
+        }
+    }
+
+    @Test
+    public void testCustomSimpleFieldTypesUnsafe() throws Exception {
+        String expectedQuery = getResource("queries/category-with-simple-field.txt");
+        String jsonResponse = getResource("responses/category-with-simple-field.json");
+
+        // Category with custom simple fields of different primitive types (unsafe - without aliases)
+        CategoryTreeQueryDefinition queryArgs = q -> q
+            .id()
+            .name()
+            .addCustomSimpleFieldUnsafe("mystring")
+            .addCustomSimpleFieldUnsafe("myinteger")
+            .addCustomSimpleFieldUnsafe("mydouble")
+            .addCustomSimpleFieldUnsafe("myboolean")
+            .addCustomSimpleFieldUnsafe("myarray");
+
+        // Search parameters
+        CategoryArgumentsDefinition searchArgs = q -> q.id(3);
+
+        String queryString = Operations.query(query -> query.category(searchArgs, queryArgs)).toString();
+
+        // Check that the generated query matches the reference query
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Enable flexible mode to allow fields without custom field label
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
+
+        try {
+            // Use Query constructor to trigger readCustomField validation
+            JsonParser parser = new JsonParser();
+            Query query = new Query(parser.parse(jsonResponse).getAsJsonObject());
+            CategoryTree category = query.getCategory();
+
+            // Check that simple fields are properly parsed via readCustomField
+            Assert.assertEquals(Integer.valueOf(3), category.getId());
+            Assert.assertEquals("Equipment", category.getName());
+            // In flexible mode, fields without _custom_ suffix are stored as JsonElements
+            Assert.assertEquals("somevalue", ((com.google.gson.JsonElement) category.get("mystring")).getAsString());
+            Assert.assertEquals(Integer.valueOf(42), Integer.valueOf(((com.google.gson.JsonElement) category.get("myinteger")).getAsInt()));
+            Assert.assertEquals(4.2, ((com.google.gson.JsonElement) category.get("mydouble")).getAsDouble(), 0);
+            Assert.assertEquals(Boolean.TRUE, Boolean.valueOf(((com.google.gson.JsonElement) category.get("myboolean")).getAsBoolean()));
+            Assert.assertTrue(category.get("myarray") instanceof com.google.gson.JsonElement);
+        } finally {
+            // Clean up system property
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
+        }
+    }
+
+    @Test
+    public void testCustomObjectFieldsUnsafe() throws Exception {
+        String expectedQuery = getResource("queries/product-with-object-field.txt");
+        String jsonResponse = getResource("responses/product-with-object-field.json");
+
+        // Search parameters
+        ProductsArgumentsDefinition searchArgs = s -> s.search("short").currentPage(1);
+
+        // Product query with custom object fields (unsafe - without aliases)
+        ProductsQueryDefinition queryArgs = q -> q.items(i -> i
+            .sku()
+            .addCustomSimpleFieldUnsafe("erin_recommends")
+            .addCustomSimpleFieldUnsafe("climate")
+            .addCustomObjectFieldUnsafe("replacement_product", c -> c
+                .addField("__typename")
+                .addField("sku")
+                .addField("name")
+                .addCustomSimpleFieldUnsafe("weight"))
+            .addCustomObjectFieldUnsafe("crosssell_products", c -> c
+                .addField("__typename")
+                .addField("sku")
+                .addField("name")));
+
+        String queryString = Operations.query(query -> query.products(searchArgs, queryArgs)).toString();
+
+        // Check that the generated query matches the reference query
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Enable flexible mode to allow fields without custom field label
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
+
+        try {
+            // Use Query constructor to trigger readCustomField validation
+            JsonParser parser = new JsonParser();
+            Query query = new Query(parser.parse(jsonResponse).getAsJsonObject());
+            ProductInterface product = query.getProducts().getItems().get(0);
+
+            // Check that custom fields are properly parsed via readCustomField
+            Assert.assertEquals("MSH12", product.getSku());
+            // In flexible mode, fields without _custom_ suffix can be stored as various types
+            Object erinRecommends = product.get("erin_recommends");
+            Object climate = product.get("climate");
+
+            // Verify the values regardless of exact type (JsonElement vs raw Java objects)
+            Assert.assertTrue("erin_recommends should be 0",
+                (erinRecommends instanceof Number && ((Number) erinRecommends).intValue() == 0) ||
+                    (erinRecommends instanceof com.google.gson.JsonElement && ((com.google.gson.JsonElement) erinRecommends)
+                        .getAsInt() == 0));
+            Assert.assertTrue("climate should be '205,212,209'",
+                "205,212,209".equals(climate.toString().replace("\"", "")));
+
+            // Check that custom array and object fields work (can be various types in flexible mode)
+            Object crosssellProducts = product.get("crosssell_products");
+            Object replacementProduct = product.get("replacement_product");
+            Assert.assertNotNull("crosssell_products should be present", crosssellProducts);
+            Assert.assertNotNull("replacement_product should be present", replacementProduct);
+        } finally {
+            // Clean up system property
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
+        }
+    }
+
+    @Test
+    public void testProductWithCustomSimpleFieldsUnsafe() throws Exception {
+        String expectedQuery = getResource("queries/product-with-simple-fields.txt");
+        String jsonResponse = getResource("responses/product-with-simple-fields.json");
+
+        // Search parameters
+        ProductsArgumentsDefinition searchArgs = s -> s.search("short").currentPage(1);
+
+        // Product query with custom simple fields (unsafe - without aliases)
+        ProductsQueryDefinition queryArgs = q -> q.items(i -> i
+            .sku()
+            .addCustomSimpleFieldUnsafe("erin_recommends")
+            .addCustomSimpleFieldUnsafe("climate")
+            .addCustomSimpleFieldUnsafe("special_price")
+            .addCustomSimpleFieldUnsafe("is_featured"));
+
+        String queryString = Operations.query(query -> query.products(searchArgs, queryArgs)).toString();
+
+        // Check that the generated query matches the reference query
+        Assert.assertEquals(expectedQuery, queryString);
+
+        // Enable flexible mode to allow fields without custom field label
+        System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
+
+        try {
+            // Use Query constructor to trigger readCustomField validation
+            JsonParser parser = new JsonParser();
+            Query query = new Query(parser.parse(jsonResponse).getAsJsonObject());
+            ProductInterface product = query.getProducts().getItems().get(0);
+
+            // Check that custom simple fields are properly parsed via readCustomField
+            Assert.assertEquals("MSH12", product.getSku());
+            // In flexible mode, fields without _custom_ suffix can be stored as various types
+            Object erinRecommends = product.get("erin_recommends");
+            Object climate = product.get("climate");
+            Object specialPrice = product.get("special_price");
+            Object isFeatured = product.get("is_featured");
+
+            // Verify the values regardless of exact type (JsonElement vs raw Java objects)
+            Assert.assertTrue("erin_recommends should be 0",
+                (erinRecommends instanceof Number && ((Number) erinRecommends).intValue() == 0) ||
+                    (erinRecommends instanceof com.google.gson.JsonElement && ((com.google.gson.JsonElement) erinRecommends)
+                        .getAsInt() == 0));
+            Assert.assertTrue("climate should be '205,212,209'",
+                "205,212,209".equals(climate.toString().replace("\"", "")));
+            Assert.assertTrue("special_price should be 24.99",
+                (specialPrice instanceof Number && Math.abs(((Number) specialPrice).doubleValue() - 24.99) < 0.01) ||
+                    (specialPrice instanceof com.google.gson.JsonElement && Math.abs(((com.google.gson.JsonElement) specialPrice)
+                        .getAsDouble() - 24.99) < 0.01));
+            Assert.assertTrue("is_featured should be true",
+                Boolean.TRUE.equals(isFeatured) ||
+                    (isFeatured instanceof com.google.gson.JsonElement && ((com.google.gson.JsonElement) isFeatured).getAsBoolean()));
+        } finally {
+            // Clean up system property
+            System.clearProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
+        }
+    }
+
 }

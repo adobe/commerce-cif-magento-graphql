@@ -40,6 +40,20 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     public final HashMap<String, Object> optimisticData = new HashMap<>();
     private String aliasSuffix = null;
 
+    /**
+     * System property that unlocks the use of custom unsafe fields without the protection mechanism.
+     * When set to {@code true}, allows field names without the {@code _custom_} suffix to be used,
+     * bypassing schema violation checks and potentially causing field name conflicts with existing
+     * standard fields in the GraphQL schema.
+     * 
+     * <p>
+     * <strong>Property name:</strong> {@code cif.magento.graphql.UnlockCustomUnsafeFields}
+     * </p>
+     * 
+     * @see #readCustomField(String, JsonElement)
+     */
+    public static final String UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY = "cif.magento.graphql.UnlockCustomUnsafeFields";
+
     @SuppressWarnings("unchecked")
     public T withAlias(String aliasSuffix) {
         if (this.aliasSuffix != null) {
@@ -159,22 +173,60 @@ public abstract class AbstractResponse<T extends AbstractResponse> implements Se
     }
 
     /**
-     * Tries to read a custom field from the GraphQL JSON response. The method throws a schema violation
-     * exception if the field name does not contain the <code>_custom_</code> alias suffix added by the library,
-     * which would indicate that the field does not belong to the GraphQL Schema and was not explicitly requested
-     * as a custom field.
+     * Tries to read a custom field from the GraphQL JSON response. The behavior of this method
+     * depends on the system property <code>cif.magento.graphql.UnlockCustomUnsafeFields</code>:
+     * 
+     * <ul>
+     * <li><strong>Default behavior (property unset or false)</strong>: <em>Strict mode</em> -
+     * field names MUST have the _custom_ suffix (like <code>myField_custom_</code>).
+     * If a field name lacks this suffix, throws {@link SchemaViolationError}.</li>
+     * <li><strong>When property is set to true</strong>: <em>Flexible mode</em> -
+     * accepts ANY field name, with or without the _custom_ suffix.
+     * Schema violation errors are disabled - no {@link SchemaViolationError} is thrown.</li>
+     * </ul>
+     * 
+     * If the field name contains the custom field label, it will be stripped before storing.
+     * If it doesn't contain the label, the field name will be used as-is (in flexible mode only).
+     * 
+     * <p>
+     * <strong>Examples of setting the system property:</strong>
+     * </p>
+     * 
+     * <pre>
+     * {@code
+     * // JVM command line argument
+     * java -Dcif.magento.graphql.UnlockCustomUnsafeFields=true MyApp
+     * 
+     * // Programmatically in code
+     * System.setProperty(AbstractResponse.UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY, "true");
+     * }
+     * </pre>
      * 
      * @param fieldName The field name.
      * @param element The JSON element parsed by the JSON deserialiser.
-     * @throws SchemaViolationError If the field name does not contain the <code>_custom_</code> suffix.
+     * @throws SchemaViolationError If the field name does not contain the <code>_custom_</code> suffix
+     *             and schema violation error is not disabled.
      */
     protected void readCustomField(String fieldName, JsonElement element) throws SchemaViolationError {
-        if (!fieldName.endsWith(AbstractQuery.CUSTOM_FIELD_LABEL)) {
-            throw new SchemaViolationError(this, fieldName, element);
+        boolean disableSchemaViolationError = Boolean.getBoolean(UNLOCK_CUSTOM_UNSAFE_FIELDS_PROPERTY);
+
+        String actualFieldName;
+
+        if (fieldName.endsWith(AbstractQuery.CUSTOM_FIELD_LABEL)) {
+            // Field has custom field label suffix, remove it
+            int end = fieldName.lastIndexOf(AbstractQuery.CUSTOM_FIELD_LABEL);
+            actualFieldName = fieldName.substring(0, end);
+        } else {
+            // Field doesn't have custom field label suffix
+            if (!disableSchemaViolationError) {
+                // Strict mode: throw error for fields without custom field label
+                throw new SchemaViolationError(this, fieldName, element);
+            }
+            // Flexible mode: use field name as-is
+            actualFieldName = fieldName;
         }
 
-        int end = fieldName.lastIndexOf(AbstractQuery.CUSTOM_FIELD_LABEL);
-        responseData.put(fieldName.substring(0, end), element);
+        responseData.put(actualFieldName, element);
     }
 
     protected String getFieldName(String key) {

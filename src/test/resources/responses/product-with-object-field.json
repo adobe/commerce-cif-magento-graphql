@@ -1,0 +1,25 @@
+{
+  "products": {
+    "items": [
+      {
+        "__typename": "ConfigurableProduct",
+        "sku": "MSH12",
+        "erin_recommends": 0,
+        "climate": "205,212,209",
+        "replacement_product": {
+          "__typename": "ConfigurableProduct",
+          "sku": "MSH12-old",
+          "name": "Zing Jump Rope",
+          "weight": 42
+        },
+        "crosssell_products": [
+          {
+            "__typename": "SimpleProduct",
+            "sku": "24-UG06",
+            "name": "Affirm Water Bottle"
+          }
+        ]
+      }
+    ]
+  }
+}
