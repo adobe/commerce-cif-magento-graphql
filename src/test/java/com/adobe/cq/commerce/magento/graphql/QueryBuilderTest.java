@@ -118,7 +118,7 @@ public class QueryBuilderTest {
         CategoryTree categoryTree = query.getCategory();
 
         Assert.assertEquals(2, categoryTree.getId().intValue());
-        Assert.assertEquals("Default Categoryss", categoryTree.getName());
+        Assert.assertEquals("Default Category", categoryTree.getName());
         Assert.assertEquals(1, categoryTree.getChildren().size());
     }
 
