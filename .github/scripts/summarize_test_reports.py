@@ -17,6 +17,9 @@ import xml.etree.ElementTree as ET
 
 surefire_dir = "target/surefire-reports"
 total_tests = 0
+total_skipped = 0
+total_failures = 0
+total_errors = 0
 file_count = 0
 passed_files = 0
 failed_files = 0
@@ -61,7 +64,11 @@ for xml_path in sorted(glob.glob(os.path.join(surefire_dir, "TEST-*.xml"))):
     tests = int(root.get("tests", "0"))
     failures = int(root.get("failures", "0"))
     errors = int(root.get("errors", "0"))
+    skipped = int(root.get("skipped", "0"))
     total_tests += tests
+    total_skipped += skipped
+    total_failures += failures
+    total_errors += errors
     if failures or errors:
         status = "FAILED"
         failed_files += 1
@@ -90,6 +97,12 @@ for xml_path in sorted(glob.glob(os.path.join(surefire_dir, "TEST-*.xml"))):
             }
         )
 
+# Per-testcase counts (matching the aem-cif-guides-venia overview table).
+# Derived from the suite attributes so the numbers always reconcile:
+# tests = passed + failures + errors + skipped.
+total_failed = total_failures + total_errors
+total_passed = total_tests - total_skipped - total_failed
+
 os.makedirs("build-reports", exist_ok=True)
 with open("build-reports/.total-tests", "w", encoding="utf-8") as f:
     f.write(str(total_tests))
@@ -101,8 +114,18 @@ with open("build-reports/.failed-files", "w", encoding="utf-8") as f:
     f.write(str(failed_files))
 with open("build-reports/.failed-cases", "w", encoding="utf-8") as f:
     f.write(str(len(failed_cases)))
+with open("build-reports/.passed-cases", "w", encoding="utf-8") as f:
+    f.write(str(total_passed))
+with open("build-reports/.skipped-cases", "w", encoding="utf-8") as f:
+    f.write(str(total_skipped))
 
 lines = []
+# Overview table (Total / Passed / Failed / Skipped) — same layout as venia.
+lines.append("| Total | ✅ Passed | ❌ Failed | ⏭️ Skipped |")
+lines.append("|------:|----------:|----------:|-----------:|")
+lines.append(f"| {total_tests} | {total_passed} | {total_failed} | {total_skipped} |")
+lines.append("")
+
 if failed_cases:
     lines.append(f"### Failed tests ({len(failed_cases)})")
     lines.append("")
