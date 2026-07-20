@@ -24,7 +24,6 @@ file_count = 0
 passed_files = 0
 failed_files = 0
 failed_cases = []
-table_rows = []
 
 
 def classname_to_source(classname):
@@ -70,14 +69,9 @@ for xml_path in sorted(glob.glob(os.path.join(surefire_dir, "TEST-*.xml"))):
     total_failures += failures
     total_errors += errors
     if failures or errors:
-        status = "FAILED"
         failed_files += 1
     else:
-        status = "PASSED"
         passed_files += 1
-    table_rows.append(
-        f"| {status} | `{classname}` | {tests} | {failures} | {errors} |"
-    )
     for testcase in root.findall("testcase"):
         kind, message, detail = extract_failure_detail(testcase)
         if not kind:
@@ -137,12 +131,6 @@ if failed_cases:
         lines.append(case["detail"] or case["message"] or case["kind"])
         lines.append("```")
         lines.append("")
-
-lines.append("### All test classes")
-lines.append("")
-lines.append("| Status | Test class (Java file) | Tests | Failures | Errors |")
-lines.append("|---|---|--:|--:|--:|")
-lines.extend(table_rows)
 
 with open("build-reports/test-summary.md", "w", encoding="utf-8") as f:
     f.write("\n".join(lines) + "\n")
