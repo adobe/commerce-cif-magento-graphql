@@ -121,16 +121,27 @@ lines.append(f"| {total_tests} | {total_passed} | {total_failed} | {total_skippe
 lines.append("")
 
 if failed_cases:
+    # Keep the summary small: just list which tests failed. Full stack traces live
+    # in the uploaded build-reports artifact — link to it so details are one click
+    # away ("analyze"), not inlined. Mirrors core-cif-components (CircleCI) output.
     lines.append(f"### Failed tests ({len(failed_cases)})")
     lines.append("")
     for case in failed_cases:
-        lines.append(f"#### `{case['name']}`")
-        lines.append(f"**Class:** `{case['classname']}`")
-        lines.append("")
-        lines.append("```")
-        lines.append(case["detail"] or case["message"] or case["kind"])
-        lines.append("```")
-        lines.append("")
+        lines.append(f"- `{case['name']}` — `{case['classname']}`")
+    lines.append("")
+
+    server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    run_id = os.environ.get("GITHUB_RUN_ID", "")
+    if repo and run_id:
+        run_url = f"{server}/{repo}/actions/runs/{run_id}"
+        lines.append(
+            f"🔎 Download the **build-reports** artifact from the [workflow run]({run_url}) "
+            f"to see full stack traces."
+        )
+    else:
+        lines.append("🔎 Download the **build-reports** artifact to see full stack traces.")
+    lines.append("")
 
 with open("build-reports/test-summary.md", "w", encoding="utf-8") as f:
     f.write("\n".join(lines) + "\n")
