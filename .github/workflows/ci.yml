@@ -19,6 +19,7 @@ jobs:
     permissions:
       contents: read
       actions: write
+      checks: write
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -36,35 +37,23 @@ jobs:
       - name: Build
         run: mvn -B clean install
 
-      - name: Prepare test reports
+      # Publish the Surefire JUnit results as a GitHub check run — a compact pass/fail table
+      # with drill-down into each failed test (same style as the venia integration checks and
+      # CircleCI's native test summary in core-cif-components).
+      - name: Publish test report
         if: always()
-        run: |
-          if [ ! -d target/surefire-reports ]; then
-            echo "No surefire reports found."
-            exit 0
-          fi
+        uses: dorny/test-reporter@v3
+        with:
+          name: Tests
+          path: '**/target/surefire-reports/*.xml'
+          reporter: java-junit
+          fail-on-error: false
 
-          mkdir -p build-reports/surefire-reports
-          cp -r target/surefire-reports/. build-reports/surefire-reports/
-
-          python3 .github/scripts/summarize_test_reports.py
-
-      - name: Annotate test failures
-        if: always() && hashFiles('build-reports/test-annotations.txt') != ''
-        run: |
-          while IFS= read -r line || [ -n "$line" ]; do
-            echo "$line"
-          done < build-reports/test-annotations.txt
-
-      - name: Publish summary
-        if: always()
-        run: bash .github/scripts/publish_test_summary.sh
-
-      - name: Upload build-reports
-        if: always() && hashFiles('build-reports/surefire-reports/**') != ''
+      - name: Upload surefire reports
+        if: always() && hashFiles('**/target/surefire-reports/**') != ''
         uses: actions/upload-artifact@v6
         with:
-          name: build-reports
-          path: build-reports/
-          if-no-files-found: error
+          name: surefire-reports
+          path: '**/target/surefire-reports/**'
+          if-no-files-found: ignore
           retention-days: 14
