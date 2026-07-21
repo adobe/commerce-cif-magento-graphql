@@ -37,17 +37,17 @@ jobs:
       - name: Build
         run: mvn -B clean install
 
-      # Publish the Surefire JUnit results as a GitHub check run — a compact pass/fail table
-      # with drill-down into each failed test (same style as the venia integration checks and
-      # CircleCI's native test summary in core-cif-components).
-      - name: Publish test report
-        if: always()
-        uses: dorny/test-reporter@v3
+      # Publish the Surefire JUnit results as a "Tests" check run — but ONLY when a test fails
+      # (skip_success_summary + if: failure()), so a green run shows nothing. Same tool and
+      # settings as core-cif-components' ci.yml and the venia test jobs.
+      - name: Publish test results
+        if: failure()
+        uses: mikepenz/action-junit-report@v5
         with:
-          name: Tests
-          path: '**/target/surefire-reports/*.xml'
-          reporter: java-junit
-          fail-on-error: false
+          check_name: Tests
+          report_paths: '**/target/surefire-reports/TEST-*.xml'
+          skip_success_summary: true
+          fail_on_failure: false
 
       - name: Upload surefire reports
         if: always() && hashFiles('**/target/surefire-reports/**') != ''
