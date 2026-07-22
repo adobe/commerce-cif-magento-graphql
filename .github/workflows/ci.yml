@@ -18,7 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      actions: write
       checks: write
     steps:
       - name: Checkout
@@ -30,16 +29,13 @@ jobs:
           distribution: temurin
           java-version: "11"
           cache: maven
-          server-id: central
-          server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
 
       - name: Build
         run: mvn -B clean install
 
-      # Publish the Surefire JUnit results as a "Tests" check run — but ONLY when a test fails
-      # (skip_success_summary + if: failure()), so a green run shows nothing. Same tool and
-      # settings as core-cif-components' ci.yml and the venia test jobs.
+      # On a test failure only, write a pass/fail summary to the build job's Summary tab and
+      # annotate the failing test(s). annotate_only avoids a second "Tests" check run that would
+      # just duplicate this job's own status. Same tool/settings across venia, graphql, magento.
       - name: Publish test results
         if: failure()
         uses: mikepenz/action-junit-report@v5
@@ -47,10 +43,11 @@ jobs:
           check_name: Tests
           report_paths: '**/target/surefire-reports/TEST-*.xml'
           skip_success_summary: true
+          annotate_only: true
           fail_on_failure: false
 
       - name: Upload surefire reports
-        if: always() && hashFiles('**/target/surefire-reports/**') != ''
+        if: failure() && hashFiles('**/target/surefire-reports/**') != ''
         uses: actions/upload-artifact@v6
         with:
           name: surefire-reports
