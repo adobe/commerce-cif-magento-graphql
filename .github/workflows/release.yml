@@ -5,15 +5,25 @@ on:
     tags:
       - magento-graphql-*
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: read
   checks: write
 
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5
 
       - name: Set up JDK 11
         uses: actions/setup-java@v5
@@ -25,8 +35,7 @@ jobs:
       - name: Build
         run: mvn -B clean install
 
-      # On a test failure only, publish the failed tests with their error message and
-      # stack trace — same report as the CI workflow.
+      # On a test failure only, publish the failed tests with their error message and stack trace.
       - name: Publish test results
         if: failure()
         uses: mikepenz/action-junit-report@v5
@@ -38,11 +47,14 @@ jobs:
           fail_on_failure: false
 
   release:
+    name: release
     needs: build
     runs-on: ubuntu-latest
     environment: maven-central
+
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5
 
       - name: Set up JDK 11
         uses: actions/setup-java@v5
