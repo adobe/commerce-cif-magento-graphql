@@ -99,7 +99,6 @@
                         <exclude>README.md</exclude>
                         <exclude>src/test/resources/**/*</exclude>
                         <exclude>**/*.md</exclude>
-                        <exclude>.circleci/*</exclude>
                         <exclude>.github/workflows/*</exclude>
                     </excludes>
                 </configuration>
