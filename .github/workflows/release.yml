@@ -1,0 +1,87 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - magento-graphql-*
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "11"
+          cache: maven
+
+      - name: Build
+        run: mvn -B clean install
+
+      # On a test failure only, publish the failed tests with their error message and stack trace.
+      - name: Publish test results
+        if: failure()
+        uses: mikepenz/action-junit-report@v5
+        with:
+          check_name: Tests
+          report_paths: '**/target/surefire-reports/TEST-*.xml'
+          skip_success_summary: true
+          annotate_only: true
+          fail_on_failure: false
+
+  release:
+    name: release
+    needs: build
+    runs-on: ubuntu-latest
+    environment: maven-central
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "11"
+          cache: maven
+
+      - name: Import GPG key
+        run: echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --import
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: Release
+        run: mvn -B -s .github/settings.xml clean deploy -P release-sign-artifacts
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+
+      # If a test fails during the release deploy, publish the same failure report.
+      - name: Publish test results
+        if: failure()
+        uses: mikepenz/action-junit-report@v5
+        with:
+          check_name: Tests
+          report_paths: '**/target/surefire-reports/TEST-*.xml'
+          skip_success_summary: true
+          annotate_only: true
+          fail_on_failure: false

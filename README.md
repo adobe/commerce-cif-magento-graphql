@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/adobe/commerce-cif-magento-graphql.svg?style=svg)](https://circleci.com/gh/adobe/commerce-cif-magento-graphql)
+[![GitHub Actions](https://github.com/adobe/commerce-cif-magento-graphql/actions/workflows/ci.yml/badge.svg)](https://github.com/adobe/commerce-cif-magento-graphql/actions/workflows/ci.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.commerce.cif/magento-graphql.svg)](https://search.maven.org/search?q=g:com.adobe.commerce.cif%20AND%20a:magento-graphql)
 
 # Magento GraphQL data models and query builders
@@ -55,7 +55,7 @@ mvn clean install -Pformat-code
 
 ## Releases to Maven Central
 
-Releases are triggered by manually running `mvn release:prepare release:clean` on the `master` branch. This automatically pushes a commit with a release git tag like `magento-graphql-x.y.z-magento230` which triggers a dedicated `CircleCI` build that performs the deployment of the artifact to Maven Central.
+Releases are triggered by manually running `mvn release:prepare release:clean` on the `master` branch. This automatically pushes a commit with a release git tag like `magento-graphql-x.y.z-magento230` which triggers a dedicated `GitHub Actions` build that performs the deployment of the artifact to Maven Central.
 
 ### Contributing
  
